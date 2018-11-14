@@ -1,48 +1,51 @@
 {
-  "name": "jackcoleman-secure_linux_cis",
-  "version": "0.1.0",
-  "author": "Jack Coleman",
-  "summary": "",
+  "name": "autostructure-secure_linux_cis",
+  "version": "1.0.0",
+  "author": "Autostructure",
+  "summary": "This module hardens Linux servers to CIS security compliance",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/autostructure/secure_linux_cis.git",
+  "project_page": "https://github.com/autostructure/secure_linux_cis",
+  "issues_url": "https://github.com/autostructure/secure_linux_cis/issues",
   "dependencies": [
-
+    {
+      "name": "camptocamp/kmod",
+      "version_requirement": ">= 2.0.0 < 3.0.0"
+    },
+    {
+      "name": "puppet/alternatives",
+      "version_requirement": ">= 2.0.0 < 3.0.0"
+    },
+    {
+      "name": "camptocamp/postfix",
+      "version_requirement": ">= 1.0.0 < 2.0.0"
+    },
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.0.0 <= 5.0.0"
+    },
+    {
+      "name": "herculesteam/augeasproviders_core",
+      "version_requirement": ">= 2.0.0 < 3.0.0"
+    },
+    {
+      "name": "herculesteam/augeasproviders_sysctl",
+      "version_requirement": ">= 2.0.0 < 3.0.0"
+    },
+    {
+      "name": "kemra102/auditd",
+      "version_requirement": ">= 2.0.0 < 3.0.0"
+    },
+    {
+      "name": "herculesteam/augeasproviders_pam",
+      "version_requirement": ">= 2.0.0 < 3.0.0"
+    }
   ],
   "operatingsystem_support": [
-    {
-      "operatingsystem": "CentOS",
-      "operatingsystemrelease": [
-        "7"
-      ]
-    },
-    {
-      "operatingsystem": "OracleLinux",
-      "operatingsystemrelease": [
-        "7"
-      ]
-    },
     {
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
         "7"
-      ]
-    },
-    {
-      "operatingsystem": "Scientific",
-      "operatingsystemrelease": [
-        "7"
-      ]
-    },
-    {
-      "operatingsystem": "Debian",
-      "operatingsystemrelease": [
-        "8"
-      ]
-    },
-    {
-      "operatingsystem": "Ubuntu",
-      "operatingsystemrelease": [
-        "16.04"
       ]
     }
   ],
@@ -52,7 +55,7 @@
       "version_requirement": ">= 4.7.0 < 6.0.0"
     }
   ],
-  "pdk-version": "1.5.0",
+  "pdk-version": "1.7.0",
   "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
-  "template-ref": "1.5.0-0-gd1b3eca"
+  "template-ref": "tags/1.6.1-0-g6b0d497"
 }
