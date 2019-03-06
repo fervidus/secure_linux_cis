@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # home_directory_owner.rb
 # Contains users that do not own home directories
 

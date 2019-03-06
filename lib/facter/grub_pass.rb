@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # grub_pass.rb
 
 Facter.add('grub_pass') do

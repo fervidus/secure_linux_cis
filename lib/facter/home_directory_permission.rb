@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # home_directory_permission.rb
 # Contains all user directories that have permissions less restrictive than 750
 

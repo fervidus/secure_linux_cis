@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # root_uid.rb
 # This contains all users that have a UID of "0"
 

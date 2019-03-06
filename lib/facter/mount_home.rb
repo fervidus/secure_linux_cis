@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # mount_home.rb
 # Ensures that a seperate partition exists for /home
 

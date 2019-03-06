@@ -9,7 +9,9 @@ fixtures:
     ntp: "puppetlabs/ntp"
     auditd: "kemra102/auditd"
     aboe: "aboe/chrony"
-    postfix: "camptocamp/postfix"
+    postfix:
+      repo: camptocamp-postfix
+      ref: 1.7.0
     logrotate: "puppet/logrotate"
     augeasproviders_shellvar: "herculesteam/augeasproviders_shellvar"
     augeasproviders_pam: "herculesteam/augeasproviders_pam"
@@ -22,3 +24,6 @@ fixtures:
     firewall:
       repo: "puppetlabs/firewall"
       ref: "1.9.0"
+    augeas_core: "puppetlabs/augeas_core"
+    cron_core: "puppetlabs/cron_core"
+    mailalias_core: "puppetlabs/mailalias_core"

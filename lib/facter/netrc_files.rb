@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # netrc_files.rb
 # Contains any .netrc files on the system
 

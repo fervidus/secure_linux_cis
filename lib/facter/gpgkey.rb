@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # gpgkey.rb
 
 Facter.add('gpgkey') do

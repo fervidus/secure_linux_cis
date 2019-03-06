@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # var_tmp_partition_parsed.rb
 # Parses the var_tmp_partition custom fact to ensure nodev option is set
 
@@ -6,7 +8,7 @@ Facter.add('var_tmp_partition_nodev') do
   setcode do
     parsed = Facter::Core::Execution.exec("mount | grep \"/var/tmp\"")
     # rubocop:enable Style/StringLiterals
-    if parsed =~ %r{nodev}
+    if parsed.match?(%r{nodev})
       true
     else
       false

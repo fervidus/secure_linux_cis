@@ -16,18 +16,24 @@ class secure_linux_cis::redhat7::cis_5_4_1_4 (
   Integer $pass_inactive_days = 30,
 ) {
 
-  if $enforced {
+  if($facts['local_users']) {
+    if $enforced {
 
-    if $pass_inactive_days > 30 {
-      fail('pass_inactive_days should be set to a value of 30 or less')
-    }
+      if $pass_inactive_days > 30 {
+        fail('pass_inactive_days should be set to a value of 30 or less')
+      }
 
-    if !($facts['local_users'].empty) {
+        $facts['local_users'].each |String $user, Hash $attributes| {
 
-      $facts['local_users'].each |String $user, Hash $attributes| {
+        if !($attributes['max_days_between_password_change'].empty) {
 
-        if $attributes['password_inactive'] != $pass_inactive_days {
-          exec { "/bin/chage --inactive ${pass_inactive_days} ${user}": }
+          unless $attributes['if_never_conditional'] == 'never' {
+
+            if $attributes['number_parser_inactive'] != $pass_inactive_days {
+
+              exec { "/bin/chage --inactive ${pass_inactive_days} ${user}": }
+            }
+          }
         }
       }
     }

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # rhost_files.rb
 # This fact contains any .rhost files that any users may posses
 

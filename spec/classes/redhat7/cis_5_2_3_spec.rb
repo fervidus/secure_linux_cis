@@ -19,8 +19,8 @@ describe 'secure_linux_cis::redhat7::cis_5_2_3' do
               .with(
                 ensure: 'present',
                 path:   '/etc/ssh/sshd_config',
-                line:   'LogLevel Info',
-                match:  '^LogLevel.*',
+                line:   'LogLevel INFO',
+                match:  '^LogLevel',
               )
           }
         else

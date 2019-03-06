@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # unconf_daemons.rb
 # Ensures no unconfined daemons exist
 Facter.add('unconf_daemons') do

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # var_tmp_partition.rb
 # Ensures a seperate partition exists for /var/tmp
 

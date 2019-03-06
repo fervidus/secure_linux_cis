@@ -18,7 +18,7 @@ describe 'secure_linux_cis::redhat7::cis_4_1_1_1' do
                 ensure: 'present',
                 path: '/etc/audit/auditd.conf',
                 line: 'max_log_file = 8',
-                match: '^max_log_file',
+                match: '^max_log_file =',
               )
           }
         else

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # duplicate_group.rb
 # Ensures no duplicate group names exist in /etc/group
 

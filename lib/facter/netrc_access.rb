@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # netrc_access.rb
 # Contains .netrc files that are either group or world accessible
 

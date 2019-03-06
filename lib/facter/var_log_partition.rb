@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # var_log_partition.rb
 # Ensures /var/log has a separate partition
 

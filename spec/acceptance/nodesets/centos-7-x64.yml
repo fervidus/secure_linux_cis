@@ -1,0 +1,15 @@
+HOSTS:
+  centos-7-x64:
+    roles:
+      - agent
+    platform: el-7-x86_64
+    snapshot: sexy-centos-beaker-snapshot
+    hypervisor: fusion
+    ssh:
+      password: password
+      user: root
+      auth_methods:
+        - password
+CONFIG:
+  log_level: verbose
+  type: foss

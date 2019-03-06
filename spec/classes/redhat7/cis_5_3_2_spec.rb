@@ -36,7 +36,7 @@ describe 'secure_linux_cis::redhat7::cis_5_3_2' do
                   'audit',
                   'silent',
                   'deny=5',
-                  'unlock_time=900',
+                  'unlock_time=900'
                 ],
                 position: 'before *[type="auth" and module="pam_unix.so"]',
               )
@@ -52,7 +52,7 @@ describe 'secure_linux_cis::redhat7::cis_5_3_2' do
                   'authfail',
                   'audit',
                   'deny=5',
-                  'unlock_time=900',
+                  'unlock_time=900'
                 ],
                 position: 'after *[type="auth" and module="pam_unix.so"]',
               )
@@ -68,7 +68,7 @@ describe 'secure_linux_cis::redhat7::cis_5_3_2' do
                   'authsucc',
                   'audit',
                   'deny=5',
-                  'unlock_time=900',
+                  'unlock_time=900'
                 ],
                 position: 'after *[type="auth" and module="pam_faillock.so" and control="[default=die]"]',
               )
@@ -95,7 +95,7 @@ describe 'secure_linux_cis::redhat7::cis_5_3_2' do
                   'audit',
                   'silent',
                   'deny=5',
-                  'unlock_time=900',
+                  'unlock_time=900'
                 ],
                 position: 'before *[type="auth" and module="pam_unix.so"]',
               )
@@ -111,7 +111,7 @@ describe 'secure_linux_cis::redhat7::cis_5_3_2' do
                   'authfail',
                   'audit',
                   'deny=5',
-                  'unlock_time=900',
+                  'unlock_time=900'
                 ],
                 position: 'after *[type="auth" and module="pam_unix.so"]',
               )
@@ -127,7 +127,7 @@ describe 'secure_linux_cis::redhat7::cis_5_3_2' do
                   'authsucc',
                   'audit',
                   'deny=5',
-                  'unlock_time=900',
+                  'unlock_time=900'
                 ],
                 position: 'after *[type="auth" and module="pam_faillock.so" and control="[default=die]"]',
               )

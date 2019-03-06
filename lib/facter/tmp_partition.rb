@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # tmp_partition.rb
 # Makes sure that /tmp is mounted
 

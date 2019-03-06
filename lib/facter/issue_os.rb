@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # issue_os.rb
 
 Facter.add('issue_os') do

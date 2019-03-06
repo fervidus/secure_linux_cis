@@ -1,6 +1,12 @@
-# A description of what this class does
+# 5.4.1.5 Ensure all users last password change date is in the past (Scored)
 #
-# @summary A short summary of the purpose of this class
+# Description:
+# All users should have a password change date in the past.
+#
+# Rationale:
+# If a users recorded password change date is in the future then they could bypass any set password expiration.
+#
+# @summary 5.4.1.5 Ensure all users last password change date is in the past (Scored)
 #
 # @example
 #   include secure_linux_cis::redhat7::cis_5_4_1_5
@@ -17,7 +23,11 @@
       $facts['local_users'].each |String $user, Hash $attributes| {
 
         if !$attributes['password_change'] {
-          fail("User ${user} has a password last changed date in the future. Please investigate.")
+          # fail("User ${user} has a password last changed date in the future. Please investigate.")
+          notify { "plcd ${user}":
+            message  => 'Not in compliance with CIS 5.4.1.5 (Scored). We believe the user has a password last changed date in the future. Please investigate.', #lint:ignore:140chars
+            loglevel => 'warning',
+          }
         }
       }
     }

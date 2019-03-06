@@ -15,9 +15,10 @@ class secure_linux_cis::redhat7::cis_1_6_1_2 (
   if $enforced {
 
     file_line { 'selinux_enforce':
-      path  => '/etc/selinux/config',
-      line  => 'SELINUX=enforcing',
-      match => 'SELINUX=',
+      path     => '/etc/selinux/config',
+      line     => 'SELINUX=enforcing',
+      match    => 'SELINUX=',
+      multiple => true,
     }
   }
 }

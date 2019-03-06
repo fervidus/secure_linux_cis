@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This fact xorg_x11_packages returns an array of installed packages that start with xorg-x11*
 #
 Facter.add('xorg_x11_packages') do

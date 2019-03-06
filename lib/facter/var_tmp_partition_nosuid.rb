@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # var_tmp_partition_nosuid.rb
 # Ensures the nosuid option exists on the /var/tmp partition
 
@@ -6,7 +8,7 @@ Facter.add('var_tmp_partition_nosuid') do
   setcode do
     parsed = Facter::Core::Execution.exec("mount | grep \"/var/tmp\"")
     # rubocop:enable Style/StringLiterals
-    if parsed =~ %r{nosuid}
+    if parsed.match?(%r{nosuid})
       true
     else
       false

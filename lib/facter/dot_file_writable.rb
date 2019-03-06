@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # dot_file_writable.rb
 # Contains dot files that are either group or world writable
 

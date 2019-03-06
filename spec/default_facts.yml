@@ -1,8 +1,7 @@
-# Use default_module_facts.yml for module specific facts.
 #
 # Facts specified here will override the values provided by rspec-puppet-facts.
 ---
-concat_basedir: "/tmp"
+concat_basedir: ""
 ipaddress: "172.16.254.254"
 is_pe: false
 macaddress: "AA:AA:AA:AA:AA:AA"
@@ -50,8 +49,12 @@ var_tmp_partition_noexec: false
 tmp_nosuid: false
 var_tmp_partition_nodev: false
 tmp_noexec: false
+world_writable_redhat: "true"
 #-----
-# local_users:
+local_users: {
+  "luther" : { },
+  "root" : { }
+  }
 #   rando1:
 #     max_days_between_password_change:  192
 #     min_days_between_password_change:  22
@@ -98,4 +101,4 @@ networking:
       ip: 127.0.0.1
       mtu: 65536
       netmask: 255.0.0.0
-      network: 127.0.0.0
+network: 127.0.0.0

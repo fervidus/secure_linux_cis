@@ -17,7 +17,8 @@ class secure_linux_cis::redhat7::cis_1_1_2 (
       if $facts['tmp_partition'] == undef {
 
         notify { 'tmp-part':
-          message => 'Not in compliance with CIS 1.1.2 (Scored). There is not a seperate partition for /tmp',
+          message  => 'Not in compliance with CIS 1.1.2 (Scored). There is not a seperate partition for /tmp',
+          loglevel => 'warning',
           }
         }
     }

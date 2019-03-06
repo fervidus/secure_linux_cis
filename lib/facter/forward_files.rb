@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # forward_files.rb
 # Contains any .forward files that may exist on a system
 

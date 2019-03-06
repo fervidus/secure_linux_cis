@@ -17,7 +17,7 @@ class secure_linux_cis::redhat7::cis_1_6_1_3 (
     file_line { 'selinux_targeted':
       path  => '/etc/selinux/config',
       line  => 'SELINUXTYPE=targeted',
-      match => 'SELINUXTYPE=',
+      match => '^SELINUXTYPE=',
     }
   }
 }

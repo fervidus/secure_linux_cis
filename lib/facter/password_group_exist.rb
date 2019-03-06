@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # password_group_exist.rb
 # Ensures groups that are defined in /etc/passwd file but not in the /etc/group file
 

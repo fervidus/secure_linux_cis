@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # home_directory.rb
 
 Facter.add('home_directory') do

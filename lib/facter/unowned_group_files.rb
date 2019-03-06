@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # unowned_group_files.#!/usr/bin/env ruby -wKU
 # This custom fact contains all files that are not owned by groups listed in the system
 

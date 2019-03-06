@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # unowned_files.rb
 # This custom fact contains all files that are not owned by users listed in the system
 

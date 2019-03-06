@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # file_permission.rb
 # Custom fact that contains specific installed files and the permissions they have
 

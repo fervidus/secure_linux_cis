@@ -18,7 +18,7 @@ describe 'secure_linux_cis::redhat7::cis_2_2_1_2' do
                 servers: ['time.example.com'],
                 restrict: [
                   '-4 default kod nomodify notrap nopeer noquery',
-                  '-6 default kod nomodify notrap nopeer noquery',
+                  '-6 default kod nomodify notrap nopeer noquery'
                 ],
               )
             is_expected.to contain_file('/etc/sysconfig/ntpd')

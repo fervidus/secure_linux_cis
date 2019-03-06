@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # var_partition.rb
 # Checks whether a seperate partition exists for /var
 

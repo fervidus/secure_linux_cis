@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # var_log_audit.rb
 # Ensures a seperate partition exists for /var/log/audit
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # automounting.rb
 # Ensures automounting is enabled
 

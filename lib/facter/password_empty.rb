@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # password_empty.rb
 
 Facter.add('password_empty') do

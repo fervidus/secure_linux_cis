@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # suid_files.rb
 # This custom fact contains all SUID files on a system, which allow users to execute with root privileges
 

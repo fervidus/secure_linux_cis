@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # duplicate_user.rb
 # Ensures no duplicate user names exist in /etc/passwd
 

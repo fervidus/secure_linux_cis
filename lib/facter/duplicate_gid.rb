@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # duplicate_gid.rb
 # Ensures no duplicate GIDs exist in /etc/group
 
