@@ -58,7 +58,7 @@ As of enforcement for the Redhat 7 OS, there are 223 CIS rules that are either e
 
 ```yaml
 # hieradata/common.yaml
-secure_linux::cis_1_1_2::enforced: false
+secure_linux_cis::redhat7::cis_1_1_2::enforced: false
 ```
 
 See [Limitations](#limitations) for a list of vulnerabilities that might not apply to certain system configurations
