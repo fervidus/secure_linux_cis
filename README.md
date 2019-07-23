@@ -417,7 +417,7 @@ bundle exec rake spec
 ```
 ## Contributors
 
-This module is an open source project that was created and maintained by Autostructure.
+This module is an open source project that was created and maintained by Fervid.
 
 ## Disclaimer
 
@@ -432,7 +432,7 @@ any theory of liability, whether in contract, strict liability, or tort
 (including negligence or otherwise) arising in any way out of the use of
 this Guidance, even if advised of the possibility of such damage.
 >
-> The User of this Work agrees to hold harmless and indemnify Autostructure,
+> The User of this Work agrees to hold harmless and indemnify Fervid,
 its agents, parent company, and employees from every claim or liability
 (whether in tort or in contract), including attorneys' fees,
 court costs, and expenses, arising in direct consequence of Recipient's
@@ -443,5 +443,5 @@ infringement or other violations of intellectual property or technical
 data rights.
 >
 > Nothing in this Work is intended to constitute an endorsement, explicit
-or implied, by Autostructure of any particular manufacturer's
+or implied, by Fervid of any particular manufacturer's
 product or service.
