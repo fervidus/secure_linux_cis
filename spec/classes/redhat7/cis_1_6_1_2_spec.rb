@@ -14,15 +14,13 @@ describe 'secure_linux_cis::redhat7::cis_1_6_1_2' do
         if option
           it {
             is_expected.to contain_file_line('selinux_enforce')
-            is_expected.not_to contain_file_line('selinux_disable') 
+            is_expected.not_to contain_file_line('selinux_disable')
           }
         else
-          it { 
-            is_expected.not_to contain_file_line('selinux_enforce') 
+          it {
+            is_expected.not_to contain_file_line('selinux_enforce')
             is_expected.to contain_file_line('selinux_disable')
-            
-            }
-          
+          }
         end
       end
     end
