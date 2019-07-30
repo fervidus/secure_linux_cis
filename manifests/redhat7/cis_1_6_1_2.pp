@@ -20,7 +20,7 @@ class secure_linux_cis::redhat7::cis_1_6_1_2 (
       multiple => true,
     }
   } else {
-    file_line { 'selinux_enforce':
+    file_line { 'selinux_disable':
       path     => '/etc/selinux/config',
       line     => 'SELINUX=disabled',
       match    => 'SELINUX=',
