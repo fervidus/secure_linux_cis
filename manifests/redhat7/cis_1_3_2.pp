@@ -14,7 +14,7 @@ class secure_linux_cis::redhat7::cis_1_3_2 (
 
   if $enforced {
 
-    cron {'cron_aide':
+    cron::job {'cron_aide':
       command => '/usr/sbin/aide --check',
       user    => 'root',
       hour    => 5,

@@ -92,7 +92,7 @@ class secure_linux_cis (
       }
     }
 
-    'centos7': {
+    'centos7','CentOS7': {
       class { '::secure_linux_cis::centos7':
         logging                 => $logging,
         logging_host            => $logging_host,

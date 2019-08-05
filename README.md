@@ -419,6 +419,8 @@ bundle exec rake spec
 
 This module is an open source project that was created and maintained by Fervid.
 
+To see who's already involved, see the [list of contributors.](https://github.com/fervidus/secure_linux_cis/graphs/contributors)
+
 ## Disclaimer
 
 > This Work is provided "as is." Any express or implied warranties,

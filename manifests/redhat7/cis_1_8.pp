@@ -14,10 +14,9 @@ class secure_linux_cis::redhat7::cis_1_8 (
 
   if $enforced {
 
-    cron { 'security-update':
-      ensure   => present,
-      command  => 'yum check-update --security',
-      monthday => '1',
+    cron::monthly { 'security-update':
+      ensure  => present,
+      command => 'yum check-update --security',
     }
   }
 }
