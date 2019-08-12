@@ -18,10 +18,10 @@ class secure_linux_cis::redhat7::cis_3_6_4 (
   if $enforced {
 
     firewall { '004 accept new and established ouput tcp connections':
-        chain  => 'OUTPUT',
-        state  => ['NEW', 'ESTABLISHED'],
-        action => 'accept',
-        proto  => 'tcp',
+      chain  => 'OUTPUT',
+      state  => ['NEW', 'ESTABLISHED'],
+      action => 'accept',
+      proto  => 'tcp',
     }
     -> firewall { '005 accept new and established ouput udp connections':
       chain  => 'OUTPUT',

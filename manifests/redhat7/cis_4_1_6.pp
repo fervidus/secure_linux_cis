@@ -33,7 +33,7 @@ class secure_linux_cis::redhat7::cis_4_1_6 (
   if $enforced {
 
     # 64 bit architecture
-    if $facts['architecture'] =~ /64/ {
+    if $facts['os']['architecture'] =~ /64/ {
 
       file_line { 'audit.rules network 1':
         ensure => present,

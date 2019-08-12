@@ -10,15 +10,15 @@
 #   include secure_linux_cis::redhat7::cis_1_1_22
 class secure_linux_cis::redhat7::cis_1_1_22 (
   Boolean $enforced = true,
-  ) {
-    if $enforced {
+) {
+  if $enforced {
 
-      if $facts['automounting'] == 'enabled' {
+    if $facts['automounting'] == 'enabled' {
 
-        exec {'disable_automount':
-          command => 'systemctl disable autofs',
-          path    => '/bin/',
-        }
+      exec {'disable_automount':
+        command => 'systemctl disable autofs',
+        path    => '/bin/',
       }
     }
+  }
 }

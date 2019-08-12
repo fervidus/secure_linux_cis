@@ -17,10 +17,10 @@ class secure_linux_cis::redhat7::cis_5_2_9 (
   if $enforced {
 
     file_line { 'ssh permit empty password':
-        ensure => 'present',
-        path   => '/etc/ssh/sshd_config',
-        line   => 'PermitEmptyPasswords no',
-        match  => '^#?PermitEmptyPasswords',
+      ensure => 'present',
+      path   => '/etc/ssh/sshd_config',
+      line   => 'PermitEmptyPasswords no',
+      match  => '^#?PermitEmptyPasswords',
     }
   }
 }

@@ -9,15 +9,15 @@
 #   include secure_linux_cis::redhat7::cis_1_1_12
 class secure_linux_cis::redhat7::cis_1_1_12 (
   Boolean $enforced = true,
-  ) {
-    if $enforced {
+) {
+  if $enforced {
 
-      if $facts['var_log_audit'] == undef {
+    if $facts['var_log_audit'] == undef {
 
-        notify {'vla':
-          message  => 'Not in compliance with CIS 1.1.12 (Scored). /var/log/audit is not in a seperate partition',
-          loglevel => 'warning',
-        }
+      notify {'vla':
+        message  => 'Not in compliance with CIS 1.1.12 (Scored). /var/log/audit is not in a seperate partition',
+        loglevel => 'warning',
       }
     }
+  }
 }

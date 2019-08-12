@@ -29,7 +29,7 @@ class secure_linux_cis::redhat7::cis_5_2_12 (
 
     if $client_alive_interval > 300 or $client_alive_interval < 1 {
 
-        fail('The Client Alive Interval has been manually set past the 1 - 300 threshold')
+      fail('The Client Alive Interval has been manually set past the 1 - 300 threshold')
     }
 
     file_line { 'ssh alive interval':

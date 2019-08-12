@@ -19,7 +19,7 @@ class secure_linux_cis::redhat7::cis_5_3_3 (
 
   $services = [
     'system-auth',
-    'password-auth'
+    'password-auth',
   ]
 
   if $enforced {

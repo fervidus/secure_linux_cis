@@ -19,7 +19,7 @@ class secure_linux_cis::redhat7::cis_6_2_2 (
       notify { 'pp':
         message  => 'Not in compliance with CIS 6.2.2 (Scored). You have "+" entries in /etc/passwd. Check the plus_passwd fact for details', #lint:ignore:140chars
         loglevel => 'warning',
-        }
       }
     }
   }
+}
