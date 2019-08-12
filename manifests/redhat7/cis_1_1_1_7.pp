@@ -11,6 +11,8 @@
 #
 # @summary 1.1.1.7 Ensure mounting of udf filesystems is disabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_1_1_7
 class secure_linux_cis::redhat7::cis_1_1_1_7 (
