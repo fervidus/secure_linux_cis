@@ -70,7 +70,7 @@ class secure_linux_cis::redhat7::cis_5_3_2 (
           "deny=${attempts}",
           "unlock_time=${lockout_time}",
         ],
-        position           => 'after *[type="auth" and module="pam_unix.so"]',
+        position         => 'after *[type="auth" and module="pam_unix.so"]',
       }
 
       pam { "pam_faillock authsucc ${service}":
