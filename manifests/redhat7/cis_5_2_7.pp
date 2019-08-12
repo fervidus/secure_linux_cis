@@ -19,10 +19,10 @@ class secure_linux_cis::redhat7::cis_5_2_7 (
   if $enforced {
 
     file_line { 'ssh host based authentication':
-        ensure => 'present',
-        path   => '/etc/ssh/sshd_config',
-        line   => 'HostbasedAuthentication no',
-        match  => '^HostbasedAuthentication',
+      ensure => 'present',
+      path   => '/etc/ssh/sshd_config',
+      line   => 'HostbasedAuthentication no',
+      match  => '^HostbasedAuthentication',
     }
   }
 }

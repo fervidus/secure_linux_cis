@@ -7,19 +7,47 @@
 #
 # @summary This wrapper class declares CIS controls for the RedHat Enterprise Linux 7 Benchmark v2.2.0
 #
+# @param time_servers Array of valid NTP Time servers
+# @param logging How logging is done
+# @param logging_host Which host should logging be sent to
+# @param is_logging_host Is this host a logging host
+# @param max_log_file Maximum log file
+# @param max_auth_tries How many authorization attempts to allow
+# @param time_sync Which NTP program to use
+# @param ipv6_enabled Should ipv6 be enabled
+# @param approved_mac_algorithms Which algorigthms are approved for use
+# @param client_alive_interval Client alive interval to use
+# @param client_alive_count_max Maximum specificed client alive count
+# @param login_grace_time Login grace time
+# @param allow_users Which users to allow
+# @param allow_groups Which groups to allow
+# @param deny_users Which users to deny
+# @param deny_groups Which groups to deny
+# @param minlen Minimum length
+# @param dcredit D Credit
+# @param ucredit U Credit
+# @param ocredit O Credit
+# @param lcredit L Credit
+# @param attempts Number of attempts
+# @param lockout_time Amount of time for lockout
+# @param past_passwords Number of previous passwords
+# @param pass_max_days Password maximum days
+# @param pass_min_days Password minimum days
+# @param pass_warn_days Password warning days
+#
 # @example
 #   include secure_linux_cis::redhat7
 class secure_linux_cis::redhat7 (
   Array[String] $time_servers                   = [],
   Enum['rsyslog', 'syslog-ng', 'none'] $logging = 'rsyslog',
-  String $logging_host                          = '',
+  String $logging_host                          = '',  #lint:ignore:empty_string_assignment
   Boolean $is_logging_host                      = false,
   Integer $max_log_file                         = 8,
   Enum['1', '2', '3', '4'] $max_auth_tries      = '4',
   Enum['ntp', 'chrony', 'none'] $time_sync      = 'ntp',
   Boolean $ipv6_enabled                         = true,
   Array $approved_mac_algorithms                = ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com', #lint:ignore:140chars
-                                                  'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com'],
+                                                  'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com'],  #lint:ignore:strict_indent
   Integer $client_alive_interval                = 300,
   Enum['0','1','2','3'] $client_alive_count_max = '0',
   Integer $login_grace_time                     = 60,
@@ -39,6 +67,7 @@ class secure_linux_cis::redhat7 (
   Integer $pass_min_days                        = 7,
   Integer $pass_warn_days                       = 7,
 ) {
+
   include ::secure_linux_cis::redhat7::cis_1_1_1_1
   include ::secure_linux_cis::redhat7::cis_1_1_1_2
   include ::secure_linux_cis::redhat7::cis_1_1_1_3
@@ -117,10 +146,12 @@ class secure_linux_cis::redhat7 (
     time_servers => $time_servers,
     time_sync    => $time_sync,
   }
+
   class { '::secure_linux_cis::redhat7::cis_2_2_1_3':
     time_servers => $time_servers,
     time_sync    => $time_sync,
   }
+
   include ::secure_linux_cis::redhat7::cis_2_2_2
   include ::secure_linux_cis::redhat7::cis_2_2_3
   include ::secure_linux_cis::redhat7::cis_2_2_4
@@ -197,6 +228,7 @@ class secure_linux_cis::redhat7 (
   class { '::secure_linux_cis::redhat7::cis_4_1_1_1':
     max_log_file => $max_log_file,
   }
+
   include ::secure_linux_cis::redhat7::cis_4_1_1_2
   include ::secure_linux_cis::redhat7::cis_4_1_1_3
   include ::secure_linux_cis::redhat7::cis_4_1_2
@@ -285,21 +317,26 @@ class secure_linux_cis::redhat7 (
   class { '::secure_linux_cis::redhat7::cis_5_2_5':
     max_auth_tries => $max_auth_tries,
   }
+
   include ::secure_linux_cis::redhat7::cis_5_2_6
   include ::secure_linux_cis::redhat7::cis_5_2_7
   include ::secure_linux_cis::redhat7::cis_5_2_8
   include ::secure_linux_cis::redhat7::cis_5_2_9
   include ::secure_linux_cis::redhat7::cis_5_2_10
+
   class { '::secure_linux_cis::redhat7::cis_5_2_11':
     approved_mac_algorithms => $approved_mac_algorithms,
   }
+
   class { '::secure_linux_cis::redhat7::cis_5_2_12':
     client_alive_interval  => $client_alive_interval,
     client_alive_count_max => $client_alive_count_max,
   }
+
   class { '::secure_linux_cis::redhat7::cis_5_2_13':
     login_grace_time => $login_grace_time,
   }
+
   # need to discuss class 5_2_14 spec testing, fails with empty lists
   class { '::secure_linux_cis::redhat7::cis_5_2_14':
     allow_users  => $allow_users,
@@ -307,7 +344,9 @@ class secure_linux_cis::redhat7 (
     deny_users   => $deny_users,
     deny_groups  => $deny_groups,
   }
+
   include ::secure_linux_cis::redhat7::cis_5_2_15
+
   class { '::secure_linux_cis::redhat7::cis_5_3_1':
     minlen  => $minlen,
     dcredit => $dcredit,
@@ -315,23 +354,30 @@ class secure_linux_cis::redhat7 (
     ocredit => $ocredit,
     lcredit => $lcredit,
   }
+
   class { '::secure_linux_cis::redhat7::cis_5_3_2':
-  attempts     => $attempts,
-  lockout_time => $lockout_time,
+    attempts     => $attempts,
+    lockout_time => $lockout_time,
   }
+
   class { '::secure_linux_cis::redhat7::cis_5_3_3':
     past_passwords => $past_passwords,
   }
+
   include ::secure_linux_cis::redhat7::cis_5_3_4
+
   class { '::secure_linux_cis::redhat7::cis_5_4_1_1':
     pass_max_days => $pass_max_days,
   }
+
   class { '::secure_linux_cis::redhat7::cis_5_4_1_2':
     pass_min_days => $pass_min_days,
   }
+
   class { '::secure_linux_cis::redhat7::cis_5_4_1_3':
     pass_warn_days => $pass_warn_days,
   }
+
   include ::secure_linux_cis::redhat7::cis_5_4_1_4
   include ::secure_linux_cis::redhat7::cis_5_4_1_5
   include ::secure_linux_cis::redhat7::cis_5_4_2
@@ -383,21 +429,5 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_6_2_17
   include ::secure_linux_cis::redhat7::cis_6_2_18
   include ::secure_linux_cis::redhat7::cis_6_2_19
-
-#test
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

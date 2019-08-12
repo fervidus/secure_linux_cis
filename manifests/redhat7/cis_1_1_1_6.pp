@@ -10,6 +10,8 @@
 #
 # @summary 1.1.1.6 Ensure mounting of squashfs filesystems is disabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_1_1_6
 class secure_linux_cis::redhat7::cis_1_1_1_6 (

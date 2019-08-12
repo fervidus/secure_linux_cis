@@ -18,10 +18,10 @@ class secure_linux_cis::redhat7::cis_5_2_8 (
   if $enforced {
 
     file_line { 'ssh permit root login':
-        ensure => 'present',
-        path   => '/etc/ssh/sshd_config',
-        line   => 'PermitRootLogin no',
-        match  => '^#?PermitRootLogin',
+      ensure => 'present',
+      path   => '/etc/ssh/sshd_config',
+      line   => 'PermitRootLogin no',
+      match  => '^#?PermitRootLogin',
     }
   }
 }

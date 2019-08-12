@@ -8,6 +8,6 @@
 #
 # @example
 #   include secure_linux_cis::redhat7::cis_1_1_18
-  class secure_linux_cis::redhat7::cis_1_1_18 {
+class secure_linux_cis::redhat7::cis_1_1_18 {
   # Documented in README
-  }
+}

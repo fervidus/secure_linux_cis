@@ -32,7 +32,7 @@ class secure_linux_cis::redhat7::cis_5_4_1_2 (
         match  => '^#?PASS_MIN_DAYS',
       }
 
-        $facts['local_users'].each |String $user, Hash $attributes| {
+      $facts['local_users'].each |String $user, Hash $attributes| {
 
         if !($attributes['max_days_between_password_change'].empty) {
 

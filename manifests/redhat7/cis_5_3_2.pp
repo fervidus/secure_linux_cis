@@ -23,7 +23,7 @@ class secure_linux_cis::redhat7::cis_5_3_2 (
 
   $services = [
     'system-auth',
-    'password-auth'
+    'password-auth',
   ]
 
   if $enforced {
@@ -48,12 +48,12 @@ class secure_linux_cis::redhat7::cis_5_3_2 (
         control          => 'required',
         control_is_param => true,
         arguments        => [
-                            'preauth',
-                            'audit',
-                            'silent',
-                            "deny=${attempts}",
-                            "unlock_time=${lockout_time}"
-                            ],
+          'preauth',
+          'audit',
+          'silent',
+          "deny=${attempts}",
+          "unlock_time=${lockout_time}",
+        ],
         position         => 'before *[type="auth" and module="pam_unix.so"]',
       }
 
@@ -65,12 +65,12 @@ class secure_linux_cis::redhat7::cis_5_3_2 (
         control          => '[default=die]',
         control_is_param => true,
         arguments        => [
-                            'authfail',
-                            'audit',
-                            "deny=${attempts}",
-                            "unlock_time=${lockout_time}"
-                            ],
-      position           => 'after *[type="auth" and module="pam_unix.so"]',
+          'authfail',
+          'audit',
+          "deny=${attempts}",
+          "unlock_time=${lockout_time}",
+        ],
+        position         => 'after *[type="auth" and module="pam_unix.so"]',
       }
 
       pam { "pam_faillock authsucc ${service}":
@@ -81,11 +81,11 @@ class secure_linux_cis::redhat7::cis_5_3_2 (
         control          => 'sufficient',
         control_is_param => true,
         arguments        => [
-                            'authsucc',
-                            'audit',
-                            "deny=${attempts}",
-                            "unlock_time=${lockout_time}"
-                            ],
+          'authsucc',
+          'audit',
+          "deny=${attempts}",
+          "unlock_time=${lockout_time}",
+        ],
         position         => 'after *[type="auth" and module="pam_faillock.so" and control="[default=die]"]',
       }
     }

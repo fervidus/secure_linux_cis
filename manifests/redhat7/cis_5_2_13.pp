@@ -23,14 +23,14 @@ class secure_linux_cis::redhat7::cis_5_2_13 (
 
     if $login_grace_time > 60 or $login_grace_time < 1 {
 
-        fail('The Login Grace Time parameter has been manually set past the 1 - 60 threshold')
+      fail('The Login Grace Time parameter has been manually set past the 1 - 60 threshold')
     }
 
-      file_line{ 'ssh login grace time':
-        ensure => 'present',
-        path   => '/etc/ssh/sshd_config',
-        line   => "LoginGraceTime ${login_grace_time}",
-        match  => '^#?LoginGraceTime',
-      }
+    file_line{ 'ssh login grace time':
+      ensure => 'present',
+      path   => '/etc/ssh/sshd_config',
+      line   => "LoginGraceTime ${login_grace_time}",
+      match  => '^#?LoginGraceTime',
     }
   }
+}

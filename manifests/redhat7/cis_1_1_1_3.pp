@@ -9,6 +9,8 @@
 #
 # @summary 1.1.1.3 Ensure mounting of jffs2 filesystems is disabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_1_1_3
 class secure_linux_cis::redhat7::cis_1_1_1_3 (

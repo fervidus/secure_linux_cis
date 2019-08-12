@@ -35,66 +35,66 @@ class secure_linux_cis::redhat7::cis_5_3_1 (
 
   if $enforced {
 
-      if $minlen == 0 and $dcredit == 0 and $ucredit == 0 and $ocredit == 0 and $lcredit == 0 {
+    if $minlen == 0 and $dcredit == 0 and $ucredit == 0 and $ocredit == 0 and $lcredit == 0 {
 
-        notify { 'blackpass':
-          message  => 'Not in compliance with CIS 5.3.1 (Scored). At least one of the password requirements in /etc/security/pwquality.conf must be specified',#lint:ignore:140chars
-          loglevel => 'warning',
-        }
+      notify { 'blackpass':
+        message  => 'Not in compliance with CIS 5.3.1 (Scored). At least one of the password requirements in /etc/security/pwquality.conf must be specified',#lint:ignore:140chars
+        loglevel => 'warning',
       }
-      elsif $minlen == undef and $dcredit == undef and $ucredit == undef and $ocredit == undef and $lcredit == undef {
+    }
+    elsif $minlen == undef and $dcredit == undef and $ucredit == undef and $ocredit == undef and $lcredit == undef {
 
-        fail('All of the minimum characters in pwquality.conf are undefined')      }
-      else {
+    fail('All of the minimum characters in pwquality.conf are undefined')      }
+    else {
 
-        file_line { 'pam password auth':
-          ensure => 'present',
-          path   => '/etc/pam.d/password-auth',
-          line   => 'password requisite pam_pwquality.so try_first_pass retry=3',
-          match  => 'pam_pwquality.so',
-        }
-
-        file_line { 'pam system auth':
-          ensure => 'present',
-          path   => '/etc/pam.d/system-auth',
-          line   => 'password requisite pam_pwquality.so try_first_pass retry=3',
-          match  => 'pam_pwquality.so',
-        }
-
-        file_line { 'pam minlen':
-          ensure => 'present',
-          path   => '/etc/security/pwquality.conf',
-          line   => "minlen = ${minlen}",
-          match  => '^#?minlen',
-        }
-
-        file_line { 'pam dcredit':
-          ensure => 'present',
-          path   => '/etc/security/pwquality.conf',
-          line   => "dcredit = ${dcredit}",
-          match  => '^#?dcredit',
-        }
-
-        file_line { 'pam ucredit':
-          ensure => 'present',
-          path   => '/etc/security/pwquality.conf',
-          line   => "ucredit = ${ucredit}",
-          match  => '^#?ucredit',
-        }
-
-        file_line { 'pam ocredit':
-          ensure => 'present',
-          path   => '/etc/security/pwquality.conf',
-          line   => "ocredit = ${ocredit}",
-          match  => '^#?ocredit',
-        }
-
-        file_line { 'pam lcredit':
-          ensure => 'present',
-          path   => '/etc/security/pwquality.conf',
-          line   => "lcredit = ${lcredit}",
-          match  => '^#?lcredit',
-        }
+      file_line { 'pam password auth':
+        ensure => 'present',
+        path   => '/etc/pam.d/password-auth',
+        line   => 'password requisite pam_pwquality.so try_first_pass retry=3',
+        match  => 'pam_pwquality.so',
       }
+
+      file_line { 'pam system auth':
+        ensure => 'present',
+        path   => '/etc/pam.d/system-auth',
+        line   => 'password requisite pam_pwquality.so try_first_pass retry=3',
+        match  => 'pam_pwquality.so',
+      }
+
+      file_line { 'pam minlen':
+        ensure => 'present',
+        path   => '/etc/security/pwquality.conf',
+        line   => "minlen = ${minlen}",
+        match  => '^#?minlen',
+      }
+
+      file_line { 'pam dcredit':
+        ensure => 'present',
+        path   => '/etc/security/pwquality.conf',
+        line   => "dcredit = ${dcredit}",
+        match  => '^#?dcredit',
+      }
+
+      file_line { 'pam ucredit':
+        ensure => 'present',
+        path   => '/etc/security/pwquality.conf',
+        line   => "ucredit = ${ucredit}",
+        match  => '^#?ucredit',
+      }
+
+      file_line { 'pam ocredit':
+        ensure => 'present',
+        path   => '/etc/security/pwquality.conf',
+        line   => "ocredit = ${ocredit}",
+        match  => '^#?ocredit',
+      }
+
+      file_line { 'pam lcredit':
+        ensure => 'present',
+        path   => '/etc/security/pwquality.conf',
+        line   => "lcredit = ${lcredit}",
+        match  => '^#?lcredit',
+      }
+    }
   }
 }
