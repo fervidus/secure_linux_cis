@@ -16,7 +16,7 @@ class secure_linux_cis::redhat7::cis_1_1_3 (
   if $enforced {
 
     if $facts['mountpoints']['/tmp'] {
-      if 'nodev' in $facts['mountpoints']['/tmp']['options'] {
+      if ! 'nodev' in $facts['mountpoints']['/tmp']['options'] {
         notify { 'tn':
           message  => 'Not in compliance with CIS 1.1.3 (Scored). The nodev option is not set on the /tmp partition',
           loglevel => 'warning',
