@@ -7,6 +7,8 @@
 #
 # @summary 1.1.6 Ensure separate partition exists for /var (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_1_6
 class secure_linux_cis::redhat7::cis_1_1_6 (
@@ -14,7 +16,7 @@ class secure_linux_cis::redhat7::cis_1_1_6 (
 ) {
   if $enforced {
 
-    if $facts['var_partition'].empty {
+    if ! $facts['mountpoints']['/var'] {
       notify { 'vp':
         message  => 'Not in compliance with CIS 1.1.6 (Scored). A seperate partition does not exist for /var',
         loglevel => 'warning',

@@ -84,14 +84,13 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_1_1_4
   include ::secure_linux_cis::redhat7::cis_1_1_5
 
-  if($here) {
   include ::secure_linux_cis::redhat7::cis_1_1_6
 
-  # Ensure that /var/tmp is managed in the right order
-  Class['::secure_linux_cis::redhat7::cis_1_1_7']
-  -> Class['::secure_linux_cis::redhat7::cis_1_1_8']
-  -> Class['::secure_linux_cis::redhat7::cis_1_1_9']
-  -> Class['::secure_linux_cis::redhat7::cis_1_1_10']
+  if($here) {
+  include ::secure_linux_cis::redhat7::cis_1_1_7
+  include ::secure_linux_cis::redhat7::cis_1_1_8
+  include ::secure_linux_cis::redhat7::cis_1_1_9
+  include ::secure_linux_cis::redhat7::cis_1_1_10
 
   include ::secure_linux_cis::redhat7::cis_1_1_11
   include ::secure_linux_cis::redhat7::cis_1_1_12
