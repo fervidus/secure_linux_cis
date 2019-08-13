@@ -79,6 +79,11 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_1_1_1_7
   include ::secure_linux_cis::redhat7::cis_1_1_1_8
 
+  include ::secure_linux_cis::redhat7::cis_1_1_2
+  include ::secure_linux_cis::redhat7::cis_1_1_3
+  include ::secure_linux_cis::redhat7::cis_1_1_4
+  include ::secure_linux_cis::redhat7::cis_1_1_5
+
   # Ensure that /tmp is managed in the right order
   Class['::secure_linux_cis::redhat7::cis_1_1_2']
   -> Class['::secure_linux_cis::redhat7::cis_1_1_3']
