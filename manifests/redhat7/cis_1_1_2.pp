@@ -36,7 +36,7 @@ class secure_linux_cis::redhat7::cis_1_1_2 (
 
     exec { 'restart tmp.mount':
       path        => '/bin:/sbin:/usr/bin:/usr/sbin',
-      command     => 'systemctl restart tmp.mount',
+      command     => 'systemctl unmask tmp.mount; systemctl enable tmp.mount; systemctl restart tmp.mount',
       refreshonly => true,
       logoutput   => false,
     }
