@@ -24,12 +24,13 @@ class secure_linux_cis::redhat7::cis_1_1_2 (
     }
 
     file { '/etc/systemd/system/local-fs.target.wants/tmp.mount':
-      ensure => file,
-      owner  => 'root',
-      group  => 'root',
-      mode   => '0644',
-      source => "puppet:///modules/${module_name}/tmp.mount",
-      notify => Exec['restart tmp.mount'],
+      ensure  => file,
+      owner   => 'root',
+      group   => 'root',
+      mode    => '0644',
+      source  => "puppet:///modules/${module_name}/tmp.mount",
+      replace => false,
+      notify  => Exec['restart tmp.mount'],
     }
 
     exec { 'restart tmp.mount':
