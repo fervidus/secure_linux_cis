@@ -21,14 +21,24 @@ class secure_linux_cis::redhat7::cis_1_1_2 (
         message  => 'Not in compliance with CIS 1.1.2 (Scored). There is not a seperate partition for /tmp',
         loglevel => 'warning',
       }
-    } else {
-      file { '/etc/systemd/system/local-fs.target.wants/tmp.mount':
-        ensure => file,
-        owner  => 'root',
-        group  => 'root',
-        mode   => '0644',
-        source => "puppet:///modules/${module_name}/etc/systemd/system/local-fs.target.wants/tmp.mount",
-      }
     }
+
+    file { '/etc/systemd/system/local-fs.target.wants/tmp.mount':
+      ensure => file,
+      owner  => 'root',
+      group  => 'root',
+      mode   => '0644',
+      source => "puppet:///modules/${module_name}/etc/systemd/system/local-fs.target.wants/tmp.mount",
+      notify => Exec['restart tmp.mount'],
+    }
+
+    exec { 'restart tmp.mount':
+      path        => '/bin:/sbin:/usr/bin:/usr/sbin',
+      command     => 'systemctl restart tmp.mount',
+      refreshonly => true,
+      logoutput   => false,
+    }
+
+
   }
 }
