@@ -70,32 +70,37 @@ class secure_linux_cis::redhat7 (
 
   include ::secure_linux_cis::redhat7::cis_1_1_1_1
 
-  # Ensure that /tmp is managed in the right order
-  Class['::secure_linux_cis::redhat7::cis_1_1_1_2']
-  -> Class['::secure_linux_cis::redhat7::cis_1_1_1_3']
-  -> Class['::secure_linux_cis::redhat7::cis_1_1_1_4']
-  -> Class['::secure_linux_cis::redhat7::cis_1_1_1_5']
+  include ::secure_linux_cis::redhat7::cis_1_1_1_2
+  include ::secure_linux_cis::redhat7::cis_1_1_1_3
+  include ::secure_linux_cis::redhat7::cis_1_1_1_4
+  include ::secure_linux_cis::redhat7::cis_1_1_1_5
 
   include ::secure_linux_cis::redhat7::cis_1_1_1_6
   include ::secure_linux_cis::redhat7::cis_1_1_1_7
   include ::secure_linux_cis::redhat7::cis_1_1_1_8
 
-  include ::secure_linux_cis::redhat7::cis_1_1_2
-  include ::secure_linux_cis::redhat7::cis_1_1_3
-  include ::secure_linux_cis::redhat7::cis_1_1_4
-  include ::secure_linux_cis::redhat7::cis_1_1_5
+  # Ensure that /tmp is managed in the right order
+  Class['::secure_linux_cis::redhat7::cis_1_1_2']
+  -> Class['::secure_linux_cis::redhat7::cis_1_1_3']
+  -> Class['::secure_linux_cis::redhat7::cis_1_1_4']
+  -> Class['::secure_linux_cis::redhat7::cis_1_1_5']
+
+  if($here) {
   include ::secure_linux_cis::redhat7::cis_1_1_6
-  include ::secure_linux_cis::redhat7::cis_1_1_7
-  include ::secure_linux_cis::redhat7::cis_1_1_8
-  include ::secure_linux_cis::redhat7::cis_1_1_9
-  include ::secure_linux_cis::redhat7::cis_1_1_10
+
+  # Ensure that /var/tmp is managed in the right order
+  Class['::secure_linux_cis::redhat7::cis_1_1_7']
+  -> Class['::secure_linux_cis::redhat7::cis_1_1_8']
+  -> Class['::secure_linux_cis::redhat7::cis_1_1_9']
+  -> Class['::secure_linux_cis::redhat7::cis_1_1_10']
+
   include ::secure_linux_cis::redhat7::cis_1_1_11
   include ::secure_linux_cis::redhat7::cis_1_1_12
   include ::secure_linux_cis::redhat7::cis_1_1_13
   include ::secure_linux_cis::redhat7::cis_1_1_14
   include ::secure_linux_cis::redhat7::cis_1_1_15
-  # include ::secure_linux_cis::redhat7::cis_1_1_16
-  # include ::secure_linux_cis::redhat7::cis_1_1_17
+  include ::secure_linux_cis::redhat7::cis_1_1_16
+  include ::secure_linux_cis::redhat7::cis_1_1_17
   # include ::secure_linux_cis::redhat7::cis_1_1_18
   # include ::secure_linux_cis::redhat7::cis_1_1_19
   # include ::secure_linux_cis::redhat7::cis_1_1_20
@@ -106,7 +111,7 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_1_2_2
   # include ::secure_linux_cis::redhat7::cis_1_2_3
   # include ::secure_linux_cis::redhat7::cis_1_2_4
-  include ::secure_linux_cis::redhat7::cis_1_2_5
+  # include ::secure_linux_cis::redhat7::cis_1_2_5
 
   include ::secure_linux_cis::redhat7::cis_1_3_1
   include ::secure_linux_cis::redhat7::cis_1_3_2
@@ -128,10 +133,10 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_1_6_1_6
   include ::secure_linux_cis::redhat7::cis_1_6_2
   include ::secure_linux_cis::redhat7::cis_1_7_1_1
-  include ::secure_linux_cis::redhat7::cis_1_7_1_2
-  include ::secure_linux_cis::redhat7::cis_1_7_1_3
-  include ::secure_linux_cis::redhat7::cis_1_7_1_4
-  # include ::secure_linux_cis::redhat7::cis_1_7_1_5
+  # include ::secure_linux_cis::redhat7::cis_1_7_1_2
+  # include ::secure_linux_cis::redhat7::cis_1_7_1_3
+  # include ::secure_linux_cis::redhat7::cis_1_7_1_4
+  include ::secure_linux_cis::redhat7::cis_1_7_1_5
   # include ::secure_linux_cis::redhat7::cis_1_7_1_6
   include ::secure_linux_cis::redhat7::cis_1_7_2
 
@@ -145,6 +150,7 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_2_1_6
   include ::secure_linux_cis::redhat7::cis_2_1_7
 
+  # include ::secure_linux_cis::redhat7::cis_2_2_1_1
   class { '::secure_linux_cis::redhat7::cis_2_2_1_2':
     time_servers => $time_servers,
     time_sync    => $time_sync,
@@ -194,29 +200,31 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_3_2_7
   include ::secure_linux_cis::redhat7::cis_3_2_8
 
-  class { '::secure_linux_cis::redhat7::cis_3_3_1':
-    ipv6_enabled => $ipv6_enabled,
-  }
-  class { '::secure_linux_cis::redhat7::cis_3_3_2':
-    ipv6_enabled => $ipv6_enabled,
-  }
-  class { '::secure_linux_cis::redhat7::cis_3_3_3':
-    ipv6_enabled => $ipv6_enabled,
-  }
+  # class { '::secure_linux_cis::redhat7::cis_3_3_1':
+  #   ipv6_enabled => $ipv6_enabled,
+  # }
+
+  # class { '::secure_linux_cis::redhat7::cis_3_3_2':
+  #   ipv6_enabled => $ipv6_enabled,
+  # }
+
+  # class { '::secure_linux_cis::redhat7::cis_3_3_3':
+  #   ipv6_enabled => $ipv6_enabled,
+  # }
 
   include ::secure_linux_cis::redhat7::cis_3_4_1
   include ::secure_linux_cis::redhat7::cis_3_4_2
   include ::secure_linux_cis::redhat7::cis_3_4_3
 
-  include ::secure_linux_cis::redhat7::cis_3_5_1
-  include ::secure_linux_cis::redhat7::cis_3_5_2
-  include ::secure_linux_cis::redhat7::cis_3_5_3
-  include ::secure_linux_cis::redhat7::cis_3_5_4
+  # include ::secure_linux_cis::redhat7::cis_3_5_1
+  # include ::secure_linux_cis::redhat7::cis_3_5_2
+  # include ::secure_linux_cis::redhat7::cis_3_5_3
+  # include ::secure_linux_cis::redhat7::cis_3_5_4
 
   include ::secure_linux_cis::redhat7::cis_3_6_1
   include ::secure_linux_cis::redhat7::cis_3_6_2
   include ::secure_linux_cis::redhat7::cis_3_6_3
-  include ::secure_linux_cis::redhat7::cis_3_6_4
+  # include ::secure_linux_cis::redhat7::cis_3_6_4
   include ::secure_linux_cis::redhat7::cis_3_6_5
 
   # Set order for firewall rules to be applied
@@ -226,11 +234,11 @@ class secure_linux_cis::redhat7 (
   -> Class['::secure_linux_cis::redhat7::cis_3_6_5']
   -> Class['::secure_linux_cis::redhat7::cis_3_6_2']
 
-  include ::secure_linux_cis::redhat7::cis_3_7
+  # include ::secure_linux_cis::redhat7::cis_3_7
 
-  class { '::secure_linux_cis::redhat7::cis_4_1_1_1':
-    max_log_file => $max_log_file,
-  }
+  # class { '::secure_linux_cis::redhat7::cis_4_1_1_1':
+  #   max_log_file => $max_log_file,
+  # }
 
   include ::secure_linux_cis::redhat7::cis_4_1_1_2
   include ::secure_linux_cis::redhat7::cis_4_1_1_3
@@ -244,21 +252,21 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_4_1_9
   include ::secure_linux_cis::redhat7::cis_4_1_10
   include ::secure_linux_cis::redhat7::cis_4_1_11
-  #include ::secure_linux_cis::redhat7::cis_4_1_12
+  include ::secure_linux_cis::redhat7::cis_4_1_12
   include ::secure_linux_cis::redhat7::cis_4_1_13
   include ::secure_linux_cis::redhat7::cis_4_1_14
   include ::secure_linux_cis::redhat7::cis_4_1_15
   include ::secure_linux_cis::redhat7::cis_4_1_16
   include ::secure_linux_cis::redhat7::cis_4_1_17
-  #include ::secure_linux_cis::redhat7::cis_4_1_18
+  include ::secure_linux_cis::redhat7::cis_4_1_18
 
   class { '::secure_linux_cis::redhat7::cis_4_2_1_1':
     logging => $logging,
   }
 
-  class { '::secure_linux_cis::redhat7::cis_4_2_1_2':
-    logging => $logging,
-  }
+  # class { '::secure_linux_cis::redhat7::cis_4_2_1_2':
+  #   logging => $logging,
+  # }
 
   class { '::secure_linux_cis::redhat7::cis_4_2_1_3':
     logging => $logging,
@@ -269,32 +277,32 @@ class secure_linux_cis::redhat7 (
     logging_host => $logging_host,
   }
 
-  class { '::secure_linux_cis::redhat7::cis_4_2_1_5':
-    logging         => $logging,
-    is_logging_host => $is_logging_host,
-  }
+  # class { '::secure_linux_cis::redhat7::cis_4_2_1_5':
+  #   logging         => $logging,
+  #   is_logging_host => $is_logging_host,
+  # }
 
   class { '::secure_linux_cis::redhat7::cis_4_2_2_1':
     logging => $logging,
   }
 
-  class { '::secure_linux_cis::redhat7::cis_4_2_2_2':
-    logging => $logging,
-  }
+  # class { '::secure_linux_cis::redhat7::cis_4_2_2_2':
+  #   logging => $logging,
+  # }
 
   class { '::secure_linux_cis::redhat7::cis_4_2_2_3':
     logging => $logging,
   }
 
-  class { '::secure_linux_cis::redhat7::cis_4_2_2_4':
-    logging      => $logging,
-    logging_host => $logging_host,
-  }
+  # class { '::secure_linux_cis::redhat7::cis_4_2_2_4':
+  #   logging      => $logging,
+  #   logging_host => $logging_host,
+  # }
 
-  class { '::secure_linux_cis::redhat7::cis_4_2_2_5':
-    logging         => $logging,
-    is_logging_host => $is_logging_host,
-  }
+  # class { '::secure_linux_cis::redhat7::cis_4_2_2_5':
+  #   logging         => $logging,
+  #   is_logging_host => $is_logging_host,
+  # }
 
   class { '::secure_linux_cis::redhat7::cis_4_2_3':
     logging => $logging,
@@ -302,7 +310,7 @@ class secure_linux_cis::redhat7 (
 
   class { '::secure_linux_cis::redhat7::cis_4_2_4': }
 
-  include ::secure_linux_cis::redhat7::cis_4_3
+  # include ::secure_linux_cis::redhat7::cis_4_3
 
   include ::secure_linux_cis::redhat7::cis_5_1_1
   include ::secure_linux_cis::redhat7::cis_5_1_2
@@ -386,7 +394,7 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_5_4_2
   include ::secure_linux_cis::redhat7::cis_5_4_3
   include ::secure_linux_cis::redhat7::cis_5_4_4
-  # include ::secure_linux_cis::redhat7::cis_5_4_5
+  include ::secure_linux_cis::redhat7::cis_5_4_5
   # include ::secure_linux_cis::redhat7::cis_5_5
   include ::secure_linux_cis::redhat7::cis_5_6
 
@@ -405,12 +413,12 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_6_1_12
   # include ::secure_linux_cis::redhat7::cis_6_1_13
   # include ::secure_linux_cis::redhat7::cis_6_1_14
-  # include ::secure_linux_cis::redhat7::cis_6_2_1
+  include ::secure_linux_cis::redhat7::cis_6_2_1
   include ::secure_linux_cis::redhat7::cis_6_2_2
   include ::secure_linux_cis::redhat7::cis_6_2_3
   include ::secure_linux_cis::redhat7::cis_6_2_4
   include ::secure_linux_cis::redhat7::cis_6_2_5
-  # include ::secure_linux_cis::redhat7::cis_6_2_6
+  include ::secure_linux_cis::redhat7::cis_6_2_6
 
   file { '/tmp/cis_scripts':
     ensure => directory,
@@ -432,5 +440,5 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_6_2_17
   include ::secure_linux_cis::redhat7::cis_6_2_18
   include ::secure_linux_cis::redhat7::cis_6_2_19
-
+  }
 }
