@@ -87,11 +87,11 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_1_1_6
 
   include ::secure_linux_cis::redhat7::cis_1_1_7
-  if($here) {
   include ::secure_linux_cis::redhat7::cis_1_1_8
   include ::secure_linux_cis::redhat7::cis_1_1_9
   include ::secure_linux_cis::redhat7::cis_1_1_10
 
+  if($here) {
   include ::secure_linux_cis::redhat7::cis_1_1_11
   include ::secure_linux_cis::redhat7::cis_1_1_12
   include ::secure_linux_cis::redhat7::cis_1_1_13
