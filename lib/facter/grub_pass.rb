@@ -3,5 +3,6 @@
 # grub_pass.rb
 
 Facter.add('grub_pass') do
-  setcode 'grep "^GRUB2 PASSWORD" /boot/grub2/grub.cfg'
+  confine osfamily: 'RedHat'
+  setcode 'grep "^GRUB2_PASSWORD" /boot/grub2/user.cfg'
 end

@@ -4,6 +4,7 @@
 # Ensures no duplicate user names exist in /etc/passwd
 
 Facter.add('duplicate_user') do
+  confine osfamily: 'RedHat'
   setcode do
     Facter::Core::Execution.exec('/tmp/cis_scripts/dup_usr.sh')
   end

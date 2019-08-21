@@ -4,6 +4,7 @@
 # Checks whether a seperate partition exists for /var
 
 Facter.add('var_partition') do
+  confine osfamily: 'RedHat'
   # rubocop:disable Style/StringLiterals
   setcode do
     Facter::Core::Execution.exec("mount | grep \"/var\"")

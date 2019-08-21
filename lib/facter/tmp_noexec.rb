@@ -4,6 +4,7 @@
 # Ensures noxec option exists on tmp.mount
 
 Facter.add('tmp_noexec') do
+  confine osfamily: 'RedHat'
   setcode do
     mounted = Facter::Core::Execution.exec('mount | grep /tmp')
     if mounted.match?(%r{noexec})

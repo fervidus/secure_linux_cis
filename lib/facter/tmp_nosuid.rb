@@ -4,6 +4,7 @@
 # Contains the mount options for /tmp, ensuring nosuid is enabled
 
 Facter.add('tmp_nosuid') do
+  confine osfamily: 'RedHat'
   setcode do
     mounted = Facter::Core::Execution.exec('mount | grep /tmp')
     if mounted.match?(%r{nosuid})

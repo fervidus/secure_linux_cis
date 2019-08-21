@@ -34,7 +34,7 @@ class secure_linux_cis::redhat7::cis_4_1_4 (
       file_line { 'audit.rules time 2':
         ensure => present,
         path   => '/etc/audit/audit.rules',
-        line   => '-a always,exit -F arch=b32 -S adjtimex -S settimeofday -S stime -k timechange',
+        line   => '-a always,exit -F arch=b32 -S adjtimex -S settimeofday -S stime -k time-change',
       }
 
       file_line { 'audit.rules time 3':
@@ -63,7 +63,7 @@ class secure_linux_cis::redhat7::cis_4_1_4 (
       file_line { 'audit.rules time 1':
         ensure => present,
         path   => '/etc/audit/audit.rules',
-        line   => '-a always,exit -F arch=b32 -S adjtimex -S settimeofday -S stime -k timechange',
+        line   => '-a always,exit -F arch=b32 -S adjtimex -S settimeofday -S stime -k time-change',
       }
 
       file_line { 'audit.rules time 2':

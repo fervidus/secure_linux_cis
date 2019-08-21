@@ -4,5 +4,6 @@
 # Ensures automounting is enabled
 
 Facter.add('automounting') do
+  confine osfamily: 'RedHat'
   setcode 'systemctl is-enabled autofs'
 end
