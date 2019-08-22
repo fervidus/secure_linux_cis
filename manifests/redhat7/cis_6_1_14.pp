@@ -8,6 +8,8 @@
 # #
 # # @summary 6.1.14 Audit SGID executables (Not Scored)
 # #
+# # @param enforced Should this rule be enforced
+# #
 # # @example
 # #   include secure_linux_cis::redhat7::cis_6_1_14
 # class secure_linux_cis::redhat7::cis_6_1_14 (

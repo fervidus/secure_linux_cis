@@ -6,6 +6,8 @@
 #
 # @summary 1.3.2 Ensure filesystem integrity is regularly checked (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_3_2
 class secure_linux_cis::redhat7::cis_1_3_2 (
@@ -20,5 +22,6 @@ class secure_linux_cis::redhat7::cis_1_3_2 (
       hour    => 5,
       minute  => 0,
     }
+
   }
 }

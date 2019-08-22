@@ -7,6 +7,8 @@
 #
 # @summary 1.3.1 Ensure AIDE is installed (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_3_1
 class secure_linux_cis::redhat7::cis_1_3_1 (
@@ -21,9 +23,10 @@ class secure_linux_cis::redhat7::cis_1_3_1 (
     }
 
     exec { 'aide_database':
-      command     => 'aide --init',
-      refreshonly => true,
-      path        => '/sbin/',
+      command   => 'aide --init',
+      creates   => '/var/lib/aide/aide.db.new.gz',
+      path      => '/sbin/',
+      logoutput => true,
     }
 
   }

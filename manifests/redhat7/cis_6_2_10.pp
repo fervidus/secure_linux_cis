@@ -6,6 +6,8 @@
 #
 # @summary 6.2.10 Ensure users' dot files are not group or world writable (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_6_2_10
 class secure_linux_cis::redhat7::cis_6_2_10 (

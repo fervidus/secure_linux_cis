@@ -10,6 +10,7 @@
 #
 # @summary 4.1.1.1 Ensure audit log storage size is configured (Not Scored)
 #
+# @param enforced Should this rule be enforced
 # @param max_log_file The maximum size of the audit log file (MB) for your organization's policy.
 #
 # @example

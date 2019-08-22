@@ -8,6 +8,8 @@
 #
 # @summary 1.5.1 Ensure core dumps are restricted (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_5_1
 class secure_linux_cis::redhat7::cis_1_5_1 (
@@ -17,8 +19,9 @@ class secure_linux_cis::redhat7::cis_1_5_1 (
   if $enforced {
 
     file_line { 'limits_hc':
-      path => '/etc/security/limits.conf',
-      line => '* hard core 0',
+      path  => '/etc/security/limits.conf',
+      line  => '* hard core 0',
+      match => '^* hard core ',
     }
 
     sysctl { 'fs.suid_dumpable':

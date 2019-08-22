@@ -10,6 +10,8 @@
 #
 # @summary 5.2.7 Ensure SSH HostbasedAuthentication is disabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_2_7
 class secure_linux_cis::redhat7::cis_5_2_7 (
@@ -19,10 +21,10 @@ class secure_linux_cis::redhat7::cis_5_2_7 (
   if $enforced {
 
     file_line { 'ssh host based authentication':
-        ensure => 'present',
-        path   => '/etc/ssh/sshd_config',
-        line   => 'HostbasedAuthentication no',
-        match  => '^HostbasedAuthentication',
+      ensure => 'present',
+      path   => '/etc/ssh/sshd_config',
+      line   => 'HostbasedAuthentication no',
+      match  => '^HostbasedAuthentication',
     }
   }
 }

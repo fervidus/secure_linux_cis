@@ -17,6 +17,8 @@
 #
 # @summary 5.1.7 Ensure permissions on /etc/cron.d are configured (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_1_7
 class secure_linux_cis::redhat7::cis_5_1_7 (

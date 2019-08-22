@@ -16,6 +16,8 @@
 #
 # @summary 4.1.16 Ensure system administrator actions (sudolog) are collected (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_4_1_16
 class secure_linux_cis::redhat7::cis_4_1_16 (

@@ -12,6 +12,8 @@
 #
 # @summary 4.1.8 Ensure login and logout events are collected (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_4_1_8
 class secure_linux_cis::redhat7::cis_4_1_8 (

@@ -10,6 +10,9 @@
 #
 # @summary 5.4.1.3 Ensure password expiration warning days is 7 or more (Scored)
 #
+# @param enforced Should this rule be enforced
+# @param pass_warn_days Password warning days
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_4_1_3
 class secure_linux_cis::redhat7::cis_5_4_1_3 (
@@ -31,7 +34,7 @@ class secure_linux_cis::redhat7::cis_5_4_1_3 (
         match  => '^#?PASS_WARN_AGE',
       }
 
-        $facts['local_users'].each |String $user, Hash $attributes| {
+      $facts['local_users'].each |String $user, Hash $attributes| {
 
         if !($attributes['max_days_between_password_change'].empty) {
 

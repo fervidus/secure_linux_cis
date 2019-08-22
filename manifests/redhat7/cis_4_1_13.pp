@@ -20,6 +20,8 @@
 #
 # @summary 4.1.13 Ensure successful file system mounts are collected (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_4_1_13
 class secure_linux_cis::redhat7::cis_4_1_13 (
@@ -29,7 +31,7 @@ class secure_linux_cis::redhat7::cis_4_1_13 (
   if $enforced {
 
     # 64 bit architecture
-    if $facts['architecture'] =~ /64/ {
+    if $facts['os']['architecture'] =~ /64/ {
 
       file_line { 'audit.rules mounts 1':
         ensure => present,

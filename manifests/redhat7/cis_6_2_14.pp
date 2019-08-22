@@ -6,6 +6,8 @@
 #
 # @summary 6.2.14 Ensure no users have .rhosts files (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_6_2_14
 class secure_linux_cis::redhat7::cis_6_2_14 (

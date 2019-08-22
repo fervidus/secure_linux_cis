@@ -17,6 +17,10 @@
       "version_requirement": ">= 2.0.0 < 3.0.0"
     },
     {
+      "name": "puppet/cron",
+      "version_requirement": ">= 1.0.0 < 2.0.0"
+    },
+    {
       "name": "camptocamp/postfix",
       "version_requirement": ">= 1.0.0 < 2.0.0"
     },
@@ -49,10 +53,6 @@
       "version_requirement": ">= 1.0.0 < 2.0.0"
     },
     {
-      "name": "puppet/cron",
-      "version_requirement": ">= 1.0.2 < 2.0.0"
-    },
-    {
       "name": "herculesteam/augeasproviders_shellvar",
       "version_requirement": ">= 3.0.0 < 4.0.0"
     },
@@ -63,6 +63,10 @@
     {
       "name": "camptocamp/augeas",
       "version_requirement": ">= 1.0.0 < 2.0.0"
+    },
+    {
+      "name": "waveclaw/subscription_manager",
+      "version_requirement": ">= 5.1.0 < 6.0.0"
     },
     {
       "name": "puppetlabs/mailalias_core",
@@ -83,7 +87,7 @@
       "version_requirement": ">= 4.7.0 < 6.0.0"
     }
   ],
-  "pdk-version": "1.11.1",
+  "pdk-version": "1.12.0",
   "template-url": "https://github.com/puppetlabs/pdk-templates#1.11.1",
-  "template-ref": "tags/1.11.1-0-g2ff8c24"
+  "template-ref": "1.11.1-0-g2ff8c24"
 }

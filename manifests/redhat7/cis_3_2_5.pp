@@ -14,6 +14,8 @@
 #
 # @summary 3.2.5 Ensure broadcast ICMP requests are ignored (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_3_2_5
 class secure_linux_cis::redhat7::cis_3_2_5 (

@@ -9,6 +9,9 @@
 #
 # @summary 5.4.1.4 Ensure inactive password lock is 30 days or less (Scored)
 #
+# @param enforced Should this rule be enforced
+# @param pass_inactive_days Password inactive days
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_4_1_4
 class secure_linux_cis::redhat7::cis_5_4_1_4 (
@@ -23,7 +26,7 @@ class secure_linux_cis::redhat7::cis_5_4_1_4 (
         fail('pass_inactive_days should be set to a value of 30 or less')
       }
 
-        $facts['local_users'].each |String $user, Hash $attributes| {
+      $facts['local_users'].each |String $user, Hash $attributes| {
 
         if !($attributes['max_days_between_password_change'].empty) {
 

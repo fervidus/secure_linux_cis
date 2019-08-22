@@ -6,6 +6,8 @@
 #
 # @summary 1.2.5 Disable the rhnsd Daemon (Not Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_2_5
 class secure_linux_cis::redhat7::cis_1_2_5 (
@@ -18,5 +20,6 @@ class secure_linux_cis::redhat7::cis_1_2_5 (
       ensure => stopped,
       enable => false,
     }
+
   }
 }

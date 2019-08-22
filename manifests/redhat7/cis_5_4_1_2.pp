@@ -11,6 +11,9 @@
 #
 # @summary 5.4.1.2 Ensure minimum days between password changes is 7 or more (Scored)
 #
+# @param enforced Should this rule be enforced
+# @param pass_min_days Password minimum days
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_4_1_2
 class secure_linux_cis::redhat7::cis_5_4_1_2 (
@@ -32,7 +35,7 @@ class secure_linux_cis::redhat7::cis_5_4_1_2 (
         match  => '^#?PASS_MIN_DAYS',
       }
 
-        $facts['local_users'].each |String $user, Hash $attributes| {
+      $facts['local_users'].each |String $user, Hash $attributes| {
 
         if !($attributes['max_days_between_password_change'].empty) {
 

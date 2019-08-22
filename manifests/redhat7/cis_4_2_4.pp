@@ -2,6 +2,8 @@
 #
 # @summary A short summary of the purpose of this class
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_4_2_4
 class secure_linux_cis::redhat7::cis_4_2_4 (
@@ -15,7 +17,7 @@ class secure_linux_cis::redhat7::cis_4_2_4 (
     file { '/var/log':
       ensure  => directory,
       recurse => true,
-      mode    => 'g-wx,o-rwx',
+      mode    => 'g-wx,o-rwx',  #lint:ignore:no_symbolic_file_modes
       ignore  => 'puppet',
     }
   }

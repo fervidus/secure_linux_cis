@@ -6,23 +6,23 @@
 #
 # @summary 1.1.15 Ensure nodev option set on /dev/shm partition (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_1_15
 class secure_linux_cis::redhat7::cis_1_1_15 (
   Boolean $enforced = true,
-  ) {
+) {
 
-    if $enforced {
+  if $enforced {
 
-      file_line { 'dev_shm':
-        path   => '/etc/fstab',
-        line   => 'tmpfs /dev/shm tmpfs defaults,nodev,nosuid,noexec 0 0',
-        notify => Exec['devm'],
-        }
-      exec { 'devm':
-        command     => 'mount -o remount,nodev /dev/shm',
-        path        => '/bin/',
-        refreshonly => true,
-      }
+    $mount = '/dev/shm'
+    $option = 'nodev'
+
+    secure_linux_cis::mount_options { "${mount}-${option}":
+      mount => $mount,
+      opt   => $option,
     }
+
+  }
 }

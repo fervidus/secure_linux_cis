@@ -10,6 +10,8 @@
 #
 # @summary 1.1.1.8 Ensure mounting of FAT filesystems is disabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_1_1_8
 class secure_linux_cis::redhat7::cis_1_1_1_8 (

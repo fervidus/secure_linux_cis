@@ -10,6 +10,8 @@
 #
 # @summary 3.2.6 Ensure bogus ICMP responses are ignored (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_3_2_6
 class secure_linux_cis::redhat7::cis_3_2_6 (

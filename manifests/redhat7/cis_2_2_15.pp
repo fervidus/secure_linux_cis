@@ -13,6 +13,8 @@
 #
 # @summary 2.2.15 Ensure mail transfer agent is configured for local-only mode (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_2_2_15
 class secure_linux_cis::redhat7::cis_2_2_15 (

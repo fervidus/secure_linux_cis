@@ -7,6 +7,8 @@
 #
 # @summary 6.2.4 Ensure no legacy "+" entries exist in /etc/group (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_6_2_4
 class secure_linux_cis::redhat7::cis_6_2_4 (

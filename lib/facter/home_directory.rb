@@ -3,7 +3,6 @@
 # home_directory.rb
 
 Facter.add('home_directory') do
-  confine osfamily: 'RedHat'
   setcode do
     Facter::Core::Execution.exec('/tmp/cis_scripts/home_directory.sh')
   end

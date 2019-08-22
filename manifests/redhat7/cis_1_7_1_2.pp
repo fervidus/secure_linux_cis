@@ -9,19 +9,21 @@
 #
 # @summary 1.7.1.2 Ensure local login warning banner is configured properly (Not Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_7_1_2
-  class secure_linux_cis::redhat7::cis_1_7_1_2 (
+class secure_linux_cis::redhat7::cis_1_7_1_2 (
   Boolean $enforced = true,
 ) {
 
   if $enforced {
 
-      if $facts['issue_os'] {
+    if $facts['issue_os'] {
 
-        notify {'issue':
-          message  => 'Not in compliance with CIS 1.7.1.2 (Scored). There is OS and/or patch level information in /etc/issue',
-          loglevel => 'warning',
+      notify {'issue':
+        message  => 'Not in compliance with CIS 1.7.1.2 (Scored). There is OS and/or patch level information in /etc/issue',
+        loglevel => 'warning',
       }
     }
   }

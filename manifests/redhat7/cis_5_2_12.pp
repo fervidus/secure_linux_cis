@@ -17,6 +17,10 @@
 #
 # @summary 5.2.12 Ensure SSH Idle Timeout Interval is configured (Scored)
 #
+# @param enforced Should this rule be enforced
+# @param client_alive_interval Client alive interval to use
+# @param client_alive_count_max Maximum specificed client alive count
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_2_12
 class secure_linux_cis::redhat7::cis_5_2_12 (
@@ -29,7 +33,7 @@ class secure_linux_cis::redhat7::cis_5_2_12 (
 
     if $client_alive_interval > 300 or $client_alive_interval < 1 {
 
-        fail('The Client Alive Interval has been manually set past the 1 - 300 threshold')
+      fail('The Client Alive Interval has been manually set past the 1 - 300 threshold')
     }
 
     file_line { 'ssh alive interval':

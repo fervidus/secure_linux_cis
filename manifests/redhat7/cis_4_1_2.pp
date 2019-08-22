@@ -9,6 +9,8 @@
 #
 # @summary 4.1.2 Ensure auditd service is enabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_4_1_2
 class secure_linux_cis::redhat7::cis_4_1_2 (

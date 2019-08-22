@@ -10,6 +10,9 @@
 #
 # @summary 4.2.1.3 Ensure rsyslog default file permissions configured (Scored)
 #
+# @param enforced Should this rule be enforced
+# @param logging How logging is done
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_4_2_1_3
 class secure_linux_cis::redhat7::cis_4_2_1_3 (

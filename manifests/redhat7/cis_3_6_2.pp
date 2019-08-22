@@ -10,6 +10,8 @@
 #
 # @summary 3.6.2 Ensure default deny firewall policy (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_3_6_2
 class secure_linux_cis::redhat7::cis_3_6_2 (

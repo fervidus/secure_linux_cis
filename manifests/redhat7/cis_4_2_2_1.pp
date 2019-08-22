@@ -9,6 +9,9 @@
 #
 # @summary 4.2.2.1 Ensure syslog-ng service is enabled (Scored)
 #
+# @param enforced Should this rule be enforced
+# @param logging How logging is done
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_4_2_2_1
 class secure_linux_cis::redhat7::cis_4_2_2_1 (

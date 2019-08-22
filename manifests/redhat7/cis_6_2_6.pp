@@ -2,6 +2,8 @@
 #
 # @summary 6.2.6 Ensure root PATH Integrity (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_6_2_6
 class secure_linux_cis::redhat7::cis_6_2_6 (

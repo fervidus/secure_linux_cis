@@ -6,6 +6,8 @@
 #
 # @summary 6.2.15 Ensure all groups in /etc/passwd exist in /etc/group (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_6_2_15
 class secure_linux_cis::redhat7::cis_6_2_15 (

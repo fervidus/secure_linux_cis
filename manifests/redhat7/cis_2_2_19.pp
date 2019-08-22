@@ -11,6 +11,8 @@
 #
 # @summary 2.2.19 Ensure telnet server is not enabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_2_2_19
 class secure_linux_cis::redhat7::cis_2_2_19 (

@@ -7,7 +7,9 @@
 #
 # @summary 5.4.2 Ensure system accounts are non-login (Scored)
 #
-# @exampl e
+# @param enforced Should this rule be enforced
+#
+# @example
 #   include secure_linux_cis::redhat7::cis_5_4_2
 class secure_linux_cis::redhat7::cis_5_4_2 (
   Boolean $enforced = true,

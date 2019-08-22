@@ -12,6 +12,8 @@
 #
 # @summary 3.5.1 Ensure DCCP is disabled (Not Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_3_5_1
 class secure_linux_cis::redhat7::cis_3_5_1 (

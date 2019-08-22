@@ -7,6 +7,8 @@
 #
 # @summary 6.2.18 Ensure no duplicate user names exist (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_6_2_18
 class secure_linux_cis::redhat7::cis_6_2_18 (

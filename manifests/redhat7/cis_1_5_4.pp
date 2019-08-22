@@ -7,6 +7,8 @@
 #
 # @summary 1.5.4 Ensure prelink is disabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_5_4
 class secure_linux_cis::redhat7::cis_1_5_4 (

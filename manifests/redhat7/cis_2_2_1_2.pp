@@ -13,6 +13,10 @@
 #
 # @summary 2.2.1.2 Ensure ntp is configured (Scored)
 #
+# @param enforced Should this rule be enforced
+# @param time_servers Array of valid NTP Time servers
+# @param time_sync Which NTP program to use
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_2_2_1_2
 class secure_linux_cis::redhat7::cis_2_2_1_2 (

@@ -10,6 +10,8 @@
 #
 # @summary 1.7.1.1 Ensure message of the day is configured properly (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_7_1_1
 class secure_linux_cis::redhat7::cis_1_7_1_1 (

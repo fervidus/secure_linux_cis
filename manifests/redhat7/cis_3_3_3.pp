@@ -9,6 +9,9 @@
 #
 # @summary 3.3.3 Ensure IPv6 is disabled (Not Scored)
 #
+# @param enforced Should this rule be enforced
+# @param ipv6_enabled Should ipv6 be enabled
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_3_3_3
 class secure_linux_cis::redhat7::cis_3_3_3 (

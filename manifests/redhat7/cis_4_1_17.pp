@@ -18,6 +18,8 @@
 #
 # @summary 4.1.17 Ensure kernel module loading and unloading is collected (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_4_1_17
 class secure_linux_cis::redhat7::cis_4_1_17 (
@@ -27,7 +29,7 @@ class secure_linux_cis::redhat7::cis_4_1_17 (
   if $enforced {
 
     # 64 bit architecture
-    if $facts['architecture'] =~ /64/ {
+    if $facts['os']['architecture'] =~ /64/ {
 
       file_line { 'audit.rules kernel module 1':
         ensure => present,

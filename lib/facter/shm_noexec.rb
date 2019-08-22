@@ -4,7 +4,6 @@
 # Ensures the noexec option is enabled on the /deev/shm partition
 
 Facter.add('shm_noexec') do
-  confine osfamily: 'RedHat'
   setcode do
     shmne = Facter::Core::Execution.exec('mount | grep /dev/shm')
     if shmne.match?(%r{noexec})

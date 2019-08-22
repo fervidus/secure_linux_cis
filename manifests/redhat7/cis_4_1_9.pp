@@ -15,6 +15,8 @@
 #
 # @summary 4.1.9 Ensure session initiation information is collected (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_4_1_9
 class secure_linux_cis::redhat7::cis_4_1_9 (

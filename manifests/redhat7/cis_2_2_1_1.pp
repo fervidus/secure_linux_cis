@@ -11,6 +11,8 @@
 #
 # @summary 2.2.1.1 Ensure time synchronization is in use (Not Scored)
 #
+# # @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_2_2_1_1
 class secure_linux_cis::redhat7::cis_2_2_1_1 {

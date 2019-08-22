@@ -6,20 +6,23 @@
 #
 # @summary 1.1.2 Ensure separate partition exists for /tmp (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_1_2
 class secure_linux_cis::redhat7::cis_1_1_2 (
   Boolean $enforced = true,
-  ) {
+) {
 
-    if $enforced {
+  if $enforced {
 
-      if $facts['tmp_partition'] == undef {
-
-        notify { 'tmp-part':
-          message  => 'Not in compliance with CIS 1.1.2 (Scored). There is not a seperate partition for /tmp',
-          loglevel => 'warning',
-          }
-        }
+    if ! $facts['mountpoints']['/tmp'] {
+      notify { 'tmp-part':
+        message  => 'Not in compliance with CIS 1.1.2 (Scored). There is not a seperate partition for /tmp',
+        loglevel => 'warning',
+      }
     }
+  }
 }
+
+

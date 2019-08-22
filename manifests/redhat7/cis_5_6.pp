@@ -8,6 +8,8 @@
 #
 # @summary 5.6 Ensure access to the su command is restricted (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_6
 class secure_linux_cis::redhat7::cis_5_6 (

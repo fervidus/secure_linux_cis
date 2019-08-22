@@ -7,6 +7,8 @@
 #
 # @summary 1.6.1.4 Ensure SETroubleshoot is not installed (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_6_1_4
 class secure_linux_cis::redhat7::cis_1_6_1_4 (

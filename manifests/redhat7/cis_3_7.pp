@@ -11,6 +11,8 @@
 #
 # @summary 3.7 Ensure wireless interfaces are disabled (Not Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_3_7
 class secure_linux_cis::redhat7::cis_3_7 (

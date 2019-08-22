@@ -2,6 +2,10 @@
 #
 # @summary A short summary of the purpose of this class
 #
+# @param enforced Should this rule be enforced
+# @param logging How logging is done
+# @param is_logging_host Is this host a logging host
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_4_2_1_5
 class secure_linux_cis::redhat7::cis_4_2_1_5 (

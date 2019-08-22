@@ -10,6 +10,9 @@
 #
 # @summary 5.2.5 Ensure SSH MaxAuthTries is set to 4 or less (Scored)
 #
+# @param enforced Should this rule be enforced
+# @param max_auth_tries How many authorization attempts to allow
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_2_5
 class secure_linux_cis::redhat7::cis_5_2_5 (
@@ -20,10 +23,10 @@ class secure_linux_cis::redhat7::cis_5_2_5 (
   if $enforced {
 
     file_line { 'ssh max auth tries':
-    ensure => present,
-    path   => '/etc/ssh/sshd_config',
-    line   => "MaxAuthTries ${max_auth_tries}",
-    match  => '^#?MaxAuthTries',
+      ensure => present,
+      path   => '/etc/ssh/sshd_config',
+      line   => "MaxAuthTries ${max_auth_tries}",
+      match  => '^#?MaxAuthTries',
     }
   }
 }

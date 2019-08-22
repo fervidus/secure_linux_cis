@@ -8,6 +8,8 @@
 #
 # @summary 2.2.13 Ensure HTTP Proxy Server is not enabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_2_2_13
 class secure_linux_cis::redhat7::cis_2_2_13 (

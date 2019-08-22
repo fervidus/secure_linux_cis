@@ -10,6 +10,9 @@
 #
 # @summary 3.3.1 Ensure IPv6 router advertisements are not accepted (Not Scored)
 #
+# @param enforced Should this rule be enforced
+# @param ipv6_enabled Should ipv6 be enabled
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_3_3_1
 class secure_linux_cis::redhat7::cis_3_3_1 (

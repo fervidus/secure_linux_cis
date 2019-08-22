@@ -10,6 +10,8 @@
 #
 # @summary 3.6.5 Ensure firewall rules exist for all open ports (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_3_6_5
 class secure_linux_cis::redhat7::cis_3_6_5 (
@@ -19,11 +21,11 @@ class secure_linux_cis::redhat7::cis_3_6_5 (
   if $enforced {
 
     firewall { '010 open ssh port':
-        chain  => 'INPUT',
-        dport  => 22,
-        state  => 'NEW',
-        action => 'accept',
-        proto  => 'tcp',
+      chain  => 'INPUT',
+      dport  => 22,
+      state  => 'NEW',
+      action => 'accept',
+      proto  => 'tcp',
     }
   }
 }

@@ -6,6 +6,8 @@
 # #
 # # @summary 5.5 Ensure root login is restricted to system console (Not Scored)
 # #
+# # @param enforced Should this rule be enforced
+# #
 # # @example
 # #   include secure_linux_cis::redhat7::cis_5_5
 #   class secure_linux_cis::redhat7::cis_5_5 (

@@ -7,6 +7,8 @@
 #
 # @summary 6.2.16 Ensure no duplicate UIDs exist (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_6_2_16
 class secure_linux_cis::redhat7::cis_6_2_16 (

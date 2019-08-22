@@ -10,6 +10,9 @@
 #
 # @summary 5.3.3 Ensure password reuse is limited (Scored)
 #
+# @param enforced Should this rule be enforced
+# @param past_passwords Number of previous passwords
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_3_3
 class secure_linux_cis::redhat7::cis_5_3_3 (
@@ -19,7 +22,7 @@ class secure_linux_cis::redhat7::cis_5_3_3 (
 
   $services = [
     'system-auth',
-    'password-auth'
+    'password-auth',
   ]
 
   if $enforced {
