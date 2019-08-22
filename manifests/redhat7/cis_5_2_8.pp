@@ -9,6 +9,8 @@
 #
 # @summary 5.2.8 Ensure SSH root login is disabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_2_8
 class secure_linux_cis::redhat7::cis_5_2_8 (
@@ -18,10 +20,10 @@ class secure_linux_cis::redhat7::cis_5_2_8 (
   if $enforced {
 
     file_line { 'ssh permit root login':
-        ensure => 'present',
-        path   => '/etc/ssh/sshd_config',
-        line   => 'PermitRootLogin no',
-        match  => '^#?PermitRootLogin',
+      ensure => 'present',
+      path   => '/etc/ssh/sshd_config',
+      line   => 'PermitRootLogin no',
+      match  => '^#?PermitRootLogin',
     }
   }
 }

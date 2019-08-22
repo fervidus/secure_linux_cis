@@ -11,6 +11,8 @@
 #
 # @summary A short summary of the purpose of this class
 #
+# # @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_3_4_4
 class secure_linux_cis::redhat7::cis_3_4_4 {

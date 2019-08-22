@@ -10,6 +10,8 @@
 #
 # @summary 2.3.5 Ensure LDAP client is not installed (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_2_3_5
 class secure_linux_cis::redhat7::cis_2_3_5 (

@@ -9,6 +9,8 @@
 #
 # @summary 2.3.4 Ensure telnet client is not installed (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_2_3_4
 class secure_linux_cis::redhat7::cis_2_3_4 (

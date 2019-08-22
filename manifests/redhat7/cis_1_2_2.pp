@@ -2,10 +2,11 @@
 #
 #
 # Description:
-# The gpgcheck option, found in the main section of the /etc/yum.conf and individual /etc/yum/repos.d/*
-# files determines if an RPM package's signature is checked prior to its installation.
+# Most packages managers implement GPG key signing to verify package integrity during installation.
 #
 # @summary 1.2.2 Ensure gpgcheck is globally activated (Scored)
+#
+# @param enforced Should this rule be enforced
 #
 # @example
 #   include secure_linux_cis::redhat7::cis_1_2_2
@@ -21,5 +22,6 @@ class secure_linux_cis::redhat7::cis_1_2_2 (
       line   => 'gpgcheck=1',
       match  => '^gpgcheck',
     }
+
   }
 }

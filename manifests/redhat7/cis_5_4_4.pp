@@ -9,6 +9,8 @@
 #
 # @summary 5.4.4 Ensure default user umask is 027 or more restrictive (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_4_4
 class secure_linux_cis::redhat7::cis_5_4_4 (

@@ -20,6 +20,8 @@
 #
 # @summary 3.4.3 Ensure /etc/hosts.deny is configured (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_3_4_3
 class secure_linux_cis::redhat7::cis_3_4_3 (

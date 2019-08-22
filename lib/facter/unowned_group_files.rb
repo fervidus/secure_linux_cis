@@ -4,6 +4,5 @@
 # This custom fact contains all files that are not owned by groups listed in the system
 
 Facter.add('unowned_group_files') do
-  confine osfamily: 'RedHat'
   setcode "df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -nogroup"
 end

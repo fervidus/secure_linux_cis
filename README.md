@@ -287,6 +287,14 @@ The amount of days a user has before they are notified of their next password ch
 
 Used in cis_5_4_1_3
 
+#### `repolist`
+
+Default value: ['updates/7/x86_64','rhel-7-server-rpms/7Server/x86_64']
+
+The default CentOS7 and RHEL7 update repos
+
+Used in cis_1_2_1
+
 ### Useful Organization Information (Highly recommended to read before using module)
 
 #### 1.8

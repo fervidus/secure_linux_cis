@@ -15,6 +15,8 @@
 #
 # @summary 5.1.6 Ensure permissions on /etc/cron.monthly are configured (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_1_6
 class secure_linux_cis::redhat7::cis_5_1_6 (

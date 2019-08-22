@@ -12,6 +12,8 @@
 #
 # @summary 3.2.2 Ensure ICMP redirects are not accepted (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_3_2_2
 class secure_linux_cis::redhat7::cis_3_2_2 (

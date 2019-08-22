@@ -6,6 +6,8 @@
 #
 # @summary 1.6.1.6 Ensure no unconfined daemons exist (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_6_1_6
 class secure_linux_cis::redhat7::cis_1_6_1_6 (

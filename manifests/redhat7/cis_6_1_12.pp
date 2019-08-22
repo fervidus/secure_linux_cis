@@ -5,6 +5,8 @@
 #
 # @summary 6.1.12 Ensure no ungrouped files or directories exist (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_6_1_12
 class secure_linux_cis::redhat7::cis_6_1_12 (

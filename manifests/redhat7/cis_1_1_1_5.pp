@@ -9,6 +9,8 @@
 #
 # @summary 1.1.1.5 Ensure mounting of hfsplus filesystems is disabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_1_1_5
 class secure_linux_cis::redhat7::cis_1_1_1_5 (

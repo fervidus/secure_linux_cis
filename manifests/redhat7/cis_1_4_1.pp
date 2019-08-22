@@ -8,6 +8,8 @@
 #
 # @summary 1.4.1 Ensure permissions on bootloader config are configured (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_4_1
 class secure_linux_cis::redhat7::cis_1_4_1 (

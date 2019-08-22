@@ -10,6 +10,8 @@
 #
 # @summary 2.2.2 Ensure X Window System is not installed (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_2_2_2
 class secure_linux_cis::redhat7::cis_2_2_2 (

@@ -10,6 +10,8 @@
 #
 # @summary 5.2.1 Ensure permissions on /etc/ssh/sshd_config are configured (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_2_1
 class secure_linux_cis::redhat7::cis_5_2_1 (

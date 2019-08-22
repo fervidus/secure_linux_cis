@@ -4,7 +4,6 @@
 # Contains all user directories that have permissions less restrictive than 750
 
 Facter.add('home_directory_permission') do
-  confine osfamily: 'RedHat'
   setcode do
     Facter::Core::Execution.exec('/tmp/cis_scripts/home_dir_perm.sh')
   end

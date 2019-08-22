@@ -6,6 +6,8 @@
 #
 # @summary 6.1.10 Ensure no world writable files exist (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_6_1_10
 class secure_linux_cis::redhat7::cis_6_1_10 (

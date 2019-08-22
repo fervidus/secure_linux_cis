@@ -8,6 +8,8 @@
 #
 # @summary 6.2.3 Ensure no legacy "+" entries exist in /etc/shadow (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_6_2_3
 class secure_linux_cis::redhat7::cis_6_2_3 (

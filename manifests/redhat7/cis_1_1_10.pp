@@ -6,21 +6,22 @@
 #
 # @summary 1.1.10 Ensure noexec option set on /var/tmp partition (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_1_10
 class secure_linux_cis::redhat7::cis_1_1_10 (
   Boolean $enforced = true,
-  ) {
-    if $enforced {
+) {
+  if $enforced {
 
-      if !($facts['var_tmp_partition'].empty) {
+    $mount = '/var/tmp'
+    $option = 'noexec'
 
-        if $facts['var_tmp_partition_noexec'] == false {
-          notify { 'vtpne':
-            message  => 'Not in compliance with CIS 1.1.10 (Scored). The noexec option is not set on the /var/tmp partition',
-            loglevel => 'warning',
-          }
-        }
-      }
+    secure_linux_cis::mount_options { "${mount}-${option}":
+      mount => $mount,
+      opt   => $option,
     }
+
+  }
 }

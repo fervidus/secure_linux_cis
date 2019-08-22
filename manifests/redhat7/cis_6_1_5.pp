@@ -6,6 +6,8 @@
 #
 # @summary 6.1.5 Ensure permissions on /etc/gshadow are configured (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_6_1_5
 class secure_linux_cis::redhat7::cis_6_1_5 (

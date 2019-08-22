@@ -17,6 +17,8 @@
 #
 # @summary 4.1.10 Ensure discretionary access control permission modification events are collected (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_4_1_10
 class secure_linux_cis::redhat7::cis_4_1_10 (
@@ -26,7 +28,7 @@ class secure_linux_cis::redhat7::cis_4_1_10 (
   if $enforced {
 
     # 64 bit architecture
-    if $facts['architecture'] =~ /64/ {
+    if $facts['os']['architecture'] =~ /64/ {
 
       file_line { 'audit.rules access 1':
         ensure => present,

@@ -10,6 +10,8 @@
 #
 # @summary 4.1.1.3 Ensure audit logs are not automatically deleted (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_4_1_1_3
 class secure_linux_cis::redhat7::cis_4_1_1_3 (

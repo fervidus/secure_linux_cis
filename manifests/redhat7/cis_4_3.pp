@@ -13,6 +13,8 @@
 #
 # @summary 4.3 Ensure logrotate is configured (Not Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_4_3
 class secure_linux_cis::redhat7::cis_4_3 (

@@ -10,6 +10,8 @@
 #
 # @summary 2.2.8 Ensure DNS Server is not enabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_2_2_8
 class secure_linux_cis::redhat7::cis_2_2_8 (

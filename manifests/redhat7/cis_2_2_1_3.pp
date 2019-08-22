@@ -13,6 +13,10 @@
 #
 # @summary 2.2.1.3 Ensure chrony is configured (Scored)
 #
+# @param enforced Should this rule be enforced
+# @param time_servers Array of valid NTP Time servers
+# @param time_sync Which NTP program to use
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_2_2_1_3
 class secure_linux_cis::redhat7::cis_2_2_1_3 (

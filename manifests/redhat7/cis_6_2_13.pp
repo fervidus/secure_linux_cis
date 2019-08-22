@@ -6,6 +6,8 @@
 #
 # @summary 6.2.13 Ensure users' .netrc Files are not group or world accessible
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_6_2_13
 class secure_linux_cis::redhat7::cis_6_2_13 (

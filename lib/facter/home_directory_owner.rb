@@ -4,7 +4,6 @@
 # Contains users that do not own home directories
 
 Facter.add('home_directory_owner') do
-  confine osfamily: 'RedHat'
   setcode do
     Facter::Core::Execution.exec('/tmp/cis_scripts/home_dir_own.sh')
   end

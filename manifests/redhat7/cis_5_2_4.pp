@@ -13,6 +13,8 @@
 #
 # @summary 5.2.4 Ensure SSH X11 forwarding is disabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_2_4
 class secure_linux_cis::redhat7::cis_5_2_4 (

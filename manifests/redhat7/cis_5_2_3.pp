@@ -15,6 +15,8 @@
 #
 # @summary 5.2.3 Ensure SSH LogLevel is set to INFO (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_2_3
 class secure_linux_cis::redhat7::cis_5_2_3 (

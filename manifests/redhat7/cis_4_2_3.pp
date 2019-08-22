@@ -13,6 +13,9 @@
 #
 # @summary 4.2.3 Ensure rsyslog or syslog-ng is installed (Scored)
 #
+# @param enforced Should this rule be enforced
+# @param logging How logging is done
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_4_2_3
 class secure_linux_cis::redhat7::cis_4_2_3 (

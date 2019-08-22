@@ -6,6 +6,8 @@
 #
 # @summary 6.1.3 Ensure permissions on /etc/shadow are configured (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_6_1_3
 class secure_linux_cis::redhat7::cis_6_1_3 (

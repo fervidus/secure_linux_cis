@@ -10,6 +10,8 @@
 #
 # @summary 3.5.4 Ensure TIPC is disabled (Not Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_3_5_4
 class secure_linux_cis::redhat7::cis_3_5_4 (

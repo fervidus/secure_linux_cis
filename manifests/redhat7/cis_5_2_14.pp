@@ -27,6 +27,12 @@
 #
 # @summary 5.2.14 Ensure SSH access is limited (Scored)
 #
+# @param enforced Should this rule be enforced
+# @param allow_users Which users to allow
+# @param allow_groups Which groups to allow
+# @param deny_users Which users to deny
+# @param deny_groups Which groups to deny
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_2_14
 class secure_linux_cis::redhat7::cis_5_2_14 (

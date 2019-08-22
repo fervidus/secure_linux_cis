@@ -12,6 +12,8 @@
 #
 # @summary 3.6.3 Ensure loopback traffic is configured (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_3_6_3
 class secure_linux_cis::redhat7::cis_3_6_3 (

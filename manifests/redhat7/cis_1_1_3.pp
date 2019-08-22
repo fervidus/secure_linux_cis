@@ -6,21 +6,22 @@
 #
 # @summary 1.1.3 Ensure nodev option set on /tmp partition (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_1_3
 class secure_linux_cis::redhat7::cis_1_1_3 (
   Boolean $enforced = true,
-  ) {
-    if $enforced {
+) {
+  if $enforced {
 
-      if $facts['tmp_partition'] {
+    $mount = '/tmp'
+    $option = 'nodev'
 
-        if $facts['tmp_nodev'] == false {
-          notify { 'tn':
-            message  => 'Not in compliance with CIS 1.1.3 (Scored). The nodev option is not set on the /tmp partition',
-            loglevel => 'warning',
-          }
-      }
+    secure_linux_cis::mount_options { "${mount}-${option}":
+      mount => $mount,
+      opt   => $option,
     }
+
   }
 }

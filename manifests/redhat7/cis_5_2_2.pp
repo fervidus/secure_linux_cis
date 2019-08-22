@@ -10,6 +10,8 @@
 #
 # @summary 5.2.2 Ensure SSH Protocol is set to 2 (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_2_2
 class secure_linux_cis::redhat7::cis_5_2_2 (

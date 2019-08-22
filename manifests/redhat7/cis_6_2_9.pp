@@ -6,6 +6,8 @@
 #
 # @summary 6.2.9 Ensure users own their home directories (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_6_2_9
 class secure_linux_cis::redhat7::cis_6_2_9 (
@@ -18,7 +20,7 @@ class secure_linux_cis::redhat7::cis_6_2_9 (
       owner   => 'root',
       group   => 'root',
       mode    => '0711',
-      content => file('secure_linux_cis/home_dir_own.sh')
+      content => file('secure_linux_cis/home_dir_own.sh'),
       # source => 'puppet:///modules/secure_linux_cis/home_dir_own.sh',
     }
 

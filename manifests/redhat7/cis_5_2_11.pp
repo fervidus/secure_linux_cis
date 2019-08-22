@@ -8,12 +8,15 @@
 #
 # @summary A short summary of the purpose of this class
 #
+# @param enforced Should this rule be enforced
+# @param approved_mac_algorithms Which algorigthms are approved for use
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_2_11
 class secure_linux_cis::redhat7::cis_5_2_11 (
   Boolean $enforced = true,
   Array $approved_mac_algorithms = ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com',
-                                    'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com']
+  'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com']
 ) {
 
   if $enforced {
@@ -24,7 +27,7 @@ class secure_linux_cis::redhat7::cis_5_2_11 (
       'umac-128-etm@openssh.com',
       'hmac-sha2-512',
       'hmac-sha2-256',
-      'umac-128@openssh.com'
+      'umac-128@openssh.com',
     ]
 
     $approved_mac_algorithms.each |$algorithm| {

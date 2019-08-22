@@ -9,6 +9,8 @@
 #
 # @summary 3.6.1 Ensure iptables is installed (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_3_6_1
 class secure_linux_cis::redhat7::cis_3_6_1 (

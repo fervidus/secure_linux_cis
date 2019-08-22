@@ -12,6 +12,8 @@
 #
 # @summary 2.1.6 Ensure tftp server is not enabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_2_1_6
 class secure_linux_cis::redhat7::cis_2_1_6 (

@@ -12,6 +12,8 @@
 #
 # @summary 2.3.1 Ensure NIS Client is not installed (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_2_3_1
 class secure_linux_cis::redhat7::cis_2_3_1 (

@@ -6,21 +6,22 @@
 #
 # @summary 1.1.4 Ensure nosuid option set on /tmp partition (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_1_4
 class secure_linux_cis::redhat7::cis_1_1_4 (
   Boolean $enforced = true,
-  ) {
-    if $enforced {
+) {
+  if $enforced {
 
-      if $facts['tmp_partition'] {
+    $mount = '/tmp'
+    $option = 'nosuid'
 
-        if $facts['tmp_nosuid'] == false {
-          notify { 'tnos':
-            message  => 'Not in compliance with CIS 1.1.4 (Scored). The nosuid option is not set on the /tmp partition',
-            loglevel => 'warning',
-            }
-        }
+    secure_linux_cis::mount_options { "${mount}-${option}":
+      mount => $mount,
+      opt   => $option,
     }
+
   }
 }

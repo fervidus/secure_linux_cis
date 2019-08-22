@@ -6,19 +6,22 @@
 #
 # @summary 1.1.14 Ensure nodev option set on /home partition (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_1_14
 class secure_linux_cis::redhat7::cis_1_1_14 (
   Boolean $enforced = true,
-  ) {
-    if $enforced {
+) {
+  if $enforced {
 
-      if !($facts['mount_home'].empty) and $facts['home_nodev'] == undef {
+    $mount = '/home'
+    $option = 'nodev'
 
-        notify { 'hn':
-          message  => 'Not in compliance with CIS 1.1.14 (Scored). The "nodev" option is not included on the home partition',
-          loglevel => 'warning',
-        }
-      }
+    secure_linux_cis::mount_options { "${mount}-${option}":
+      mount => $mount,
+      opt   => $option,
     }
+
+  }
 }

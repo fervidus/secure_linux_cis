@@ -21,6 +21,8 @@
 #
 # @summary 3.4.2 Ensure /etc/hosts.allow is configured (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_3_4_2
 class secure_linux_cis::redhat7::cis_3_4_2 (
@@ -35,7 +37,7 @@ class secure_linux_cis::redhat7::cis_3_4_2 (
       owner   => 'root',
       group   => 'root',
       mode    => '0644',
-      content => "ALL: ${facts['network']}/${facts['netmask']}",
+      content => "ALL: ${facts['networking']['network']}/${facts['networking']['netmask']}",
     }
   }
 }

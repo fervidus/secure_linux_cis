@@ -1,6 +1,13 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+## Release 1.0.7
+
+* Added multiple enhancements by Dan Wittenberg
+* Move to PDK 12
+
+## Release 1.0.5
+
+* Confined facts to RedHat family
 
 ## Release 1.0.1
 

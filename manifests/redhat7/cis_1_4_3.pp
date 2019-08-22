@@ -7,9 +7,11 @@
 #
 # @summary 1.4.3 Ensure authentication required for single user mode (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_4_3
-  class secure_linux_cis::redhat7::cis_1_4_3 (
+class secure_linux_cis::redhat7::cis_1_4_3 (
   Boolean $enforced = true,
 ) {
 
@@ -25,5 +27,6 @@
       line  => 'ExecStart=-/bin/sh -c \"/sbin/sulogin; /usr/bin/systemctl --fail --no-block default\"',
       match => '^ExecStart=',
     }
+
   }
 }

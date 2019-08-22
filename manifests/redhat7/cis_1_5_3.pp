@@ -7,6 +7,8 @@
 #
 # @summary 1.5.3 Ensure address space layout randomization (ASLR) is enabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_5_3
 class secure_linux_cis::redhat7::cis_1_5_3 (

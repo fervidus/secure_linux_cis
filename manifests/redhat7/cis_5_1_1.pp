@@ -10,6 +10,8 @@
 #
 # @summary 5.1.1 Ensure cron daemon is enabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_1_1
 class secure_linux_cis::redhat7::cis_5_1_1 (

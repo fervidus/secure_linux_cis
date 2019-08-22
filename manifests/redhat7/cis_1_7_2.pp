@@ -6,6 +6,8 @@
 #
 # @summary 1.7.2 Ensure GDM login banner is configured (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_7_2
 class secure_linux_cis::redhat7::cis_1_7_2 (

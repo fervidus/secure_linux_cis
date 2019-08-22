@@ -7,9 +7,11 @@
 #
 # @summary 1.4.2 Ensure bootloader password is set (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_4_2
-  class secure_linux_cis::redhat7::cis_1_4_2 (
+class secure_linux_cis::redhat7::cis_1_4_2 (
   Boolean $enforced = true,
 ) {
 

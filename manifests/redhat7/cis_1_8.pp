@@ -6,6 +6,8 @@
 #
 # @summary 1.8 Ensure updates, patches, and additional security software are installed (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_8
 class secure_linux_cis::redhat7::cis_1_8 (

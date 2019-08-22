@@ -8,9 +8,11 @@
 #
 # @summary 5.4.1.5 Ensure all users last password change date is in the past (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_4_1_5
-  class secure_linux_cis::redhat7::cis_5_4_1_5 (
+class secure_linux_cis::redhat7::cis_5_4_1_5 (
   Boolean $enforced = true,
 ) {
 

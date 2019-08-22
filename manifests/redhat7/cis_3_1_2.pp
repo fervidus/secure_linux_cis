@@ -10,6 +10,8 @@
 #
 # @summary 3.1.2 Ensure packet redirect sending is disabled (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_3_1_2
 class secure_linux_cis::redhat7::cis_3_1_2 (

@@ -15,6 +15,8 @@
 #
 # @summary 4.1.14 Ensure file deletion events by users are collected (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_4_1_14
 class secure_linux_cis::redhat7::cis_4_1_14 (
@@ -24,7 +26,7 @@ class secure_linux_cis::redhat7::cis_4_1_14 (
   if $enforced {
 
     # 64 bit architecture
-    if $facts['architecture'] =~ /64/ {
+    if $facts['os']['architecture'] =~ /64/ {
 
       file_line { 'audit.rules file deletion 1':
         ensure => present,

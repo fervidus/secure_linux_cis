@@ -14,6 +14,8 @@
 #
 # @summary 4.1.4 Ensure events that modify date and time information are collected (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_4_1_4
 class secure_linux_cis::redhat7::cis_4_1_4 (
@@ -23,7 +25,7 @@ class secure_linux_cis::redhat7::cis_4_1_4 (
   if $enforced {
 
     # 64 bit architecture
-    if $facts['architecture'] =~ /64/ {
+    if $facts['os']['architecture'] =~ /64/ {
 
       file_line { 'audit.rules time 1':
         ensure => present,
@@ -34,7 +36,7 @@ class secure_linux_cis::redhat7::cis_4_1_4 (
       file_line { 'audit.rules time 2':
         ensure => present,
         path   => '/etc/audit/audit.rules',
-        line   => '-a always,exit -F arch=b32 -S adjtimex -S settimeofday -S stime -k time-change',
+        line   => '-a always,exit -F arch=b32 -S adjtimex -S settimeofday -S stime -k timechange',
       }
 
       file_line { 'audit.rules time 3':
@@ -63,7 +65,7 @@ class secure_linux_cis::redhat7::cis_4_1_4 (
       file_line { 'audit.rules time 1':
         ensure => present,
         path   => '/etc/audit/audit.rules',
-        line   => '-a always,exit -F arch=b32 -S adjtimex -S settimeofday -S stime -k time-change',
+        line   => '-a always,exit -F arch=b32 -S adjtimex -S settimeofday -S stime -k timechange',
       }
 
       file_line { 'audit.rules time 2':

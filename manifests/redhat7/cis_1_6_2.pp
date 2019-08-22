@@ -6,6 +6,8 @@
 #
 # @summary 1.6.2 Ensure SELinux is installed (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_1_6_2
 class secure_linux_cis::redhat7::cis_1_6_2 (

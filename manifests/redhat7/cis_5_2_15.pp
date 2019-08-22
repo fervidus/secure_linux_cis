@@ -10,6 +10,8 @@
 #
 # @summary 5.2.15 Ensure SSH warning banner is configured (Scored)
 #
+# @param enforced Should this rule be enforced
+#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_2_15
 class secure_linux_cis::redhat7::cis_5_2_15 (
@@ -19,10 +21,10 @@ class secure_linux_cis::redhat7::cis_5_2_15 (
   if $enforced {
 
     file_line { 'ssh warning banner':
-        ensure => 'present',
-        path   => '/etc/ssh/sshd_config',
-        line   => 'Banner /etc/issue.net',
-        match  => '^#?Banner',
+      ensure => 'present',
+      path   => '/etc/ssh/sshd_config',
+      line   => 'Banner /etc/issue.net',
+      match  => '^#?Banner',
     }
   }
 }
