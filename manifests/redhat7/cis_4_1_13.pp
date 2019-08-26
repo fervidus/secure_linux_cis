@@ -35,13 +35,13 @@ class secure_linux_cis::redhat7::cis_4_1_13 (
 
       file_line { 'audit.rules mounts 1':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-a always,exit -F arch=b64 -S mount -F auid>=1000 -F auid!=4294967295 -k mounts',
       }
 
       file_line { 'audit.rules mounts 2':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-a always,exit -F arch=b32 -S mount -F auid>=1000 -F auid!=4294967295 -k mounts',
       }
     }
@@ -50,7 +50,7 @@ class secure_linux_cis::redhat7::cis_4_1_13 (
 
       file_line { 'audit.rules mounts 1':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-a always,exit -F arch=b32 -S mount -F auid>=1000 -F auid!=4294967295 -k mounts',
       }
     }

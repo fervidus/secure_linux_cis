@@ -4,6 +4,7 @@
 # Ensures the nodev option exists for the /home partition
 
 Facter.add('home_nodev') do
+  confine osfamily: 'RedHat'
   setcode do
     home = Facter::Core::Execution.exec('mount | grep /home')
     %r{nodev}.match(home)

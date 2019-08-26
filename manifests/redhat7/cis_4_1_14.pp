@@ -30,13 +30,13 @@ class secure_linux_cis::redhat7::cis_4_1_14 (
 
       file_line { 'audit.rules file deletion 1':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-a always,exit -F arch=b64 -S unlink -S unlinkat -S rename -S renameat -F auid>=1000 -F auid!=4294967295 -k delete',
       }
 
       file_line { 'audit.rules file deletion 2':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-a always,exit -F arch=b32 -S unlink -S unlinkat -S rename -S renameat -F auid>=1000 -F auid!=4294967295 -k delete',
       }
     }
@@ -46,7 +46,7 @@ class secure_linux_cis::redhat7::cis_4_1_14 (
 
       file_line { 'audit.rules file deletion 1':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-a always,exit -F arch=b32 -S unlink -S unlinkat -S rename -S renameat -F auid>=1000 -F auid!=4294967295 -k delete',
       }
     }

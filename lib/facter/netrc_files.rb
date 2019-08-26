@@ -4,6 +4,7 @@
 # Contains any .netrc files on the system
 
 Facter.add('netrc_files') do
+  confine osfamily: 'RedHat'
   setcode do
     Facter::Core::Execution.exec('/tmp/cis_scripts/netrc.sh')
   end

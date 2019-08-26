@@ -39,43 +39,43 @@ class secure_linux_cis::redhat7::cis_4_1_6 (
 
       file_line { 'audit.rules network 1':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-a always,exit -F arch=b64 -S sethostname -S setdomainname -k system-locale',
       }
 
       file_line { 'audit.rules network 2':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-a always,exit -F arch=b32 -S sethostname -S setdomainname -k system-locale',
       }
 
       file_line { 'audit.rules network 3':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-w /etc/issue -p wa -k system-locale',
       }
 
       file_line { 'audit.rules network 4':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-w /etc/issue.net -p wa -k system-locale',
       }
 
       file_line { 'audit.rules network 5':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-w /etc/hosts -p wa -k system-locale',
       }
 
       file_line { 'audit.rules network 6':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-w /etc/sysconfig/network -p wa -k system-locale',
       }
 
       file_line { 'audit.rules network 7':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-w /etc/sysconfig/network-scripts/ -p wa -k system-locale',
       }
     }
@@ -85,37 +85,37 @@ class secure_linux_cis::redhat7::cis_4_1_6 (
 
       file_line { 'audit.rules network 1':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-a always,exit -F arch=b32 -S sethostname -S setdomainname -k system-locale',
       }
 
       file_line { 'audit.rules network 2':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-w /etc/issue -p wa -k system-locale',
       }
 
       file_line { 'audit.rules network 3':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-w /etc/issue.net -p wa -k system-locale',
       }
 
       file_line { 'audit.rules network 4':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-w /etc/hosts -p wa -k system-locale',
       }
 
       file_line { 'audit.rules network 5':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-w /etc/sysconfig/network -p wa -k system-locale',
       }
 
       file_line { 'audit.rules network 6':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-w /etc/sysconfig/network-scripts/ -p wa -k system-locale',
       }
     }
