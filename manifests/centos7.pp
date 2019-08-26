@@ -377,7 +377,7 @@ class secure_linux_cis::centos7 (
   # 4.1.17
   include ::secure_linux_cis::redhat7::cis_4_1_17
   # # 4.1.18
-  # include ::secure_linux_cis::redhat7::cis_4_1_18
+  include ::secure_linux_cis::redhat7::cis_4_1_18
 
   # 4.2.1.1
   class { '::secure_linux_cis::redhat7::cis_4_2_1_1':
