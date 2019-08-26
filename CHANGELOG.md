@@ -1,6 +1,7 @@
 # Changelog
 
 ## Release 1.0.8
+* Refactoring by CanIHaveThisOne
 * Change audit.rules entries to /etc/audit/rules.d/audit.rules so persistent across reboots
 * Add '-e 2' to audit.rules to make immutable (activate class cis_4_1_18)
 * Refactor and expand local_users fact and classes cis_5_4_1_1 to cis_5_4_1_5
