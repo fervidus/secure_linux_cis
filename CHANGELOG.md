@@ -5,7 +5,7 @@
 * Add '-e 2' to audit.rules to make immutable (activate class cis_4_1_18)
 * Refactor and expand local_users fact and classes cis_5_4_1_1 to cis_5_4_1_5
 * Reinstate confining facts to RedHat
-* Re-add typo in auditd rule cis_4_1_4
+* Re-fix typo in auditd rule cis_4_1_4
 
 ## Release 1.0.7
 
