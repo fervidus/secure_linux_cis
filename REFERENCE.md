@@ -131,6 +131,7 @@
 * [`secure_linux_cis::redhat7::cis_4_1_15`](#secure_linux_cisredhat7cis_4_1_15): 4.1.15 Ensure changes to system administration scope (sudoers) is collected (Scored)
 * [`secure_linux_cis::redhat7::cis_4_1_16`](#secure_linux_cisredhat7cis_4_1_16): 4.1.16 Ensure system administrator actions (sudolog) are collected (Scored)
 * [`secure_linux_cis::redhat7::cis_4_1_17`](#secure_linux_cisredhat7cis_4_1_17): 4.1.17 Ensure kernel module loading and unloading is collected (Scored)
+* [`secure_linux_cis::redhat7::cis_4_1_18`](#secure_linux_cisredhat7cis_4_1_17): 4.1.18 Ensure the audit configuration is immutable (Scored)
 * [`secure_linux_cis::redhat7::cis_4_1_1_1`](#secure_linux_cisredhat7cis_4_1_1_1): 4.1.1.1 Ensure audit log storage size is configured (Not Scored)
 * [`secure_linux_cis::redhat7::cis_4_1_1_2`](#secure_linux_cisredhat7cis_4_1_1_2): 4.1.1.2 Ensure system is disabled when audit logs are full (Scored)
 * [`secure_linux_cis::redhat7::cis_4_1_1_3`](#secure_linux_cisredhat7cis_4_1_1_3): 4.1.1.3 Ensure audit logs are not automatically deleted (Scored)

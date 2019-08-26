@@ -4,6 +4,7 @@
 # Ensures the nodev option is enabled on the /dev/shm partition
 
 Facter.add('shm_nodev') do
+  confine osfamily: 'RedHat'
   setcode do
     shm = Facter::Core::Execution.exec('mount | grep /dev/shm')
     if shm.match?(%r{nodev})

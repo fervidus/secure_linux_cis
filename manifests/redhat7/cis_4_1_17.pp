@@ -33,25 +33,25 @@ class secure_linux_cis::redhat7::cis_4_1_17 (
 
       file_line { 'audit.rules kernel module 1':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-w /sbin/insmod -p x -k modules',
       }
 
       file_line { 'audit.rules kernel module 2':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-w /sbin/rmmod -p x -k modules',
       }
 
       file_line { 'audit.rules kernel module 3':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-w /sbin/modprobe -p x -k modules',
       }
 
       file_line { 'audit.rules kernel module 4':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-a always,exit -F arch=b64 -S init_module -S delete_module -k modules',
       }
     }
@@ -61,25 +61,25 @@ class secure_linux_cis::redhat7::cis_4_1_17 (
 
       file_line { 'audit.rules kernel module 1':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-w /sbin/insmod -p x -k modules',
       }
 
       file_line { 'audit.rules kernel module 2':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-w /sbin/rmmod -p x -k modules',
       }
 
       file_line { 'audit.rules kernel module 3':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-w /sbin/modprobe -p x -k modules',
       }
 
       file_line { 'audit.rules kernel module 4':
         ensure => present,
-        path   => '/etc/audit/audit.rules',
+        path   => '/etc/audit/rules.d/audit.rules',
         line   => '-a always,exit -F arch=b32 -S init_module -S delete_module -k modules',
       }
     }

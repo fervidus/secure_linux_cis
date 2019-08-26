@@ -4,6 +4,7 @@
 # Ensures groups that are defined in /etc/passwd file but not in the /etc/group file
 
 Facter.add('password_group_exist') do
+  confine osfamily: 'RedHat'
   setcode do
     Facter::Core::Execution.exec('/tmp/cis_scripts/pwd_group_exist.sh')
   end

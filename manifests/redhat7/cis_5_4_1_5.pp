@@ -8,8 +8,6 @@
 #
 # @summary 5.4.1.5 Ensure all users last password change date is in the past (Scored)
 #
-# @param enforced Should this rule be enforced
-#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_4_1_5
 class secure_linux_cis::redhat7::cis_5_4_1_5 (
@@ -24,7 +22,7 @@ class secure_linux_cis::redhat7::cis_5_4_1_5 (
     else {
       $facts['local_users'].each |String $user, Hash $attributes| {
 
-        if !$attributes['password_change'] {
+        if !$attributes['password_date_valid'] {
           # fail("User ${user} has a password last changed date in the future. Please investigate.")
           notify { "plcd ${user}":
             message  => 'Not in compliance with CIS 5.4.1.5 (Scored). We believe the user has a password last changed date in the future. Please investigate.', #lint:ignore:140chars

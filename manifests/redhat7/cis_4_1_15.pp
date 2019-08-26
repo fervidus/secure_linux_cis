@@ -25,13 +25,13 @@ class secure_linux_cis::redhat7::cis_4_1_15 (
 
     file_line { 'audit.rules sudoers 1':
       ensure => present,
-      path   => '/etc/audit/audit.rules',
+      path   => '/etc/audit/rules.d/audit.rules',
       line   => '-w /etc/sudoers -p wa -k scope',
     }
 
     file_line { 'audit.rules sudoers 2':
       ensure => present,
-      path   => '/etc/audit/audit.rules',
+      path   => '/etc/audit/rules.d/audit.rules',
       line   => '-w /etc/sudoers.d/ -p wa -k scope',
     }
   }
