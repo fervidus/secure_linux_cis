@@ -11,9 +11,6 @@
 #
 # @summary 5.4.1.1 Ensure password expiration is 365 days or less (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param pass_max_days Password maximum days
-#
 # @example
 #   include secure_linux_cis::redhat7::cis_5_4_1_1
 class secure_linux_cis::redhat7::cis_5_4_1_1 (
@@ -38,7 +35,7 @@ class secure_linux_cis::redhat7::cis_5_4_1_1 (
 
       $facts['local_users'].each |String $user, Hash $attributes| {
 
-        if !($attributes['max_days_between_password_change'].empty) {
+        if $attributes['password_expires_days'] != 'never' {
 
           if $attributes['max_days_between_password_change'] != $pass_max_days {
             exec { "/bin/chage --maxdays ${pass_max_days} ${user}": }
