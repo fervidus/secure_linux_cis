@@ -24,6 +24,7 @@ Facter.add(:local_users) do
       last_password_change_days = last_password_change
       password_expires_days     = password_expires
       password_inactive_days    = password_inactive
+      account_expires_days      = account_expires
 
       # check if password attribute not 'never', then determine days between now and then
       # and check if password is set prior to current date
@@ -41,8 +42,6 @@ Facter.add(:local_users) do
 
       if account_expires    != 'never'
         account_expires_days = (Date.parse(account_expires) - Date.today).to_i
-      else
-        account_expires_days = account_expires
       end
 
       # create nested fact
