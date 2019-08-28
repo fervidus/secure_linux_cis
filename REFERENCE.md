@@ -15,6 +15,8 @@
 * [`secure_linux_cis::redhat7::cis_1_1_13`](#secure_linux_cisredhat7cis_1_1_13): 1.1.13 Ensure separate partition exists for /home (Scored)
 * [`secure_linux_cis::redhat7::cis_1_1_14`](#secure_linux_cisredhat7cis_1_1_14): 1.1.14 Ensure nodev option set on /home partition (Scored)
 * [`secure_linux_cis::redhat7::cis_1_1_15`](#secure_linux_cisredhat7cis_1_1_15): 1.1.15 Ensure nodev option set on /dev/shm partition (Scored)
+* [`secure_linux_cis::redhat7::cis_1_1_16`](#secure_linux_cisredhat7cis_1_1_16): 1.1.16 Ensure nosuid option set on /dev/shm partition (Scored)
+* [`secure_linux_cis::redhat7::cis_1_1_17`](#secure_linux_cisredhat7cis_1_1_17): 1.1.17 Ensure noexec option set on /dev/shm partition (Scored)
 * [`secure_linux_cis::redhat7::cis_1_1_18`](#secure_linux_cisredhat7cis_1_1_18): 1.1.18 Ensure nodev option set on removable media partitions (Not Scored)
 * [`secure_linux_cis::redhat7::cis_1_1_19`](#secure_linux_cisredhat7cis_1_1_19): 1.1.19 Ensure nosuid option set on removable media partitions (Not Scored)
 * [`secure_linux_cis::redhat7::cis_1_1_1_1`](#secure_linux_cisredhat7cis_1_1_1_1): 1.1.1.1 Ensure mounting of cramfs filesystems is disabled (Scored)
@@ -33,10 +35,13 @@
 * [`secure_linux_cis::redhat7::cis_1_1_4`](#secure_linux_cisredhat7cis_1_1_4): 1.1.4 Ensure nosuid option set on /tmp partition (Scored)
 * [`secure_linux_cis::redhat7::cis_1_1_5`](#secure_linux_cisredhat7cis_1_1_5): 1.1.5 Ensure noexec option set on /tmp partition (Scored)
 * [`secure_linux_cis::redhat7::cis_1_1_6`](#secure_linux_cisredhat7cis_1_1_6): 1.1.6 Ensure separate partition exists for /var (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_7`](#secure_linux_cisredhat7cis_1_1_7): A short summary of the purpose of this class
+* [`secure_linux_cis::redhat7::cis_1_1_7`](#secure_linux_cisredhat7cis_1_1_7): 1.1.7 Ensure separate partition exists for /var/tmp (Scored)
 * [`secure_linux_cis::redhat7::cis_1_1_8`](#secure_linux_cisredhat7cis_1_1_8): 1.1.8 Ensure nodev option set on /var/tmp partition (Scored)
 * [`secure_linux_cis::redhat7::cis_1_1_9`](#secure_linux_cisredhat7cis_1_1_9): 1.1.9 Ensure nosuid option set on /var/tmp partition (Scored)
+* [`secure_linux_cis::redhat7::cis_1_2_1`](#secure_linux_cisredhat7cis_1_2_1): 1.2.1 Ensure package manager repositories are configured (Not Scored)
 * [`secure_linux_cis::redhat7::cis_1_2_2`](#secure_linux_cisredhat7cis_1_2_2): 1.2.2 Ensure gpgcheck is globally activated (Scored)
+* [`secure_linux_cis::redhat7::cis_1_2_3`](#secure_linux_cisredhat7cis_1_2_3): 1.2.3 Ensure GPG keys are configured (Not Scored)
+* [`secure_linux_cis::redhat7::cis_1_2_4`](#secure_linux_cisredhat7cis_1_2_4): 1.2.4 Ensure Red Hat Subscription Manager connection is configured (Not Scored)
 * [`secure_linux_cis::redhat7::cis_1_2_5`](#secure_linux_cisredhat7cis_1_2_5): 1.2.5 Disable the rhnsd Daemon (Not Scored)
 * [`secure_linux_cis::redhat7::cis_1_3_1`](#secure_linux_cisredhat7cis_1_3_1): 1.3.1 Ensure AIDE is installed (Scored)
 * [`secure_linux_cis::redhat7::cis_1_3_2`](#secure_linux_cisredhat7cis_1_3_2): 1.3.2 Ensure filesystem integrity is regularly checked (Scored)
@@ -44,6 +49,7 @@
 * [`secure_linux_cis::redhat7::cis_1_4_2`](#secure_linux_cisredhat7cis_1_4_2): 1.4.2 Ensure bootloader password is set (Scored)
 * [`secure_linux_cis::redhat7::cis_1_4_3`](#secure_linux_cisredhat7cis_1_4_3): 1.4.3 Ensure authentication required for single user mode (Scored)
 * [`secure_linux_cis::redhat7::cis_1_5_1`](#secure_linux_cisredhat7cis_1_5_1): 1.5.1 Ensure core dumps are restricted (Scored)
+* [`secure_linux_cis::redhat7::cis_1_5_2`](#secure_linux_cisredhat7cis_1_5_2): 1.5.2 Ensure XD/NX support is enabled (Not Scored)
 * [`secure_linux_cis::redhat7::cis_1_5_3`](#secure_linux_cisredhat7cis_1_5_3): 1.5.3 Ensure address space layout randomization (ASLR) is enabled (Scored)
 * [`secure_linux_cis::redhat7::cis_1_5_4`](#secure_linux_cisredhat7cis_1_5_4): 1.5.4 Ensure prelink is disabled (Scored)
 * [`secure_linux_cis::redhat7::cis_1_6_1_1`](#secure_linux_cisredhat7cis_1_6_1_1): 1.6.1.1 Ensure SELinux is not disabled in bootloader configuration (Scored)
@@ -126,12 +132,13 @@
 * [`secure_linux_cis::redhat7::cis_3_7`](#secure_linux_cisredhat7cis_3_7): 3.7 Ensure wireless interfaces are disabled (Not Scored)
 * [`secure_linux_cis::redhat7::cis_4_1_10`](#secure_linux_cisredhat7cis_4_1_10): 4.1.10 Ensure discretionary access control permission modification events are collected (Scored)
 * [`secure_linux_cis::redhat7::cis_4_1_11`](#secure_linux_cisredhat7cis_4_1_11): 4.1.11 Ensure unsuccessful unauthorized file access attempts are collected (Scored)
+* [`secure_linux_cis::redhat7::cis_4_1_12`](#secure_linux_cisredhat7cis_4_1_12): A short summary of the purpose of this class
 * [`secure_linux_cis::redhat7::cis_4_1_13`](#secure_linux_cisredhat7cis_4_1_13): 4.1.13 Ensure successful file system mounts are collected (Scored)
 * [`secure_linux_cis::redhat7::cis_4_1_14`](#secure_linux_cisredhat7cis_4_1_14): 4.1.14 Ensure file deletion events by users are collected (Scored)
 * [`secure_linux_cis::redhat7::cis_4_1_15`](#secure_linux_cisredhat7cis_4_1_15): 4.1.15 Ensure changes to system administration scope (sudoers) is collected (Scored)
 * [`secure_linux_cis::redhat7::cis_4_1_16`](#secure_linux_cisredhat7cis_4_1_16): 4.1.16 Ensure system administrator actions (sudolog) are collected (Scored)
 * [`secure_linux_cis::redhat7::cis_4_1_17`](#secure_linux_cisredhat7cis_4_1_17): 4.1.17 Ensure kernel module loading and unloading is collected (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_18`](#secure_linux_cisredhat7cis_4_1_17): 4.1.18 Ensure the audit configuration is immutable (Scored)
+* [`secure_linux_cis::redhat7::cis_4_1_18`](#secure_linux_cisredhat7cis_4_1_18): 4.1.18 Ensure the audit configuration is immutable (Scored)
 * [`secure_linux_cis::redhat7::cis_4_1_1_1`](#secure_linux_cisredhat7cis_4_1_1_1): 4.1.1.1 Ensure audit log storage size is configured (Not Scored)
 * [`secure_linux_cis::redhat7::cis_4_1_1_2`](#secure_linux_cisredhat7cis_4_1_1_2): 4.1.1.2 Ensure system is disabled when audit logs are full (Scored)
 * [`secure_linux_cis::redhat7::cis_4_1_1_3`](#secure_linux_cisredhat7cis_4_1_1_3): 4.1.1.3 Ensure audit logs are not automatically deleted (Scored)
@@ -191,6 +198,7 @@
 * [`secure_linux_cis::redhat7::cis_5_4_2`](#secure_linux_cisredhat7cis_5_4_2): 5.4.2 Ensure system accounts are non-login (Scored)
 * [`secure_linux_cis::redhat7::cis_5_4_3`](#secure_linux_cisredhat7cis_5_4_3): 5.4.3 Ensure default group for the root account is GID 0 (Scored)
 * [`secure_linux_cis::redhat7::cis_5_4_4`](#secure_linux_cisredhat7cis_5_4_4): 5.4.4 Ensure default user umask is 027 or more restrictive (Scored)
+* [`secure_linux_cis::redhat7::cis_5_4_5`](#secure_linux_cisredhat7cis_5_4_5): The TMOUT parameter has been added in 5_4_4
 * [`secure_linux_cis::redhat7::cis_5_6`](#secure_linux_cisredhat7cis_5_6): 5.6 Ensure access to the su command is restricted (Scored)
 * [`secure_linux_cis::redhat7::cis_6_1_10`](#secure_linux_cisredhat7cis_6_1_10): 6.1.10 Ensure no world writable files exist (Scored)
 * [`secure_linux_cis::redhat7::cis_6_1_11`](#secure_linux_cisredhat7cis_6_1_11): 6.1.11 Ensure no unowned files or directories exist (Scored)
@@ -222,6 +230,10 @@
 * [`secure_linux_cis::redhat7::cis_6_2_7`](#secure_linux_cisredhat7cis_6_2_7): 6.2.7 Ensure all users' home directories exist (Scored)
 * [`secure_linux_cis::redhat7::cis_6_2_8`](#secure_linux_cisredhat7cis_6_2_8): 6.2.8 Ensure users' home directories permissions are 750 or more restrictive (Scored)
 * [`secure_linux_cis::redhat7::cis_6_2_9`](#secure_linux_cisredhat7cis_6_2_9): 6.2.9 Ensure users own their home directories (Scored)
+
+**Defined types**
+
+* [`secure_linux_cis::mount_options`](#secure_linux_cismount_options): Check and fix a mount with a single option
 
 ## Classes
 
@@ -457,6 +469,14 @@ Data type: `Integer`
 Password warning days
 
 Default value: 7
+
+##### `repolist`
+
+Data type: `Array`
+
+List of acceptable software repos
+
+Default value: ['updates/7/x86_64','rhel-7-server-rpms/7Server/x86_64']
 
 ### secure_linux_cis::centos7
 
@@ -697,6 +717,14 @@ Data type: `Integer`
 Password warning days
 
 Default value: 7
+
+##### `repolist`
+
+Data type: `Array`
+
+List of acceptable software repos
+
+Default value: ['updates/7/x86_64']
 
 ### secure_linux_cis::centos7::cis_6_1_10
 
@@ -972,6 +1000,14 @@ Password inactive days
 
 Default value: 30
 
+##### `repolist`
+
+Data type: `Array`
+
+List of acceptable software repos
+
+Default value: ['rhel-7-server-rpms/7Server/x86_64']
+
 ### secure_linux_cis::redhat7::cis_1_1_10
 
 1.1.10 Ensure noexec option set on /var/tmp partition (Scored)
@@ -1139,6 +1175,62 @@ Should this rule be enforced
 
 Default value: `true`
 
+### secure_linux_cis::redhat7::cis_1_1_16
+
+1.1.16 Ensure nosuid option set on /dev/shm partition (Scored)
+
+
+Description:
+The nosuid mount option specifies that the filesystem cannot contain setuid files.
+
+#### Examples
+
+##### 
+
+```puppet
+include secure_linux_cis::redhat7::cis_1_1_16
+```
+
+#### Parameters
+
+The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_16` class.
+
+##### `enforced`
+
+Data type: `Boolean`
+
+Should this rule be enforced
+
+Default value: `true`
+
+### secure_linux_cis::redhat7::cis_1_1_17
+
+1.1.17 Ensure noexec option set on /dev/shm partition (Scored)
+
+
+Description:
+The noexec mount option specifies that the filesystem cannot contain executable binaries.
+
+#### Examples
+
+##### 
+
+```puppet
+include secure_linux_cis::redhat7::cis_1_1_17
+```
+
+#### Parameters
+
+The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_17` class.
+
+##### `enforced`
+
+Data type: `Boolean`
+
+Should this rule be enforced
+
+Default value: `true`
+
 ### secure_linux_cis::redhat7::cis_1_1_18
 
 1.1.18 Ensure nodev option set on removable media partitions (Not Scored)
@@ -1146,8 +1238,6 @@ Default value: `true`
 
 Description:
 The nodev mount option specifies that the filesystem cannot contain special devices.
-
-# @param enforced Should this rule be enforced
 
 #### Examples
 
@@ -1157,6 +1247,18 @@ The nodev mount option specifies that the filesystem cannot contain special devi
 include secure_linux_cis::redhat7::cis_1_1_18
 ```
 
+#### Parameters
+
+The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_18` class.
+
+##### `enforced`
+
+Data type: `Boolean`
+
+Should this rule be enforced
+
+Default value: `true`
+
 ### secure_linux_cis::redhat7::cis_1_1_19
 
 1.1.19 Ensure nosuid option set on removable media partitions (Not Scored)
@@ -1165,8 +1267,6 @@ include secure_linux_cis::redhat7::cis_1_1_18
 Description:
 The nosuid mount option specifies that the filesystem cannot contain setuid files.
 
-# @param enforced Should this rule be enforced
-
 #### Examples
 
 ##### 
@@ -1174,6 +1274,18 @@ The nosuid mount option specifies that the filesystem cannot contain setuid file
 ```puppet
 include secure_linux_cis::redhat7::cis_1_1_19
 ```
+
+#### Parameters
+
+The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_19` class.
+
+##### `enforced`
+
+Data type: `Boolean`
+
+Should this rule be enforced
+
+Default value: `true`
 
 ### secure_linux_cis::redhat7::cis_1_1_1_1
 
@@ -1465,8 +1577,6 @@ Default value: `true`
 Description:
 The noexec mount option specifies that the filesystem cannot contain executable binaries.
 
-# @param enforced Should this rule be enforced
-
 #### Examples
 
 ##### 
@@ -1474,6 +1584,18 @@ The noexec mount option specifies that the filesystem cannot contain executable 
 ```puppet
 include secure_linux_cis::redhat7::cis_1_1_20
 ```
+
+#### Parameters
+
+The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_20` class.
+
+##### `enforced`
+
+Data type: `Boolean`
+
+Should this rule be enforced
+
+Default value: `true`
 
 ### secure_linux_cis::redhat7::cis_1_1_21
 
@@ -1729,14 +1851,41 @@ Should this rule be enforced
 
 Default value: `true`
 
+### secure_linux_cis::redhat7::cis_1_2_1
+
+1.2.1 Ensure package manager repositories are configured (Not Scored)
+
+
+Description:
+Systems need to have package manager repositories configured to ensure they receive the latest patches and updates.
+
+#### Examples
+
+##### 
+
+```puppet
+include secure_linux_cis::redhat7::cis_1_2_1
+```
+
+#### Parameters
+
+The following parameters are available in the `secure_linux_cis::redhat7::cis_1_2_1` class.
+
+##### `enforced`
+
+Data type: `Boolean`
+
+Should this rule be enforced
+
+Default value: `true`
+
 ### secure_linux_cis::redhat7::cis_1_2_2
 
 1.2.2 Ensure gpgcheck is globally activated (Scored)
 
 
 Description:
-The gpgcheck option, found in the main section of the /etc/yum.conf and individual /etc/yum/repos.d/*
-files determines if an RPM package's signature is checked prior to its installation.
+Most packages managers implement GPG key signing to verify package integrity during installation.
 
 #### Examples
 
@@ -1749,6 +1898,64 @@ include secure_linux_cis::redhat7::cis_1_2_2
 #### Parameters
 
 The following parameters are available in the `secure_linux_cis::redhat7::cis_1_2_2` class.
+
+##### `enforced`
+
+Data type: `Boolean`
+
+Should this rule be enforced
+
+Default value: `true`
+
+### secure_linux_cis::redhat7::cis_1_2_3
+
+1.2.3 Ensure GPG keys are configured (Not Scored)
+
+
+Description:
+The gpgcheck option, found in the main section of the /etc/yum.conf and individual /etc/yum/repos.d/*
+files determines if an RPM package's signature is checked prior to its installation.
+
+#### Examples
+
+##### 
+
+```puppet
+include secure_linux_cis::redhat7::cis_1_2_3
+```
+
+#### Parameters
+
+The following parameters are available in the `secure_linux_cis::redhat7::cis_1_2_3` class.
+
+##### `enforced`
+
+Data type: `Boolean`
+
+Should this rule be enforced
+
+Default value: `true`
+
+### secure_linux_cis::redhat7::cis_1_2_4
+
+1.2.4 Ensure Red Hat Subscription Manager connection is configured (Not Scored)
+
+
+Description:
+Systems need to be registered with the Red Hat Subscription Manager
+(RHSM) to receive patch updates. This is usually configured during initial installation.
+
+#### Examples
+
+##### 
+
+```puppet
+include secure_linux_cis::redhat7::cis_1_2_4
+```
+
+#### Parameters
+
+The following parameters are available in the `secure_linux_cis::redhat7::cis_1_2_4` class.
 
 ##### `enforced`
 
@@ -1952,6 +2159,38 @@ include secure_linux_cis::redhat7::cis_1_5_1
 #### Parameters
 
 The following parameters are available in the `secure_linux_cis::redhat7::cis_1_5_1` class.
+
+##### `enforced`
+
+Data type: `Boolean`
+
+Should this rule be enforced
+
+Default value: `true`
+
+### secure_linux_cis::redhat7::cis_1_5_2
+
+1.5.2 Ensure XD/NX support is enabled (Not Scored)
+
+
+Description:
+Recent processors in the x86 family support the ability to prevent code execution on a per memory page basis.
+Generically and on AMD processors, this ability is called No Execute (NX), while on Intel processors it is called Execute Disable (XD).
+This ability can help prevent exploitation of buffer overflow vulnerabilities and should be activated whenever possible.
+Extra steps must be taken to ensure that this protection is enabled, particularly on 32-bit x86 systems. Other processors, such
+as # Itanium and POWER, have included such support since inception and the standard kernel for those platforms supports the feature.
+
+#### Examples
+
+##### 
+
+```puppet
+include secure_linux_cis::redhat7::cis_1_5_2
+```
+
+#### Parameters
+
+The following parameters are available in the `secure_linux_cis::redhat7::cis_1_5_2` class.
 
 ##### `enforced`
 
@@ -3118,7 +3357,7 @@ Data type: `Enum['ntp', 'chrony', 'none']`
 
 Which NTP program to use
 
-Default value: 'ntp'
+Default value: 'chrony'
 
 ### secure_linux_cis::redhat7::cis_2_2_2
 
@@ -4632,6 +4871,18 @@ Should this rule be enforced
 
 Default value: `true`
 
+### secure_linux_cis::redhat7::cis_4_1_12
+
+A description of what this class does
+
+#### Examples
+
+##### 
+
+```puppet
+include secure_linux_cis::redhat7::cis_4_1_12
+```
+
 ### secure_linux_cis::redhat7::cis_4_1_13
 
 4.1.13 Ensure successful file system mounts are collected (Scored)
@@ -4815,6 +5066,41 @@ include secure_linux_cis::redhat7::cis_4_1_17
 #### Parameters
 
 The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_17` class.
+
+##### `enforced`
+
+Data type: `Boolean`
+
+Should this rule be enforced
+
+Default value: `true`
+
+### secure_linux_cis::redhat7::cis_4_1_18
+
+4.1.18 Ensure the audit configuration is immutable (Scored)
+
+Description:
+Set system audit so that audit rules cannot be modified with auditctl.
+Setting the flag "-e 2" forces audit to be put in immutable mode. Audit changes can only be made
+on system reboot.
+
+Rationale:
+In immutable mode, unauthorized users cannot execute changes to the audit system
+to potentially hide malicious activity and then put the audit rules back.
+Users would most likely notice a system reboot and that could alert administrators of an attempt
+to make unauthorized audit changes.
+
+#### Examples
+
+##### 
+
+```puppet
+include secure_linux_cis::redhat7::cis_4_1_18
+```
+
+#### Parameters
+
+The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_18` class.
 
 ##### `enforced`
 
@@ -6854,7 +7140,7 @@ Default value: `true`
 
 Data type: `Integer`
 
-Password maximum days
+Password max days
 
 Default value: 90
 
@@ -7094,6 +7380,22 @@ The following parameters are available in the `secure_linux_cis::redhat7::cis_5_
 Data type: `Boolean`
 
 Should this rule be enforced
+
+Default value: `true`
+
+### secure_linux_cis::redhat7::cis_5_4_5
+
+The TMOUT parameter has been added in 5_4_4
+
+#### Parameters
+
+The following parameters are available in the `secure_linux_cis::redhat7::cis_5_4_5` class.
+
+##### `enforced`
+
+Data type: `Boolean`
+
+
 
 Default value: `true`
 
@@ -7967,4 +8269,41 @@ Data type: `Boolean`
 Should this rule be enforced
 
 Default value: `true`
+
+## Defined types
+
+### secure_linux_cis::mount_options
+
+Check and fix a mount with a single option
+
+#### Examples
+
+##### 
+
+```puppet
+secure_linux_cis::mount_options { 'namevar':
+  mount => $mountpoint,
+  opt   => $option,
+}
+```
+
+#### Parameters
+
+The following parameters are available in the `secure_linux_cis::mount_options` defined type.
+
+##### `mount`
+
+Data type: `String`
+
+The mount point we have to check
+
+Default value: '/root'
+
+##### `opt`
+
+Data type: `String`
+
+The options to check that mount for
+
+Default value: 'rw'
 
