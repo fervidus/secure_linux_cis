@@ -28,22 +28,19 @@ class secure_linux_cis::redhat7::cis_5_4_1_1 (
       fail('PASS_MAX_DAYS should be set to a value less than 365')
     }
 
-    else {
-      file_line { 'password expiration policy':
-        ensure => present,
-        path   => '/etc/login.defs',
-        line   => "PASS_MAX_DAYS ${pass_max_days}",
-        match  => '^#?PASS_MAX_DAYS',
-      }
+    file_line { 'password expiration policy':
+      ensure => present,
+      path   => '/etc/login.defs',
+      line   => "PASS_MAX_DAYS ${pass_max_days}",
+      match  => '^#?PASS_MAX_DAYS',
+    }
 
-      $facts['local_users'].each |String $user, Hash $attributes| {
+    # local_users fact may be undef
+    $local_users = pick($facts['local_users'], {})
 
-        if $attributes['password_expires_days'] != 'never' {
-
-          if $attributes['max_days_between_password_change'] != $pass_max_days {
-            exec { "/bin/chage --maxdays ${pass_max_days} ${user}": }
-          }
-        }
+    $local_users.each |String $user, Hash $attributes| {
+      if $attributes['password_expires_days'] != 'never' and $attributes['max_days_between_password_change'] != $pass_max_days {
+        exec { "/bin/chage --maxdays ${pass_max_days} ${user}": }
       }
     }
   }

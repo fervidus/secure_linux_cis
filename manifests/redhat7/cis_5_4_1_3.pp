@@ -26,22 +26,20 @@ class secure_linux_cis::redhat7::cis_5_4_1_3 (
       fail('PASS_WARN_AGE should be set to a value of 7 or more')
     }
 
-    else {
-      file_line { 'password warning policy':
-        ensure => present,
-        path   => '/etc/login.defs',
-        line   => "PASS_WARN_AGE ${pass_warn_days}",
-        match  => '^#?PASS_WARN_AGE',
-      }
+    file_line { 'password warning policy':
+      ensure => present,
+      path   => '/etc/login.defs',
+      line   => "PASS_WARN_AGE ${pass_warn_days}",
+      match  => '^#?PASS_WARN_AGE',
+    }
 
-      $facts['local_users'].each |String $user, Hash $attributes| {
+    # local_users fact may be undef
+    $local_users = pick($facts['local_users'], {})
 
-        if $attributes['password_expires_days'] != 'never' {
+    $local_users.each |String $user, Hash $attributes| {
 
-          if $attributes['warn_days_between_password_change'] != $pass_warn_days {
-            exec { "/bin/chage --warndays ${pass_warn_days} ${user}": }
-          }
-        }
+      if $attributes['password_expires_days'] != 'never' and $attributes['warn_days_between_password_change'] != $pass_warn_days {
+        exec { "/bin/chage --warndays ${pass_warn_days} ${user}": }
       }
     }
   }

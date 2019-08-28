@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.0.9
+* Multiple cleanup
+* Grub fixes
+* Started plan
+
 ## Release 1.0.8
 * Refactoring by CanIHaveThisOne
 * Change audit.rules entries to /etc/audit/rules.d/audit.rules so persistent across reboots

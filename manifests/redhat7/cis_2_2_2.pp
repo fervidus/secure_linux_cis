@@ -18,7 +18,7 @@ class secure_linux_cis::redhat7::cis_2_2_2 (
   Boolean $enforced = true,
 ) {
 
-  if $enforced and $facts['xorg_x11_packages'] != [] {
+  if $enforced and !empty($facts['xorg_x11_packages']) {
 
     package { $facts['xorg_x11_packages']:
       ensure => purged,

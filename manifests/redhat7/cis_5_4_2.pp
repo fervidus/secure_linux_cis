@@ -17,7 +17,7 @@ class secure_linux_cis::redhat7::cis_5_4_2 (
 
   if $enforced {
 
-    if $facts['nologin'] != [] {
+    if !empty($facts['nologin']) {
 
       $facts['nologin'].each | String $user | {
         exec { "nologin ${user}":
@@ -25,7 +25,6 @@ class secure_linux_cis::redhat7::cis_5_4_2 (
           path    => '/sbin/',
         }
       }
-
     }
   }
 }

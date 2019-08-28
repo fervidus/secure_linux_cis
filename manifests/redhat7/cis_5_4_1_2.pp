@@ -27,22 +27,19 @@ class secure_linux_cis::redhat7::cis_5_4_1_2 (
       fail('PASS_min_DAYS should be set to a value of 7 or more')
     }
 
-    else {
-      file_line { 'password change policy':
-        ensure => present,
-        path   => '/etc/login.defs',
-        line   => "PASS_MIN_DAYS ${pass_min_days}",
-        match  => '^#?PASS_MIN_DAYS',
-      }
+    file_line { 'password change policy':
+      ensure => present,
+      path   => '/etc/login.defs',
+      line   => "PASS_MIN_DAYS ${pass_min_days}",
+      match  => '^#?PASS_MIN_DAYS',
+    }
 
-      $facts['local_users'].each |String $user, Hash $attributes| {
+    # local_users fact may be undef
+    $local_users = pick($facts['local_users'], {})
 
-        if $attributes['password_expires_days'] != 'never' {
-
-          if $attributes['min_days_between_password_change'] != $pass_min_days {
-            exec { "/bin/chage --mindays ${pass_min_days} ${user}": }
-          }
-        }
+    $local_users.each |String $user, Hash $attributes| {
+      if $attributes['password_expires_days'] != 'never' and $attributes['min_days_between_password_change'] != $pass_min_days {
+        exec { "/bin/chage --mindays ${pass_min_days} ${user}": }
       }
     }
   }
