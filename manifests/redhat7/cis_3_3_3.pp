@@ -33,5 +33,10 @@ class secure_linux_cis::redhat7::cis_3_3_3 (
       ensure => present,
     }
 
+    services { 'ip6tables':
+      ensure => stopped,
+      enable => false,
+    }
+
   }
 }
