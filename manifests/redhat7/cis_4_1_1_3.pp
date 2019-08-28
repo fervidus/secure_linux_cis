@@ -26,5 +26,6 @@ class secure_linux_cis::redhat7::cis_4_1_1_3 (
       line   => 'max_log_file_action = keep_logs',
       match  => '^max_log_file_action',
     }
+
   }
 }

@@ -21,9 +21,11 @@ class secure_linux_cis::redhat7::cis_2_2_20 (
 ) {
 
   if $enforced {
+
     service { 'tftp.socket':
       ensure => stopped,
       enable => false,
     }
+
   }
 }

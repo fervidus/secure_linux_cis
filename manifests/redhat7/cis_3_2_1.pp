@@ -26,6 +26,7 @@ class secure_linux_cis::redhat7::cis_3_2_1 (
 ) {
 
   if $enforced {
+
     sysctl { 'net.ipv4.conf.all.accept_source_route':
       value => 0,
     }
@@ -33,5 +34,6 @@ class secure_linux_cis::redhat7::cis_3_2_1 (
     sysctl { 'net.ipv4.conf.default.accept_source_route':
       value => 0,
     }
+
   }
 }

@@ -27,5 +27,6 @@ class secure_linux_cis::redhat7::cis_3_6_5 (
       action => 'accept',
       proto  => 'tcp',
     }
+
   }
 }

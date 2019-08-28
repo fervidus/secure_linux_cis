@@ -18,6 +18,7 @@ class secure_linux_cis::redhat7::cis_2_1_5 (
 ) {
 
   if $enforced {
+
     service { 'time-dgram':
       ensure => stopped,
       enable => false,
@@ -27,5 +28,6 @@ class secure_linux_cis::redhat7::cis_2_1_5 (
       ensure => stopped,
       enable => false,
     }
+
   }
 }

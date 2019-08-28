@@ -17,8 +17,10 @@ class secure_linux_cis::redhat7::cis_1_8 (
   if $enforced {
 
     cron::monthly { 'security-update':
-      ensure  => present,
-      command => 'yum check-update --security',
+      ensure      => present,
+      environment =>  [ 'MAILTO=root', 'PATH="/usr/bin:/bin"', ],
+      command     => 'yum check-update --security',
     }
+
   }
 }

@@ -19,8 +19,10 @@ class secure_linux_cis::redhat7::cis_2_3_5 (
 ) {
 
   if $enforced {
+
     package { 'openldap-clients':
       ensure => purged,
     }
+
   }
 }

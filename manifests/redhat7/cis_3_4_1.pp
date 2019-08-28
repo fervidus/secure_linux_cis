@@ -20,8 +20,10 @@ class secure_linux_cis::redhat7::cis_3_4_1 (
 ) {
 
   if $enforced {
+
     package { 'tcp_wrappers':
       ensure => installed,
     }
+
   }
 }

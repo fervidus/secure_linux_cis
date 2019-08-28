@@ -17,6 +17,7 @@ class secure_linux_cis::redhat7::cis_2_2_17 (
 ) {
 
   if $enforced {
+
     $rsh_services = [
       'rsh.socket',
       'rlogin.socket',
@@ -27,5 +28,6 @@ class secure_linux_cis::redhat7::cis_2_2_17 (
       ensure => stopped,
       enable => false,
     }
+
   }
 }

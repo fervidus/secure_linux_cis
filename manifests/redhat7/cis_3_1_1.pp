@@ -18,8 +18,10 @@ class secure_linux_cis::redhat7::cis_3_1_1 (
 ) {
 
   if $enforced {
+
     sysctl { 'net.ipv4.ip_forward':
       value => 0,
     }
+
   }
 }

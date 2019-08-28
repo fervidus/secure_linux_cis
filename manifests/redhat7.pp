@@ -442,4 +442,5 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_6_2_17
   include ::secure_linux_cis::redhat7::cis_6_2_18
   include ::secure_linux_cis::redhat7::cis_6_2_19
+
 }

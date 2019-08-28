@@ -21,8 +21,10 @@ class secure_linux_cis::redhat7::cis_2_3_1 (
 ) {
 
   if $enforced {
+
     package { 'ypbind':
       ensure => purged,
     }
+
   }
 }

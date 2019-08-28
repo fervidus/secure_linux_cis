@@ -39,5 +39,6 @@ class secure_linux_cis::redhat7::cis_3_4_2 (
       mode    => '0644',
       content => "ALL: ${facts['networking']['network']}/${facts['networking']['netmask']}",
     }
+
   }
 }

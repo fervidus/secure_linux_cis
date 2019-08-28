@@ -55,5 +55,6 @@ class secure_linux_cis::redhat7::cis_3_6_4 (
       action => 'accept',
       proto  => 'icmp',
     }
+
   }
 }

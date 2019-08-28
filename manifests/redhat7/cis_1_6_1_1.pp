@@ -16,17 +16,18 @@ class secure_linux_cis::redhat7::cis_1_6_1_1 (
 
   if $enforced {
 
+    kernel_parameter { 'selinux=0':
+      ensure   => absent,
+    }
+
+    kernel_parameter { 'enforcing=0':
+      ensure   => absent,
+    }
+
     file_line { 'cmdline_def_default':
       path   => '/etc/default/grub',
       line   => 'GRUB_CMDLINE_LINUX_DEFAULT="quiet"',
       match  => '^GRUB_CMDLINE_LINUX_DEFAULT=',
-      notify => Exec['1_6_1_1 update grub cfg'],
-    }
-
-    file_line { 'cmdline_def':
-      path   => '/etc/default/grub',
-      line   => 'GRUB_CMDLINE_LINUX="crashkernel=auto rd.lvm.lv=vg0/root rd.lvm.lv=vg0/swap rhgb quiet audit=1"',
-      match  => '^GRUB_CMDLINE_LINUX=',
       notify => Exec['1_6_1_1 update grub cfg'],
     }
 

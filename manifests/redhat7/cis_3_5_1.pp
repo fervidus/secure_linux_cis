@@ -25,5 +25,6 @@ class secure_linux_cis::redhat7::cis_3_5_1 (
     kmod::install { 'dccp':
       command => '/bin/true',
     }
+
   }
 }

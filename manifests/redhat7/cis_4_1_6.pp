@@ -119,5 +119,6 @@ class secure_linux_cis::redhat7::cis_4_1_6 (
         line   => '-w /etc/sysconfig/network-scripts/ -p wa -k system-locale',
       }
     }
+
   }
 }

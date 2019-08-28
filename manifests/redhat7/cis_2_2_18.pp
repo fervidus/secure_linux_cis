@@ -18,9 +18,11 @@ class secure_linux_cis::redhat7::cis_2_2_18 (
 ) {
 
   if $enforced {
+
     service { 'ntalk':
       ensure => stopped,
       enable => false,
     }
+
   }
 }

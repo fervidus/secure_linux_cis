@@ -25,6 +25,7 @@ class secure_linux_cis::redhat7::cis_1_7_1_2 (
         message  => 'Not in compliance with CIS 1.7.1.2 (Scored). There is OS and/or patch level information in /etc/issue',
         loglevel => 'warning',
       }
+
     }
   }
 }

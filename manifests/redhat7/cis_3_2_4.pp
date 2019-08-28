@@ -18,6 +18,7 @@ class secure_linux_cis::redhat7::cis_3_2_4 (
 ) {
 
   if $enforced {
+
     sysctl { 'net.ipv4.conf.all.log_martians':
       value => 1,
     }
@@ -25,5 +26,6 @@ class secure_linux_cis::redhat7::cis_3_2_4 (
     sysctl { 'net.ipv4.conf.default.log_martians':
       value => 1,
     }
+
   }
 }

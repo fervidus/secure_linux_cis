@@ -20,18 +20,9 @@ class secure_linux_cis::redhat7::cis_4_1_3 (
 
   if $enforced {
 
-    shellvar { 'GRUB_CMDLINE_LINUX cis_4_1_3':
-      ensure       => present,
-      variable     => 'GRUB_CMDLINE_LINUX',
-      target       => '/etc/default/grub',
-      value        => 'audit=1',
-      array_append => true,
-      notify       => Exec['reload grub2 configuration 4_1_3'],
+    kernel_parameter { 'audit=1':
+      ensure => present,
     }
 
-    exec { 'reload grub2 configuration 4_1_3':
-      command     => '/sbin/grub2-mkconfig -o /boot/grub2/grub.cfg',
-      refreshonly => true,
-    }
   }
 }

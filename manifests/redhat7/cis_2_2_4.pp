@@ -20,9 +20,11 @@ class secure_linux_cis::redhat7::cis_2_2_4 (
 ) {
 
   if $enforced {
+
     service { 'cups':
       ensure => stopped,
       enable => false,
     }
+
   }
 }
