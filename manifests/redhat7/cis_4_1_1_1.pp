@@ -28,5 +28,6 @@ class secure_linux_cis::redhat7::cis_4_1_1_1 (
       line   => "max_log_file = ${max_log_file}",
       match  => '^max_log_file =',
     }
+
   }
 }

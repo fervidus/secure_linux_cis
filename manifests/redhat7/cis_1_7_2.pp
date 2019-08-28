@@ -21,6 +21,7 @@ class secure_linux_cis::redhat7::cis_1_7_2 (
       path    => '/etc/dconf/profile/gdm',
       content => "user-db:user\nsystem-db:gdm\nfile-db:/usr/share/gdm/greeter-dconf-defaults",
     }
+
     file { 'banner-login':
       ensure  => present,
       path    => '/etc/dconf/db/gdm.d/01-banner-message',
@@ -28,12 +29,12 @@ class secure_linux_cis::redhat7::cis_1_7_2 (
       require => File['gdm'],
       notify  => Exec['dconf'],
     }
+
     exec { 'dconf':
       path        => '/bin/',
       command     => 'dconf update',
       refreshonly => true,
     }
 
-    # File['gdm'] -> File['banner-login'] ~> Exec['dconf']
   }
 }

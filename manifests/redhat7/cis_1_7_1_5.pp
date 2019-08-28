@@ -16,11 +16,12 @@ class secure_linux_cis::redhat7::cis_1_7_1_5 (
 
   if $enforced {
 
-    file { '/etc/motd':
+    file { '/etc/issue':
       ensure => present,
       owner  => 'root',
       group  => 'root',
       mode   => '0644',
     }
+
   }
 }

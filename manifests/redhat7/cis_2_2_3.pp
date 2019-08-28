@@ -21,9 +21,11 @@ class secure_linux_cis::redhat7::cis_2_2_3 (
 ) {
 
   if $enforced {
+
     service { 'avahi-daemon':
       ensure => stopped,
       enable => false,
     }
+
   }
 }

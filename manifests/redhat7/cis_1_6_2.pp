@@ -19,5 +19,6 @@ class secure_linux_cis::redhat7::cis_1_6_2 (
     package { 'libselinux':
       ensure => present,
     }
+
   }
 }

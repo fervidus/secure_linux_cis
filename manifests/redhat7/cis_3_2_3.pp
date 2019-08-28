@@ -19,6 +19,7 @@ class secure_linux_cis::redhat7::cis_3_2_3 (
 ) {
 
   if $enforced {
+
     sysctl { 'net.ipv4.conf.all.secure_redirects':
       value => 0,
     }
@@ -26,5 +27,6 @@ class secure_linux_cis::redhat7::cis_3_2_3 (
     sysctl { 'net.ipv4.conf.default.secure_redirects':
       value => 0,
     }
+
   }
 }

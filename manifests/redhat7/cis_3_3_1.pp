@@ -29,5 +29,6 @@ class secure_linux_cis::redhat7::cis_3_3_1 (
     sysctl { 'net.ipv6.conf.default.accept_ra':
       value => 0,
     }
+
   }
 }

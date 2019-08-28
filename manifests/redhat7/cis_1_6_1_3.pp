@@ -21,5 +21,6 @@ class secure_linux_cis::redhat7::cis_1_6_1_3 (
       line  => 'SELINUXTYPE=targeted',
       match => '^SELINUXTYPE=',
     }
+
   }
 }

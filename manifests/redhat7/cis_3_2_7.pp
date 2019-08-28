@@ -23,6 +23,7 @@ class secure_linux_cis::redhat7::cis_3_2_7 (
 ) {
 
   if $enforced {
+
     sysctl { 'net.ipv4.conf.all.rp_filter':
       value => 1,
     }
@@ -30,5 +31,6 @@ class secure_linux_cis::redhat7::cis_3_2_7 (
     sysctl { 'net.ipv4.conf.default.rp_filter':
       value => 1,
     }
+
   }
 }

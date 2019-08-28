@@ -21,9 +21,11 @@ class secure_linux_cis::redhat7::cis_2_2_12 (
 ) {
 
   if $enforced {
+
     service { 'smb':
       ensure => stopped,
       enable => false,
     }
+
   }
 }

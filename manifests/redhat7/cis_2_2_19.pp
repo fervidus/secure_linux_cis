@@ -20,9 +20,11 @@ class secure_linux_cis::redhat7::cis_2_2_19 (
 ) {
 
   if $enforced {
+
     service { 'telnet.socket':
       ensure => stopped,
       enable => false,
     }
+
   }
 }

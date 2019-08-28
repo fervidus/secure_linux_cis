@@ -40,5 +40,6 @@ class secure_linux_cis::redhat7::cis_3_6_3 (
       source => '127.0.0.0/8',
       action => 'drop',
     }
+
   }
 }

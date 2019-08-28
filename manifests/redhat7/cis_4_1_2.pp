@@ -29,5 +29,6 @@ class secure_linux_cis::redhat7::cis_4_1_2 (
       ensure => running,
       enable => true,
     }
+
   }
 }

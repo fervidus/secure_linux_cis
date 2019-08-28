@@ -24,5 +24,6 @@ class secure_linux_cis::redhat7::cis_3_6_1 (
     resources { 'firewall':
       purge => true,
     }
+
   }
 }

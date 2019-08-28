@@ -18,6 +18,7 @@ class secure_linux_cis::redhat7::cis_2_1_4 (
 ) {
 
   if $enforced {
+
     service { 'echo-dgram':
       ensure => stopped,
       enable => false,
@@ -27,5 +28,6 @@ class secure_linux_cis::redhat7::cis_2_1_4 (
       ensure => stopped,
       enable => false,
     }
+
   }
 }

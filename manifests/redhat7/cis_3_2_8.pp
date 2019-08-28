@@ -26,8 +26,10 @@ class secure_linux_cis::redhat7::cis_3_2_8 (
 ) {
 
   if $enforced {
+
     sysctl { 'net.ipv4.tcp_syncookies':
       value => 1,
     }
+
   }
 }

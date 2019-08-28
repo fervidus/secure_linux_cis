@@ -23,6 +23,7 @@ class secure_linux_cis::redhat7::cis_1_4_2 (
         message  => 'Not in compliance with CIS 1.4.2 (Scored). The Grub bootloader does not have a set password. If using a bootloader other than this message, please ensure that an encrypted password is set', #lint:ignore:140chars
         loglevel => 'warning',
       }
+
     }
   }
 }

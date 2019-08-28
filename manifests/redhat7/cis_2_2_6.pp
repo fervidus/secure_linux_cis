@@ -19,9 +19,11 @@ class secure_linux_cis::redhat7::cis_2_2_6 (
 ) {
 
   if $enforced {
+
     service { 'slapd':
       ensure => stopped,
       enable => false,
     }
+
   }
 }

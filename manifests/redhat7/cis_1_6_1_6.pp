@@ -22,6 +22,7 @@ class secure_linux_cis::redhat7::cis_1_6_1_6 (
         message  => 'Not in compliance with CIS 1.6.1.6 (Scored). There are unconfined daemons running on the system',
         loglevel => 'warning',
       }
+
     }
   }
 }

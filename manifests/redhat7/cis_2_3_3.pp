@@ -18,8 +18,10 @@ class secure_linux_cis::redhat7::cis_2_3_3 (
 ) {
 
   if $enforced {
+
     package { 'talk':
       ensure => purged,
     }
+
   }
 }

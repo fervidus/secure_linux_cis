@@ -20,9 +20,11 @@ class secure_linux_cis::redhat7::cis_2_2_9 (
 ) {
 
   if $enforced {
+
     service { 'vsftpd':
       ensure => stopped,
       enable => false,
     }
+
   }
 }

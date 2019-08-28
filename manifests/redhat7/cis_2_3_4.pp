@@ -18,8 +18,10 @@ class secure_linux_cis::redhat7::cis_2_3_4 (
 ) {
 
   if $enforced {
+
     package { 'telnet':
       ensure => purged,
     }
+
   }
 }

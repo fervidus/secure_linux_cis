@@ -17,9 +17,11 @@ class secure_linux_cis::redhat7::cis_2_2_21 (
 ) {
 
   if $enforced {
+
     service { 'rsyncd':
       ensure => stopped,
       enable => false,
     }
+
   }
 }

@@ -22,7 +22,7 @@
 class secure_linux_cis::redhat7::cis_2_2_1_3 (
   Array[String] $time_servers              = [],
   Boolean $enforced                        = true,
-  Enum['ntp', 'chrony', 'none'] $time_sync = 'ntp',
+  Enum['ntp', 'chrony', 'none'] $time_sync = 'chrony',
 ) {
 
   if $enforced and $time_sync == 'chrony' {
@@ -38,5 +38,6 @@ class secure_linux_cis::redhat7::cis_2_2_1_3 (
       mode    => '0644',
       content => 'OPTIONS="-u chrony"',
     }
+
   }
 }

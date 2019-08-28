@@ -19,9 +19,11 @@ class secure_linux_cis::redhat7::cis_2_2_8 (
 ) {
 
   if $enforced {
+
     service { 'named':
       ensure => stopped,
       enable => false,
     }
+
   }
 }

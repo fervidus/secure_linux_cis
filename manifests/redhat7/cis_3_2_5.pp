@@ -23,8 +23,10 @@ class secure_linux_cis::redhat7::cis_3_2_5 (
 ) {
 
   if $enforced {
+
     sysctl { 'net.ipv4.icmp_echo_ignore_broadcasts':
       value => 1,
     }
+
   }
 }

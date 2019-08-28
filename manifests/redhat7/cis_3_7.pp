@@ -24,11 +24,13 @@ class secure_linux_cis::redhat7::cis_3_7 (
     $facts['networking']['interfaces'].each | String $name, Hash $attributes | {
 
       if $name =~ /wlan/ {
-
         exec { "Disable wireless network interface: ${name}":
-          command => "/sbin/ip link set ${name} down",
+          command   => "/sbin/ip link set ${name} down",
+          onlyif    => "ip link show ${name} |grep 'state UP'",
+          logoutput => true,
         }
       }
+
     }
   }
 }
