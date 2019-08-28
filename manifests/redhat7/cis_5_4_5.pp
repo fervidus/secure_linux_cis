@@ -16,8 +16,8 @@ class secure_linux_cis::redhat7::cis_5_4_5 (
   Boolean $enforced = true,
 ) {
 
-  if $enforced {
+  #if $enforced {
 
-  }
+  #}
 
 }
