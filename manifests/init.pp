@@ -36,7 +36,7 @@ class secure_linux_cis (
   Enum['rsyslog', 'syslog-ng', 'none'] $logging = 'rsyslog',
   String $logging_host = '',  #lint:ignore:empty_string_assignment
   Boolean $is_logging_host = false,
-  Integer $max_log_file = 8,
+  Integer $max_log_file = 32,
   Enum['1', '2', '3', '4'] $max_auth_tries = '4',
   Enum['ntp', 'chrony', 'none'] $time_sync = 'none',
   Boolean $ipv6_enabled = false,
