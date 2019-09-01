@@ -104,7 +104,7 @@ Used in cis_4_2_1_5, cis_4_2_2_5
 
 #### `max_log_file`
 
-Default value: 8
+Default value: 32
 
 Determines the size of the specified log file (MB)
 
