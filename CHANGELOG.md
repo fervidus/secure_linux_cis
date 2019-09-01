@@ -3,6 +3,7 @@
 ## Release 1.0.11
 * Create resource collector override to disable ip6tables in class cis_3_3_3 when ipv6 disabled
 * Change default of ip6_enabled to false (ipv6 is now now opt-in)
+* Increase max_log_file default size from 8 to 32Mb to satisfy Nessus scan
 
 ## Release 1.0.10
 * Fix multiple line issue with cis 5.2.10
