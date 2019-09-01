@@ -128,7 +128,7 @@ Used in cis_2_2_1_2, cis_2_2_1_3
 
 #### `ipv6_enabled`
 
-Default value: true
+Default value: false
 
 Determines whether or not the system will accept ipv6 router advertisements
 
