@@ -17,7 +17,7 @@
 #   include secure_linux_cis::redhat7::cis_4_1_1_1
 class secure_linux_cis::redhat7::cis_4_1_1_1 (
   Boolean $enforced     = true,
-  Integer $max_log_file = 8,
+  Integer $max_log_file = 32,
 ) {
 
   if $enforced {
