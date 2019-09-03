@@ -21,6 +21,14 @@ class secure_linux_cis::redhat7::cis_3_3_3 (
 
   if $enforced and !$ipv6_enabled {
 
+    sysctl { 'net.ipv6.conf.all.disable_ipv6':
+      value => 1,
+    }
+
+    sysctl { 'net.ipv6.conf.default.disable_ipv6':
+      value => 1,
+    }
+
     kernel_parameter { 'ipv6.disable=1':
       ensure => present,
     }
