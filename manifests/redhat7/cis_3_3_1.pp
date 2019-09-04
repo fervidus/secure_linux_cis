@@ -20,7 +20,7 @@ class secure_linux_cis::redhat7::cis_3_3_1 (
   Boolean $ipv6_enabled = true,
 ) {
 
-  if $enforced and $ipv6_enabled {
+  if $enforced {
 
     sysctl { 'net.ipv6.conf.all.accept_ra':
       value => 0,
