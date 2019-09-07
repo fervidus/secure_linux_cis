@@ -17,7 +17,7 @@
 #   include secure_linux_cis::redhat7::cis_3_3_1
 class secure_linux_cis::redhat7::cis_3_3_1 (
   Boolean $enforced = true,
-  Boolean $ipv6_enabled = true,
+  Boolean $ipv6_enabled = false,
 ) {
 
   if $enforced {
