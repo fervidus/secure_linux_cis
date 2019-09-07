@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.0.12
+* Fix cis_5_2_14 ssh DenyGroups typo
+* Refactor remaining bash scripts using Shellcheck and test functions
+* Replace sysctl resources with file_line in cis_3_3_1, cis_3_3_2 and cis_3_3_3 as sysctl fails to write to /proc/sys/net/ipv6 when  kernel_parameter ipv6.disable=1 in effect and system has been rebooted.  Kernel_parameter requires a reboot to have effect.
+
 ## Release 1.0.11
 * Create resource collector override to disable ip6tables in class cis_3_3_3 when ipv6 disabled
 * Change default of ip6_enabled to false (ipv6 is now now opt-in)
