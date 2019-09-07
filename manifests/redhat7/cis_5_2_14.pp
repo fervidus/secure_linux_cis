@@ -100,8 +100,8 @@ class secure_linux_cis::redhat7::cis_5_2_14 (
         file_line{ 'ssh deny groups':
           ensure => 'present',
           path   => '/etc/ssh/sshd_config',
-          line   => "DenyUsers ${group_list_deny}",
-          match  => '^#?DenyUsers',
+          line   => "DenyGroups ${group_list_deny}",
+          match  => '^#?DenyGroups',
         }
       }
     }
