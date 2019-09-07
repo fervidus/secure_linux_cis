@@ -23,13 +23,15 @@ class secure_linux_cis::redhat7::cis_3_3_1 (
   if $enforced {
 
     file_line { 'net.ipv6.conf.all.accept_ra':
-      path => '/etc/sysctl.conf',
-      line => 'net.ipv6.conf.all.accept_ra = 0',
+      path  => '/etc/sysctl.conf',
+      line  => 'net.ipv6.conf.all.accept_ra = 0',
+      match => '^net.ipv6.conf.all.accept_ra.*'
     }
 
     file_line { 'net.ipv6.conf.default.accept_ra':
       path => '/etc/sysctl.conf',
       line => 'net.ipv6.conf.default.accept_ra = 0',
+      match => '^net.ipv6.conf.default.accept_ra.*'
     }
   }
 }
