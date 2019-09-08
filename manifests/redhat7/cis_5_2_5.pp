@@ -17,7 +17,7 @@
 #   include secure_linux_cis::redhat7::cis_5_2_5
 class secure_linux_cis::redhat7::cis_5_2_5 (
   Boolean      $enforced       = true,
-  Integer[1,6] $max_auth_tries = 6,
+  Integer[1,4] $max_auth_tries = 4,
 ) {
 
   if $enforced {
