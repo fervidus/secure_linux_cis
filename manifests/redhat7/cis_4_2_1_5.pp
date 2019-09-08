@@ -22,7 +22,7 @@ class secure_linux_cis::redhat7::cis_4_2_1_5 (
         ensure => present,
         path   => '/etc/rsyslog.conf',
         line   => '$ModLoad imtcp',
-        match  => '\$ModLoad',
+        match  => '$ModLoad',
         notify => Exec['reload rsyslog'],
       }
 
@@ -30,7 +30,7 @@ class secure_linux_cis::redhat7::cis_4_2_1_5 (
         ensure => present,
         path   => '/etc/rsyslog.conf',
         line   => '$InputTCPServerRun 514',
-        match  => '\$InputTCPServerRun',
+        match  => '$InputTCPServerRun',
         notify => Exec['reload rsyslog'],
       }
     }
@@ -41,7 +41,7 @@ class secure_linux_cis::redhat7::cis_4_2_1_5 (
         ensure => present,
         path   => '/etc/rsyslog.conf',
         line   => '#$ModLoad imtcp',
-        match  => '\$ModLoad',
+        match  => '$ModLoad',
         notify => Exec['reload rsyslog'],
       }
 
@@ -49,7 +49,7 @@ class secure_linux_cis::redhat7::cis_4_2_1_5 (
         ensure => present,
         path   => '/etc/rsyslog.conf',
         line   => '#$InputTCPServerRun 514',
-        match  => '\$InputTCPServerRun',
+        match  => '$InputTCPServerRun',
         notify => Exec['reload rsyslog'],
       }
     }
