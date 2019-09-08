@@ -22,6 +22,14 @@ class secure_linux_cis::redhat7::cis_4_2_1_3 (
 
   if $enforced and $logging == 'rsyslog' {
 
+    file_line { 'rsyslog.conf log_permissions':
+      ensure => present,
+      path   => '/etc/rsyslog.conf',
+      line   => '$FileCreateMode 0600',
+      match  => '^$FileCreateMode.*',
+      notify => Exec['reload rsyslog'],
+    }
+
     file { '/etc/rsyslog.d/':
       ensure  => directory,
       recurse => true,
