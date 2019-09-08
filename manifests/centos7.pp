@@ -45,7 +45,7 @@ class secure_linux_cis::centos7 (
   String                                $logging_host            = '',  #lint:ignore:empty_string_assignment
   Boolean                               $is_logging_host         = false,
   Integer                               $max_log_file            = 32,
-  Integer[1,6]                          $max_auth_tries          = 6,
+  Integer[1,4]                          $max_auth_tries          = 4,
   Enum['ntp', 'chrony', 'none']         $time_sync               = 'ntp',
   Boolean                               $ipv6_enabled            = false,
   Array                                 $approved_mac_algorithms =
