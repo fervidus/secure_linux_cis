@@ -28,10 +28,5 @@ class secure_linux_cis::redhat7::cis_4_2_1_4 (
       match  => '\*\.\* @@',
       notify => Exec['reload rsyslog 4_2_1_4'],
     }
-
-    exec { 'reload rsyslog 4_2_1_4':
-      command     => '/bin/pkill -HUP rsyslogd',
-      refreshonly => true,
-    }
   }
 }
