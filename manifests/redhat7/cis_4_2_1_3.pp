@@ -25,7 +25,7 @@ class secure_linux_cis::redhat7::cis_4_2_1_3 (
     file_line { 'rsyslog.conf log_permissions':
       ensure => present,
       path   => '/etc/rsyslog.conf',
-      line   => '$FileCreateMode 0600',
+      line   => '$FileCreateMode 0640',
       match  => '^$FileCreateMode.*',
       notify => Exec['reload rsyslog'],
     }
