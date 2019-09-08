@@ -47,10 +47,5 @@ class secure_linux_cis::redhat7::cis_4_2_1_2 (
         notify  => Exec['reload rsyslog'],
       }
     }
-
-    exec { 'reload rsyslog':
-      command     => '/bin/pkill -HUP rsyslogd',
-      refreshonly => true,
-    }
   }
 }
