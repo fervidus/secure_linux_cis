@@ -71,7 +71,7 @@ class secure_linux_cis::centos7 (
   Integer                               $pass_min_days           = 7,
   Integer                               $pass_warn_days          = 7,
   Integer                               $pass_inactive_days      = 30,
-  Array                                 $repolist                = ['updates/7/x86_64']
+  Array                                 $repolist                = ['updates/7/x86_64'],
 ) {
 
   # 1.1.1.1
