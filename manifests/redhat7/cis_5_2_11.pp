@@ -45,6 +45,7 @@ class secure_linux_cis::redhat7::cis_5_2_11 (
       path   => '/etc/ssh/sshd_config',
       line   => "MACs ${mac_algorithm_array}",
       match  => '^#?MACs',
+      notify => Exec['reload sshd'],
     }
   }
 }
