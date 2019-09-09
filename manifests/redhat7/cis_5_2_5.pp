@@ -27,6 +27,7 @@ class secure_linux_cis::redhat7::cis_5_2_5 (
       path   => '/etc/ssh/sshd_config',
       line   => "MaxAuthTries ${max_auth_tries}",
       match  => '^#?MaxAuthTries',
+      notify => Exec['reload sshd'],
     }
   }
 }
