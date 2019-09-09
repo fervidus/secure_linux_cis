@@ -30,6 +30,7 @@ class secure_linux_cis::redhat7::cis_5_2_3 (
       path   => '/etc/ssh/sshd_config',
       line   => 'LogLevel INFO',
       match  => '^LogLevel',
+      notify => Exec['reload sshd'],
     }
   }
 }
