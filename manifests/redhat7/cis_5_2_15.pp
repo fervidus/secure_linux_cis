@@ -25,6 +25,7 @@ class secure_linux_cis::redhat7::cis_5_2_15 (
       path   => '/etc/ssh/sshd_config',
       line   => 'Banner /etc/issue.net',
       match  => '^#?Banner',
+      notify => Exec['reload sshd'],
     }
   }
 }
