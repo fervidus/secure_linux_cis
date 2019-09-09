@@ -452,8 +452,8 @@ class secure_linux_cis::redhat7 (
   }
   # Reload sshd config (only if running)
   exec { 'reload sshd':
-    command     => '/usr/bin/systemctl status sshd | /usr/bin/grep running && /usr/bin/systemctl reload sshd',
-    returns     => [0,1],
+    command     => '/usr/bin/systemctl reload sshd',
+    onlyif      => '/usr/bin/systemctl status sshd | /usr/bin/grep running',
     refreshonly => true,
   }
   # Reboot when notified
