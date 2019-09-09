@@ -643,11 +643,18 @@ class secure_linux_cis::centos7 (
   # 6.2.19
   include ::secure_linux_cis::redhat7::cis_6_2_19
 
-  # Shared resources used in more than one class
+  ## Shared resources used in more than one class
+  # Reload rsyslog
   exec { 'reload rsyslog':
     command     => '/bin/pkill -HUP rsyslogd',
     refreshonly => true,
   }
+  # Reload sshd config (only if running)
+  exec { 'reload sshd':
+    command     => '/usr/bin/systemctl status sshd | /usr/bin/grep running && /usr/bin/systemctl reload sshd',
+    refreshonly => true,
+  }
+  # Reboot when notified
   reboot { 'after_run':
     apply   => 'finished',
     timeout => 60,
