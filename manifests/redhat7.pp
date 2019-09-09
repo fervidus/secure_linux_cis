@@ -443,4 +443,13 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_6_2_18
   include ::secure_linux_cis::redhat7::cis_6_2_19
 
+  # Shared resources used in more than one class
+  exec { 'reload rsyslog':
+    command     => '/bin/pkill -HUP rsyslogd',
+    refreshonly => true,
+  }
+  reboot { 'after_run':
+    apply   => 'finished',
+    timeout => 60,
+  }
 }
