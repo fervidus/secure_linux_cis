@@ -35,6 +35,7 @@
 # @param pass_max_days Password maximum days
 # @param pass_min_days Password minimum days
 # @param pass_warn_days Password warning days
+# @param pass_inactive_days Password inactive days
 # @param repolist List of acceptable software repos
 #
 # @example
@@ -49,8 +50,8 @@ class secure_linux_cis::centos7 (
   Enum['ntp', 'chrony', 'none']         $time_sync               = 'ntp',
   Boolean                               $ipv6_enabled            = false,
   Array                                 $approved_mac_algorithms =
-   ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com',
-    'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com'],  #lint:ignore:strict_indent
+    ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com',
+     'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com'],  #lint:ignore:strict_indent
   Integer                               $client_alive_interval   = 300,
   Integer[0,3]                          $client_alive_count_max  = 0,
   Integer                               $login_grace_time        = 60,
@@ -69,6 +70,7 @@ class secure_linux_cis::centos7 (
   Integer                               $pass_max_days           = 90,
   Integer                               $pass_min_days           = 7,
   Integer                               $pass_warn_days          = 7,
+  Integer                               $pass_inactive_days      = 30,
   Array                                 $repolist                = ['updates/7/x86_64']
 ) {
 
