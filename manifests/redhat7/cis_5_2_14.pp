@@ -63,6 +63,7 @@ class secure_linux_cis::redhat7::cis_5_2_14 (
           path   => '/etc/ssh/sshd_config',
           line   => "AllowUsers ${user_list_allow}",
           match  => '^#?AllowUsers',
+          notify => Exec['reload sshd'],
         }
 
       }
@@ -76,6 +77,7 @@ class secure_linux_cis::redhat7::cis_5_2_14 (
           path   => '/etc/ssh/sshd_config',
           line   => "AllowGroups ${group_list_allow}",
           match  => '^#?AllowGroups',
+          notify => Exec['reload sshd'],
         }
 
       }
@@ -89,6 +91,7 @@ class secure_linux_cis::redhat7::cis_5_2_14 (
           path   => '/etc/ssh/sshd_config',
           line   => "DenyUsers ${user_list_deny}",
           match  => '^#?DenyUsers',
+          notify => Exec['reload sshd'],
         }
 
       }
@@ -102,6 +105,7 @@ class secure_linux_cis::redhat7::cis_5_2_14 (
           path   => '/etc/ssh/sshd_config',
           line   => "DenyGroups ${group_list_deny}",
           match  => '^#?DenyGroups',
+          notify => Exec['reload sshd'],
         }
       }
     }
