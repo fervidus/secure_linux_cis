@@ -652,6 +652,7 @@ class secure_linux_cis::centos7 (
   # Reload sshd config (only if running)
   exec { 'reload sshd':
     command     => '/usr/bin/systemctl status sshd | /usr/bin/grep running && /usr/bin/systemctl reload sshd',
+    returns     => [0,1],
     refreshonly => true,
   }
   # Reboot when notified
