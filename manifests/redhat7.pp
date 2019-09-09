@@ -40,36 +40,37 @@
 # @example
 #   include secure_linux_cis::redhat7
 class secure_linux_cis::redhat7 (
-  Array[String] $time_servers                   = [],
-  Enum['rsyslog', 'syslog-ng', 'none'] $logging = 'rsyslog',
-  String $logging_host                          = '',  #lint:ignore:empty_string_assignment
-  Boolean $is_logging_host                      = false,
-  Integer $max_log_file                         = 32,
-  Enum['1', '2', '3', '4'] $max_auth_tries      = '4',
-  Enum['ntp', 'chrony', 'none'] $time_sync      = 'ntp',
-  Boolean $ipv6_enabled                         = false,
-  Array $approved_mac_algorithms                = ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com', #lint:ignore:140chars
-                                                  'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com'],  #lint:ignore:strict_indent
-  Integer $client_alive_interval                = 300,
-  Enum['0','1','2','3'] $client_alive_count_max = '0',
-  Integer $login_grace_time                     = 60,
-  Array[String] $allow_users                    = [],
-  Array[String] $allow_groups                   = [],
-  Array[String] $deny_users                     = [],
-  Array[String] $deny_groups                    =[],
-  Integer $minlen                               = 14,
-  Integer $dcredit                              = -1,
-  Integer $ucredit                              = -1,
-  Integer $ocredit                              = -1,
-  Integer $lcredit                              = -1,
-  Integer $attempts                             = 5,
-  Integer $lockout_time                         = 900,
-  Integer $past_passwords                       = 5,
-  Integer $pass_max_days                        = 90,
-  Integer $pass_min_days                        = 7,
-  Integer $pass_warn_days                       = 7,
-  Integer $pass_inactive_days                   = 30,
-  Array   $repolist                             = ['rhel-7-server-rpms/7Server/x86_64']
+  Array[String]                         $time_servers            = [],
+  Enum['rsyslog', 'syslog-ng', 'none']  $logging                 = 'rsyslog',
+  String                                $logging_host            = '',  #lint:ignore:empty_string_assignment
+  Boolean                               $is_logging_host         = false,
+  Integer                               $max_log_file            = 32,
+  Integer[1,4]                          $max_auth_tries          = 4,
+  Enum['ntp', 'chrony', 'none']         $time_sync               = 'ntp',
+  Boolean                               $ipv6_enabled            = false,
+  Array                                 $approved_mac_algorithms =
+    ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com',
+     'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com'],  #lint:ignore:strict_indent
+  Integer                               $client_alive_interval   = 300,
+  Integer[0,3]                          $client_alive_count_max  = 0,
+  Integer                               $login_grace_time        = 60,
+  Array[String]                         $allow_users             = [],
+  Array[String]                         $allow_groups            = [],
+  Array[String]                         $deny_users              = [],
+  Array[String]                         $deny_groups             = [],
+  Integer                               $minlen                  = 14,
+  Integer                               $dcredit                 = -1,
+  Integer                               $ucredit                 = -1,
+  Integer                               $ocredit                 = -1,
+  Integer                               $lcredit                 = -1,
+  Integer                               $attempts                = 5,
+  Integer                               $lockout_time            = 900,
+  Integer                               $past_passwords          = 5,
+  Integer                               $pass_max_days           = 90,
+  Integer                               $pass_min_days           = 7,
+  Integer                               $pass_warn_days          = 7,
+  Integer                               $pass_inactive_days      = 30,
+  Array                                 $repolist                = ['rhel-7-server-rpms/7Server/x86_64'],
 ) {
 
   include ::secure_linux_cis::redhat7::cis_1_1_1_1
