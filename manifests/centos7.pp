@@ -652,5 +652,4 @@ class secure_linux_cis::centos7 (
     apply   => 'finished',
     timeout => 60,
   }
-
 }
