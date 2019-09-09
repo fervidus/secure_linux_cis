@@ -27,6 +27,7 @@ class secure_linux_cis::redhat7::cis_4_1_18 (
       ensure => present,
       path   => '/etc/audit/rules.d/audit.rules',
       line   => '-e 2',
+      notify => Exec['reload rsyslog'],
     }
   }
 }
