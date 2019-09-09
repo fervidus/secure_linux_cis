@@ -27,6 +27,7 @@
 # @param pass_max_days Password maximum days
 # @param pass_min_days Password minimum days
 # @param pass_warn_days Password warning days
+# @param pass_inactive_days Password inactive days
 # @param repolist List of acceptable software repos
 #
 # @example
@@ -62,6 +63,7 @@ class secure_linux_cis (
   Integer                               $pass_max_days           = 90,
   Integer                               $pass_min_days           = 7,
   Integer                               $pass_warn_days          = 7,
+  Integer                               $pass_inactive_days      = 30,
   Array                                 $repolist                = ['updates/7/x86_64','rhel-7-server-rpms/7Server/x86_64'],
 ) {
 
@@ -104,6 +106,7 @@ class secure_linux_cis (
         pass_max_days           => $pass_max_days,
         pass_min_days           => $pass_min_days,
         pass_warn_days          => $pass_warn_days,
+        pass_inactive_days      => $pass_inactive_days,
       }
     }
 
@@ -136,6 +139,7 @@ class secure_linux_cis (
         pass_max_days           => $pass_max_days,
         pass_min_days           => $pass_min_days,
         pass_warn_days          => $pass_warn_days,
+        pass_inactive_days      => $pass_inactive_days,
       }
     }
     default: {
