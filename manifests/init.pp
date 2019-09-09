@@ -145,7 +145,5 @@ class secure_linux_cis (
     default: {
       fail("Operating System: ${os} is not supported at this time.")
     }
-
   }
-
 }
