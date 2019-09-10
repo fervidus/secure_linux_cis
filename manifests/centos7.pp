@@ -644,15 +644,18 @@ class secure_linux_cis::centos7 (
   include ::secure_linux_cis::redhat7::cis_6_2_19
 
   ## Shared resources used in more than one class
+  # Set default path for execs
+  Exec { path => '/bin/:/sbin/:/usr/bin/:/usr/sbin/' }
+  
   # Reload rsyslog
   exec { 'reload rsyslog':
-    command     => '/bin/pkill -HUP rsyslogd',
+    command     => 'pkill -HUP rsyslogd',
     refreshonly => true,
   }
   # Reload sshd config (only if running)
   exec { 'reload sshd':
-    command     => '/usr/bin/systemctl reload sshd',
-    onlyif      => '/usr/bin/systemctl status sshd | /usr/bin/grep running',
+    command     => 'systemctl reload sshd',
+    onlyif      => 'systemctl status sshd | grep running',
     refreshonly => true,
   }
   # Reboot when notified
