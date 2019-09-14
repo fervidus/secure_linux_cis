@@ -72,6 +72,7 @@ class secure_linux_cis::centos7 (
   Integer                               $pass_warn_days          = 7,
   Integer                               $pass_inactive_days      = 30,
   Array                                 $repolist                = ['updates/7/x86_64'],
+  Optional[String]                      $banner                  = undef,
 ) {
 
   # 1.1.1.1
@@ -176,12 +177,22 @@ class secure_linux_cis::centos7 (
   include ::secure_linux_cis::redhat7::cis_1_7_1_2
   # 1.7.1.3
   include ::secure_linux_cis::redhat7::cis_1_7_1_3
+
   # 1.7.1.4
-  include ::secure_linux_cis::redhat7::cis_1_7_1_4
-  # # 1.7.1.5
-  # include ::secure_linux_cis::redhat7::cis_1_7_1_5
-  # # 1.7.1.6
-  # include ::secure_linux_cis::redhat7::cis_1_7_1_6
+  class { '::secure_linux_cis::redhat7::cis_1_7_1_4':
+    banner => $banner,
+  }
+
+  # 1.7.1.5
+  class { '::secure_linux_cis::redhat7::cis_1_7_1_5':
+    banner => $banner,
+  }
+
+  # 1.7.1.6
+  class { '::secure_linux_cis::redhat7::cis_1_7_1_6':
+    banner => $banner,
+  }
+  
   # 1.7.2
   include ::secure_linux_cis::redhat7::cis_1_7_2
   # 1.8
