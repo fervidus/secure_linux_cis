@@ -65,6 +65,7 @@ class secure_linux_cis (
   Integer                               $pass_warn_days          = 7,
   Integer                               $pass_inactive_days      = 30,
   Array                                 $repolist                = ['updates/7/x86_64','rhel-7-server-rpms/7Server/x86_64'],
+  Optional[String]                      $banner                  = undef,
 ) {
 
 # Validate parameters
@@ -107,6 +108,7 @@ class secure_linux_cis (
         pass_min_days           => $pass_min_days,
         pass_warn_days          => $pass_warn_days,
         pass_inactive_days      => $pass_inactive_days,
+        banner                  => $banner,
       }
     }
 
@@ -140,6 +142,7 @@ class secure_linux_cis (
         pass_min_days           => $pass_min_days,
         pass_warn_days          => $pass_warn_days,
         pass_inactive_days      => $pass_inactive_days,
+        banner                  => $banner,
       }
     }
     default: {
