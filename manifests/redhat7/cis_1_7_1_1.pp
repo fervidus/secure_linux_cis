@@ -23,7 +23,7 @@ class secure_linux_cis::redhat7::cis_1_7_1_1 (
     if $facts['motd'] {
 
       notify { 'motd':
-        message  => '[1.7.1.1] There is OS and/or patch level information in /etc/motd',
+        message  => 'Not in compliance with CIS 1.7.1.1 (Scored). There is OS and/or patch level information in /etc/motd',
         loglevel => 'warning',
       }
     }
