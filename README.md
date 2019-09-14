@@ -295,7 +295,7 @@ The default CentOS7 and RHEL7 update repos
 
 Used in cis_1_2_1
 
-##### `banner`
+#### `banner`
 
 Default value: undef
 
