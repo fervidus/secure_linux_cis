@@ -71,6 +71,7 @@ class secure_linux_cis::redhat7 (
   Integer                               $pass_warn_days          = 7,
   Integer                               $pass_inactive_days      = 30,
   Array                                 $repolist                = ['rhel-7-server-rpms/7Server/x86_64'],
+  Optional[String]                      $banner                  = undef,
 ) {
 
   include ::secure_linux_cis::redhat7::cis_1_1_1_1
@@ -138,13 +139,26 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_1_7_1_1
   # include ::secure_linux_cis::redhat7::cis_1_7_1_2
   # include ::secure_linux_cis::redhat7::cis_1_7_1_3
-  # include ::secure_linux_cis::redhat7::cis_1_7_1_4
-  include ::secure_linux_cis::redhat7::cis_1_7_1_5
-  # include ::secure_linux_cis::redhat7::cis_1_7_1_6
+
+  # 1.7.1.4
+  class { '::secure_linux_cis::redhat7::cis_1_7_1_4':
+    banner => $banner,
+  }
+
+  # 1.7.1.5
+  class { '::secure_linux_cis::redhat7::cis_1_7_1_5':
+    banner => $banner,
+  }
+
+  # 1.7.1.6
+  class { '::secure_linux_cis::redhat7::cis_1_7_1_6':
+    banner => $banner,
+  }
+  
   include ::secure_linux_cis::redhat7::cis_1_7_2
 
   include ::secure_linux_cis::redhat7::cis_1_8
-
+  
   include ::secure_linux_cis::redhat7::cis_2_1_1
   include ::secure_linux_cis::redhat7::cis_2_1_2
   include ::secure_linux_cis::redhat7::cis_2_1_3
