@@ -2579,6 +2579,14 @@ Should this rule be enforced
 
 Default value: `true`
 
+##### `banner`
+
+Data type: `Optional[String]`
+
+Content of /etc/motd
+
+Default value: `undef`
+
 ### secure_linux_cis::redhat7::cis_1_7_1_5
 
 1.7.1.5 Ensure permissions on /etc/issue are configured (Scored)
@@ -2607,6 +2615,14 @@ Should this rule be enforced
 
 Default value: `true`
 
+##### `banner`
+
+Data type: `Optional[String]`
+
+Content of /etc/issue
+
+Default value: `undef`
+
 ### secure_linux_cis::redhat7::cis_1_7_1_6
 
 1.7.1.6 Ensure permissions on /etc/issue.net are configured (Not Scored)
@@ -2634,6 +2650,14 @@ Data type: `Boolean`
 Should this rule be enforced
 
 Default value: `true`
+
+##### `banner`
+
+Data type: `Optional[String]`
+
+Content of /etc/issue.net
+
+Default value: `undef`
 
 ### secure_linux_cis::redhat7::cis_1_7_2
 
