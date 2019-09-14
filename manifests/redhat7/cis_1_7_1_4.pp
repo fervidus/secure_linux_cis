@@ -11,17 +11,18 @@
 # @example
 #   include secure_linux_cis::redhat7::cis_1_7_1_4
 class secure_linux_cis::redhat7::cis_1_7_1_4 (
-  Boolean $enforced = true,
+  Boolean           $enforced = true,
+  Optional[String]  $banner   = undef,
 ) {
 
   if $enforced {
 
     file { '/etc/motd':
-      ensure => present,
-      owner  => 'root',
-      group  => 'root',
-      mode   => '0644',
+      ensure  => present,
+      owner   => 'root',
+      group   => 'root',
+      mode    => '0644',
+      content => $banner,
     }
-
   }
 }
