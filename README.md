@@ -303,6 +303,13 @@ Optional content of /etc/issue, /etc/issue.net and /etc/motd
 
 Used in cis_1_7_1_4, cis_1_7_1_5, cis_1_7_1_6
 
+#### `auto_restart`
+
+Default value: false
+
+Restart when defined classes make changes that require a reboot to take effect
+
+
 ### Useful Organization Information (Highly recommended to read before using module)
 
 #### 1.8

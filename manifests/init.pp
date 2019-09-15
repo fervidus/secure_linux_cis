@@ -29,6 +29,8 @@
 # @param pass_warn_days Password warning days
 # @param pass_inactive_days Password inactive days
 # @param repolist List of acceptable software repos
+# @param banner Optional string to be content of /etc/issue, /etc/issue.net and /etc/motd
+# @param auto_restart If an automatic restart should occur when defined classes require a reboot to take effect
 #
 # @example
 #   include secure_linux_cis
@@ -66,6 +68,7 @@ class secure_linux_cis (
   Integer                               $pass_inactive_days      = 30,
   Array                                 $repolist                = ['updates/7/x86_64','rhel-7-server-rpms/7Server/x86_64'],
   Optional[String]                      $banner                  = undef,
+  Boolean                               $auto_restart            = false,
 ) {
 
 # Validate parameters
@@ -109,6 +112,7 @@ class secure_linux_cis (
         pass_warn_days          => $pass_warn_days,
         pass_inactive_days      => $pass_inactive_days,
         banner                  => $banner,
+        auto_restart            => $auto_restart,
       }
     }
 
@@ -143,6 +147,7 @@ class secure_linux_cis (
         pass_warn_days          => $pass_warn_days,
         pass_inactive_days      => $pass_inactive_days,
         banner                  => $banner,
+        auto_restart            => $auto_restart,
       }
     }
     default: {

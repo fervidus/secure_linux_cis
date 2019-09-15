@@ -36,6 +36,8 @@
 # @param pass_warn_days Password warning days
 # @param pass_inactive_days Password inactive days
 # @param repolist List of acceptable software repos
+# @param banner Optional string to be content of /etc/issue, /etc/issue.net and /etc/motd
+# @param auto_restart If an automatic restart should occur when defined classes require a reboot to take effect
 #
 # @example
 #   include secure_linux_cis::redhat7
@@ -72,6 +74,7 @@ class secure_linux_cis::redhat7 (
   Integer                               $pass_inactive_days      = 30,
   Array                                 $repolist                = ['rhel-7-server-rpms/7Server/x86_64'],
   Optional[String]                      $banner                  = undef,
+  Boolean                               $auto_restart            = false,
 ) {
 
   include ::secure_linux_cis::redhat7::cis_1_1_1_1
@@ -467,15 +470,38 @@ class secure_linux_cis::redhat7 (
     command     => 'pkill -HUP rsyslogd',
     refreshonly => true,
   }
+
   # Reload sshd config (only if running)
   exec { 'reload sshd':
     command     => 'systemctl reload sshd',
     onlyif      => 'systemctl status sshd | grep running',
     refreshonly => true,
   }
-  # Reboot when notified
-  reboot { 'after_run':
-    apply   => 'finished',
-    timeout => 60,
+
+  # define classes that change resources requiring a reboot to take effect, as using pkill is undesirable.
+  if $auto_restart {
+    $restart_classes = ['class[secure_linux_cis::redhat7::cis_1_6_1_1]',
+      'class[secure_linux_cis::redhat7::cis_3_3_3]',
+      'class[secure_linux_cis::redhat7::cis_4_1_3]',
+      'class[secure_linux_cis::redhat7::cis_4_1_4]',
+      'class[secure_linux_cis::redhat7::cis_4_1_5]',
+      'class[secure_linux_cis::redhat7::cis_4_1_6]',
+      'class[secure_linux_cis::redhat7::cis_4_1_7]',
+      'class[secure_linux_cis::redhat7::cis_4_1_8]',
+      'class[secure_linux_cis::redhat7::cis_4_1_9]',
+      'class[secure_linux_cis::redhat7::cis_4_1_10]',
+      'class[secure_linux_cis::redhat7::cis_4_1_11]',
+      'class[secure_linux_cis::redhat7::cis_4_1_13]',
+      'class[secure_linux_cis::redhat7::cis_4_1_14]',
+      'class[secure_linux_cis::redhat7::cis_4_1_15]',
+      'class[secure_linux_cis::redhat7::cis_4_1_16]',
+      'class[secure_linux_cis::redhat7::cis_4_1_17]',
+      'class[secure_linux_cis::redhat7::cis_4_1_18]',]
+
+    reboot { 'after_run':
+      apply     => 'finished',
+      timeout   => 60,
+      subscribe => $restart_classes,
+    }
   }
 }

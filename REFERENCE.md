@@ -315,7 +315,7 @@ Data type: `Boolean`
 
 Should ipv6 be enabled
 
-Default value: `true`
+Default value: `false`
 
 ##### `approved_mac_algorithms`
 
@@ -563,7 +563,7 @@ Data type: `Boolean`
 
 Should ipv6 be enabled
 
-Default value: `true`
+Default value: `false`
 
 ##### `approved_mac_algorithms`
 
@@ -726,6 +726,22 @@ List of acceptable software repos
 
 Default value: ['updates/7/x86_64']
 
+##### `banner`
+
+Data type: `Optional[String]`
+
+Content of /etc/motd
+
+Default value: `undef`
+
+##### `auto_restart`
+
+Data type: `Boolean`
+
+Restart when defined classes make changes that require a reboot to take effect
+
+Default value: `false`
+
 ### secure_linux_cis::centos7::cis_6_1_10
 
 6.1.10 Ensure no world writable files exist (Scored)
@@ -837,7 +853,7 @@ Data type: `Boolean`
 
 Should ipv6 be enabled
 
-Default value: `true`
+Default value: `false`
 
 ##### `approved_mac_algorithms`
 
@@ -1007,6 +1023,22 @@ Data type: `Array`
 List of acceptable software repos
 
 Default value: ['rhel-7-server-rpms/7Server/x86_64']
+
+##### `banner`
+
+Data type: `Optional[String]`
+
+Content of /etc/motd
+
+Default value: `undef`
+
+##### `auto_restart`
+
+Data type: `Boolean`
+
+Restart when defined classes make changes that require a reboot to take effect
+
+Default value: `false`
 
 ### secure_linux_cis::redhat7::cis_1_1_10
 
@@ -4247,7 +4279,7 @@ Data type: `Boolean`
 
 Should ipv6 be enabled
 
-Default value: `true`
+Default value: `false`
 
 ### secure_linux_cis::redhat7::cis_3_3_2
 
@@ -4288,7 +4320,7 @@ Data type: `Boolean`
 
 Should ipv6 be enabled
 
-Default value: `true`
+Default value: `false`
 
 ### secure_linux_cis::redhat7::cis_3_3_3
 
@@ -4327,7 +4359,7 @@ Data type: `Boolean`
 
 Should ipv6 be enabled
 
-Default value: `true`
+Default value: `false`
 
 ### secure_linux_cis::redhat7::cis_3_4_1
 
