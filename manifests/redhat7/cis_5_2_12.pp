@@ -24,9 +24,9 @@
 # @example
 #   include secure_linux_cis::redhat7::cis_5_2_12
 class secure_linux_cis::redhat7::cis_5_2_12 (
-  Boolean $enforced = true,
-  Integer $client_alive_interval = 300,
-  Enum['0','1','2','3'] $client_alive_count_max = '0',
+  Boolean      $enforced               = true,
+  Integer      $client_alive_interval  = 300,
+  Integer[0,3] $client_alive_count_max = 3,
 ) {
 
   if $enforced {
@@ -41,6 +41,7 @@ class secure_linux_cis::redhat7::cis_5_2_12 (
       path   => '/etc/ssh/sshd_config',
       line   => "ClientAliveInterval ${client_alive_interval}",
       match  => '^#?ClientAliveInterval',
+      notify => Exec['reload sshd'],
     }
 
     file_line { 'ssh alive count max':
@@ -48,6 +49,7 @@ class secure_linux_cis::redhat7::cis_5_2_12 (
       path   => '/etc/ssh/sshd_config',
       line   => "ClientAliveCountMax ${client_alive_count_max}",
       match  => '^#?ClientAliveCountMax',
+      notify => Exec['reload sshd'],
     }
   }
 }

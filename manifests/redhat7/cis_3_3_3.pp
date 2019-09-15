@@ -16,17 +16,21 @@
 #   include secure_linux_cis::redhat7::cis_3_3_3
 class secure_linux_cis::redhat7::cis_3_3_3 (
   Boolean $enforced = true,
-  Boolean $ipv6_enabled = true,
+  Boolean $ipv6_enabled = false,
 ) {
 
   if $enforced and !$ipv6_enabled {
 
-    sysctl { 'net.ipv6.conf.all.disable_ipv6':
-      value => 1,
+    file_line { 'net.ipv6.conf.all.disable_ipv6':
+      path  => '/etc/sysctl.conf',
+      line  => 'net.ipv6.conf.all.disable_ipv6 = 1',
+      match => '^net.ipv6.conf.all.disable_ipv6.*',
     }
 
-    sysctl { 'net.ipv6.conf.default.disable_ipv6':
-      value => 1,
+    file_line { 'net.ipv6.conf.default.disable_ipv6':
+      path  => '/etc/sysctl.conf',
+      line  => 'net.ipv6.conf.default.disable_ipv6 = 1',
+      match => '^net.ipv6.conf.default.disable_ipv6.*',
     }
 
     kernel_parameter { 'ipv6.disable=1':

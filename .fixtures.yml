@@ -28,3 +28,4 @@ fixtures:
     cron: "puppet/cron"
     mailalias_core: "puppetlabs/mailalias_core"
     subscription_manager: "waveclaw/subscription_manager"
+    reboot: "puppetlabs/reboot"

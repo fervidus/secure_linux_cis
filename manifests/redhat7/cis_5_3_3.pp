@@ -35,17 +35,15 @@ class secure_linux_cis::redhat7::cis_5_3_3 (
 
       $services.each | $service | {
 
-        file_line { "password recycle ${service}":
-          ensure => 'present',
-          path   => "/etc/pam.d/${service}",
-          line   => "password sufficient pam_unix.so remember=${past_passwords}",
-          match  => '^#?password sufficient pam_unix\.so|^#?password required pam_pwhistory\.so',
+        pam { "pam ${service} sufficient":
+          ensure    => present,
+          service   => $service,
+          type      => 'password',
+          control   => 'sufficient',
+          module    => 'pam_unix.so',
+          arguments => ["remember=${past_passwords}", 'sha512', 'nullok', 'try_first_pass', 'use_authtok'],
         }
-
       }
-
     }
-
   }
-
 }

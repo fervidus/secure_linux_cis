@@ -24,6 +24,7 @@ class secure_linux_cis::redhat7::cis_5_2_8 (
       path   => '/etc/ssh/sshd_config',
       line   => 'PermitRootLogin no',
       match  => '^#?PermitRootLogin',
+      notify => Exec['reload sshd'],
     }
   }
 }

@@ -315,7 +315,7 @@ Data type: `Boolean`
 
 Should ipv6 be enabled
 
-Default value: `true`
+Default value: `false`
 
 ##### `approved_mac_algorithms`
 
@@ -563,7 +563,7 @@ Data type: `Boolean`
 
 Should ipv6 be enabled
 
-Default value: `true`
+Default value: `false`
 
 ##### `approved_mac_algorithms`
 
@@ -726,6 +726,22 @@ List of acceptable software repos
 
 Default value: ['updates/7/x86_64']
 
+##### `banner`
+
+Data type: `Optional[String]`
+
+Content of /etc/motd
+
+Default value: `undef`
+
+##### `auto_restart`
+
+Data type: `Boolean`
+
+Restart when defined classes make changes that require a reboot to take effect
+
+Default value: `false`
+
 ### secure_linux_cis::centos7::cis_6_1_10
 
 6.1.10 Ensure no world writable files exist (Scored)
@@ -837,7 +853,7 @@ Data type: `Boolean`
 
 Should ipv6 be enabled
 
-Default value: `true`
+Default value: `false`
 
 ##### `approved_mac_algorithms`
 
@@ -1007,6 +1023,22 @@ Data type: `Array`
 List of acceptable software repos
 
 Default value: ['rhel-7-server-rpms/7Server/x86_64']
+
+##### `banner`
+
+Data type: `Optional[String]`
+
+Content of /etc/motd
+
+Default value: `undef`
+
+##### `auto_restart`
+
+Data type: `Boolean`
+
+Restart when defined classes make changes that require a reboot to take effect
+
+Default value: `false`
 
 ### secure_linux_cis::redhat7::cis_1_1_10
 
@@ -2579,6 +2611,14 @@ Should this rule be enforced
 
 Default value: `true`
 
+##### `banner`
+
+Data type: `Optional[String]`
+
+Content of /etc/motd
+
+Default value: `undef`
+
 ### secure_linux_cis::redhat7::cis_1_7_1_5
 
 1.7.1.5 Ensure permissions on /etc/issue are configured (Scored)
@@ -2607,6 +2647,14 @@ Should this rule be enforced
 
 Default value: `true`
 
+##### `banner`
+
+Data type: `Optional[String]`
+
+Content of /etc/issue
+
+Default value: `undef`
+
 ### secure_linux_cis::redhat7::cis_1_7_1_6
 
 1.7.1.6 Ensure permissions on /etc/issue.net are configured (Not Scored)
@@ -2634,6 +2682,14 @@ Data type: `Boolean`
 Should this rule be enforced
 
 Default value: `true`
+
+##### `banner`
+
+Data type: `Optional[String]`
+
+Content of /etc/issue.net
+
+Default value: `undef`
 
 ### secure_linux_cis::redhat7::cis_1_7_2
 
@@ -4223,7 +4279,7 @@ Data type: `Boolean`
 
 Should ipv6 be enabled
 
-Default value: `true`
+Default value: `false`
 
 ### secure_linux_cis::redhat7::cis_3_3_2
 
@@ -4264,7 +4320,7 @@ Data type: `Boolean`
 
 Should ipv6 be enabled
 
-Default value: `true`
+Default value: `false`
 
 ### secure_linux_cis::redhat7::cis_3_3_3
 
@@ -4303,7 +4359,7 @@ Data type: `Boolean`
 
 Should ipv6 be enabled
 
-Default value: `true`
+Default value: `false`
 
 ### secure_linux_cis::redhat7::cis_3_4_1
 

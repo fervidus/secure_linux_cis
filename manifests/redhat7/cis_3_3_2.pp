@@ -18,18 +18,21 @@
 #   include secure_linux_cis::redhat7::cis_3_3_3
 class secure_linux_cis::redhat7::cis_3_3_2 (
   Boolean $enforced = true,
-  Boolean $ipv6_enabled = true,
+  Boolean $ipv6_enabled = false,
 ) {
 
   if $enforced {
 
-    sysctl { 'net.ipv6.conf.all.accept_redirects':
-      value => 0,
+    file_line { 'net.ipv6.conf.all.accept_redirects':
+      path  => '/etc/sysctl.conf',
+      line  => 'net.ipv6.conf.all.accept_redirects = 0',
+      match => '^net.ipv6.conf.all.accept_redirects.*',
     }
 
-    sysctl { 'net.ipv6.conf.default.accept_redirects':
-      value => 0,
+    file_line { 'net.ipv6.conf.default.accept_redirects':
+      path  => '/etc/sysctl.conf',
+      line  => 'net.ipv6.conf.default.accept_redirects = 0',
+      match => 'net.ipv6.conf.default.accept_redirects.*',
     }
-
   }
 }

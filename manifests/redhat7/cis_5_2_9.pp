@@ -23,6 +23,7 @@ class secure_linux_cis::redhat7::cis_5_2_9 (
       path   => '/etc/ssh/sshd_config',
       line   => 'PermitEmptyPasswords no',
       match  => '^#?PermitEmptyPasswords',
+      notify => Exec['reload sshd'],
     }
   }
 }

@@ -16,8 +16,8 @@
 # @example
 #   include secure_linux_cis::redhat7::cis_5_2_5
 class secure_linux_cis::redhat7::cis_5_2_5 (
-  Boolean $enforced = true,
-  Enum['1', '2', '3', '4'] $max_auth_tries = '4',
+  Boolean      $enforced       = true,
+  Integer[1,4] $max_auth_tries = 4,
 ) {
 
   if $enforced {
@@ -27,6 +27,7 @@ class secure_linux_cis::redhat7::cis_5_2_5 (
       path   => '/etc/ssh/sshd_config',
       line   => "MaxAuthTries ${max_auth_tries}",
       match  => '^#?MaxAuthTries',
+      notify => Exec['reload sshd'],
     }
   }
 }

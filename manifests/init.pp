@@ -27,41 +27,48 @@
 # @param pass_max_days Password maximum days
 # @param pass_min_days Password minimum days
 # @param pass_warn_days Password warning days
+# @param pass_inactive_days Password inactive days
 # @param repolist List of acceptable software repos
+# @param banner Optional string to be content of /etc/issue, /etc/issue.net and /etc/motd
+# @param auto_restart If an automatic restart should occur when defined classes require a reboot to take effect
 #
 # @example
 #   include secure_linux_cis
 class secure_linux_cis (
-  Array[String] $time_servers = [],
-  Enum['rsyslog', 'syslog-ng', 'none'] $logging = 'rsyslog',
-  String $logging_host = '',  #lint:ignore:empty_string_assignment
-  Boolean $is_logging_host = false,
-  Integer $max_log_file = 32,
-  Enum['1', '2', '3', '4'] $max_auth_tries = '4',
-  Enum['ntp', 'chrony', 'none'] $time_sync = 'none',
-  Boolean $ipv6_enabled = false,
-  Array $approved_mac_algorithms = ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com',
-                                    'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com'],  #lint:ignore:strict_indent
+  Array[String]                         $time_servers            = [],
+  Enum['rsyslog', 'syslog-ng', 'none']  $logging                 = 'rsyslog',
+  String                                $logging_host            = '',  #lint:ignore:empty_string_assignment
+  Boolean                               $is_logging_host         = false,
+  Integer                               $max_log_file            = 32,
+  Integer[1,4]                          $max_auth_tries          = 4,
+  Enum['ntp', 'chrony', 'none']         $time_sync               = 'ntp',
+  Boolean                               $ipv6_enabled            = false,
+  Array                                 $approved_mac_algorithms =
+    ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com',
+  'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com'],
   # $client_alive_interval must be between 1 and 300
-  Integer $client_alive_interval = 300,
-  Enum['0','1','2','3'] $client_alive_count_max = '0',
-  Integer $login_grace_time = 60,
-  Array[String] $allow_users = [],
-  Array[String] $allow_groups = [],
-  Array[String] $deny_users = [],
-  Array[String] $deny_groups =[],
-  Integer $minlen = 14,
-  Integer $dcredit = -1,
-  Integer $ucredit = -1,
-  Integer $ocredit = -1,
-  Integer $lcredit = -1,
-  Integer $attempts = 5,
-  Integer $lockout_time = 900,
-  Integer $past_passwords = 5,
-  Integer $pass_max_days = 90,
-  Integer $pass_min_days = 7,
-  Integer $pass_warn_days = 7,
-  Array   $repolist = ['updates/7/x86_64','rhel-7-server-rpms/7Server/x86_64'],
+  Integer                               $client_alive_interval   = 300,
+  Integer[0,3]                          $client_alive_count_max  = 0,
+  Integer                               $login_grace_time        = 60,
+  Array[String]                         $allow_users             = [],
+  Array[String]                         $allow_groups            = [],
+  Array[String]                         $deny_users              = [],
+  Array[String]                         $deny_groups             = [],
+  Integer                               $minlen                  = 14,
+  Integer                               $dcredit                 = -1,
+  Integer                               $ucredit                 = -1,
+  Integer                               $ocredit                 = -1,
+  Integer                               $lcredit                 = -1,
+  Integer                               $attempts                = 5,
+  Integer                               $lockout_time            = 900,
+  Integer                               $past_passwords          = 5,
+  Integer                               $pass_max_days           = 90,
+  Integer                               $pass_min_days           = 7,
+  Integer                               $pass_warn_days          = 7,
+  Integer                               $pass_inactive_days      = 30,
+  Array                                 $repolist                = ['updates/7/x86_64','rhel-7-server-rpms/7Server/x86_64'],
+  Optional[String]                      $banner                  = undef,
+  Boolean                               $auto_restart            = false,
 ) {
 
 # Validate parameters
@@ -103,6 +110,9 @@ class secure_linux_cis (
         pass_max_days           => $pass_max_days,
         pass_min_days           => $pass_min_days,
         pass_warn_days          => $pass_warn_days,
+        pass_inactive_days      => $pass_inactive_days,
+        banner                  => $banner,
+        auto_restart            => $auto_restart,
       }
     }
 
@@ -135,12 +145,13 @@ class secure_linux_cis (
         pass_max_days           => $pass_max_days,
         pass_min_days           => $pass_min_days,
         pass_warn_days          => $pass_warn_days,
+        pass_inactive_days      => $pass_inactive_days,
+        banner                  => $banner,
+        auto_restart            => $auto_restart,
       }
     }
     default: {
       fail("Operating System: ${os} is not supported at this time.")
     }
-
   }
-
 }

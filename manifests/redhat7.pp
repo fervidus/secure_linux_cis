@@ -36,40 +36,45 @@
 # @param pass_warn_days Password warning days
 # @param pass_inactive_days Password inactive days
 # @param repolist List of acceptable software repos
+# @param banner Optional string to be content of /etc/issue, /etc/issue.net and /etc/motd
+# @param auto_restart If an automatic restart should occur when defined classes require a reboot to take effect
 #
 # @example
 #   include secure_linux_cis::redhat7
 class secure_linux_cis::redhat7 (
-  Array[String] $time_servers                   = [],
-  Enum['rsyslog', 'syslog-ng', 'none'] $logging = 'rsyslog',
-  String $logging_host                          = '',  #lint:ignore:empty_string_assignment
-  Boolean $is_logging_host                      = false,
-  Integer $max_log_file                         = 32,
-  Enum['1', '2', '3', '4'] $max_auth_tries      = '4',
-  Enum['ntp', 'chrony', 'none'] $time_sync      = 'ntp',
-  Boolean $ipv6_enabled                         = false,
-  Array $approved_mac_algorithms                = ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com', #lint:ignore:140chars
-                                                  'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com'],  #lint:ignore:strict_indent
-  Integer $client_alive_interval                = 300,
-  Enum['0','1','2','3'] $client_alive_count_max = '0',
-  Integer $login_grace_time                     = 60,
-  Array[String] $allow_users                    = [],
-  Array[String] $allow_groups                   = [],
-  Array[String] $deny_users                     = [],
-  Array[String] $deny_groups                    =[],
-  Integer $minlen                               = 14,
-  Integer $dcredit                              = -1,
-  Integer $ucredit                              = -1,
-  Integer $ocredit                              = -1,
-  Integer $lcredit                              = -1,
-  Integer $attempts                             = 5,
-  Integer $lockout_time                         = 900,
-  Integer $past_passwords                       = 5,
-  Integer $pass_max_days                        = 90,
-  Integer $pass_min_days                        = 7,
-  Integer $pass_warn_days                       = 7,
-  Integer $pass_inactive_days                   = 30,
-  Array   $repolist                             = ['rhel-7-server-rpms/7Server/x86_64']
+  Array[String]                         $time_servers            = [],
+  Enum['rsyslog', 'syslog-ng', 'none']  $logging                 = 'rsyslog',
+  String                                $logging_host            = '',  #lint:ignore:empty_string_assignment
+  Boolean                               $is_logging_host         = false,
+  Integer                               $max_log_file            = 32,
+  Integer[1,4]                          $max_auth_tries          = 4,
+  Enum['ntp', 'chrony', 'none']         $time_sync               = 'ntp',
+  Boolean                               $ipv6_enabled            = false,
+  Array                                 $approved_mac_algorithms =
+    ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com',
+  'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com'],
+  Integer                               $client_alive_interval   = 300,
+  Integer[0,3]                          $client_alive_count_max  = 0,
+  Integer                               $login_grace_time        = 60,
+  Array[String]                         $allow_users             = [],
+  Array[String]                         $allow_groups            = [],
+  Array[String]                         $deny_users              = [],
+  Array[String]                         $deny_groups             = [],
+  Integer                               $minlen                  = 14,
+  Integer                               $dcredit                 = -1,
+  Integer                               $ucredit                 = -1,
+  Integer                               $ocredit                 = -1,
+  Integer                               $lcredit                 = -1,
+  Integer                               $attempts                = 5,
+  Integer                               $lockout_time            = 900,
+  Integer                               $past_passwords          = 5,
+  Integer                               $pass_max_days           = 90,
+  Integer                               $pass_min_days           = 7,
+  Integer                               $pass_warn_days          = 7,
+  Integer                               $pass_inactive_days      = 30,
+  Array                                 $repolist                = ['rhel-7-server-rpms/7Server/x86_64'],
+  Optional[String]                      $banner                  = undef,
+  Boolean                               $auto_restart            = false,
 ) {
 
   include ::secure_linux_cis::redhat7::cis_1_1_1_1
@@ -137,13 +142,26 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_1_7_1_1
   # include ::secure_linux_cis::redhat7::cis_1_7_1_2
   # include ::secure_linux_cis::redhat7::cis_1_7_1_3
-  # include ::secure_linux_cis::redhat7::cis_1_7_1_4
-  include ::secure_linux_cis::redhat7::cis_1_7_1_5
-  # include ::secure_linux_cis::redhat7::cis_1_7_1_6
+
+  # 1.7.1.4
+  class { '::secure_linux_cis::redhat7::cis_1_7_1_4':
+    banner => $banner,
+  }
+
+  # 1.7.1.5
+  class { '::secure_linux_cis::redhat7::cis_1_7_1_5':
+    banner => $banner,
+  }
+
+  # 1.7.1.6
+  class { '::secure_linux_cis::redhat7::cis_1_7_1_6':
+    banner => $banner,
+  }
+  
   include ::secure_linux_cis::redhat7::cis_1_7_2
 
   include ::secure_linux_cis::redhat7::cis_1_8
-
+  
   include ::secure_linux_cis::redhat7::cis_2_1_1
   include ::secure_linux_cis::redhat7::cis_2_1_2
   include ::secure_linux_cis::redhat7::cis_2_1_3
@@ -443,4 +461,47 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_6_2_18
   include ::secure_linux_cis::redhat7::cis_6_2_19
 
+  ## Shared resources used in more than one class
+  # Set default path for execs
+  Exec { path => '/bin/:/sbin/:/usr/bin/:/usr/sbin/' }
+
+  # Reload rsyslog
+  exec { 'reload rsyslog':
+    command     => 'pkill -HUP rsyslogd',
+    refreshonly => true,
+  }
+
+  # Reload sshd config (only if running)
+  exec { 'reload sshd':
+    command     => 'systemctl reload sshd',
+    onlyif      => 'systemctl status sshd | grep running',
+    refreshonly => true,
+  }
+
+  # define classes that change resources requiring a reboot to take effect, as using pkill is undesirable.
+  if $auto_restart {
+    $restart_classes = ['class[secure_linux_cis::redhat7::cis_1_6_1_1]',
+      'class[secure_linux_cis::redhat7::cis_3_3_3]',
+      'class[secure_linux_cis::redhat7::cis_4_1_3]',
+      'class[secure_linux_cis::redhat7::cis_4_1_4]',
+      'class[secure_linux_cis::redhat7::cis_4_1_5]',
+      'class[secure_linux_cis::redhat7::cis_4_1_6]',
+      'class[secure_linux_cis::redhat7::cis_4_1_7]',
+      'class[secure_linux_cis::redhat7::cis_4_1_8]',
+      'class[secure_linux_cis::redhat7::cis_4_1_9]',
+      'class[secure_linux_cis::redhat7::cis_4_1_10]',
+      'class[secure_linux_cis::redhat7::cis_4_1_11]',
+      'class[secure_linux_cis::redhat7::cis_4_1_13]',
+      'class[secure_linux_cis::redhat7::cis_4_1_14]',
+      'class[secure_linux_cis::redhat7::cis_4_1_15]',
+      'class[secure_linux_cis::redhat7::cis_4_1_16]',
+      'class[secure_linux_cis::redhat7::cis_4_1_17]',
+      'class[secure_linux_cis::redhat7::cis_4_1_18]',]
+
+    reboot { 'after_run':
+      apply     => 'finished',
+      timeout   => 60,
+      subscribe => $restart_classes,
+    }
+  }
 }

@@ -25,6 +25,7 @@ class secure_linux_cis::redhat7::cis_5_2_7 (
       path   => '/etc/ssh/sshd_config',
       line   => 'HostbasedAuthentication no',
       match  => '^HostbasedAuthentication',
+      notify => Exec['reload sshd'],
     }
   }
 }
