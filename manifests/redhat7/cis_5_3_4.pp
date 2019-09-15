@@ -1,10 +1,14 @@
 # A description of what this class does
 #
 # Description:
-#
+# The commands below change password encryption from md5 to sha512 (a much stronger hashing algorithm).
+# All existing accounts will need to perform a password change to upgrade the stored hashes to the new algorithm.
 #
 # Rationale:
+# The SHA-512 algorithm provides much stronger hashing than MD5, thus providing additional protection
+# to the system by increasing the level of effort for an attacker to successfully determine passwords. 
 #
+# Note that these change only apply to accounts configured on the local system. 
 #
 # @summary A short summary of the purpose of this class
 #
@@ -12,25 +16,8 @@
 #
 # @example
 #   include secure_linux_cis::redhat7::cis_5_3_4
-class secure_linux_cis::redhat7::cis_5_3_4 (
-  Boolean $enforced = true,
-) {
+class secure_linux_cis::redhat7::cis_5_3_4  {
 
-  $services = [
-    'system-auth',
-    'password-auth',
-  ]
+  # This benchmark is managed in secure_linux_cis::redhat7::cis_5_3_3
 
-  if $enforced {
-
-    $services.each | $service | {
-
-      file_line { "password hashing ${service}":
-        ensure => 'present',
-        path   => "/etc/pam.d/${service}",
-        line   => 'password sufficient pam_unix.so sha512',
-        match  => '^#?password sufficient pam_unix.so sha512',
-      }
-    }
-  }
 }

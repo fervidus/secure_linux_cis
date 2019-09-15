@@ -43,9 +43,9 @@ class secure_linux_cis::redhat7::cis_5_4_4 (
     }
 
     file_line { 'login.defs':
-      path     => '/etc/login.defs',
-      line     => 'UMASK           077',
-      match    => '^\s+umask\s+\d+',
+      path  => '/etc/login.defs',
+      line  => 'UMASK           077',
+      match => '^\s+umask\s+\d+',
     }
 
     file_line { 'csh.cshrc':

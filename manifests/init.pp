@@ -45,7 +45,7 @@ class secure_linux_cis (
   Boolean                               $ipv6_enabled            = false,
   Array                                 $approved_mac_algorithms =
     ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com',
-     'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com'],  #lint:ignore:strict_indent
+  'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com'],
   # $client_alive_interval must be between 1 and 300
   Integer                               $client_alive_interval   = 300,
   Integer[0,3]                          $client_alive_count_max  = 0,

@@ -52,7 +52,7 @@ class secure_linux_cis::redhat7 (
   Boolean                               $ipv6_enabled            = false,
   Array                                 $approved_mac_algorithms =
     ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com',
-     'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com'],  #lint:ignore:strict_indent
+  'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com'],
   Integer                               $client_alive_interval   = 300,
   Integer[0,3]                          $client_alive_count_max  = 0,
   Integer                               $login_grace_time        = 60,
@@ -464,7 +464,7 @@ class secure_linux_cis::redhat7 (
   ## Shared resources used in more than one class
   # Set default path for execs
   Exec { path => '/bin/:/sbin/:/usr/bin/:/usr/sbin/' }
-  
+
   # Reload rsyslog
   exec { 'reload rsyslog':
     command     => 'pkill -HUP rsyslogd',

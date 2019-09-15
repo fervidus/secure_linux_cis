@@ -40,6 +40,11 @@ class secure_linux_cis::redhat7::cis_5_3_1 (
   Integer $lcredit = -1,
 ) {
 
+  $services = [
+    'system-auth',
+    'password-auth',
+  ]
+
   if $enforced {
 
     if $minlen == 0 and $dcredit == 0 and $ucredit == 0 and $ocredit == 0 and $lcredit == 0 {
@@ -53,20 +58,6 @@ class secure_linux_cis::redhat7::cis_5_3_1 (
 
     fail('All of the minimum characters in pwquality.conf are undefined')      }
     else {
-
-      file_line { 'pam password auth':
-        ensure => 'present',
-        path   => '/etc/pam.d/password-auth',
-        line   => 'password requisite pam_pwquality.so try_first_pass retry=3',
-        match  => 'pam_pwquality.so',
-      }
-
-      file_line { 'pam system auth':
-        ensure => 'present',
-        path   => '/etc/pam.d/system-auth',
-        line   => 'password requisite pam_pwquality.so try_first_pass retry=3',
-        match  => 'pam_pwquality.so',
-      }
 
       file_line { 'pam minlen':
         ensure => 'present',
@@ -101,6 +92,17 @@ class secure_linux_cis::redhat7::cis_5_3_1 (
         path   => '/etc/security/pwquality.conf',
         line   => "lcredit = ${lcredit}",
         match  => '^#?lcredit',
+      }
+
+      $services.each | $service | {
+        pam { "pam ${service} requisite":
+          ensure    => present,
+          service   => $service,
+          type      => 'password',
+          control   => 'requisite',
+          module    => 'pam_pwquality.so',
+          arguments => ['try_first_path', 'retry=3']
+        }
       }
     }
   }
