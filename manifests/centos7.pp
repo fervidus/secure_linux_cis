@@ -195,7 +195,7 @@ class secure_linux_cis::centos7 (
   class { '::secure_linux_cis::redhat7::cis_1_7_1_6':
     banner => $banner,
   }
-  
+
   # 1.7.2
   include ::secure_linux_cis::redhat7::cis_1_7_2
   # 1.8
