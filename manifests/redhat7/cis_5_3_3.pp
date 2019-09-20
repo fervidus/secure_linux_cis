@@ -41,7 +41,8 @@ class secure_linux_cis::redhat7::cis_5_3_3 (
           type      => 'password',
           control   => 'sufficient',
           module    => 'pam_unix.so',
-          arguments => ["remember=${past_passwords}", 'sha512', 'nullok', 'try_first_pass', 'use_authtok'],
+          arguments => ["remember=${past_passwords}", 'sha512', 'shadow', 'use_authtok'],
+          position  => 'after *[type="password" and module="pam_unix.so" and control="requisite"]',
         }
       }
     }
