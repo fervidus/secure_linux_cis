@@ -19,10 +19,10 @@ class secure_linux_cis::redhat7::cis_1_3_1 (
 
     package { 'aide':
       ensure => installed,
-      notify => Exec['aide_database'],
+      notify => Exec['create_aide_database'],
     }
 
-    exec { 'aide_database':
+    exec { 'create_aide_database':
       command   => 'aide --init',
       creates   => '/var/lib/aide/aide.db.new.gz',
       path      => '/sbin/',
