@@ -15,32 +15,30 @@
 # @example
 #   include secure_linux_cis::redhat7::cis_3_3_3
 class secure_linux_cis::redhat7::cis_3_3_3 (
-  Boolean $enforced = true,
+  Boolean $enforced     = true,
   Boolean $ipv6_enabled = false,
 ) {
 
   if $enforced and !$ipv6_enabled {
 
-    file_line { 'net.ipv6.conf.all.disable_ipv6':
-      path  => '/etc/sysctl.conf',
-      line  => 'net.ipv6.conf.all.disable_ipv6 = 1',
-      match => '^net.ipv6.conf.all.disable_ipv6.*',
+    sysctl { 'net.ipv6.conf.all.disable_ipv6':
+      value => 1,
     }
 
-    file_line { 'net.ipv6.conf.default.disable_ipv6':
-      path  => '/etc/sysctl.conf',
-      line  => 'net.ipv6.conf.default.disable_ipv6 = 1',
-      match => '^net.ipv6.conf.default.disable_ipv6.*',
+    sysctl { 'net.ipv6.conf.default.disable_ipv6':
+      value => 1,
     }
 
-    kernel_parameter { 'ipv6.disable=1':
-      ensure => present,
+    file_line { 'disable_ipv6_network':
+      path  => '/etc/sysconfig/network',
+      line  => 'NETWORKING_IPV6=no'
+      match => 'NETWORKING_IPV6=',
     }
 
-    Service <| tag == 'ip6tables' |>
-    {
-      ensure => stopped,
-      enable => false,
+    file_line { 'disable_ipv6_network_init':
+      path  => '/etc/sysconfig/network',
+      line  => 'IPV6INIT=no'
+      match => 'IPV6INIT=',
     }
   }
 }

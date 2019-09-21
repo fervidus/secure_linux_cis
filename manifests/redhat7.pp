@@ -481,7 +481,6 @@ class secure_linux_cis::redhat7 (
   # define classes that change resources requiring a reboot to take effect, as using pkill is undesirable.
   if $auto_restart {
     $restart_classes = ['class[secure_linux_cis::redhat7::cis_1_6_1_1]',
-      'class[secure_linux_cis::redhat7::cis_3_3_3]',
       'class[secure_linux_cis::redhat7::cis_4_1_3]',
       'class[secure_linux_cis::redhat7::cis_4_1_4]',
       'class[secure_linux_cis::redhat7::cis_4_1_5]',

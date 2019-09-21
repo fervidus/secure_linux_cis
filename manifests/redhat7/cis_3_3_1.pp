@@ -16,22 +16,18 @@
 # @example
 #   include secure_linux_cis::redhat7::cis_3_3_1
 class secure_linux_cis::redhat7::cis_3_3_1 (
-  Boolean $enforced = true,
+  Boolean $enforced     = true,
   Boolean $ipv6_enabled = false,
 ) {
 
   if $enforced {
 
-    file_line { 'net.ipv6.conf.all.accept_ra':
-      path  => '/etc/sysctl.conf',
-      line  => 'net.ipv6.conf.all.accept_ra = 0',
-      match => '^net.ipv6.conf.all.accept_ra.*'
+    sysctl { 'net.ipv6.conf.all.accept_ra':
+      value => 0,
     }
 
-    file_line { 'net.ipv6.conf.default.accept_ra':
-      path  => '/etc/sysctl.conf',
-      line  => 'net.ipv6.conf.default.accept_ra = 0',
-      match => '^net.ipv6.conf.default.accept_ra.*'
+    sysctl { 'net.ipv6.conf.default.accept_ra':
+      value => 0,
     }
   }
 }
