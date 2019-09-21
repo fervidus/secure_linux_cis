@@ -24,7 +24,7 @@ class secure_linux_cis::redhat7::cis_6_2_7 (
       content => file('secure_linux_cis/home_directory.sh'),
     }
 
-    if !($facts['home_directory'].empty {
+    if !($facts['home_directory'].empty) {
       notify { 'hdir':
         message  => 'Not in compliance with CIS 6.2.7 (Scored). You have a user(s) that does not have a home directory. Check the home_directory fact for details',#lint:ignore:140chars
         loglevel => 'warning',
