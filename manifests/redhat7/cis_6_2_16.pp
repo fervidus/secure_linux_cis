@@ -18,11 +18,11 @@ class secure_linux_cis::redhat7::cis_6_2_16 (
   if $enforced {
 
     file { '/tmp/cis_scripts/dup_uid.sh':
+      ensure  => file,
       owner   => 'root',
       group   => 'root',
-      mode    => '0711',
+      mode    => '0700',
       content => file('secure_linux_cis/dup_uid.sh'),
-      # source => 'puppet:///modules/secure_linux_cis/dup_uid.sh',
     }
 
     if !($facts['duplicate_uid'].empty) {

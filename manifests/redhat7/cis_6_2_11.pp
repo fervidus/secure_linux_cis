@@ -17,11 +17,11 @@ class secure_linux_cis::redhat7::cis_6_2_11 (
   if $enforced {
 
     file { '/tmp/cis_scripts/forward.sh':
+      ensure  => file,
       owner   => 'root',
       group   => 'root',
-      mode    => '0711',
+      mode    => '0700',
       content => file('secure_linux_cis/forward.sh'),
-      # source => 'puppet:///modules/secure_linux_cis/forward.sh',
     }
 
     if !($facts['forward_files'].empty) {

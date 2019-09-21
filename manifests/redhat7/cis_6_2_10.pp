@@ -17,11 +17,11 @@ class secure_linux_cis::redhat7::cis_6_2_10 (
   if $enforced {
 
     file { '/tmp/cis_scripts/dot_file_wr.sh':
+      ensure  => file,
       owner   => 'root',
       group   => 'root',
-      mode    => '0711',
+      mode    => '0700',
       content => file('secure_linux_cis/dot_file_wr.sh'),
-      # source => 'puppet:///modules/secure_linux_cis/dot_file_wr.sh',
     }
 
     if $facts['dot_file_writable'] != '' {

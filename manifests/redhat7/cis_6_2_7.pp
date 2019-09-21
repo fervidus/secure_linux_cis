@@ -16,17 +16,15 @@ class secure_linux_cis::redhat7::cis_6_2_7 (
 
   if $enforced {
 
-    file { '/tmp/cis_scripts/home_directory':
+    file { '/tmp/cis_scripts/home_directory.sh':
       ensure  => file,
       owner   => 'root',
       group   => 'root',
-      mode    => '0711',
+      mode    => '0700',
       content => file('secure_linux_cis/home_directory.sh'),
-      # force  => 'yes',
-      # source => 'puppet:///modules/secure_linux_cis/home_directory.sh',
     }
 
-    if $facts['home_directory'] {
+    if !($facts['home_directory'].empty {
       notify { 'hdir':
         message  => 'Not in compliance with CIS 6.2.7 (Scored). You have a user(s) that does not have a home directory. Check the home_directory fact for details',#lint:ignore:140chars
         loglevel => 'warning',
