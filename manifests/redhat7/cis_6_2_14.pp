@@ -16,7 +16,7 @@ class secure_linux_cis::redhat7::cis_6_2_14 (
 
   if $enforced {
 
-    file { '/tmp/cis_scripts/rhost.sh':
+    file { '/usr/share/applications/cis_scripts/rhost.sh':
       ensure  => file,
       owner   => 'root',
       group   => 'root',

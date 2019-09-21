@@ -27,7 +27,6 @@ class secure_linux_cis::redhat7::cis_4_2_1_3 (
       path   => '/etc/rsyslog.conf',
       line   => '$FileCreateMode 0640',
       match  => '^\$FileCreateMode.*',
-      notify => Exec['reload rsyslog'],
     }
 
     file { '/etc/rsyslog.d/':

@@ -101,7 +101,7 @@ class secure_linux_cis::redhat7::cis_5_3_1 (
           type      => 'password',
           control   => 'requisite',
           module    => 'pam_pwquality.so',
-          arguments => ['try_first_path', 'retry=3']
+          arguments => ['try_first_pass', 'retry=3']
         }
       }
     }

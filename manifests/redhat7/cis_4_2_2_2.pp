@@ -48,13 +48,7 @@ class secure_linux_cis::redhat7::cis_4_2_2_2 (
         ensure => present,
         path   => '/etc/syslog-ng/syslog-ng.conf',
         line   => $config,
-        notify => Exec['reload syslog-ng 4_2_2_2'],
       }
-    }
-
-    exec { 'reload syslog-ng 4_2_2_2':
-      command     => '/bin/pkill -HUP syslog-ng',
-      refreshonly => true,
     }
   }
 }

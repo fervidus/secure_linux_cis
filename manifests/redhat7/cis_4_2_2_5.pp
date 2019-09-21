@@ -33,7 +33,6 @@ class secure_linux_cis::redhat7::cis_4_2_2_5 (
         path   => '/etc/syslog-ng/syslog-ng.conf',
         line   => 'source net{ tcp(); };',
         match  => '^source net',
-        notify => Exec['reload syslog-ng 4_2_2_5'],
       }
 
       file_line { 'syslog-ng.conf remote 2':
@@ -41,14 +40,12 @@ class secure_linux_cis::redhat7::cis_4_2_2_5 (
         path   => '/etc/syslog-ng/syslog-ng.conf',
         line   => 'destination remote { file("/var/log/remote/${FULLHOST}-log"); };', # lint:ignore:single_quote_string_with_variables
         match  => '^destination remote',
-        notify => Exec['reload syslog-ng 4_2_2_5'],
       }
 
       file_line { 'syslog-ng.conf remote 3':
         ensure => present,
         path   => '/etc/syslog-ng/syslog-ng.conf',
         line   => 'log { source(net); destination(remote); };',
-        notify => Exec['reload syslog-ng 4_2_2_5'],
       }
     }
 
@@ -59,7 +56,6 @@ class secure_linux_cis::redhat7::cis_4_2_2_5 (
         path   => '/etc/syslog-ng/syslog-ng.conf',
         line   => '',
         match  => '^source net',
-        notify => Exec['reload syslog-ng 4_2_2_5'],
       }
 
       file_line { 'syslog-ng.conf remote 2':
@@ -67,13 +63,7 @@ class secure_linux_cis::redhat7::cis_4_2_2_5 (
         path   => '/etc/syslog-ng/syslog-ng.conf',
         line   => '',
         match  => '^destination remote',
-        notify => Exec['reload syslog-ng 4_2_2_5'],
       }
-    }
-
-    exec { 'reload syslog-ng 4_2_2_5':
-      command     => '/bin/pkill -HUP syslog-ng',
-      refreshonly => true,
     }
   }
 }

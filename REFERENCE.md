@@ -726,11 +726,19 @@ List of acceptable software repos
 
 Default value: ['updates/7/x86_64']
 
+##### `motd`
+
+Data type: `Optional[String]`
+
+Optional content of /etc/motd.  Falls back to optional value of $banner if not defined
+
+Default value: undef
+
 ##### `banner`
 
 Data type: `Optional[String]`
 
-Content of /etc/motd
+Content of /etc/issue and /etc/issue.net
 
 Default value: `undef`
 
@@ -1024,11 +1032,19 @@ List of acceptable software repos
 
 Default value: ['rhel-7-server-rpms/7Server/x86_64']
 
+##### `motd`
+
+Data type: `Optional[String]`
+
+Optional content of /etc/motd.  Falls back to optional value of $banner if not defined
+
+Default value: undef
+
 ##### `banner`
 
 Data type: `Optional[String]`
 
-Content of /etc/motd
+Content of /etc/issue and /etc/issue.net
 
 Default value: `undef`
 
@@ -2611,11 +2627,19 @@ Should this rule be enforced
 
 Default value: `true`
 
+##### `motd`
+
+Data type: `Optional[String]`
+
+Optional content of /etc/motd.  Falls back to optional value of $banner if not defined
+
+Default value: undef
+
 ##### `banner`
 
 Data type: `Optional[String]`
 
-Content of /etc/motd
+Content of /etc/issue and /etc/issue.net
 
 Default value: `undef`
 

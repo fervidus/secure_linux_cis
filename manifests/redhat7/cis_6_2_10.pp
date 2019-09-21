@@ -16,7 +16,7 @@ class secure_linux_cis::redhat7::cis_6_2_10 (
 
   if $enforced {
 
-    file { '/tmp/cis_scripts/dot_file_wr.sh':
+    file { '/usr/share/applications/cis_scripts/dot_file_wr.sh':
       ensure  => file,
       owner   => 'root',
       group   => 'root',
