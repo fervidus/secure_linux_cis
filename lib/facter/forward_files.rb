@@ -6,6 +6,6 @@
 Facter.add('forward_files') do
   confine osfamily: 'RedHat'
   setcode do
-    Facter::Core::Execution.exec('/tmp/cis_scripts/forward.sh')
+    Facter::Core::Execution.exec('/usr/share/applications/cis_scripts/forward.sh')
   end
 end

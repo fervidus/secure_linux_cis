@@ -1,15 +1,17 @@
 # Changelog
 
 ## Release 1.0.13
-* Restore sysctl resources when disabling ipv6 in cis_3_3_1,  cis_3_3_2 and cis_3_3_3, remove kernel_parameter is cis_3_3_3 as problematic, add /etc/sysconfig/network entries
+* Restore sysctl resources when disabling ipv6 in cis_3_3_1, cis_3_3_2 and cis_3_3_3, remove kernel_parameter from cis_3_3_3 as problematic when using sysctl to disable and check ipv6, add /etc/sysconfig/network entries
 * Fix typo in cis_5_3_1 of try_first_path instead of try_first_pass
 * Remove nullok and add shadow to /etc/pam.d system-auth and password-auth
 * Added AIDE database renaming to cis_1_3_1 as 'aide --init' command creates a .new file requiring renaming
-* Remove all use of pkill, add rsyslog and rsyslog-ng classes to array of classes that trigger a reboot, as rsyslog can be configured to halt system if terminated
+* Remove all use of pkill, add rsyslog and rsyslog-ng classes to array of classes that trigger an opt-in reboot, as rsyslog can be (outside of this module) configured to halt system or boot into single mode if terminated
 * Add optional $motd parameter to be sole content of /etc/motd.  If not defined and $banner is defined, $banner becomes content of /etc/motd
-* Fix various custom fact scripts issues with missing .sh, false positives when home dir absent, reduce permissions to 0700
-* Move location custom fact scripts from /tmp to /usr/share/applications as fail to execute if /tmp mounted noexec as per recommendations
+* Fix various custom fact scripts issues with missing .sh, false positives when home dir absent, reduce script file and directory permissions to 0700
+* Move location of custom fact scripts directory from /tmp to /usr/share/applications as fail to execute if /tmp mounted noexec as per recommendations!
 * Remove subscription_manager from dependencies as appears unused
+* Change cis_1_6_11 to use kernel_parameter instead of file_line to set 'quiet' in grub.cfg, to avoid entire line being overwritten in /etc/default/grub.cfg
+* Update cis_3_3_3 and cis_3_6_2 to allow ip6_tables to drop undefined traffic
 
 ## Release 1.0.12
 * Fix cis_5_2_14 ssh DenyGroups typo

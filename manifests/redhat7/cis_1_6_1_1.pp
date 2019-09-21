@@ -16,11 +16,9 @@ class secure_linux_cis::redhat7::cis_1_6_1_1 (
 
   if $enforced {
 
-    file_line { 'cmdline_def_default':
-      path   => '/etc/default/grub',
-      line   => 'GRUB_CMDLINE_LINUX_DEFAULT="quiet"',
-      match  => '^GRUB_CMDLINE_LINUX_DEFAULT=',
-      notify => Exec['1_6_1_1 update grub cfg'],
+    kernel_parameter { 'quiet':
+      ensure   => present,
+      bootmode => 'default',
     }
 
     kernel_parameter { 'selinux=0':
@@ -29,13 +27,6 @@ class secure_linux_cis::redhat7::cis_1_6_1_1 (
 
     kernel_parameter { 'enforcing=0':
       ensure   => absent,
-    }
-
-    exec { '1_6_1_1 update grub cfg':
-      path        => '/bin:/sbin:/usr/bin:/usr/sbin',
-      command     => 'grub2-mkconfig -o /boot/grub2/grub.cfg',
-      refreshonly => true,
-      logoutput   => true,
     }
   }
 }

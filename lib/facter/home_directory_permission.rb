@@ -6,6 +6,6 @@
 Facter.add('home_directory_permission') do
   confine osfamily: 'RedHat'
   setcode do
-    Facter::Core::Execution.exec('/tmp/cis_scripts/home_dir_perm.sh')
+    Facter::Core::Execution.exec('/usr/share/applications/cis_scripts/home_dir_perm.sh')
   end
 end
