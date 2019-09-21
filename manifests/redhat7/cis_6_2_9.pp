@@ -17,17 +17,17 @@ class secure_linux_cis::redhat7::cis_6_2_9 (
   if $enforced {
 
     file { '/tmp/cis_scripts/home_dir_own.sh':
+      ensure  => file,
       owner   => 'root',
       group   => 'root',
-      mode    => '0711',
+      mode    => '0700',
       content => file('secure_linux_cis/home_dir_own.sh'),
-      # source => 'puppet:///modules/secure_linux_cis/home_dir_own.sh',
     }
 
     if !($facts[ 'home_directory_owner' ].empty) {
 
       notify { 'hdo':
-        message  => 'Not in compliance with CIS 6.2.9 (Scored). You have a home directory that is not owned by a user. Check the home_directory_owner fact for details',#lint:ignore:140chars
+        message  => 'Not in compliance with CIS 6.2.9 (Scored). You have a home directory that is not owned by the matching user name. Check the home_directory_owner fact for details',#lint:ignore:140chars
         loglevel => 'warning',
       }
     }

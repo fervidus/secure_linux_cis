@@ -12,14 +12,12 @@ class secure_linux_cis::redhat7::cis_6_2_6 (
 
   if $enforced {
 
-    file { '/tmp/cis_scripts/root_path':
+    file { '/tmp/cis_scripts/root_path.sh':
       ensure  => file,
       owner   => 'root',
       group   => 'root',
-      mode    => '0711',
+      mode    => '0700',
       content => file('secure_linux_cis/root_path.sh'),
-      # force  => 'yes',
-      # source  => 'puppet:///modules/secure_linux_cis/root_path.sh',
     }
 
     if $facts['root_path'] {

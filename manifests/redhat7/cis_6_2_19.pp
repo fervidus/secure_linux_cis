@@ -18,11 +18,11 @@ class secure_linux_cis::redhat7::cis_6_2_19 (
   if $enforced {
 
     file { '/tmp/cis_scripts/dup_group.sh':
+      ensure  => file,
       owner   => 'root',
       group   => 'root',
-      mode    => '0711',
+      mode    => '0700',
       content => file('secure_linux_cis/dup_group.sh'),
-      # source => 'puppet:///modules/secure_linux_cis/dup_group.sh',
     }
 
     if !($facts['duplicate_group'].empty) {

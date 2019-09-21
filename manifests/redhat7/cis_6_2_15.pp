@@ -17,11 +17,11 @@ class secure_linux_cis::redhat7::cis_6_2_15 (
   if $enforced {
 
     file { '/tmp/cis_scripts/pwd_group_exist.sh':
+      ensure  => file,
       owner   => 'root',
       group   => 'root',
-      mode    => '0711',
+      mode    => '0700',
       content => file('secure_linux_cis/pwd_group_exist.sh'),
-      # source => 'puppet:///modules/secure_linux_cis/pwd_group_exist.sh',
     }
 
     if !($facts['password_group_exist'].empty) {

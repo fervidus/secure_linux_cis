@@ -17,11 +17,11 @@ class secure_linux_cis::redhat7::cis_6_2_12 (
   if $enforced {
 
     file { '/tmp/cis_scripts/netrc.sh':
+      ensure  => file,
       owner   => 'root',
       group   => 'root',
-      mode    => '0711',
+      mode    => '0700',
       content => file('secure_linux_cis/netrc.sh'),
-      # source => 'puppet:///modules/secure_linux_cis/netrc.sh',
     }
 
     if !($facts[ 'netrc_files' ].empty) {
