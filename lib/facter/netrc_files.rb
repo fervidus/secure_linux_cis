@@ -6,6 +6,6 @@
 Facter.add('netrc_files') do
   confine osfamily: 'RedHat'
   setcode do
-    Facter::Core::Execution.exec('/tmp/cis_scripts/netrc.sh')
+    Facter::Core::Execution.exec('/usr/share/applications/cis_scripts/netrc.sh')
   end
 end

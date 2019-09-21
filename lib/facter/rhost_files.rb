@@ -6,6 +6,6 @@
 Facter.add('rhost_files') do
   confine osfamily: 'RedHat'
   setcode do
-    Facter::Core::Execution.exec('/tmp/cis_scripts/rhost.sh')
+    Facter::Core::Execution.exec('/usr/share/applications/cis_scripts/rhost.sh')
   end
 end
