@@ -31,9 +31,9 @@ class secure_linux_cis::redhat7::cis_1_3_1 (
     }
 
     exec { 'rename_aide_database':
-      command => 'mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz',
-      creates => '/var/lib/aide/aide.db.gz',
-      path    => ['/usr/bin', '/usr/sbin',],
+      command   => 'mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz',
+      creates   => '/var/lib/aide/aide.db.gz',
+      path      => '/bin/:/sbin/:/usr/bin/:/usr/sbin/',
       logoutput => true,
     }
   }

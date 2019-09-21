@@ -16,7 +16,7 @@ class secure_linux_cis::redhat7::cis_6_2_7 (
 
   if $enforced {
 
-    file { '/tmp/cis_scripts/home_directory.sh':
+    file { '/usr/share/application/cis_scripts/home_directory.sh':
       ensure  => file,
       owner   => 'root',
       group   => 'root',

@@ -17,7 +17,7 @@ class secure_linux_cis::redhat7::cis_6_2_18 (
 
   if $enforced {
 
-    file { '/tmp/cis_scripts/dup_usr.sh':
+    file { '/usr/share/application/cis_scripts/dup_usr.sh':
       ensure  => file,
       owner   => 'root',
       group   => 'root',

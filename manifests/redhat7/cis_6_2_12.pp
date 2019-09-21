@@ -16,7 +16,7 @@ class secure_linux_cis::redhat7::cis_6_2_12 (
 
   if $enforced {
 
-    file { '/tmp/cis_scripts/netrc.sh':
+    file { '/usr/share/application/cis_scripts/netrc.sh':
       ensure  => file,
       owner   => 'root',
       group   => 'root',
