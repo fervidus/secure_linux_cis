@@ -30,12 +30,6 @@ class secure_linux_cis::redhat7::cis_4_2_2_4 (
       path   => '/etc/syslog-ng/syslog-ng.conf',
       line   => "destination logserver { tcp(\"${logging_host}\" port(514)); }; log { source(src); destination(logserver); };",
       match  => '^destination logserver',
-      notify => Exec['reload syslog-ng 4_2_2_4'],
-    }
-
-    exec { 'reload syslog-ng 4_2_2_4':
-      command     => '/bin/pkill -HUP syslog-ng',
-      refreshonly => true,
     }
   }
 }

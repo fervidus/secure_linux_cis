@@ -26,7 +26,6 @@ class secure_linux_cis::redhat7::cis_4_2_1_4 (
       path   => '/etc/rsyslog.conf',
       line   => "*.* @@${logging_host}",
       match  => '\*\.\* @@',
-      notify => Exec['reload rsyslog 4_2_1_4'],
     }
   }
 }

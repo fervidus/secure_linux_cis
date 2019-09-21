@@ -26,12 +26,6 @@ class secure_linux_cis::redhat7::cis_4_2_2_3 (
       ensure => present,
       path   => '/etc/syslog-ng/syslog-ng.conf',
       line   => 'options { chain_hostnames(off); flush_lines(0); perm(0640); stats_freq(3600); threaded(yes); };',
-      notify => Exec['reload syslog-ng 4_2_2_3'],
-    }
-
-    exec { 'reload syslog-ng 4_2_2_3':
-      command     => '/bin/pkill -HUP syslog-ng',
-      refreshonly => true,
     }
   }
 }

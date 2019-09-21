@@ -13,16 +13,24 @@
 class secure_linux_cis::redhat7::cis_1_7_1_4 (
   Boolean           $enforced = true,
   Optional[String]  $banner   = undef,
+  Optional[String]  $motd     = undef,
 ) {
 
   if $enforced {
+
+    if !$motd and $banner {
+      $motd_real = $banner
+    }
+    else {
+      $motd_real = $motd
+    }
 
     file { '/etc/motd':
       ensure  => present,
       owner   => 'root',
       group   => 'root',
       mode    => '0644',
-      content => $banner,
+      content => $motd_real,
     }
   }
 }

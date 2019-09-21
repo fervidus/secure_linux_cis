@@ -1,5 +1,14 @@
 # Changelog
 
+## Release 1.0.13
+* Restore sysctl resources when disabling ipv6 in cis_3_3_1,  cis_3_3_2 and cis_3_3_3, remove kernel_parameter is cis_3_3_3 as problematic, add /etc/sysconfig/network entries
+* Fix various fact script issues with missing .sh, false positives when home dir absent, reduce permissions to 0700
+* Fix typo in cis_5_3_1 of try_first_path instead of try_first_pass
+* Remove nullok and add shadow to /etc/pam.d system-auth and password-auth
+* Added AIDE database renaming to cis_1_3_1 as 'aide --init' command creates a .new file requiring renaming
+* Remove all use of pkill, add rsyslog and rsyslog-ng classes to array of classes that trigger a reboot, as rsyslog can be configured to halt system if terminated
+* Add optional $motd parameter to be sole content of /etc/motd.  If not defined and $banner is defined, $banner becomes content of /etc/motd
+
 ## Release 1.0.12
 * Fix cis_5_2_14 ssh DenyGroups typo
 * Refactor remaining bash scripts using Shellcheck and test functions

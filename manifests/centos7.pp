@@ -37,7 +37,8 @@
 # @param pass_warn_days Password warning days
 # @param pass_inactive_days Password inactive days
 # @param repolist List of acceptable software repos
-# @param banner Optional string to be content of /etc/issue, /etc/issue.net and /etc/motd
+# @param banner Optional string to be content of /etc/issue, /etc/issue.net (and /etc/motd if $motd not defined)
+# @param motd Optional string to be content of /etc/motd.  If $banner is defined and $motd is not, $banner becomes content of /etc/motd
 # @param auto_restart If an automatic restart should occur when defined classes require a reboot to take effect
 #
 # @example
@@ -75,6 +76,7 @@ class secure_linux_cis::centos7 (
   Integer                               $pass_inactive_days      = 30,
   Array                                 $repolist                = ['updates/7/x86_64'],
   Optional[String]                      $banner                  = undef,
+  Optional[String]                      $motd                    = undef,
   Boolean                               $auto_restart            = false,
 ) {
 
@@ -184,6 +186,7 @@ class secure_linux_cis::centos7 (
   # 1.7.1.4
   class { '::secure_linux_cis::redhat7::cis_1_7_1_4':
     banner => $banner,
+    motd   => $motd,
   }
 
   # 1.7.1.5
@@ -661,12 +664,6 @@ class secure_linux_cis::centos7 (
   # Set default path for execs
   Exec { path => '/bin/:/sbin/:/usr/bin/:/usr/sbin/' }
 
-  # Reload rsyslog
-  exec { 'reload rsyslog':
-    command     => 'pkill -HUP rsyslogd',
-    refreshonly => true,
-  }
-
   # Reload sshd config (only if running)
   exec { 'reload sshd':
     command     => 'systemctl reload sshd',
@@ -676,7 +673,8 @@ class secure_linux_cis::centos7 (
 
   # define classes that change resources requiring a reboot to take effect, as using pkill is undesirable.
   if $auto_restart {
-    $restart_classes = ['class[secure_linux_cis::redhat7::cis_1_6_1_1]',
+    $restart_classes = [
+      'class[secure_linux_cis::redhat7::cis_1_6_1_1]',
       'class[secure_linux_cis::redhat7::cis_4_1_3]',
       'class[secure_linux_cis::redhat7::cis_4_1_4]',
       'class[secure_linux_cis::redhat7::cis_4_1_5]',
@@ -691,7 +689,16 @@ class secure_linux_cis::centos7 (
       'class[secure_linux_cis::redhat7::cis_4_1_15]',
       'class[secure_linux_cis::redhat7::cis_4_1_16]',
       'class[secure_linux_cis::redhat7::cis_4_1_17]',
-      'class[secure_linux_cis::redhat7::cis_4_1_18]',]
+      'class[secure_linux_cis::redhat7::cis_4_1_18]',
+      'class[secure_linux_cis::redhat7::cis_4_2_1_2]',
+      'class[secure_linux_cis::redhat7::cis_4_2_1_3]',
+      'class[secure_linux_cis::redhat7::cis_4_2_1_4]',
+      'class[secure_linux_cis::redhat7::cis_4_2_1_5]',
+      'class[secure_linux_cis::redhat7::cis_4_2_2_2]',
+      'class[secure_linux_cis::redhat7::cis_4_2_2_3]',
+      'class[secure_linux_cis::redhat7::cis_4_2_2_4]',
+      'class[secure_linux_cis::redhat7::cis_4_2_2_5]',
+      ]
 
     reboot { 'after_run':
       apply     => 'finished',
