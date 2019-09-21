@@ -8,7 +8,8 @@
 * Remove all use of pkill, add rsyslog and rsyslog-ng classes to array of classes that trigger a reboot, as rsyslog can be configured to halt system if terminated
 * Add optional $motd parameter to be sole content of /etc/motd.  If not defined and $banner is defined, $banner becomes content of /etc/motd
 * Fix various custom fact scripts issues with missing .sh, false positives when home dir absent, reduce permissions to 0700
-* Move location custom fact scripts from /tmp to /usr/share/application as fail to execute if /tmp mounted noexec as per recommendations
+* Move location custom fact scripts from /tmp to /usr/share/applications as fail to execute if /tmp mounted noexec as per recommendations
+* Remove subscription_manager from dependencies as appears unused
 
 ## Release 1.0.12
 * Fix cis_5_2_14 ssh DenyGroups typo

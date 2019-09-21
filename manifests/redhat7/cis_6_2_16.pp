@@ -17,7 +17,7 @@ class secure_linux_cis::redhat7::cis_6_2_16 (
 
   if $enforced {
 
-    file { '/usr/share/application/cis_scripts/dup_uid.sh':
+    file { '/usr/share/applications/cis_scripts/dup_uid.sh':
       ensure  => file,
       owner   => 'root',
       group   => 'root',

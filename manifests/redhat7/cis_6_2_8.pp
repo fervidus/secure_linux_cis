@@ -16,7 +16,7 @@ class secure_linux_cis::redhat7::cis_6_2_8 (
 
   if $enforced {
 
-    file { '/usr/share/application/cis_scripts/home_dir_perm.sh':
+    file { '/usr/share/applications/cis_scripts/home_dir_perm.sh':
       ensure  => file,
       owner   => 'root',
       group   => 'root',

@@ -16,7 +16,7 @@ class secure_linux_cis::redhat7::cis_6_2_11 (
 
   if $enforced {
 
-    file { '/usr/share/application/cis_scripts/forward.sh':
+    file { '/usr/share/applications/cis_scripts/forward.sh':
       ensure  => file,
       owner   => 'root',
       group   => 'root',

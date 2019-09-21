@@ -12,7 +12,7 @@ class secure_linux_cis::redhat7::cis_6_2_6 (
 
   if $enforced {
 
-    file { '/usr/share/application/cis_scripts/root_path.sh':
+    file { '/usr/share/applications/cis_scripts/root_path.sh':
       ensure  => file,
       owner   => 'root',
       group   => 'root',
