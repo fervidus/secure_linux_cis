@@ -40,5 +40,11 @@ class secure_linux_cis::redhat7::cis_3_3_3 (
       line  => 'IPV6INIT=no',
       match => 'IPV6INIT=',
     }
+
+    Service <| tag == 'ip6tables' |>
+    {
+      ensure => stopped,
+      enable => false,
+    }
   }
 }
