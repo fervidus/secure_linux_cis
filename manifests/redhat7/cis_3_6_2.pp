@@ -16,7 +16,6 @@
 #   include secure_linux_cis::redhat7::cis_3_6_2
 class secure_linux_cis::redhat7::cis_3_6_2 (
   Boolean $enforced = true,
-  Boolean $ipv6_enabled = false,
 ) {
 
   if $enforced {
@@ -36,22 +35,19 @@ class secure_linux_cis::redhat7::cis_3_6_2 (
       policy => drop,
     }
 
-    if !$ipv6_enabled {
+    firewallchain { 'INPUT:filter:IPv6':
+      ensure => present,
+      policy => drop,
+    }
 
-      firewallchain { 'INPUT:filter:IPv6':
-        ensure => present,
-        policy => drop,
-      }
-  
-      firewallchain { 'OUTPUT:filter:IPv6':
-        ensure => present,
-        policy => drop,
-      }
-  
-      firewallchain { 'FORWARD:filter:IPv6':
-        ensure => present,
-        policy => drop,
-      }
+    firewallchain { 'OUTPUT:filter:IPv6':
+      ensure => present,
+      policy => drop,
+    }
+
+    firewallchain { 'FORWARD:filter:IPv6':
+      ensure => present,
+      policy => drop,
     }
   }
 }
