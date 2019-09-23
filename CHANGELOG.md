@@ -1,7 +1,7 @@
 # Changelog
 
 ## Release 1.0.13
-* Restore sysctl resources when disabling ipv6 in cis_3_3_1, cis_3_3_2 and cis_3_3_3, remove kernel_parameter is cis_3_3_3 as problematic, add /etc/sysconfig/network entries
+* Restore sysctl resources when disabling ipv6 in cis_3_3_1, cis_3_3_2 and cis_3_3_3, remove kernel_parameter from cis_3_3_3 as problematic when using sysctl to disable and check ipv6, add /etc/sysconfig/network entries
 * Fix typo in cis_5_3_1 of try_first_path instead of try_first_pass
 * Remove nullok and add shadow to /etc/pam.d system-auth and password-auth
 * Added AIDE database renaming to cis_1_3_1 as 'aide --init' command creates a .new file requiring renaming
