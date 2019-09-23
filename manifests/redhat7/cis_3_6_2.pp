@@ -37,6 +37,7 @@ class secure_linux_cis::redhat7::cis_3_6_2 (
     }
 
     if !$ipv6_enabled {
+
       firewallchain { 'INPUT:filter:IPv6':
         ensure => present,
         policy => drop,
