@@ -447,7 +447,7 @@ class secure_linux_cis::redhat7 (
     ensure => directory,
     owner  => 'root',
     group  => 'root',
-    mode   => '0755',
+    mode   => '0700',
   }
 
   include ::secure_linux_cis::redhat7::cis_6_2_7
