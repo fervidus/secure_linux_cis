@@ -6,6 +6,6 @@
 Facter.add('home_directory_owner') do
   confine osfamily: 'RedHat'
   setcode do
-    Facter::Core::Execution.exec('/usr/share/applications/cis_scripts/home_dir_own.sh')
+    Facter::Core::Execution.exec('/usr/share/cis_scripts/home_dir_own.sh')
   end
 end

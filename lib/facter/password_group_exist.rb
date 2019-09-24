@@ -6,6 +6,6 @@
 Facter.add('password_group_exist') do
   confine osfamily: 'RedHat'
   setcode do
-    Facter::Core::Execution.exec('/usr/share/applications/cis_scripts/pwd_group_exist.sh')
+    Facter::Core::Execution.exec('/usr/share/cis_scripts/pwd_group_exist.sh')
   end
 end
