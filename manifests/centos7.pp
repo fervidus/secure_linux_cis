@@ -626,7 +626,7 @@ class secure_linux_cis::centos7 (
   # 6.2.6
   include ::secure_linux_cis::redhat7::cis_6_2_1
 
-  file { '/usr/share/applications/cis_scripts':
+  file { '/usr/share/cis_scripts':
     ensure => directory,
     owner  => 'root',
     group  => 'root',

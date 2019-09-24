@@ -443,7 +443,7 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_6_2_5
   include ::secure_linux_cis::redhat7::cis_6_2_6
 
-  file { '/usr/share/applications/cis_scripts':
+  file { '/usr/share/cis_scripts':
     ensure => directory,
     owner  => 'root',
     group  => 'root',

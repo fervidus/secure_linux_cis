@@ -6,6 +6,6 @@
 Facter.add('dot_file_writable') do
   confine osfamily: 'RedHat'
   setcode do
-    Facter::Core::Execution.exec('/usr/share/applications/cis_scripts/dot_file_wr.sh')
+    Facter::Core::Execution.exec('/usr/share/cis_scripts/dot_file_wr.sh')
   end
 end

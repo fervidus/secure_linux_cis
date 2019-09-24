@@ -6,6 +6,6 @@
 Facter.add('duplicate_user') do
   confine osfamily: 'RedHat'
   setcode do
-    Facter::Core::Execution.exec('/usr/share/applications/cis_scripts/dup_usr.sh')
+    Facter::Core::Execution.exec('/usr/share/cis_scripts/dup_usr.sh')
   end
 end

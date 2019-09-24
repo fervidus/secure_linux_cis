@@ -16,7 +16,7 @@ class secure_linux_cis::redhat7::cis_6_2_15 (
 
   if $enforced {
 
-    file { '/usr/share/applications/cis_scripts/pwd_group_exist.sh':
+    file { '/usr/share/cis_scripts/pwd_group_exist.sh':
       ensure  => file,
       owner   => 'root',
       group   => 'root',
