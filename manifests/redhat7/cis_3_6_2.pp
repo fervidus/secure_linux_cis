@@ -35,5 +35,19 @@ class secure_linux_cis::redhat7::cis_3_6_2 (
       policy => drop,
     }
 
+    firewallchain { 'INPUT:filter:IPv6':
+      ensure => present,
+      policy => drop,
+    }
+
+    firewallchain { 'OUTPUT:filter:IPv6':
+      ensure => present,
+      policy => drop,
+    }
+
+    firewallchain { 'FORWARD:filter:IPv6':
+      ensure => present,
+      policy => drop,
+    }
   }
 }

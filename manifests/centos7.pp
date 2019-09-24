@@ -630,7 +630,7 @@ class secure_linux_cis::centos7 (
     ensure => directory,
     owner  => 'root',
     group  => 'root',
-    mode   => '0755',
+    mode   => '0700',
   }
 
   # 6.2.7

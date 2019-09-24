@@ -24,7 +24,7 @@ class secure_linux_cis::redhat7::cis_1_3_1 (
 
     exec { 'create_aide_database':
       command   => 'aide --init',
-      creates   => '/var/lib/aide/aide.db.new.gz',
+      creates   => ['/var/lib/aide/aide.db.new.gz', '/var/lib/aide/aide.db.gz'],
       path      => '/sbin/',
       logoutput => true,
       notify    => Exec['rename_aide_database'],
