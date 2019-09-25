@@ -80,6 +80,9 @@ class secure_linux_cis::centos7 (
   Boolean                               $auto_restart            = false,
 ) {
 
+  # Set default path for execs if not otherwise specified
+  Exec { path => '/bin/:/sbin/:/usr/bin/:/usr/sbin/' }
+
   # 1.1.1.1
   include ::secure_linux_cis::redhat7::cis_1_1_1_1
   # 1.1.1.2
@@ -661,9 +664,6 @@ class secure_linux_cis::centos7 (
   include ::secure_linux_cis::redhat7::cis_6_2_19
 
   ## Shared resources used in more than one class
-  # Set default path for execs
-  Exec { path => '/bin/:/sbin/:/usr/bin/:/usr/sbin/' }
-
   # Reload sshd config (only if running)
   exec { 'reload sshd':
     command     => 'systemctl reload sshd',
