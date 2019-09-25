@@ -26,21 +26,21 @@ Facter.add(:local_users) do
       password_inactive_days    = password_inactive
       account_expires_days      = account_expires
 
-      # check if password attribute not 'never', then determine days between now and then
+      # check if password attribute not 'never' or 'password must be changed', then determine days between now and then
       # and check if password is set prior to current date
-      if last_password_change    != 'never'
+      unless last_password_change == 'never' || last_password_change == 'password must be changed'
         last_password_change_days = (Date.today - Date.parse(last_password_change)).to_i
         password_date_valid       = Date.parse(last_password_change) <= Date.today
       end
 
-      if password_expires       != 'never'
+      unless password_expires    == 'never' || password_expires == 'password must be changed'
         password_expires_days    = (Date.parse(password_expires) - Date.today).to_i
-        if password_inactive    != 'never'
+        unless password_inactive == 'never' || password_inactive == 'password must be changed'
           password_inactive_days = (Date.parse(password_inactive) - Date.parse(password_expires)).to_i
         end
       end
 
-      if account_expires    != 'never'
+      unless account_expires == 'never'
         account_expires_days = (Date.parse(account_expires) - Date.today).to_i
       end
 
