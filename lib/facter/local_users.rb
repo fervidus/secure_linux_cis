@@ -28,14 +28,15 @@ Facter.add(:local_users) do
 
       # check if password attribute not 'never' or 'password must be changed', then determine days between now and then
       # and check if password is set prior to current date
-      unless last_password_change == 'never' || last_password_change == 'password must be changed'
+      unless ['never', 'password must be changed'].include?(last_password_change)
         last_password_change_days = (Date.today - Date.parse(last_password_change)).to_i
         password_date_valid       = Date.parse(last_password_change) <= Date.today
       end
 
-      unless password_expires    == 'never' || password_expires == 'password must be changed'
-        password_expires_days    = (Date.parse(password_expires) - Date.today).to_i
-        unless password_inactive == 'never' || password_inactive == 'password must be changed'
+      unless ['never', 'password must be changed'].include?(password_expires)
+        password_expires_days = (Date.parse(password_expires) - Date.today).to_i
+
+        unless ['never', 'password must be changed'].include?(password_inactive)
           password_inactive_days = (Date.parse(password_inactive) - Date.parse(password_expires)).to_i
         end
       end
