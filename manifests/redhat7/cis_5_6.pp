@@ -22,5 +22,10 @@ class secure_linux_cis::redhat7::cis_5_6 (
       path => '/etc/pam.d/su',
       line => 'auth required pam_wheel.so use_uid',
     }
+
+    exec { 'root_wheel':
+      command => 'usermod -G wheel root',
+      unless  => 'grep wheel /etc/group | grep root',
+    }
   }
 }
