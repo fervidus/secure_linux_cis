@@ -1,18 +1,19 @@
 # Changelog
 
 ## Release 1.0.13
+* Added AIDE database renaming to cis_1_3_1 as 'aide --init' command creates a new temporary file requiring renaming
+* Change cis_1_6_11 to use kernel_parameter instead of file_line to set 'quiet' in grub.cfg, to avoid entire line being overwritten in /etc/default/grub.cfg
+* Add optional $motd parameter to be sole content of /etc/motd in cis_1_7_1_4.  If not defined and $banner is defined, $banner becomes content of /etc/motd
 * Restore sysctl resources when disabling ipv6 in cis_3_3_1, cis_3_3_2 and cis_3_3_3, remove kernel_parameter from cis_3_3_3 as problematic when using sysctl to disable and check ipv6, add /etc/sysconfig/network entries
+* Update cis_3_3_3 and cis_3_6_2 to allow ip6_tables to drop undefined traffic
 * Fix typo in cis_5_3_1 of try_first_path instead of try_first_pass
-* Remove nullok and add shadow to /etc/pam.d system-auth and password-auth
-* Added AIDE database renaming to cis_1_3_1 as 'aide --init' command creates a .new file requiring renaming
+* Remove nullok and add shadow to /etc/pam.d system-auth and password-auth in cis_5_3_3
 * Remove all use of pkill, add rsyslog and rsyslog-ng classes to array of classes that trigger an opt-in reboot, as rsyslog can be (outside of this module) configured to halt system or boot into single mode if terminated
-* Add optional $motd parameter to be sole content of /etc/motd.  If not defined and $banner is defined, $banner becomes content of /etc/motd
 * Fix various custom fact scripts issues with missing .sh, false positives when home dir absent, reduce script file and directory permissions to 0700
+* Update local_users custom fact to allow for users whose password needs to be changed
 * Move location of custom fact scripts directory from /tmp/cis_scripts to /usr/share/cis_scripts as fail to execute if /tmp mounted noexec as per recommendations!
 * Remove subscription_manager from dependencies as appears unused
-* Change cis_1_6_11 to use kernel_parameter instead of file_line to set 'quiet' in grub.cfg, to avoid entire line being overwritten in /etc/default/grub.cfg
-* Update cis_3_3_3 and cis_3_6_2 to allow ip6_tables to drop undefined traffic
-* Update local_users custom fact to allow for users whose password needs to be changed
+
 
 ## Release 1.0.12
 * Fix cis_5_2_14 ssh DenyGroups typo
