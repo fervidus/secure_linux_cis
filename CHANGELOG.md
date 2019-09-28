@@ -12,6 +12,7 @@
 * Remove subscription_manager from dependencies as appears unused
 * Change cis_1_6_11 to use kernel_parameter instead of file_line to set 'quiet' in grub.cfg, to avoid entire line being overwritten in /etc/default/grub.cfg
 * Update cis_3_3_3 and cis_3_6_2 to allow ip6_tables to drop undefined traffic
+* Update local_users custom fact to allow for users whose password needs to be changed
 
 ## Release 1.0.12
 * Fix cis_5_2_14 ssh DenyGroups typo
