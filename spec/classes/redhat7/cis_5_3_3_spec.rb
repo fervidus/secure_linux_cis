@@ -13,25 +13,29 @@ describe 'secure_linux_cis::redhat7::cis_5_3_3' do
 
         if option
           it {
-            is_expected.to contain_file_line('password recycle system-auth')
+            is_expected.to contain_pam('pam system-auth sufficient')
               .with(
-                ensure: 'present',
-                path: '/etc/pam.d/system-auth',
-                line: 'password sufficient pam_unix.so remember=5',
-                match: '^#?password sufficient pam_unix\.so|^#?password required pam_pwhistory\.so',
+                ensure:  'present',
+                service: 'system-auth',
+                type:    'password',
+                control: 'sufficient',
+                module:  'pam_unix.so',
+                arguments: ['remember=5', 'sha512', 'nullok', 'try_first_pass', 'use_authtok'],
               )
-            is_expected.to contain_file_line('password recycle password-auth')
+            is_expected.to contain_pam('pam password-auth sufficient')
               .with(
-                ensure: 'present',
-                path: '/etc/pam.d/password-auth',
-                line: 'password sufficient pam_unix.so remember=5',
-                match: '^#?password sufficient pam_unix\.so|^#?password required pam_pwhistory\.so',
+                ensure:  'present',
+                service: 'password-auth',
+                type:    'password',
+                control: 'sufficient',
+                module:  'pam_unix.so',
+                arguments: ['remember=5', 'sha512', 'nullok', 'try_first_pass', 'use_authtok'],
               )
           }
         else
           it {
-            is_expected.not_to contain_file_line('password recycle password-auth')
-            is_expected.not_to contain_file_line('password recycle system-auth')
+            is_expected.not_to contain_pam('pam system-auth sufficient')
+            is_expected.not_to contain_pam('pam password-auth sufficient')
           }
         end
       end

@@ -16,13 +16,13 @@ describe 'secure_linux_cis::redhat7::cis_4_1_15' do
             is_expected.to contain_file_line('audit.rules sudoers 1')
               .with(
                 ensure: 'present',
-                path: '/etc/audit/audit.rules',
+                path: '/etc/audit/rules.d/audit.rules',
                 line: '-w /etc/sudoers -p wa -k scope',
               )
             is_expected.to contain_file_line('audit.rules sudoers 2')
               .with(
                 ensure: 'present',
-                path: '/etc/audit/audit.rules',
+                path: '/etc/audit/rules.d/audit.rules',
                 line: '-w /etc/sudoers.d/ -p wa -k scope',
               )
           }

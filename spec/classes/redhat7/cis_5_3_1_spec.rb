@@ -13,20 +13,6 @@ describe 'secure_linux_cis::redhat7::cis_5_3_1' do
 
         if option
           it {
-            is_expected.to contain_file_line('pam password auth')
-              .with(
-                ensure: 'present',
-                path: '/etc/pam.d/password-auth',
-                line: 'password requisite pam_pwquality.so try_first_pass retry=3',
-                match: 'pam_pwquality.so',
-              )
-            is_expected.to contain_file_line('pam system auth')
-              .with(
-                ensure: 'present',
-                path: '/etc/pam.d/system-auth',
-                line: 'password requisite pam_pwquality.so try_first_pass retry=3',
-                match: 'pam_pwquality.so',
-              )
             is_expected.to contain_file_line('pam minlen')
               .with(
                 ensure: 'present',
@@ -62,6 +48,24 @@ describe 'secure_linux_cis::redhat7::cis_5_3_1' do
                 line: 'lcredit = -1',
                 match: '^#?lcredit',
               )
+            is_expected.to contain_pam('pam system-auth requisite')
+              .with(
+                ensure:  'present',
+                service: 'system-auth',
+                type:    'password',
+                control: 'requisite',
+                module:  'pam_pwquality.so',
+                arguments: ['try_first_pass', 'retry=3'],
+              )
+            is_expected.to contain_pam('pam password-auth requisite')
+              .with(
+                ensure:  'present',
+                service: 'password-auth',
+                type:    'password',
+                control: 'requisite',
+                module:  'pam_pwquality.so',
+                arguments: ['try_first_pass', 'retry=3'],
+              )
           }
         else
           it {
@@ -72,6 +76,8 @@ describe 'secure_linux_cis::redhat7::cis_5_3_1' do
             is_expected.not_to contain_file_line('pam ucredit')
             is_expected.not_to contain_file_line('pam ocredit')
             is_expected.not_to contain_file_line('pam lcredit')
+            is_expected.not_to contain_pam('pam system-auth requisite')
+            is_expected.not_to contain_pam('pam password-auth requisite')
           }
         end
       end

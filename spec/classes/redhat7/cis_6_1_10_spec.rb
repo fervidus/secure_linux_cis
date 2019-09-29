@@ -12,11 +12,24 @@ describe 'secure_linux_cis::redhat7::cis_6_1_10' do
         it { is_expected.to compile }
 
         if option
-          it {
-            is_expected.to contain_notify('ww')
-          }
+          context 'With non compliant settings' do
+            let(:facts) do
+              super().merge('world_writable' => '/file')
+            end
+
+            it {
+              is_expected.to contain_notify('ww')
+            }
+          end
+          context 'With compliant settings' do
+            it {
+              is_expected.not_to contain_notify('ww')
+            }
+          end
         else
-          it { is_expected.not_to contain_notify('ww') }
+          context 'With this check disabled' do
+            it { is_expected.not_to contain_notify('ww') }
+          end
         end
       end
     end

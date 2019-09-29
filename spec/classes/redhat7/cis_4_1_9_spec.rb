@@ -16,19 +16,19 @@ describe 'secure_linux_cis::redhat7::cis_4_1_9' do
             is_expected.to contain_file_line('audit.rules session 1')
               .with(
                 ensure: 'present',
-                path: '/etc/audit/audit.rules',
+                path: '/etc/audit/rules.d/audit.rules',
                 line: '-w /var/run/utmp -p wa -k session',
               )
             is_expected.to contain_file_line('audit.rules session 2')
               .with(
                 ensure: 'present',
-                path: '/etc/audit/audit.rules',
+                path: '/etc/audit/rules.d/audit.rules',
                 line: '-w /var/log/wtmp -p wa -k logins',
               )
             is_expected.to contain_file_line('audit.rules session 3')
               .with(
                 ensure: 'present',
-                path: '/etc/audit/audit.rules',
+                path: '/etc/audit/rules.d/audit.rules',
                 line: '-w /var/log/btmp -p wa -k logins',
               )
           }

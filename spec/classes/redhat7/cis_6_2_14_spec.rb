@@ -12,11 +12,25 @@ describe 'secure_linux_cis::redhat7::cis_6_2_14' do
         it { is_expected.to compile }
 
         if option
-          it {
-            is_expected.to contain_notify('rf')
-          }
+          context 'With non compliant settings' do
+            let(:facts) do
+              super().merge('rhost_files' => 'warning /dir/.rhost file exists')
+            end
+
+            it {
+              is_expected.to contain_notify('rf')
+            }
+          end
+          context 'With compliant settings' do
+            it {
+              is_expected.not_to contain_notify('rf')
+            }
+          end
+          it { is_expected.to contain_file('/tmp/cis_scripts/rhost.sh').with(ensure: 'file') }
         else
-          it { is_expected.not_to contain_notify('rf') }
+          context 'With this check disabled' do
+            it { is_expected.not_to contain_notify('rf') }
+          end
         end
       end
     end

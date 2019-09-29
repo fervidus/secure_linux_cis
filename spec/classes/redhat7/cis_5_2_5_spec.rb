@@ -7,7 +7,7 @@ describe 'secure_linux_cis::redhat7::cis_5_2_5' do
     bool_options.each do |option|
       context "on #{os}" do
         let(:facts) { os_facts }
-        let(:params) { { 'enforced' => option, 'max_auth_tries' => '4' } }
+        let(:params) { { 'enforced' => option, 'max_auth_tries' => 4 } }
 
         it { is_expected.to compile }
 

@@ -1,5 +1,6 @@
 # This file can be used to install module dependencies for unit testing
-# See https://github.com/puppetlabs/puppetlabs_spec_helper#using-fixtures for details
+# See https://github.com/puppetlabs/puppetlabs_spec_helper#using-fixtures
+# for details
 ---
 fixtures:
   forge_modules:
@@ -28,3 +29,4 @@ fixtures:
     cron: "puppet/cron"
     mailalias_core: "puppetlabs/mailalias_core"
     reboot: "puppetlabs/reboot"
+    chrony: "aboe/chrony"

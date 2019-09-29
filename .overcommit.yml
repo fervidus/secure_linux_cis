@@ -1,0 +1,76 @@
+---
+
+PreCommit:
+  BundleCheck:
+    enabled: true
+  ExecutePermissions:
+    enabled: true
+    exclude:
+      - '**/*.sh'
+      - '**/*.rb'
+  FixMe:
+    enabled: true
+    on_fail: warn
+  Flay:
+    enabled: true
+  ForbiddenBranches:
+    enabled: true
+    branch_patterns: ['production']
+  HardTabs:
+    enabled: true
+  LineEndings:
+    enabled: true
+  MasterHooksMatch:
+    enabled: true
+    quiet: true
+  Pydocstyle:
+    enabled: true
+  Pylint:
+    enabled: true
+  PythonFlake8:
+    enabled: true
+  PuppetLint:
+    enabled: true
+  PuppetMetadataJsonLint:
+    enabled: true
+  RuboCop:
+    enabled: true
+    command: ['bundle', 'exec', 'rubocop']
+    include:
+      - '**/*.gemspec'
+      - '**/*.rb'
+      - '**/Gemfile'
+  RubyLint:
+    enabled: false
+  ShellCheck:
+    enabled: true
+  TrailingWhitespace:
+    enabled: true
+  YamlLint:
+    enabled: true
+  YamlSyntax:
+    enabled: true
+  YardCoverage:
+    enabled: true
+  YarnCheck:
+    enabled: true
+
+PostCheckout:
+  BundleInstall:
+    enabled: true
+
+PostCommit:
+  BundleInstall:
+    enabled: true
+  GitGuilt:
+    enabled: false
+
+CommitMsg:
+  ALL:
+    on_warn: fail
+  HardTabs:
+    enabled: true
+  SpellCheck:
+    enabled: false
+  RussianNovel:
+    enabled: true

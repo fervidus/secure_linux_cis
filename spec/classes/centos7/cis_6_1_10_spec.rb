@@ -12,11 +12,24 @@ describe 'secure_linux_cis::centos7::cis_6_1_10' do
         it { is_expected.to compile }
 
         if option
-          it {
-            is_expected.to contain_notify('wwrh')
-          }
+          context 'With non compliant settings' do
+            let(:facts) do
+              super().merge('world_writable_redhat' => '/file')
+            end
+
+            it {
+              is_expected.to contain_notify('wwrh')
+            }
+          end
+          context 'With compliant settings' do
+            it {
+              is_expected.not_to contain_notify('wwrh')
+            }
+          end
         else
-          it { is_expected.not_to contain_notify('wwrh') }
+          context 'With this check disabled' do
+            it { is_expected.not_to contain_notify('wwrh') }
+          end
         end
       end
     end

@@ -12,11 +12,25 @@ describe 'secure_linux_cis::redhat7::cis_6_2_18' do
         it { is_expected.to compile }
 
         if option
-          it {
-            is_expected.to contain_notify('dusr')
-          }
+          context 'With non compliant settings' do
+            let(:facts) do
+              super().merge('duplicate_user' => 'Duplicate User Name (user): 1 2')
+            end
+
+            it {
+              is_expected.to contain_notify('dusr')
+            }
+          end
+          context 'With compliant settings' do
+            it {
+              is_expected.not_to contain_notify('dusr')
+            }
+          end
+          it { is_expected.to contain_file('/tmp/cis_scripts/dup_usr.sh').with(ensure: 'file') }
         else
-          it { is_expected.not_to contain_notify('dusr') }
+          context 'With this check disabled' do
+            it { is_expected.not_to contain_notify('dusr') }
+          end
         end
       end
     end

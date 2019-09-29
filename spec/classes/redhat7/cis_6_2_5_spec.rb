@@ -12,11 +12,28 @@ describe 'secure_linux_cis::redhat7::cis_6_2_5' do
         it { is_expected.to compile }
 
         if option
-          it {
-            is_expected.to contain_notify('ru')
-          }
+          context 'With non compliant settings' do
+            let(:facts) do
+              super().merge('root_uid' => 'toor')
+            end
+
+            it {
+              is_expected.to contain_notify('ru')
+            }
+          end
+          context 'With compliant settings' do
+            let(:facts) do
+              super().merge('root_uid' => 'root')
+            end
+
+            it {
+              is_expected.not_to contain_notify('ru')
+            }
+          end
         else
-          it { is_expected.not_to contain_notify('ru') }
+          context 'With this check disabled' do
+            it { is_expected.not_to contain_notify('ru') }
+          end
         end
       end
     end

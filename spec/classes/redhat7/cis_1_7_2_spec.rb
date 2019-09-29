@@ -12,17 +12,33 @@ describe 'secure_linux_cis::redhat7::cis_1_7_2' do
         it { is_expected.to compile }
 
         if option
-          it {
-            # is_expected.to contain_file('gdm').that_requires('File[banner-login]').that_notifies('Exec[dconf]')
-            is_expected.to contain_file('banner-login').that_requires('File[gdm]')
-            is_expected.to contain_file('banner-login').that_notifies('Exec[dconf]')
-          }
+          context 'With non compliant settings' do
+            let(:facts) do
+              super().merge('gnome_installed' => true)
+            end
+
+            it {
+              is_expected.to contain_file('gdm')
+              is_expected.to contain_file('banner-login').that_requires('File[gdm]')
+              is_expected.to contain_file('banner-login').that_notifies('Exec[dconf]')
+              is_expected.to contain_exec('dconf')
+            }
+          end
+          context 'With compliant settings' do
+            it {
+              is_expected.not_to contain_file('gdm')
+              is_expected.not_to contain_file('banner-login')
+              is_expected.not_to contain_exec('dconf')
+            }
+          end
         else
-          it {
-            is_expected.not_to contain_file('gdm')
-            is_expected.not_to contain_file('banner-login')
-            is_expected.not_to contain_exec('dconf')
-          }
+          context 'With this check disabled' do
+            it {
+              is_expected.not_to contain_file('gdm')
+              is_expected.not_to contain_file('banner-login')
+              is_expected.not_to contain_exec('dconf')
+            }
+          end
         end
       end
     end

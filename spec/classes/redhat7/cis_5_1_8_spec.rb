@@ -29,15 +29,21 @@ describe 'secure_linux_cis::redhat7::cis_5_1_8' do
                 group: 'root',
                 mode: '0600',
               )
-          }
-          it {
-            is_expected.not_to contain_file('etc/cron.deny')
-            is_expected.not_to contain_file('etc/at.deny')
+            is_expected.to contain_file('/etc/cron.deny')
+              .with(
+                ensure: 'absent',
+              )
+            is_expected.to contain_file('/etc/at.deny')
+              .with(
+                ensure: 'absent',
+              )
           }
         else
           it {
             is_expected.not_to contain_file('/etc/at.allow')
             is_expected.not_to contain_file('/etc/cron.allow')
+            is_expected.not_to contain_file('etc/cron.deny')
+            is_expected.not_to contain_file('etc/at.deny')
           }
         end
       end

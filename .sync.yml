@@ -1,4 +1,3 @@
-
 ---
 Gemfile:
   optional:
@@ -6,3 +5,5 @@ Gemfile:
       - gem: 'puppet-resource_api'
 spec/spec_helper.rb:
   mock_with: ':rspec'
+  coverage_report: true
+  minimum_code_coverage_percentage: 90

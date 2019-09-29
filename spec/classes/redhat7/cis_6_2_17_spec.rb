@@ -12,11 +12,25 @@ describe 'secure_linux_cis::redhat7::cis_6_2_17' do
         it { is_expected.to compile }
 
         if option
-          it {
-            is_expected.to contain_notify('dg')
-          }
+          context 'With non compliant settings' do
+            let(:facts) do
+              super().merge('duplicate_gid' => 'Duplicate GID (2): groups')
+            end
+
+            it {
+              is_expected.to contain_notify('dg')
+            }
+          end
+          context 'With compliant settings' do
+            it {
+              is_expected.not_to contain_notify('dg')
+            }
+          end
+          it { is_expected.to contain_file('/tmp/cis_scripts/dup_gid.sh').with(ensure: 'file') }
         else
-          it { is_expected.not_to contain_notify('dg') }
+          context 'With this check disabled' do
+            it { is_expected.not_to contain_notify('dg') }
+          end
         end
       end
     end
