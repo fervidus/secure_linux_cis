@@ -16,6 +16,8 @@ class secure_linux_cis::redhat7::cis_5_2_9 (
   Boolean $enforced = true,
 ) {
 
+  include ::secure_linux_cis::service
+
   if $enforced {
 
     file_line { 'ssh permit empty password':

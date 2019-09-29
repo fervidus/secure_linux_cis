@@ -43,6 +43,8 @@ class secure_linux_cis::redhat7::cis_5_2_14 (
   Array[String] $deny_groups =[],
 ) {
 
+  include ::secure_linux_cis::service
+
   if $enforced {
 
     if $allow_users == [] and $allow_groups == [] and $deny_users == [] and $deny_groups == [] {

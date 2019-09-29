@@ -22,6 +22,8 @@ class secure_linux_cis::redhat7::cis_5_2_13 (
   Integer $login_grace_time = 60,
 ) {
 
+  include ::secure_linux_cis::service
+
   if $enforced {
 
     if $login_grace_time > 60 or $login_grace_time < 1 {

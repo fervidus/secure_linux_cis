@@ -23,6 +23,8 @@ class secure_linux_cis::redhat7::cis_5_2_3 (
   Boolean $enforced = true,
 ) {
 
+  include ::secure_linux_cis::service
+
   if $enforced {
 
     file_line { 'ssh log level':

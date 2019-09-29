@@ -12,8 +12,6 @@ PreCommit:
   FixMe:
     enabled: true
     on_fail: warn
-  Flay:
-    enabled: true
   ForbiddenBranches:
     enabled: true
     branch_patterns: ['production']

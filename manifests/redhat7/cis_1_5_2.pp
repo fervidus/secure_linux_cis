@@ -20,16 +20,11 @@ class secure_linux_cis::redhat7::cis_1_5_2 (
 
   if $enforced {
 
-    #notify { 'NX':
-    #  message  => '[1.5.2] (Not Scored) Please run "dmesg | grep NX" and verify that No Execute (or Execute Disable, for some Intel
-    #  processors) protection is enabled', #lint:ignore:140chars
-    #}
-
-    exec { '1_5_2 ensure xd/nx support':
-      path    => '/bin:/sbin:/usr/bin:/usr/sbin',
-      command => 'echo "Not in compliance with CIS 1.5.2.  Ensure XD/NX support enabled (Not Scored)"; exit 1',
-      unless  => 'dmesg | grep " NX " | grep " protection: active"',
+    if(! $facts['nx_dmesg']) {
+      notify { 'NX':
+        message  => '[1.5.2] (Not Scored) Please run "dmesg | grep NX" and verify that No Execute (or Execute Disable, for some Intel
+        processors) protection is enabled', #lint:ignore:140chars
+      }
     }
-
   }
 }

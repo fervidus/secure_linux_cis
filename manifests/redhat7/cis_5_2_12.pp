@@ -29,6 +29,8 @@ class secure_linux_cis::redhat7::cis_5_2_12 (
   Integer[0,3] $client_alive_count_max = 3,
 ) {
 
+  include ::secure_linux_cis::service
+
   if $enforced {
 
     if $client_alive_interval > 300 or $client_alive_interval < 1 {

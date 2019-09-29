@@ -117,7 +117,10 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_1_1_21
   include ::secure_linux_cis::redhat7::cis_1_1_22
 
-  include ::secure_linux_cis::redhat7::cis_1_2_1
+  class { '::secure_linux_cis::redhat7::cis_1_2_1':
+    repolist => $repolist,
+  }
+
   include ::secure_linux_cis::redhat7::cis_1_2_2  #TODO: find a good way to automate
   include ::secure_linux_cis::redhat7::cis_1_2_3
   include ::secure_linux_cis::redhat7::cis_1_2_4
@@ -466,14 +469,6 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_6_2_17
   include ::secure_linux_cis::redhat7::cis_6_2_18
   include ::secure_linux_cis::redhat7::cis_6_2_19
-
-  ## Shared resources used in more than one class
-  # Reload sshd config (only if running)
-  exec { 'reload sshd':
-    command     => 'systemctl reload sshd',
-    onlyif      => 'systemctl status sshd | grep running',
-    refreshonly => true,
-  }
 
   # define classes that change resources requiring a reboot to take effect, as using pkill is undesirable.
   if $auto_restart {

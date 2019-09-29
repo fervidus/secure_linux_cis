@@ -42,7 +42,7 @@
 # @param auto_restart If an automatic restart should occur when defined classes require a reboot to take effect
 #
 # @example
-#   include secure_linux_cis::redhat7
+#   include secure_linux_cis::centos7
 class secure_linux_cis::centos7 (
   Array[String]                         $time_servers            = [],
   Enum['rsyslog', 'syslog-ng', 'none']  $logging                 = 'rsyslog',
@@ -142,7 +142,9 @@ class secure_linux_cis::centos7 (
   # 1.1.22
   include ::secure_linux_cis::redhat7::cis_1_1_22
   # 1.2.1
-  # include ::secure_linux_cis::redhat7::cis_1_2_1
+  # class { '::secure_linux_cis::redhat7::cis_1_2_1':
+  #   repolist => $repolist,
+  # }
   # 1.2.2
   # include ::secure_linux_cis::redhat7::cis_1_2_3
   # 1.2.3
@@ -662,14 +664,6 @@ class secure_linux_cis::centos7 (
   include ::secure_linux_cis::redhat7::cis_6_2_18
   # 6.2.19
   include ::secure_linux_cis::redhat7::cis_6_2_19
-
-  ## Shared resources used in more than one class
-  # Reload sshd config (only if running)
-  exec { 'reload sshd':
-    command     => 'systemctl reload sshd',
-    onlyif      => 'systemctl status sshd | grep running',
-    refreshonly => true,
-  }
 
   # define classes that change resources requiring a reboot to take effect, as using pkill is undesirable.
   if $auto_restart {

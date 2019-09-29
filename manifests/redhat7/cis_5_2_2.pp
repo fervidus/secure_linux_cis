@@ -20,6 +20,8 @@ class secure_linux_cis::redhat7::cis_5_2_2 (
 
   if $enforced {
 
+    include ::secure_linux_cis::service
+
     file_line { 'ssh protocol':
       ensure => present,
       path   => '/etc/ssh/sshd_config',

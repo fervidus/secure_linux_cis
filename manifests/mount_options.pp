@@ -4,7 +4,7 @@
 # @param opt The options to check that mount for
 #
 # @example
-#   secure_linux_cis::mount_options { 'namevar': 
+#   secure_linux_cis::mount_options { 'namevar':
 #     mount => $mountpoint,
 #     opt   => $option,
 #   }
