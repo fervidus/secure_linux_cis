@@ -22,6 +22,7 @@ describe 'secure_linux_cis::redhat7::cis_5_2_2' do
                 line:   'Protocol 2',
                 match:  '^Protocol.*',
               )
+            is_expected.to contain_class('secure_linux_cis::service')
           }
         else
           it {

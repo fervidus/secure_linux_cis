@@ -6,7 +6,11 @@ describe 'secure_linux_cis::redhat7::cis_3_7' do
   on_supported_os.each do |os, os_facts|
     bool_options.each do |option|
       context "on #{os}" do
-        let(:facts) { os_facts }
+        let(:facts) do
+          os_facts.merge(
+            'networking' => { 'interfaces' => { 'wlan1' => { 'mac' => 'de:ad:be:ef:00:00' } } },
+          )
+        end
         let(:params) { { 'enforced' => option } }
 
         it { is_expected.to compile }

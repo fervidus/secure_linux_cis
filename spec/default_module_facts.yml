@@ -1,0 +1,16 @@
+# Facts specified here will override the values provided by rspec-puppet-facts.
+---
+architecture: 'amd64'
+os:
+  architecture: 'amd64'
+  name: 'RedHat'
+  release:
+    major: 7
+mountpoints:
+  '/':
+    filesystem: 'xfs'
+    device: '/dev/root'
+networking:
+  interfaces:
+    eth0:
+      mac: c0:ff:ee:c0:ff:ee

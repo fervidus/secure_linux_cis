@@ -15,9 +15,9 @@ describe 'secure_linux_cis::redhat7::cis_4_2_1_5' do
           it {
             is_expected.to contain_file_line('rsyslog.conf ModLoad')
             is_expected.to contain_file_line('rsyslog.conf InputTCPServerRun')
-            is_expected.to contain_exec('reload rsyslog 4_2_1_5')
+            is_expected.to contain_exec('reload rsyslog')
               .with(
-                command: '/bin/pkill -HUP rsyslogd',
+                command: 'pkill -HUP rsyslogd',
                 refreshonly: true,
               )
           }
@@ -25,7 +25,7 @@ describe 'secure_linux_cis::redhat7::cis_4_2_1_5' do
           it {
             is_expected.not_to contain_file_line('rsyslog.conf ModLoad')
             is_expected.not_to contain_file_line('rsyslog.conf InputTCPServerRun')
-            is_expected.not_to contain_exec('reload rsyslog 4_2_1_5')
+            is_expected.not_to contain_exec('reload rsyslog')
           }
         end
       end

@@ -12,11 +12,25 @@ describe 'secure_linux_cis::redhat7::cis_6_2_7' do
         it { is_expected.to compile }
 
         if option
-          it {
-            is_expected.to contain_notify('hdir')
-          }
+          context 'With non compliant settings' do
+            let(:facts) do
+              super().merge('home_directory' => 'The home directory (/dir) of user user does not exist.')
+            end
+
+            it {
+              is_expected.to contain_notify('hdir')
+            }
+          end
+          context 'With compliant settings' do
+            it {
+              is_expected.not_to contain_notify('hdir')
+            }
+          end
+          it { is_expected.to contain_file('/tmp/cis_scripts/home_directory').with(ensure: 'file') }
         else
-          it { is_expected.not_to contain_notify('hdir') }
+          context 'With this check disabled' do
+            it { is_expected.not_to contain_notify('hdir') }
+          end
         end
       end
     end

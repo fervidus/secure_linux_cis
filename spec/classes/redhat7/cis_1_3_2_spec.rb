@@ -13,10 +13,10 @@ describe 'secure_linux_cis::redhat7::cis_1_3_2' do
 
         if option
           it {
-            is_expected.to contain_cron('cron_aide')
+            is_expected.to contain_cron__job('cron_aide')
           }
         else
-          it { is_expected.not_to contain_cron('cron_aide') }
+          it { is_expected.not_to contain_cron__job('cron_aide') }
         end
       end
     end

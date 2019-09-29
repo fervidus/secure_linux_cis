@@ -12,13 +12,28 @@ describe 'secure_linux_cis::redhat7::cis_1_1_6' do
         it { is_expected.to compile }
 
         if option
-          it {
-            is_expected.to contain_notify('vp')
-          }
+          context 'With non compliant settings' do
+            it {
+              is_expected.to contain_notify('vp')
+            }
+          end
+          context 'With compliant settings' do
+            let(:facts) do
+              super().merge(
+                'mountpoints' => {
+                  '/var' => {},
+                },
+              )
+            end
+
+            it {
+              is_expected.not_to contain_notify('vp')
+            }
+          end
         else
-          it {
-            is_expected.not_to contain_notify('vp')
-          }
+          context 'With this check disabled' do
+            it { is_expected.not_to contain_notify('vp') }
+          end
         end
       end
     end

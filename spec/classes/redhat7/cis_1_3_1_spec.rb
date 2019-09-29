@@ -14,6 +14,9 @@ describe 'secure_linux_cis::redhat7::cis_1_3_1' do
         if option
           it {
             is_expected.to contain_package('aide').that_comes_before('Exec[aide_database]')
+            is_expected.to contain_exec('aide_database').with(
+              command: 'aide --init',
+            )
           }
         else
           it {

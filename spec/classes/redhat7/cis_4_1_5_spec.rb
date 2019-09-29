@@ -16,31 +16,31 @@ describe 'secure_linux_cis::redhat7::cis_4_1_5' do
             is_expected.to contain_file_line('audit.rules user/group 1')
               .with(
                 ensure: 'present',
-                path: '/etc/audit/audit.rules',
+                path: '/etc/audit/rules.d/audit.rules',
                 line: '-w /etc/group -p wa -k identity',
               )
             is_expected.to contain_file_line('audit.rules user/group 2')
               .with(
                 ensure: 'present',
-                path: '/etc/audit/audit.rules',
+                path: '/etc/audit/rules.d/audit.rules',
                 line: '-w /etc/passwd -p wa -k identity',
               )
             is_expected.to contain_file_line('audit.rules user/group 3')
               .with(
                 ensure: 'present',
-                path: '/etc/audit/audit.rules',
+                path: '/etc/audit/rules.d/audit.rules',
                 line: '-w /etc/gshadow -p wa -k identity',
               )
             is_expected.to contain_file_line('audit.rules user/group 4')
               .with(
                 ensure: 'present',
-                path: '/etc/audit/audit.rules',
+                path: '/etc/audit/rules.d/audit.rules',
                 line: '-w /etc/shadow -p wa -k identity',
               )
             is_expected.to contain_file_line('audit.rules user/group 5')
               .with(
                 ensure: 'present',
-                path: '/etc/audit/audit.rules',
+                path: '/etc/audit/rules.d/audit.rules',
                 line: '-w /etc/security/opasswd -p wa -k identity',
               )
           }

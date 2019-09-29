@@ -12,11 +12,24 @@ describe 'secure_linux_cis::redhat7::cis_6_2_3' do
         it { is_expected.to compile }
 
         if option
-          it {
-            is_expected.to contain_notify('ps')
-          }
+          context 'With non compliant settings' do
+            let(:facts) do
+              super().merge('plus_shadow' => '+:user')
+            end
+
+            it {
+              is_expected.to contain_notify('ps')
+            }
+          end
+          context 'With compliant settings' do
+            it {
+              is_expected.not_to contain_notify('ps')
+            }
+          end
         else
-          it { is_expected.not_to contain_notify('ps') }
+          context 'With this check disabled' do
+            it { is_expected.not_to contain_notify('ps') }
+          end
         end
       end
     end

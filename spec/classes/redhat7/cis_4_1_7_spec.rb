@@ -16,13 +16,13 @@ describe 'secure_linux_cis::redhat7::cis_4_1_7' do
             is_expected.to contain_file_line('audit.rules selinux 1')
               .with(
                 ensure: 'present',
-                path: '/etc/audit/audit.rules',
+                path: '/etc/audit/rules.d/audit.rules',
                 line: '-w /etc/selinux/ -p wa -k MAC-policy',
               )
             is_expected.to contain_file_line('audit.rules selinux 2')
               .with(
                 ensure: 'present',
-                path: '/etc/audit/audit.rules',
+                path: '/etc/audit/rules.d/audit.rules',
                 line: '-w /usr/share/selinux/ -p wa -k MAC-policy',
               )
           }

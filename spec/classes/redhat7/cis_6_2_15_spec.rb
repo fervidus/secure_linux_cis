@@ -12,11 +12,25 @@ describe 'secure_linux_cis::redhat7::cis_6_2_15' do
         it { is_expected.to compile }
 
         if option
-          it {
-            is_expected.to contain_notify('pge')
-          }
+          context 'With non compliant settings' do
+            let(:facts) do
+              super().merge('password_group_exist' => 'Group group is referenced by /etc/passwd but does not exist in /etc/group')
+            end
+
+            it {
+              is_expected.to contain_notify('pge')
+            }
+          end
+          context 'With compliant settings' do
+            it {
+              is_expected.not_to contain_notify('pge')
+            }
+          end
+          it { is_expected.to contain_file('/tmp/cis_scripts/pwd_group_exist.sh').with(ensure: 'file') }
         else
-          it { is_expected.not_to contain_notify('pge') }
+          context 'With this check disabled' do
+            it { is_expected.not_to contain_notify('pge') }
+          end
         end
       end
     end

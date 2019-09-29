@@ -13,19 +13,27 @@ describe 'secure_linux_cis::redhat7::cis_3_3_3' do
 
         if option
           it {
-            is_expected.to contain_sysctl('net.ipv6.conf.all.disable_ipv6')
+            is_expected.to contain_file_line('net.ipv6.conf.all.disable_ipv6')
               .with(
-                value: 1,
+                path:  '/etc/sysctl.conf',
+                line:  'net.ipv6.conf.all.disable_ipv6 = 1',
+                match: '^net.ipv6.conf.all.disable_ipv6.*',
               )
-            is_expected.to contain_sysctl('net.ipv6.conf.default.disable_ipv6')
+            is_expected.to contain_file_line('net.ipv6.conf.default.disable_ipv6')
               .with(
-                value: 1,
+                path:  '/etc/sysctl.conf',
+                line:  'net.ipv6.conf.default.disable_ipv6 = 1',
+                match: '^net.ipv6.conf.default.disable_ipv6.*',
               )
+          }
+          it {
+            is_expected.to contain_kernel_parameter('ipv6.disable=1').with(ensure: 'present')
           }
         else
           it {
-            is_expected.not_to contain_sysctl('net.ipv6.conf.all.disable_ipv6')
-            is_expected.not_to contain_sysctl('net.ipv6.conf.default.disable_ipv6')
+            is_expected.not_to contain_file_line('net.ipv6.conf.all.disable_ipv6')
+            is_expected.not_to contain_file_line('net.ipv6.conf.default.disable_ipv6')
+            is_expected.not_to contain_kernel_parameter('ipv6.disable=1').with(ensure: 'present')
           }
         end
       end

@@ -12,11 +12,24 @@ describe 'secure_linux_cis::redhat7::cis_1_6_1_6' do
         it { is_expected.to compile }
 
         if option
-          it {
-            is_expected.to contain_notify('ud')
-          }
+          context 'With non compliant settings' do
+            let(:facts) do
+              super().merge('unconf_daemons' => 'daemon')
+            end
+
+            it {
+              is_expected.to contain_notify('ud')
+            }
+          end
+          context 'With compliant settings' do
+            it {
+              is_expected.not_to contain_notify('ud')
+            }
+          end
         else
-          it { is_expected.not_to contain_notify('ud') }
+          context 'With this check disabled' do
+            it { is_expected.not_to contain_notify('ud') }
+          end
         end
       end
     end

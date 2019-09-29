@@ -12,11 +12,25 @@ describe 'secure_linux_cis::redhat7::cis_6_2_12' do
         it { is_expected.to compile }
 
         if option
-          it {
-            is_expected.to contain_notify('n')
-          }
+          context 'With non compliant settings' do
+            let(:facts) do
+              super().merge('netrc_files' => 'warning /dir/.netrc file exists')
+            end
+
+            it {
+              is_expected.to contain_notify('n')
+            }
+          end
+          context 'With compliant settings' do
+            it {
+              is_expected.not_to contain_notify('n')
+            }
+          end
+          it { is_expected.to contain_file('/tmp/cis_scripts/netrc.sh').with(ensure: 'file') }
         else
-          it { is_expected.not_to contain_notify('n') }
+          context 'With this check disabled' do
+            it { is_expected.not_to contain_notify('n') }
+          end
         end
       end
     end

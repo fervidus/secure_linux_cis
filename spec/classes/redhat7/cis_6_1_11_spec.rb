@@ -12,11 +12,24 @@ describe 'secure_linux_cis::redhat7::cis_6_1_11' do
         it { is_expected.to compile }
 
         if option
-          it {
-            is_expected.to contain_notify('uf')
-          }
+          context 'With non compliant settings' do
+            let(:facts) do
+              super().merge('unowned_user_files' => '/file')
+            end
+
+            it {
+              is_expected.to contain_notify('uf')
+            }
+          end
+          context 'With compliant settings' do
+            it {
+              is_expected.not_to contain_notify('uf')
+            }
+          end
         else
-          it { is_expected.not_to contain_notify('uf') }
+          context 'With this check disabled' do
+            it { is_expected.not_to contain_notify('uf') }
+          end
         end
       end
     end
