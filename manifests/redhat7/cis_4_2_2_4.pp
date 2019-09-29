@@ -20,7 +20,7 @@
 class secure_linux_cis::redhat7::cis_4_2_2_4 (
   Boolean $enforced = true,
   Enum['rsyslog', 'syslog-ng', 'none'] $logging = 'rsyslog',
-  String $logging_host = undef,
+  Optional[String] $logging_host = undef,
 ) {
 
   if $enforced and $logging == 'syslog-ng' and $logging_host != '' {

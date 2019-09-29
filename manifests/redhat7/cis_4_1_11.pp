@@ -25,7 +25,7 @@ class secure_linux_cis::redhat7::cis_4_1_11 (
 
   if $enforced {
 
-    # 32 bit architecture
+    # 64 bit architecture
     if $facts['os']['architecture'] =~ /64/ {
 
       file_line { 'audit.rules file access 1':

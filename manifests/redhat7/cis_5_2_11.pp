@@ -19,6 +19,8 @@ class secure_linux_cis::redhat7::cis_5_2_11 (
   'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com']
 ) {
 
+  include ::secure_linux_cis::service
+
   if $enforced {
 
     $acceptable_values = [

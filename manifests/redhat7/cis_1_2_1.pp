@@ -12,13 +12,13 @@
 #   include secure_linux_cis::redhat7::cis_1_2_1
 class secure_linux_cis::redhat7::cis_1_2_1 (
   Boolean $enforced = true,
+  Array $repolist = ['rhel-7-server-rpms/7Server/x86_64']
 ) {
 
   if $enforced {
-
     if($facts['yum_repolist'] != undef) {
-      if member($secure_linux_cis::repolist, $facts['yum_repolist']) == false {
-        notify { "No approved repo found in list:  ${secure_linux_cis::repolist}": }
+      if member($repolist, $facts['yum_repolist']) == false {
+        notify { "No approved repo found in list:  ${repolist}": }
       }
     }
 

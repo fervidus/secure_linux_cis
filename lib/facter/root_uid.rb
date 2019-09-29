@@ -5,5 +5,5 @@
 
 Facter.add('root_uid') do
   confine osfamily: 'RedHat'
-  setcode "cat /etc/passwd | awk -F: '($3 == 0) { print $1 }"
+  setcode "cat /etc/passwd | awk -F: '($3 == 0) { print $1 }'"
 end

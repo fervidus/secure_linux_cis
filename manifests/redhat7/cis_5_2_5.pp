@@ -20,6 +20,8 @@ class secure_linux_cis::redhat7::cis_5_2_5 (
   Integer[1,4] $max_auth_tries = 4,
 ) {
 
+  include ::secure_linux_cis::service
+
   if $enforced {
 
     file_line { 'ssh max auth tries':

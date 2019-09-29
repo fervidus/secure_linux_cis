@@ -26,7 +26,7 @@ class secure_linux_cis::redhat7::cis_3_7 (
       if $name =~ /wlan/ {
         exec { "Disable wireless network interface: ${name}":
           command   => "/sbin/ip link set ${name} down",
-          onlyif    => "ip link show ${name} |grep 'state UP'",
+          onlyif    => "/sbin/ip link show ${name} |grep 'state UP'",
           logoutput => true,
         }
       }

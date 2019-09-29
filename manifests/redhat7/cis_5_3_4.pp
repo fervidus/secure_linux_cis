@@ -6,9 +6,9 @@
 #
 # Rationale:
 # The SHA-512 algorithm provides much stronger hashing than MD5, thus providing additional protection
-# to the system by increasing the level of effort for an attacker to successfully determine passwords. 
+# to the system by increasing the level of effort for an attacker to successfully determine passwords.
 #
-# Note that these change only apply to accounts configured on the local system. 
+# Note that these change only apply to accounts configured on the local system.
 #
 # @summary A short summary of the purpose of this class
 #
