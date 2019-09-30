@@ -22,8 +22,6 @@ class secure_linux_cis::redhat7::cis_4_2_1_3 (
 
   if $enforced and $logging == 'rsyslog' {
 
-    include ::secure_linux_cis::service
-
     file_line { 'rsyslog.conf log_permissions':
       ensure => present,
       path   => '/etc/rsyslog.conf',

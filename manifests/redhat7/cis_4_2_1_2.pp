@@ -20,8 +20,6 @@ class secure_linux_cis::redhat7::cis_4_2_1_2 (
   Enum['rsyslog', 'syslog-ng', 'none'] $logging = 'rsyslog',
 ) {
 
-  include ::secure_linux_cis::service
-
   if $enforced and $logging == 'rsyslog' {
 
     $configs = {
