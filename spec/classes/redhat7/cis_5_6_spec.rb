@@ -14,9 +14,11 @@ describe 'secure_linux_cis::redhat7::cis_5_6' do
         if option
           it {
             is_expected.to contain_file_line('su')
+            is_expected.to contain_exec('root_wheel')
           }
         else
           it { is_expected.not_to contain_file_line('su') }
+          it { is_expected.not_to contain_exec('root_wheel') }
         end
       end
     end

@@ -26,7 +26,7 @@ describe 'secure_linux_cis::redhat7::cis_6_2_6' do
               is_expected.not_to contain_notify('rp')
             }
           end
-          it { is_expected.to contain_file('/tmp/cis_scripts/root_path').with(ensure: 'file') }
+          it { is_expected.to contain_file('/usr/share/cis_scripts/root_path.sh').with(ensure: 'file') }
         else
           context 'With this check disabled' do
             it { is_expected.not_to contain_notify('rp') }

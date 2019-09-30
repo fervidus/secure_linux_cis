@@ -492,7 +492,7 @@ class secure_linux_cis::redhat7 (
       'Class[Secure_linux_cis::Redhat7::Cis_4_2_1_3]',
       'Class[Secure_linux_cis::Redhat7::Cis_4_2_1_4]',
       'Class[Secure_linux_cis::Redhat7::Cis_4_2_2_3]',
-      ]
+    ]
 
     reboot { 'after_run':
       apply     => 'finished',

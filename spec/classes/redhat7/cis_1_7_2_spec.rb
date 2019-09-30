@@ -18,24 +18,24 @@ describe 'secure_linux_cis::redhat7::cis_1_7_2' do
             end
 
             it {
-              is_expected.to contain_file('gdm')
-              is_expected.to contain_file('banner-login').that_requires('File[gdm]')
-              is_expected.to contain_file('banner-login').that_notifies('Exec[dconf]')
+              is_expected.to contain_file('/etc/dconf/profile/gdm')
+              is_expected.to contain_file('/etc/dconf/db/gdm.d/01-banner-message').that_requires('File[/etc/dconf/profile/gdm]')
+              is_expected.to contain_file('/etc/dconf/db/gdm.d/01-banner-message').that_notifies('Exec[dconf]')
               is_expected.to contain_exec('dconf')
             }
           end
           context 'With compliant settings' do
             it {
-              is_expected.not_to contain_file('gdm')
-              is_expected.not_to contain_file('banner-login')
+              is_expected.not_to contain_file('/etc/dconf/profile/gdm')
+              is_expected.not_to contain_file('/etc/dconf/db/gdm.d/01-banner-message')
               is_expected.not_to contain_exec('dconf')
             }
           end
         else
           context 'With this check disabled' do
             it {
-              is_expected.not_to contain_file('gdm')
-              is_expected.not_to contain_file('banner-login')
+              is_expected.not_to contain_file('/etc/dconf/profile/gdm')
+              is_expected.not_to contain_file('/etc/dconf/db/gdm.d/01-banner-message')
               is_expected.not_to contain_exec('dconf')
             }
           end

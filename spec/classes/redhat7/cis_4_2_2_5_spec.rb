@@ -28,18 +28,12 @@ describe 'secure_linux_cis::redhat7::cis_4_2_2_5' do
                 path: '/etc/syslog-ng/syslog-ng.conf',
                 line: 'log { source(net); destination(remote); };',
               )
-            is_expected.to contain_exec('reload syslog-ng 4_2_2_5')
-              .with(
-                command: '/bin/pkill -HUP syslog-ng',
-                refreshonly: true,
-              )
           }
         else
           it {
             is_expected.not_to contain_file_line('syslog-ng.conf remote 1')
             is_expected.not_to contain_file_line('syslog-ng.conf remote 2')
             is_expected.not_to contain_file_line('syslog-ng.conf remote 3')
-            is_expected.not_to contain_exec('reload syslog-ng 4_2_2_5')
           }
         end
       end
@@ -53,7 +47,6 @@ describe 'secure_linux_cis::redhat7::cis_4_2_2_5' do
           is_expected.not_to contain_file_line('syslog-ng.conf remote 1')
           is_expected.not_to contain_file_line('syslog-ng.conf remote 2')
           is_expected.not_to contain_file_line('syslog-ng.conf remote 3')
-          is_expected.not_to contain_exec('reload syslog-ng 4_2_2_5')
         }
       end
     end

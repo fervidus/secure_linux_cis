@@ -13,15 +13,19 @@ describe 'secure_linux_cis::redhat7::cis_1_3_1' do
 
         if option
           it {
-            is_expected.to contain_package('aide').that_comes_before('Exec[aide_database]')
-            is_expected.to contain_exec('aide_database').with(
+            is_expected.to contain_package('aide').that_notifies('Exec[create_aide_database]')
+            is_expected.to contain_exec('create_aide_database').with(
               command: 'aide --init',
+            )
+            is_expected.to contain_exec('rename_aide_database').with(
+              command: 'mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz',
             )
           }
         else
           it {
             is_expected.not_to contain_package('aide')
-            is_expected.not_to contain_exec('aide_database')
+            is_expected.not_to contain_exec('create_aide_database')
+            is_expected.not_to contain_exec('rename_aide_database')
           }
         end
       end

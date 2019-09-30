@@ -15,11 +15,11 @@ describe 'secure_linux_cis::redhat7' do
 
       it { is_expected.to compile }
       it {
-        is_expected.to contain_file('/tmp/cis_scripts').with(
+        is_expected.to contain_file('/usr/share/cis_scripts').with(
           ensure: 'directory',
           owner:  'root',
           group:  'root',
-          mode:   '0755',
+          mode:   '0700',
         )
       }
     end

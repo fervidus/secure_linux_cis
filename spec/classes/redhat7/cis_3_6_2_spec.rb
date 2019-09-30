@@ -28,12 +28,30 @@ describe 'secure_linux_cis::redhat7::cis_3_6_2' do
                 ensure: 'present',
                 policy: 'drop',
               )
+            is_expected.to contain_firewallchain('INPUT:filter:IPv6')
+              .with(
+                ensure: 'present',
+                policy: 'drop',
+              )
+            is_expected.to contain_firewallchain('OUTPUT:filter:IPv6')
+              .with(
+                ensure: 'present',
+                policy: 'drop',
+              )
+            is_expected.to contain_firewallchain('FORWARD:filter:IPv6')
+              .with(
+                ensure: 'present',
+                policy: 'drop',
+              )
           }
         else
           it {
             is_expected.not_to contain_firewallchain('INPUT:filter:IPv4')
             is_expected.not_to contain_firewallchain('OUTPUT:filter:IPv4')
             is_expected.not_to contain_firewallchain('FORWARD:filter:IPv4')
+            is_expected.not_to contain_firewallchain('INPUT:filter:IPv6')
+            is_expected.not_to contain_firewallchain('OUTPUT:filter:IPv6')
+            is_expected.not_to contain_firewallchain('FORWARD:filter:IPv6')
           }
         end
       end

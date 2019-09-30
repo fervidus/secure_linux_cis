@@ -7,6 +7,8 @@
 # @summary 1.7.1.4 Ensure permissions on /etc/motd are configured (Not Scored)
 #
 # @param enforced Should this rule be enforced
+# @param banner Text of the motd, if $motd is empty
+# @param motd Text of the motd
 #
 # @example
 #   include secure_linux_cis::redhat7::cis_1_7_1_4

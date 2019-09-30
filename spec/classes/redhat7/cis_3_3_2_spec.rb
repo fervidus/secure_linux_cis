@@ -13,23 +13,13 @@ describe 'secure_linux_cis::redhat7::cis_3_3_2' do
 
         if option
           it {
-            is_expected.to contain_file_line('net.ipv6.conf.all.accept_redirects')
-              .with(
-                path:  '/etc/sysctl.conf',
-                line:  'net.ipv6.conf.all.accept_redirects = 0',
-                match: '^net.ipv6.conf.all.accept_redirects.*',
-              )
-            is_expected.to contain_file_line('net.ipv6.conf.default.accept_redirects')
-              .with(
-                path:  '/etc/sysctl.conf',
-                line:  'net.ipv6.conf.default.accept_redirects = 0',
-                match: '^net.ipv6.conf.default.accept_redirects.*',
-              )
+            is_expected.to contain_sysctl('net.ipv6.conf.all.accept_redirects').with(value: '0')
+            is_expected.to contain_sysctl('net.ipv6.conf.default.accept_redirects').with(value: '0')
           }
         else
           it {
-            is_expected.not_to contain_file_line('net.ipv6.conf.all.accept_redirects')
-            is_expected.not_to contain_file_line('net.ipv6.conf.default.accept_redirects')
+            is_expected.not_to contain_sysctl('net.ipv6.conf.all.accept_redirects')
+            is_expected.not_to contain_sysctl('net.ipv6.conf.default.accept_redirects')
           }
         end
       end
