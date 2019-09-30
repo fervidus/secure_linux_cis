@@ -18,16 +18,10 @@ describe 'secure_linux_cis::redhat7::cis_4_2_2_4' do
                 path: '/etc/syslog-ng/syslog-ng.conf',
                 line: 'destination logserver { tcp("loghost.example.com" port(514)); }; log { source(src); destination(logserver); };',
               )
-            is_expected.to contain_exec('reload syslog-ng 4_2_2_4')
-              .with(
-                command: '/bin/pkill -HUP syslog-ng',
-                refreshonly: true,
-              )
           }
         else
           it {
             is_expected.not_to contain_file_line('syslog-ng.conf logging_host')
-            is_expected.not_to contain_exec('reload syslog-ng 4_2_2_4')
           }
         end
       end
@@ -39,7 +33,6 @@ describe 'secure_linux_cis::redhat7::cis_4_2_2_4' do
 
         it {
           is_expected.not_to contain_file_line('syslog-ng.conf logging_host')
-          is_expected.not_to contain_exec('reload syslog-ng 4_2_2_4')
         }
       end
     end

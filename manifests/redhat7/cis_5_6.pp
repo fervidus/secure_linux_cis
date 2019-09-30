@@ -26,6 +26,7 @@ class secure_linux_cis::redhat7::cis_5_6 (
     exec { 'root_wheel':
       command => 'usermod -G wheel root',
       unless  => 'grep wheel /etc/group | grep root',
+      path    => '/bin/:/sbin/:/usr/bin/:/usr/sbin/',
     }
   }
 }

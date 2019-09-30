@@ -7,6 +7,7 @@
 # @summary 1.2.1 Ensure package manager repositories are configured (Not Scored)
 #
 # @param enforced Should this rule be enforced
+# @param repolist List of allowed repositories
 #
 # @example
 #   include secure_linux_cis::redhat7::cis_1_2_1

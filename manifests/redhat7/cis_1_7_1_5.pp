@@ -7,6 +7,7 @@
 # @summary 1.7.1.5 Ensure permissions on /etc/issue are configured (Scored)
 #
 # @param enforced Should this rule be enforced
+# @param banner Contents of /etc/issue
 #
 # @example
 #   include secure_linux_cis::redhat7::cis_1_7_1_5

@@ -26,7 +26,7 @@ describe 'secure_linux_cis::redhat7::cis_6_2_12' do
               is_expected.not_to contain_notify('n')
             }
           end
-          it { is_expected.to contain_file('/tmp/cis_scripts/netrc.sh').with(ensure: 'file') }
+          it { is_expected.to contain_file('/usr/share/cis_scripts/netrc.sh').with(ensure: 'file') }
         else
           context 'With this check disabled' do
             it { is_expected.not_to contain_notify('n') }

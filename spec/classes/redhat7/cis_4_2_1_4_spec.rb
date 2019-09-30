@@ -20,11 +20,6 @@ describe 'secure_linux_cis::redhat7::cis_4_2_1_4' do
                 line: '*.* @@loghost.example.com',
                 match: '\*\.\* @@',
               )
-            is_expected.to contain_exec('reload rsyslog')
-              .with(
-                command: 'pkill -HUP rsyslogd',
-                refreshonly: true,
-              )
           }
         else
           it {

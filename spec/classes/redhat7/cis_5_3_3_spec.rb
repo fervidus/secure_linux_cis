@@ -20,7 +20,7 @@ describe 'secure_linux_cis::redhat7::cis_5_3_3' do
                 type:    'password',
                 control: 'sufficient',
                 module:  'pam_unix.so',
-                arguments: ['remember=5', 'sha512', 'nullok', 'try_first_pass', 'use_authtok'],
+                arguments: ['remember=5', 'sha512', 'shadow', 'try_first_pass', 'use_authtok'],
               )
             is_expected.to contain_pam('pam password-auth sufficient')
               .with(
@@ -29,7 +29,7 @@ describe 'secure_linux_cis::redhat7::cis_5_3_3' do
                 type:    'password',
                 control: 'sufficient',
                 module:  'pam_unix.so',
-                arguments: ['remember=5', 'sha512', 'nullok', 'try_first_pass', 'use_authtok'],
+                arguments: ['remember=5', 'sha512', 'shadow', 'try_first_pass', 'use_authtok'],
               )
           }
         else

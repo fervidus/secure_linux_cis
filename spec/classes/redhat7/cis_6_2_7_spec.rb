@@ -26,7 +26,7 @@ describe 'secure_linux_cis::redhat7::cis_6_2_7' do
               is_expected.not_to contain_notify('hdir')
             }
           end
-          it { is_expected.to contain_file('/tmp/cis_scripts/home_directory').with(ensure: 'file') }
+          it { is_expected.to contain_file('/usr/share/cis_scripts/home_directory.sh').with(ensure: 'file') }
         else
           context 'With this check disabled' do
             it { is_expected.not_to contain_notify('hdir') }

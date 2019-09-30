@@ -24,7 +24,6 @@ describe 'secure_linux_cis::redhat7::cis_4_2_1_3' do
               path:   '/etc/rsyslog.conf',
               line:   '$FileCreateMode 0640',
               match:  '^\$FileCreateMode.*',
-              notify: 'Exec[reload rsyslog]',
             )
             is_expected.to contain_class('secure_linux_cis::service')
           }

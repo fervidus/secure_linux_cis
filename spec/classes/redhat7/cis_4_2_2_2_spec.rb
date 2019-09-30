@@ -81,16 +81,10 @@ describe 'secure_linux_cis::redhat7::cis_4_2_2_2' do
               .with(
                 line: 'log { source(src); source(chroots); filter(f_warn); destination(warn); };',
               )
-            is_expected.to contain_exec('reload syslog-ng 4_2_2_2')
-              .with(
-                command: '/bin/pkill -HUP syslog-ng',
-                refreshonly: true,
-              )
           }
         else
           it {
             is_expected.not_to contain_file_line('syslog-ng.conf log { source(src); source(chroots); filter(f_warn); destination(warn); };')
-            is_expected.not_to contain_exec('reload syslog-ng 4_2_2_2')
           }
         end
       end

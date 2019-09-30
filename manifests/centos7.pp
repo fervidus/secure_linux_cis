@@ -692,7 +692,7 @@ class secure_linux_cis::centos7 (
       'Class[Secure_linux_cis::Redhat7::Cis_4_2_2_3]',
       'Class[Secure_linux_cis::Redhat7::Cis_4_2_2_4]',
       'Class[Secure_linux_cis::Redhat7::Cis_4_2_2_5]',
-      ]
+    ]
 
     reboot { 'after_run':
       apply     => 'finished',
