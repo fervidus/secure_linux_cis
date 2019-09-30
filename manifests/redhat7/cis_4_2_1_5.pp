@@ -14,10 +14,8 @@ class secure_linux_cis::redhat7::cis_4_2_1_5 (
   Boolean $is_logging_host = false,
 ) {
 
-
   if $enforced and $logging == 'rsyslog' {
 
-    include ::secure_linux_cis::service
     if $is_logging_host {
 
       file_line { 'rsyslog.conf ModLoad':

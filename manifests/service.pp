@@ -8,12 +8,6 @@ class secure_linux_cis::service {
   # Set default path for execs
   Exec { path => '/bin/:/sbin/:/usr/bin/:/usr/sbin/' }
 
-  # Reload rsyslog
-  exec { 'reload rsyslog':
-    command     => 'pkill -HUP rsyslogd',
-    refreshonly => true,
-  }
-
   # Reload sshd config (only if running)
   exec { 'reload sshd':
     command     => 'systemctl reload sshd',

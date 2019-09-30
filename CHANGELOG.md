@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.0.14
+
+Thanks to Bart-Jan Vrielink for fixing out spec test.
+
+
 ## Release 1.0.13
 * Added AIDE database renaming to cis_1_3_1 as 'aide --init' command creates a new temporary file requiring renaming
 * Change cis_1_6_11 to use kernel_parameter instead of file_line to set 'quiet' in grub.cfg, to avoid entire line being overwritten in /etc/default/grub.cfg
