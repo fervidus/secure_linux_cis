@@ -1,3 +1,4 @@
+[![Build Status](https://img.shields.io/travis/fervidus/secure_linux_cis)](https://img.shields.io/travis/fervidus/secure_linux_cis)
 
 # secure_linux_cis
 

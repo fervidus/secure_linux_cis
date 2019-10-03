@@ -7,6 +7,7 @@
 # @param is_logging_host Is this host a logging host
 #
 # @example
+
 #   include secure_linux_cis::redhat7::cis_4_2_1_5
 class secure_linux_cis::redhat7::cis_4_2_1_5 (
   Boolean $enforced = true,
