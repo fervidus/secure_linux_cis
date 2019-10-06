@@ -24,11 +24,9 @@ describe 'secure_linux_cis::redhat7::cis_1_1_15' do
         it { is_expected.to compile }
 
         if option
-          it {
-            is_expected.to contain_secure_linux_cis__mount_options('/dev/shm-nodev')
-          }
+          it { is_expected.to contain_mount('/dev/shm') }
         else
-          it { is_expected.not_to contain_secure_linux_cis__mount_options('/dev/shm-nodev') }
+          it { is_expected.not_to contain_mount('/dev/shm') }
         end
       end
     end
