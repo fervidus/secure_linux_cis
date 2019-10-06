@@ -19,16 +19,11 @@ class secure_linux_cis::redhat7::cis_5_4_4 (
 
   if $enforced {
 
-# The timeout parameter has been added for the 5.4.5 control for both files
     file_line { 'bashrc':
       path     => '/etc/bashrc',
       line     => '      umask 077',
       match    => '^\s+umask\s+\d+',
       multiple => true,
-    }
-    file_line { 'bashrc_tmout':
-      path => '/etc/bashrc',
-      line => 'TMOUT=600',
     }
 
     file_line { 'profile':
@@ -36,10 +31,6 @@ class secure_linux_cis::redhat7::cis_5_4_4 (
       line     => '    umask 077',
       match    => '^\s+umask\s+\d+',
       multiple => true,
-    }
-    file_line { 'profile_tmout':
-      path => '/etc/profile',
-      line => 'TMOUT=600',
     }
 
     file_line { 'login.defs':

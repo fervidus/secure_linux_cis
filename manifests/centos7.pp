@@ -584,8 +584,8 @@ class secure_linux_cis::centos7 (
   include ::secure_linux_cis::redhat7::cis_5_4_3
   # 5.4.4
   include ::secure_linux_cis::redhat7::cis_5_4_4
-  # # 5.4.5
-  # include ::secure_linux_cis::redhat7::cis_5_4_5
+  # 5.4.5
+  include ::secure_linux_cis::redhat7::cis_5_4_5
   # # 5.5
   # include ::secure_linux_cis::redhat7::cis_5_5
   # 5.6
