@@ -18,13 +18,13 @@ fixtures:
     augeasproviders_grub: "herculesteam/augeasproviders_grub"
     augeasproviders_core:
       repo: "herculesteam/augeasproviders_core"
-      ref: "2.4.0"
+      ref: "2.5.0"
     augeasproviders_sysctl:
       repo: "herculesteam/augeasproviders_sysctl"
       ref: "2.3.1"
     firewall:
       repo: "puppetlabs/firewall"
-      ref: "1.9.0"
+      ref: "2.1.0"
     augeas: "camptocamp/augeas"
     cron: "puppet/cron"
     mailalias_core: "puppetlabs/mailalias_core"
