@@ -26,6 +26,7 @@ fixtures:
       repo: "puppetlabs/firewall"
       ref: "2.1.0"
     augeas: "camptocamp/augeas"
+    augeas_core: "puppetlabs/augeas_core"
     cron: "puppet/cron"
     mailalias_core: "puppetlabs/mailalias_core"
     reboot: "puppetlabs/reboot"
