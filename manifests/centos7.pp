@@ -146,9 +146,9 @@ class secure_linux_cis::centos7 (
   #   repolist => $repolist,
   # }
   # 1.2.2
-  # include ::secure_linux_cis::redhat7::cis_1_2_3
-  # 1.2.3
   include ::secure_linux_cis::redhat7::cis_1_2_2
+  # 1.2.3
+  # include ::secure_linux_cis::redhat7::cis_1_2_3 
   # 1.3.1
   include ::secure_linux_cis::redhat7::cis_1_3_1
   # 1.3.2
