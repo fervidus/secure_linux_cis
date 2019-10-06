@@ -27,7 +27,6 @@ fixtures:
       ref: "1.9.0"
     augeas: "camptocamp/augeas"
     cron: "puppet/cron"
-    augeas_core: "puppetlabs/augeas_core"
     mailalias_core: "puppetlabs/mailalias_core"
     reboot: "puppetlabs/reboot"
     chrony: "aboe/chrony"
