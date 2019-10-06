@@ -30,4 +30,5 @@ fixtures:
     cron: "puppet/cron"
     mailalias_core: "puppetlabs/mailalias_core"
     reboot: "puppetlabs/reboot"
+    mount: "puppetlabs/mount_core"
     chrony: "aboe/chrony"
