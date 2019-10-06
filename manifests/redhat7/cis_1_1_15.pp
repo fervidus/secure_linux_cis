@@ -13,16 +13,21 @@
 class secure_linux_cis::redhat7::cis_1_1_15 (
   Boolean $enforced = true,
 ) {
+# this class manages cis_1_1_15, cis_1_1_16 and cis_1_1_17 as /dev/shm is not listed in /etc/fstab by default and mount_options.pp fails
+
+  $mount   = '/dev/shm'
+  $options = 'nodev,nosuid,noexec'
 
   if $enforced {
 
-    $mount = '/dev/shm'
-    $option = 'nodev'
+    if $facts['mountpoints'][$mount] {
 
-    secure_linux_cis::mount_options { "${mount}-${option}":
-      mount => $mount,
-      opt   => $option,
+      mount { $mount:
+          device  => $mount,
+          fstype  => 'tmpfs',
+          options => $options,
+          atboot  => 'true',
+      }
     }
-
   }
 }

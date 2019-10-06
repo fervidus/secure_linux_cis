@@ -14,15 +14,9 @@
 class secure_linux_cis::redhat7::cis_1_1_16 (
   Boolean $enforced = true,
 ) {
-  if $enforced {
+# this requirement is managed in cis_1_1_15
 
-    $mount = '/dev/shm'
-    $option = 'nosuid'
+#  if $enforced {
 
-    secure_linux_cis::mount_options { "${mount}-${option}":
-      mount => $mount,
-      opt   => $option,
-    }
-
-  }
+#  }
 }
