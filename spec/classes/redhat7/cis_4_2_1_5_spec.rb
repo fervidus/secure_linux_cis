@@ -2,7 +2,6 @@ require 'spec_helper'
 
 bool_options = [true, false]
 
-
 describe 'secure_linux_cis::redhat7::cis_4_2_1_5' do
   on_supported_os.each do |os, os_facts|
     bool_options.each do |option|
