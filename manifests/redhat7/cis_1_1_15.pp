@@ -26,7 +26,7 @@ class secure_linux_cis::redhat7::cis_1_1_15 (
           device  => $mount,
           fstype  => 'tmpfs',
           options => $options,
-          atboot  => 'true',
+          atboot  => true,
       }
     }
   }
