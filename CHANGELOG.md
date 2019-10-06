@@ -1,9 +1,15 @@
 # Changelog
 
+## Release 1.0.15
+* Activate use of cis_1_1_3, cis 1_1_4 and cis_1_1_5 to manage /tmp partition options 
+* Change management of /dev/shm to use mount resource as not listed in /etc/fstab and mount_options.pp fails
+* Move TMOUT setting from cis_5_4_4 to cis 5_4_5, add export and readonly lines
+* Add oboe/chrony to dependencies in metadata
+* Remove puppetlabs/augeas_core from metadata as only compatible with puppet >=6
+* Raise minimum version requirements for dependencies in metadata 
+
 ## Release 1.0.14
-
-Thanks to Bart-Jan Vrielink for fixing out spec test.
-
+Thanks to Bart-Jan Vrielink for fixing our spec test.
 
 ## Release 1.0.13
 * Added AIDE database renaming to cis_1_3_1 as 'aide --init' command creates a new temporary file requiring renaming
@@ -18,7 +24,6 @@ Thanks to Bart-Jan Vrielink for fixing out spec test.
 * Update local_users custom fact to allow for users whose password needs to be changed
 * Move location of custom fact scripts directory from /tmp/cis_scripts to /usr/share/cis_scripts as fail to execute if /tmp mounted noexec as per recommendations!
 * Remove subscription_manager from dependencies as appears unused
-
 
 ## Release 1.0.12
 * Fix cis_5_2_14 ssh DenyGroups typo

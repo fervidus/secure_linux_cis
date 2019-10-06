@@ -32,11 +32,12 @@ class secure_linux_cis::redhat7::cis_5_4_5 (
         path => $path,
         line => 'export TMOUT',
       }
+    }
 
-      file_line { "${path}_readonly_tmout":
-        path => $path,
-        line => 'readonly TMOUT',
-      }
+    file_line { "bashrc_readonly_tmout":
+      path => '/etc/bashrc',
+      line => 'readonly TMOUT',
     }
   }
 }
+
