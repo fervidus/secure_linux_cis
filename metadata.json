@@ -1,6 +1,6 @@
 {
   "name": "fervid-secure_linux_cis",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "author": "Fervid",
   "summary": "This module hardens Linux servers to CIS security compliance",
   "license": "Apache-2.0",
@@ -9,28 +9,24 @@
   "issues_url": "https://github.com/fervidus/secure_linux_cis/issues",
   "dependencies": [
     {
+      "name": "aboe/chrony",
+      "version_requirement": ">= 0.3.0 < 1.0.0"
+    },
+    {
+      "name": "camptocamp/augeas",
+      "version_requirement": ">= 1.8.0 < 2.0.0"
+    },
+    {
       "name": "camptocamp/kmod",
-      "version_requirement": ">= 2.0.0 < 3.0.0"
-    },
-    {
-      "name": "puppet/alternatives",
-      "version_requirement": ">= 2.0.0 < 3.0.0"
-    },
-    {
-      "name": "puppet/cron",
-      "version_requirement": ">= 1.0.0 < 2.0.0"
+      "version_requirement": ">= 2.3.0 < 3.0.0"
     },
     {
       "name": "camptocamp/postfix",
-      "version_requirement": ">= 1.0.0 < 2.0.0"
-    },
-    {
-      "name": "puppetlabs/stdlib",
-      "version_requirement": ">= 4.0.0 <= 5.0.0"
+      "version_requirement": ">= 1.8.0 < 2.0.0"
     },
     {
       "name": "herculesteam/augeasproviders_core",
-      "version_requirement": ">= 2.0.0 < 3.0.0"
+      "version_requirement": ">= 2.5.0 < 3.0.0"
     },
     {
       "name": "herculesteam/augeasproviders_grub",
@@ -38,47 +34,51 @@
     },
     {
       "name": "herculesteam/augeasproviders_sysctl",
-      "version_requirement": ">= 2.0.0 < 3.0.0"
-    },
-    {
-      "name": "kemra102/auditd",
-      "version_requirement": ">= 2.0.0 < 3.0.0"
-    },
-    {
-      "name": "herculesteam/augeasproviders_pam",
-      "version_requirement": ">= 2.0.0 < 3.0.0"
-    },
-    {
-      "name": "puppetlabs/ntp",
-      "version_requirement": ">= 7.0.0 < 8.0.0"
-    },
-    {
-      "name": "puppetlabs/firewall",
-      "version_requirement": ">= 1.0.0 < 2.0.0"
+      "version_requirement": ">= 2.3.0 < 3.0.0"
     },
     {
       "name": "herculesteam/augeasproviders_shellvar",
+      "version_requirement": ">= 4.0.0 < 5.0.0"
+    },
+    {
+      "name": "herculesteam/augeasproviders_pam",
+      "version_requirement": ">= 2.2.0 < 3.0.0"
+    },
+    {
+      "name": "kemra102/auditd",
+      "version_requirement": ">= 2.2.0 < 3.0.0"
+    },
+    {
+      "name": "puppet/alternatives",
       "version_requirement": ">= 3.0.0 < 4.0.0"
+    },
+    {
+      "name": "puppet/cron",
+      "version_requirement": ">= 1.3.0 < 2.0.0"
     },
     {
       "name": "puppet/logrotate",
-      "version_requirement": ">= 3.0.0 < 4.0.0"
+      "version_requirement": ">= 4.0.0 < 5.0.0"
     },
     {
-      "name": "camptocamp/augeas",
-      "version_requirement": ">= 1.0.0 < 2.0.0"
-    },
-    {
-      "name": "puppetlabs/augeas_core",
-      "version_requirement": ">= 1.0.0 < 2.0.0"
+      "name": "puppetlabs/firewall",
+      "version_requirement": ">= 2.0.0 < 3.0.0"
     },
     {
       "name": "puppetlabs/mailalias_core",
       "version_requirement": ">= 1.0.0 < 2.0.0"
     },
     {
+      "name": "puppetlabs/ntp",
+      "version_requirement": ">= 8.0.0 < 9.0.0"
+    },
+    {
       "name": "puppetlabs/reboot",
       "version_requirement": ">= 1.0.0 < 3.0.0"
+    },
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.0.0 <= 5.0.0"
     }
   ],
   "operatingsystem_support": [
