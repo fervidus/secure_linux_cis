@@ -108,8 +108,8 @@ class secure_linux_cis::redhat7 (
   include ::secure_linux_cis::redhat7::cis_1_1_13
   include ::secure_linux_cis::redhat7::cis_1_1_14
   include ::secure_linux_cis::redhat7::cis_1_1_15
-  include ::secure_linux_cis::redhat7::cis_1_1_16
-  include ::secure_linux_cis::redhat7::cis_1_1_17
+  # include ::secure_linux_cis::redhat7::cis_1_1_16
+  # include ::secure_linux_cis::redhat7::cis_1_1_17
   include ::secure_linux_cis::redhat7::cis_1_1_18
   include ::secure_linux_cis::redhat7::cis_1_1_19
   include ::secure_linux_cis::redhat7::cis_1_1_20

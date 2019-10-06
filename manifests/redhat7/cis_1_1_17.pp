@@ -13,17 +13,11 @@
 class secure_linux_cis::redhat7::cis_1_1_17 (
   Boolean $enforced = true,
 ) {
+# this requirement is managed in cis_1_1_15
 
-  if $enforced {
+#  if $enforced {
 
-    $mount = '/dev/shm'
-    $option = 'noexec'
-
-    secure_linux_cis::mount_options { "${mount}-${option}":
-      mount => $mount,
-      opt   => $option,
-    }
-
-  }
+#  }
 }
+
 

@@ -102,11 +102,11 @@ class secure_linux_cis::centos7 (
   # 1.1.2
   include ::secure_linux_cis::redhat7::cis_1_1_2
   # 1.1.3
-  # include ::secure_linux_cis::redhat7::cis_1_1_3
-  # # 1.1.4
-  # include ::secure_linux_cis::redhat7::cis_1_1_4
-  # # 1.1.5
-  # include ::secure_linux_cis::redhat7::cis_1_1_5
+  include ::secure_linux_cis::redhat7::cis_1_1_3
+  # 1.1.4
+  include ::secure_linux_cis::redhat7::cis_1_1_4
+  # 1.1.5
+  include ::secure_linux_cis::redhat7::cis_1_1_5
   # 1.1.6
   include ::secure_linux_cis::redhat7::cis_1_1_6
   # 1.1.7
@@ -127,7 +127,7 @@ class secure_linux_cis::centos7 (
   include ::secure_linux_cis::redhat7::cis_1_1_14
   # 1.1.15
   include ::secure_linux_cis::redhat7::cis_1_1_15
-  # 1.1.16
+  # # 1.1.16
   # include ::secure_linux_cis::redhat7::cis_1_1_16
   # # 1.1.17
   # include ::secure_linux_cis::redhat7::cis_1_1_17
