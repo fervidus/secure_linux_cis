@@ -10,14 +10,33 @@
 #
 # @example
 #   include secure_linux_cis::redhat7::cis_5_4_5
-
-# The TMOUT parameter has been added in 5_4_4
 class secure_linux_cis::redhat7::cis_5_4_5 (
   Boolean $enforced = true,
 ) {
 
-  #if $enforced {
+  $paths = [
+    '/etc/bashrc',
+    '/etc/profile',
+  ]
 
-  #}
+  if $enforced {
 
+    $paths.each | $path | {
+
+      file_line { "${path}_tmout":
+        path => $path,
+        line => 'TMOUT=600',
+      }
+
+      file_line { "${path}_export_tmout":
+        path => $path,
+        line => 'export TMOUT',
+      }
+
+      file_line { "${path}_readonly_tmout":
+        path => $path,
+        line => 'readonly TMOUT',
+      }
+    }
+  }
 }
