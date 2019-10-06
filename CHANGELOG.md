@@ -1,10 +1,10 @@
 # Changelog
 
 ## Release 1.0.15
-* Activate use of cis_1_1_3, cis 1_1_4 and cis_1_1_5 to manage /tmp partition options 
-* Change management of /dev/shm to use mount resource as not listed in /etc/fstab and mount_options.pp fails
-* Move TMOUT setting from cis_5_4_4 to cis 5_4_5, add export and readonly lines
-* Add oboe/chrony to dependencies in metadata
+* Activate use of cis_1_1_3, cis 1_1_4 and cis_1_1_5 to manage /tmp partition options in centos7.pp
+* Change management of /dev/shm to use mount resource in cis_1_1_15 as not listed in /etc/fstab and mount_options.pp fails
+* Move TMOUT setting from cis_5_4_4 to cis 5_4_5, add export and readonly lines to /etc/bashrc
+* Add oboe/chrony to dependencies in metadata to allow time_sync to work with chrony
 * Remove puppetlabs/augeas_core from metadata as only compatible with puppet >=6
 * Raise minimum version requirements for dependencies in metadata 
 

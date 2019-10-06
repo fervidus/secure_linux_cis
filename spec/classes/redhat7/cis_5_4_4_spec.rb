@@ -15,8 +15,6 @@ describe 'secure_linux_cis::redhat7::cis_5_4_4' do
           it {
             is_expected.to contain_file_line('bashrc')
             is_expected.to contain_file_line('profile')
-            is_expected.to contain_file_line('profile_tmout')
-            is_expected.to contain_file_line('bashrc_tmout')
             is_expected.to contain_file_line('csh.cshrc')
             is_expected.to contain_file_line('login.defs')
           }
@@ -24,8 +22,6 @@ describe 'secure_linux_cis::redhat7::cis_5_4_4' do
           it {
             is_expected.not_to contain_file_line('bashrc')
             is_expected.not_to contain_file_line('profile')
-            is_expected.not_to contain_file_line('profile_tmout')
-            is_expected.not_to contain_file_line('bashrc_tmout')
             is_expected.not_to contain_file_line('csh.cshrc')
             is_expected.not_to contain_file_line('login.defs')
           }

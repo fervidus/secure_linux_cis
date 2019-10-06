@@ -34,7 +34,7 @@ class secure_linux_cis::redhat7::cis_5_4_5 (
       }
     }
 
-    file_line { "bashrc_readonly_tmout":
+    file_line { 'bashrc_readonly_tmout':
       path => '/etc/bashrc',
       line => 'readonly TMOUT',
     }

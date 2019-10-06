@@ -25,7 +25,6 @@ describe 'secure_linux_cis::redhat7::cis_4_2_1_3' do
               line:   '$FileCreateMode 0640',
               match:  '^\$FileCreateMode.*',
             )
-            is_expected.to contain_class('secure_linux_cis::service')
           }
         else
           it {

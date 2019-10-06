@@ -6,7 +6,6 @@ describe 'secure_linux_cis::service' do
       let(:facts) { os_facts }
 
       it { is_expected.to compile }
-      it { is_expected.to contain_exec('reload rsyslog') }
       it { is_expected.to contain_exec('reload sshd') }
     end
   end
