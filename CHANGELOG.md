@@ -6,7 +6,8 @@
 * Move TMOUT setting from cis_5_4_4 to cis 5_4_5, add export and readonly lines to /etc/bashrc
 * Add oboe/chrony to dependencies in metadata to allow time_sync to work with chrony
 * Add puppetlabs/mount_core to metadata to maintain compliance with puppet 6
-* Raise minimum version requirements for dependencies in metadata 
+* Raise minimum version requirements for dependencies in metadata
+* Raise Puppet version requirement to >= 5.0.0 < 7.0.0
 
 ## Release 1.0.14
 Thanks to Bart-Jan Vrielink for fixing our spec test.
