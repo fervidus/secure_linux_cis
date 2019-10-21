@@ -25,6 +25,18 @@ class secure_linux_cis::redhat7::cis_5_4_1_4 (
       fail('pass_inactive_days should be set to a value of 30 or less')
     }
 
+    # Set the default inactivity period
+    # The command 'useradd -D -f 30' does the same as editting
+    # /etc/default/useradd directly.
+    $useradd_config = '/etc/default/useradd'
+    shellvar { 'cis_5_4_1_4':
+      ensure   => present,
+      target   => $useradd_config,
+      variable => 'INACTIVE',
+      value    => $pass_inactive_days,
+    }
+
+
     # local_users fact may be undef
     $local_users = pick($facts['local_users'], {})
 

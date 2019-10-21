@@ -390,7 +390,7 @@ class secure_linux_cis::centos7 (
   # 4.1.11
   include ::secure_linux_cis::redhat7::cis_4_1_11
   # # 4.1.12
-  # include ::secure_linux_cis::redhat7::cis_4_1_12
+  include ::secure_linux_cis::redhat7::cis_4_1_12
   # 4.1.13
   include ::secure_linux_cis::redhat7::cis_4_1_13
   # 4.1.14
