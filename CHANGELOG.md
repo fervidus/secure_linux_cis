@@ -2,6 +2,7 @@
 
 ## Release 1.0.16
 * Add file_line management of /etc/default/useradd INACTIVE entry in cis_5_4_1_4 to meet Nessus scan requirement
+* Expand puppetlabs/firewall version range to >= 1.15.0 < 3.0.0 as many other modules still have < 2.0.0 and this module will fail to install
 
 ## Release 1.0.15
 * Activate use of cis_1_1_3, cis 1_1_4 and cis_1_1_5 to manage /tmp partition options in centos7.pp
