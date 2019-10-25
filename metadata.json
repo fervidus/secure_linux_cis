@@ -1,6 +1,6 @@
 {
   "name": "fervid-secure_linux_cis",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "author": "Fervid",
   "summary": "This module hardens Linux servers to CIS security compliance",
   "license": "Apache-2.0",
@@ -66,7 +66,7 @@
     },
     {
       "name": "puppetlabs/firewall",
-      "version_requirement": ">= 2.0.0 < 3.0.0"
+      "version_requirement": ">= 1.5.0 < 3.0.0"
     },
     {
       "name": "puppetlabs/mailalias_core",

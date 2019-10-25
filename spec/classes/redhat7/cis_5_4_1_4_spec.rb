@@ -12,7 +12,7 @@ describe 'secure_linux_cis::redhat7::cis_5_4_1_4' do
         it { is_expected.to compile }
 
         if option
-          it { is_expected.to contain_shellvar('cis_5_4_1_4') }
+          it { is_expected.to contain_file_line('useradd_inactive') }
           context 'With non compliant settings' do
             let(:facts) do
               super().merge(
@@ -44,7 +44,7 @@ describe 'secure_linux_cis::redhat7::cis_5_4_1_4' do
           end
         else
           context 'With this check disabled' do
-            it { is_expected.not_to contain_shellvar('cis_5_4_1_4') }
+            it { is_expected.not_to contain_file_line('useradd_inactive') }
             it { is_expected.not_to contain_exec('/bin/chage --inactive 30 root') }
           end
         end

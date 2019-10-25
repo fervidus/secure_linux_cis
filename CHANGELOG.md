@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.0.16
+* Added support for CIS 4.1.12
+* Add newlines to the end of /etc/hosts.{allow,deny} in cis_3_4_2 and cis_3_4_3
+* cis_5_4_1_4 now also covers the default setting
+
 ## Release 1.0.15
 * Activate use of cis_1_1_3, cis 1_1_4 and cis_1_1_5 to manage /tmp partition options in centos7.pp
 * Change management of /dev/shm to use mount resource in cis_1_1_15 as not listed in /etc/fstab and mount_options.pp fails
