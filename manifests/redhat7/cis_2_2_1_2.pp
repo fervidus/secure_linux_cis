@@ -35,12 +35,27 @@ class secure_linux_cis::redhat7::cis_2_2_1_2 (
       ],
     }
 
-    file { '/etc/sysconfig/ntpd':
-      ensure  => file,
-      owner   => 'root',
-      group   => 'root',
-      mode    => '0644',
-      content => 'OPTIONS="-u ntp:ntp"',
+    case $facts['os']['family'] {
+      'RedHat': {
+        file { '/etc/sysconfig/ntpd':
+          ensure  => file,
+          owner   => 'root',
+          group   => 'root',
+          mode    => '0644',
+          content => 'OPTIONS="-u ntp:ntp"',
+        }
+      }
+      'Debian': {
+        file_line { 'ntpuser':
+          ensure  => present,
+          path    => '/etc/init.d/ntp',
+          line    => 'RUNASUSER=ntp',
+          match   => '^RUNASUSER=',
+          require => Class['::ntp']
+        }
+      }
+      default: {
+      }
     }
 
   }

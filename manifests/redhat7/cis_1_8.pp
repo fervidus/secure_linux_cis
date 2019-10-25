@@ -14,12 +14,23 @@ class secure_linux_cis::redhat7::cis_1_8 (
   Boolean $enforced = true,
 ) {
 
+  case $facts['os']['family'] {
+    'RedHat': {
+      $command = 'yum check-update --security'
+    }
+    'Debian': {
+      $command = 'apt-get -s upgrade'
+    }
+    default: {
+    }
+  }
+
   if $enforced {
 
     cron::monthly { 'security-update':
       ensure      => present,
       environment =>  [ 'MAILTO=root', 'PATH="/usr/bin:/bin"', ],
-      command     => 'yum check-update --security',
+      command     => $command,
     }
 
   }

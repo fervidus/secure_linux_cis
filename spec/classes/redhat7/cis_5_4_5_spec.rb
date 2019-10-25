@@ -13,17 +13,25 @@ describe 'secure_linux_cis::redhat7::cis_5_4_5' do
 
         if option
           it {
-            is_expected.to contain_file_line('/etc/bashrc_tmout')
+            case facts[:osfamily]
+            when 'RedHat'
+              is_expected.to contain_file_line('/etc/bashrc_tmout')
+              is_expected.to contain_file_line('/etc/bashrc_export_tmout')
+            when 'Debian'
+              is_expected.to contain_file_line('/etc/bash.bashrc_tmout')
+              is_expected.to contain_file_line('/etc/bash.bashrc_export_tmout')
+            end
             is_expected.to contain_file_line('/etc/profile_tmout')
-            is_expected.to contain_file_line('/etc/bashrc_export_tmout')
             is_expected.to contain_file_line('/etc/profile_export_tmout')
             is_expected.to contain_file_line('bashrc_readonly_tmout')
           }
         else
           it {
             is_expected.not_to contain_file_line('/etc/bashrc_tmout')
+            is_expected.not_to contain_file_line('/etc/bash.bashrc_tmout')
             is_expected.not_to contain_file_line('/etc/profile_tmout')
             is_expected.not_to contain_file_line('/etc/bashrc_export_tmout')
+            is_expected.not_to contain_file_line('/etc/bash.bashrc_export_tmout')
             is_expected.not_to contain_file_line('/etc/profile_export_tmout')
             is_expected.not_to contain_file_line('bashrc_readonly_tmout')
           }

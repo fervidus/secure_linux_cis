@@ -12,14 +12,22 @@ describe 'secure_linux_cis::redhat7::cis_1_3_1' do
         it { is_expected.to compile }
 
         if option
+
           it {
             is_expected.to contain_package('aide').that_notifies('Exec[create_aide_database]')
-            is_expected.to contain_exec('create_aide_database').with(
-              command: 'aide --init',
-            )
-            is_expected.to contain_exec('rename_aide_database').with(
-              command: 'mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz',
-            )
+            case facts[:osfamily]
+            when 'RedHat'
+              is_expected.to contain_exec('create_aide_database').with(
+                command: 'aide --init',
+              )
+              is_expected.to contain_exec('rename_aide_database').with(
+                command: 'mv /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz',
+              )
+            when 'Debian'
+              is_expected.to contain_exec('create_aide_database').with(
+                command: 'aideinit',
+              )
+            end
           }
         else
           it {

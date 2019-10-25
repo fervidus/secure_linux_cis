@@ -14,18 +14,32 @@
 # @summary 2.2.15 Ensure mail transfer agent is configured for local-only mode (Scored)
 #
 # @param enforced Should this rule be enforced
+# @param mta Which Mail Transfer program to use
 #
 # @example
 #   include secure_linux_cis::redhat7::cis_2_2_15
 class secure_linux_cis::redhat7::cis_2_2_15 (
   Boolean $enforced = true,
+  Enum['postfix', 'exim', 'none'] $mta = 'postfix',
 ) {
 
-  if $enforced {
+  if $enforced{
 
-    class { '::postfix':
-      inet_interfaces => 'loopback-only',
+    case $mta {
+      'postfix':
+        {
+          class { '::postfix':
+            inet_interfaces => 'loopback-only',
+          }
+        }
+        'exim', 'none', default: {
+          if !($facts[ 'smtp_port' ].empty) {
+            notify { 'smtp':
+              message  => 'Not in compliance with CIS 2.2.15 (Scored). There is a daemon listening on TCP port 25 (smtp). Check the smtp_port fact for details',#lint:ignore:140chars
+              loglevel => 'warning',
+            }
+          }
+        }
     }
-
   }
 }

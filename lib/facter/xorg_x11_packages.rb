@@ -10,3 +10,11 @@ Facter.add('xorg_x11_packages') do
     package_list.split("\n")
   end
 end
+Facter.add('xorg_x11_packages') do
+  confine osfamily: 'Debian'
+  confine kernel: :linux
+  setcode do
+    package_list = Facter::Core::Execution.exec('dpkg-query -W xserver-xorg*')
+    package_list.split("\n")
+  end
+end

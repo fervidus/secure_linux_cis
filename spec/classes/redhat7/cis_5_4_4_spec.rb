@@ -15,7 +15,9 @@ describe 'secure_linux_cis::redhat7::cis_5_4_4' do
           it {
             is_expected.to contain_file_line('bashrc')
             is_expected.to contain_file_line('profile')
-            is_expected.to contain_file_line('csh.cshrc')
+            if facts[:osfamily] == 'RedHat'
+              is_expected.to contain_file_line('csh.cshrc')
+            end
             is_expected.to contain_file_line('login.defs')
           }
         else

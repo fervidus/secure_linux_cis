@@ -43,7 +43,7 @@ class secure_linux_cis::redhat7::cis_5_4_1_4 (
     $local_users.each |String $user, Hash $attributes| {
 
       if $attributes['password_expires_days'] != 'never' and $attributes['password_expires_days'] != 'password must be changed' and $attributes['password_inactive_days'] != $pass_inactive_days { #lint:ignore:140chars
-        exec { "/bin/chage --inactive ${pass_inactive_days} ${user}": }
+        exec { "/usr/bin/chage --inactive ${pass_inactive_days} ${user}": }
       }
     }
   }

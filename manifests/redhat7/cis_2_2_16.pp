@@ -23,7 +23,7 @@ class secure_linux_cis::redhat7::cis_2_2_16 (
 
   if $enforced {
 
-    service { 'ypserv':
+    service { ['ypserv', 'nis']:
       ensure => stopped,
       enable => false,
     }

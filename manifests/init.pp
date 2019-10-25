@@ -7,6 +7,8 @@
 # @param max_log_file Maximum log file
 # @param max_auth_tries How many authorization attempts to allow
 # @param time_sync Which NTP program to use
+# @param mta Which Mail Transfer program to use
+# @param mac Which Mandatory Access Control to use
 # @param ipv6_enabled Should ipv6 be enabled
 # @param approved_mac_algorithms Which algorigthms are approved for use
 # @param client_alive_interval Client alive interval to use
@@ -43,6 +45,8 @@ class secure_linux_cis (
   Integer                               $max_log_file            = 32,
   Integer[1,4]                          $max_auth_tries          = 4,
   Enum['ntp', 'chrony', 'none']         $time_sync               = 'ntp',
+  Enum['postfix', 'exim', 'none']       $mta                     = 'postfix',
+  Enum['selinux', 'apparmor', 'none']   $mac                     = 'selinux',
   Boolean                               $ipv6_enabled            = false,
   Array                                 $approved_mac_algorithms =
     ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com',
@@ -93,6 +97,8 @@ class secure_linux_cis (
         approved_mac_algorithms => $approved_mac_algorithms,
         time_servers            => $time_servers,
         time_sync               => $time_sync,
+        mta                     => $mta,
+        mac                     => $mac,
         ipv6_enabled            => $ipv6_enabled,
         client_alive_interval   => $client_alive_interval,
         client_alive_count_max  => $client_alive_count_max,
@@ -129,6 +135,46 @@ class secure_linux_cis (
         approved_mac_algorithms => $approved_mac_algorithms,
         time_servers            => $time_servers,
         time_sync               => $time_sync,
+        mta                     => $mta,
+        mac                     => $mac,
+        ipv6_enabled            => $ipv6_enabled,
+        client_alive_interval   => $client_alive_interval,
+        client_alive_count_max  => $client_alive_count_max,
+        login_grace_time        => $login_grace_time,
+        allow_users             => $allow_users,
+        allow_groups            => $allow_groups,
+        deny_users              => $deny_users,
+        deny_groups             => $deny_groups,
+        minlen                  => $minlen,
+        dcredit                 => $dcredit,
+        ucredit                 => $ucredit,
+        ocredit                 => $ocredit,
+        lcredit                 => $lcredit,
+        attempts                => $attempts,
+        lockout_time            => $lockout_time,
+        past_passwords          => $past_passwords,
+        pass_max_days           => $pass_max_days,
+        pass_min_days           => $pass_min_days,
+        pass_warn_days          => $pass_warn_days,
+        pass_inactive_days      => $pass_inactive_days,
+        banner                  => $banner,
+        motd                    => $motd,
+        auto_restart            => $auto_restart,
+      }
+    }
+
+    'debian9','Debian9': {
+      class { '::secure_linux_cis::debian9':
+        logging                 => $logging,
+        logging_host            => $logging_host,
+        is_logging_host         => $is_logging_host,
+        max_log_file            => $max_log_file,
+        max_auth_tries          => $max_auth_tries,
+        approved_mac_algorithms => $approved_mac_algorithms,
+        time_servers            => $time_servers,
+        time_sync               => $time_sync,
+        mta                     => 'exim',
+        mac                     => 'apparmor',
         ipv6_enabled            => $ipv6_enabled,
         client_alive_interval   => $client_alive_interval,
         client_alive_count_max  => $client_alive_count_max,

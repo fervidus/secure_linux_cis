@@ -14,10 +14,21 @@ class secure_linux_cis::redhat7::cis_1_3_2 (
   Boolean $enforced = true,
 ) {
 
+  case $facts['os']['family'] {
+    'RedHat': {
+      $command = '/usr/sbin/aide --check'
+    }
+    'Debian': {
+      $command = '/usr/bin/aide.wrapper --config /etc/aide/aide.conf --check'
+    }
+    default: {
+    }
+  }
+
   if $enforced {
 
     cron::job {'cron_aide':
-      command => '/usr/sbin/aide --check',
+      command => $command,
       user    => 'root',
       hour    => 5,
       minute  => 0,

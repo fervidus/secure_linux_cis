@@ -16,16 +16,20 @@ class secure_linux_cis::redhat7::cis_1_4_1 (
   Boolean $enforced = true,
 ) {
 
+  case $facts['os']['family'] {
+    'RedHat': {
+      $grubconfig = ['/boot/grub2/grub.cfg', '/boot/grub2/user.cfg']
+    }
+    'Debian': {
+      $grubconfig = '/boot/grub/grub.cfg'
+    }
+    default: {
+    }
+  }
+
   if $enforced {
 
-    file { '/boot/grub2/grub.cfg':
-      ensure => file,
-      owner  => 'root',
-      group  => 'root',
-      mode   => '0600',
-    }
-
-    file { '/boot/grub2/user.cfg':
+    file { $grubconfig:
       ensure => file,
       owner  => 'root',
       group  => 'root',

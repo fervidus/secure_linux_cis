@@ -23,5 +23,11 @@ class secure_linux_cis::redhat7::cis_3_1_1 (
       value => 0,
     }
 
+    if $facts['os']['family'] == 'Debian' {
+      sysctl { 'net.ipv6.conf.all.forwarding':
+        value => 0,
+      }
+    }
+
   }
 }

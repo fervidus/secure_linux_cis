@@ -17,7 +17,13 @@ describe 'secure_linux_cis::redhat7::cis_5_1_1' do
 
         if option
           it {
-            is_expected.to contain_service('crond')
+            case facts[:osfamily]
+            when 'RedHat'
+              service = 'crond'
+            when 'Debian'
+              service = 'cron'
+            end
+            is_expected.to contain_service(service)
               .with(
                 ensure: 'running',
                 enable: true,

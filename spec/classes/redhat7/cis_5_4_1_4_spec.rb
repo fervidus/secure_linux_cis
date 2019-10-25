@@ -26,7 +26,7 @@ describe 'secure_linux_cis::redhat7::cis_5_4_1_4' do
             end
 
             it {
-              is_expected.to contain_exec('/bin/chage --inactive 30 root')
+              is_expected.to contain_exec('/usr/bin/chage --inactive 30 root')
             }
           end
           context 'With compliant settings' do
@@ -39,13 +39,13 @@ describe 'secure_linux_cis::redhat7::cis_5_4_1_4' do
             end
 
             it {
-              is_expected.not_to contain_exec('/bin/chage --inactive 30 root')
+              is_expected.not_to contain_exec('/usr/bin/chage --inactive 30 root')
             }
           end
         else
           context 'With this check disabled' do
             it { is_expected.not_to contain_shellvar('cis_5_4_1_4') }
-            it { is_expected.not_to contain_exec('/bin/chage --inactive 30 root') }
+            it { is_expected.not_to contain_exec('/usr/bin/chage --inactive 30 root') }
           end
         end
       end

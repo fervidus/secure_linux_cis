@@ -15,6 +15,8 @@
 # @param max_log_file Maximum log file
 # @param max_auth_tries How many authorization attempts to allow
 # @param time_sync Which NTP program to use
+# @param mta Which Mail Transfer program to use
+# @param mac Which Mandatory Access Control to use
 # @param ipv6_enabled Should ipv6 be enabled
 # @param approved_mac_algorithms Which algorigthms are approved for use
 # @param client_alive_interval Client alive interval to use
@@ -51,6 +53,8 @@ class secure_linux_cis::centos7 (
   Integer                               $max_log_file            = 32,
   Integer[1,4]                          $max_auth_tries          = 4,
   Enum['ntp', 'chrony', 'none']         $time_sync               = 'ntp',
+  Enum['postfix', 'exim', 'none']       $mta                     = 'postfix',
+  Enum['selinux', 'apparmor', 'none']   $mac                     = 'selinux',
   Boolean                               $ipv6_enabled            = false,
   Array                                 $approved_mac_algorithms =
     ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com',
@@ -170,9 +174,13 @@ class secure_linux_cis::centos7 (
   # 1.6.1.1
   include ::secure_linux_cis::redhat7::cis_1_6_1_1
   # 1.6.1.2
-  include ::secure_linux_cis::redhat7::cis_1_6_1_2
+  class { '::secure_linux_cis::redhat7::cis_1_6_1_2':
+    mac => 'selinux',
+  }
   # 1.6.1.3
-  include ::secure_linux_cis::redhat7::cis_1_6_1_3
+  class { '::secure_linux_cis::redhat7::cis_1_6_1_3':
+    mac => 'selinux',
+  }
   # 1.6.1.4
   include ::secure_linux_cis::redhat7::cis_1_6_1_4
   # 1.6.1.5
@@ -262,7 +270,10 @@ class secure_linux_cis::centos7 (
   # 2.2.14
   include ::secure_linux_cis::redhat7::cis_2_2_14
   # 2.2.15
-  include ::secure_linux_cis::redhat7::cis_2_2_15
+  class { '::secure_linux_cis::redhat7::cis_2_2_15':
+    mta => $mta,
+  }
+
   # 2.2.16
   include ::secure_linux_cis::redhat7::cis_2_2_16
   # 2.2.17

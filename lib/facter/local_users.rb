@@ -3,7 +3,7 @@
 # local_users.rb
 # This fact contains a dictionary of local users and their value for max number of days between a password change
 Facter.add(:local_users) do
-  confine osfamily: 'RedHat'
+  confine osfamily: ['RedHat', 'Debian']
   require 'date'
   setcode do
     local_users = {}

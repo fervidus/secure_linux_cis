@@ -17,10 +17,21 @@ class secure_linux_cis::redhat7::cis_4_1_2 (
   Boolean $enforced = true,
 ) {
 
+  case $facts['os']['family'] {
+    'RedHat': {
+      $package = 'audit'
+    }
+    'Debian': {
+      $package = 'auditd'
+    }
+    default: {
+    }
+  }
+
   if $enforced {
 
     # Also ensuring the package is installed before the service
-    package { 'audit':
+    package { $package:
       ensure => installed,
       before => Service['auditd'],
     }

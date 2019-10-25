@@ -7,8 +7,10 @@ describe 'secure_linux_cis::redhat7::cis_4_1_6' do
     bool_options.each do |option|
       context "on #{os} 64 bit architecture" do
         let(:facts) do
-          os_facts.merge('os' => { 'architecture' => 'amd64' })
+          os_facts[:os][:architecture] = 'amd64'
+          os_facts
         end
+
         let(:params) { { 'enforced' => option } }
 
         it { is_expected.to compile }
@@ -45,18 +47,28 @@ describe 'secure_linux_cis::redhat7::cis_4_1_6' do
                 path: '/etc/audit/rules.d/audit.rules',
                 line: '-w /etc/hosts -p wa -k system-locale',
               )
-            is_expected.to contain_file_line('audit.rules network 6')
-              .with(
-                ensure: 'present',
-                path: '/etc/audit/rules.d/audit.rules',
-                line: '-w /etc/sysconfig/network -p wa -k system-locale',
-              )
-            is_expected.to contain_file_line('audit.rules network 7')
-              .with(
-                ensure: 'present',
-                path: '/etc/audit/rules.d/audit.rules',
-                line: '-w /etc/sysconfig/network-scripts/ -p wa -k system-locale',
-              )
+            case facts[:osfamily]
+            when 'RedHat'
+              is_expected.to contain_file_line('audit.rules network 6')
+                .with(
+                  ensure: 'present',
+                  path: '/etc/audit/rules.d/audit.rules',
+                  line: '-w /etc/sysconfig/network -p wa -k system-locale',
+                )
+              is_expected.to contain_file_line('audit.rules network 7')
+                .with(
+                  ensure: 'present',
+                  path: '/etc/audit/rules.d/audit.rules',
+                  line: '-w /etc/sysconfig/network-scripts/ -p wa -k system-locale',
+                )
+            when 'Debian'
+              is_expected.to contain_file_line('audit.rules network 6')
+                .with(
+                  ensure: 'present',
+                  path: '/etc/audit/rules.d/audit.rules',
+                  line: '-w /etc/network -p wa -k system-locale',
+                )
+            end
           }
         else
           it {
@@ -72,7 +84,8 @@ describe 'secure_linux_cis::redhat7::cis_4_1_6' do
       end
       context "on #{os} 32 bit architecture" do
         let(:facts) do
-          os_facts.merge('os' => { 'architecture' => 'i386' })
+          os_facts[:os][:architecture] = 'i386'
+          os_facts
         end
         let(:params) { { 'enforced' => option } }
 
@@ -104,18 +117,28 @@ describe 'secure_linux_cis::redhat7::cis_4_1_6' do
                 path: '/etc/audit/rules.d/audit.rules',
                 line: '-w /etc/hosts -p wa -k system-locale',
               )
-            is_expected.to contain_file_line('audit.rules network 5')
-              .with(
-                ensure: 'present',
-                path: '/etc/audit/rules.d/audit.rules',
-                line: '-w /etc/sysconfig/network -p wa -k system-locale',
-              )
-            is_expected.to contain_file_line('audit.rules network 6')
-              .with(
-                ensure: 'present',
-                path: '/etc/audit/rules.d/audit.rules',
-                line: '-w /etc/sysconfig/network-scripts/ -p wa -k system-locale',
-              )
+            case facts[:osfamily]
+            when 'RedHat'
+              is_expected.to contain_file_line('audit.rules network 5')
+                .with(
+                  ensure: 'present',
+                  path: '/etc/audit/rules.d/audit.rules',
+                  line: '-w /etc/sysconfig/network -p wa -k system-locale',
+                )
+              is_expected.to contain_file_line('audit.rules network 6')
+                .with(
+                  ensure: 'present',
+                  path: '/etc/audit/rules.d/audit.rules',
+                  line: '-w /etc/sysconfig/network-scripts/ -p wa -k system-locale',
+                )
+            when 'Debian'
+              is_expected.to contain_file_line('audit.rules network 5')
+                .with(
+                  ensure: 'present',
+                  path: '/etc/audit/rules.d/audit.rules',
+                  line: '-w /etc/network -p wa -k system-locale',
+                )
+            end
           }
         else
           it {

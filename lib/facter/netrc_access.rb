@@ -4,7 +4,7 @@
 # Contains .netrc files that are either group or world accessible
 
 Facter.add('netrc_access') do
-  confine osfamily: 'RedHat'
+  confine osfamily: ['RedHat', 'Debian']
   setcode do
     Facter::Core::Execution.exec('/usr/share/cis_scripts/netrc_access.sh')
   end

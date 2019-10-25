@@ -18,9 +18,20 @@ class secure_linux_cis::redhat7::cis_2_2_8 (
   Boolean $enforced = true,
 ) {
 
+  case $facts['os']['family'] {
+    'RedHat': {
+      $service = 'named'
+    }
+    'Debian': {
+      $service = 'bind9'
+    }
+    default: {
+    }
+  }
+
   if $enforced {
 
-    service { 'named':
+    service { $service:
       ensure => stopped,
       enable => false,
     }

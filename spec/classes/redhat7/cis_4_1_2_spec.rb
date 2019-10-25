@@ -13,7 +13,14 @@ describe 'secure_linux_cis::redhat7::cis_4_1_2' do
 
         if option
           it {
-            is_expected.to contain_package('audit')
+            case facts[:osfamily]
+            when 'RedHat'
+              pkg = 'audit'
+            when 'Debian'
+              pkg = 'auditd'
+            end
+
+            is_expected.to contain_package(pkg)
               .with(
                 ensure: 'installed',
               )
@@ -26,6 +33,7 @@ describe 'secure_linux_cis::redhat7::cis_4_1_2' do
         else
           it {
             is_expected.not_to contain_package('audit')
+            is_expected.not_to contain_package('auditd')
             is_expected.not_to contain_service('auditd')
           }
         end

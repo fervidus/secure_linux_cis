@@ -19,7 +19,7 @@ class secure_linux_cis::redhat7::cis_2_2_5 (
 
   if $enforced {
 
-    service { 'dhcpd':
+    service { ['dhcpd', 'isc-dhcp-server', 'isc-dhcp-server6']:
       ensure => stopped,
       enable => false,
     }

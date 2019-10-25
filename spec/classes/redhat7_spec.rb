@@ -1,16 +1,19 @@
 require 'spec_helper'
 
 describe 'secure_linux_cis::redhat7' do
-  on_supported_os.each do |os, os_facts|
+  test_on = {
+    supported_os: [
+      {
+        'operatingsystem'        => 'RedHat',
+        'operatingsystemrelease' => ['7'],
+      },
+    ],
+  }
+  on_supported_os(test_on).each do |os, os_facts|
     context "on #{os}" do
       let(:facts) do
-        os_facts.merge(
-          'os' => {
-            'architecture' => 'amd64',
-            'name' => 'RedHat',
-            'release' => { 'major' => 7 },
-          },
-        )
+        os_facts[:os][:architecture] = 'amd64'
+        os_facts
       end
 
       it { is_expected.to compile }
