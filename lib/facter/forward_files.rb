@@ -4,7 +4,7 @@
 # Contains any .forward files that may exist on a system
 
 Facter.add('forward_files') do
-  confine osfamily: ['RedHat', 'Debian']
+  confine kernel: 'Linux'
   setcode do
     Facter::Core::Execution.exec('/usr/share/cis_scripts/forward.sh')
   end

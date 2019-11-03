@@ -3,6 +3,6 @@
 # issue_net.rb
 
 Facter.add('issue_net') do
-  confine osfamily: ['RedHat', 'Debian']
+  confine kernel: 'Linux'
   setcode 'egrep \'(\\\v|\\\r|\\\m|\\\s)\' /etc/issue.net'
 end
