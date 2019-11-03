@@ -1,0 +1,5 @@
+secure_linux_cis::aide_command: /usr/sbin/aide --check
+secure_linux_cis::su_group: wheelwheel
+secure_linux_cis::grub_config_files:
+  - /boot/grub2/grub.cfg
+  - /boot/grub2/user.cfg

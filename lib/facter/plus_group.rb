@@ -4,6 +4,6 @@
 # Contains "+" entries in /etc/group
 
 Facter.add('plus_group') do
-  confine osfamily: ['RedHat', 'Debian']
+  confine kernel: 'Linux'
   setcode "grep '^\\+:' /etc/group"
 end

@@ -11,7 +11,7 @@ LOCALHOST_IPv4 = '0100007F'.freeze # 127.0.0.1 in hex
 LOCALHOST_IPv6 = '00000000000000000000000001000000'.freeze # ::1 in hex
 
 Facter.add('smtp_listen') do
-  confine osfamily: ['RedHat', 'Debian']
+  confine kernel: 'Linux'
   smtp = []
   setcode do
     File.open(PROC_NET_TCP).each do |i|

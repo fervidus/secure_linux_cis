@@ -38,6 +38,10 @@
 # @example
 #   include secure_linux_cis
 class secure_linux_cis (
+  Array[String]                         $include_rules,
+  Array[String]                         $grub_config_files,
+  String                                $aide_command,
+  String                                $su_group,
   Array[String]                         $time_servers            = [],
   Enum['rsyslog', 'syslog-ng', 'none']  $logging                 = 'rsyslog',
   String                                $logging_host            = '',  #lint:ignore:empty_string_assignment
@@ -76,132 +80,5 @@ class secure_linux_cis (
   Optional[String]                      $motd                    = undef,
   Boolean                               $auto_restart            = false,
 ) {
-
-# Validate parameters
-
-
-
-
-
-  # Local Variable for full Operating System
-  $os = "${facts['os']['name']}${facts['os']['release']['major']}"
-
-  case $os {
-    'RedHat7': {
-      class { '::secure_linux_cis::redhat7':
-        logging                 => $logging,
-        logging_host            => $logging_host,
-        is_logging_host         => $is_logging_host,
-        max_log_file            => $max_log_file,
-        max_auth_tries          => $max_auth_tries,
-        approved_mac_algorithms => $approved_mac_algorithms,
-        time_servers            => $time_servers,
-        time_sync               => $time_sync,
-        mta                     => $mta,
-        mac                     => $mac,
-        ipv6_enabled            => $ipv6_enabled,
-        client_alive_interval   => $client_alive_interval,
-        client_alive_count_max  => $client_alive_count_max,
-        login_grace_time        => $login_grace_time,
-        allow_users             => $allow_users,
-        allow_groups            => $allow_groups,
-        deny_users              => $deny_users,
-        deny_groups             => $deny_groups,
-        minlen                  => $minlen,
-        dcredit                 => $dcredit,
-        ucredit                 => $ucredit,
-        ocredit                 => $ocredit,
-        lcredit                 => $lcredit,
-        attempts                => $attempts,
-        lockout_time            => $lockout_time,
-        past_passwords          => $past_passwords,
-        pass_max_days           => $pass_max_days,
-        pass_min_days           => $pass_min_days,
-        pass_warn_days          => $pass_warn_days,
-        pass_inactive_days      => $pass_inactive_days,
-        banner                  => $banner,
-        motd                    => $motd,
-        auto_restart            => $auto_restart,
-      }
-    }
-
-    'centos7','CentOS7': {
-      class { '::secure_linux_cis::centos7':
-        logging                 => $logging,
-        logging_host            => $logging_host,
-        is_logging_host         => $is_logging_host,
-        max_log_file            => $max_log_file,
-        max_auth_tries          => $max_auth_tries,
-        approved_mac_algorithms => $approved_mac_algorithms,
-        time_servers            => $time_servers,
-        time_sync               => $time_sync,
-        mta                     => $mta,
-        mac                     => $mac,
-        ipv6_enabled            => $ipv6_enabled,
-        client_alive_interval   => $client_alive_interval,
-        client_alive_count_max  => $client_alive_count_max,
-        login_grace_time        => $login_grace_time,
-        allow_users             => $allow_users,
-        allow_groups            => $allow_groups,
-        deny_users              => $deny_users,
-        deny_groups             => $deny_groups,
-        minlen                  => $minlen,
-        dcredit                 => $dcredit,
-        ucredit                 => $ucredit,
-        ocredit                 => $ocredit,
-        lcredit                 => $lcredit,
-        attempts                => $attempts,
-        lockout_time            => $lockout_time,
-        past_passwords          => $past_passwords,
-        pass_max_days           => $pass_max_days,
-        pass_min_days           => $pass_min_days,
-        pass_warn_days          => $pass_warn_days,
-        pass_inactive_days      => $pass_inactive_days,
-        banner                  => $banner,
-        motd                    => $motd,
-        auto_restart            => $auto_restart,
-      }
-    }
-
-    'debian9','Debian9': {
-      class { '::secure_linux_cis::debian9':
-        logging                 => $logging,
-        logging_host            => $logging_host,
-        is_logging_host         => $is_logging_host,
-        max_log_file            => $max_log_file,
-        max_auth_tries          => $max_auth_tries,
-        approved_mac_algorithms => $approved_mac_algorithms,
-        time_servers            => $time_servers,
-        time_sync               => $time_sync,
-        mta                     => 'exim',
-        mac                     => 'apparmor',
-        ipv6_enabled            => $ipv6_enabled,
-        client_alive_interval   => $client_alive_interval,
-        client_alive_count_max  => $client_alive_count_max,
-        login_grace_time        => $login_grace_time,
-        allow_users             => $allow_users,
-        allow_groups            => $allow_groups,
-        deny_users              => $deny_users,
-        deny_groups             => $deny_groups,
-        minlen                  => $minlen,
-        dcredit                 => $dcredit,
-        ucredit                 => $ucredit,
-        ocredit                 => $ocredit,
-        lcredit                 => $lcredit,
-        attempts                => $attempts,
-        lockout_time            => $lockout_time,
-        past_passwords          => $past_passwords,
-        pass_max_days           => $pass_max_days,
-        pass_min_days           => $pass_min_days,
-        pass_warn_days          => $pass_warn_days,
-        pass_inactive_days      => $pass_inactive_days,
-        banner                  => $banner,
-        motd                    => $motd,
-        auto_restart            => $auto_restart,
-      }
-    }
-    default: {
-      fail("Operating System: ${os} is not supported at this time.")
-    }
-  }
+  include $include_rules
 }

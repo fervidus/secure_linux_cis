@@ -1,0 +1,4 @@
+secure_linux_cis::aide_command: /usr/bin/aide.wrapper --config /etc/aide/aide.conf --check
+secure_linux_cis::su_group: sudo
+secure_linux_cis::grub_config_files:
+  - /boot/grub/grub.cfg
