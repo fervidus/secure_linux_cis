@@ -8,5 +8,5 @@ Facter.add('grub_pass') do
 end
 Facter.add('grub_pass') do
   confine osfamily:  'Debian'
-  setcode 'grep "^set superusers=" {/boot/grub/*.cfg,/boot/efi/EFI/*/*.cfg} 2>/dev/null | awk -F= "{print \$1}"'
+  setcode 'grep "^set superusers=" /boot/grub/*.cfg /boot/efi/EFI/*/*.cfg 2>/dev/null | awk -F= "{print \$1}"'
 end
