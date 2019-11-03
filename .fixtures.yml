@@ -4,29 +4,19 @@
 ---
 fixtures:
   forge_modules:
-    alternatives:
-      repo: "puppet/alternatives"
-      ref: "2.1.0"
+    alternatives: "puppet/alternatives"
     kmod: "camptocamp/kmod"
     stdlib: "puppetlabs/stdlib"
     ntp: "puppetlabs/ntp"
     auditd: "kemra102/auditd"
-    postfix:
-      repo: "camptocamp-postfix"
-      ref: "1.8.0"
+    postfix: "camptocamp-postfix"
     logrotate: "puppet/logrotate"
     augeasproviders_shellvar: "herculesteam/augeasproviders_shellvar"
     augeasproviders_pam: "herculesteam/augeasproviders_pam"
     augeasproviders_grub: "herculesteam/augeasproviders_grub"
-    augeasproviders_core:
-      repo: "herculesteam/augeasproviders_core"
-      ref: "2.5.0"
-    augeasproviders_sysctl:
-      repo: "herculesteam/augeasproviders_sysctl"
-      ref: "2.3.1"
-    firewall:
-      repo: "puppetlabs/firewall"
-      ref: "2.1.0"
+    augeasproviders_core: "herculesteam/augeasproviders_core"
+    augeasproviders_sysctl: "herculesteam/augeasproviders_sysctl"
+    firewall: "puppetlabs/firewall"
     augeas: "camptocamp/augeas"
     augeas_core: "puppetlabs/augeas_core"
     cron: "puppet/cron"
