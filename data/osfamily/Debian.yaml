@@ -1,0 +1,11 @@
+---
+secure_linux_cis::aide_command: /usr/bin/aide.wrapper --config /etc/aide/aide.conf --check
+secure_linux_cis::mac: apparmor
+secure_linux_cis::su_group: sudo
+secure_linux_cis::grub_config_files:
+  - /boot/grub/grub.cfg
+secure_linux_cis::update_command: apt-get -s upgrade
+secure_linux_cis::tcp_wrappers_package: tcpd
+secure_linux_cis::samba_service: smbd
+secure_linux_cis::auditd_package: auditd
+secure_linux_cis::cron_service: cron

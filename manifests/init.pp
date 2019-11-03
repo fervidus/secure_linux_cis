@@ -1,5 +1,9 @@
 # @summary CIS Red Hat Enterprise Linux 7 Benchmark
 #
+# @param include_rules Which rules to include
+# @param grub_config_files Grub configuration
+# @param aide_command Command used to invoke aide
+# @param su_group The default group for sudo rights
 # @param time_servers Array of valid NTP Time servers
 # @param logging How logging is done
 # @param logging_host Which host should logging be sent to
@@ -9,6 +13,7 @@
 # @param time_sync Which NTP program to use
 # @param mta Which Mail Transfer program to use
 # @param mac Which Mandatory Access Control to use
+# @param firewall Which Firewall provider to use
 # @param ipv6_enabled Should ipv6 be enabled
 # @param approved_mac_algorithms Which algorigthms are approved for use
 # @param client_alive_interval Client alive interval to use
@@ -38,6 +43,15 @@
 # @example
 #   include secure_linux_cis
 class secure_linux_cis (
+  Array[String]                         $include_rules,
+  Array[String]                         $grub_config_files,
+  String                                $aide_command,
+  String                                $su_group,
+  String                                $update_command,
+  Enum['tcp_wrappers', 'tcpd', 'none']  $tcp_wrappers_package,
+  Enum['audit', 'auditd', 'none']       $auditd_package,
+  Enum['smbd', 'smb', 'none']           $samba_service,
+  Enum['cron', 'crond', 'none']         $cron_service,
   Array[String]                         $time_servers            = [],
   Enum['rsyslog', 'syslog-ng', 'none']  $logging                 = 'rsyslog',
   String                                $logging_host            = '',  #lint:ignore:empty_string_assignment
@@ -47,6 +61,7 @@ class secure_linux_cis (
   Enum['ntp', 'chrony', 'none']         $time_sync               = 'ntp',
   Enum['postfix', 'exim', 'none']       $mta                     = 'postfix',
   Enum['selinux', 'apparmor', 'none']   $mac                     = 'selinux',
+  Enum['firewalld','nftables','iptables'] $firewall              = 'iptables',
   Boolean                               $ipv6_enabled            = false,
   Array                                 $approved_mac_algorithms =
     ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com',
@@ -76,132 +91,18 @@ class secure_linux_cis (
   Optional[String]                      $motd                    = undef,
   Boolean                               $auto_restart            = false,
 ) {
-
-# Validate parameters
-
-
-
-
-
-  # Local Variable for full Operating System
-  $os = "${facts['os']['name']}${facts['os']['release']['major']}"
-
-  case $os {
-    'RedHat7': {
-      class { '::secure_linux_cis::redhat7':
-        logging                 => $logging,
-        logging_host            => $logging_host,
-        is_logging_host         => $is_logging_host,
-        max_log_file            => $max_log_file,
-        max_auth_tries          => $max_auth_tries,
-        approved_mac_algorithms => $approved_mac_algorithms,
-        time_servers            => $time_servers,
-        time_sync               => $time_sync,
-        mta                     => $mta,
-        mac                     => $mac,
-        ipv6_enabled            => $ipv6_enabled,
-        client_alive_interval   => $client_alive_interval,
-        client_alive_count_max  => $client_alive_count_max,
-        login_grace_time        => $login_grace_time,
-        allow_users             => $allow_users,
-        allow_groups            => $allow_groups,
-        deny_users              => $deny_users,
-        deny_groups             => $deny_groups,
-        minlen                  => $minlen,
-        dcredit                 => $dcredit,
-        ucredit                 => $ucredit,
-        ocredit                 => $ocredit,
-        lcredit                 => $lcredit,
-        attempts                => $attempts,
-        lockout_time            => $lockout_time,
-        past_passwords          => $past_passwords,
-        pass_max_days           => $pass_max_days,
-        pass_min_days           => $pass_min_days,
-        pass_warn_days          => $pass_warn_days,
-        pass_inactive_days      => $pass_inactive_days,
-        banner                  => $banner,
-        motd                    => $motd,
-        auto_restart            => $auto_restart,
-      }
-    }
-
-    'centos7','CentOS7': {
-      class { '::secure_linux_cis::centos7':
-        logging                 => $logging,
-        logging_host            => $logging_host,
-        is_logging_host         => $is_logging_host,
-        max_log_file            => $max_log_file,
-        max_auth_tries          => $max_auth_tries,
-        approved_mac_algorithms => $approved_mac_algorithms,
-        time_servers            => $time_servers,
-        time_sync               => $time_sync,
-        mta                     => $mta,
-        mac                     => $mac,
-        ipv6_enabled            => $ipv6_enabled,
-        client_alive_interval   => $client_alive_interval,
-        client_alive_count_max  => $client_alive_count_max,
-        login_grace_time        => $login_grace_time,
-        allow_users             => $allow_users,
-        allow_groups            => $allow_groups,
-        deny_users              => $deny_users,
-        deny_groups             => $deny_groups,
-        minlen                  => $minlen,
-        dcredit                 => $dcredit,
-        ucredit                 => $ucredit,
-        ocredit                 => $ocredit,
-        lcredit                 => $lcredit,
-        attempts                => $attempts,
-        lockout_time            => $lockout_time,
-        past_passwords          => $past_passwords,
-        pass_max_days           => $pass_max_days,
-        pass_min_days           => $pass_min_days,
-        pass_warn_days          => $pass_warn_days,
-        pass_inactive_days      => $pass_inactive_days,
-        banner                  => $banner,
-        motd                    => $motd,
-        auto_restart            => $auto_restart,
-      }
-    }
-
-    'debian9','Debian9': {
-      class { '::secure_linux_cis::debian9':
-        logging                 => $logging,
-        logging_host            => $logging_host,
-        is_logging_host         => $is_logging_host,
-        max_log_file            => $max_log_file,
-        max_auth_tries          => $max_auth_tries,
-        approved_mac_algorithms => $approved_mac_algorithms,
-        time_servers            => $time_servers,
-        time_sync               => $time_sync,
-        mta                     => 'exim',
-        mac                     => 'apparmor',
-        ipv6_enabled            => $ipv6_enabled,
-        client_alive_interval   => $client_alive_interval,
-        client_alive_count_max  => $client_alive_count_max,
-        login_grace_time        => $login_grace_time,
-        allow_users             => $allow_users,
-        allow_groups            => $allow_groups,
-        deny_users              => $deny_users,
-        deny_groups             => $deny_groups,
-        minlen                  => $minlen,
-        dcredit                 => $dcredit,
-        ucredit                 => $ucredit,
-        ocredit                 => $ocredit,
-        lcredit                 => $lcredit,
-        attempts                => $attempts,
-        lockout_time            => $lockout_time,
-        past_passwords          => $past_passwords,
-        pass_max_days           => $pass_max_days,
-        pass_min_days           => $pass_min_days,
-        pass_warn_days          => $pass_warn_days,
-        pass_inactive_days      => $pass_inactive_days,
-        banner                  => $banner,
-        motd                    => $motd,
-        auto_restart            => $auto_restart,
-      }
-    }
-    default: {
-      fail("Operating System: ${os} is not supported at this time.")
-    }
+  file { '/usr/share/cis_scripts':
+    ensure => directory,
   }
+
+  include $include_rules
+
+  Class['::Secure_linux_cis::Rules::Ensure_auditd_service_is_enabled']
+  -> Class['::Secure_linux_cis::Rules::Ensure_audit_log_storage_size_is_configured']
+
+  Class['::Secure_linux_cis::Rules::Ensure_auditd_service_is_enabled']
+  -> Class['::Secure_linux_cis::Rules::Ensure_audit_logs_are_not_automatically_deleted']
+
+  Class['::Secure_linux_cis::Rules::Ensure_auditd_service_is_enabled']
+  -> Class['::Secure_linux_cis::Rules::Ensure_system_is_disabled_when_audit_logs_are_full']
 }
