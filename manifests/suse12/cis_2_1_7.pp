@@ -1,0 +1,6 @@
+#
+class secure_linux_cis::cis_suse12::cis_2_1_7 (
+  Boolean $enforced = true,
+) {
+  contain secure_linux_cis::rules::ensure_xinetd_is_not_enabled
+}
