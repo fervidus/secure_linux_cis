@@ -10,7 +10,7 @@
 # #
 # # @example
 # #   include secure_linux_cis::ensure_root_login_is_restricted_to_system_console
-#   class secure_linux_cis::ensure_root_login_is_restricted_to_system_console (
+#   class secure_linux_cis::rules::ensure_root_login_is_restricted_to_system_console (
 #   Boolean $enforced = true,
 # ) {
 #

@@ -10,7 +10,7 @@
 #
 # @example
 #   include secure_linux_cis::disable_the_rhnsd_daemon
-class secure_linux_cis::disable_the_rhnsd_daemon (
+class secure_linux_cis::rules::disable_the_rhnsd_daemon (
   Boolean $enforced = true,
 ) {
 

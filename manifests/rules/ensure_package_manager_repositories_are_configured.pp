@@ -11,7 +11,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_package_manager_repositories_are_configured
-class secure_linux_cis::ensure_package_manager_repositories_are_configured (
+class secure_linux_cis::rules::ensure_package_manager_repositories_are_configured (
   Boolean $enforced = true,
   Array $repolist = ['rhel-7-server-rpms/7Server/x86_64']
 ) {

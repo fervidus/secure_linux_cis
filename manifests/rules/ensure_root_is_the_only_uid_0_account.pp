@@ -10,7 +10,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_root_is_the_only_uid_0_account
-class secure_linux_cis::ensure_root_is_the_only_uid_0_account (
+class secure_linux_cis::rules::ensure_root_is_the_only_uid_0_account (
   Boolean $enforced = true,
 ) {
 

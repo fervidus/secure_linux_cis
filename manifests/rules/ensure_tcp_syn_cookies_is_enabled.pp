@@ -21,7 +21,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_tcp_syn_cookies_is_enabled
-class secure_linux_cis::ensure_tcp_syn_cookies_is_enabled (
+class secure_linux_cis::rules::ensure_tcp_syn_cookies_is_enabled (
   Boolean $enforced = true,
 ) {
 

@@ -19,7 +19,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ntp_is_configured
-class secure_linux_cis::ensure_ntp_is_configured (
+class secure_linux_cis::rules::ensure_ntp_is_configured (
   Array[String] $time_servers              = [],
   Boolean $enforced                        = true,
   Enum['ntp', 'chrony', 'none'] $time_sync = 'ntp',

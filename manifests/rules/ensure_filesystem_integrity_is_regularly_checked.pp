@@ -10,12 +10,12 @@
 #
 # @example
 #   include secure_linux_cis::ensure_filesystem_integrity_is_regularly_checked
-class secure_linux_cis::ensure_filesystem_integrity_is_regularly_checked (
+class secure_linux_cis::rules::ensure_filesystem_integrity_is_regularly_checked (
   Boolean $enforced = true,
 ) {
 
   case $facts['os']['family'] {
-    'RedHat': {
+    'RedHat','SLES': {
       $command = '/usr/sbin/aide --check'
     }
     'Debian': {

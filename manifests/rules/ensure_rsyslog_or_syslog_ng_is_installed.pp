@@ -18,7 +18,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_rsyslog_or_syslog_ng_is_installed
-class secure_linux_cis::ensure_rsyslog_or_syslog_ng_is_installed (
+class secure_linux_cis::rules::ensure_rsyslog_or_syslog_ng_is_installed (
   Boolean $enforced = true,
   Enum['rsyslog', 'syslog-ng', 'none'] $logging = 'rsyslog',
 ) {

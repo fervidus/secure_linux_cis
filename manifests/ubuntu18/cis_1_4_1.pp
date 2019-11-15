@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_ubuntu18::cis_1_4_1 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_permissions_on_bootloader_config_are_configured
+class secure_linux_cis::ubuntu18::cis_1_4_1 {
+  include secure_linux_cis::rules::ensure_permissions_on_bootloader_config_are_configured
 }

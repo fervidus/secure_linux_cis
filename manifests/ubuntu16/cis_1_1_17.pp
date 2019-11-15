@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_ubuntu16::cis_1_1_17 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_noexec_option_set_on_dev_shm_partition
+class secure_linux_cis::ubuntu16::cis_1_1_17 {
+  include secure_linux_cis::rules::ensure_nodev_option_set_on_removable_media_partitions
 }

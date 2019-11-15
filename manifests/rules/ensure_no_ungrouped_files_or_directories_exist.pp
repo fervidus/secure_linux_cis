@@ -9,7 +9,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_no_ungrouped_files_or_directories_exist
-class secure_linux_cis::ensure_no_ungrouped_files_or_directories_exist (
+class secure_linux_cis::rules::ensure_no_ungrouped_files_or_directories_exist (
   Boolean $enforced = true,
 ) {
 

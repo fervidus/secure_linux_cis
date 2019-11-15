@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_amazon1::cis_3_5_4 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_tipc_is_disabled
+class secure_linux_cis::amazon1::cis_3_5_4 {
+  include secure_linux_cis::rules::ensure_tipc_is_disabled
 }

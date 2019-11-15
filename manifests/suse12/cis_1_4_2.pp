@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_suse12::cis_1_4_2 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_bootloader_password_is_set
+class secure_linux_cis::suse12::cis_1_4_2 {
+  include secure_linux_cis::rules::ensure_bootloader_password_is_set
 }

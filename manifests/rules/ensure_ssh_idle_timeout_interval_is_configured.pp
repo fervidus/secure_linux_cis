@@ -23,7 +23,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_idle_timeout_interval_is_configured
-class secure_linux_cis::ensure_ssh_idle_timeout_interval_is_configured (
+class secure_linux_cis::rules::ensure_ssh_idle_timeout_interval_is_configured (
   Boolean      $enforced               = true,
   Integer      $client_alive_interval  = 300,
   Integer[0,3] $client_alive_count_max = 3,

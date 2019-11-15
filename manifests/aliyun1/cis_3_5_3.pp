@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_aliyun1::cis_3_5_3 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_rds_is_disabled
+class secure_linux_cis::aliyun1::cis_3_5_3 {
+  include secure_linux_cis::rules::ensure_iptables_is_installed
 }

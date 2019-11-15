@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_ubuntu16::cis_6_1_11 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_no_unowned_files_or_directories_exist
+class secure_linux_cis::ubuntu16::cis_6_1_11 {
+  include secure_linux_cis::rules::ensure_no_unowned_files_or_directories_exist
 }

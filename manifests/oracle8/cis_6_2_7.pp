@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_oracle8::cis_6_2_7 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_all_users_home_directories_exist
+class secure_linux_cis::oracle8::cis_6_2_7 {
+  include secure_linux_cis::rules::ensure_users_home_directories_permissions_are_750_or_more_restrictive
 }

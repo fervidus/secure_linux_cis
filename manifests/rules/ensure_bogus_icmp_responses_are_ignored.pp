@@ -14,7 +14,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_bogus_icmp_responses_are_ignored
-class secure_linux_cis::ensure_bogus_icmp_responses_are_ignored (
+class secure_linux_cis::rules::ensure_bogus_icmp_responses_are_ignored (
   Boolean $enforced = true,
 ) {
 

@@ -16,7 +16,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_events_that_modify_the_system_s_mandatory_access_controls_are_collected
-class secure_linux_cis::ensure_events_that_modify_the_system_s_mandatory_access_controls_are_collected (
+class secure_linux_cis::rules::ensure_events_that_modify_the_system_s_mandatory_access_controls_are_collected (
   Boolean $enforced = true,
 ) {
 

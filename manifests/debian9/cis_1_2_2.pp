@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_debian9::cis_1_2_2 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_gpgcheck_is_globally_activated
+class secure_linux_cis::debian9::cis_1_2_2 {
+  include secure_linux_cis::rules::ensure_gpg_keys_are_configured_not_scored_scored_
 }

@@ -12,7 +12,7 @@
 # #
 # # @example
 # #   include secure_linux_cis::audit_suid_executables
-# class secure_linux_cis::audit_suid_executables (
+# class secure_linux_cis::rules::audit_suid_executables (
 #   Boolean $enforced = true,
 # ) {
 #

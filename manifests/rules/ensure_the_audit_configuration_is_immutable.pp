@@ -17,7 +17,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_the_audit_configuration_is_immutable
-class secure_linux_cis::ensure_the_audit_configuration_is_immutable (
+class secure_linux_cis::rules::ensure_the_audit_configuration_is_immutable (
   Boolean $enforced = true,
 ){
 

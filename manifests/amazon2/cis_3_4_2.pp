@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_amazon2::cis_3_4_2 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_etc_hosts_allow_is_configured
+class secure_linux_cis::amazon2::cis_3_4_2 {
+  include secure_linux_cis::rules::ensure_sctp_is_disabled
 }

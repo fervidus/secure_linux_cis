@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_ubuntu18::cis_6_2_1 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_password_fields_are_not_empty
+class secure_linux_cis::ubuntu18::cis_6_2_1 {
+  include secure_linux_cis::rules::ensure_password_fields_are_not_empty
 }

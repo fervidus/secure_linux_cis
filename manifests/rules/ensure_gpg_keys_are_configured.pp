@@ -11,7 +11,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_gpg_keys_are_configured
-class secure_linux_cis::ensure_gpg_keys_are_configured (
+class secure_linux_cis::rules::ensure_gpg_keys_are_configured (
   Boolean $enforced = true,
 ) {
 

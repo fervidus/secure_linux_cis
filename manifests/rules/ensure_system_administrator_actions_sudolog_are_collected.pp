@@ -20,7 +20,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_system_administrator_actions_sudolog_are_collected
-class secure_linux_cis::ensure_system_administrator_actions_sudolog_are_collected (
+class secure_linux_cis::rules::ensure_system_administrator_actions_sudolog_are_collected (
   Boolean $enforced = true,
 ) {
 

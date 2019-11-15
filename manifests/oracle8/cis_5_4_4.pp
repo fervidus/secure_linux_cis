@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_oracle8::cis_5_4_4 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_default_user_umask_is_027_or_more_restrictive
+class secure_linux_cis::oracle8::cis_5_4_4 {
+  include secure_linux_cis::rules::ensure_password_hashing_algorithm_is_sha_512
 }

@@ -10,7 +10,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_gpgcheck_is_globally_activated
-class secure_linux_cis::ensure_gpgcheck_is_globally_activated (
+class secure_linux_cis::rules::ensure_gpgcheck_is_globally_activated (
   Boolean $enforced = true,
 ) {
 

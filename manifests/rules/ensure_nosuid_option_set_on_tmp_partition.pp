@@ -10,7 +10,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_nosuid_option_set_on_tmp_partition
-class secure_linux_cis::ensure_nosuid_option_set_on_tmp_partition (
+class secure_linux_cis::rules::ensure_nosuid_option_set_on_tmp_partition (
   Boolean $enforced = true,
 ) {
   if $enforced {

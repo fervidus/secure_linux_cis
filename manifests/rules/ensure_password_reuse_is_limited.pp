@@ -15,7 +15,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_password_reuse_is_limited
-class secure_linux_cis::ensure_password_reuse_is_limited (
+class secure_linux_cis::rules::ensure_password_reuse_is_limited (
   Boolean $enforced = true,
   Integer $past_passwords = 5,
 ) {

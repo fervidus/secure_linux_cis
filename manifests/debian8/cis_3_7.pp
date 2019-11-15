@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_debian8::cis_3_7 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_wireless_interfaces_are_disabled
+class secure_linux_cis::debian8::cis_3_7 {
+  include secure_linux_cis::rules::disable_ipv6
 }

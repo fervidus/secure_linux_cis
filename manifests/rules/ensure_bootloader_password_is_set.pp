@@ -11,7 +11,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_bootloader_password_is_set
-class secure_linux_cis::ensure_bootloader_password_is_set (
+class secure_linux_cis::rules::ensure_bootloader_password_is_set (
   Boolean $enforced = true,
 ) {
 

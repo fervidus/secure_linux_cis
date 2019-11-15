@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_rhel6::cis_1_1_1_1 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_mounting_of_cramfs_filesystems_is_disabled
+class secure_linux_cis::rhel6::cis_1_1_1_1 {
+  include secure_linux_cis::rules::ensure_mounting_of_cramfs_filesystems_is_disabled
 }

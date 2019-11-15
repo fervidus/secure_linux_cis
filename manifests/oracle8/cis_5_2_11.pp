@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_oracle8::cis_5_2_11 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_only_approved_mac_algorithms_are_used
+class secure_linux_cis::oracle8::cis_5_2_11 {
+  include secure_linux_cis::rules::ensure_ssh_permitemptypasswords_is_disabled
 }

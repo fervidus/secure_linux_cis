@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos6::cis_1_1_13 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_separate_partition_exists_for_home
+class secure_linux_cis::centos6::cis_1_1_13 {
+  include secure_linux_cis::rules::ensure_separate_partition_exists_for_home
 }

@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos7::cis_1_7_1_1 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_message_of_the_day_is_configured_properly
+class secure_linux_cis::centos7::cis_1_7_1_1 {
+  include secure_linux_cis::rules::ensure_message_of_the_day_is_configured_properly
 }

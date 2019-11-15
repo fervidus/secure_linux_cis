@@ -14,7 +14,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_cron_daemon_is_enabled
-class secure_linux_cis::ensure_cron_daemon_is_enabled (
+class secure_linux_cis::rules::ensure_cron_daemon_is_enabled (
   Boolean $enforced = true,
 ) {
 

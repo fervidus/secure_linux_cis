@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos7::cis_6_2_15 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_all_groups_in_etc_passwd_exist_in_etc_group
+class secure_linux_cis::centos7::cis_6_2_15 {
+  include secure_linux_cis::rules::ensure_all_groups_in_etc_passwd_exist_in_etc_group
 }

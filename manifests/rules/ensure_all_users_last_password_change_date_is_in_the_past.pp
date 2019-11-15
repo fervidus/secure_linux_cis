@@ -12,7 +12,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_all_users_last_password_change_date_is_in_the_past
-class secure_linux_cis::ensure_all_users_last_password_change_date_is_in_the_past (
+class secure_linux_cis::rules::ensure_all_users_last_password_change_date_is_in_the_past (
   Boolean $enforced = true,
 ) {
 

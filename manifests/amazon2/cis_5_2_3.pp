@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_amazon2::cis_5_2_3 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_ssh_loglevel_is_set_to_info
+class secure_linux_cis::amazon2::cis_5_2_3 {
+  include secure_linux_cis::rules::ensure_permissions_on_ssh_public_host_key_files_are_configured
 }

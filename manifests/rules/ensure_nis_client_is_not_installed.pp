@@ -16,7 +16,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_nis_client_is_not_installed
-class secure_linux_cis::ensure_nis_client_is_not_installed (
+class secure_linux_cis::rules::ensure_nis_client_is_not_installed (
   Boolean $enforced = true,
 ) {
 

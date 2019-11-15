@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_oracle8::cis_5_2_4 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_ssh_x11_forwarding_is_disabled
+class secure_linux_cis::oracle8::cis_5_2_4 {
+  include secure_linux_cis::rules::ensure_permissions_on_ssh_public_host_key_files_are_configured
 }

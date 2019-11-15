@@ -15,7 +15,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_cups_is_not_enabled
-class secure_linux_cis::ensure_cups_is_not_enabled (
+class secure_linux_cis::rules::ensure_cups_is_not_enabled (
   Boolean $enforced = true,
 ) {
 

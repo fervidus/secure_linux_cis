@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_ubuntu16::cis_3_6_2 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_default_deny_firewall_policy
+class secure_linux_cis::ubuntu16::cis_3_6_2 {
+  include secure_linux_cis::rules::ensure_default_deny_firewall_policy
 }

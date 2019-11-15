@@ -17,7 +17,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_logingracetime_is_set_to_one_minute_or_less
-class secure_linux_cis::ensure_ssh_logingracetime_is_set_to_one_minute_or_less (
+class secure_linux_cis::rules::ensure_ssh_logingracetime_is_set_to_one_minute_or_less (
   Boolean $enforced = true,
   Integer $login_grace_time = 60,
 ) {

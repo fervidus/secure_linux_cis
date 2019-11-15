@@ -10,7 +10,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_no_users_have_netrc_files
-class secure_linux_cis::ensure_no_users_have_netrc_files (
+class secure_linux_cis::rules::ensure_no_users_have_netrc_files (
   Boolean $enforced = true,
 ) {
 

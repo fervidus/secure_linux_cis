@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos8::cis_2_2_5 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_dhcp_server_is_not_enabled
+class secure_linux_cis::centos8::cis_2_2_5 {
+  include secure_linux_cis::rules::ensure_SNMP_Server_is_not_enabled
 }

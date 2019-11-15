@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_rhel7::cis_6_2_1 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_password_fields_are_not_empty
+class secure_linux_cis::rhel7::cis_6_2_1 {
+  include secure_linux_cis::rules::ensure_password_fields_are_not_empty
 }

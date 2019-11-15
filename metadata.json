@@ -119,6 +119,14 @@
       ]
     },
     {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
         "8",

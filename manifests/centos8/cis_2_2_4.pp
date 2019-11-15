@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos8::cis_2_2_4 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_cups_is_not_enabled
+class secure_linux_cis::centos8::cis_2_2_4 {
+  include secure_linux_cis::rules::ensure_Avahi_Server_is_not_enabled
 }

@@ -23,7 +23,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_at_cron_is_restricted_to_authorized_users
-class secure_linux_cis::ensure_at_cron_is_restricted_to_authorized_users (
+class secure_linux_cis::rules::ensure_at_cron_is_restricted_to_authorized_users (
   Boolean $enforced = true,
 ) {
 

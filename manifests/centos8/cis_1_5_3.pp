@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos8::cis_1_5_3 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_address_space_layout_randomization_aslr_is_enabled
+class secure_linux_cis::centos8::cis_1_5_3 {
+  include secure_linux_cis::rules::ensure_authentication_required_for_single_user_mode
 }

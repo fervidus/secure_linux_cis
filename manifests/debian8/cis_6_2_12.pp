@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_debian8::cis_6_2_12 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_no_users_have_netrc_files
+class secure_linux_cis::debian8::cis_6_2_12 {
+  include secure_linux_cis::rules::ensure_no_users_have_netrc_files
 }

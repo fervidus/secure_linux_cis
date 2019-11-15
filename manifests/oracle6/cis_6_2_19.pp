@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_oracle6::cis_6_2_19 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_no_duplicate_group_names_exist
+class secure_linux_cis::oracle6::cis_6_2_19 {
+  include secure_linux_cis::rules::ensure_no_duplicate_group_names_exist
 }

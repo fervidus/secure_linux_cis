@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_amazon1::cis_5_1_8 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_at_cron_is_restricted_to_authorized_users
+class secure_linux_cis::amazon1::cis_5_1_8 {
+  include secure_linux_cis::rules::ensure_at_cron_is_restricted_to_authorized_users
 }

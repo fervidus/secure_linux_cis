@@ -11,7 +11,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_authentication_required_for_single_user_mode
-class secure_linux_cis::ensure_authentication_required_for_single_user_mode (
+class secure_linux_cis::rules::ensure_authentication_required_for_single_user_mode (
   Boolean $enforced = true,
 ) {
 

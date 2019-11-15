@@ -10,7 +10,7 @@
 #
 # @example
 #   include secure_linux_cis::disable_automounting
-class secure_linux_cis::disable_automounting (
+class secure_linux_cis::rules::disable_automounting (
   Boolean $enforced = true,
 ) {
   if $enforced {

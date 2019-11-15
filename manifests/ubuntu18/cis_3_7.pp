@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_ubuntu18::cis_3_7 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_wireless_interfaces_are_disabled
+class secure_linux_cis::ubuntu18::cis_3_7 {
+  include secure_linux_cis::rules::ensure_wireless_interfaces_are_disabled
 }

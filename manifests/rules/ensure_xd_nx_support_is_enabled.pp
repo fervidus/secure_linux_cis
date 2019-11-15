@@ -14,7 +14,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_xd_nx_support_is_enabled
-class secure_linux_cis::ensure_xd_nx_support_is_enabled (
+class secure_linux_cis::rules::ensure_xd_nx_support_is_enabled (
   Boolean $enforced = true,
 ) {
 

@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_rhel7::cis_1_1_20 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_noexec_option_set_on_removable_media_partitions
+class secure_linux_cis::rhel7::cis_1_1_20 {
+  include secure_linux_cis::rules::ensure_noexec_option_set_on_removable_media_partitions
 }

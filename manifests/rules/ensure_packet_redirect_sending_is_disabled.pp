@@ -14,7 +14,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_packet_redirect_sending_is_disabled
-class secure_linux_cis::ensure_packet_redirect_sending_is_disabled (
+class secure_linux_cis::rules::ensure_packet_redirect_sending_is_disabled (
   Boolean $enforced = true,
 ) {
 

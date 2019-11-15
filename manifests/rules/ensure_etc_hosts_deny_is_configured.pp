@@ -24,7 +24,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_etc_hosts_deny_is_configured
-class secure_linux_cis::ensure_etc_hosts_deny_is_configured (
+class secure_linux_cis::rules::ensure_etc_hosts_deny_is_configured (
   Boolean $enforced = true,
 ) {
 

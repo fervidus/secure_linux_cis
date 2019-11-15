@@ -13,7 +13,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_outbound_and_established_connections_are_configured
-class secure_linux_cis::ensure_outbound_and_established_connections_are_configured (
+class secure_linux_cis::rules::ensure_outbound_and_established_connections_are_configured (
   Boolean $enforced = true,
 ) {
 

@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_aliyun1::cis_4_1_2 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_auditd_service_is_enabled
+class secure_linux_cis::aliyun1::cis_4_1_2 {
+  include secure_linux_cis::rules::ensure_auditd_service_is_enabled
 }

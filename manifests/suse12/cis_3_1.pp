@@ -1,6 +1,6 @@
 #
-class secure_linux_cis::cis_suse12::cis_3_1 (
+class secure_linux_cis::suse12::cis_3_1 (
   Boolean $enforced = true,
 ) {
-  contain secure_linux_cis::rules::network_parameters
+  include secure_linux_cis::rules::network_parameters
 }

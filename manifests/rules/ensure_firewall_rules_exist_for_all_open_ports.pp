@@ -14,7 +14,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_firewall_rules_exist_for_all_open_ports
-class secure_linux_cis::ensure_firewall_rules_exist_for_all_open_ports (
+class secure_linux_cis::rules::ensure_firewall_rules_exist_for_all_open_ports (
   Boolean $enforced = true,
 ) {
 

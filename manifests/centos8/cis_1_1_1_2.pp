@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos8::cis_1_1_1_2 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_mounting_of_freevxfs_filesystems_is_disabled
+class secure_linux_cis::centos8::cis_1_1_1_2 {
+  include secure_linux_cis::rules::ensure_mounting_of_vFAT_filesystems_is_limited
 }

@@ -10,7 +10,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_users_home_directories_permissions_are_750_or_more_restrictive
-class secure_linux_cis::ensure_users_home_directories_permissions_are_750_or_more_restrictive (
+class secure_linux_cis::rules::ensure_users_home_directories_permissions_are_750_or_more_restrictive (
   Boolean $enforced = true,
 ) {
 

@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_amazon2::cis_3_2_7 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_reverse_path_filtering_is_enabled
+class secure_linux_cis::amazon2::cis_3_2_7 {
+  include secure_linux_cis::rules::ensure_reverse_path_filtering_is_enabled
 }

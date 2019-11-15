@@ -10,7 +10,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_no_unconfined_daemons_exist
-class secure_linux_cis::ensure_no_unconfined_daemons_exist (
+class secure_linux_cis::rules::ensure_no_unconfined_daemons_exist (
   Boolean $enforced = true,
 ) {
 

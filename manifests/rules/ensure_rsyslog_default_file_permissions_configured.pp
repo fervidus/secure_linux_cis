@@ -15,7 +15,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_rsyslog_default_file_permissions_configured
-class secure_linux_cis::ensure_rsyslog_default_file_permissions_configured (
+class secure_linux_cis::rules::ensure_rsyslog_default_file_permissions_configured (
   Boolean $enforced = true,
   Enum['rsyslog', 'syslog-ng', 'none'] $logging = 'rsyslog',
 ) {

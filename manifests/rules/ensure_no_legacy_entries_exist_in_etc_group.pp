@@ -11,7 +11,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_no_legacy_entries_exist_in_etc_group
-class secure_linux_cis::ensure_no_legacy_entries_exist_in_etc_group (
+class secure_linux_cis::rules::ensure_no_legacy_entries_exist_in_etc_group (
   Boolean $enforced = true,
 ) {
 

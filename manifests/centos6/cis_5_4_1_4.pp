@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos6::cis_5_4_1_4 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_inactive_password_lock_is_30_days_or_less
+class secure_linux_cis::centos6::cis_5_4_1_4 {
+  include secure_linux_cis::rules::ensure_inactive_password_lock_is_30_days_or_less
 }

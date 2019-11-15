@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_rhel8::cis_1_2_5 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::disable_the_rhnsd_daemon
+class secure_linux_cis::rhel8::cis_1_2_5 {
+  include secure_linux_cis::rules::ensure_package_manager_repositories_are_configured
 }

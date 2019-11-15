@@ -11,7 +11,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_aide_is_installed
-class secure_linux_cis::ensure_aide_is_installed (
+class secure_linux_cis::rules::ensure_aide_is_installed (
   Boolean $enforced = true,
 ) {
 

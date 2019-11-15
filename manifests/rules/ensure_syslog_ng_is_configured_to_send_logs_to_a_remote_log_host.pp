@@ -17,7 +17,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_syslog_ng_is_configured_to_send_logs_to_a_remote_log_host
-class secure_linux_cis::ensure_syslog_ng_is_configured_to_send_logs_to_a_remote_log_host (
+class secure_linux_cis::rules::ensure_syslog_ng_is_configured_to_send_logs_to_a_remote_log_host (
   Boolean $enforced = true,
   Enum['rsyslog', 'syslog-ng', 'none'] $logging = 'rsyslog',
   Optional[String] $logging_host = undef,

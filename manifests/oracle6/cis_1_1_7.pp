@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_oracle6::cis_1_1_7 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_separate_partition_exists_for_var_tmp
+class secure_linux_cis::oracle6::cis_1_1_7 {
+  include secure_linux_cis::rules::ensure_separate_partition_exists_for_var_tmp
 }

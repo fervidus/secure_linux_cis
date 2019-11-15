@@ -19,7 +19,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_loglevel_is_set_to_info
-class secure_linux_cis::ensure_ssh_loglevel_is_set_to_info (
+class secure_linux_cis::rules::ensure_ssh_loglevel_is_set_to_info (
   Boolean $enforced = true,
 ) {
 

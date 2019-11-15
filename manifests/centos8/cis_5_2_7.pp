@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos8::cis_5_2_7 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_ssh_hostbasedauthentication_is_disabled
+class secure_linux_cis::centos8::cis_5_2_7 {
+  include secure_linux_cis::rules::ensure_SSH_MaxAuthTries_is_set_to_4_or_less
 }

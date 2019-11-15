@@ -31,7 +31,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_password_creation_requirements_are_configured
-class secure_linux_cis::ensure_password_creation_requirements_are_configured (
+class secure_linux_cis::rules::ensure_password_creation_requirements_are_configured (
   Boolean $enforced = true,
   Integer $minlen = 14,
   Integer $dcredit = -1,

@@ -10,7 +10,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_all_users_home_directories_exist
-class secure_linux_cis::ensure_all_users_home_directories_exist (
+class secure_linux_cis::rules::ensure_all_users_home_directories_exist (
   Boolean $enforced = true,
 ) {
 

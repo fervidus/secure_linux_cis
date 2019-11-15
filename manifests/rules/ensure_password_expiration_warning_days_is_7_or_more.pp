@@ -15,7 +15,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_password_expiration_warning_days_is_7_or_more
-class secure_linux_cis::ensure_password_expiration_warning_days_is_7_or_more (
+class secure_linux_cis::rules::ensure_password_expiration_warning_days_is_7_or_more (
   Boolean $enforced = true,
   Integer $pass_warn_days = 7,
 ) {

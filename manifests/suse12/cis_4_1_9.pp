@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_suse12::cis_4_1_9 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_session_initiation_information_is_collected
+class secure_linux_cis::suse12::cis_4_1_9 {
+  include secure_linux_cis::rules::ensure_session_initiation_information_is_collected
 }

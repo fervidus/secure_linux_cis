@@ -12,7 +12,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_http_proxy_server_is_not_enabled
-class secure_linux_cis::ensure_http_proxy_server_is_not_enabled (
+class secure_linux_cis::rules::ensure_http_proxy_server_is_not_enabled (
   Boolean $enforced = true,
 ) {
 

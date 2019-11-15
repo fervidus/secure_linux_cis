@@ -14,7 +14,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_inactive_password_lock_is_30_days_or_less
-class secure_linux_cis::ensure_inactive_password_lock_is_30_days_or_less (
+class secure_linux_cis::rules::ensure_inactive_password_lock_is_30_days_or_less (
   Boolean $enforced = true,
   Integer $pass_inactive_days = 30,
 ) {

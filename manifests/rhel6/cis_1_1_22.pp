@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_rhel6::cis_1_1_22 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::disable_automounting
+class secure_linux_cis::rhel6::cis_1_1_22 {
+  include secure_linux_cis::rules::disable_automounting
 }

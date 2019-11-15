@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_amazon1::cis_6_2_7 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_all_users_home_directories_exist
+class secure_linux_cis::amazon1::cis_6_2_7 {
+  include secure_linux_cis::rules::ensure_all_users_home_directories_exist
 }

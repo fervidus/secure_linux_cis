@@ -13,7 +13,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_chargen_services_are_not_enabled
-class secure_linux_cis::ensure_chargen_services_are_not_enabled (
+class secure_linux_cis::rules::ensure_chargen_services_are_not_enabled (
   Boolean $enforced = true,
 ) {
 

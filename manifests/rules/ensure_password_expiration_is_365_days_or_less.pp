@@ -16,7 +16,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_password_expiration_is_365_days_or_less
-class secure_linux_cis::ensure_password_expiration_is_365_days_or_less (
+class secure_linux_cis::rules::ensure_password_expiration_is_365_days_or_less (
   Boolean $enforced = true,
   Integer $pass_max_days = 90,
 ) {

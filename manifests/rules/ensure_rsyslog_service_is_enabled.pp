@@ -14,7 +14,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_rsyslog_service_is_enabled
-class secure_linux_cis::ensure_rsyslog_service_is_enabled (
+class secure_linux_cis::rules::ensure_rsyslog_service_is_enabled (
   Boolean $enforced = true,
   Enum['rsyslog', 'syslog-ng', 'none'] $logging = 'rsyslog',
 ) {

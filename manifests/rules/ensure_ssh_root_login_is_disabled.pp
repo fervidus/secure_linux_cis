@@ -13,7 +13,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_root_login_is_disabled
-class secure_linux_cis::ensure_ssh_root_login_is_disabled (
+class secure_linux_cis::rules::ensure_ssh_root_login_is_disabled (
   Boolean $enforced = true,
 ) {
 

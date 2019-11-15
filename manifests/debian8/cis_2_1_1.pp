@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_debian8::cis_2_1_1 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_chargen_services_are_not_enabled
+class secure_linux_cis::debian8::cis_2_1_1 {
+  include secure_linux_cis::rules::ensure_xinetd_is_not_installed
 }

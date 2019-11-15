@@ -10,7 +10,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_all_groups_in_etc_passwd_exist_in_etc_group
-class secure_linux_cis::ensure_all_groups_in_etc_passwd_exist_in_etc_group (
+class secure_linux_cis::rules::ensure_all_groups_in_etc_passwd_exist_in_etc_group (
   Boolean $enforced = true,
 ) {
 

@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_suse12::cis_5_6 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_access_to_the_su_command_is_restricted
+class secure_linux_cis::suse12::cis_5_6 {
+  include secure_linux_cis::rules::ensure_access_to_the_su_command_is_restricted
 }

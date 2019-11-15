@@ -10,7 +10,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_noexec_option_set_on_var_tmp_partition
-class secure_linux_cis::ensure_noexec_option_set_on_var_tmp_partition (
+class secure_linux_cis::rules::ensure_noexec_option_set_on_var_tmp_partition (
   Boolean $enforced = true,
 ) {
   if $enforced {

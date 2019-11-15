@@ -10,7 +10,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_password_fields_are_not_empty
-class secure_linux_cis::ensure_password_fields_are_not_empty (
+class secure_linux_cis::rules::ensure_password_fields_are_not_empty (
   Boolean $enforced = true,
 ) {
 

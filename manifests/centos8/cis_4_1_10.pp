@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos8::cis_4_1_10 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_discretionary_access_control_permission_modification_events_are_collected
+class secure_linux_cis::centos8::cis_4_1_10 {
+  include secure_linux_cis::rules::ensure_unsuccessful_unauthorized_file_access_attempts_are_collected
 }

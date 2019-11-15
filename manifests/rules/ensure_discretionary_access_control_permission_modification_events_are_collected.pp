@@ -21,7 +21,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_discretionary_access_control_permission_modification_events_are_collected
-class secure_linux_cis::ensure_discretionary_access_control_permission_modification_events_are_collected (
+class secure_linux_cis::rules::ensure_discretionary_access_control_permission_modification_events_are_collected (
   Boolean $enforced = true,
 ) {
 

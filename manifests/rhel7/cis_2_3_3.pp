@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_rhel7::cis_2_3_3 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_talk_client_is_not_installed
+class secure_linux_cis::rhel7::cis_2_3_3 {
+  include secure_linux_cis::rules::ensure_talk_client_is_not_installed
 }

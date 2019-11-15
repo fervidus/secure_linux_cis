@@ -22,7 +22,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_kernel_module_loading_and_unloading_is_collected
-class secure_linux_cis::ensure_kernel_module_loading_and_unloading_is_collected (
+class secure_linux_cis::rules::ensure_kernel_module_loading_and_unloading_is_collected (
   Boolean $enforced = true,
 ) {
 

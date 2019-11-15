@@ -13,7 +13,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_suspicious_packets_are_logged
-class secure_linux_cis::ensure_suspicious_packets_are_logged (
+class secure_linux_cis::rules::ensure_suspicious_packets_are_logged (
   Boolean $enforced = true,
 ) {
 

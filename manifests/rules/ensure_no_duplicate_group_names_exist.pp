@@ -11,7 +11,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_no_duplicate_group_names_exist
-class secure_linux_cis::ensure_no_duplicate_group_names_exist (
+class secure_linux_cis::rules::ensure_no_duplicate_group_names_exist (
   Boolean $enforced = true,
 ) {
 

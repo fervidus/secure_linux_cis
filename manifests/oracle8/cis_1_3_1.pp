@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_oracle8::cis_1_3_1 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_aide_is_installed
+class secure_linux_cis::oracle8::cis_1_3_1 {
+  include secure_linux_cis::rules::ensure_sudo_is_installed
 }

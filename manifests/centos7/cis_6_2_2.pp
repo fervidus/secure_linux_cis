@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos7::cis_6_2_2 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_no_legacy_entries_exist_in_etc_passwd
+class secure_linux_cis::centos7::cis_6_2_2 {
+  include secure_linux_cis::rules::ensure_no_legacy_entries_exist_in_etc_passwd
 }

@@ -11,7 +11,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_system_accounts_are_non_login
-class secure_linux_cis::ensure_system_accounts_are_non_login (
+class secure_linux_cis::rules::ensure_system_accounts_are_non_login (
   Boolean $enforced = true,
 ) {
 

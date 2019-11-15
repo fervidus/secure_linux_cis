@@ -15,7 +15,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_audit_log_storage_size_is_configured
-class secure_linux_cis::ensure_audit_log_storage_size_is_configured (
+class secure_linux_cis::rules::ensure_audit_log_storage_size_is_configured (
   Boolean $enforced     = true,
   Integer $max_log_file = 32,
 ) {

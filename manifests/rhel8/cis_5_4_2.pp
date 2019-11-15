@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_rhel8::cis_5_4_2 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_system_accounts_are_non_login
+class secure_linux_cis::rhel8::cis_5_4_2 {
+  include secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_configured
 }

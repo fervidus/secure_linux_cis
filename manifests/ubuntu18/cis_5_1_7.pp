@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_ubuntu18::cis_5_1_7 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_permissions_on_etc_cron_d_are_configured
+class secure_linux_cis::ubuntu18::cis_5_1_7 {
+  include secure_linux_cis::rules::ensure_permissions_on_etc_cron_d_are_configured
 }

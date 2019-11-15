@@ -19,7 +19,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_lockout_for_failed_password_attempts_is_configured
-class secure_linux_cis::ensure_lockout_for_failed_password_attempts_is_configured (
+class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_configured (
   Boolean $enforced = true,
   Integer $attempts = 5,
   Integer $lockout_time = 900,

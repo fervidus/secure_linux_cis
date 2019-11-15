@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_amazon2::cis_6_1_4 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_permissions_on_etc_group_are_configured
+class secure_linux_cis::amazon2::cis_6_1_4 {
+  include secure_linux_cis::rules::ensure_permissions_on_etc_group_are_configured
 }

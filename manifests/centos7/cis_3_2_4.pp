@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos7::cis_3_2_4 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_suspicious_packets_are_logged
+class secure_linux_cis::centos7::cis_3_2_4 {
+  include secure_linux_cis::rules::ensure_suspicious_packets_are_logged
 }

@@ -16,7 +16,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_password_hashing_algorithm_is_sha_512
-class secure_linux_cis::ensure_password_hashing_algorithm_is_sha_512  {
+class secure_linux_cis::rules::ensure_password_hashing_algorithm_is_sha_512  {
 
   # This benchmark is managed in secure_linux_cis::ensure_password_hashing_algorithm_is_sha_512
 

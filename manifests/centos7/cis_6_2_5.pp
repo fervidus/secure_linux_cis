@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos7::cis_6_2_5 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_root_is_the_only_uid_0_account
+class secure_linux_cis::centos7::cis_6_2_5 {
+  include secure_linux_cis::rules::ensure_root_is_the_only_uid_0_account
 }

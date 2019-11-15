@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos8::cis_5_2_12 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_ssh_idle_timeout_interval_is_configured
+class secure_linux_cis::centos8::cis_5_2_12 {
+  include secure_linux_cis::rules::ensure_SSH_PermitUserEnvironment_is_disabled
 }

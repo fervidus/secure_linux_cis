@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_debian8::cis_1_1_7 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_separate_partition_exists_for_var_tmp
+class secure_linux_cis::debian8::cis_1_1_7 {
+  include secure_linux_cis::rules::ensure_nodev_option_set_on_var_tmp_partition
 }

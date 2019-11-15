@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos8::cis_6_2_9 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_users_own_their_home_directories
+class secure_linux_cis::centos8::cis_6_2_9 {
+  include secure_linux_cis::rules::ensure_users_dot_files_are_not_group_or_world_writable
 }

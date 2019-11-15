@@ -15,7 +15,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_maxauthtries_is_set_to_4_or_less
-class secure_linux_cis::ensure_ssh_maxauthtries_is_set_to_4_or_less (
+class secure_linux_cis::rules::ensure_ssh_maxauthtries_is_set_to_4_or_less (
   Boolean      $enforced       = true,
   Integer[1,4] $max_auth_tries = 4,
 ) {

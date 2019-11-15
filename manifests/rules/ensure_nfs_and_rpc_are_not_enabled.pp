@@ -14,7 +14,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_nfs_and_rpc_are_not_enabled
-class secure_linux_cis::ensure_nfs_and_rpc_are_not_enabled (
+class secure_linux_cis::rules::ensure_nfs_and_rpc_are_not_enabled (
   Boolean $enforced = true,
 ) {
 

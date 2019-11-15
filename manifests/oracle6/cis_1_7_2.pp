@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_oracle6::cis_1_7_2 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_gdm_login_banner_is_configured
+class secure_linux_cis::oracle6::cis_1_7_2 {
+  include secure_linux_cis::rules::ensure_gdm_login_banner_is_configured
 }

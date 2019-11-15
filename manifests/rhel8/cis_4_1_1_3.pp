@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_rhel8::cis_4_1_1_3 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_audit_logs_are_not_automatically_deleted
+class secure_linux_cis::rhel8::cis_4_1_1_3 {
+  include secure_linux_cis::rules::ensure_auditing_for_processes_that_start_prior_to_auditd_is_enabled
 }

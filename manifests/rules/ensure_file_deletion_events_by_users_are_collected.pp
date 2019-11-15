@@ -19,7 +19,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_file_deletion_events_by_users_are_collected
-class secure_linux_cis::ensure_file_deletion_events_by_users_are_collected (
+class secure_linux_cis::rules::ensure_file_deletion_events_by_users_are_collected (
   Boolean $enforced = true,
 ) {
 

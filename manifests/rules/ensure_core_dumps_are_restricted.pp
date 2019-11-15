@@ -12,7 +12,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_core_dumps_are_restricted
-class secure_linux_cis::ensure_core_dumps_are_restricted (
+class secure_linux_cis::rules::ensure_core_dumps_are_restricted (
   Boolean $enforced = true,
 ) {
 

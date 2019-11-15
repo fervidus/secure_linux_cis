@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_debian9::cis_5_3_1 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_password_creation_requirements_are_configured
+class secure_linux_cis::debian9::cis_5_3_1 {
+  include secure_linux_cis::rules::ensure_password_creation_requirements_are_configured
 }

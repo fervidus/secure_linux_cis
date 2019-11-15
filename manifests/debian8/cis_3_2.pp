@@ -1,6 +1,6 @@
 #
-class secure_linux_cis::cis_debian8::cis_3_2 (
+class secure_linux_cis::debian8::cis_3_2 (
   Boolean $enforced = true,
 ) {
-  contain secure_linux_cis::rules::network_parameters
+  include secure_linux_cis::rules::network_parameters
 }

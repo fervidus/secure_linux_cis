@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_aliyun1::cis_2_1_3 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_discard_services_are_not_enabled
+class secure_linux_cis::aliyun1::cis_2_1_3 {
+  include secure_linux_cis::rules::ensure_avahi_server_is_not_enabled
 }

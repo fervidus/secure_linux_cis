@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos8::cis_6_2_12 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_no_users_have_netrc_files
+class secure_linux_cis::centos8::cis_6_2_12 {
+  include secure_linux_cis::rules::ensure_users_netrc_Files_are_not_group_or_world_accessible
 }

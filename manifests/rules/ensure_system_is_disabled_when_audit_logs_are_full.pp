@@ -13,7 +13,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_system_is_disabled_when_audit_logs_are_full
-class secure_linux_cis::ensure_system_is_disabled_when_audit_logs_are_full (
+class secure_linux_cis::rules::ensure_system_is_disabled_when_audit_logs_are_full (
   Boolean $enforced = true,
 ) {
 

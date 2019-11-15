@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_oracle6::cis_1_4_2 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_bootloader_password_is_set
+class secure_linux_cis::oracle6::cis_1_4_2 {
+  include secure_linux_cis::rules::ensure_bootloader_password_is_set
 }

@@ -13,7 +13,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_iptables_is_installed
-class secure_linux_cis::ensure_iptables_is_installed (
+class secure_linux_cis::rules::ensure_iptables_is_installed (
   Boolean $enforced = true,
 ) {
 

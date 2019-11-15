@@ -10,7 +10,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_users_own_their_home_directories
-class secure_linux_cis::ensure_users_own_their_home_directories (
+class secure_linux_cis::rules::ensure_users_own_their_home_directories (
   Boolean $enforced = true,
 ) {
 

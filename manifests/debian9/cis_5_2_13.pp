@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_debian9::cis_5_2_13 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_ssh_logingracetime_is_set_to_one_minute_or_less
+class secure_linux_cis::debian9::cis_5_2_13 {
+  include secure_linux_cis::rules::ensure_only_strong_ciphers_are_used
 }

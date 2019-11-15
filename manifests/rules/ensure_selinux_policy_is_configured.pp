@@ -11,7 +11,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_selinux_policy_is_configured
-class secure_linux_cis::ensure_selinux_policy_is_configured (
+class secure_linux_cis::rules::ensure_selinux_policy_is_configured (
   Boolean $enforced = true,
   Enum['selinux', 'apparmor', 'none'] $mac = 'selinux',
 ) {

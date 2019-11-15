@@ -18,7 +18,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_reverse_path_filtering_is_enabled
-class secure_linux_cis::ensure_reverse_path_filtering_is_enabled (
+class secure_linux_cis::rules::ensure_reverse_path_filtering_is_enabled (
   Boolean $enforced = true,
 ) {
 

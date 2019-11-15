@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos7::cis_1_1_21 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_sticky_bit_is_set_on_all_world_writable_directories
+class secure_linux_cis::centos7::cis_1_1_21 {
+  include secure_linux_cis::rules::ensure_sticky_bit_is_set_on_all_world_writable_directories
 }

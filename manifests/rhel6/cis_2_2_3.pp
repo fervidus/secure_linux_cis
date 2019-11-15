@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_rhel6::cis_2_2_3 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_avahi_server_is_not_enabled
+class secure_linux_cis::rhel6::cis_2_2_3 {
+  include secure_linux_cis::rules::ensure_avahi_server_is_not_enabled
 }

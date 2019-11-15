@@ -10,7 +10,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_nodev_option_set_on_removable_media_partitions
-class secure_linux_cis::ensure_nodev_option_set_on_removable_media_partitions (
+class secure_linux_cis::rules::ensure_nodev_option_set_on_removable_media_partitions (
   Boolean $enforced = true,
 ){
   if $enforced {

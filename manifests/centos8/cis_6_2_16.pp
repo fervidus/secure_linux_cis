@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_centos8::cis_6_2_16 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_no_duplicate_uids_exist
+class secure_linux_cis::centos8::cis_6_2_16 {
+  include secure_linux_cis::rules::ensure_no_duplicate_GIDs_exist
 }

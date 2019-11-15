@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_oracle6::cis_4_1_9 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_session_initiation_information_is_collected
+class secure_linux_cis::oracle6::cis_4_1_9 {
+  include secure_linux_cis::rules::ensure_session_initiation_information_is_collected
 }

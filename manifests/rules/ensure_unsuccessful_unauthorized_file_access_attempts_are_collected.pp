@@ -19,7 +19,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_unsuccessful_unauthorized_file_access_attempts_are_collected
-class secure_linux_cis::ensure_unsuccessful_unauthorized_file_access_attempts_are_collected (
+class secure_linux_cis::rules::ensure_unsuccessful_unauthorized_file_access_attempts_are_collected (
   Boolean $enforced = true,
 ) {
 

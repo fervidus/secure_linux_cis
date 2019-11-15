@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_rhel7::cis_1_2_3 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_gpg_keys_are_configured
+class secure_linux_cis::rhel7::cis_1_2_3 {
+  include secure_linux_cis::rules::ensure_gpg_keys_are_configured
 }

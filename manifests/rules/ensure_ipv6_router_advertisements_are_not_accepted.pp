@@ -15,7 +15,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ipv6_router_advertisements_are_not_accepted
-class secure_linux_cis::ensure_ipv6_router_advertisements_are_not_accepted (
+class secure_linux_cis::rules::ensure_ipv6_router_advertisements_are_not_accepted (
   Boolean $enforced     = true,
   Boolean $ipv6_enabled = false,
 ) {

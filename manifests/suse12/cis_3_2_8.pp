@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_suse12::cis_3_2_8 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_tcp_syn_cookies_is_enabled
+class secure_linux_cis::suse12::cis_3_2_8 {
+  include secure_linux_cis::rules::ensure_tcp_syn_cookies_is_enabled
 }

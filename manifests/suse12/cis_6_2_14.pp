@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_suse12::cis_6_2_14 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_no_users_have_rhosts_files
+class secure_linux_cis::suse12::cis_6_2_14 {
+  include secure_linux_cis::rules::ensure_no_users_have_rhosts_files
 }

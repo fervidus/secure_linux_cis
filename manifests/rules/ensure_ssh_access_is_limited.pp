@@ -35,7 +35,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_access_is_limited
-class secure_linux_cis::ensure_ssh_access_is_limited (
+class secure_linux_cis::rules::ensure_ssh_access_is_limited (
   Boolean $enforced = true,
   Array[String] $allow_users = [],
   Array[String] $allow_groups = [],

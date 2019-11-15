@@ -21,7 +21,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_source_routed_packets_are_not_accepted
-class secure_linux_cis::ensure_source_routed_packets_are_not_accepted (
+class secure_linux_cis::rules::ensure_source_routed_packets_are_not_accepted (
   Boolean $enforced = true,
 ) {
 

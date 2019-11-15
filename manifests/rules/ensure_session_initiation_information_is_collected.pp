@@ -19,7 +19,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_session_initiation_information_is_collected
-class secure_linux_cis::ensure_session_initiation_information_is_collected (
+class secure_linux_cis::rules::ensure_session_initiation_information_is_collected (
   Boolean $enforced = true,
 ) {
 

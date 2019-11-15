@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_ubuntu18::cis_5_4_2 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_system_accounts_are_non_login
+class secure_linux_cis::ubuntu18::cis_5_4_2 {
+  include secure_linux_cis::rules::ensure_system_accounts_are_non_login
 }

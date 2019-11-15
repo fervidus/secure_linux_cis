@@ -14,7 +14,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_default_deny_firewall_policy
-class secure_linux_cis::ensure_default_deny_firewall_policy (
+class secure_linux_cis::rules::ensure_default_deny_firewall_policy (
   Boolean $enforced = true,
 ) {
 

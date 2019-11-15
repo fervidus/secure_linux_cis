@@ -10,7 +10,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_default_user_shell_timeout_is_900_seconds_or_less
-class secure_linux_cis::ensure_default_user_shell_timeout_is_900_seconds_or_less (
+class secure_linux_cis::rules::ensure_default_user_shell_timeout_is_900_seconds_or_less (
   Boolean $enforced = true,
 ) {
 

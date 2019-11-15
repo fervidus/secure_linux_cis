@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_rhel8::cis_1_2_1 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_package_manager_repositories_are_configured
+class secure_linux_cis::rhel8::cis_1_2_1 {
+  include secure_linux_cis::rules::ensure_red_hat_subscription_manager_connection_is_configured
 }

@@ -1,6 +1,4 @@
 #
-class secure_linux_cis::cis_debian8::cis_1_5_4 (
-  Boolean $enforced = true,
-) {
-  contain secure_linux_cis::rules::ensure_prelink_is_disabled
+class secure_linux_cis::debian8::cis_1_5_4 {
+  include secure_linux_cis::rules::ensure_prelink_is_disabled
 }

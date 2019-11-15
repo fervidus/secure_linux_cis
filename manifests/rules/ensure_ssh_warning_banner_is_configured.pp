@@ -14,7 +14,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_warning_banner_is_configured
-class secure_linux_cis::ensure_ssh_warning_banner_is_configured (
+class secure_linux_cis::rules::ensure_ssh_warning_banner_is_configured (
   Boolean $enforced = true,
 ) {
 

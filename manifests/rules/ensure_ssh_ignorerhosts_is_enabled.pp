@@ -13,7 +13,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_ignorerhosts_is_enabled
-class secure_linux_cis::ensure_ssh_ignorerhosts_is_enabled (
+class secure_linux_cis::rules::ensure_ssh_ignorerhosts_is_enabled (
   Boolean $enforced = true,
 ) {
 
