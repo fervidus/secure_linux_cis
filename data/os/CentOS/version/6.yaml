@@ -190,9 +190,9 @@ secure_linux_cis::include_rules:
   - secure_linux_cis::centos6::cis_5_4_3
   - secure_linux_cis::centos6::cis_5_4_4
   - secure_linux_cis::centos6::cis_5_4_5
-  - secure_linux_cis::centos6::cis_5_5
+#  - secure_linux_cis::centos6::cis_5_5
   - secure_linux_cis::centos6::cis_5_6
-  - secure_linux_cis::centos6::cis_6_1_1
+#  - secure_linux_cis::centos6::cis_6_1_1
   - secure_linux_cis::centos6::cis_6_1_2
   - secure_linux_cis::centos6::cis_6_1_3
   - secure_linux_cis::centos6::cis_6_1_4
@@ -204,8 +204,8 @@ secure_linux_cis::include_rules:
   - secure_linux_cis::centos6::cis_6_1_10
   - secure_linux_cis::centos6::cis_6_1_11
   - secure_linux_cis::centos6::cis_6_1_12
-  - secure_linux_cis::centos6::cis_6_1_13
-  - secure_linux_cis::centos6::cis_6_1_14
+#  - secure_linux_cis::centos6::cis_6_1_13
+#  - secure_linux_cis::centos6::cis_6_1_14
   - secure_linux_cis::centos6::cis_6_2_1
   - secure_linux_cis::centos6::cis_6_2_2
   - secure_linux_cis::centos6::cis_6_2_3
