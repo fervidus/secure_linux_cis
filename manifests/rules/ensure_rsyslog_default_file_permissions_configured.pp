@@ -17,10 +17,9 @@
 #   include secure_linux_cis::ensure_rsyslog_default_file_permissions_configured
 class secure_linux_cis::rules::ensure_rsyslog_default_file_permissions_configured (
   Boolean $enforced = true,
-  Enum['rsyslog', 'syslog-ng', 'none'] $logging = 'rsyslog',
 ) {
 
-  if $enforced and $logging == 'rsyslog' {
+  if $enforced and $::secure_linux_cis::logging == 'rsyslog' {
 
     file_line { 'rsyslog.conf log_permissions':
       ensure => present,

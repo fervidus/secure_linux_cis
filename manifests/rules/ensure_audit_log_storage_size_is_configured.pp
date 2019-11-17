@@ -17,7 +17,6 @@
 #   include secure_linux_cis::ensure_audit_log_storage_size_is_configured
 class secure_linux_cis::rules::ensure_audit_log_storage_size_is_configured (
   Boolean $enforced     = true,
-  Integer $max_log_file = 32,
 ) {
 
   if $enforced {
@@ -25,7 +24,7 @@ class secure_linux_cis::rules::ensure_audit_log_storage_size_is_configured (
     file_line { 'max_log_file':
       ensure => present,
       path   => '/etc/audit/auditd.conf',
-      line   => "max_log_file = ${max_log_file}",
+      line   => "max_log_file = ${::secure_linux_cis::max_log_file}",
       match  => '^max_log_file =',
     }
 

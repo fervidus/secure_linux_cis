@@ -13,17 +13,16 @@
 #   include secure_linux_cis::ensure_the_selinux_state_is_enforcing
 class secure_linux_cis::rules::ensure_the_selinux_state_is_enforcing (
   Boolean $enforced = true,
-  Enum['selinux', 'apparmor', 'none'] $mac = 'selinux',
 ) {
 
-  if $enforced  and $mac == 'selinux' {
+  if $enforced  and $::secure_linux_cis::mac == 'selinux' {
     file_line { 'selinux_enforce':
       path     => '/etc/selinux/config',
       line     => 'SELINUX=enforcing',
       match    => 'SELINUX=',
       multiple => true,
     }
-  } elsif $mac == 'selinux' {
+  } elsif $::secure_linux_cis::mac == 'selinux' {
     file_line { 'selinux_disable':
       path     => '/etc/selinux/config',
       line     => 'SELINUX=disabled',

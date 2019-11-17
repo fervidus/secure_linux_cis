@@ -20,12 +20,11 @@
 #   include secure_linux_cis::ensure_mail_transfer_agent_is_configured_for_local_only_mode
 class secure_linux_cis::rules::ensure_mail_transfer_agent_is_configured_for_local_only_mode (
   Boolean $enforced = true,
-  Enum['postfix', 'exim', 'none'] $mta = 'postfix',
 ) {
 
   if $enforced{
 
-    case $mta {
+    case $::secure_linux_cis::mta {
       'postfix':
         {
           class { '::postfix':

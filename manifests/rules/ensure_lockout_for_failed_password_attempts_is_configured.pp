@@ -21,8 +21,6 @@
 #   include secure_linux_cis::ensure_lockout_for_failed_password_attempts_is_configured
 class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_configured (
   Boolean $enforced = true,
-  Integer $attempts = 5,
-  Integer $lockout_time = 900,
 ) {
 
   $services = [
@@ -55,8 +53,8 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
           'preauth',
           'audit',
           'silent',
-          "deny=${attempts}",
-          "unlock_time=${lockout_time}",
+          "deny=${::secure_linux_cis::attempts}",
+          "unlock_time=${::secure_linux_cis::lockout_time}",
         ],
         position         => 'before *[type="auth" and module="pam_unix.so"]',
       }
@@ -71,8 +69,8 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
         arguments        => [
           'authfail',
           'audit',
-          "deny=${attempts}",
-          "unlock_time=${lockout_time}",
+          "deny=${::secure_linux_cis::attempts}",
+          "unlock_time=${::secure_linux_cis::lockout_time}",
         ],
         position         => 'after *[type="auth" and module="pam_unix.so"]',
       }
@@ -87,8 +85,8 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
         arguments        => [
           'authsucc',
           'audit',
-          "deny=${attempts}",
-          "unlock_time=${lockout_time}",
+          "deny=${::secure_linux_cis::attempts}",
+          "unlock_time=${::secure_linux_cis::lockout_time}",
         ],
         position         => 'after *[type="auth" and module="pam_faillock.so" and control="[default=die]"]',
       }

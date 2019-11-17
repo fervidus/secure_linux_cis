@@ -13,13 +13,12 @@
 #   include secure_linux_cis::ensure_package_manager_repositories_are_configured
 class secure_linux_cis::rules::ensure_package_manager_repositories_are_configured (
   Boolean $enforced = true,
-  Array $repolist = ['rhel-7-server-rpms/7Server/x86_64']
 ) {
 
   if $enforced {
     if($facts['yum_repolist'] != undef) {
-      if member($repolist, $facts['yum_repolist']) == false {
-        notify { "No approved repo found in list:  ${repolist}": }
+      if member($::secure_linux_cis::repolist, $facts['yum_repolist']) == false {
+        notify { "No approved repo found in list:  ${::secure_linux_cis::repolist}": }
       }
     }
 

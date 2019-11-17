@@ -33,11 +33,6 @@
 #   include secure_linux_cis::ensure_password_creation_requirements_are_configured
 class secure_linux_cis::rules::ensure_password_creation_requirements_are_configured (
   Boolean $enforced = true,
-  Integer $minlen = 14,
-  Integer $dcredit = -1,
-  Integer $ucredit = -1,
-  Integer $ocredit = -1,
-  Integer $lcredit = -1,
 ) {
 
   $services = [
@@ -47,14 +42,14 @@ class secure_linux_cis::rules::ensure_password_creation_requirements_are_configu
 
   if $enforced {
 
-    if $minlen == 0 and $dcredit == 0 and $ucredit == 0 and $ocredit == 0 and $lcredit == 0 {
+    if $::secure_linux_cis::minlen == 0 and $::secure_linux_cis::dcredit == 0 and $::secure_linux_cis::ucredit == 0 and $::secure_linux_cis::ocredit == 0 and $::secure_linux_cis::lcredit == 0 {
 
       notify { 'blackpass':
         message  => 'Not in compliance with CIS  (Scored). At least one of the password requirements in /etc/security/pwquality.conf must be specified',#lint:ignore:140chars
         loglevel => 'warning',
       }
     }
-    elsif $minlen == undef and $dcredit == undef and $ucredit == undef and $ocredit == undef and $lcredit == undef {
+    elsif $::secure_linux_cis::minlen == undef and $::secure_linux_cis::dcredit == undef and $::secure_linux_cis::ucredit == undef and $::secure_linux_cis::ocredit == undef and $::secure_linux_cis::lcredit == undef {
 
     fail('All of the minimum characters in pwquality.conf are undefined')      }
     else {
@@ -75,35 +70,35 @@ class secure_linux_cis::rules::ensure_password_creation_requirements_are_configu
       file_line { 'pam minlen':
         ensure => 'present',
         path   => '/etc/security/pwquality.conf',
-        line   => "minlen = ${minlen}",
+        line   => "minlen = ${::secure_linux_cis::minlen}",
         match  => '^#?minlen',
       }
 
       file_line { 'pam dcredit':
         ensure => 'present',
         path   => '/etc/security/pwquality.conf',
-        line   => "dcredit = ${dcredit}",
+        line   => "dcredit = ${::secure_linux_cis::dcredit}",
         match  => '^#?dcredit',
       }
 
       file_line { 'pam ucredit':
         ensure => 'present',
         path   => '/etc/security/pwquality.conf',
-        line   => "ucredit = ${ucredit}",
+        line   => "ucredit = ${::secure_linux_cis::ucredit}",
         match  => '^#?ucredit',
       }
 
       file_line { 'pam ocredit':
         ensure => 'present',
         path   => '/etc/security/pwquality.conf',
-        line   => "ocredit = ${ocredit}",
+        line   => "ocredit = ${::secure_linux_cis::ocredit}",
         match  => '^#?ocredit',
       }
 
       file_line { 'pam lcredit':
         ensure => 'present',
         path   => '/etc/security/pwquality.conf',
-        line   => "lcredit = ${lcredit}",
+        line   => "lcredit = ${::secure_linux_cis::lcredit}",
         match  => '^#?lcredit',
       }
 

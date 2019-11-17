@@ -20,9 +20,7 @@
 # @example
 #   include secure_linux_cis::ensure_chrony_is_configured
 class secure_linux_cis::rules::ensure_chrony_is_configured (
-  Array[String] $time_servers              = [],
-  Boolean $enforced                        = true,
-  Enum['ntp', 'chrony', 'none'] $time_sync = 'chrony',
+  Boolean $enforced = true,
 ) {
 
   case $facts['os']['family'] {
@@ -38,10 +36,10 @@ class secure_linux_cis::rules::ensure_chrony_is_configured (
     }
   }
 
-  if $enforced and $time_sync == 'chrony' {
+  if $enforced and $::secure_linux_cis::time_sync == 'chrony' {
 
     class { '::chrony':
-      servers => $time_servers,
+      servers => $::secure_linux_cis::time_servers,
     }
 
     file { $config:

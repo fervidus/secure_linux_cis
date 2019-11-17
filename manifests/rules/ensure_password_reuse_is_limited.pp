@@ -17,7 +17,6 @@
 #   include secure_linux_cis::ensure_password_reuse_is_limited
 class secure_linux_cis::rules::ensure_password_reuse_is_limited (
   Boolean $enforced = true,
-  Integer $past_passwords = 5,
 ) {
 
   $services = [
@@ -27,7 +26,7 @@ class secure_linux_cis::rules::ensure_password_reuse_is_limited (
 
   if $enforced {
 
-    if $past_passwords < 5 {
+    if $::secure_linux_cis::past_passwords < 5 {
       fail('CIS recommends setting old password limit to previous 5.')
     }
 
@@ -41,7 +40,7 @@ class secure_linux_cis::rules::ensure_password_reuse_is_limited (
           type      => 'password',
           control   => 'sufficient',
           module    => 'pam_unix.so',
-          arguments => ["remember=${past_passwords}", 'sha512', 'shadow', 'try_first_pass', 'use_authtok'],
+          arguments => ["remember=${::secure_linux_cis::past_passwords}", 'sha512', 'shadow', 'try_first_pass', 'use_authtok'],
           position  => 'after *[type="password" and module="pam_unix.so" and control="requisite"]',
         }
       }

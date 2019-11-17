@@ -13,10 +13,9 @@
 #   include secure_linux_cis::ensure_selinux_policy_is_configured
 class secure_linux_cis::rules::ensure_selinux_policy_is_configured (
   Boolean $enforced = true,
-  Enum['selinux', 'apparmor', 'none'] $mac = 'selinux',
 ) {
 
-  if $enforced and $mac == 'selinux' {
+  if $enforced and $::secure_linux_cis::mac == 'selinux' {
 
     file_line { 'selinux_targeted':
       path  => '/etc/selinux/config',

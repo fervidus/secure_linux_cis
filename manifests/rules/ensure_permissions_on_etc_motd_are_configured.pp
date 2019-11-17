@@ -14,17 +14,15 @@
 #   include secure_linux_cis::ensure_permissions_on_etc_motd_are_configured
 class secure_linux_cis::rules::ensure_permissions_on_etc_motd_are_configured (
   Boolean           $enforced = true,
-  Optional[String]  $banner   = undef,
-  Optional[String]  $motd     = undef,
 ) {
 
   if $enforced {
 
-    if !$motd and $banner {
-      $motd_real = $banner
+    if !$::secure_linux_cis::motd and $::secure_linux_cis::banner {
+      $motd_real = $::secure_linux_cis::banner
     }
     else {
-      $motd_real = $motd
+      $motd_real = $::secure_linux_cis::motd
     }
 
     file { '/etc/motd':

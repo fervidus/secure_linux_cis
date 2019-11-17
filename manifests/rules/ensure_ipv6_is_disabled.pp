@@ -16,10 +16,9 @@
 #   include secure_linux_cis::ensure_ipv6_is_disabled
 class secure_linux_cis::rules::ensure_ipv6_is_disabled (
   Boolean $enforced     = true,
-  Boolean $ipv6_enabled = false,
 ) {
 
-  if $enforced and !$ipv6_enabled {
+  if $enforced and !$::secure_linux_cis::ipv6_enabled {
 
     sysctl { 'net.ipv6.conf.all.disable_ipv6':
       value => 1,

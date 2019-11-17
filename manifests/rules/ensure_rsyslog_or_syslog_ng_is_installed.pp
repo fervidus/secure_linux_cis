@@ -20,19 +20,18 @@
 #   include secure_linux_cis::ensure_rsyslog_or_syslog_ng_is_installed
 class secure_linux_cis::rules::ensure_rsyslog_or_syslog_ng_is_installed (
   Boolean $enforced = true,
-  Enum['rsyslog', 'syslog-ng', 'none'] $logging = 'rsyslog',
 ) {
 
   if $enforced {
 
-    if $logging == 'rsyslog' {
+    if $::secure_linux_cis::logging == 'rsyslog' {
 
       package { 'rsyslog':
         ensure => installed,
       }
     }
 
-    elsif $logging == 'syslog-ng' {
+    elsif $::secure_linux_cis::logging == 'syslog-ng' {
 
       package { 'syslog-ng':
         ensure => installed,

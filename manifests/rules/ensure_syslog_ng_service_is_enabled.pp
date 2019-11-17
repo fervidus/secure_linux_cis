@@ -16,10 +16,9 @@
 #   include secure_linux_cis::ensure_syslog_ng_service_is_enabled
 class secure_linux_cis::rules::ensure_syslog_ng_service_is_enabled (
   Boolean $enforced = true,
-  Enum['rsyslog', 'syslog-ng', 'none'] $logging = 'rsyslog',
 ) {
 
-  if $enforced and $logging == 'syslog-ng' {
+  if $enforced and $::secure_linux_cis::logging == 'syslog-ng' {
 
     service { 'syslog-ng':
       ensure => running,

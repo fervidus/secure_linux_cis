@@ -11,13 +11,11 @@
 #   include secure_linux_cis::ensure_remote_rsyslog_messages_are_only_accepted_on_designated_log_hosts
 class secure_linux_cis::rules::ensure_remote_rsyslog_messages_are_only_accepted_on_designated_log_hosts (
   Boolean $enforced = true,
-  Enum['rsyslog', 'syslog-ng', 'none'] $logging = 'rsyslog',
-  Boolean $is_logging_host = false,
 ) {
 
-  if $enforced and $logging == 'rsyslog' {
+  if $enforced and $::secure_linux_cis::logging == 'rsyslog' {
 
-    if $is_logging_host {
+    if $::secure_linux_cis::is_logging_host {
 
       file_line { 'rsyslog.conf ModLoad':
         ensure => present,

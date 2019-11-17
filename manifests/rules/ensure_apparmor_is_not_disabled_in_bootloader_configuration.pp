@@ -13,8 +13,8 @@
 # @param pass_inactive_days Password inactive days
 #
 # @example
-#   include secure_linux_cis::ensure_interactive_boot_is_not_enabled
-class secure_linux_cis::rules::ensure_interactive_boot_is_not_enabled (
+#   include secure_linux_cis::ensure_apparmor_is_not_disabled_in_bootloader_configuration
+class secure_linux_cis::rules::ensure_apparmor_is_not_disabled_in_bootloader_configuration (
   Boolean $enforced = true,
 ) {
 
@@ -24,9 +24,9 @@ class secure_linux_cis::rules::ensure_interactive_boot_is_not_enabled (
     # /etc/default/useradd directly.
     file_line {'no_interactive_boot':
       ensure => present,
-      path   => '/etc/sysconfig/init',
-      line   => 'PROMPT=no',
-      match  => '^#?PROMPT=',
+      path   => '/etc/default/grub',
+      line   => 'GRUB_CMDLINE_LINUX="apparmor=1 security=apparmor"',
+      match  => '^#?GRUB_CMDLINE_LINUX=',
     }
   }
 }

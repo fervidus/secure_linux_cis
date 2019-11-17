@@ -37,17 +37,13 @@
 #   include secure_linux_cis::ensure_ssh_access_is_limited
 class secure_linux_cis::rules::ensure_ssh_access_is_limited (
   Boolean $enforced = true,
-  Array[String] $allow_users = [],
-  Array[String] $allow_groups = [],
-  Array[String] $deny_users = [],
-  Array[String] $deny_groups =[],
 ) {
 
   include ::secure_linux_cis::service
 
   if $enforced {
 
-    if $allow_users == [] and $allow_groups == [] and $deny_users == [] and $deny_groups == [] {
+    if $::secure_linux_cis::allow_users == [] and $::secure_linux_cis::allow_groups == [] and $::secure_linux_cis::deny_users == [] and $::secure_linux_cis::deny_groups == [] {
 
       notify { 'allow_groups':
         message  => 'Not in compliance with CIS 4 (Scored). One or more parameters in /etc/ssh/sshd_config have not been set.',
@@ -56,9 +52,9 @@ class secure_linux_cis::rules::ensure_ssh_access_is_limited (
     }
     else {
 
-      if $allow_users != [] {
+      if $::secure_linux_cis::allow_users != [] {
 
-        $user_list_allow = join($allow_users, ' ')
+        $user_list_allow = join($::secure_linux_cis::allow_users, ' ')
 
         file_line{ 'ssh allow users':
           ensure => 'present',
@@ -70,9 +66,9 @@ class secure_linux_cis::rules::ensure_ssh_access_is_limited (
 
       }
 
-      if $allow_groups != [] {
+      if $::secure_linux_cis::allow_groups != [] {
 
-        $group_list_allow = join($allow_groups, ' ')
+        $group_list_allow = join($::secure_linux_cis::allow_groups, ' ')
 
         file_line{ 'ssh allow groups':
           ensure => 'present',
@@ -84,9 +80,9 @@ class secure_linux_cis::rules::ensure_ssh_access_is_limited (
 
       }
 
-      if $deny_users != [] {
+      if $::secure_linux_cis::deny_users != [] {
 
-        $user_list_deny = join($deny_users, ' ')
+        $user_list_deny = join($::secure_linux_cis::deny_users, ' ')
 
         file_line{ 'ssh deny users':
           ensure => 'present',
@@ -98,9 +94,9 @@ class secure_linux_cis::rules::ensure_ssh_access_is_limited (
 
       }
 
-      if $deny_groups != [] {
+      if $::secure_linux_cis::deny_groups != [] {
 
-        $group_list_deny = join($deny_groups, ' ')
+        $group_list_deny = join($::secure_linux_cis::deny_groups, ' ')
 
         file_line{ 'ssh deny groups':
           ensure => 'present',

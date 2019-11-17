@@ -18,7 +18,6 @@
 #   include secure_linux_cis::ensure_ipv6_redirects_are_not_accepted
 class secure_linux_cis::rules::ensure_ipv6_redirects_are_not_accepted (
   Boolean $enforced     = true,
-  Boolean $ipv6_enabled = false,
 ) {
 
   if $enforced {
