@@ -34,10 +34,10 @@ class secure_linux_cis::rules::ensure_loopback_traffic_is_configured (
       outiface => 'lo',
       action   => 'accept',
     }
-    -> firewall { '003 drop all to lo /8':
+    -> firewall { '003 drop all to lo 127.0.0.0/8':
       chain  => 'INPUT',
       proto  => 'all',
-      source => '/8',
+      source => '127.0.0.0/8',
       action => 'drop',
     }
 
