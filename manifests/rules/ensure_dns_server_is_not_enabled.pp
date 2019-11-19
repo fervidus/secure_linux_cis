@@ -25,12 +25,14 @@ class secure_linux_cis::rules::ensure_dns_server_is_not_enabled {
       $service = 'bind9'
     }
     default: {
+      notify { "This DNS server check is not yet implemented for ${facts['os']['family']}": }
+      $service = 'TODO DNS'
     }
   }
 
-    service { $service:
-      ensure => stopped,
-      enable => false,
-    }
-
+  service { $service:
+    ensure => stopped,
+    enable => false,
   }
+
+}

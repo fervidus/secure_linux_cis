@@ -21,13 +21,15 @@ class secure_linux_cis::rules::ensure_updates_patches_and_additional_security_so
       $command = 'apt-get -s upgrade'
     }
     default: {
+      notify { "This check is not yet implemented for ${facts['os']['family']}": }
+      $command = '/bin/true'
     }
   }
 
-    cron::monthly { 'security-update':
-      ensure      => present,
-      environment =>  [ 'MAILTO=root', 'PATH="/usr/bin:/bin"', ],
-      command     => $command,
-    }
-
+  cron::monthly { 'security-update':
+    ensure      => present,
+    environment =>  [ 'MAILTO=root', 'PATH="/usr/bin:/bin"', ],
+    command     => $command,
   }
+
+}

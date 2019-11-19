@@ -1,7 +1,7 @@
 #!/bin/bash
-< /etc/passwd egrep -v '^(root|halt|sync|shutdown)' | awk -F: '($7 != "/sbin/nologin" && $7 != "/bin/false") { print $1 " " $6 }' | while read dir; do
+< /etc/passwd grep -Ev '^(root|halt|sync|shutdown)' | awk -F: '($7 !~ "/sbin/nologin" && $7 != "/bin/false") { print $1 " " $6 }' | while read dir; do
   for file in $dir/.[A-Za-z0-9]*; do
-    if [ ! -h "$file" -a -f "$file" ]; then
+    if [ ! -h "$file" ] && [ -f "$file" ]; then
       fileperm="$(ls -ld "$file" | cut -f1 -d" ")"
       if [ "$(echo "$fileperm" | cut -c6)" != "-" ]; then
         echo "Group Write permission set on file $file"

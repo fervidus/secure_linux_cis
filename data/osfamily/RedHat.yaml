@@ -1,3 +1,4 @@
+---
 secure_linux_cis::aide_command: /usr/sbin/aide --check
 secure_linux_cis::su_group: wheel
 secure_linux_cis::grub_config_files:

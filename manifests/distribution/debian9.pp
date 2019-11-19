@@ -142,12 +142,8 @@ class secure_linux_cis::distribution::debian9 (
   include ::secure_linux_cis::distribution::redhat7::cis_1_5_4
 
   include ::secure_linux_cis::distribution::redhat7::cis_1_6_1_1
-  class { '::secure_linux_cis::distribution::redhat7::cis_1_6_1_2':
-    mac => $mac,
-  }
-  class { '::secure_linux_cis::distribution::redhat7::cis_1_6_1_3':
-    mac => $mac,
-  }
+  include ::secure_linux_cis::distribution::redhat7::cis_1_6_1_2
+  include ::secure_linux_cis::distribution::redhat7::cis_1_6_1_3
   include ::secure_linux_cis::distribution::redhat7::cis_1_6_1_3
   # Debian 1.6.1.4
   include ::secure_linux_cis::distribution::redhat7::cis_1_6_1_6
