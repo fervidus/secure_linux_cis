@@ -1,4 +1,4 @@
 #
 class secure_linux_cis::distribution::ubuntu16::cis_1_2_2 {
-  include secure_linux_cis::rules::ensure_gpg_keys_are_configured
+  # Not scored. Please check output of apt-key list
 }
