@@ -13,7 +13,7 @@
 
 class secure_linux_cis::rules::ensure_gdm_login_banner_is_configured {
 
-  if !$facts['gnome_installed'] {
+  if $facts['gnome_installed'] {
 
     file { '/etc/dconf/profile/gdm':
       ensure  => present,
@@ -23,7 +23,6 @@ class secure_linux_cis::rules::ensure_gdm_login_banner_is_configured {
     file { '/etc/dconf/db/gdm.d/01-banner-message':
       ensure  => present,
       content => "[org/gnome/login-screen]\nbanner-message-enable=true\nbanner-message-text=\'Authorized uses only. All activity may be monitored and reported.\'", #lint:ignore:140chars
-      require => File['/etc/dconf/profile/gdm'],
       notify  => Exec['dconf'],
     }
 
