@@ -39,7 +39,7 @@ class secure_linux_cis::redhat7::cis_5_4_1_3 (
     $local_users.each |String $user, Hash $attributes| {
 
       if $attributes['password_expires_days'] != 'never' and $attributes['warn_days_between_password_change'] != $pass_warn_days {
-        exec { "/bin/chage --warndays ${pass_warn_days} ${user}": }
+        exec { "/usr/bin/chage --warndays ${pass_warn_days} ${user}": }
       }
     }
   }

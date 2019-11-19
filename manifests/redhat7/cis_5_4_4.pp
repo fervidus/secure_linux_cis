@@ -17,10 +17,15 @@ class secure_linux_cis::redhat7::cis_5_4_4 (
   Boolean $enforced = true,
 ) {
 
+  $bashrc = $facts['os']['family'] ? {
+    'RedHat' => '/etc/bashrc',
+    'Debian' => '/etc/bash.bashrc',
+  }
+
   if $enforced {
 
     file_line { 'bashrc':
-      path     => '/etc/bashrc',
+      path     => $bashrc,
       line     => '      umask 077',
       match    => '^\s+umask\s+\d+',
       multiple => true,
@@ -39,11 +44,13 @@ class secure_linux_cis::redhat7::cis_5_4_4 (
       match => '^\s+umask\s+\d+',
     }
 
-    file_line { 'csh.cshrc':
-      path     => '/etc/csh.cshrc',
-      line     => '    umask 077',
-      match    => '^\s+umask\s+\d+',
-      multiple => true,
+    if $facts['os']['family'] == 'RedHat' {
+      file_line { 'csh.cshrc':
+        path     => '/etc/csh.cshrc',
+        line     => '    umask 077',
+        match    => '^\s+umask\s+\d+',
+        multiple => true,
+      }
     }
   }
 }

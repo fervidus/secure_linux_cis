@@ -4,6 +4,6 @@
 # Contains "+" entries in /etc/shadow
 
 Facter.add('plus_shadow') do
-  confine osfamily: 'RedHat'
+  confine osfamily: ['RedHat', 'Debian']
   setcode "grep '^\\+:' /etc/shadow"
 end

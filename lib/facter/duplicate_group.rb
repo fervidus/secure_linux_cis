@@ -4,7 +4,7 @@
 # Ensures no duplicate group names exist in /etc/group
 
 Facter.add('duplicate_group') do
-  confine osfamily: 'RedHat'
+  confine osfamily: ['RedHat', 'Debian']
   setcode do
     Facter::Core::Execution.exec('/usr/share/cis_scripts/dup_group.sh')
   end

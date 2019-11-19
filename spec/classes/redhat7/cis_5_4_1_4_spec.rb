@@ -12,6 +12,7 @@ describe 'secure_linux_cis::redhat7::cis_5_4_1_4' do
         it { is_expected.to compile }
 
         if option
+<<<<<<< HEAD
           it {
             is_expected.to contain_file_line('useradd_inactive')
               .with(
@@ -27,6 +28,44 @@ describe 'secure_linux_cis::redhat7::cis_5_4_1_4' do
           }
         end
 
+=======
+          it { is_expected.to contain_file_line('useradd_inactive') }
+          context 'With non compliant settings' do
+            let(:facts) do
+              super().merge(
+                'local_users' => {
+                  'root' => {
+                    'password_expires_days' => 60,
+                    'password_inactive_days' => 99,
+                  },
+                },
+              )
+            end
+
+            it {
+              is_expected.to contain_exec('/usr/bin/chage --inactive 30 root')
+            }
+          end
+          context 'With compliant settings' do
+            let(:facts) do
+              super().merge(
+                'local_users' => {
+                  'root' => { 'password_expires_days' => 'never' },
+                },
+              )
+            end
+
+            it {
+              is_expected.not_to contain_exec('/usr/bin/chage --inactive 30 root')
+            }
+          end
+        else
+          context 'With this check disabled' do
+            it { is_expected.not_to contain_shellvar('cis_5_4_1_4') }
+            it { is_expected.not_to contain_exec('/usr/bin/chage --inactive 30 root') }
+          end
+        end
+>>>>>>> c4ffb07011687d608c4aaeb3018d62fdaa6f7383
       end
     end
   end

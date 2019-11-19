@@ -36,7 +36,7 @@ class secure_linux_cis::redhat7::cis_3_4_3 (
       owner   => 'root',
       group   => 'root',
       mode    => '0644',
-      content => 'ALL: ALL',
+      content => "ALL: ALL\n",
     }
 
   }

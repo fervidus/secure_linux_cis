@@ -16,11 +16,25 @@ class secure_linux_cis::redhat7::cis_6_1_5 (
 
   if $enforced {
 
-    file {'/etc/gshadow':
-      ensure => present,
-      owner  => 'root',
-      group  => 'root',
-      mode   => '0000',
+    case $facts['os']['family'] {
+      'RedHat': {
+        file {'/etc/gshadow':
+          ensure => present,
+          owner  => 'root',
+          group  => 'root',
+          mode   => '0000',
+        }
+      }
+      'Debian': {
+        file {'/etc/gshadow':
+          ensure => present,
+          owner  => 'root',
+          group  => 'shadow',
+          mode   => '0640',
+        }
+      }
+      default: {
+      }
     }
   }
 }

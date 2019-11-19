@@ -17,17 +17,20 @@ describe 'secure_linux_cis::redhat7::cis_3_3_3' do
             is_expected.to contain_sysctl('net.ipv6.conf.default.disable_ipv6').with(value: '1')
           }
           it {
-            is_expected.to contain_file_line('disable_ipv6_network').with(
-              path: '/etc/sysconfig/network',
-              line: 'NETWORKING_IPV6=no',
-              match: 'NETWORKING_IPV6=',
-            )
-            is_expected.to contain_file_line('disable_ipv6_network_init').with(
-              path: '/etc/sysconfig/network',
-              line: 'IPV6INIT=no',
-              match: 'IPV6INIT=',
-            )
+            if facts[:osfamily] == 'RedHat'
+              is_expected.to contain_file_line('disable_ipv6_network').with(
+                path: '/etc/sysconfig/network',
+                line: 'NETWORKING_IPV6=no',
+                match: 'NETWORKING_IPV6=',
+              )
+              is_expected.to contain_file_line('disable_ipv6_network_init').with(
+                path: '/etc/sysconfig/network',
+                line: 'IPV6INIT=no',
+                match: 'IPV6INIT=',
+              )
+            end
           }
+
         else
           it {
             is_expected.not_to contain_sysctl('net.ipv6.conf.all.disable_ipv6')

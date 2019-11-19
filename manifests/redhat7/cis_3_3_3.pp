@@ -29,16 +29,18 @@ class secure_linux_cis::redhat7::cis_3_3_3 (
       value => 1,
     }
 
-    file_line { 'disable_ipv6_network':
-      path  => '/etc/sysconfig/network',
-      line  => 'NETWORKING_IPV6=no',
-      match => 'NETWORKING_IPV6=',
-    }
+    if $facts['os']['family'] == 'RedHat' {
+      file_line { 'disable_ipv6_network':
+        path  => '/etc/sysconfig/network',
+        line  => 'NETWORKING_IPV6=no',
+        match => 'NETWORKING_IPV6=',
+      }
 
-    file_line { 'disable_ipv6_network_init':
-      path  => '/etc/sysconfig/network',
-      line  => 'IPV6INIT=no',
-      match => 'IPV6INIT=',
+      file_line { 'disable_ipv6_network_init':
+        path  => '/etc/sysconfig/network',
+        line  => 'IPV6INIT=no',
+        match => 'IPV6INIT=',
+      }
     }
   }
 }

@@ -22,7 +22,7 @@ class secure_linux_cis::redhat7::cis_5_4_2 (
       $facts['nologin'].each | String $user | {
         exec { "nologin ${user}":
           command => "usermod -s /sbin/nologin ${user}",
-          path    => '/sbin/',
+          path    => '/sbin/:/usr/sbin',
         }
       }
     }

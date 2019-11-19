@@ -16,11 +16,25 @@ class secure_linux_cis::redhat7::cis_6_1_3 (
 
   if $enforced {
 
-    file {'/etc/shadow':
-      ensure => present,
-      owner  => 'root',
-      group  => 'root',
-      mode   => '0000',
+    case $facts['os']['family'] {
+      'RedHat': {
+        file {'/etc/shadow':
+          ensure => present,
+          owner  => 'root',
+          group  => 'root',
+          mode   => '0000',
+        }
+      }
+      'Debian': {
+        file {'/etc/shadow':
+          ensure => present,
+          owner  => 'root',
+          group  => 'shadow',
+          mode   => '0640',
+        }
+      }
+      default: {
+      }
     }
   }
 }

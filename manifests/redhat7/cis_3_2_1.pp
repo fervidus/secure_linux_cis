@@ -35,5 +35,14 @@ class secure_linux_cis::redhat7::cis_3_2_1 (
       value => 0,
     }
 
+    if $facts['os']['family'] == 'Debian' {
+      sysctl { 'net.ipv6.conf.all.accept_source_route':
+        value => 0,
+      }
+      sysctl { 'net.ipv6.conf.default.accept_source_route':
+        value => 0,
+      }
+    }
+
   }
 }

@@ -1,8 +1,17 @@
 # Changelog
 
+## Release 1.0.17
+* Fix issue with logic in cis_1_7_2
+* Correct syntax in rootpw fact
+* Fix logix in cis_1_2_1
+* Fix type for cis_6_2_6 in centos.pp 
+
 ## Release 1.0.16
 * Add file_line management of /etc/default/useradd INACTIVE entry in cis_5_4_1_4 to meet Nessus scan requirement
 * Expand puppetlabs/firewall version range to >= 1.15.0 < 3.0.0 as many other modules still have < 2.0.0 and this module will fail to install
+* Added support for CIS 4.1.12
+* Add newlines to the end of /etc/hosts.{allow,deny} in cis_3_4_2 and cis_3_4_3
+* cis_5_4_1_4 now also covers the default setting
 
 ## Release 1.0.15
 * Activate use of cis_1_1_3, cis 1_1_4 and cis_1_1_5 to manage /tmp partition options in centos7.pp

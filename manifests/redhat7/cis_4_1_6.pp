@@ -67,16 +67,28 @@ class secure_linux_cis::redhat7::cis_4_1_6 (
         line   => '-w /etc/hosts -p wa -k system-locale',
       }
 
-      file_line { 'audit.rules network 6':
-        ensure => present,
-        path   => '/etc/audit/rules.d/audit.rules',
-        line   => '-w /etc/sysconfig/network -p wa -k system-locale',
-      }
-
-      file_line { 'audit.rules network 7':
-        ensure => present,
-        path   => '/etc/audit/rules.d/audit.rules',
-        line   => '-w /etc/sysconfig/network-scripts/ -p wa -k system-locale',
+      case $facts['os']['family'] {
+        'RedHat': {
+          file_line { 'audit.rules network 6':
+            ensure => present,
+            path   => '/etc/audit/rules.d/audit.rules',
+            line   => '-w /etc/sysconfig/network -p wa -k system-locale',
+          }
+          file_line { 'audit.rules network 7':
+            ensure => present,
+            path   => '/etc/audit/rules.d/audit.rules',
+            line   => '-w /etc/sysconfig/network-scripts/ -p wa -k system-locale',
+          }
+        }
+        'Debian': {
+          file_line { 'audit.rules network 6':
+            ensure => present,
+            path   => '/etc/audit/rules.d/audit.rules',
+            line   => '-w /etc/network -p wa -k system-locale',
+          }
+        }
+        default: {
+        }
       }
     }
 
@@ -107,16 +119,29 @@ class secure_linux_cis::redhat7::cis_4_1_6 (
         line   => '-w /etc/hosts -p wa -k system-locale',
       }
 
-      file_line { 'audit.rules network 5':
-        ensure => present,
-        path   => '/etc/audit/rules.d/audit.rules',
-        line   => '-w /etc/sysconfig/network -p wa -k system-locale',
-      }
+      case $facts['os']['family'] {
+        'RedHat': {
+          file_line { 'audit.rules network 5':
+            ensure => present,
+            path   => '/etc/audit/rules.d/audit.rules',
+            line   => '-w /etc/sysconfig/network -p wa -k system-locale',
+          }
 
-      file_line { 'audit.rules network 6':
-        ensure => present,
-        path   => '/etc/audit/rules.d/audit.rules',
-        line   => '-w /etc/sysconfig/network-scripts/ -p wa -k system-locale',
+          file_line { 'audit.rules network 6':
+            ensure => present,
+            path   => '/etc/audit/rules.d/audit.rules',
+            line   => '-w /etc/sysconfig/network-scripts/ -p wa -k system-locale',
+          }
+        }
+        'Debian': {
+          file_line { 'audit.rules network 5':
+            ensure => present,
+            path   => '/etc/audit/rules.d/audit.rules',
+            line   => '-w /etc/network -p wa -k system-locale',
+          }
+        }
+        default: {
+        }
       }
     }
 

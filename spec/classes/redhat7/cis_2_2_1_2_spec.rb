@@ -21,19 +21,31 @@ describe 'secure_linux_cis::redhat7::cis_2_2_1_2' do
                   '-6 default kod nomodify notrap nopeer noquery',
                 ],
               )
-            is_expected.to contain_file('/etc/sysconfig/ntpd')
-              .with(
-                ensure: 'file',
-                owner: 'root',
-                group: 'root',
-                mode: '0644',
-                content: 'OPTIONS="-u ntp:ntp"',
-              )
+            case facts[:osfamily]
+            when 'RedHat'
+              is_expected.to contain_file('/etc/sysconfig/ntpd')
+                .with(
+                  ensure: 'file',
+                  owner: 'root',
+                  group: 'root',
+                  mode: '0644',
+                  content: 'OPTIONS="-u ntp:ntp"',
+                )
+            when 'Debian'
+              is_expected.to contain_file_line('ntpuser')
+                .with(
+                  ensure: 'present',
+                  path: '/etc/init.d/ntp',
+                  line: 'RUNASUSER=ntp',
+                  match: '^RUNASUSER=',
+                )
+            end
           }
         else
           it {
             is_expected.not_to contain_class('ntp')
             is_expected.not_to contain_file('/etc/sysconfig/ntpd')
+            is_expected.not_to contain_file_line('ntpuser')
           }
         end
       end

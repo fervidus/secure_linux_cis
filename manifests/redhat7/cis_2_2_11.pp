@@ -19,15 +19,27 @@ class secure_linux_cis::redhat7::cis_2_2_11 (
 
   if $enforced {
 
-    $services = [
-      'dovecot',
-      'cyrus-imap',
-    ]
+    case $facts['os']['family'] {
+      'RedHat': {
+        $services = [
+          'dovecot',
+          'cyrus-imap',
+        ]
 
-    service { $services:
-      ensure => stopped,
-      enable => false,
+        service { $services:
+          ensure => stopped,
+          enable => false,
+        }
+
+      }
+      'Debian': {
+        package { 'exim4':
+          ensure => absent,
+        }
+      }
+      default: {
+      }
+
     }
-
   }
 }

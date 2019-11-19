@@ -25,6 +25,7 @@ class secure_linux_cis::redhat7::cis_5_4_1_4 (
       fail('pass_inactive_days should be set to a value of 30 or less')
     }
 
+<<<<<<< HEAD
     # Set default inactive days for new users
     file_line {'useradd_inactive':
       ensure => present,
@@ -33,13 +34,26 @@ class secure_linux_cis::redhat7::cis_5_4_1_4 (
       match  => '^#?INACTIVE=',
     }
 
+=======
+    # Set the default inactivity period
+    # The command 'useradd -D -f 30' does the same as editting
+    # /etc/default/useradd directly.
+    file_line {'useradd_inactive':
+      ensure => present,
+      path   => '/etc/default/useradd',
+      line   => "INACTIVE=${pass_inactive_days}",
+      match  => '^#?INACTIVE=',
+    }
+
+
+>>>>>>> c4ffb07011687d608c4aaeb3018d62fdaa6f7383
     # local_users fact may be undef
     $local_users = pick($facts['local_users'], {})
 
     $local_users.each |String $user, Hash $attributes| {
 
       if $attributes['password_expires_days'] != 'never' and $attributes['password_expires_days'] != 'password must be changed' and $attributes['password_inactive_days'] != $pass_inactive_days { #lint:ignore:140chars
-        exec { "/bin/chage --inactive ${pass_inactive_days} ${user}": }
+        exec { "/usr/bin/chage --inactive ${pass_inactive_days} ${user}": }
       }
     }
   }

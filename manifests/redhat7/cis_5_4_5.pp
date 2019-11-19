@@ -14,8 +14,13 @@ class secure_linux_cis::redhat7::cis_5_4_5 (
   Boolean $enforced = true,
 ) {
 
+  $bashrc = $facts['os']['family'] ? {
+    'RedHat' => '/etc/bashrc',
+    'Debian' => '/etc/bash.bashrc',
+  }
+
   $paths = [
-    '/etc/bashrc',
+    $bashrc,
     '/etc/profile',
   ]
 
@@ -35,7 +40,7 @@ class secure_linux_cis::redhat7::cis_5_4_5 (
     }
 
     file_line { 'bashrc_readonly_tmout':
-      path => '/etc/bashrc',
+      path => $bashrc,
       line => 'readonly TMOUT',
     }
   }

@@ -25,18 +25,31 @@ class secure_linux_cis::redhat7::cis_2_2_1_3 (
   Enum['ntp', 'chrony', 'none'] $time_sync = 'chrony',
 ) {
 
+  case $facts['os']['family'] {
+    'RedHat': {
+      $config = '/etc/sysconfig/chronyd'
+      $content = 'OPTIONS="-u chrony"'
+    }
+    'Debian': {
+      $config = '/etc/default/chrony'
+      $content = 'DAEMON_OPTS="-u _chrony"'
+    }
+    default: {
+    }
+  }
+
   if $enforced and $time_sync == 'chrony' {
 
     class { '::chrony':
       servers => $time_servers,
     }
 
-    file { '/etc/sysconfig/chronyd':
+    file { $config:
       ensure  => file,
       owner   => 'root',
       group   => 'root',
       mode    => '0644',
-      content => 'OPTIONS="-u chrony"',
+      content => $content,
     }
 
   }

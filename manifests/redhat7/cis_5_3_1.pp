@@ -59,6 +59,19 @@ class secure_linux_cis::redhat7::cis_5_3_1 (
     fail('All of the minimum characters in pwquality.conf are undefined')      }
     else {
 
+      # By default this is already installed on RedHat, but not on Debian
+      # We just make certain it is installed on either OS, as this package
+      # provides /etc/security/pwquality.conf
+      $libpwquality = $facts['os']['family'] ? {
+        'RedHat' => 'libpwquality',
+        'Debian' => 'libpam-pwquality',
+      }
+
+      package { $libpwquality:
+        ensure => installed,
+      }
+      -> File_line <| path == '/etc/security/pwquality.conf' |>
+
       file_line { 'pam minlen':
         ensure => 'present',
         path   => '/etc/security/pwquality.conf',

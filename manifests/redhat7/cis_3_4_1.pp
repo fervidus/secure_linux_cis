@@ -19,9 +19,20 @@ class secure_linux_cis::redhat7::cis_3_4_1 (
   Boolean $enforced = true,
 ) {
 
+  case $facts['os']['family'] {
+    'RedHat': {
+      $package = 'tcp_wrappers'
+    }
+    'Debian': {
+      $package = 'tcpd'
+    }
+    default: {
+    }
+  }
+
   if $enforced {
 
-    package { 'tcp_wrappers':
+    package { $package:
       ensure => installed,
     }
 

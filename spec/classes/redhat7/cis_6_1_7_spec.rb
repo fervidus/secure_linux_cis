@@ -13,13 +13,24 @@ describe 'secure_linux_cis::redhat7::cis_6_1_7' do
 
         if option
           it {
-            is_expected.to contain_file('/etc/shadow-')
-              .with(
-                ensure: 'present',
-                owner: 'root',
-                group: 'root',
-                mode: '0000',
-              )
+            case facts[:osfamily]
+            when 'RedHat'
+              is_expected.to contain_file('/etc/shadow-')
+                .with(
+                  ensure: 'present',
+                  owner: 'root',
+                  group: 'root',
+                  mode: '0000',
+                )
+            when 'Debian'
+              is_expected.to contain_file('/etc/shadow-')
+                .with(
+                  ensure: 'present',
+                  owner: 'root',
+                  group: 'shadow',
+                  mode: '0640',
+                )
+            end
           }
         else
           it { is_expected.not_to contain_file('/etc/shadow-') }

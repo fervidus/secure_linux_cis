@@ -18,9 +18,20 @@ class secure_linux_cis::redhat7::cis_5_1_1 (
   Boolean $enforced = true,
 ) {
 
+  case $facts['os']['family'] {
+    'RedHat': {
+      $service = 'crond'
+    }
+    'Debian': {
+      $service = 'cron'
+    }
+    default: {
+    }
+  }
+
   if $enforced {
 
-    service { 'crond':
+    service { $service:
       ensure => running,
       enable => true,
     }

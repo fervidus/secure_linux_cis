@@ -28,10 +28,28 @@ class secure_linux_cis::redhat7::cis_4_1_8 (
       line   => '-w /var/log/lastlog -p wa -k logins',
     }
 
-    file_line { 'audit.rules login/logout 2':
-      ensure => present,
-      path   => '/etc/audit/rules.d/audit.rules',
-      line   => '-w /var/run/faillock/ -p wa -k logins',
+    case $facts['os']['family'] {
+      'RedHat': {
+        file_line { 'audit.rules login/logout 2':
+          ensure => present,
+          path   => '/etc/audit/rules.d/audit.rules',
+          line   => '-w /var/run/faillock/ -p wa -k logins',
+        }
+      }
+      'Debian': {
+        file_line { 'audit.rules login/logout 2':
+          ensure => present,
+          path   => '/etc/audit/rules.d/audit.rules',
+          line   => '-w /var/run/faillog -p wa -k logins',
+        }
+        file_line { 'audit.rules login/logout 3':
+          ensure => present,
+          path   => '/etc/audit/rules.d/audit.rules',
+          line   => '-w /var/run/tallylog -p wa -k logins',
+        }
+      }
+      default: {
+      }
     }
   }
 }

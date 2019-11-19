@@ -17,14 +17,26 @@ describe 'secure_linux_cis::redhat7::cis_2_2_1_3' do
               .with(
                 servers: ['time.example.com'],
               )
-            is_expected.to contain_file('/etc/sysconfig/chronyd')
-              .with(
-                ensure: 'file',
-                owner: 'root',
-                group: 'root',
-                mode: '0644',
-                content: 'OPTIONS="-u chrony"',
-              )
+            case facts[:osfamily]
+            when 'RedHat'
+              is_expected.to contain_file('/etc/sysconfig/chronyd')
+                .with(
+                  ensure: 'file',
+                  owner: 'root',
+                  group: 'root',
+                  mode: '0644',
+                  content: 'OPTIONS="-u chrony"',
+                )
+            when 'Debian'
+              is_expected.to contain_file('/etc/default/chrony')
+                .with(
+                  ensure: 'file',
+                  owner: 'root',
+                  group: 'root',
+                  mode: '0644',
+                  content: 'DAEMON_OPTS="-u _chrony"',
+                )
+            end
           }
         else
           it {

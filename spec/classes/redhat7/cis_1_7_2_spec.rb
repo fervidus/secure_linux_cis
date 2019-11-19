@@ -14,7 +14,7 @@ describe 'secure_linux_cis::redhat7::cis_1_7_2' do
         if option
           context 'With non compliant settings' do
             let(:facts) do
-              super().merge('gnome_installed' => true)
+              super().merge('gnome_installed' => 'gnome is installed')
             end
 
             it {

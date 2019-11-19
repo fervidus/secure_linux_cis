@@ -20,9 +20,20 @@ class secure_linux_cis::redhat7::cis_2_2_12 (
   Boolean $enforced = true,
 ) {
 
+  case $facts['os']['family'] {
+    'RedHat': {
+      $service = 'smb'
+    }
+    'Debian': {
+      $service = 'smbd'
+    }
+    default: {
+    }
+  }
+
   if $enforced {
 
-    service { 'smb':
+    service { $service:
       ensure => stopped,
       enable => false,
     }

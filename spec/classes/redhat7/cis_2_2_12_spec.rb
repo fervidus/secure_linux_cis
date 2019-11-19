@@ -13,15 +13,25 @@ describe 'secure_linux_cis::redhat7::cis_2_2_12' do
 
         if option
           it {
-            is_expected.to contain_service('smb')
-              .with(
-                ensure: 'stopped',
-                enable: false,
-              )
+            case facts[:osfamily]
+            when 'RedHat'
+              is_expected.to contain_service('smb')
+                .with(
+                  ensure: 'stopped',
+                  enable: false,
+                )
+            when 'Debian'
+              is_expected.to contain_service('smbd')
+                .with(
+                  ensure: 'stopped',
+                  enable: false,
+                )
+            end
           }
         else
           it {
             is_expected.not_to contain_service('smb')
+            is_expected.not_to contain_service('smbd')
           }
         end
       end

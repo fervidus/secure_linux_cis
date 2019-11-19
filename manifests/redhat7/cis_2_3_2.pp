@@ -21,7 +21,7 @@ class secure_linux_cis::redhat7::cis_2_3_2 (
 
   if $enforced {
 
-    package { 'rsh':
+    package { ['rsh', 'rsh-client', 'rsh-redone-client']:
       ensure => purged,
     }
 
