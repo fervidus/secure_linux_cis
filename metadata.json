@@ -66,11 +66,7 @@
     },
     {
       "name": "puppetlabs/firewall",
-<<<<<<< HEAD
-      "version_requirement": ">= 1.15.0 < 3.0.0"
-=======
       "version_requirement": ">= 1.15.3 < 3.0.0"
->>>>>>> c4ffb07011687d608c4aaeb3018d62fdaa6f7383
     },
     {
       "name": "puppetlabs/mailalias_core",
