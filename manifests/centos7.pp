@@ -400,7 +400,7 @@ class secure_linux_cis::centos7 (
   include ::secure_linux_cis::redhat7::cis_4_1_10
   # 4.1.11
   include ::secure_linux_cis::redhat7::cis_4_1_11
-  # # 4.1.12
+  # 4.1.12
   include ::secure_linux_cis::redhat7::cis_4_1_12
   # 4.1.13
   include ::secure_linux_cis::redhat7::cis_4_1_13
@@ -412,7 +412,7 @@ class secure_linux_cis::centos7 (
   include ::secure_linux_cis::redhat7::cis_4_1_16
   # 4.1.17
   include ::secure_linux_cis::redhat7::cis_4_1_17
-  # # 4.1.18
+  # 4.1.18
   include ::secure_linux_cis::redhat7::cis_4_1_18
 
   # 4.2.1.1
@@ -639,7 +639,7 @@ class secure_linux_cis::centos7 (
   include ::secure_linux_cis::redhat7::cis_6_2_4
   # 6.2.5
   include ::secure_linux_cis::redhat7::cis_6_2_5
-  ## 6.2.6
+  # # 6.2.6
   #include ::secure_linux_cis::redhat7::cis_6_2_6
 
   file { '/usr/share/cis_scripts':
