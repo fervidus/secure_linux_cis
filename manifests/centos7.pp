@@ -640,7 +640,7 @@ class secure_linux_cis::centos7 (
   # 6.2.5
   include ::secure_linux_cis::redhat7::cis_6_2_5
   # 6.2.6
-  include ::secure_linux_cis::redhat7::cis_6_2_1
+  include ::secure_linux_cis::redhat7::cis_6_2_6
 
   file { '/usr/share/cis_scripts':
     ensure => directory,
