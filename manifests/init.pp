@@ -86,6 +86,10 @@ class secure_linux_cis (
   Optional[String]                      $motd                    = undef,
   Boolean                               $auto_restart            = false,
 ) {
+  file { '/usr/share/cis_scripts':
+    ensure => directory,
+  }
+
   include $include_rules
 
   file { '/usr/share/cis_scripts':
