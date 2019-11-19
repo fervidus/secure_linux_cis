@@ -146,9 +146,9 @@ class secure_linux_cis::centos7 (
   # 1.1.22
   include ::secure_linux_cis::redhat7::cis_1_1_22
   # 1.2.1
-  # class { '::secure_linux_cis::redhat7::cis_1_2_1':
-  #   repolist => $repolist,
-  # }
+  class { '::secure_linux_cis::redhat7::cis_1_2_1':
+    repolist => $repolist,
+  }
   # 1.2.2
   include ::secure_linux_cis::redhat7::cis_1_2_2
   # 1.2.3
@@ -639,8 +639,8 @@ class secure_linux_cis::centos7 (
   include ::secure_linux_cis::redhat7::cis_6_2_4
   # 6.2.5
   include ::secure_linux_cis::redhat7::cis_6_2_5
-  # 6.2.6
-  include ::secure_linux_cis::redhat7::cis_6_2_6
+  ## 6.2.6
+  #include ::secure_linux_cis::redhat7::cis_6_2_6
 
   file { '/usr/share/cis_scripts':
     ensure => directory,
