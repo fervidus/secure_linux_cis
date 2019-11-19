@@ -14,7 +14,7 @@ class secure_linux_cis::redhat7::cis_1_7_2 (
   Boolean $enforced = true,
 ) {
 
-  if $enforced and !$facts['gnome_installed'].empty {
+  if $enforced and $facts['gnome_installed'] {
 
     file { '/etc/dconf/profile/gdm':
       ensure  => present,

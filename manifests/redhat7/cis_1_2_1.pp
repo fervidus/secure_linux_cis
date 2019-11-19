@@ -18,10 +18,9 @@ class secure_linux_cis::redhat7::cis_1_2_1 (
 
   if $enforced {
     if($facts['yum_repolist'] != undef) {
-      if member($repolist, $facts['yum_repolist']) == false {
-        notify { "No approved repo found in list:  ${repolist}": }
+      if (intersection($facts['yum_repolist'].split("\n"), $repolist).empty) {
+        notify { "No approved repo from ${repolist} found on this system.": }
       }
     }
-
   }
 }
