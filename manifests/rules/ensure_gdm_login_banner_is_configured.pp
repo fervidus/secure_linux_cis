@@ -13,7 +13,7 @@
 
 class secure_linux_cis::rules::ensure_gdm_login_banner_is_configured {
 
-  if !$facts['gnome_installed'].empty {
+  if !$facts['gnome_installed'] {
 
     file { '/etc/dconf/profile/gdm':
       ensure  => present,
