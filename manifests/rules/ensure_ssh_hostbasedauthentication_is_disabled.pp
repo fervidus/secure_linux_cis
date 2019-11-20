@@ -19,11 +19,11 @@ class secure_linux_cis::rules::ensure_ssh_hostbasedauthentication_is_disabled {
 
   include ::secure_linux_cis::service
 
-    file_line { 'ssh host based authentication':
-      ensure => 'present',
-      path   => '/etc/ssh/sshd_config',
-      line   => 'HostbasedAuthentication no',
-      match  => '^HostbasedAuthentication',
-      notify => Exec['reload sshd'],
-    }
+  file_line { 'ssh host based authentication':
+    ensure => 'present',
+    path   => '/etc/ssh/sshd_config',
+    line   => 'HostbasedAuthentication no',
+    match  => '^HostbasedAuthentication',
+    notify => Exec['reload sshd'],
   }
+}

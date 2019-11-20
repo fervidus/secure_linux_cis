@@ -16,26 +16,26 @@
 
 class secure_linux_cis::rules::ensure_imap_and_pop3_server_is_not_enabled {
 
-    case $facts['os']['family'] {
-      'RedHat': {
-        $services = [
-          'dovecot',
-          'cyrus-imap',
-        ]
+  case $facts['os']['family'] {
+    'RedHat': {
+      $services = [
+        'dovecot',
+        'cyrus-imap',
+      ]
 
-        service { $services:
-          ensure => stopped,
-          enable => false,
-        }
-
-      }
-      'Debian': {
-        package { 'exim4':
-          ensure => absent,
-        }
-      }
-      default: {
+      service { $services:
+        ensure => stopped,
+        enable => false,
       }
 
     }
+    'Debian': {
+      package { 'exim4':
+        ensure => purged,
+      }
+    }
+    default: {
+    }
+
   }
+}

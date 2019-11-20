@@ -18,9 +18,9 @@
 
 class secure_linux_cis::rules::ensure_telnet_server_is_not_enabled {
 
-    service { 'telnet.socket':
-      ensure => stopped,
-      enable => false,
-    }
-
+  service { 'telnet.socket':
+    ensure => stopped,
+    enable => false,
   }
+
+}

@@ -15,13 +15,13 @@
 
 class secure_linux_cis::rules::ensure_http_proxy_server_is_not_enabled {
 
-    $http_proxy_services = [
-      'squid',
-    ]
+  $http_proxy_services = [
+    'squid',
+  ]
 
-    service { $http_proxy_services:
-      ensure => stopped,
-      enable => false,
-    }
-
+  service { $http_proxy_services:
+    ensure => stopped,
+    enable => false,
   }
+
+}

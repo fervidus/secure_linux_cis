@@ -17,33 +17,33 @@
 
 class secure_linux_cis::rules::ensure_default_deny_firewall_policy {
 
-    firewallchain { 'INPUT:filter:IPv4':
-      ensure => present,
-      policy => drop,
-    }
-
-    firewallchain { 'OUTPUT:filter:IPv4':
-      ensure => present,
-      policy => drop,
-    }
-
-    firewallchain { 'FORWARD:filter:IPv4':
-      ensure => present,
-      policy => drop,
-    }
-
-    firewallchain { 'INPUT:filter:IPv6':
-      ensure => present,
-      policy => drop,
-    }
-
-    firewallchain { 'OUTPUT:filter:IPv6':
-      ensure => present,
-      policy => drop,
-    }
-
-    firewallchain { 'FORWARD:filter:IPv6':
-      ensure => present,
-      policy => drop,
-    }
+  firewallchain { 'INPUT:filter:IPv4':
+    ensure => present,
+    policy => drop,
   }
+
+  firewallchain { 'OUTPUT:filter:IPv4':
+    ensure => present,
+    policy => drop,
+  }
+
+  firewallchain { 'FORWARD:filter:IPv4':
+    ensure => present,
+    policy => drop,
+  }
+
+  firewallchain { 'INPUT:filter:IPv6':
+    ensure => present,
+    policy => drop,
+  }
+
+  firewallchain { 'OUTPUT:filter:IPv6':
+    ensure => present,
+    policy => drop,
+  }
+
+  firewallchain { 'FORWARD:filter:IPv6':
+    ensure => present,
+    policy => drop,
+  }
+}

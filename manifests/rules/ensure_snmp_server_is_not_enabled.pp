@@ -18,9 +18,9 @@
 
 class secure_linux_cis::rules::ensure_snmp_server_is_not_enabled {
 
-    service { 'snmpd':
-      ensure => stopped,
-      enable => false,
-    }
-
+  service { 'snmpd':
+    ensure => stopped,
+    enable => false,
   }
+
+}

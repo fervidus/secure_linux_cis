@@ -14,13 +14,21 @@
 
 class secure_linux_cis::rules::ensure_system_accounts_are_non_login {
 
-    if !empty($facts['nologin']) {
+  case $facts['os']['family'] {
+    'Debian': {
+      $nologin = '/usr/sbin/nologin'
+    }
+    default: {
+      $nologin = '/sbin/nologin'
+    }
+  }
+  if !empty($facts['nologin']) {
 
-      $facts['nologin'].each | String $user | {
-        exec { "nologin ${user}":
-          command => "usermod -s /sbin/nologin ${user}",
-          path    => '/sbin/:/usr/sbin',
-        }
+    $facts['nologin'].each | String $user | {
+      exec { "nologin ${user}":
+        command => "usermod -s ${nologin} ${user}",
+        path    => '/sbin/:/usr/sbin',
       }
     }
   }
+}

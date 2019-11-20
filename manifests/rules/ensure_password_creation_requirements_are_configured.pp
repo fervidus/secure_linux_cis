@@ -34,10 +34,13 @@
 
 class secure_linux_cis::rules::ensure_password_creation_requirements_are_configured {
 
-  $services = [
-    'system-auth',
-    'password-auth',
-  ]
+  $services = $facts['os']['family'] ? {
+    'RedHat' => [
+      'system-auth',
+      'password-auth',
+    ],
+    'Debian' => ['common-password'],
+  }
 
   if $::secure_linux_cis::minlen == 0 and $::secure_linux_cis::dcredit == 0 and $::secure_linux_cis::ucredit == 0 and $::secure_linux_cis::ocredit == 0 and $::secure_linux_cis::lcredit == 0 {
 

@@ -14,12 +14,12 @@
 
 class secure_linux_cis::rules::ensure_bootloader_password_is_set {
 
-    if $facts['grub_pass'] == undef {
+  if $facts['grub_pass'] == undef {
 
-      notify { 'gp':
-        message  => 'Not in compliance with CIS (Scored). The Grub bootloader does not have a set password. If using a bootloader other than this message, please ensure that an encrypted password is set', #lint:ignore:140chars
-        loglevel => 'warning',
-      }
-
+    notify { 'gp':
+      message  => 'Not in compliance with CIS (Scored). The Grub bootloader does not have a set password. If using a bootloader other than this message, please ensure that an encrypted password is set', #lint:ignore:140chars
+      loglevel => 'warning',
     }
+
   }
+}

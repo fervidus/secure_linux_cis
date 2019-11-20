@@ -16,8 +16,8 @@
 
 class secure_linux_cis::rules::ensure_talk_client_is_not_installed {
 
-    package { 'talk':
-      ensure => purged,
-    }
-
+  package { 'talk':
+    ensure => purged,
   }
+
+}

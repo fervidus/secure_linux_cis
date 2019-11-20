@@ -8,11 +8,11 @@
 # @param enforced Should this rule be enforced
 #
 # @example
-#   include secure_linux_cis::ensure_permissions_on_etc_passwd_are_configured
+#   include secure_linux_cis::ensure_permissions_on_etc_passwd__are_configured
 
-class secure_linux_cis::rules::ensure_permissions_on_etc_passwd_are_configured {
+class secure_linux_cis::rules::ensure_permissions_on_etc_passwd__are_configured {
 
-  file {'/etc/passwd':
+  file {'/etc/passwd-':
     ensure => present,
     owner  => 'root',
     group  => 'root',

@@ -17,8 +17,8 @@
 
 class secure_linux_cis::rules::ensure_tipc_is_disabled {
 
-    kmod::install { 'tipc':
-      command => '/bin/true',
-    }
-
+  kmod::install { 'tipc':
+    command => '/bin/true',
   }
+
+}

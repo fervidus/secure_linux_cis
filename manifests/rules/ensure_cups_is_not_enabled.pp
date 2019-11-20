@@ -18,9 +18,9 @@
 
 class secure_linux_cis::rules::ensure_cups_is_not_enabled {
 
-    service { 'cups':
-      ensure => stopped,
-      enable => false,
-    }
-
+  service { 'cups':
+    ensure => stopped,
+    enable => false,
   }
+
+}

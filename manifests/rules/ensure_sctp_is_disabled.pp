@@ -20,8 +20,8 @@
 
 class secure_linux_cis::rules::ensure_sctp_is_disabled {
 
-    kmod::install { 'sctp':
-      command => '/bin/true',
-    }
-
+  kmod::install { 'sctp':
+    command => '/bin/true',
   }
+
+}

@@ -14,7 +14,7 @@
 
 class secure_linux_cis::rules::ensure_prelink_is_disabled {
 
-    package { 'prelink':
-      ensure => purged,
-    }
+  package { 'prelink':
+    ensure => purged,
   }
+}

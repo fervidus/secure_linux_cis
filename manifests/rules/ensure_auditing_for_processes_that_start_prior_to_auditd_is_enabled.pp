@@ -17,8 +17,8 @@
 
 class secure_linux_cis::rules::ensure_auditing_for_processes_that_start_prior_to_auditd_is_enabled {
 
-    kernel_parameter { 'audit=1':
-      ensure => present,
-    }
-
+  kernel_parameter { 'audit=1':
+    ensure => present,
   }
+
+}

@@ -16,17 +16,17 @@
 
 class secure_linux_cis::rules::ensure_http_server_is_not_enabled {
 
-    $http_services = [
-      'httpd',
-      'apache',
-      'apache2',
-      'lighttpd',
-      'nginx',
-    ]
+  $http_services = [
+    'httpd',
+    'apache',
+    'apache2',
+    'lighttpd',
+    'nginx',
+  ]
 
-    service { $http_services:
-      ensure => stopped,
-      enable => false,
-    }
-
+  service { $http_services:
+    ensure => stopped,
+    enable => false,
   }
+
+}

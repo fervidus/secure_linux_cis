@@ -17,15 +17,15 @@
 
 class secure_linux_cis::rules::ensure_nfs_and_rpc_are_not_enabled {
 
-    $nfs_services = [
-      'nfs',
-      'nfs-server',
-      'rpcbind',
-    ]
+  $nfs_services = [
+    'nfs',
+    'nfs-server',
+    'rpcbind',
+  ]
 
-    service { $nfs_services:
-      ensure => stopped,
-      enable => false,
-    }
-
+  service { $nfs_services:
+    ensure => stopped,
+    enable => false,
   }
+
+}

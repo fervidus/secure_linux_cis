@@ -18,8 +18,8 @@
 
 class secure_linux_cis::rules::ensure_rds_is_disabled {
 
-    kmod::install { 'rds':
-      command => '/bin/true',
-    }
-
+  kmod::install { 'rds':
+    command => '/bin/true',
   }
+
+}

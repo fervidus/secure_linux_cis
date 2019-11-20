@@ -20,6 +20,6 @@
 
 class secure_linux_cis::rules::ensure_logrotate_is_configured {
 
-    class { '::logrotate': }
+  class { '::logrotate': }
 
-  }
+}

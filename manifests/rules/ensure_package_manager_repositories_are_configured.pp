@@ -14,10 +14,10 @@
 
 class secure_linux_cis::rules::ensure_package_manager_repositories_are_configured {
 
-    if($facts['yum_repolist'] != undef) {
-      if member($::secure_linux_cis::repolist, $facts['yum_repolist']) == false {
-        notify { "No approved repo found in list:  ${::secure_linux_cis::repolist}": }
-      }
+  if($facts['yum_repolist'] != undef) {
+    if member($::secure_linux_cis::repolist, $facts['yum_repolist']) == false {
+      notify { "No approved repo found in list:  ${::secure_linux_cis::repolist}": }
     }
-
   }
+
+}

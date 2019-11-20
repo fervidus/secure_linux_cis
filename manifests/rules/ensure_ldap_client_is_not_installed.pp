@@ -17,8 +17,8 @@
 
 class secure_linux_cis::rules::ensure_ldap_client_is_not_installed {
 
-    package { ['openldap-clients', 'ldap-utils']:
-      ensure => purged,
-    }
-
+  package { ['openldap-clients', 'ldap-utils']:
+    ensure => purged,
   }
+
+}

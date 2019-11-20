@@ -18,8 +18,8 @@
 
 class secure_linux_cis::rules::ensure_mounting_of_udf_filesystems_is_disabled {
 
-    kmod::install { 'udf':
-      command => '/bin/true',
-    }
+  kmod::install { 'udf':
+    command => '/bin/true',
   }
+}
 

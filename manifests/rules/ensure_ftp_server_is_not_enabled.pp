@@ -18,9 +18,9 @@
 
 class secure_linux_cis::rules::ensure_ftp_server_is_not_enabled {
 
-    service { 'vsftpd':
-      ensure => stopped,
-      enable => false,
-    }
-
+  service { 'vsftpd':
+    ensure => stopped,
+    enable => false,
   }
+
+}

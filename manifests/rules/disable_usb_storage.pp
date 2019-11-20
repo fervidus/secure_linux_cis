@@ -16,8 +16,8 @@
 
 class secure_linux_cis::rules::disable_usb_storage {
 
-    kmod::install { 'usb-storage':
-      command => '/bin/true',
-    }
+  kmod::install { 'usb-storage':
+    command => '/bin/true',
   }
+}
 

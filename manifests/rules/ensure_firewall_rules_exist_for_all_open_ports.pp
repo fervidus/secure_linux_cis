@@ -17,12 +17,12 @@
 
 class secure_linux_cis::rules::ensure_firewall_rules_exist_for_all_open_ports {
 
-    firewall { '010 open ssh port':
-      chain  => 'INPUT',
-      dport  => 22,
-      state  => 'NEW',
-      action => 'accept',
-      proto  => 'tcp',
-    }
-
+  firewall { '010 open ssh port':
+    chain  => 'INPUT',
+    dport  => 22,
+    state  => 'NEW',
+    action => 'accept',
+    proto  => 'tcp',
   }
+
+}

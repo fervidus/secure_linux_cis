@@ -17,9 +17,9 @@
 
 class secure_linux_cis::rules::ensure_ldap_server_is_not_enabled {
 
-    service { 'slapd':
-      ensure => stopped,
-      enable => false,
-    }
-
+  service { 'slapd':
+    ensure => stopped,
+    enable => false,
   }
+
+}

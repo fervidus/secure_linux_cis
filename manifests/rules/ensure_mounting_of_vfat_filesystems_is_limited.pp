@@ -17,8 +17,8 @@
 
 class secure_linux_cis::rules::ensure_mounting_of_vfat_filesystems_is_limited {
 
-    kmod::install { 'vfat':
-      command => '/bin/true',
-    }
+  kmod::install { 'vfat':
+    command => '/bin/true',
   }
+}
 

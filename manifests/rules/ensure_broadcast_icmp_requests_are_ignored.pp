@@ -21,8 +21,8 @@
 
 class secure_linux_cis::rules::ensure_broadcast_icmp_requests_are_ignored {
 
-    sysctl { 'net.ipv4.icmp_echo_ignore_broadcasts':
-      value => 1,
-    }
-
+  sysctl { 'net.ipv4.icmp_echo_ignore_broadcasts':
+    value => 1,
   }
+
+}

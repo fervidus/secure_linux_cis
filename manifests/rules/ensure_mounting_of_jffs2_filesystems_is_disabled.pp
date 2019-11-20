@@ -16,8 +16,8 @@
 
 class secure_linux_cis::rules::ensure_mounting_of_jffs2_filesystems_is_disabled {
 
-    kmod::install { 'jffs2':
-      command => '/bin/true',
-    }
+  kmod::install { 'jffs2':
+    command => '/bin/true',
   }
+}
 

@@ -19,8 +19,8 @@
 
 class secure_linux_cis::rules::ensure_dccp_is_disabled {
 
-    kmod::install { 'dccp':
-      command => '/bin/true',
-    }
-
+  kmod::install { 'dccp':
+    command => '/bin/true',
   }
+
+}

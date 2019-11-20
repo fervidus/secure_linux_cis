@@ -16,8 +16,8 @@
 
 class secure_linux_cis::rules::ensure_mounting_of_hfs_filesystems_is_disabled {
 
-    kmod::install { 'hfs':
-      command => '/bin/true',
-    }
+  kmod::install { 'hfs':
+    command => '/bin/true',
   }
+}
 

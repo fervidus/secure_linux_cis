@@ -13,11 +13,11 @@
 
 class secure_linux_cis::rules::ensure_gpgcheck_is_globally_activated {
 
-    file_line { 'gpgcheck':
-      ensure => present,
-      path   => '/etc/yum.conf',
-      line   => 'gpgcheck=1',
-      match  => '^gpgcheck',
-    }
-
+  file_line { 'gpgcheck':
+    ensure => present,
+    path   => '/etc/yum.conf',
+    line   => 'gpgcheck=1',
+    match  => '^gpgcheck',
   }
+
+}

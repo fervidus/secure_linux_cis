@@ -18,11 +18,11 @@
 
 class secure_linux_cis::rules::ensure_audit_log_storage_size_is_configured {
 
-    file_line { 'max_log_file':
-      ensure => present,
-      path   => '/etc/audit/auditd.conf',
-      line   => "max_log_file = ${::secure_linux_cis::max_log_file}",
-      match  => '^max_log_file =',
-    }
-
+  file_line { 'max_log_file':
+    ensure => present,
+    path   => '/etc/audit/auditd.conf',
+    line   => "max_log_file = ${::secure_linux_cis::max_log_file}",
+    match  => '^max_log_file =',
   }
+
+}

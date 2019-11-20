@@ -18,16 +18,42 @@
 
 class secure_linux_cis::rules::ensure_password_reuse_is_limited {
 
-  $services = [
-    'system-auth',
-    'password-auth',
-  ]
+  if $::secure_linux_cis::past_passwords < 5 {
+    fail('CIS recommends setting old password limit to previous 5.')
+  }
+  case $facts['os']['family'] {
+    'Debian': {
+      pam { 'pam common-password pwhistory':
+        ensure    => present,
+        service   => 'common-password',
+        type      => 'password',
+        control   => 'required',
+        module    => 'pam_pwhistory.so',
+        arguments => ["remember=${::secure_linux_cis::past_passwords}"],
+        position  => 'before *[type="password" and module="pam_unix.so"]',
+      }
+      pam { 'pam_unix common-password':
+        ensure           => present,
+        service          => 'common-password',
+        type             => 'password',
+        module           => 'pam_unix.so',
+        control          => '[success=1 default=ignore]',
+        control_is_param => true,
+        arguments        => [
+          'obscure',
+          'use_authtok',
+          'try_first_pass',
+          'sha512',
+        ],
+      }
 
-    if $::secure_linux_cis::past_passwords < 5 {
-      fail('CIS recommends setting old password limit to previous 5.')
     }
+    default: {
 
-    else {
+      $services = [
+        'system-auth',
+        'password-auth',
+      ]
 
       $services.each | $service | {
 
@@ -43,3 +69,4 @@ class secure_linux_cis::rules::ensure_password_reuse_is_limited {
       }
     }
   }
+}

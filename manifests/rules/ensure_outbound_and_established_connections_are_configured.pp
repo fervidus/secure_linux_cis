@@ -16,41 +16,41 @@
 
 class secure_linux_cis::rules::ensure_outbound_and_established_connections_are_configured {
 
-    firewall { '004 accept new and established ouput tcp connections':
-      chain  => 'OUTPUT',
-      state  => ['NEW', 'ESTABLISHED'],
-      action => 'accept',
-      proto  => 'tcp',
-    }
-    -> firewall { '005 accept new and established ouput udp connections':
-      chain  => 'OUTPUT',
-      state  => ['NEW', 'ESTABLISHED'],
-      action => 'accept',
-      proto  => 'udp',
-    }
-    -> firewall { '006 accept new and established ouput icmp connections':
-      chain  => 'OUTPUT',
-      state  => ['NEW', 'ESTABLISHED'],
-      action => 'accept',
-      proto  => 'icmp',
-    }
-    -> firewall { '007 accept estalished input tcp connections':
-      chain  => 'INPUT',
-      state  => 'ESTABLISHED',
-      action => 'accept',
-      proto  => 'tcp',
-    }
-    -> firewall { '008 accept estalished input udp connections':
-      chain  => 'INPUT',
-      state  => 'ESTABLISHED',
-      action => 'accept',
-      proto  => 'udp',
-    }
-    -> firewall { '009 accept estalished input icmp connections':
-      chain  => 'INPUT',
-      state  => 'ESTABLISHED',
-      action => 'accept',
-      proto  => 'icmp',
-    }
-
+  firewall { '004 accept new and established ouput tcp connections':
+    chain  => 'OUTPUT',
+    state  => ['NEW', 'ESTABLISHED'],
+    action => 'accept',
+    proto  => 'tcp',
   }
+  -> firewall { '005 accept new and established ouput udp connections':
+    chain  => 'OUTPUT',
+    state  => ['NEW', 'ESTABLISHED'],
+    action => 'accept',
+    proto  => 'udp',
+  }
+  -> firewall { '006 accept new and established ouput icmp connections':
+    chain  => 'OUTPUT',
+    state  => ['NEW', 'ESTABLISHED'],
+    action => 'accept',
+    proto  => 'icmp',
+  }
+  -> firewall { '007 accept estalished input tcp connections':
+    chain  => 'INPUT',
+    state  => 'ESTABLISHED',
+    action => 'accept',
+    proto  => 'tcp',
+  }
+  -> firewall { '008 accept estalished input udp connections':
+    chain  => 'INPUT',
+    state  => 'ESTABLISHED',
+    action => 'accept',
+    proto  => 'udp',
+  }
+  -> firewall { '009 accept estalished input icmp connections':
+    chain  => 'INPUT',
+    state  => 'ESTABLISHED',
+    action => 'accept',
+    proto  => 'icmp',
+  }
+
+}

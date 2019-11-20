@@ -22,10 +22,10 @@
 
 class secure_linux_cis::rules::ensure_permissions_on_etc_crontab_are_configured {
 
-    file { '/etc/crontab':
-      ensure => file,
-      group  => 'root',
-      owner  => 'root',
-      mode   => '0600',
-    }
+  file { '/etc/crontab':
+    ensure => file,
+    group  => 'root',
+    owner  => 'root',
+    mode   => '0600',
   }
+}

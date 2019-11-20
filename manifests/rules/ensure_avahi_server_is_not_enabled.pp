@@ -19,9 +19,9 @@
 
 class secure_linux_cis::rules::ensure_avahi_server_is_not_enabled {
 
-    service { 'avahi-daemon':
-      ensure => stopped,
-      enable => false,
-    }
-
+  service { 'avahi-daemon':
+    ensure => stopped,
+    enable => false,
   }
+
+}

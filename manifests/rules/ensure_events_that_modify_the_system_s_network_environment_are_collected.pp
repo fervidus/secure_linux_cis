@@ -31,115 +31,115 @@
 
 class secure_linux_cis::rules::ensure_events_that_modify_the_system_s_network_environment_are_collected {
 
-    # 64 bit architecture
-    if $facts['os']['architecture'] =~ /64/ {
+  # 64 bit architecture
+  if $facts['os']['architecture'] =~ /64/ {
 
-      file_line { 'audit.rules network 1':
-        ensure => present,
-        path   => '/etc/audit/rules.d/audit.rules',
-        line   => '-a always,exit -F arch=b64 -S sethostname -S setdomainname -k system-locale',
-      }
-
-      file_line { 'audit.rules network 2':
-        ensure => present,
-        path   => '/etc/audit/rules.d/audit.rules',
-        line   => '-a always,exit -F arch=b32 -S sethostname -S setdomainname -k system-locale',
-      }
-
-      file_line { 'audit.rules network 3':
-        ensure => present,
-        path   => '/etc/audit/rules.d/audit.rules',
-        line   => '-w /etc/issue -p wa -k system-locale',
-      }
-
-      file_line { 'audit.rules network 4':
-        ensure => present,
-        path   => '/etc/audit/rules.d/audit.rules',
-        line   => '-w /etc/issue.net -p wa -k system-locale',
-      }
-
-      file_line { 'audit.rules network 5':
-        ensure => present,
-        path   => '/etc/audit/rules.d/audit.rules',
-        line   => '-w /etc/hosts -p wa -k system-locale',
-      }
-
-      case $facts['os']['family'] {
-        'RedHat': {
-          file_line { 'audit.rules network 6':
-            ensure => present,
-            path   => '/etc/audit/rules.d/audit.rules',
-            line   => '-w /etc/sysconfig/network -p wa -k system-locale',
-          }
-          file_line { 'audit.rules network 7':
-            ensure => present,
-            path   => '/etc/audit/rules.d/audit.rules',
-            line   => '-w /etc/sysconfig/network-scripts/ -p wa -k system-locale',
-          }
-        }
-        'Debian': {
-          file_line { 'audit.rules network 6':
-            ensure => present,
-            path   => '/etc/audit/rules.d/audit.rules',
-            line   => '-w /etc/network -p wa -k system-locale',
-          }
-        }
-        default: {
-        }
-      }
+    file_line { 'audit.rules network 1':
+      ensure => present,
+      path   => '/etc/audit/rules.d/audit.rules',
+      line   => '-a always,exit -F arch=b64 -S sethostname -S setdomainname -k system-locale',
     }
 
-    # 32 bit architecture
-    else {
-
-      file_line { 'audit.rules network 1':
-        ensure => present,
-        path   => '/etc/audit/rules.d/audit.rules',
-        line   => '-a always,exit -F arch=b32 -S sethostname -S setdomainname -k system-locale',
-      }
-
-      file_line { 'audit.rules network 2':
-        ensure => present,
-        path   => '/etc/audit/rules.d/audit.rules',
-        line   => '-w /etc/issue -p wa -k system-locale',
-      }
-
-      file_line { 'audit.rules network 3':
-        ensure => present,
-        path   => '/etc/audit/rules.d/audit.rules',
-        line   => '-w /etc/issue.net -p wa -k system-locale',
-      }
-
-      file_line { 'audit.rules network 4':
-        ensure => present,
-        path   => '/etc/audit/rules.d/audit.rules',
-        line   => '-w /etc/hosts -p wa -k system-locale',
-      }
-
-      case $facts['os']['family'] {
-        'RedHat': {
-          file_line { 'audit.rules network 5':
-            ensure => present,
-            path   => '/etc/audit/rules.d/audit.rules',
-            line   => '-w /etc/sysconfig/network -p wa -k system-locale',
-          }
-
-          file_line { 'audit.rules network 6':
-            ensure => present,
-            path   => '/etc/audit/rules.d/audit.rules',
-            line   => '-w /etc/sysconfig/network-scripts/ -p wa -k system-locale',
-          }
-        }
-        'Debian': {
-          file_line { 'audit.rules network 5':
-            ensure => present,
-            path   => '/etc/audit/rules.d/audit.rules',
-            line   => '-w /etc/network -p wa -k system-locale',
-          }
-        }
-        default: {
-        }
-      }
+    file_line { 'audit.rules network 2':
+      ensure => present,
+      path   => '/etc/audit/rules.d/audit.rules',
+      line   => '-a always,exit -F arch=b32 -S sethostname -S setdomainname -k system-locale',
     }
 
+    file_line { 'audit.rules network 3':
+      ensure => present,
+      path   => '/etc/audit/rules.d/audit.rules',
+      line   => '-w /etc/issue -p wa -k system-locale',
+    }
+
+    file_line { 'audit.rules network 4':
+      ensure => present,
+      path   => '/etc/audit/rules.d/audit.rules',
+      line   => '-w /etc/issue.net -p wa -k system-locale',
+    }
+
+    file_line { 'audit.rules network 5':
+      ensure => present,
+      path   => '/etc/audit/rules.d/audit.rules',
+      line   => '-w /etc/hosts -p wa -k system-locale',
+    }
+
+    case $facts['os']['family'] {
+      'RedHat': {
+        file_line { 'audit.rules network 6':
+          ensure => present,
+          path   => '/etc/audit/rules.d/audit.rules',
+          line   => '-w /etc/sysconfig/network -p wa -k system-locale',
+        }
+        file_line { 'audit.rules network 7':
+          ensure => present,
+          path   => '/etc/audit/rules.d/audit.rules',
+          line   => '-w /etc/sysconfig/network-scripts/ -p wa -k system-locale',
+        }
+      }
+      'Debian': {
+        file_line { 'audit.rules network 6':
+          ensure => present,
+          path   => '/etc/audit/rules.d/audit.rules',
+          line   => '-w /etc/network -p wa -k system-locale',
+        }
+      }
+      default: {
+      }
+    }
   }
+
+  # 32 bit architecture
+  else {
+
+    file_line { 'audit.rules network 1':
+      ensure => present,
+      path   => '/etc/audit/rules.d/audit.rules',
+      line   => '-a always,exit -F arch=b32 -S sethostname -S setdomainname -k system-locale',
+    }
+
+    file_line { 'audit.rules network 2':
+      ensure => present,
+      path   => '/etc/audit/rules.d/audit.rules',
+      line   => '-w /etc/issue -p wa -k system-locale',
+    }
+
+    file_line { 'audit.rules network 3':
+      ensure => present,
+      path   => '/etc/audit/rules.d/audit.rules',
+      line   => '-w /etc/issue.net -p wa -k system-locale',
+    }
+
+    file_line { 'audit.rules network 4':
+      ensure => present,
+      path   => '/etc/audit/rules.d/audit.rules',
+      line   => '-w /etc/hosts -p wa -k system-locale',
+    }
+
+    case $facts['os']['family'] {
+      'RedHat': {
+        file_line { 'audit.rules network 5':
+          ensure => present,
+          path   => '/etc/audit/rules.d/audit.rules',
+          line   => '-w /etc/sysconfig/network -p wa -k system-locale',
+        }
+
+        file_line { 'audit.rules network 6':
+          ensure => present,
+          path   => '/etc/audit/rules.d/audit.rules',
+          line   => '-w /etc/sysconfig/network-scripts/ -p wa -k system-locale',
+        }
+      }
+      'Debian': {
+        file_line { 'audit.rules network 5':
+          ensure => present,
+          path   => '/etc/audit/rules.d/audit.rules',
+          line   => '-w /etc/network -p wa -k system-locale',
+        }
+      }
+      default: {
+      }
+    }
+  }
+
+}

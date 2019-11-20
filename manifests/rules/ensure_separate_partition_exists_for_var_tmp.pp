@@ -12,11 +12,11 @@
 #   include secure_linux_cis::ensure_separate_partition_exists_for_var_tmp
 
 class secure_linux_cis::rules::ensure_separate_partition_exists_for_var_tmp {
-    if ! $facts['mountpoints']['/var/tmp'] {
-      notify { 'vtp':
-        message  => 'Not in compliance with CIS  (Scored). There is not a separate partition for /var/tmp',
-        loglevel => 'warning',
-      }
+  if ! $facts['mountpoints']['/var/tmp'] {
+    notify { 'vtp':
+      message  => 'Not in compliance with CIS  (Scored). There is not a separate partition for /var/tmp',
+      loglevel => 'warning',
     }
-
   }
+
+}
