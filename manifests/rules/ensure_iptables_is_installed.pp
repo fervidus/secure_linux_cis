@@ -16,10 +16,10 @@
 
 class secure_linux_cis::rules::ensure_iptables_is_installed {
 
-    class { '::firewall': }
+  include ::firewall
 
-    resources { 'firewall':
-      purge => true,
-    }
-
+  resources { 'firewall':
+    purge => true,
   }
+
+}

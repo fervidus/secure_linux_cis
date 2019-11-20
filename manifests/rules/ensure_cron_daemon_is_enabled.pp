@@ -25,11 +25,13 @@ class secure_linux_cis::rules::ensure_cron_daemon_is_enabled {
       $service = 'cron'
     }
     default: {
+      notify { "This cron daemon check is not yet implemented for ${facts['os']['family']}": }
+      $service = 'TODO cron'
     }
   }
 
-    service { $service:
-      ensure => running,
-      enable => true,
-    }
+  service { $service:
+    ensure => running,
+    enable => true,
   }
+}

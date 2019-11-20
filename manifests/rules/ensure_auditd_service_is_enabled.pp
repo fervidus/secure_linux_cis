@@ -24,18 +24,23 @@ class secure_linux_cis::rules::ensure_auditd_service_is_enabled {
       $package = 'auditd'
     }
     default: {
+      notify { "This auditd package check is not yet implemented for ${facts['os']['family']}": }
+      $package = 'TODO auditd'
     }
   }
 
-    # Also ensuring the package is installed before the service
-    package { $package:
-      ensure => installed,
-      before => Service['auditd'],
-    }
-
-    service { 'auditd':
-      ensure => running,
-      enable => true,
-    }
-
+  # Also ensuring the package is installed before the service
+  package { $package:
+    ensure => installed,
+    before => Service['auditd'],
   }
+
+  service { 'auditd':
+    ensure => running,
+    enable => true,
+  }
+
+  # Make sure package is installed before configuration is adjusted
+  Package[$package] -> File_line <| path == '/etc/audit/auditd.conf' |>
+
+}

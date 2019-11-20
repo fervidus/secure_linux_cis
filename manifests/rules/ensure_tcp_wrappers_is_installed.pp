@@ -26,11 +26,13 @@ class secure_linux_cis::rules::ensure_tcp_wrappers_is_installed {
       $package = 'tcpd'
     }
     default: {
+      notify { "This TCPwrappers package check is not yet implemented for ${facts['os']['family']}": }
+      $package = 'TODO tcpwrappers'
     }
   }
 
-    package { $package:
-      ensure => installed,
-    }
-
+  package { $package:
+    ensure => installed,
   }
+
+}

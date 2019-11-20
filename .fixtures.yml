@@ -9,7 +9,6 @@ fixtures:
     stdlib: "puppetlabs/stdlib"
     ntp: "puppetlabs/ntp"
     auditd: "kemra102/auditd"
-    postfix: "camptocamp-postfix"
     logrotate: "puppet/logrotate"
     augeasproviders_shellvar: "herculesteam/augeasproviders_shellvar"
     augeasproviders_pam: "herculesteam/augeasproviders_pam"
@@ -24,3 +23,6 @@ fixtures:
     reboot: "puppetlabs/reboot"
     mount: "puppetlabs/mount_core"
     chrony: "aboe/chrony"
+  repositories:
+    # Because PR #245 is not yet in the Forge
+    postfix: 'https://github.com/camptocamp/puppet-postfix.git'
