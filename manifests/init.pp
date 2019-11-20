@@ -91,12 +91,4 @@ class secure_linux_cis (
   }
 
   include $include_rules
-
-  file { '/usr/share/cis_scripts':
-    ensure => directory,
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0700',
-  }
-
 }
