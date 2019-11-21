@@ -16,13 +16,11 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_permissions_on_ssh_public_host_key_files_are_configured
-class secure_linux_cis::rules::ensure_permissions_on_ssh_public_host_key_files_are_configured (
-  Boolean $enforced = true,
-) {
+class secure_linux_cis::rules::ensure_permissions_on_ssh_public_host_key_files_are_configured {
 
   include ::secure_linux_cis::service
 
-  if $enforced and !$facts['ssh_host_pub_keys'].empty {
+  unless $facts['ssh_host_pub_keys'].empty {
 
     file{ $facts['ssh_host_pub_keys']:
       ensure => 'present',

@@ -18,7 +18,6 @@
 # @example
 #   include secure_linux_cis::rules::ensure_only_strong_key_exchange_algorithms_are_used
 class secure_linux_cis::rules::ensure_only_strong_key_exchange_algorithms_are_used (
-  Boolean $enforced = true,
   Array $approved_kex = [
     'curve25519-sha256',
     'curve25519-sha256@libssh.org',
@@ -31,40 +30,36 @@ class secure_linux_cis::rules::ensure_only_strong_key_exchange_algorithms_are_us
     'diffie-hellman-group-exchange-sha256'
   ]
 ) {
-
   include ::secure_linux_cis::service
 
-  if $enforced {
+  $acceptable_values = [
+    'curve25519-sha256',
+    'curve25519-sha256@libssh.org',
+    'diffie-hellman-group14-sha256',
+    'diffie-hellman-group16-sha512',
+    'diffie-hellman-group18-sha512',
+    'ecdh-sha2-nistp521',
+    'ecdh-sha2-nistp384',
+    'ecdh-sha2-nistp256',
+    'diffie-hellman-group-exchange-sha256'
+  ]
 
-    $acceptable_values = [
-      'curve25519-sha256',
-      'curve25519-sha256@libssh.org',
-      'diffie-hellman-group14-sha256',
-      'diffie-hellman-group16-sha512',
-      'diffie-hellman-group18-sha512',
-      'ecdh-sha2-nistp521',
-      'ecdh-sha2-nistp384',
-      'ecdh-sha2-nistp256',
-      'diffie-hellman-group-exchange-sha256'
-    ]
+  $approved_kex.each |$kex| {
 
-    $approved_kex.each |$kex| {
+    if !($kex in $acceptable_values) {
 
-      if !($kex in $acceptable_values) {
-
-        fail("Key exchange algorithm ${kex} does not match CIS standards. Please use CIS standard 5.2.15 for reference")
-      }
+      fail("Key exchange algorithm ${kex} does not match CIS standards. Please use CIS standard 5.2.15 for reference")
     }
+  }
 
-    $kex_array = join($approved_kex,',')
+  $kex_array = join($approved_kex,',')
 
-    file_line { 'ssh kex':
-      ensure => 'present',
-      path   => '/etc/ssh/sshd_config',
-      line   => "KexAlgorithms ${kex_array}",
-      match  => '^#?KexAlgorithms',
-      notify => Exec['reload sshd'],
-    }
+  file_line { 'ssh kex':
+    ensure => 'present',
+    path   => '/etc/ssh/sshd_config',
+    line   => "KexAlgorithms ${kex_array}",
+    match  => '^#?KexAlgorithms',
+    notify => Exec['reload sshd'],
   }
 }
 
