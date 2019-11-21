@@ -6,230 +6,230 @@
 **Classes**
 
 * [`secure_linux_cis`](#secure_linux_cis): CIS Red Hat Enterprise Linux 7 Benchmark
-* [`secure_linux_cis::centos7`](#secure_linux_ciscentos7): This wrapper class declares CIS controls for the CentOS Linux 7 Benchmark v2.2.0. Most of the classes are inherited from the
-* [`secure_linux_cis::centos7::cis_6_1_10`](#secure_linux_ciscentos7cis_6_1_10): 6.1.10 Ensure no world writable files exist (Scored)
+* [`secure_linux_cis::distribution::centos7`](#secure_linux_ciscentos7): This wrapper class declares CIS controls for the CentOS Linux 7 Benchmark v2.2.0. Most of the classes are inherited from the
+* [`secure_linux_cis::distribution::centos7::cis_6_1_10`](#secure_linux_ciscentos7cis_6_1_10): 6.1.10 Ensure no world writable files exist (Scored)
 * [`secure_linux_cis::redhat7`](#secure_linux_cisredhat7): This wrapper class declares CIS controls for the RedHat Enterprise Linux 7 Benchmark v2.2.0
-* [`secure_linux_cis::redhat7::cis_1_1_10`](#secure_linux_cisredhat7cis_1_1_10): 1.1.10 Ensure noexec option set on /var/tmp partition (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_11`](#secure_linux_cisredhat7cis_1_1_11): 1.1.11 Ensure separate partition exists for /var/log (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_12`](#secure_linux_cisredhat7cis_1_1_12): 1.1.12 Ensure separate partition exists for /var/log/audit (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_13`](#secure_linux_cisredhat7cis_1_1_13): 1.1.13 Ensure separate partition exists for /home (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_14`](#secure_linux_cisredhat7cis_1_1_14): 1.1.14 Ensure nodev option set on /home partition (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_15`](#secure_linux_cisredhat7cis_1_1_15): 1.1.15 Ensure nodev option set on /dev/shm partition (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_16`](#secure_linux_cisredhat7cis_1_1_16): 1.1.16 Ensure nosuid option set on /dev/shm partition (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_17`](#secure_linux_cisredhat7cis_1_1_17): 1.1.17 Ensure noexec option set on /dev/shm partition (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_18`](#secure_linux_cisredhat7cis_1_1_18): 1.1.18 Ensure nodev option set on removable media partitions (Not Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_19`](#secure_linux_cisredhat7cis_1_1_19): 1.1.19 Ensure nosuid option set on removable media partitions (Not Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_1_1`](#secure_linux_cisredhat7cis_1_1_1_1): 1.1.1.1 Ensure mounting of cramfs filesystems is disabled (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_1_2`](#secure_linux_cisredhat7cis_1_1_1_2): 1.1.1.2 Ensure mounting of freevxfs filesystems is disabled (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_1_3`](#secure_linux_cisredhat7cis_1_1_1_3): 1.1.1.3 Ensure mounting of jffs2 filesystems is disabled (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_1_4`](#secure_linux_cisredhat7cis_1_1_1_4): 1.1.1.4 Ensure mounting of hfs filesystems is disabled (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_1_5`](#secure_linux_cisredhat7cis_1_1_1_5): 1.1.1.5 Ensure mounting of hfsplus filesystems is disabled (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_1_6`](#secure_linux_cisredhat7cis_1_1_1_6): 1.1.1.6 Ensure mounting of squashfs filesystems is disabled (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_1_7`](#secure_linux_cisredhat7cis_1_1_1_7): 1.1.1.7 Ensure mounting of udf filesystems is disabled (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_1_8`](#secure_linux_cisredhat7cis_1_1_1_8): 1.1.1.8 Ensure mounting of FAT filesystems is disabled (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_2`](#secure_linux_cisredhat7cis_1_1_2): 1.1.2 Ensure separate partition exists for /tmp (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_20`](#secure_linux_cisredhat7cis_1_1_20): 1.1.20 Ensure noexec option set on removable media partitions (Not Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_21`](#secure_linux_cisredhat7cis_1_1_21): 1.1.21 Ensure sticky bit is set on all world-writable directories (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_22`](#secure_linux_cisredhat7cis_1_1_22): 1.1.22 Disable Automounting (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_3`](#secure_linux_cisredhat7cis_1_1_3): 1.1.3 Ensure nodev option set on /tmp partition (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_4`](#secure_linux_cisredhat7cis_1_1_4): 1.1.4 Ensure nosuid option set on /tmp partition (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_5`](#secure_linux_cisredhat7cis_1_1_5): 1.1.5 Ensure noexec option set on /tmp partition (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_6`](#secure_linux_cisredhat7cis_1_1_6): 1.1.6 Ensure separate partition exists for /var (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_7`](#secure_linux_cisredhat7cis_1_1_7): 1.1.7 Ensure separate partition exists for /var/tmp (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_8`](#secure_linux_cisredhat7cis_1_1_8): 1.1.8 Ensure nodev option set on /var/tmp partition (Scored)
-* [`secure_linux_cis::redhat7::cis_1_1_9`](#secure_linux_cisredhat7cis_1_1_9): 1.1.9 Ensure nosuid option set on /var/tmp partition (Scored)
-* [`secure_linux_cis::redhat7::cis_1_2_1`](#secure_linux_cisredhat7cis_1_2_1): 1.2.1 Ensure package manager repositories are configured (Not Scored)
-* [`secure_linux_cis::redhat7::cis_1_2_2`](#secure_linux_cisredhat7cis_1_2_2): 1.2.2 Ensure gpgcheck is globally activated (Scored)
-* [`secure_linux_cis::redhat7::cis_1_2_3`](#secure_linux_cisredhat7cis_1_2_3): 1.2.3 Ensure GPG keys are configured (Not Scored)
-* [`secure_linux_cis::redhat7::cis_1_2_4`](#secure_linux_cisredhat7cis_1_2_4): 1.2.4 Ensure Red Hat Subscription Manager connection is configured (Not Scored)
-* [`secure_linux_cis::redhat7::cis_1_2_5`](#secure_linux_cisredhat7cis_1_2_5): 1.2.5 Disable the rhnsd Daemon (Not Scored)
-* [`secure_linux_cis::redhat7::cis_1_3_1`](#secure_linux_cisredhat7cis_1_3_1): 1.3.1 Ensure AIDE is installed (Scored)
-* [`secure_linux_cis::redhat7::cis_1_3_2`](#secure_linux_cisredhat7cis_1_3_2): 1.3.2 Ensure filesystem integrity is regularly checked (Scored)
-* [`secure_linux_cis::redhat7::cis_1_4_1`](#secure_linux_cisredhat7cis_1_4_1): 1.4.1 Ensure permissions on bootloader config are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_1_4_2`](#secure_linux_cisredhat7cis_1_4_2): 1.4.2 Ensure bootloader password is set (Scored)
-* [`secure_linux_cis::redhat7::cis_1_4_3`](#secure_linux_cisredhat7cis_1_4_3): 1.4.3 Ensure authentication required for single user mode (Scored)
-* [`secure_linux_cis::redhat7::cis_1_5_1`](#secure_linux_cisredhat7cis_1_5_1): 1.5.1 Ensure core dumps are restricted (Scored)
-* [`secure_linux_cis::redhat7::cis_1_5_2`](#secure_linux_cisredhat7cis_1_5_2): 1.5.2 Ensure XD/NX support is enabled (Not Scored)
-* [`secure_linux_cis::redhat7::cis_1_5_3`](#secure_linux_cisredhat7cis_1_5_3): 1.5.3 Ensure address space layout randomization (ASLR) is enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_1_5_4`](#secure_linux_cisredhat7cis_1_5_4): 1.5.4 Ensure prelink is disabled (Scored)
-* [`secure_linux_cis::redhat7::cis_1_6_1_1`](#secure_linux_cisredhat7cis_1_6_1_1): 1.6.1.1 Ensure SELinux is not disabled in bootloader configuration (Scored)
-* [`secure_linux_cis::redhat7::cis_1_6_1_2`](#secure_linux_cisredhat7cis_1_6_1_2): 1.6.1.2 Ensure the SELinux state is enforcing (Scored)
-* [`secure_linux_cis::redhat7::cis_1_6_1_3`](#secure_linux_cisredhat7cis_1_6_1_3): 1.6.1.3 Ensure SELinux policy is configured (Scored)
-* [`secure_linux_cis::redhat7::cis_1_6_1_4`](#secure_linux_cisredhat7cis_1_6_1_4): 1.6.1.4 Ensure SETroubleshoot is not installed (Scored)
-* [`secure_linux_cis::redhat7::cis_1_6_1_5`](#secure_linux_cisredhat7cis_1_6_1_5): 1.6.1.5 Ensure the MCS Translation Service (mcstrans) is not installed (Scored)
-* [`secure_linux_cis::redhat7::cis_1_6_1_6`](#secure_linux_cisredhat7cis_1_6_1_6): 1.6.1.6 Ensure no unconfined daemons exist (Scored)
-* [`secure_linux_cis::redhat7::cis_1_6_2`](#secure_linux_cisredhat7cis_1_6_2): 1.6.2 Ensure SELinux is installed (Scored)
-* [`secure_linux_cis::redhat7::cis_1_7_1_1`](#secure_linux_cisredhat7cis_1_7_1_1): 1.7.1.1 Ensure message of the day is configured properly (Scored)
-* [`secure_linux_cis::redhat7::cis_1_7_1_2`](#secure_linux_cisredhat7cis_1_7_1_2): 1.7.1.2 Ensure local login warning banner is configured properly (Not Scored)
-* [`secure_linux_cis::redhat7::cis_1_7_1_3`](#secure_linux_cisredhat7cis_1_7_1_3): 1.7.1.3 Ensure remote login warning banner is configured properly (Not Scored)
-* [`secure_linux_cis::redhat7::cis_1_7_1_4`](#secure_linux_cisredhat7cis_1_7_1_4): 1.7.1.4 Ensure permissions on /etc/motd are configured (Not Scored)
-* [`secure_linux_cis::redhat7::cis_1_7_1_5`](#secure_linux_cisredhat7cis_1_7_1_5): 1.7.1.5 Ensure permissions on /etc/issue are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_1_7_1_6`](#secure_linux_cisredhat7cis_1_7_1_6): 1.7.1.6 Ensure permissions on /etc/issue.net are configured (Not Scored)
-* [`secure_linux_cis::redhat7::cis_1_7_2`](#secure_linux_cisredhat7cis_1_7_2): 1.7.2 Ensure GDM login banner is configured (Scored)
-* [`secure_linux_cis::redhat7::cis_1_8`](#secure_linux_cisredhat7cis_1_8): 1.8 Ensure updates, patches, and additional security software are installed (Scored)
-* [`secure_linux_cis::redhat7::cis_2_1_1`](#secure_linux_cisredhat7cis_2_1_1): 2.1.1 Ensure chargen services are not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_1_2`](#secure_linux_cisredhat7cis_2_1_2): 2.1.2 Ensure daytime services are not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_1_3`](#secure_linux_cisredhat7cis_2_1_3): 2.1.3 Ensure discard services are not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_1_4`](#secure_linux_cisredhat7cis_2_1_4): 2.1.4 Ensure echo services are not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_1_5`](#secure_linux_cisredhat7cis_2_1_5): 2.1.5 Ensure time services are not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_1_6`](#secure_linux_cisredhat7cis_2_1_6): 2.1.6 Ensure tftp server is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_1_7`](#secure_linux_cisredhat7cis_2_1_7): 2.1.7 Ensure xinetd is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_10`](#secure_linux_cisredhat7cis_2_2_10): 2.2.10 Ensure HTTP server is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_11`](#secure_linux_cisredhat7cis_2_2_11): 2.2.11 Ensure IMAP and POP3 server is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_12`](#secure_linux_cisredhat7cis_2_2_12): 2.2.12 Ensure Samba is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_13`](#secure_linux_cisredhat7cis_2_2_13): 2.2.13 Ensure HTTP Proxy Server is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_14`](#secure_linux_cisredhat7cis_2_2_14): 2.2.14 Ensure SNMP Server is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_15`](#secure_linux_cisredhat7cis_2_2_15): 2.2.15 Ensure mail transfer agent is configured for local-only mode (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_16`](#secure_linux_cisredhat7cis_2_2_16): 2.2.16 Ensure NIS Server is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_17`](#secure_linux_cisredhat7cis_2_2_17): 2.2.17 Ensure rsh server is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_18`](#secure_linux_cisredhat7cis_2_2_18): 2.2.18 Ensure talk server is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_19`](#secure_linux_cisredhat7cis_2_2_19): 2.2.19 Ensure telnet server is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_1_1`](#secure_linux_cisredhat7cis_2_2_1_1): 2.2.1.1 Ensure time synchronization is in use (Not Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_1_2`](#secure_linux_cisredhat7cis_2_2_1_2): 2.2.1.2 Ensure ntp is configured (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_1_3`](#secure_linux_cisredhat7cis_2_2_1_3): 2.2.1.3 Ensure chrony is configured (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_2`](#secure_linux_cisredhat7cis_2_2_2): 2.2.2 Ensure X Window System is not installed (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_20`](#secure_linux_cisredhat7cis_2_2_20): 2.2.20 Ensure tftp server is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_21`](#secure_linux_cisredhat7cis_2_2_21): 2.2.21 Ensure rsync service is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_3`](#secure_linux_cisredhat7cis_2_2_3): 2.2.3 Ensure Avahi Server is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_4`](#secure_linux_cisredhat7cis_2_2_4): 2.2.4 Ensure CUPS is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_5`](#secure_linux_cisredhat7cis_2_2_5): 2.2.5 Ensure DHCP Server is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_6`](#secure_linux_cisredhat7cis_2_2_6): 2.2.6 Ensure LDAP server is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_7`](#secure_linux_cisredhat7cis_2_2_7): 2.2.7 Ensure NFS and RPC are not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_8`](#secure_linux_cisredhat7cis_2_2_8): 2.2.8 Ensure DNS Server is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_2_9`](#secure_linux_cisredhat7cis_2_2_9): 2.2.9 Ensure FTP Server is not enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_2_3_1`](#secure_linux_cisredhat7cis_2_3_1): 2.3.1 Ensure NIS Client is not installed (Scored)
-* [`secure_linux_cis::redhat7::cis_2_3_2`](#secure_linux_cisredhat7cis_2_3_2): 2.3.2 Ensure rsh client is not installed (Scored)
-* [`secure_linux_cis::redhat7::cis_2_3_3`](#secure_linux_cisredhat7cis_2_3_3): 2.3.3 Ensure talk client is not installed (Scored)
-* [`secure_linux_cis::redhat7::cis_2_3_4`](#secure_linux_cisredhat7cis_2_3_4): 2.3.4 Ensure telnet client is not installed (Scored)
-* [`secure_linux_cis::redhat7::cis_2_3_5`](#secure_linux_cisredhat7cis_2_3_5): 2.3.5 Ensure LDAP client is not installed (Scored)
-* [`secure_linux_cis::redhat7::cis_3_1_1`](#secure_linux_cisredhat7cis_3_1_1): 3.1.1 Ensure IP forwarding is disabled (Scored)
-* [`secure_linux_cis::redhat7::cis_3_1_2`](#secure_linux_cisredhat7cis_3_1_2): 3.1.2 Ensure packet redirect sending is disabled (Scored)
-* [`secure_linux_cis::redhat7::cis_3_2_1`](#secure_linux_cisredhat7cis_3_2_1): 3.2.1 Ensure source routed packets are not accepted (Scored)
-* [`secure_linux_cis::redhat7::cis_3_2_2`](#secure_linux_cisredhat7cis_3_2_2): 3.2.2 Ensure ICMP redirects are not accepted (Scored)
-* [`secure_linux_cis::redhat7::cis_3_2_3`](#secure_linux_cisredhat7cis_3_2_3): 3.2.3 Ensure secure ICMP redirects are not accepted (Scored)
-* [`secure_linux_cis::redhat7::cis_3_2_4`](#secure_linux_cisredhat7cis_3_2_4): 3.2.4 Ensure suspicious packets are logged (Scored)
-* [`secure_linux_cis::redhat7::cis_3_2_5`](#secure_linux_cisredhat7cis_3_2_5): 3.2.5 Ensure broadcast ICMP requests are ignored (Scored)
-* [`secure_linux_cis::redhat7::cis_3_2_6`](#secure_linux_cisredhat7cis_3_2_6): 3.2.6 Ensure bogus ICMP responses are ignored (Scored)
-* [`secure_linux_cis::redhat7::cis_3_2_7`](#secure_linux_cisredhat7cis_3_2_7): 3.2.7 Ensure Reverse Path Filtering is enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_3_2_8`](#secure_linux_cisredhat7cis_3_2_8): 3.2.8 Ensure TCP SYN Cookies is enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_3_3_1`](#secure_linux_cisredhat7cis_3_3_1): 3.3.1 Ensure IPv6 router advertisements are not accepted (Not Scored)
-* [`secure_linux_cis::redhat7::cis_3_3_2`](#secure_linux_cisredhat7cis_3_3_2): 3.3.2 Ensure IPv6 redirects are not accepted (Not Scored)
-* [`secure_linux_cis::redhat7::cis_3_3_3`](#secure_linux_cisredhat7cis_3_3_3): 3.3.3 Ensure IPv6 is disabled (Not Scored)
-* [`secure_linux_cis::redhat7::cis_3_4_1`](#secure_linux_cisredhat7cis_3_4_1): 3.4.1 Ensure TCP Wrappers is installed (Scored)
-* [`secure_linux_cis::redhat7::cis_3_4_2`](#secure_linux_cisredhat7cis_3_4_2): 3.4.2 Ensure /etc/hosts.allow is configured (Scored)
-* [`secure_linux_cis::redhat7::cis_3_4_3`](#secure_linux_cisredhat7cis_3_4_3): 3.4.3 Ensure /etc/hosts.deny is configured (Scored)
-* [`secure_linux_cis::redhat7::cis_3_4_4`](#secure_linux_cisredhat7cis_3_4_4): A short summary of the purpose of this class
-* [`secure_linux_cis::redhat7::cis_3_4_5`](#secure_linux_cisredhat7cis_3_4_5): A short summary of the purpose of this class
-* [`secure_linux_cis::redhat7::cis_3_5_1`](#secure_linux_cisredhat7cis_3_5_1): 3.5.1 Ensure DCCP is disabled (Not Scored)
-* [`secure_linux_cis::redhat7::cis_3_5_2`](#secure_linux_cisredhat7cis_3_5_2): 3.5.2 Ensure SCTP is disabled (Not Scored)
-* [`secure_linux_cis::redhat7::cis_3_5_3`](#secure_linux_cisredhat7cis_3_5_3): 3.5.3 Ensure RDS is disabled (Not Scored)
-* [`secure_linux_cis::redhat7::cis_3_5_4`](#secure_linux_cisredhat7cis_3_5_4): 3.5.4 Ensure TIPC is disabled (Not Scored)
-* [`secure_linux_cis::redhat7::cis_3_6_1`](#secure_linux_cisredhat7cis_3_6_1): 3.6.1 Ensure iptables is installed (Scored)
-* [`secure_linux_cis::redhat7::cis_3_6_2`](#secure_linux_cisredhat7cis_3_6_2): 3.6.2 Ensure default deny firewall policy (Scored)
-* [`secure_linux_cis::redhat7::cis_3_6_3`](#secure_linux_cisredhat7cis_3_6_3): 3.6.3 Ensure loopback traffic is configured (Scored)
-* [`secure_linux_cis::redhat7::cis_3_6_4`](#secure_linux_cisredhat7cis_3_6_4): 3.6.4 Ensure outbound and established connections are configured (Not Scored)
-* [`secure_linux_cis::redhat7::cis_3_6_5`](#secure_linux_cisredhat7cis_3_6_5): 3.6.5 Ensure firewall rules exist for all open ports (Scored)
-* [`secure_linux_cis::redhat7::cis_3_7`](#secure_linux_cisredhat7cis_3_7): 3.7 Ensure wireless interfaces are disabled (Not Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_10`](#secure_linux_cisredhat7cis_4_1_10): 4.1.10 Ensure discretionary access control permission modification events are collected (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_11`](#secure_linux_cisredhat7cis_4_1_11): 4.1.11 Ensure unsuccessful unauthorized file access attempts are collected (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_12`](#secure_linux_cisredhat7cis_4_1_12): A short summary of the purpose of this class
-* [`secure_linux_cis::redhat7::cis_4_1_13`](#secure_linux_cisredhat7cis_4_1_13): 4.1.13 Ensure successful file system mounts are collected (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_14`](#secure_linux_cisredhat7cis_4_1_14): 4.1.14 Ensure file deletion events by users are collected (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_15`](#secure_linux_cisredhat7cis_4_1_15): 4.1.15 Ensure changes to system administration scope (sudoers) is collected (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_16`](#secure_linux_cisredhat7cis_4_1_16): 4.1.16 Ensure system administrator actions (sudolog) are collected (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_17`](#secure_linux_cisredhat7cis_4_1_17): 4.1.17 Ensure kernel module loading and unloading is collected (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_18`](#secure_linux_cisredhat7cis_4_1_18): 4.1.18 Ensure the audit configuration is immutable (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_1_1`](#secure_linux_cisredhat7cis_4_1_1_1): 4.1.1.1 Ensure audit log storage size is configured (Not Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_1_2`](#secure_linux_cisredhat7cis_4_1_1_2): 4.1.1.2 Ensure system is disabled when audit logs are full (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_1_3`](#secure_linux_cisredhat7cis_4_1_1_3): 4.1.1.3 Ensure audit logs are not automatically deleted (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_2`](#secure_linux_cisredhat7cis_4_1_2): 4.1.2 Ensure auditd service is enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_3`](#secure_linux_cisredhat7cis_4_1_3): A short summary of the purpose of this class
-* [`secure_linux_cis::redhat7::cis_4_1_4`](#secure_linux_cisredhat7cis_4_1_4): 4.1.4 Ensure events that modify date and time information are collected (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_5`](#secure_linux_cisredhat7cis_4_1_5): 4.1.5 Ensure events that modify user/group information are collected (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_6`](#secure_linux_cisredhat7cis_4_1_6): 4.1.6 Ensure events that modify the system's network environment are collected (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_7`](#secure_linux_cisredhat7cis_4_1_7): 4.1.7 Ensure events that modify the system's Mandatory Access Controls are collected (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_8`](#secure_linux_cisredhat7cis_4_1_8): 4.1.8 Ensure login and logout events are collected (Scored)
-* [`secure_linux_cis::redhat7::cis_4_1_9`](#secure_linux_cisredhat7cis_4_1_9): 4.1.9 Ensure session initiation information is collected (Scored)
-* [`secure_linux_cis::redhat7::cis_4_2_1_1`](#secure_linux_cisredhat7cis_4_2_1_1): 4.2.1.1 Ensure rsyslog Service is enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_4_2_1_2`](#secure_linux_cisredhat7cis_4_2_1_2): 4.2.1.2 Ensure logging is configured (Not Scored)
-* [`secure_linux_cis::redhat7::cis_4_2_1_3`](#secure_linux_cisredhat7cis_4_2_1_3): 4.2.1.3 Ensure rsyslog default file permissions configured (Scored)
-* [`secure_linux_cis::redhat7::cis_4_2_1_4`](#secure_linux_cisredhat7cis_4_2_1_4): 4.2.1.4 Ensure rsyslog is configured to send logs to a remote log host (Scored)
-* [`secure_linux_cis::redhat7::cis_4_2_1_5`](#secure_linux_cisredhat7cis_4_2_1_5): A short summary of the purpose of this class
-* [`secure_linux_cis::redhat7::cis_4_2_2_1`](#secure_linux_cisredhat7cis_4_2_2_1): 4.2.2.1 Ensure syslog-ng service is enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_4_2_2_2`](#secure_linux_cisredhat7cis_4_2_2_2): 4.2.2.2 Ensure logging is configured (Not Scored)
-* [`secure_linux_cis::redhat7::cis_4_2_2_3`](#secure_linux_cisredhat7cis_4_2_2_3): 4.2.2.3 Ensure syslog-ng default file permissions configured (Scored)
-* [`secure_linux_cis::redhat7::cis_4_2_2_4`](#secure_linux_cisredhat7cis_4_2_2_4): 4.2.2.4 Ensure syslog-ng is configured to send logs to a remote log host (Not Scored)
-* [`secure_linux_cis::redhat7::cis_4_2_2_5`](#secure_linux_cisredhat7cis_4_2_2_5): 4.2.2.5 Ensure remote syslog-ng messages are only accepted on designated log hosts (Not Scored)
-* [`secure_linux_cis::redhat7::cis_4_2_3`](#secure_linux_cisredhat7cis_4_2_3): 4.2.3 Ensure rsyslog or syslog-ng is installed (Scored)
-* [`secure_linux_cis::redhat7::cis_4_2_4`](#secure_linux_cisredhat7cis_4_2_4): A short summary of the purpose of this class
-* [`secure_linux_cis::redhat7::cis_4_3`](#secure_linux_cisredhat7cis_4_3): 4.3 Ensure logrotate is configured (Not Scored)
-* [`secure_linux_cis::redhat7::cis_5_1_1`](#secure_linux_cisredhat7cis_5_1_1): 5.1.1 Ensure cron daemon is enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_5_1_2`](#secure_linux_cisredhat7cis_5_1_2): 5.1.2 Ensure permissions on /etc/crontab are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_5_1_3`](#secure_linux_cisredhat7cis_5_1_3): 5.1.3 Ensure permissions on /etc/cron.hourly are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_5_1_4`](#secure_linux_cisredhat7cis_5_1_4): 5.1.4 Ensure permissions on /etc/cron.daily are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_5_1_5`](#secure_linux_cisredhat7cis_5_1_5): 5.1.5 Ensure permissions on /etc/cron.weekly are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_5_1_6`](#secure_linux_cisredhat7cis_5_1_6): 5.1.6 Ensure permissions on /etc/cron.monthly are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_5_1_7`](#secure_linux_cisredhat7cis_5_1_7): 5.1.7 Ensure permissions on /etc/cron.d are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_5_1_8`](#secure_linux_cisredhat7cis_5_1_8): 5.1.8 Ensure at/cron is restricted to authorized users (Scored)
-* [`secure_linux_cis::redhat7::cis_5_2_1`](#secure_linux_cisredhat7cis_5_2_1): 5.2.1 Ensure permissions on /etc/ssh/sshd_config are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_5_2_10`](#secure_linux_cisredhat7cis_5_2_10): 5.2.10 Ensure SSH PermitUserEnvironment is disabled (Scored)
-* [`secure_linux_cis::redhat7::cis_5_2_11`](#secure_linux_cisredhat7cis_5_2_11): A short summary of the purpose of this class
-* [`secure_linux_cis::redhat7::cis_5_2_12`](#secure_linux_cisredhat7cis_5_2_12): 5.2.12 Ensure SSH Idle Timeout Interval is configured (Scored)
-* [`secure_linux_cis::redhat7::cis_5_2_13`](#secure_linux_cisredhat7cis_5_2_13): 5.2.13 Ensure SSH LoginGraceTime is set to one minute or less (Scored)
-* [`secure_linux_cis::redhat7::cis_5_2_14`](#secure_linux_cisredhat7cis_5_2_14): 5.2.14 Ensure SSH access is limited (Scored)
-* [`secure_linux_cis::redhat7::cis_5_2_15`](#secure_linux_cisredhat7cis_5_2_15): 5.2.15 Ensure SSH warning banner is configured (Scored)
-* [`secure_linux_cis::redhat7::cis_5_2_2`](#secure_linux_cisredhat7cis_5_2_2): 5.2.2 Ensure SSH Protocol is set to 2 (Scored)
-* [`secure_linux_cis::redhat7::cis_5_2_3`](#secure_linux_cisredhat7cis_5_2_3): 5.2.3 Ensure SSH LogLevel is set to INFO (Scored)
-* [`secure_linux_cis::redhat7::cis_5_2_4`](#secure_linux_cisredhat7cis_5_2_4): 5.2.4 Ensure SSH X11 forwarding is disabled (Scored)
-* [`secure_linux_cis::redhat7::cis_5_2_5`](#secure_linux_cisredhat7cis_5_2_5): 5.2.5 Ensure SSH MaxAuthTries is set to 4 or less (Scored)
-* [`secure_linux_cis::redhat7::cis_5_2_6`](#secure_linux_cisredhat7cis_5_2_6): 5.2.6 Ensure SSH IgnoreRhosts is enabled (Scored)
-* [`secure_linux_cis::redhat7::cis_5_2_7`](#secure_linux_cisredhat7cis_5_2_7): 5.2.7 Ensure SSH HostbasedAuthentication is disabled (Scored)
-* [`secure_linux_cis::redhat7::cis_5_2_8`](#secure_linux_cisredhat7cis_5_2_8): 5.2.8 Ensure SSH root login is disabled (Scored)
-* [`secure_linux_cis::redhat7::cis_5_2_9`](#secure_linux_cisredhat7cis_5_2_9): 5.2.9 Ensure SSH PermitEmptyPasswords is disabled (Scored)
-* [`secure_linux_cis::redhat7::cis_5_3_1`](#secure_linux_cisredhat7cis_5_3_1): 5.3.1 Ensure password creation requirements are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_5_3_2`](#secure_linux_cisredhat7cis_5_3_2): 5.3.2 Ensure lockout for failed password attempts is configured (Scored)
-* [`secure_linux_cis::redhat7::cis_5_3_3`](#secure_linux_cisredhat7cis_5_3_3): 5.3.3 Ensure password reuse is limited (Scored)
-* [`secure_linux_cis::redhat7::cis_5_3_4`](#secure_linux_cisredhat7cis_5_3_4): A short summary of the purpose of this class
-* [`secure_linux_cis::redhat7::cis_5_4_1_1`](#secure_linux_cisredhat7cis_5_4_1_1): 5.4.1.1 Ensure password expiration is 365 days or less (Scored)
-* [`secure_linux_cis::redhat7::cis_5_4_1_2`](#secure_linux_cisredhat7cis_5_4_1_2): 5.4.1.2 Ensure minimum days between password changes is 7 or more (Scored)
-* [`secure_linux_cis::redhat7::cis_5_4_1_3`](#secure_linux_cisredhat7cis_5_4_1_3): 5.4.1.3 Ensure password expiration warning days is 7 or more (Scored)
-* [`secure_linux_cis::redhat7::cis_5_4_1_4`](#secure_linux_cisredhat7cis_5_4_1_4): 5.4.1.4 Ensure inactive password lock is 30 days or less (Scored)
-* [`secure_linux_cis::redhat7::cis_5_4_1_5`](#secure_linux_cisredhat7cis_5_4_1_5): 5.4.1.5 Ensure all users last password change date is in the past (Scored)
-* [`secure_linux_cis::redhat7::cis_5_4_2`](#secure_linux_cisredhat7cis_5_4_2): 5.4.2 Ensure system accounts are non-login (Scored)
-* [`secure_linux_cis::redhat7::cis_5_4_3`](#secure_linux_cisredhat7cis_5_4_3): 5.4.3 Ensure default group for the root account is GID 0 (Scored)
-* [`secure_linux_cis::redhat7::cis_5_4_4`](#secure_linux_cisredhat7cis_5_4_4): 5.4.4 Ensure default user umask is 027 or more restrictive (Scored)
-* [`secure_linux_cis::redhat7::cis_5_4_5`](#secure_linux_cisredhat7cis_5_4_5): The TMOUT parameter has been added in 5_4_4
-* [`secure_linux_cis::redhat7::cis_5_6`](#secure_linux_cisredhat7cis_5_6): 5.6 Ensure access to the su command is restricted (Scored)
-* [`secure_linux_cis::redhat7::cis_6_1_10`](#secure_linux_cisredhat7cis_6_1_10): 6.1.10 Ensure no world writable files exist (Scored)
-* [`secure_linux_cis::redhat7::cis_6_1_11`](#secure_linux_cisredhat7cis_6_1_11): 6.1.11 Ensure no unowned files or directories exist (Scored)
-* [`secure_linux_cis::redhat7::cis_6_1_12`](#secure_linux_cisredhat7cis_6_1_12): 6.1.12 Ensure no ungrouped files or directories exist (Scored)
-* [`secure_linux_cis::redhat7::cis_6_1_2`](#secure_linux_cisredhat7cis_6_1_2): 6.1.2 Ensure permissions on /etc/passwd are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_6_1_3`](#secure_linux_cisredhat7cis_6_1_3): 6.1.3 Ensure permissions on /etc/shadow are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_6_1_4`](#secure_linux_cisredhat7cis_6_1_4): 6.1.4 Ensure permissions on /etc/group are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_6_1_5`](#secure_linux_cisredhat7cis_6_1_5): 6.1.5 Ensure permissions on /etc/gshadow are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_6_1_6`](#secure_linux_cisredhat7cis_6_1_6): 6.1.6 Ensure permissions on /etc/passwd- are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_6_1_7`](#secure_linux_cisredhat7cis_6_1_7): 6.1.7 Ensure permissions on /etc/shadow- are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_6_1_8`](#secure_linux_cisredhat7cis_6_1_8): 6.1.8 Ensure permissions on /etc/group- are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_6_1_9`](#secure_linux_cisredhat7cis_6_1_9): 6.1.9 Ensure permissions on /etc/gshadow- are configured (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_1`](#secure_linux_cisredhat7cis_6_2_1): 6.2.1 Ensure password fields are not empty (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_10`](#secure_linux_cisredhat7cis_6_2_10): 6.2.10 Ensure users' dot files are not group or world writable (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_11`](#secure_linux_cisredhat7cis_6_2_11): 6.2.11 Ensure no users have .forward files (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_12`](#secure_linux_cisredhat7cis_6_2_12): 6.2.12 Ensure no users have .netrc files (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_13`](#secure_linux_cisredhat7cis_6_2_13): 6.2.13 Ensure users' .netrc Files are not group or world accessible
-* [`secure_linux_cis::redhat7::cis_6_2_14`](#secure_linux_cisredhat7cis_6_2_14): 6.2.14 Ensure no users have .rhosts files (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_15`](#secure_linux_cisredhat7cis_6_2_15): 6.2.15 Ensure all groups in /etc/passwd exist in /etc/group (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_16`](#secure_linux_cisredhat7cis_6_2_16): 6.2.16 Ensure no duplicate UIDs exist (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_17`](#secure_linux_cisredhat7cis_6_2_17): 6.2.17 Ensure no duplicate GIDs exist (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_18`](#secure_linux_cisredhat7cis_6_2_18): 6.2.18 Ensure no duplicate user names exist (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_19`](#secure_linux_cisredhat7cis_6_2_19): 6.2.19 Ensure no duplicate group names exist (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_2`](#secure_linux_cisredhat7cis_6_2_2): 6.2.2 Ensure no legacy "+" entries exist in /etc/passwd (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_3`](#secure_linux_cisredhat7cis_6_2_3): 6.2.3 Ensure no legacy "+" entries exist in /etc/shadow (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_4`](#secure_linux_cisredhat7cis_6_2_4): 6.2.4 Ensure no legacy "+" entries exist in /etc/group (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_5`](#secure_linux_cisredhat7cis_6_2_5): 6.2.5 Ensure root is the only UID 0 account (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_6`](#secure_linux_cisredhat7cis_6_2_6): 6.2.6 Ensure root PATH Integrity (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_7`](#secure_linux_cisredhat7cis_6_2_7): 6.2.7 Ensure all users' home directories exist (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_8`](#secure_linux_cisredhat7cis_6_2_8): 6.2.8 Ensure users' home directories permissions are 750 or more restrictive (Scored)
-* [`secure_linux_cis::redhat7::cis_6_2_9`](#secure_linux_cisredhat7cis_6_2_9): 6.2.9 Ensure users own their home directories (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_10`](#secure_linux_cisredhat7cis_1_1_10): 1.1.10 Ensure noexec option set on /var/tmp partition (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_11`](#secure_linux_cisredhat7cis_1_1_11): 1.1.11 Ensure separate partition exists for /var/log (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_12`](#secure_linux_cisredhat7cis_1_1_12): 1.1.12 Ensure separate partition exists for /var/log/audit (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_13`](#secure_linux_cisredhat7cis_1_1_13): 1.1.13 Ensure separate partition exists for /home (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_14`](#secure_linux_cisredhat7cis_1_1_14): 1.1.14 Ensure nodev option set on /home partition (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_15`](#secure_linux_cisredhat7cis_1_1_15): 1.1.15 Ensure nodev option set on /dev/shm partition (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_16`](#secure_linux_cisredhat7cis_1_1_16): 1.1.16 Ensure nosuid option set on /dev/shm partition (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_17`](#secure_linux_cisredhat7cis_1_1_17): 1.1.17 Ensure noexec option set on /dev/shm partition (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_18`](#secure_linux_cisredhat7cis_1_1_18): 1.1.18 Ensure nodev option set on removable media partitions (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_19`](#secure_linux_cisredhat7cis_1_1_19): 1.1.19 Ensure nosuid option set on removable media partitions (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_1_1`](#secure_linux_cisredhat7cis_1_1_1_1): 1.1.1.1 Ensure mounting of cramfs filesystems is disabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_1_2`](#secure_linux_cisredhat7cis_1_1_1_2): 1.1.1.2 Ensure mounting of freevxfs filesystems is disabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_1_3`](#secure_linux_cisredhat7cis_1_1_1_3): 1.1.1.3 Ensure mounting of jffs2 filesystems is disabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_1_4`](#secure_linux_cisredhat7cis_1_1_1_4): 1.1.1.4 Ensure mounting of hfs filesystems is disabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_1_5`](#secure_linux_cisredhat7cis_1_1_1_5): 1.1.1.5 Ensure mounting of hfsplus filesystems is disabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_1_6`](#secure_linux_cisredhat7cis_1_1_1_6): 1.1.1.6 Ensure mounting of squashfs filesystems is disabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_1_7`](#secure_linux_cisredhat7cis_1_1_1_7): 1.1.1.7 Ensure mounting of udf filesystems is disabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_1_8`](#secure_linux_cisredhat7cis_1_1_1_8): 1.1.1.8 Ensure mounting of FAT filesystems is disabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_2`](#secure_linux_cisredhat7cis_1_1_2): 1.1.2 Ensure separate partition exists for /tmp (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_20`](#secure_linux_cisredhat7cis_1_1_20): 1.1.20 Ensure noexec option set on removable media partitions (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_21`](#secure_linux_cisredhat7cis_1_1_21): 1.1.21 Ensure sticky bit is set on all world-writable directories (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_22`](#secure_linux_cisredhat7cis_1_1_22): 1.1.22 Disable Automounting (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_3`](#secure_linux_cisredhat7cis_1_1_3): 1.1.3 Ensure nodev option set on /tmp partition (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_4`](#secure_linux_cisredhat7cis_1_1_4): 1.1.4 Ensure nosuid option set on /tmp partition (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_5`](#secure_linux_cisredhat7cis_1_1_5): 1.1.5 Ensure noexec option set on /tmp partition (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_6`](#secure_linux_cisredhat7cis_1_1_6): 1.1.6 Ensure separate partition exists for /var (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_7`](#secure_linux_cisredhat7cis_1_1_7): 1.1.7 Ensure separate partition exists for /var/tmp (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_8`](#secure_linux_cisredhat7cis_1_1_8): 1.1.8 Ensure nodev option set on /var/tmp partition (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_1_9`](#secure_linux_cisredhat7cis_1_1_9): 1.1.9 Ensure nosuid option set on /var/tmp partition (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_2_1`](#secure_linux_cisredhat7cis_1_2_1): 1.2.1 Ensure package manager repositories are configured (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_2_2`](#secure_linux_cisredhat7cis_1_2_2): 1.2.2 Ensure gpgcheck is globally activated (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_2_3`](#secure_linux_cisredhat7cis_1_2_3): 1.2.3 Ensure GPG keys are configured (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_2_4`](#secure_linux_cisredhat7cis_1_2_4): 1.2.4 Ensure Red Hat Subscription Manager connection is configured (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_2_5`](#secure_linux_cisredhat7cis_1_2_5): 1.2.5 Disable the rhnsd Daemon (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_3_1`](#secure_linux_cisredhat7cis_1_3_1): 1.3.1 Ensure AIDE is installed (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_3_2`](#secure_linux_cisredhat7cis_1_3_2): 1.3.2 Ensure filesystem integrity is regularly checked (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_4_1`](#secure_linux_cisredhat7cis_1_4_1): 1.4.1 Ensure permissions on bootloader config are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_4_2`](#secure_linux_cisredhat7cis_1_4_2): 1.4.2 Ensure bootloader password is set (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_4_3`](#secure_linux_cisredhat7cis_1_4_3): 1.4.3 Ensure authentication required for single user mode (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_5_1`](#secure_linux_cisredhat7cis_1_5_1): 1.5.1 Ensure core dumps are restricted (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_5_2`](#secure_linux_cisredhat7cis_1_5_2): 1.5.2 Ensure XD/NX support is enabled (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_5_3`](#secure_linux_cisredhat7cis_1_5_3): 1.5.3 Ensure address space layout randomization (ASLR) is enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_5_4`](#secure_linux_cisredhat7cis_1_5_4): 1.5.4 Ensure prelink is disabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_6_1_1`](#secure_linux_cisredhat7cis_1_6_1_1): 1.6.1.1 Ensure SELinux is not disabled in bootloader configuration (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_6_1_2`](#secure_linux_cisredhat7cis_1_6_1_2): 1.6.1.2 Ensure the SELinux state is enforcing (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_6_1_3`](#secure_linux_cisredhat7cis_1_6_1_3): 1.6.1.3 Ensure SELinux policy is configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_6_1_4`](#secure_linux_cisredhat7cis_1_6_1_4): 1.6.1.4 Ensure SETroubleshoot is not installed (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_6_1_5`](#secure_linux_cisredhat7cis_1_6_1_5): 1.6.1.5 Ensure the MCS Translation Service (mcstrans) is not installed (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_6_1_6`](#secure_linux_cisredhat7cis_1_6_1_6): 1.6.1.6 Ensure no unconfined daemons exist (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_6_2`](#secure_linux_cisredhat7cis_1_6_2): 1.6.2 Ensure SELinux is installed (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_7_1_1`](#secure_linux_cisredhat7cis_1_7_1_1): 1.7.1.1 Ensure message of the day is configured properly (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_7_1_2`](#secure_linux_cisredhat7cis_1_7_1_2): 1.7.1.2 Ensure local login warning banner is configured properly (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_7_1_3`](#secure_linux_cisredhat7cis_1_7_1_3): 1.7.1.3 Ensure remote login warning banner is configured properly (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_7_1_4`](#secure_linux_cisredhat7cis_1_7_1_4): 1.7.1.4 Ensure permissions on /etc/motd are configured (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_7_1_5`](#secure_linux_cisredhat7cis_1_7_1_5): 1.7.1.5 Ensure permissions on /etc/issue are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_7_1_6`](#secure_linux_cisredhat7cis_1_7_1_6): 1.7.1.6 Ensure permissions on /etc/issue.net are configured (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_7_2`](#secure_linux_cisredhat7cis_1_7_2): 1.7.2 Ensure GDM login banner is configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_1_8`](#secure_linux_cisredhat7cis_1_8): 1.8 Ensure updates, patches, and additional security software are installed (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_1_1`](#secure_linux_cisredhat7cis_2_1_1): 2.1.1 Ensure chargen services are not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_1_2`](#secure_linux_cisredhat7cis_2_1_2): 2.1.2 Ensure daytime services are not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_1_3`](#secure_linux_cisredhat7cis_2_1_3): 2.1.3 Ensure discard services are not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_1_4`](#secure_linux_cisredhat7cis_2_1_4): 2.1.4 Ensure echo services are not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_1_5`](#secure_linux_cisredhat7cis_2_1_5): 2.1.5 Ensure time services are not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_1_6`](#secure_linux_cisredhat7cis_2_1_6): 2.1.6 Ensure tftp server is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_1_7`](#secure_linux_cisredhat7cis_2_1_7): 2.1.7 Ensure xinetd is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_10`](#secure_linux_cisredhat7cis_2_2_10): 2.2.10 Ensure HTTP server is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_11`](#secure_linux_cisredhat7cis_2_2_11): 2.2.11 Ensure IMAP and POP3 server is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_12`](#secure_linux_cisredhat7cis_2_2_12): 2.2.12 Ensure Samba is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_13`](#secure_linux_cisredhat7cis_2_2_13): 2.2.13 Ensure HTTP Proxy Server is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_14`](#secure_linux_cisredhat7cis_2_2_14): 2.2.14 Ensure SNMP Server is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_15`](#secure_linux_cisredhat7cis_2_2_15): 2.2.15 Ensure mail transfer agent is configured for local-only mode (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_16`](#secure_linux_cisredhat7cis_2_2_16): 2.2.16 Ensure NIS Server is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_17`](#secure_linux_cisredhat7cis_2_2_17): 2.2.17 Ensure rsh server is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_18`](#secure_linux_cisredhat7cis_2_2_18): 2.2.18 Ensure talk server is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_19`](#secure_linux_cisredhat7cis_2_2_19): 2.2.19 Ensure telnet server is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_1_1`](#secure_linux_cisredhat7cis_2_2_1_1): 2.2.1.1 Ensure time synchronization is in use (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_1_2`](#secure_linux_cisredhat7cis_2_2_1_2): 2.2.1.2 Ensure ntp is configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_1_3`](#secure_linux_cisredhat7cis_2_2_1_3): 2.2.1.3 Ensure chrony is configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_2`](#secure_linux_cisredhat7cis_2_2_2): 2.2.2 Ensure X Window System is not installed (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_20`](#secure_linux_cisredhat7cis_2_2_20): 2.2.20 Ensure tftp server is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_21`](#secure_linux_cisredhat7cis_2_2_21): 2.2.21 Ensure rsync service is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_3`](#secure_linux_cisredhat7cis_2_2_3): 2.2.3 Ensure Avahi Server is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_4`](#secure_linux_cisredhat7cis_2_2_4): 2.2.4 Ensure CUPS is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_5`](#secure_linux_cisredhat7cis_2_2_5): 2.2.5 Ensure DHCP Server is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_6`](#secure_linux_cisredhat7cis_2_2_6): 2.2.6 Ensure LDAP server is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_7`](#secure_linux_cisredhat7cis_2_2_7): 2.2.7 Ensure NFS and RPC are not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_8`](#secure_linux_cisredhat7cis_2_2_8): 2.2.8 Ensure DNS Server is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_2_9`](#secure_linux_cisredhat7cis_2_2_9): 2.2.9 Ensure FTP Server is not enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_3_1`](#secure_linux_cisredhat7cis_2_3_1): 2.3.1 Ensure NIS Client is not installed (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_3_2`](#secure_linux_cisredhat7cis_2_3_2): 2.3.2 Ensure rsh client is not installed (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_3_3`](#secure_linux_cisredhat7cis_2_3_3): 2.3.3 Ensure talk client is not installed (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_3_4`](#secure_linux_cisredhat7cis_2_3_4): 2.3.4 Ensure telnet client is not installed (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_2_3_5`](#secure_linux_cisredhat7cis_2_3_5): 2.3.5 Ensure LDAP client is not installed (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_1_1`](#secure_linux_cisredhat7cis_3_1_1): 3.1.1 Ensure IP forwarding is disabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_1_2`](#secure_linux_cisredhat7cis_3_1_2): 3.1.2 Ensure packet redirect sending is disabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_2_1`](#secure_linux_cisredhat7cis_3_2_1): 3.2.1 Ensure source routed packets are not accepted (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_2_2`](#secure_linux_cisredhat7cis_3_2_2): 3.2.2 Ensure ICMP redirects are not accepted (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_2_3`](#secure_linux_cisredhat7cis_3_2_3): 3.2.3 Ensure secure ICMP redirects are not accepted (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_2_4`](#secure_linux_cisredhat7cis_3_2_4): 3.2.4 Ensure suspicious packets are logged (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_2_5`](#secure_linux_cisredhat7cis_3_2_5): 3.2.5 Ensure broadcast ICMP requests are ignored (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_2_6`](#secure_linux_cisredhat7cis_3_2_6): 3.2.6 Ensure bogus ICMP responses are ignored (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_2_7`](#secure_linux_cisredhat7cis_3_2_7): 3.2.7 Ensure Reverse Path Filtering is enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_2_8`](#secure_linux_cisredhat7cis_3_2_8): 3.2.8 Ensure TCP SYN Cookies is enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_3_1`](#secure_linux_cisredhat7cis_3_3_1): 3.3.1 Ensure IPv6 router advertisements are not accepted (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_3_2`](#secure_linux_cisredhat7cis_3_3_2): 3.3.2 Ensure IPv6 redirects are not accepted (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_3_3`](#secure_linux_cisredhat7cis_3_3_3): 3.3.3 Ensure IPv6 is disabled (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_4_1`](#secure_linux_cisredhat7cis_3_4_1): 3.4.1 Ensure TCP Wrappers is installed (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_4_2`](#secure_linux_cisredhat7cis_3_4_2): 3.4.2 Ensure /etc/hosts.allow is configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_4_3`](#secure_linux_cisredhat7cis_3_4_3): 3.4.3 Ensure /etc/hosts.deny is configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_4_4`](#secure_linux_cisredhat7cis_3_4_4): A short summary of the purpose of this class
+* [`secure_linux_cis::distribution::redhat7::cis_3_4_5`](#secure_linux_cisredhat7cis_3_4_5): A short summary of the purpose of this class
+* [`secure_linux_cis::distribution::redhat7::cis_3_5_1`](#secure_linux_cisredhat7cis_3_5_1): 3.5.1 Ensure DCCP is disabled (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_5_2`](#secure_linux_cisredhat7cis_3_5_2): 3.5.2 Ensure SCTP is disabled (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_5_3`](#secure_linux_cisredhat7cis_3_5_3): 3.5.3 Ensure RDS is disabled (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_5_4`](#secure_linux_cisredhat7cis_3_5_4): 3.5.4 Ensure TIPC is disabled (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_6_1`](#secure_linux_cisredhat7cis_3_6_1): 3.6.1 Ensure iptables is installed (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_6_2`](#secure_linux_cisredhat7cis_3_6_2): 3.6.2 Ensure default deny firewall policy (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_6_3`](#secure_linux_cisredhat7cis_3_6_3): 3.6.3 Ensure loopback traffic is configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_6_4`](#secure_linux_cisredhat7cis_3_6_4): 3.6.4 Ensure outbound and established connections are configured (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_6_5`](#secure_linux_cisredhat7cis_3_6_5): 3.6.5 Ensure firewall rules exist for all open ports (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_3_7`](#secure_linux_cisredhat7cis_3_7): 3.7 Ensure wireless interfaces are disabled (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_10`](#secure_linux_cisredhat7cis_4_1_10): 4.1.10 Ensure discretionary access control permission modification events are collected (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_11`](#secure_linux_cisredhat7cis_4_1_11): 4.1.11 Ensure unsuccessful unauthorized file access attempts are collected (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_12`](#secure_linux_cisredhat7cis_4_1_12): A short summary of the purpose of this class
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_13`](#secure_linux_cisredhat7cis_4_1_13): 4.1.13 Ensure successful file system mounts are collected (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_14`](#secure_linux_cisredhat7cis_4_1_14): 4.1.14 Ensure file deletion events by users are collected (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_15`](#secure_linux_cisredhat7cis_4_1_15): 4.1.15 Ensure changes to system administration scope (sudoers) is collected (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_16`](#secure_linux_cisredhat7cis_4_1_16): 4.1.16 Ensure system administrator actions (sudolog) are collected (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_17`](#secure_linux_cisredhat7cis_4_1_17): 4.1.17 Ensure kernel module loading and unloading is collected (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_18`](#secure_linux_cisredhat7cis_4_1_18): 4.1.18 Ensure the audit configuration is immutable (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_1_1`](#secure_linux_cisredhat7cis_4_1_1_1): 4.1.1.1 Ensure audit log storage size is configured (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_1_2`](#secure_linux_cisredhat7cis_4_1_1_2): 4.1.1.2 Ensure system is disabled when audit logs are full (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_1_3`](#secure_linux_cisredhat7cis_4_1_1_3): 4.1.1.3 Ensure audit logs are not automatically deleted (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_2`](#secure_linux_cisredhat7cis_4_1_2): 4.1.2 Ensure auditd service is enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_3`](#secure_linux_cisredhat7cis_4_1_3): A short summary of the purpose of this class
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_4`](#secure_linux_cisredhat7cis_4_1_4): 4.1.4 Ensure events that modify date and time information are collected (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_5`](#secure_linux_cisredhat7cis_4_1_5): 4.1.5 Ensure events that modify user/group information are collected (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_6`](#secure_linux_cisredhat7cis_4_1_6): 4.1.6 Ensure events that modify the system's network environment are collected (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_7`](#secure_linux_cisredhat7cis_4_1_7): 4.1.7 Ensure events that modify the system's Mandatory Access Controls are collected (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_8`](#secure_linux_cisredhat7cis_4_1_8): 4.1.8 Ensure login and logout events are collected (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_1_9`](#secure_linux_cisredhat7cis_4_1_9): 4.1.9 Ensure session initiation information is collected (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_2_1_1`](#secure_linux_cisredhat7cis_4_2_1_1): 4.2.1.1 Ensure rsyslog Service is enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_2_1_2`](#secure_linux_cisredhat7cis_4_2_1_2): 4.2.1.2 Ensure logging is configured (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_2_1_3`](#secure_linux_cisredhat7cis_4_2_1_3): 4.2.1.3 Ensure rsyslog default file permissions configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_2_1_4`](#secure_linux_cisredhat7cis_4_2_1_4): 4.2.1.4 Ensure rsyslog is configured to send logs to a remote log host (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_2_1_5`](#secure_linux_cisredhat7cis_4_2_1_5): A short summary of the purpose of this class
+* [`secure_linux_cis::distribution::redhat7::cis_4_2_2_1`](#secure_linux_cisredhat7cis_4_2_2_1): 4.2.2.1 Ensure syslog-ng service is enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_2_2_2`](#secure_linux_cisredhat7cis_4_2_2_2): 4.2.2.2 Ensure logging is configured (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_2_2_3`](#secure_linux_cisredhat7cis_4_2_2_3): 4.2.2.3 Ensure syslog-ng default file permissions configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_2_2_4`](#secure_linux_cisredhat7cis_4_2_2_4): 4.2.2.4 Ensure syslog-ng is configured to send logs to a remote log host (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_2_2_5`](#secure_linux_cisredhat7cis_4_2_2_5): 4.2.2.5 Ensure remote syslog-ng messages are only accepted on designated log hosts (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_2_3`](#secure_linux_cisredhat7cis_4_2_3): 4.2.3 Ensure rsyslog or syslog-ng is installed (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_4_2_4`](#secure_linux_cisredhat7cis_4_2_4): A short summary of the purpose of this class
+* [`secure_linux_cis::distribution::redhat7::cis_4_3`](#secure_linux_cisredhat7cis_4_3): 4.3 Ensure logrotate is configured (Not Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_1_1`](#secure_linux_cisredhat7cis_5_1_1): 5.1.1 Ensure cron daemon is enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_1_2`](#secure_linux_cisredhat7cis_5_1_2): 5.1.2 Ensure permissions on /etc/crontab are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_1_3`](#secure_linux_cisredhat7cis_5_1_3): 5.1.3 Ensure permissions on /etc/cron.hourly are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_1_4`](#secure_linux_cisredhat7cis_5_1_4): 5.1.4 Ensure permissions on /etc/cron.daily are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_1_5`](#secure_linux_cisredhat7cis_5_1_5): 5.1.5 Ensure permissions on /etc/cron.weekly are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_1_6`](#secure_linux_cisredhat7cis_5_1_6): 5.1.6 Ensure permissions on /etc/cron.monthly are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_1_7`](#secure_linux_cisredhat7cis_5_1_7): 5.1.7 Ensure permissions on /etc/cron.d are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_1_8`](#secure_linux_cisredhat7cis_5_1_8): 5.1.8 Ensure at/cron is restricted to authorized users (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_2_1`](#secure_linux_cisredhat7cis_5_2_1): 5.2.1 Ensure permissions on /etc/ssh/sshd_config are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_2_10`](#secure_linux_cisredhat7cis_5_2_10): 5.2.10 Ensure SSH PermitUserEnvironment is disabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_2_11`](#secure_linux_cisredhat7cis_5_2_11): A short summary of the purpose of this class
+* [`secure_linux_cis::distribution::redhat7::cis_5_2_12`](#secure_linux_cisredhat7cis_5_2_12): 5.2.12 Ensure SSH Idle Timeout Interval is configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_2_13`](#secure_linux_cisredhat7cis_5_2_13): 5.2.13 Ensure SSH LoginGraceTime is set to one minute or less (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_2_14`](#secure_linux_cisredhat7cis_5_2_14): 5.2.14 Ensure SSH access is limited (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_2_15`](#secure_linux_cisredhat7cis_5_2_15): 5.2.15 Ensure SSH warning banner is configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_2_2`](#secure_linux_cisredhat7cis_5_2_2): 5.2.2 Ensure SSH Protocol is set to 2 (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_2_3`](#secure_linux_cisredhat7cis_5_2_3): 5.2.3 Ensure SSH LogLevel is set to INFO (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_2_4`](#secure_linux_cisredhat7cis_5_2_4): 5.2.4 Ensure SSH X11 forwarding is disabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_2_5`](#secure_linux_cisredhat7cis_5_2_5): 5.2.5 Ensure SSH MaxAuthTries is set to 4 or less (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_2_6`](#secure_linux_cisredhat7cis_5_2_6): 5.2.6 Ensure SSH IgnoreRhosts is enabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_2_7`](#secure_linux_cisredhat7cis_5_2_7): 5.2.7 Ensure SSH HostbasedAuthentication is disabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_2_8`](#secure_linux_cisredhat7cis_5_2_8): 5.2.8 Ensure SSH root login is disabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_2_9`](#secure_linux_cisredhat7cis_5_2_9): 5.2.9 Ensure SSH PermitEmptyPasswords is disabled (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_3_1`](#secure_linux_cisredhat7cis_5_3_1): 5.3.1 Ensure password creation requirements are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_3_2`](#secure_linux_cisredhat7cis_5_3_2): 5.3.2 Ensure lockout for failed password attempts is configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_3_3`](#secure_linux_cisredhat7cis_5_3_3): 5.3.3 Ensure password reuse is limited (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_3_4`](#secure_linux_cisredhat7cis_5_3_4): A short summary of the purpose of this class
+* [`secure_linux_cis::distribution::redhat7::cis_5_4_1_1`](#secure_linux_cisredhat7cis_5_4_1_1): 5.4.1.1 Ensure password expiration is 365 days or less (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_4_1_2`](#secure_linux_cisredhat7cis_5_4_1_2): 5.4.1.2 Ensure minimum days between password changes is 7 or more (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_4_1_3`](#secure_linux_cisredhat7cis_5_4_1_3): 5.4.1.3 Ensure password expiration warning days is 7 or more (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_4_1_4`](#secure_linux_cisredhat7cis_5_4_1_4): 5.4.1.4 Ensure inactive password lock is 30 days or less (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_4_1_5`](#secure_linux_cisredhat7cis_5_4_1_5): 5.4.1.5 Ensure all users last password change date is in the past (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_4_2`](#secure_linux_cisredhat7cis_5_4_2): 5.4.2 Ensure system accounts are non-login (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_4_3`](#secure_linux_cisredhat7cis_5_4_3): 5.4.3 Ensure default group for the root account is GID 0 (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_4_4`](#secure_linux_cisredhat7cis_5_4_4): 5.4.4 Ensure default user umask is 027 or more restrictive (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_5_4_5`](#secure_linux_cisredhat7cis_5_4_5): The TMOUT parameter has been added in 5_4_4
+* [`secure_linux_cis::distribution::redhat7::cis_5_6`](#secure_linux_cisredhat7cis_5_6): 5.6 Ensure access to the su command is restricted (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_1_10`](#secure_linux_cisredhat7cis_6_1_10): 6.1.10 Ensure no world writable files exist (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_1_11`](#secure_linux_cisredhat7cis_6_1_11): 6.1.11 Ensure no unowned files or directories exist (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_1_12`](#secure_linux_cisredhat7cis_6_1_12): 6.1.12 Ensure no ungrouped files or directories exist (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_1_2`](#secure_linux_cisredhat7cis_6_1_2): 6.1.2 Ensure permissions on /etc/passwd are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_1_3`](#secure_linux_cisredhat7cis_6_1_3): 6.1.3 Ensure permissions on /etc/shadow are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_1_4`](#secure_linux_cisredhat7cis_6_1_4): 6.1.4 Ensure permissions on /etc/group are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_1_5`](#secure_linux_cisredhat7cis_6_1_5): 6.1.5 Ensure permissions on /etc/gshadow are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_1_6`](#secure_linux_cisredhat7cis_6_1_6): 6.1.6 Ensure permissions on /etc/passwd- are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_1_7`](#secure_linux_cisredhat7cis_6_1_7): 6.1.7 Ensure permissions on /etc/shadow- are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_1_8`](#secure_linux_cisredhat7cis_6_1_8): 6.1.8 Ensure permissions on /etc/group- are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_1_9`](#secure_linux_cisredhat7cis_6_1_9): 6.1.9 Ensure permissions on /etc/gshadow- are configured (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_1`](#secure_linux_cisredhat7cis_6_2_1): 6.2.1 Ensure password fields are not empty (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_10`](#secure_linux_cisredhat7cis_6_2_10): 6.2.10 Ensure users' dot files are not group or world writable (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_11`](#secure_linux_cisredhat7cis_6_2_11): 6.2.11 Ensure no users have .forward files (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_12`](#secure_linux_cisredhat7cis_6_2_12): 6.2.12 Ensure no users have .netrc files (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_13`](#secure_linux_cisredhat7cis_6_2_13): 6.2.13 Ensure users' .netrc Files are not group or world accessible
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_14`](#secure_linux_cisredhat7cis_6_2_14): 6.2.14 Ensure no users have .rhosts files (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_15`](#secure_linux_cisredhat7cis_6_2_15): 6.2.15 Ensure all groups in /etc/passwd exist in /etc/group (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_16`](#secure_linux_cisredhat7cis_6_2_16): 6.2.16 Ensure no duplicate UIDs exist (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_17`](#secure_linux_cisredhat7cis_6_2_17): 6.2.17 Ensure no duplicate GIDs exist (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_18`](#secure_linux_cisredhat7cis_6_2_18): 6.2.18 Ensure no duplicate user names exist (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_19`](#secure_linux_cisredhat7cis_6_2_19): 6.2.19 Ensure no duplicate group names exist (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_2`](#secure_linux_cisredhat7cis_6_2_2): 6.2.2 Ensure no legacy "+" entries exist in /etc/passwd (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_3`](#secure_linux_cisredhat7cis_6_2_3): 6.2.3 Ensure no legacy "+" entries exist in /etc/shadow (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_4`](#secure_linux_cisredhat7cis_6_2_4): 6.2.4 Ensure no legacy "+" entries exist in /etc/group (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_5`](#secure_linux_cisredhat7cis_6_2_5): 6.2.5 Ensure root is the only UID 0 account (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_6`](#secure_linux_cisredhat7cis_6_2_6): 6.2.6 Ensure root PATH Integrity (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_7`](#secure_linux_cisredhat7cis_6_2_7): 6.2.7 Ensure all users' home directories exist (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_8`](#secure_linux_cisredhat7cis_6_2_8): 6.2.8 Ensure users' home directories permissions are 750 or more restrictive (Scored)
+* [`secure_linux_cis::distribution::redhat7::cis_6_2_9`](#secure_linux_cisredhat7cis_6_2_9): 6.2.9 Ensure users own their home directories (Scored)
 
 **Defined types**
 
@@ -478,7 +478,7 @@ List of acceptable software repos
 
 Default value: ['updates/7/x86_64','rhel-7-server-rpms/7Server/x86_64']
 
-### secure_linux_cis::centos7
+### secure_linux_cis::distribution::centos7
 
 This is a wrapper class that declares the CIS controls for CentOS Linux 7
 
@@ -499,7 +499,7 @@ include secure_linux_cis::redhat7
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::centos7` class.
+The following parameters are available in the `secure_linux_cis::distribution::centos7` class.
 
 ##### `time_servers`
 
@@ -750,7 +750,7 @@ Restart when defined classes make changes that require a reboot to take effect
 
 Default value: `false`
 
-### secure_linux_cis::centos7::cis_6_1_10
+### secure_linux_cis::distribution::centos7::cis_6_1_10
 
 6.1.10 Ensure no world writable files exist (Scored)
 
@@ -763,12 +763,12 @@ man page for more information.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_1_10
+include secure_linux_cis::distribution::redhat7::cis_6_1_10
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::centos7::cis_6_1_10` class.
+The following parameters are available in the `secure_linux_cis::distribution::centos7::cis_6_1_10` class.
 
 ##### `enforced`
 
@@ -1056,7 +1056,7 @@ Restart when defined classes make changes that require a reboot to take effect
 
 Default value: `false`
 
-### secure_linux_cis::redhat7::cis_1_1_10
+### secure_linux_cis::distribution::redhat7::cis_1_1_10
 
 1.1.10 Ensure noexec option set on /var/tmp partition (Scored)
 
@@ -1069,12 +1069,12 @@ The noexec mount option specifies that the filesystem cannot contain executable 
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_10
+include secure_linux_cis::distribution::redhat7::cis_1_1_10
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_10` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_10` class.
 
 ##### `enforced`
 
@@ -1084,7 +1084,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_11
+### secure_linux_cis::distribution::redhat7::cis_1_1_11
 
 1.1.11 Ensure separate partition exists for /var/log (Scored)
 
@@ -1097,12 +1097,12 @@ The /var/log directory is used by system services to store log data
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_11
+include secure_linux_cis::distribution::redhat7::cis_1_1_11
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_11` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_11` class.
 
 ##### `enforced`
 
@@ -1112,7 +1112,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_12
+### secure_linux_cis::distribution::redhat7::cis_1_1_12
 
 1.1.12 Ensure separate partition exists for /var/log/audit (Scored)
 
@@ -1124,12 +1124,12 @@ The auditing daemon, auditd , stores log data in the /var/log/audit directory.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_12
+include secure_linux_cis::distribution::redhat7::cis_1_1_12
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_12` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_12` class.
 
 ##### `enforced`
 
@@ -1139,7 +1139,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_13
+### secure_linux_cis::distribution::redhat7::cis_1_1_13
 
 1.1.13 Ensure separate partition exists for /home (Scored)
 
@@ -1152,12 +1152,12 @@ The /home directory is used to support disk storage needs of local users.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_13
+include secure_linux_cis::distribution::redhat7::cis_1_1_13
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_13` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_13` class.
 
 ##### `enforced`
 
@@ -1167,7 +1167,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_14
+### secure_linux_cis::distribution::redhat7::cis_1_1_14
 
 1.1.14 Ensure nodev option set on /home partition (Scored)
 
@@ -1180,12 +1180,12 @@ The nodev mount option specifies that the filesystem cannot contain special devi
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_14
+include secure_linux_cis::distribution::redhat7::cis_1_1_14
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_14` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_14` class.
 
 ##### `enforced`
 
@@ -1195,7 +1195,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_15
+### secure_linux_cis::distribution::redhat7::cis_1_1_15
 
 1.1.15 Ensure nodev option set on /dev/shm partition (Scored)
 
@@ -1208,12 +1208,12 @@ The nodev mount option specifies that the filesystem cannot contain special devi
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_15
+include secure_linux_cis::distribution::redhat7::cis_1_1_15
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_15` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_15` class.
 
 ##### `enforced`
 
@@ -1223,7 +1223,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_16
+### secure_linux_cis::distribution::redhat7::cis_1_1_16
 
 1.1.16 Ensure nosuid option set on /dev/shm partition (Scored)
 
@@ -1236,12 +1236,12 @@ The nosuid mount option specifies that the filesystem cannot contain setuid file
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_16
+include secure_linux_cis::distribution::redhat7::cis_1_1_16
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_16` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_16` class.
 
 ##### `enforced`
 
@@ -1251,7 +1251,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_17
+### secure_linux_cis::distribution::redhat7::cis_1_1_17
 
 1.1.17 Ensure noexec option set on /dev/shm partition (Scored)
 
@@ -1264,12 +1264,12 @@ The noexec mount option specifies that the filesystem cannot contain executable 
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_17
+include secure_linux_cis::distribution::redhat7::cis_1_1_17
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_17` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_17` class.
 
 ##### `enforced`
 
@@ -1279,7 +1279,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_18
+### secure_linux_cis::distribution::redhat7::cis_1_1_18
 
 1.1.18 Ensure nodev option set on removable media partitions (Not Scored)
 
@@ -1292,12 +1292,12 @@ The nodev mount option specifies that the filesystem cannot contain special devi
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_18
+include secure_linux_cis::distribution::redhat7::cis_1_1_18
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_18` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_18` class.
 
 ##### `enforced`
 
@@ -1307,7 +1307,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_19
+### secure_linux_cis::distribution::redhat7::cis_1_1_19
 
 1.1.19 Ensure nosuid option set on removable media partitions (Not Scored)
 
@@ -1320,12 +1320,12 @@ The nosuid mount option specifies that the filesystem cannot contain setuid file
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_19
+include secure_linux_cis::distribution::redhat7::cis_1_1_19
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_19` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_19` class.
 
 ##### `enforced`
 
@@ -1335,7 +1335,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_1_1
+### secure_linux_cis::distribution::redhat7::cis_1_1_1_1
 
 1.1.1.1 Ensure mounting of cramfs filesystems is disabled (Scored)
 
@@ -1352,12 +1352,12 @@ If this filesystem type is not needed, disable it.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_1_1
+include secure_linux_cis::distribution::redhat7::cis_1_1_1_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_1_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_1_1` class.
 
 ##### `enforced`
 
@@ -1367,7 +1367,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_1_2
+### secure_linux_cis::distribution::redhat7::cis_1_1_1_2
 
 1.1.1.2 Ensure mounting of freevxfs filesystems is disabled (Scored)
 
@@ -1384,12 +1384,12 @@ If this filesystem type is not needed, disable it.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_1_2
+include secure_linux_cis::distribution::redhat7::cis_1_1_1_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_1_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_1_2` class.
 
 ##### `enforced`
 
@@ -1399,7 +1399,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_1_3
+### secure_linux_cis::distribution::redhat7::cis_1_1_1_3
 
 1.1.1.3 Ensure mounting of jffs2 filesystems is disabled (Scored)
 
@@ -1415,12 +1415,12 @@ If this filesystem type is not needed, disable it.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_1_3
+include secure_linux_cis::distribution::redhat7::cis_1_1_1_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_1_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_1_3` class.
 
 ##### `enforced`
 
@@ -1430,7 +1430,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_1_4
+### secure_linux_cis::distribution::redhat7::cis_1_1_1_4
 
 1.1.1.4 Ensure mounting of hfs filesystems is disabled (Scored)
 
@@ -1446,12 +1446,12 @@ If this filesystem type is not needed, disable it.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_1_4
+include secure_linux_cis::distribution::redhat7::cis_1_1_1_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_1_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_1_4` class.
 
 ##### `enforced`
 
@@ -1461,7 +1461,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_1_5
+### secure_linux_cis::distribution::redhat7::cis_1_1_1_5
 
 1.1.1.5 Ensure mounting of hfsplus filesystems is disabled (Scored)
 
@@ -1477,12 +1477,12 @@ If this filesystem type is not needed, disable it.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_1_5
+include secure_linux_cis::distribution::redhat7::cis_1_1_1_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_1_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_1_5` class.
 
 ##### `enforced`
 
@@ -1492,7 +1492,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_1_6
+### secure_linux_cis::distribution::redhat7::cis_1_1_1_6
 
 1.1.1.6 Ensure mounting of squashfs filesystems is disabled (Scored)
 
@@ -1509,12 +1509,12 @@ If this filesystem type is not needed, disable it.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_1_6
+include secure_linux_cis::distribution::redhat7::cis_1_1_1_6
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_1_6` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_1_6` class.
 
 ##### `enforced`
 
@@ -1524,7 +1524,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_1_7
+### secure_linux_cis::distribution::redhat7::cis_1_1_1_7
 
 1.1.1.7 Ensure mounting of udf filesystems is disabled (Scored)
 
@@ -1542,12 +1542,12 @@ If this filesystem type is not needed, disable it.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_1_7
+include secure_linux_cis::distribution::redhat7::cis_1_1_1_7
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_1_7` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_1_7` class.
 
 ##### `enforced`
 
@@ -1557,7 +1557,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_1_8
+### secure_linux_cis::distribution::redhat7::cis_1_1_1_8
 
 1.1.1.8 Ensure mounting of FAT filesystems is disabled (Scored)
 
@@ -1574,12 +1574,12 @@ If this filesystem type is not needed, disable it.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_1_8
+include secure_linux_cis::distribution::redhat7::cis_1_1_1_8
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_1_8` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_1_8` class.
 
 ##### `enforced`
 
@@ -1589,7 +1589,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_2
+### secure_linux_cis::distribution::redhat7::cis_1_1_2
 
 1.1.2 Ensure separate partition exists for /tmp (Scored)
 
@@ -1602,12 +1602,12 @@ The /tmp directory is a world-writable directory used for temporary storage by a
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_2
+include secure_linux_cis::distribution::redhat7::cis_1_1_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_2` class.
 
 ##### `enforced`
 
@@ -1617,7 +1617,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_20
+### secure_linux_cis::distribution::redhat7::cis_1_1_20
 
 1.1.20 Ensure noexec option set on removable media partitions (Not Scored)
 
@@ -1630,12 +1630,12 @@ The noexec mount option specifies that the filesystem cannot contain executable 
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_20
+include secure_linux_cis::distribution::redhat7::cis_1_1_20
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_20` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_20` class.
 
 ##### `enforced`
 
@@ -1645,7 +1645,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_21
+### secure_linux_cis::distribution::redhat7::cis_1_1_21
 
 1.1.21 Ensure sticky bit is set on all world-writable directories (Scored)
 
@@ -1659,12 +1659,12 @@ that are not owned by them.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_21
+include secure_linux_cis::distribution::redhat7::cis_1_1_21
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_21` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_21` class.
 
 ##### `enforced`
 
@@ -1674,7 +1674,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_22
+### secure_linux_cis::distribution::redhat7::cis_1_1_22
 
 1.1.22 Disable Automounting (Scored)
 
@@ -1687,12 +1687,12 @@ autofs allows automatic mounting of devices, typically including CD/DVDs and USB
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_22
+include secure_linux_cis::distribution::redhat7::cis_1_1_22
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_22` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_22` class.
 
 ##### `enforced`
 
@@ -1702,7 +1702,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_3
+### secure_linux_cis::distribution::redhat7::cis_1_1_3
 
 1.1.3 Ensure nodev option set on /tmp partition (Scored)
 
@@ -1715,12 +1715,12 @@ The nodev mount option specifies that the filesystem cannot contain special devi
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_3
+include secure_linux_cis::distribution::redhat7::cis_1_1_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_3` class.
 
 ##### `enforced`
 
@@ -1730,7 +1730,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_4
+### secure_linux_cis::distribution::redhat7::cis_1_1_4
 
 1.1.4 Ensure nosuid option set on /tmp partition (Scored)
 
@@ -1743,12 +1743,12 @@ The nosuid mount option specifies that the filesystem cannot contain setuid file
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_4
+include secure_linux_cis::distribution::redhat7::cis_1_1_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_4` class.
 
 ##### `enforced`
 
@@ -1758,7 +1758,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_5
+### secure_linux_cis::distribution::redhat7::cis_1_1_5
 
 1.1.5 Ensure noexec option set on /tmp partition (Scored)
 
@@ -1771,12 +1771,12 @@ The noexec mount option specifies that the filesystem cannot contain executable 
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_5
+include secure_linux_cis::distribution::redhat7::cis_1_1_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_5` class.
 
 ##### `enforced`
 
@@ -1786,7 +1786,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_6
+### secure_linux_cis::distribution::redhat7::cis_1_1_6
 
 1.1.6 Ensure separate partition exists for /var (Scored)
 
@@ -1800,12 +1800,12 @@ these processes may be world-writable.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_6
+include secure_linux_cis::distribution::redhat7::cis_1_1_6
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_6` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_6` class.
 
 ##### `enforced`
 
@@ -1815,7 +1815,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_7
+### secure_linux_cis::distribution::redhat7::cis_1_1_7
 
 1.1.7 Ensure separate partition exists for /var/tmp (Scored)
 
@@ -1828,12 +1828,12 @@ The /var/tmp directory is a world-writable directory used for temporary storage 
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_7
+include secure_linux_cis::distribution::redhat7::cis_1_1_7
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_7` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_7` class.
 
 ##### `enforced`
 
@@ -1843,7 +1843,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_8
+### secure_linux_cis::distribution::redhat7::cis_1_1_8
 
 1.1.8 Ensure nodev option set on /var/tmp partition (Scored)
 
@@ -1856,12 +1856,12 @@ The nodev mount option specifies that the filesystem cannot contain special devi
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_8
+include secure_linux_cis::distribution::redhat7::cis_1_1_8
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_8` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_8` class.
 
 ##### `enforced`
 
@@ -1871,7 +1871,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_1_9
+### secure_linux_cis::distribution::redhat7::cis_1_1_9
 
 1.1.9 Ensure nosuid option set on /var/tmp partition (Scored)
 
@@ -1884,12 +1884,12 @@ The nosuid mount option specifies that the filesystem cannot contain setuid file
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_1_9
+include secure_linux_cis::distribution::redhat7::cis_1_1_9
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_1_9` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_1_9` class.
 
 ##### `enforced`
 
@@ -1899,7 +1899,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_2_1
+### secure_linux_cis::distribution::redhat7::cis_1_2_1
 
 1.2.1 Ensure package manager repositories are configured (Not Scored)
 
@@ -1912,12 +1912,12 @@ Systems need to have package manager repositories configured to ensure they rece
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_2_1
+include secure_linux_cis::distribution::redhat7::cis_1_2_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_2_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_2_1` class.
 
 ##### `enforced`
 
@@ -1927,7 +1927,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_2_2
+### secure_linux_cis::distribution::redhat7::cis_1_2_2
 
 1.2.2 Ensure gpgcheck is globally activated (Scored)
 
@@ -1940,12 +1940,12 @@ Most packages managers implement GPG key signing to verify package integrity dur
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_2_2
+include secure_linux_cis::distribution::redhat7::cis_1_2_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_2_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_2_2` class.
 
 ##### `enforced`
 
@@ -1955,7 +1955,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_2_3
+### secure_linux_cis::distribution::redhat7::cis_1_2_3
 
 1.2.3 Ensure GPG keys are configured (Not Scored)
 
@@ -1969,12 +1969,12 @@ files determines if an RPM package's signature is checked prior to its installat
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_2_3
+include secure_linux_cis::distribution::redhat7::cis_1_2_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_2_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_2_3` class.
 
 ##### `enforced`
 
@@ -1984,7 +1984,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_2_4
+### secure_linux_cis::distribution::redhat7::cis_1_2_4
 
 1.2.4 Ensure Red Hat Subscription Manager connection is configured (Not Scored)
 
@@ -1998,12 +1998,12 @@ Systems need to be registered with the Red Hat Subscription Manager
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_2_4
+include secure_linux_cis::distribution::redhat7::cis_1_2_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_2_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_2_4` class.
 
 ##### `enforced`
 
@@ -2013,7 +2013,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_2_5
+### secure_linux_cis::distribution::redhat7::cis_1_2_5
 
 1.2.5 Disable the rhnsd Daemon (Not Scored)
 
@@ -2026,12 +2026,12 @@ The rhnsd daemon polls the Red Hat Network web site for scheduled actions and, i
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_2_5
+include secure_linux_cis::distribution::redhat7::cis_1_2_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_2_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_2_5` class.
 
 ##### `enforced`
 
@@ -2041,7 +2041,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_3_1
+### secure_linux_cis::distribution::redhat7::cis_1_3_1
 
 1.3.1 Ensure AIDE is installed (Scored)
 
@@ -2055,12 +2055,12 @@ used to compare against the current state of the filesystem to detect modificati
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_3_1
+include secure_linux_cis::distribution::redhat7::cis_1_3_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_3_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_3_1` class.
 
 ##### `enforced`
 
@@ -2070,7 +2070,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_3_2
+### secure_linux_cis::distribution::redhat7::cis_1_3_2
 
 1.3.2 Ensure filesystem integrity is regularly checked (Scored)
 
@@ -2083,12 +2083,12 @@ Periodic checking of the filesystem integrity is needed to detect changes to the
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_3_2
+include secure_linux_cis::distribution::redhat7::cis_1_3_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_3_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_3_2` class.
 
 ##### `enforced`
 
@@ -2098,7 +2098,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_4_1
+### secure_linux_cis::distribution::redhat7::cis_1_4_1
 
 1.4.1 Ensure permissions on bootloader config are configured (Scored)
 
@@ -2113,12 +2113,12 @@ The grub configuration is usually located at /boot/grub2/grub.cfg and linked as 
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_4_1
+include secure_linux_cis::distribution::redhat7::cis_1_4_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_4_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_4_1` class.
 
 ##### `enforced`
 
@@ -2128,7 +2128,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_4_2
+### secure_linux_cis::distribution::redhat7::cis_1_4_2
 
 1.4.2 Ensure bootloader password is set (Scored)
 
@@ -2142,12 +2142,12 @@ before being able to set command line boot parameters
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_4_2
+include secure_linux_cis::distribution::redhat7::cis_1_4_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_4_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_4_2` class.
 
 ##### `enforced`
 
@@ -2157,7 +2157,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_4_3
+### secure_linux_cis::distribution::redhat7::cis_1_4_3
 
 1.4.3 Ensure authentication required for single user mode (Scored)
 
@@ -2171,12 +2171,12 @@ manual selection from the bootloader.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_4_3
+include secure_linux_cis::distribution::redhat7::cis_1_4_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_4_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_4_3` class.
 
 ##### `enforced`
 
@@ -2186,7 +2186,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_5_1
+### secure_linux_cis::distribution::redhat7::cis_1_5_1
 
 1.5.1 Ensure core dumps are restricted (Scored)
 
@@ -2201,12 +2201,12 @@ but this can be overridden by the user.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_5_1
+include secure_linux_cis::distribution::redhat7::cis_1_5_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_5_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_5_1` class.
 
 ##### `enforced`
 
@@ -2216,7 +2216,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_5_2
+### secure_linux_cis::distribution::redhat7::cis_1_5_2
 
 1.5.2 Ensure XD/NX support is enabled (Not Scored)
 
@@ -2233,12 +2233,12 @@ as # Itanium and POWER, have included such support since inception and the stand
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_5_2
+include secure_linux_cis::distribution::redhat7::cis_1_5_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_5_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_5_2` class.
 
 ##### `enforced`
 
@@ -2248,7 +2248,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_5_3
+### secure_linux_cis::distribution::redhat7::cis_1_5_3
 
 1.5.3 Ensure address space layout randomization (ASLR) is enabled (Scored)
 
@@ -2262,12 +2262,12 @@ of key data areas of a process.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_5_3
+include secure_linux_cis::distribution::redhat7::cis_1_5_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_5_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_5_3` class.
 
 ##### `enforced`
 
@@ -2277,7 +2277,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_5_4
+### secure_linux_cis::distribution::redhat7::cis_1_5_4
 
 1.5.4 Ensure prelink is disabled (Scored)
 
@@ -2291,12 +2291,12 @@ needed for the dynamic linker to perform relocations at startup significantly de
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_5_4
+include secure_linux_cis::distribution::redhat7::cis_1_5_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_5_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_5_4` class.
 
 ##### `enforced`
 
@@ -2306,7 +2306,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_6_1_1
+### secure_linux_cis::distribution::redhat7::cis_1_6_1_1
 
 1.6.1.1 Ensure SELinux is not disabled in bootloader configuration (Scored)
 
@@ -2319,12 +2319,12 @@ Configure SELINUX to be enabled at boot time and verify that it has not been ove
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_6_1_1
+include secure_linux_cis::distribution::redhat7::cis_1_6_1_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_6_1_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_6_1_1` class.
 
 ##### `enforced`
 
@@ -2334,7 +2334,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_6_1_2
+### secure_linux_cis::distribution::redhat7::cis_1_6_1_2
 
 1.6.1.2 Ensure the SELinux state is enforcing (Scored)
 
@@ -2347,12 +2347,12 @@ Set SELinux to enable when the system is booted.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_6_1_2
+include secure_linux_cis::distribution::redhat7::cis_1_6_1_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_6_1_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_6_1_2` class.
 
 ##### `enforced`
 
@@ -2362,7 +2362,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_6_1_3
+### secure_linux_cis::distribution::redhat7::cis_1_6_1_3
 
 1.6.1.3 Ensure SELinux policy is configured (Scored)
 
@@ -2375,12 +2375,12 @@ Configure SELinux to meet or exceed the default targeted policy, which constrain
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_6_1_3
+include secure_linux_cis::distribution::redhat7::cis_1_6_1_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_6_1_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_6_1_3` class.
 
 ##### `enforced`
 
@@ -2390,7 +2390,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_6_1_4
+### secure_linux_cis::distribution::redhat7::cis_1_6_1_4
 
 1.6.1.4 Ensure SETroubleshoot is not installed (Scored)
 
@@ -2404,12 +2404,12 @@ important information around configuration errors, unauthorized intrusions, and 
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_6_1_4
+include secure_linux_cis::distribution::redhat7::cis_1_6_1_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_6_1_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_6_1_4` class.
 
 ##### `enforced`
 
@@ -2419,7 +2419,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_6_1_5
+### secure_linux_cis::distribution::redhat7::cis_1_6_1_5
 
 1.6.1.5 Ensure the MCS Translation Service (mcstrans) is not installed (Scored)
 
@@ -2433,12 +2433,12 @@ translations are defined in /etc/selinux/targeted/setrans.conf
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_6_1_5
+include secure_linux_cis::distribution::redhat7::cis_1_6_1_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_6_1_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_6_1_5` class.
 
 ##### `enforced`
 
@@ -2448,7 +2448,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_6_1_6
+### secure_linux_cis::distribution::redhat7::cis_1_6_1_6
 
 1.6.1.6 Ensure no unconfined daemons exist (Scored)
 
@@ -2461,12 +2461,12 @@ Daemons that are not defined in SELinux policy will inherit the security context
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_6_1_6
+include secure_linux_cis::distribution::redhat7::cis_1_6_1_6
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_6_1_6` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_6_1_6` class.
 
 ##### `enforced`
 
@@ -2476,7 +2476,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_6_2
+### secure_linux_cis::distribution::redhat7::cis_1_6_2
 
 1.6.2 Ensure SELinux is installed (Scored)
 
@@ -2489,12 +2489,12 @@ SELinux provides Mandatory Access Controls.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_6_2
+include secure_linux_cis::distribution::redhat7::cis_1_6_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_6_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_6_2` class.
 
 ##### `enforced`
 
@@ -2504,7 +2504,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_7_1_1
+### secure_linux_cis::distribution::redhat7::cis_1_7_1_1
 
 1.7.1.1 Ensure message of the day is configured properly (Scored)
 
@@ -2521,12 +2521,12 @@ operating system name \v - operating system version
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_7_1_1
+include secure_linux_cis::distribution::redhat7::cis_1_7_1_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_7_1_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_7_1_1` class.
 
 ##### `enforced`
 
@@ -2536,7 +2536,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_7_1_2
+### secure_linux_cis::distribution::redhat7::cis_1_7_1_2
 
 1.7.1.2 Ensure local login warning banner is configured properly (Not Scored)
 
@@ -2552,12 +2552,12 @@ supports the following options, they display operating system information: \m - 
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_7_1_2
+include secure_linux_cis::distribution::redhat7::cis_1_7_1_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_7_1_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_7_1_2` class.
 
 ##### `enforced`
 
@@ -2567,7 +2567,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_7_1_3
+### secure_linux_cis::distribution::redhat7::cis_1_7_1_3
 
 1.7.1.3 Ensure remote login warning banner is configured properly (Not Scored)
 
@@ -2584,12 +2584,12 @@ name \v - operating system version
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_7_1_3
+include secure_linux_cis::distribution::redhat7::cis_1_7_1_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_7_1_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_7_1_3` class.
 
 ##### `enforced`
 
@@ -2599,7 +2599,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_7_1_4
+### secure_linux_cis::distribution::redhat7::cis_1_7_1_4
 
 1.7.1.4 Ensure permissions on /etc/motd are configured (Not Scored)
 
@@ -2612,12 +2612,12 @@ The contents of the /etc/motd file are displayed to users after login and functi
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_7_1_4
+include secure_linux_cis::distribution::redhat7::cis_1_7_1_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_7_1_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_7_1_4` class.
 
 ##### `enforced`
 
@@ -2643,7 +2643,7 @@ Content of /etc/issue and /etc/issue.net
 
 Default value: `undef`
 
-### secure_linux_cis::redhat7::cis_1_7_1_5
+### secure_linux_cis::distribution::redhat7::cis_1_7_1_5
 
 1.7.1.5 Ensure permissions on /etc/issue are configured (Scored)
 
@@ -2656,12 +2656,12 @@ The contents of the /etc/issue file are displayed to users prior to login for lo
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_7_1_5
+include secure_linux_cis::distribution::redhat7::cis_1_7_1_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_7_1_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_7_1_5` class.
 
 ##### `enforced`
 
@@ -2679,7 +2679,7 @@ Content of /etc/issue
 
 Default value: `undef`
 
-### secure_linux_cis::redhat7::cis_1_7_1_6
+### secure_linux_cis::distribution::redhat7::cis_1_7_1_6
 
 1.7.1.6 Ensure permissions on /etc/issue.net are configured (Not Scored)
 
@@ -2692,12 +2692,12 @@ The contents of the /etc/issue.net file are displayed to users prior to login fo
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_7_1_6
+include secure_linux_cis::distribution::redhat7::cis_1_7_1_6
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_7_1_6` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_7_1_6` class.
 
 ##### `enforced`
 
@@ -2715,7 +2715,7 @@ Content of /etc/issue.net
 
 Default value: `undef`
 
-### secure_linux_cis::redhat7::cis_1_7_2
+### secure_linux_cis::distribution::redhat7::cis_1_7_2
 
 1.7.2 Ensure GDM login banner is configured (Scored)
 
@@ -2728,12 +2728,12 @@ GDM is the GNOME Display Manager which handles graphical login for GNOME based s
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_7_2
+include secure_linux_cis::distribution::redhat7::cis_1_7_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_7_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_7_2` class.
 
 ##### `enforced`
 
@@ -2743,7 +2743,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_1_8
+### secure_linux_cis::distribution::redhat7::cis_1_8
 
 1.8 Ensure updates, patches, and additional security software are installed (Scored)
 
@@ -2756,12 +2756,12 @@ Periodically patches are released for included software either due to security f
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_1_8
+include secure_linux_cis::distribution::redhat7::cis_1_8
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_1_8` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_1_8` class.
 
 ##### `enforced`
 
@@ -2771,7 +2771,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_1_1
+### secure_linux_cis::distribution::redhat7::cis_2_1_1
 
 2.1.1 Ensure chargen services are not enabled (Scored)
 
@@ -2787,12 +2787,12 @@ Disabling this service will reduce the remote attack surface of the system.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_1_1
+include secure_linux_cis::distribution::redhat7::cis_2_1_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_1_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_1_1` class.
 
 ##### `enforced`
 
@@ -2802,7 +2802,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_1_2
+### secure_linux_cis::distribution::redhat7::cis_2_1_2
 
 2.1.2 Ensure daytime services are not enabled (Scored)
 
@@ -2818,12 +2818,12 @@ Disabling this service will reduce the remote attack surface of the system.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_1_2
+include secure_linux_cis::distribution::redhat7::cis_2_1_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_1_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_1_2` class.
 
 ##### `enforced`
 
@@ -2833,7 +2833,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_1_3
+### secure_linux_cis::distribution::redhat7::cis_2_1_3
 
 2.1.3 Ensure discard services are not enabled (Scored)
 
@@ -2849,12 +2849,12 @@ Disabling this service will reduce the remote attack surface of the system.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_1_3
+include secure_linux_cis::distribution::redhat7::cis_2_1_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_1_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_1_3` class.
 
 ##### `enforced`
 
@@ -2864,7 +2864,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_1_4
+### secure_linux_cis::distribution::redhat7::cis_2_1_4
 
 2.1.4 Ensure echo services are not enabled (Scored)
 
@@ -2880,12 +2880,12 @@ Disabling this service will reduce the remote attack surface of the system.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_1_4
+include secure_linux_cis::distribution::redhat7::cis_2_1_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_1_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_1_4` class.
 
 ##### `enforced`
 
@@ -2895,7 +2895,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_1_5
+### secure_linux_cis::distribution::redhat7::cis_2_1_5
 
 2.1.5 Ensure time services are not enabled (Scored)
 
@@ -2911,12 +2911,12 @@ Disabling this service will reduce the remote attack surface of the system.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_1_5
+include secure_linux_cis::distribution::redhat7::cis_2_1_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_1_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_1_5` class.
 
 ##### `enforced`
 
@@ -2926,7 +2926,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_1_6
+### secure_linux_cis::distribution::redhat7::cis_2_1_6
 
 2.1.6 Ensure tftp server is not enabled (Scored)
 
@@ -2945,12 +2945,12 @@ extreme caution must be used when configuring the services.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_1_6
+include secure_linux_cis::distribution::redhat7::cis_2_1_6
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_1_6` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_1_6` class.
 
 ##### `enforced`
 
@@ -2960,7 +2960,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_1_7
+### secure_linux_cis::distribution::redhat7::cis_2_1_7
 
 2.1.7 Ensure xinetd is not enabled (Scored)
 
@@ -2976,12 +2976,12 @@ If there are no xinetd services required, it is recommended that the daemon be d
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_1_7
+include secure_linux_cis::distribution::redhat7::cis_2_1_7
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_1_7` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_1_7` class.
 
 ##### `enforced`
 
@@ -2991,7 +2991,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_10
+### secure_linux_cis::distribution::redhat7::cis_2_2_10
 
 2.2.10 Ensure HTTP server is not enabled (Scored)
 
@@ -3007,12 +3007,12 @@ it is recommended that the service be disabled to reduce the potential attack su
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_10
+include secure_linux_cis::distribution::redhat7::cis_2_2_10
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_10` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_10` class.
 
 ##### `enforced`
 
@@ -3022,7 +3022,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_11
+### secure_linux_cis::distribution::redhat7::cis_2_2_11
 
 2.2.11 Ensure IMAP and POP3 server is not enabled (Scored)
 
@@ -3038,12 +3038,12 @@ it is recommended that the service be disabled to reduce the potential attack su
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_11
+include secure_linux_cis::distribution::redhat7::cis_2_2_11
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_11` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_11` class.
 
 ##### `enforced`
 
@@ -3053,7 +3053,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_12
+### secure_linux_cis::distribution::redhat7::cis_2_2_12
 
 2.2.12 Ensure Samba is not enabled (Scored)
 
@@ -3072,12 +3072,12 @@ then this service can be disabled to reduce the potential attack surface.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_12
+include secure_linux_cis::distribution::redhat7::cis_2_2_12
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_12` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_12` class.
 
 ##### `enforced`
 
@@ -3087,7 +3087,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_13
+### secure_linux_cis::distribution::redhat7::cis_2_2_13
 
 2.2.13 Ensure HTTP Proxy Server is not enabled (Scored)
 
@@ -3102,12 +3102,12 @@ If there is no need for a proxy server, it is recommended that the squid proxy b
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_13
+include secure_linux_cis::distribution::redhat7::cis_2_2_13
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_13` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_13` class.
 
 ##### `enforced`
 
@@ -3117,7 +3117,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_14
+### secure_linux_cis::distribution::redhat7::cis_2_2_14
 
 2.2.14 Ensure SNMP Server is not enabled (Scored)
 
@@ -3135,12 +3135,12 @@ If SNMP is required the server should be configured to disallow SNMP v1.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_14
+include secure_linux_cis::distribution::redhat7::cis_2_2_14
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_14` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_14` class.
 
 ##### `enforced`
 
@@ -3150,7 +3150,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_15
+### secure_linux_cis::distribution::redhat7::cis_2_2_15
 
 2.2.15 Ensure mail transfer agent is configured for local-only mode (Scored)
 
@@ -3170,12 +3170,12 @@ is intended to be a mail server that receives and processes mail from other syst
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_15
+include secure_linux_cis::distribution::redhat7::cis_2_2_15
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_15` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_15` class.
 
 ##### `enforced`
 
@@ -3185,7 +3185,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_16
+### secure_linux_cis::distribution::redhat7::cis_2_2_16
 
 2.2.16 Ensure NIS Server is not enabled (Scored)
 
@@ -3205,12 +3205,12 @@ It is recommended that the service be disabled and other, more secure services b
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_16
+include secure_linux_cis::distribution::redhat7::cis_2_2_16
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_16` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_16` class.
 
 ##### `enforced`
 
@@ -3220,7 +3220,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_17
+### secure_linux_cis::distribution::redhat7::cis_2_2_17
 
 2.2.17 Ensure rsh server is not enabled (Scored)
 
@@ -3235,12 +3235,12 @@ These legacy services contain numerous security exposures and have been replaced
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_17
+include secure_linux_cis::distribution::redhat7::cis_2_2_17
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_17` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_17` class.
 
 ##### `enforced`
 
@@ -3250,7 +3250,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_18
+### secure_linux_cis::distribution::redhat7::cis_2_2_18
 
 2.2.18 Ensure talk server is not enabled (Scored)
 
@@ -3266,12 +3266,12 @@ The software presents a security risk as it uses unencrypted protocols for commu
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_18
+include secure_linux_cis::distribution::redhat7::cis_2_2_18
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_18` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_18` class.
 
 ##### `enforced`
 
@@ -3281,7 +3281,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_19
+### secure_linux_cis::distribution::redhat7::cis_2_2_19
 
 2.2.19 Ensure telnet server is not enabled (Scored)
 
@@ -3299,12 +3299,12 @@ The ssh package provides an encrypted session and stronger security.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_19
+include secure_linux_cis::distribution::redhat7::cis_2_2_19
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_19` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_19` class.
 
 ##### `enforced`
 
@@ -3314,7 +3314,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_1_1
+### secure_linux_cis::distribution::redhat7::cis_2_2_1_1
 
 2.2.1.1 Ensure time synchronization is in use (Not Scored)
 
@@ -3334,10 +3334,10 @@ which aids in forensic investigations.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_1_1
+include secure_linux_cis::distribution::redhat7::cis_2_2_1_1
 ```
 
-### secure_linux_cis::redhat7::cis_2_2_1_2
+### secure_linux_cis::distribution::redhat7::cis_2_2_1_2
 
 2.2.1.2 Ensure ntp is configured (Scored)
 
@@ -3357,12 +3357,12 @@ is working properly.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_1_2
+include secure_linux_cis::distribution::redhat7::cis_2_2_1_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_1_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_1_2` class.
 
 ##### `enforced`
 
@@ -3388,7 +3388,7 @@ Which NTP program to use
 
 Default value: 'ntp'
 
-### secure_linux_cis::redhat7::cis_2_2_1_3
+### secure_linux_cis::distribution::redhat7::cis_2_2_1_3
 
 2.2.1.3 Ensure chrony is configured (Scored)
 
@@ -3408,12 +3408,12 @@ This recommendation only applies if chrony is in use on the system.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_1_3
+include secure_linux_cis::distribution::redhat7::cis_2_2_1_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_1_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_1_3` class.
 
 ##### `enforced`
 
@@ -3439,7 +3439,7 @@ Which NTP program to use
 
 Default value: 'chrony'
 
-### secure_linux_cis::redhat7::cis_2_2_2
+### secure_linux_cis::distribution::redhat7::cis_2_2_2
 
 2.2.2 Ensure X Window System is not installed (Scored)
 
@@ -3456,12 +3456,12 @@ Unless your organization specifically requires graphical login access via X Wind
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_2
+include secure_linux_cis::distribution::redhat7::cis_2_2_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_2` class.
 
 ##### `enforced`
 
@@ -3471,7 +3471,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_20
+### secure_linux_cis::distribution::redhat7::cis_2_2_20
 
 2.2.20 Ensure tftp server is not enabled (Scored)
 
@@ -3490,12 +3490,12 @@ In that case, extreme caution must be used when configuring the services.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_20
+include secure_linux_cis::distribution::redhat7::cis_2_2_20
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_20` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_20` class.
 
 ##### `enforced`
 
@@ -3505,7 +3505,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_21
+### secure_linux_cis::distribution::redhat7::cis_2_2_21
 
 2.2.21 Ensure rsync service is not enabled (Scored)
 
@@ -3520,12 +3520,12 @@ The rsyncd service presents a security risk as it uses unencrypted protocols for
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_21
+include secure_linux_cis::distribution::redhat7::cis_2_2_21
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_21` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_21` class.
 
 ##### `enforced`
 
@@ -3535,7 +3535,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_3
+### secure_linux_cis::distribution::redhat7::cis_2_2_3
 
 2.2.3 Ensure Avahi Server is not enabled (Scored)
 
@@ -3554,12 +3554,12 @@ It is recommended to disable the service to reduce the potential attack surface.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_3
+include secure_linux_cis::distribution::redhat7::cis_2_2_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_3` class.
 
 ##### `enforced`
 
@@ -3569,7 +3569,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_4
+### secure_linux_cis::distribution::redhat7::cis_2_2_4
 
 2.2.4 Ensure CUPS is not enabled (Scored)
 
@@ -3587,12 +3587,12 @@ it is recommended that CUPS be disabled to reduce the potential attack surface.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_4
+include secure_linux_cis::distribution::redhat7::cis_2_2_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_4` class.
 
 ##### `enforced`
 
@@ -3602,7 +3602,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_5
+### secure_linux_cis::distribution::redhat7::cis_2_2_5
 
 2.2.5 Ensure DHCP Server is not enabled (Scored)
 
@@ -3618,12 +3618,12 @@ it is recommended that this service be disabled to reduce the potential attack s
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_5
+include secure_linux_cis::distribution::redhat7::cis_2_2_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_5` class.
 
 ##### `enforced`
 
@@ -3633,7 +3633,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_6
+### secure_linux_cis::distribution::redhat7::cis_2_2_6
 
 2.2.6 Ensure LDAP server is not enabled (Scored)
 
@@ -3650,12 +3650,12 @@ it is recommended that the software be disabled to reduce the potential attack s
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_6
+include secure_linux_cis::distribution::redhat7::cis_2_2_6
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_6` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_6` class.
 
 ##### `enforced`
 
@@ -3665,7 +3665,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_7
+### secure_linux_cis::distribution::redhat7::cis_2_2_7
 
 2.2.7 Ensure NFS and RPC are not enabled (Scored)
 
@@ -3682,12 +3682,12 @@ it is recommended that these services be disabled to reduce remote attack surfac
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_7
+include secure_linux_cis::distribution::redhat7::cis_2_2_7
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_7` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_7` class.
 
 ##### `enforced`
 
@@ -3697,7 +3697,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_8
+### secure_linux_cis::distribution::redhat7::cis_2_2_8
 
 2.2.8 Ensure DNS Server is not enabled (Scored)
 
@@ -3714,12 +3714,12 @@ it is recommended that the service be disabled to reduce the potential attack su
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_8
+include secure_linux_cis::distribution::redhat7::cis_2_2_8
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_8` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_8` class.
 
 ##### `enforced`
 
@@ -3729,7 +3729,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_2_9
+### secure_linux_cis::distribution::redhat7::cis_2_2_9
 
 2.2.9 Ensure FTP Server is not enabled (Scored)
 
@@ -3747,12 +3747,12 @@ it is recommended that the service be disabled to reduce the potential attack su
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_2_9
+include secure_linux_cis::distribution::redhat7::cis_2_2_9
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_2_9` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_2_9` class.
 
 ##### `enforced`
 
@@ -3762,7 +3762,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_3_1
+### secure_linux_cis::distribution::redhat7::cis_2_3_1
 
 2.3.1 Ensure NIS Client is not installed (Scored)
 
@@ -3781,12 +3781,12 @@ replaced by such protocols as Lightweight Directory Access Protocol (LDAP). It i
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_3_1
+include secure_linux_cis::distribution::redhat7::cis_2_3_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_3_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_3_1` class.
 
 ##### `enforced`
 
@@ -3796,7 +3796,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_3_2
+### secure_linux_cis::distribution::redhat7::cis_2_3_2
 
 2.3.2 Ensure rsh client is not installed (Scored)
 
@@ -3814,12 +3814,12 @@ Note that removing the rsh package removes the clients for rsh , rcp and rlogin 
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_3_2
+include secure_linux_cis::distribution::redhat7::cis_2_3_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_3_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_3_2` class.
 
 ##### `enforced`
 
@@ -3829,7 +3829,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_3_3
+### secure_linux_cis::distribution::redhat7::cis_2_3_3
 
 2.3.3 Ensure talk client is not installed (Scored)
 
@@ -3845,12 +3845,12 @@ The software presents a security risk as it uses unencrypted protocols for commu
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_3_3
+include secure_linux_cis::distribution::redhat7::cis_2_3_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_3_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_3_3` class.
 
 ##### `enforced`
 
@@ -3860,7 +3860,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_3_4
+### secure_linux_cis::distribution::redhat7::cis_2_3_4
 
 2.3.4 Ensure telnet client is not installed (Scored)
 
@@ -3876,12 +3876,12 @@ to steal credentials. The ssh package provides an encrypted session and stronger
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_3_4
+include secure_linux_cis::distribution::redhat7::cis_2_3_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_3_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_3_4` class.
 
 ##### `enforced`
 
@@ -3891,7 +3891,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_2_3_5
+### secure_linux_cis::distribution::redhat7::cis_2_3_5
 
 2.3.5 Ensure LDAP client is not installed (Scored)
 
@@ -3908,12 +3908,12 @@ be removed to reduce the potential attack surface.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_2_3_5
+include secure_linux_cis::distribution::redhat7::cis_2_3_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_2_3_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_2_3_5` class.
 
 ##### `enforced`
 
@@ -3923,7 +3923,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_1_1
+### secure_linux_cis::distribution::redhat7::cis_3_1_1
 
 3.1.1 Ensure IP forwarding is disabled (Scored)
 
@@ -3939,12 +3939,12 @@ will never be able to forward packets, and therefore, never serve as a router.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_1_1
+include secure_linux_cis::distribution::redhat7::cis_3_1_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_1_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_1_1` class.
 
 ##### `enforced`
 
@@ -3954,7 +3954,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_1_2
+### secure_linux_cis::distribution::redhat7::cis_3_1_2
 
 3.1.2 Ensure packet redirect sending is disabled (Scored)
 
@@ -3971,12 +3971,12 @@ to corrupt routing and have users access a system set up by the attacker as oppo
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_1_2
+include secure_linux_cis::distribution::redhat7::cis_3_1_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_1_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_1_2` class.
 
 ##### `enforced`
 
@@ -3986,7 +3986,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_2_1
+### secure_linux_cis::distribution::redhat7::cis_3_2_1
 
 3.2.1 Ensure source routed packets are not accepted (Scored)
 
@@ -4010,12 +4010,12 @@ rather than rely on routing protocols that did not allow this routing.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_2_1
+include secure_linux_cis::distribution::redhat7::cis_3_2_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_2_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_2_1` class.
 
 ##### `enforced`
 
@@ -4025,7 +4025,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_2_2
+### secure_linux_cis::distribution::redhat7::cis_3_2_2
 
 3.2.2 Ensure ICMP redirects are not accepted (Scored)
 
@@ -4044,12 +4044,12 @@ them to send packets to incorrect networks and allow your system packets to be c
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_2_2
+include secure_linux_cis::distribution::redhat7::cis_3_2_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_2_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_2_2` class.
 
 ##### `enforced`
 
@@ -4059,7 +4059,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_2_3
+### secure_linux_cis::distribution::redhat7::cis_3_2_3
 
 3.2.3 Ensure secure ICMP redirects are not accepted (Scored)
 
@@ -4076,12 +4076,12 @@ the system from routing table updates by possibly compromised known gateways.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_2_3
+include secure_linux_cis::distribution::redhat7::cis_3_2_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_2_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_2_3` class.
 
 ##### `enforced`
 
@@ -4091,7 +4091,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_2_4
+### secure_linux_cis::distribution::redhat7::cis_3_2_4
 
 3.2.4 Ensure suspicious packets are logged (Scored)
 
@@ -4107,12 +4107,12 @@ possibility that an attacker is sending spoofed packets to their system.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_2_4
+include secure_linux_cis::distribution::redhat7::cis_3_2_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_2_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_2_4` class.
 
 ##### `enforced`
 
@@ -4122,7 +4122,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_2_5
+### secure_linux_cis::distribution::redhat7::cis_3_2_5
 
 3.2.5 Ensure broadcast ICMP requests are ignored (Scored)
 
@@ -4143,12 +4143,12 @@ network could be significantly multiplied.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_2_5
+include secure_linux_cis::distribution::redhat7::cis_3_2_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_2_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_2_5` class.
 
 ##### `enforced`
 
@@ -4158,7 +4158,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_2_6
+### secure_linux_cis::distribution::redhat7::cis_3_2_6
 
 3.2.6 Ensure bogus ICMP responses are ignored (Scored)
 
@@ -4175,12 +4175,12 @@ with many useless error messages.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_2_6
+include secure_linux_cis::distribution::redhat7::cis_3_2_6
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_2_6` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_2_6` class.
 
 ##### `enforced`
 
@@ -4190,7 +4190,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_2_7
+### secure_linux_cis::distribution::redhat7::cis_3_2_7
 
 3.2.7 Ensure Reverse Path Filtering is enabled (Scored)
 
@@ -4211,12 +4211,12 @@ you will not be able to enable this feature without breaking the routing.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_2_7
+include secure_linux_cis::distribution::redhat7::cis_3_2_7
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_2_7` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_2_7` class.
 
 ##### `enforced`
 
@@ -4226,7 +4226,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_2_8
+### secure_linux_cis::distribution::redhat7::cis_3_2_8
 
 3.2.8 Ensure TCP SYN Cookies is enabled (Scored)
 
@@ -4250,12 +4250,12 @@ a denial of service attack.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_2_8
+include secure_linux_cis::distribution::redhat7::cis_3_2_8
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_2_8` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_2_8` class.
 
 ##### `enforced`
 
@@ -4265,7 +4265,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_3_1
+### secure_linux_cis::distribution::redhat7::cis_3_3_1
 
 3.3.1 Ensure IPv6 router advertisements are not accepted (Not Scored)
 
@@ -4282,12 +4282,12 @@ into routing traffic to compromised machines. Setting hard routes within the sys
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_3_1
+include secure_linux_cis::distribution::redhat7::cis_3_3_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_3_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_3_1` class.
 
 ##### `enforced`
 
@@ -4305,7 +4305,7 @@ Should ipv6 be enabled
 
 Default value: `false`
 
-### secure_linux_cis::redhat7::cis_3_3_2
+### secure_linux_cis::distribution::redhat7::cis_3_3_2
 
 3.3.2 Ensure IPv6 redirects are not accepted (Not Scored)
 
@@ -4323,12 +4323,12 @@ single default route to a trusted router) protects the system from bad routes.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_3_3
+include secure_linux_cis::distribution::redhat7::cis_3_3_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_3_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_3_2` class.
 
 ##### `enforced`
 
@@ -4346,7 +4346,7 @@ Should ipv6 be enabled
 
 Default value: `false`
 
-### secure_linux_cis::redhat7::cis_3_3_3
+### secure_linux_cis::distribution::redhat7::cis_3_3_3
 
 3.3.3 Ensure IPv6 is disabled (Not Scored)
 
@@ -4362,12 +4362,12 @@ of the system.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_3_3
+include secure_linux_cis::distribution::redhat7::cis_3_3_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_3_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_3_3` class.
 
 ##### `enforced`
 
@@ -4385,7 +4385,7 @@ Should ipv6 be enabled
 
 Default value: `false`
 
-### secure_linux_cis::redhat7::cis_3_4_1
+### secure_linux_cis::distribution::redhat7::cis_3_4_1
 
 3.4.1 Ensure TCP Wrappers is installed (Scored)
 
@@ -4403,12 +4403,12 @@ recommended that all services that can support TCP Wrappers, use it.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_4_1
+include secure_linux_cis::distribution::redhat7::cis_3_4_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_4_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_4_1` class.
 
 ##### `enforced`
 
@@ -4418,7 +4418,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_4_2
+### secure_linux_cis::distribution::redhat7::cis_3_4_2
 
 3.4.2 Ensure /etc/hosts.allow is configured (Scored)
 
@@ -4445,12 +4445,12 @@ inadvertently or through malicious actions.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_4_2
+include secure_linux_cis::distribution::redhat7::cis_3_4_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_4_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_4_2` class.
 
 ##### `enforced`
 
@@ -4460,7 +4460,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_4_3
+### secure_linux_cis::distribution::redhat7::cis_3_4_3
 
 3.4.3 Ensure /etc/hosts.deny is configured (Scored)
 
@@ -4487,12 +4487,12 @@ inadvertently or through malicious actions.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_4_3
+include secure_linux_cis::distribution::redhat7::cis_3_4_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_4_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_4_3` class.
 
 ##### `enforced`
 
@@ -4502,7 +4502,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_4_4
+### secure_linux_cis::distribution::redhat7::cis_3_4_4
 
 3.4.4 Ensure permissions on /etc/hosts.allow are configured (Scored)
 
@@ -4522,10 +4522,10 @@ inadvertently or through malicious actions.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_4_4
+include secure_linux_cis::distribution::redhat7::cis_3_4_4
 ```
 
-### secure_linux_cis::redhat7::cis_3_4_5
+### secure_linux_cis::distribution::redhat7::cis_3_4_5
 
 3.4.5 Ensure permissions on /etc/hosts.deny are configured (Scored)
 
@@ -4545,10 +4545,10 @@ inadvertently or through malicious actions.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_4_5
+include secure_linux_cis::distribution::redhat7::cis_3_4_5
 ```
 
-### secure_linux_cis::redhat7::cis_3_5_1
+### secure_linux_cis::distribution::redhat7::cis_3_5_1
 
 3.5.1 Ensure DCCP is disabled (Not Scored)
 
@@ -4567,12 +4567,12 @@ the potential attack surface.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_5_1
+include secure_linux_cis::distribution::redhat7::cis_3_5_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_5_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_5_1` class.
 
 ##### `enforced`
 
@@ -4582,7 +4582,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_5_2
+### secure_linux_cis::distribution::redhat7::cis_3_5_2
 
 3.5.2 Ensure SCTP is disabled (Not Scored)
 
@@ -4602,12 +4602,12 @@ disabling the service to reduce the potential attack surface.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_5_2
+include secure_linux_cis::distribution::redhat7::cis_3_5_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_5_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_5_2` class.
 
 ##### `enforced`
 
@@ -4617,7 +4617,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_5_3
+### secure_linux_cis::distribution::redhat7::cis_3_5_3
 
 3.5.3 Ensure RDS is disabled (Not Scored)
 
@@ -4635,12 +4635,12 @@ disabling the service to reduce the potential attack surface.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_5_3
+include secure_linux_cis::distribution::redhat7::cis_3_5_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_5_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_5_3` class.
 
 ##### `enforced`
 
@@ -4650,7 +4650,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_5_4
+### secure_linux_cis::distribution::redhat7::cis_3_5_4
 
 3.5.4 Ensure TIPC is disabled (Not Scored)
 
@@ -4667,12 +4667,12 @@ disabling the service to reduce the potential attack surface.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_5_4
+include secure_linux_cis::distribution::redhat7::cis_3_5_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_5_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_5_4` class.
 
 ##### `enforced`
 
@@ -4682,7 +4682,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_6_1
+### secure_linux_cis::distribution::redhat7::cis_3_6_1
 
 3.6.1 Ensure iptables is installed (Scored)
 
@@ -4698,12 +4698,12 @@ iptables is required for firewall management and configuration.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_6_1
+include secure_linux_cis::distribution::redhat7::cis_3_6_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_6_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_6_1` class.
 
 ##### `enforced`
 
@@ -4713,7 +4713,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_6_2
+### secure_linux_cis::distribution::redhat7::cis_3_6_2
 
 3.6.2 Ensure default deny firewall policy (Scored)
 
@@ -4730,12 +4730,12 @@ denied. It is easier to white list acceptable usage than to black list unaccepta
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_6_2
+include secure_linux_cis::distribution::redhat7::cis_3_6_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_6_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_6_2` class.
 
 ##### `enforced`
 
@@ -4745,7 +4745,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_6_3
+### secure_linux_cis::distribution::redhat7::cis_3_6_3
 
 3.6.3 Ensure loopback traffic is configured (Scored)
 
@@ -4764,12 +4764,12 @@ network as an anti-spoofing measure.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_6_3
+include secure_linux_cis::distribution::redhat7::cis_3_6_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_6_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_6_3` class.
 
 ##### `enforced`
 
@@ -4779,7 +4779,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_6_4
+### secure_linux_cis::distribution::redhat7::cis_3_6_4
 
 3.6.4 Ensure outbound and established connections are configured (Not Scored)
 
@@ -4795,12 +4795,12 @@ dropped by the default policy preventing network usage.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_6_4
+include secure_linux_cis::distribution::redhat7::cis_3_6_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_6_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_6_4` class.
 
 ##### `enforced`
 
@@ -4810,7 +4810,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_6_5
+### secure_linux_cis::distribution::redhat7::cis_3_6_5
 
 3.6.5 Ensure firewall rules exist for all open ports (Scored)
 
@@ -4827,12 +4827,12 @@ packets to these ports.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_6_5
+include secure_linux_cis::distribution::redhat7::cis_3_6_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_6_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_6_5` class.
 
 ##### `enforced`
 
@@ -4842,7 +4842,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_3_7
+### secure_linux_cis::distribution::redhat7::cis_3_7
 
 3.7 Ensure wireless interfaces are disabled (Not Scored)
 
@@ -4860,12 +4860,12 @@ surface.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_3_7
+include secure_linux_cis::distribution::redhat7::cis_3_7
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_3_7` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_3_7` class.
 
 ##### `enforced`
 
@@ -4875,7 +4875,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_10
+### secure_linux_cis::distribution::redhat7::cis_4_1_10
 
 4.1.10 Ensure discretionary access control permission modification events are collected (Scored)
 
@@ -4899,12 +4899,12 @@ could indicate intruder activity or policy violation.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_10
+include secure_linux_cis::distribution::redhat7::cis_4_1_10
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_10` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_10` class.
 
 ##### `enforced`
 
@@ -4914,7 +4914,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_11
+### secure_linux_cis::distribution::redhat7::cis_4_1_11
 
 4.1.11 Ensure unsuccessful unauthorized file access attempts are collected (Scored)
 
@@ -4936,12 +4936,12 @@ process is trying to gain unauthorized access to the system.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_11
+include secure_linux_cis::distribution::redhat7::cis_4_1_11
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_11` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_11` class.
 
 ##### `enforced`
 
@@ -4951,7 +4951,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_12
+### secure_linux_cis::distribution::redhat7::cis_4_1_12
 
 A description of what this class does
 
@@ -4960,10 +4960,10 @@ A description of what this class does
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_12
+include secure_linux_cis::distribution::redhat7::cis_4_1_12
 ```
 
-### secure_linux_cis::redhat7::cis_4_1_13
+### secure_linux_cis::distribution::redhat7::cis_4_1_13
 
 4.1.13 Ensure successful file system mounts are collected (Scored)
 
@@ -4990,12 +4990,12 @@ data export to media is beyond the scope of this document.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_13
+include secure_linux_cis::distribution::redhat7::cis_4_1_13
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_13` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_13` class.
 
 ##### `enforced`
 
@@ -5005,7 +5005,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_14
+### secure_linux_cis::distribution::redhat7::cis_4_1_14
 
 4.1.14 Ensure file deletion events by users are collected (Scored)
 
@@ -5027,12 +5027,12 @@ altered.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_14
+include secure_linux_cis::distribution::redhat7::cis_4_1_14
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_14` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_14` class.
 
 ##### `enforced`
 
@@ -5042,7 +5042,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_15
+### secure_linux_cis::distribution::redhat7::cis_4_1_15
 
 4.1.15 Ensure changes to system administration scope (sudoers) is collected (Scored)
 
@@ -5062,12 +5062,12 @@ to scope of system administrator activity.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_15
+include secure_linux_cis::distribution::redhat7::cis_4_1_15
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_15` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_15` class.
 
 ##### `enforced`
 
@@ -5077,7 +5077,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_16
+### secure_linux_cis::distribution::redhat7::cis_4_1_16
 
 4.1.16 Ensure system administrator actions (sudolog) are collected (Scored)
 
@@ -5100,12 +5100,12 @@ unauthorized commands have been executed.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_16
+include secure_linux_cis::distribution::redhat7::cis_4_1_16
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_16` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_16` class.
 
 ##### `enforced`
 
@@ -5115,7 +5115,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_17
+### secure_linux_cis::distribution::redhat7::cis_4_1_17
 
 4.1.17 Ensure kernel module loading and unloading is collected (Scored)
 
@@ -5140,12 +5140,12 @@ different program to load and unload modules.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_17
+include secure_linux_cis::distribution::redhat7::cis_4_1_17
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_17` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_17` class.
 
 ##### `enforced`
 
@@ -5155,7 +5155,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_18
+### secure_linux_cis::distribution::redhat7::cis_4_1_18
 
 4.1.18 Ensure the audit configuration is immutable (Scored)
 
@@ -5175,12 +5175,12 @@ to make unauthorized audit changes.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_18
+include secure_linux_cis::distribution::redhat7::cis_4_1_18
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_18` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_18` class.
 
 ##### `enforced`
 
@@ -5190,7 +5190,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_1_1
+### secure_linux_cis::distribution::redhat7::cis_4_1_1_1
 
 4.1.1.1 Ensure audit log storage size is configured (Not Scored)
 
@@ -5207,12 +5207,12 @@ the system and audit data is not lost.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_1_1
+include secure_linux_cis::distribution::redhat7::cis_4_1_1_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_1_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_1_1` class.
 
 ##### `enforced`
 
@@ -5230,7 +5230,7 @@ The maximum size of the audit log file (MB) for your organization's policy.
 
 Default value: 8
 
-### secure_linux_cis::redhat7::cis_4_1_1_2
+### secure_linux_cis::distribution::redhat7::cis_4_1_1_2
 
 4.1.1.2 Ensure system is disabled when audit logs are full (Scored)
 
@@ -5246,12 +5246,12 @@ exceeds the benefit of the system's availability.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_1_2
+include secure_linux_cis::distribution::redhat7::cis_4_1_1_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_1_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_1_2` class.
 
 ##### `enforced`
 
@@ -5261,7 +5261,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_1_3
+### secure_linux_cis::distribution::redhat7::cis_4_1_1_3
 
 4.1.1.3 Ensure audit logs are not automatically deleted (Scored)
 
@@ -5278,12 +5278,12 @@ storing the audit history.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_1_3
+include secure_linux_cis::distribution::redhat7::cis_4_1_1_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_1_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_1_3` class.
 
 ##### `enforced`
 
@@ -5293,7 +5293,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_2
+### secure_linux_cis::distribution::redhat7::cis_4_1_2
 
 4.1.2 Ensure auditd service is enabled (Scored)
 
@@ -5309,12 +5309,12 @@ them to determine if unauthorized access to their system is occurring.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_2
+include secure_linux_cis::distribution::redhat7::cis_4_1_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_2` class.
 
 ##### `enforced`
 
@@ -5324,7 +5324,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_3
+### secure_linux_cis::distribution::redhat7::cis_4_1_3
 
 4.1.3 Ensure auditing for processes that start prior to auditd is enabled (Scored)
 
@@ -5341,12 +5341,12 @@ potential malicious activity cannot go undetected.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_3
+include secure_linux_cis::distribution::redhat7::cis_4_1_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_3` class.
 
 ##### `enforced`
 
@@ -5356,7 +5356,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_4
+### secure_linux_cis::distribution::redhat7::cis_4_1_4
 
 4.1.4 Ensure events that modify date and time information are collected (Scored)
 
@@ -5377,12 +5377,12 @@ system.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_4
+include secure_linux_cis::distribution::redhat7::cis_4_1_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_4` class.
 
 ##### `enforced`
 
@@ -5392,7 +5392,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_5
+### secure_linux_cis::distribution::redhat7::cis_4_1_5
 
 4.1.5 Ensure events that modify user/group information are collected (Scored)
 
@@ -5413,12 +5413,12 @@ compromise additional accounts.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_5
+include secure_linux_cis::distribution::redhat7::cis_4_1_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_5` class.
 
 ##### `enforced`
 
@@ -5428,7 +5428,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_6
+### secure_linux_cis::distribution::redhat7::cis_4_1_6
 
 4.1.6 Ensure events that modify the system's network environment are collected (Scored)
 
@@ -5459,12 +5459,12 @@ compromised. All audit records will be tagged with the identifier "system-locale
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_6
+include secure_linux_cis::distribution::redhat7::cis_4_1_6
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_6` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_6` class.
 
 ##### `enforced`
 
@@ -5474,7 +5474,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_7
+### secure_linux_cis::distribution::redhat7::cis_4_1_7
 
 4.1.7 Ensure events that modify the system's Mandatory Access Controls are collected (Scored)
 
@@ -5493,12 +5493,12 @@ system.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_7
+include secure_linux_cis::distribution::redhat7::cis_4_1_7
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_7` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_7` class.
 
 ##### `enforced`
 
@@ -5508,7 +5508,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_8
+### secure_linux_cis::distribution::redhat7::cis_4_1_8
 
 4.1.8 Ensure login and logout events are collected (Scored)
 
@@ -5527,12 +5527,12 @@ associated with brute force attacks against user logins.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_8
+include secure_linux_cis::distribution::redhat7::cis_4_1_8
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_8` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_8` class.
 
 ##### `enforced`
 
@@ -5542,7 +5542,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_1_9
+### secure_linux_cis::distribution::redhat7::cis_4_1_9
 
 4.1.9 Ensure session initiation information is collected (Scored)
 
@@ -5564,12 +5564,12 @@ they do not normally log in).
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_1_9
+include secure_linux_cis::distribution::redhat7::cis_4_1_9
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_1_9` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_1_9` class.
 
 ##### `enforced`
 
@@ -5579,7 +5579,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_2_1_1
+### secure_linux_cis::distribution::redhat7::cis_4_2_1_1
 
 4.2.1.1 Ensure rsyslog Service is enabled (Scored)
 
@@ -5595,12 +5595,12 @@ logging instead.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_2_1_1
+include secure_linux_cis::distribution::redhat7::cis_4_2_1_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_2_1_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_2_1_1` class.
 
 ##### `enforced`
 
@@ -5618,7 +5618,7 @@ How logging is done
 
 Default value: 'rsyslog'
 
-### secure_linux_cis::redhat7::cis_4_2_1_2
+### secure_linux_cis::distribution::redhat7::cis_4_2_1_2
 
 4.2.1.2 Ensure logging is configured (Not Scored)
 
@@ -5635,12 +5635,12 @@ and failed su attempts, failed login attempts, root login attempts, etc.).
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_2_1_2
+include secure_linux_cis::distribution::redhat7::cis_4_2_1_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_2_1_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_2_1_2` class.
 
 ##### `enforced`
 
@@ -5658,7 +5658,7 @@ How logging is done
 
 Default value: 'rsyslog'
 
-### secure_linux_cis::redhat7::cis_4_2_1_3
+### secure_linux_cis::distribution::redhat7::cis_4_2_1_3
 
 4.2.1.3 Ensure rsyslog default file permissions configured (Scored)
 
@@ -5675,12 +5675,12 @@ data is archived and protected.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_2_1_3
+include secure_linux_cis::distribution::redhat7::cis_4_2_1_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_2_1_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_2_1_3` class.
 
 ##### `enforced`
 
@@ -5698,7 +5698,7 @@ How logging is done
 
 Default value: 'rsyslog'
 
-### secure_linux_cis::redhat7::cis_4_2_1_4
+### secure_linux_cis::distribution::redhat7::cis_4_2_1_4
 
 4.2.1.4 Ensure rsyslog is configured to send logs to a remote log host (Scored)
 
@@ -5712,12 +5712,12 @@ or to receive messages from remote hosts, reducing administrative overhead.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_2_1_4
+include secure_linux_cis::distribution::redhat7::cis_4_2_1_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_2_1_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_2_1_4` class.
 
 ##### `enforced`
 
@@ -5743,7 +5743,7 @@ Which host should logging be sent to
 
 Default value: `undef`
 
-### secure_linux_cis::redhat7::cis_4_2_1_5
+### secure_linux_cis::distribution::redhat7::cis_4_2_1_5
 
 A description of what this class does
 
@@ -5752,12 +5752,12 @@ A description of what this class does
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_2_1_5
+include secure_linux_cis::distribution::redhat7::cis_4_2_1_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_2_1_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_2_1_5` class.
 
 ##### `enforced`
 
@@ -5783,7 +5783,7 @@ Is this host a logging host
 
 Default value: `false`
 
-### secure_linux_cis::redhat7::cis_4_2_2_1
+### secure_linux_cis::distribution::redhat7::cis_4_2_2_1
 
 4.2.2.1 Ensure syslog-ng service is enabled (Scored)
 
@@ -5799,12 +5799,12 @@ lack logging instead.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_2_2_1
+include secure_linux_cis::distribution::redhat7::cis_4_2_2_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_2_2_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_2_2_1` class.
 
 ##### `enforced`
 
@@ -5822,7 +5822,7 @@ How logging is done
 
 Default value: 'rsyslog'
 
-### secure_linux_cis::redhat7::cis_4_2_2_2
+### secure_linux_cis::distribution::redhat7::cis_4_2_2_2
 
 4.2.2.2 Ensure logging is configured (Not Scored)
 
@@ -5839,12 +5839,12 @@ and failed su attempts, failed login attempts, root login attempts, etc.).
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_2_2_2
+include secure_linux_cis::distribution::redhat7::cis_4_2_2_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_2_2_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_2_2_2` class.
 
 ##### `enforced`
 
@@ -5862,7 +5862,7 @@ Data type: `Enum['rsyslog', 'syslog-ng', 'none']`
 
 Default value: 'rsyslog'
 
-### secure_linux_cis::redhat7::cis_4_2_2_3
+### secure_linux_cis::distribution::redhat7::cis_4_2_2_3
 
 4.2.2.3 Ensure syslog-ng default file permissions configured (Scored)
 
@@ -5879,12 +5879,12 @@ sensitive syslog-ng data is archived and protected.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_2_2_3
+include secure_linux_cis::distribution::redhat7::cis_4_2_2_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_2_2_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_2_2_3` class.
 
 ##### `enforced`
 
@@ -5902,7 +5902,7 @@ How logging is done
 
 Default value: 'rsyslog'
 
-### secure_linux_cis::redhat7::cis_4_2_2_4
+### secure_linux_cis::distribution::redhat7::cis_4_2_2_4
 
 4.2.2.4 Ensure syslog-ng is configured to send logs to a remote log host (Not Scored)
 
@@ -5920,12 +5920,12 @@ stored on the local system
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_2_2_4
+include secure_linux_cis::distribution::redhat7::cis_4_2_2_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_2_2_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_2_2_4` class.
 
 ##### `enforced`
 
@@ -5951,7 +5951,7 @@ Which host should logging be sent to
 
 Default value: `undef`
 
-### secure_linux_cis::redhat7::cis_4_2_2_5
+### secure_linux_cis::distribution::redhat7::cis_4_2_2_5
 
 4.2.2.5 Ensure remote syslog-ng messages are only accepted on designated log hosts (Not Scored)
 
@@ -5970,12 +5970,12 @@ reasonably complete syslog data in a central location.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_2_2_5
+include secure_linux_cis::distribution::redhat7::cis_4_2_2_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_2_2_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_2_2_5` class.
 
 ##### `enforced`
 
@@ -6001,7 +6001,7 @@ Is this host a logging host
 
 Default value: `false`
 
-### secure_linux_cis::redhat7::cis_4_2_3
+### secure_linux_cis::distribution::redhat7::cis_4_2_3
 
 4.2.3 Ensure rsyslog or syslog-ng is installed (Scored)
 
@@ -6021,12 +6021,12 @@ data en route to a central logging server) justify installing and configuring th
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_2_3
+include secure_linux_cis::distribution::redhat7::cis_4_2_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_2_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_2_3` class.
 
 ##### `enforced`
 
@@ -6044,7 +6044,7 @@ How logging is done
 
 Default value: 'rsyslog'
 
-### secure_linux_cis::redhat7::cis_4_2_4
+### secure_linux_cis::distribution::redhat7::cis_4_2_4
 
 A description of what this class does
 
@@ -6053,12 +6053,12 @@ A description of what this class does
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_2_4
+include secure_linux_cis::distribution::redhat7::cis_4_2_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_2_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_2_4` class.
 
 ##### `enforced`
 
@@ -6068,7 +6068,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_4_3
+### secure_linux_cis::distribution::redhat7::cis_4_3
 
 4.3 Ensure logrotate is configured (Not Scored)
 
@@ -6088,12 +6088,12 @@ large log files.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_4_3
+include secure_linux_cis::distribution::redhat7::cis_4_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_4_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_4_3` class.
 
 ##### `enforced`
 
@@ -6103,7 +6103,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_1_1
+### secure_linux_cis::distribution::redhat7::cis_5_1_1
 
 5.1.1 Ensure cron daemon is enabled (Scored)
 
@@ -6120,12 +6120,12 @@ have to run, and cron is used to execute them.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_1_1
+include secure_linux_cis::distribution::redhat7::cis_5_1_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_1_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_1_1` class.
 
 ##### `enforced`
 
@@ -6135,7 +6135,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_1_2
+### secure_linux_cis::distribution::redhat7::cis_5_1_2
 
 5.1.2 Ensure permissions on /etc/crontab are configured (Scored)
 
@@ -6157,12 +6157,12 @@ them a way to gain unauthorized privileged access.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_1_2
+include secure_linux_cis::distribution::redhat7::cis_5_1_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_1_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_1_2` class.
 
 ##### `enforced`
 
@@ -6172,7 +6172,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_1_3
+### secure_linux_cis::distribution::redhat7::cis_5_1_3
 
 5.1.3 Ensure permissions on /etc/cron.hourly are configured (Scored)
 
@@ -6194,12 +6194,12 @@ elevated privileges or circumvent auditing controls.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_1_3
+include secure_linux_cis::distribution::redhat7::cis_5_1_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_1_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_1_3` class.
 
 ##### `enforced`
 
@@ -6209,7 +6209,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_1_4
+### secure_linux_cis::distribution::redhat7::cis_5_1_4
 
 5.1.4 Ensure permissions on /etc/cron.daily are configured (Scored)
 
@@ -6231,12 +6231,12 @@ elevated privileges or circumvent auditing controls.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_1_4
+include secure_linux_cis::distribution::redhat7::cis_5_1_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_1_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_1_4` class.
 
 ##### `enforced`
 
@@ -6246,7 +6246,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_1_5
+### secure_linux_cis::distribution::redhat7::cis_5_1_5
 
 5.1.5 Ensure permissions on /etc/cron.weekly are configured (Scored)
 
@@ -6268,12 +6268,12 @@ elevated privileges or circumvent auditing controls.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_1_5
+include secure_linux_cis::distribution::redhat7::cis_5_1_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_1_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_1_5` class.
 
 ##### `enforced`
 
@@ -6283,7 +6283,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_1_6
+### secure_linux_cis::distribution::redhat7::cis_5_1_6
 
 5.1.6 Ensure permissions on /etc/cron.monthly are configured (Scored)
 
@@ -6305,12 +6305,12 @@ elevated privileges or circumvent auditing controls.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_1_6
+include secure_linux_cis::distribution::redhat7::cis_5_1_6
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_1_6` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_1_6` class.
 
 ##### `enforced`
 
@@ -6320,7 +6320,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_1_7
+### secure_linux_cis::distribution::redhat7::cis_5_1_7
 
 5.1.7 Ensure permissions on /etc/cron.d are configured (Scored)
 
@@ -6344,12 +6344,12 @@ elevated privileges or circumvent auditing controls.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_1_7
+include secure_linux_cis::distribution::redhat7::cis_5_1_7
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_1_7` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_1_7` class.
 
 ##### `enforced`
 
@@ -6359,7 +6359,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_1_8
+### secure_linux_cis::distribution::redhat7::cis_5_1_8
 
 5.1.8 Ensure at/cron is restricted to authorized users (Scored)
 
@@ -6385,12 +6385,12 @@ deny files.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_1_8
+include secure_linux_cis::distribution::redhat7::cis_5_1_8
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_1_8` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_1_8` class.
 
 ##### `enforced`
 
@@ -6400,7 +6400,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_2_1
+### secure_linux_cis::distribution::redhat7::cis_5_2_1
 
 5.2.1 Ensure permissions on /etc/ssh/sshd_config are configured (Scored)
 
@@ -6417,12 +6417,12 @@ by non-privileged users.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_2_1
+include secure_linux_cis::distribution::redhat7::cis_5_2_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_2_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_2_1` class.
 
 ##### `enforced`
 
@@ -6432,7 +6432,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_2_10
+### secure_linux_cis::distribution::redhat7::cis_5_2_10
 
 5.2.10 Ensure SSH PermitUserEnvironment is disabled (Scored)
 
@@ -6448,12 +6448,12 @@ controls (e.g. setting an execution path that has ssh executing trojan'd program
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_2_10
+include secure_linux_cis::distribution::redhat7::cis_5_2_10
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_2_10` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_2_10` class.
 
 ##### `enforced`
 
@@ -6463,7 +6463,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_2_11
+### secure_linux_cis::distribution::redhat7::cis_5_2_11
 
 A description of what this class does
 
@@ -6477,12 +6477,12 @@ Rationale:
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_2_11
+include secure_linux_cis::distribution::redhat7::cis_5_2_11
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_2_11` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_2_11` class.
 
 ##### `enforced`
 
@@ -6501,7 +6501,7 @@ Which algorigthms are approved for use
 Default value: ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com',
   'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com']
 
-### secure_linux_cis::redhat7::cis_5_2_12
+### secure_linux_cis::distribution::redhat7::cis_5_2_12
 
 5.2.12 Ensure SSH Idle Timeout Interval is configured (Scored)
 
@@ -6525,12 +6525,12 @@ be sent.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_2_12
+include secure_linux_cis::distribution::redhat7::cis_5_2_12
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_2_12` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_2_12` class.
 
 ##### `enforced`
 
@@ -6556,7 +6556,7 @@ Maximum specificed client alive count
 
 Default value: '0'
 
-### secure_linux_cis::redhat7::cis_5_2_13
+### secure_linux_cis::distribution::redhat7::cis_5_2_13
 
 5.2.13 Ensure SSH LoginGraceTime is set to one minute or less (Scored)
 
@@ -6575,12 +6575,12 @@ based on site policy.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_2_13
+include secure_linux_cis::distribution::redhat7::cis_5_2_13
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_2_13` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_2_13` class.
 
 ##### `enforced`
 
@@ -6598,7 +6598,7 @@ Login grace time
 
 Default value: 60
 
-### secure_linux_cis::redhat7::cis_5_2_14
+### secure_linux_cis::distribution::redhat7::cis_5_2_14
 
 5.2.14 Ensure SSH access is limited (Scored)
 
@@ -6632,12 +6632,12 @@ Restricting which users can remotely access the system via SSH will help ensure 
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_2_14
+include secure_linux_cis::distribution::redhat7::cis_5_2_14
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_2_14` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_2_14` class.
 
 ##### `enforced`
 
@@ -6679,7 +6679,7 @@ Which groups to deny
 
 Default value: []
 
-### secure_linux_cis::redhat7::cis_5_2_15
+### secure_linux_cis::distribution::redhat7::cis_5_2_15
 
 5.2.15 Ensure SSH warning banner is configured (Scored)
 
@@ -6696,12 +6696,12 @@ normal user login may assist the prosecution of trespassers on the computer syst
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_2_15
+include secure_linux_cis::distribution::redhat7::cis_5_2_15
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_2_15` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_2_15` class.
 
 ##### `enforced`
 
@@ -6711,7 +6711,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_2_2
+### secure_linux_cis::distribution::redhat7::cis_5_2_2
 
 5.2.2 Ensure SSH Protocol is set to 2 (Scored)
 
@@ -6728,12 +6728,12 @@ SSH v1 suffers from insecurities that do not affect SSH v2.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_2_2
+include secure_linux_cis::distribution::redhat7::cis_5_2_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_2_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_2_2` class.
 
 ##### `enforced`
 
@@ -6743,7 +6743,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_2_3
+### secure_linux_cis::distribution::redhat7::cis_5_2_3
 
 5.2.3 Ensure SSH LogLevel is set to INFO (Scored)
 
@@ -6765,12 +6765,12 @@ the field.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_2_3
+include secure_linux_cis::distribution::redhat7::cis_5_2_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_2_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_2_3` class.
 
 ##### `enforced`
 
@@ -6780,7 +6780,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_2_4
+### secure_linux_cis::distribution::redhat7::cis_5_2_4
 
 5.2.4 Ensure SSH X11 forwarding is disabled (Scored)
 
@@ -6800,12 +6800,12 @@ users can always install their own forwarders.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_2_4
+include secure_linux_cis::distribution::redhat7::cis_5_2_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_2_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_2_4` class.
 
 ##### `enforced`
 
@@ -6815,7 +6815,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_2_5
+### secure_linux_cis::distribution::redhat7::cis_5_2_5
 
 5.2.5 Ensure SSH MaxAuthTries is set to 4 or less (Scored)
 
@@ -6832,12 +6832,12 @@ recommended setting is 4, set the number based on site policy.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_2_5
+include secure_linux_cis::distribution::redhat7::cis_5_2_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_2_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_2_5` class.
 
 ##### `enforced`
 
@@ -6855,7 +6855,7 @@ How many authorization attempts to allow
 
 Default value: '4'
 
-### secure_linux_cis::redhat7::cis_5_2_6
+### secure_linux_cis::distribution::redhat7::cis_5_2_6
 
 5.2.6 Ensure SSH IgnoreRhosts is enabled (Scored)
 
@@ -6871,12 +6871,12 @@ Setting this parameter forces users to enter a password when authenticating with
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_2_6
+include secure_linux_cis::distribution::redhat7::cis_5_2_6
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_2_6` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_2_6` class.
 
 ##### `enforced`
 
@@ -6886,7 +6886,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_2_7
+### secure_linux_cis::distribution::redhat7::cis_5_2_7
 
 5.2.7 Ensure SSH HostbasedAuthentication is disabled (Scored)
 
@@ -6903,12 +6903,12 @@ provides an additional layer of protection .
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_2_7
+include secure_linux_cis::distribution::redhat7::cis_5_2_7
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_2_7` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_2_7` class.
 
 ##### `enforced`
 
@@ -6918,7 +6918,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_2_8
+### secure_linux_cis::distribution::redhat7::cis_5_2_8
 
 5.2.8 Ensure SSH root login is disabled (Scored)
 
@@ -6934,12 +6934,12 @@ sudo or su . This in turn limits opportunity for non-repudiation and provides a 
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_2_8
+include secure_linux_cis::distribution::redhat7::cis_5_2_8
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_2_8` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_2_8` class.
 
 ##### `enforced`
 
@@ -6949,7 +6949,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_2_9
+### secure_linux_cis::distribution::redhat7::cis_5_2_9
 
 5.2.9 Ensure SSH PermitEmptyPasswords is disabled (Scored)
 
@@ -6964,12 +6964,12 @@ Disallowing remote shell access to accounts that have an empty password reduces 
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_2_9
+include secure_linux_cis::distribution::redhat7::cis_5_2_9
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_2_9` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_2_9` class.
 
 ##### `enforced`
 
@@ -6979,7 +6979,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_3_1
+### secure_linux_cis::distribution::redhat7::cis_5_3_1
 
 5.3.1 Ensure password creation requirements are configured (Scored)
 
@@ -7008,12 +7008,12 @@ Strong passwords protect systems from being hacked through brute force methods.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_3_1
+include secure_linux_cis::distribution::redhat7::cis_5_3_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_3_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_3_1` class.
 
 ##### `enforced`
 
@@ -7063,7 +7063,7 @@ L Credit
 
 Default value: -
 
-### secure_linux_cis::redhat7::cis_5_3_2
+### secure_linux_cis::distribution::redhat7::cis_5_3_2
 
 5.3.2 Ensure lockout for failed password attempts is configured (Scored)
 
@@ -7083,12 +7083,12 @@ Locking out user IDs after n unsuccessful consecutive login attempts mitigates b
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_3_2
+include secure_linux_cis::distribution::redhat7::cis_5_3_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_3_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_3_2` class.
 
 ##### `enforced`
 
@@ -7114,7 +7114,7 @@ Amount of time for lockout
 
 Default value: 900
 
-### secure_linux_cis::redhat7::cis_5_3_3
+### secure_linux_cis::distribution::redhat7::cis_5_3_3
 
 5.3.3 Ensure password reuse is limited (Scored)
 
@@ -7131,12 +7131,12 @@ Note that these change only apply to accounts configured on the local system.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_3_3
+include secure_linux_cis::distribution::redhat7::cis_5_3_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_3_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_3_3` class.
 
 ##### `enforced`
 
@@ -7154,7 +7154,7 @@ Number of previous passwords
 
 Default value: 5
 
-### secure_linux_cis::redhat7::cis_5_3_4
+### secure_linux_cis::distribution::redhat7::cis_5_3_4
 
 A description of what this class does
 
@@ -7168,12 +7168,12 @@ Rationale:
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_3_4
+include secure_linux_cis::distribution::redhat7::cis_5_3_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_3_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_3_4` class.
 
 ##### `enforced`
 
@@ -7183,7 +7183,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_4_1_1
+### secure_linux_cis::distribution::redhat7::cis_5_4_1_1
 
 5.4.1.1 Ensure password expiration is 365 days or less (Scored)
 
@@ -7201,12 +7201,12 @@ of opportunity.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_4_1_1
+include secure_linux_cis::distribution::redhat7::cis_5_4_1_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_4_1_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_4_1_1` class.
 
 ##### `enforced`
 
@@ -7224,7 +7224,7 @@ Password max days
 
 Default value: 90
 
-### secure_linux_cis::redhat7::cis_5_4_1_2
+### secure_linux_cis::distribution::redhat7::cis_5_4_1_2
 
 5.4.1.2 Ensure minimum days between password changes is 7 or more (Scored)
 
@@ -7242,12 +7242,12 @@ attempt to circumvent password reuse controls.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_4_1_2
+include secure_linux_cis::distribution::redhat7::cis_5_4_1_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_4_1_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_4_1_2` class.
 
 ##### `enforced`
 
@@ -7265,7 +7265,7 @@ Password minimum days
 
 Default value: 7
 
-### secure_linux_cis::redhat7::cis_5_4_1_3
+### secure_linux_cis::distribution::redhat7::cis_5_4_1_3
 
 5.4.1.3 Ensure password expiration warning days is 7 or more (Scored)
 
@@ -7282,12 +7282,12 @@ choose a simple password or write it down where it may be discovered.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_4_1_3
+include secure_linux_cis::distribution::redhat7::cis_5_4_1_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_4_1_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_4_1_3` class.
 
 ##### `enforced`
 
@@ -7305,7 +7305,7 @@ Password warning days
 
 Default value: 7
 
-### secure_linux_cis::redhat7::cis_5_4_1_4
+### secure_linux_cis::distribution::redhat7::cis_5_4_1_4
 
 5.4.1.4 Ensure inactive password lock is 30 days or less (Scored)
 
@@ -7321,12 +7321,12 @@ Inactive accounts pose a threat to system security since the users are not loggi
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_4_1_4
+include secure_linux_cis::distribution::redhat7::cis_5_4_1_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_4_1_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_4_1_4` class.
 
 ##### `enforced`
 
@@ -7344,7 +7344,7 @@ Password inactive days
 
 Default value: 30
 
-### secure_linux_cis::redhat7::cis_5_4_1_5
+### secure_linux_cis::distribution::redhat7::cis_5_4_1_5
 
 5.4.1.5 Ensure all users last password change date is in the past (Scored)
 
@@ -7359,12 +7359,12 @@ If a users recorded password change date is in the future then they could bypass
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_4_1_5
+include secure_linux_cis::distribution::redhat7::cis_5_4_1_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_4_1_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_4_1_5` class.
 
 ##### `enforced`
 
@@ -7374,7 +7374,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_4_2
+### secure_linux_cis::distribution::redhat7::cis_5_4_2
 
 5.4.2 Ensure system accounts are non-login (Scored)
 
@@ -7388,12 +7388,12 @@ an interactive shell.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_4_2
+include secure_linux_cis::distribution::redhat7::cis_5_4_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_4_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_4_2` class.
 
 ##### `enforced`
 
@@ -7403,7 +7403,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_4_3
+### secure_linux_cis::distribution::redhat7::cis_5_4_3
 
 5.4.3 Ensure default group for the root account is GID 0 (Scored)
 
@@ -7417,12 +7417,12 @@ The usermod command can be used to specify which group the root user belongs to.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_4_3
+include secure_linux_cis::distribution::redhat7::cis_5_4_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_4_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_4_3` class.
 
 ##### `enforced`
 
@@ -7432,7 +7432,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_4_4
+### secure_linux_cis::distribution::redhat7::cis_5_4_4
 
 5.4.4 Ensure default user umask is 027 or more restrictive (Scored)
 
@@ -7448,12 +7448,12 @@ configuration files ( .profile , .bashrc , etc.) in their home directories.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_4_4
+include secure_linux_cis::distribution::redhat7::cis_5_4_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_4_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_4_4` class.
 
 ##### `enforced`
 
@@ -7463,13 +7463,13 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_4_5
+### secure_linux_cis::distribution::redhat7::cis_5_4_5
 
 The TMOUT parameter has been added in 5_4_4
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_4_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_4_5` class.
 
 ##### `enforced`
 
@@ -7479,7 +7479,7 @@ Data type: `Boolean`
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_5_6
+### secure_linux_cis::distribution::redhat7::cis_5_6
 
 5.6 Ensure access to the su command is restricted (Scored)
 
@@ -7494,12 +7494,12 @@ statement in /etc/pam.d/su , the su command will only allow users in the wheel g
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_5_6
+include secure_linux_cis::distribution::redhat7::cis_5_6
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_5_6` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_5_6` class.
 
 ##### `enforced`
 
@@ -7509,7 +7509,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_1_10
+### secure_linux_cis::distribution::redhat7::cis_6_1_10
 
 6.1.10 Ensure no world writable files exist (Scored)
 
@@ -7522,12 +7522,12 @@ man page for more information.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_1_10
+include secure_linux_cis::distribution::redhat7::cis_6_1_10
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_1_10` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_1_10` class.
 
 ##### `enforced`
 
@@ -7537,7 +7537,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_1_11
+### secure_linux_cis::distribution::redhat7::cis_6_1_11
 
 6.1.11 Ensure no unowned files or directories exist (Scored)
 
@@ -7549,12 +7549,12 @@ Sometimes when administrators delete users from the password file they neglect t
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_1_11
+include secure_linux_cis::distribution::redhat7::cis_6_1_11
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_1_11` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_1_11` class.
 
 ##### `enforced`
 
@@ -7564,7 +7564,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_1_12
+### secure_linux_cis::distribution::redhat7::cis_6_1_12
 
 6.1.12 Ensure no ungrouped files or directories exist (Scored)
 
@@ -7576,12 +7576,12 @@ Sometimes when administrators delete users or groups from the system they neglec
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_1_12
+include secure_linux_cis::distribution::redhat7::cis_6_1_12
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_1_12` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_1_12` class.
 
 ##### `enforced`
 
@@ -7591,7 +7591,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_1_2
+### secure_linux_cis::distribution::redhat7::cis_6_1_2
 
 6.1.2 Ensure permissions on /etc/passwd are configured (Scored)
 
@@ -7604,12 +7604,12 @@ utilities to operate.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_1_2
+include secure_linux_cis::distribution::redhat7::cis_6_1_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_1_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_1_2` class.
 
 ##### `enforced`
 
@@ -7619,7 +7619,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_1_3
+### secure_linux_cis::distribution::redhat7::cis_6_1_3
 
 6.1.3 Ensure permissions on /etc/shadow are configured (Scored)
 
@@ -7632,12 +7632,12 @@ security of those accounts, such as the hashed password and other security infor
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_1_3
+include secure_linux_cis::distribution::redhat7::cis_6_1_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_1_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_1_3` class.
 
 ##### `enforced`
 
@@ -7647,7 +7647,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_1_4
+### secure_linux_cis::distribution::redhat7::cis_6_1_4
 
 6.1.4 Ensure permissions on /etc/group are configured (Scored)
 
@@ -7660,12 +7660,12 @@ allows read/write access for root and read access for everyone else.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_1_4
+include secure_linux_cis::distribution::redhat7::cis_6_1_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_1_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_1_4` class.
 
 ##### `enforced`
 
@@ -7675,7 +7675,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_1_5
+### secure_linux_cis::distribution::redhat7::cis_6_1_5
 
 6.1.5 Ensure permissions on /etc/gshadow are configured (Scored)
 
@@ -7688,12 +7688,12 @@ such as the hashed password and other security information.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_1_5
+include secure_linux_cis::distribution::redhat7::cis_6_1_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_1_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_1_5` class.
 
 ##### `enforced`
 
@@ -7703,7 +7703,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_1_6
+### secure_linux_cis::distribution::redhat7::cis_6_1_6
 
 6.1.6 Ensure permissions on /etc/passwd- are configured (Scored)
 
@@ -7715,12 +7715,12 @@ The /etc/passwd- file contains backup user account information.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_1_6
+include secure_linux_cis::distribution::redhat7::cis_6_1_6
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_1_6` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_1_6` class.
 
 ##### `enforced`
 
@@ -7730,7 +7730,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_1_7
+### secure_linux_cis::distribution::redhat7::cis_6_1_7
 
 6.1.7 Ensure permissions on /etc/shadow- are configured (Scored)
 
@@ -7743,12 +7743,12 @@ of those accounts, such as the hashed password and other security information.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_1_7
+include secure_linux_cis::distribution::redhat7::cis_6_1_7
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_1_7` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_1_7` class.
 
 ##### `enforced`
 
@@ -7758,7 +7758,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_1_8
+### secure_linux_cis::distribution::redhat7::cis_6_1_8
 
 6.1.8 Ensure permissions on /etc/group- are configured (Scored)
 
@@ -7770,12 +7770,12 @@ The /etc/group- file contains a backup list of all the valid groups defined in t
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_1_8
+include secure_linux_cis::distribution::redhat7::cis_6_1_8
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_1_8` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_1_8` class.
 
 ##### `enforced`
 
@@ -7785,7 +7785,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_1_9
+### secure_linux_cis::distribution::redhat7::cis_6_1_9
 
 6.1.9 Ensure permissions on /etc/gshadow- are configured (Scored)
 
@@ -7798,12 +7798,12 @@ of those accounts, such as the hashed password and other security information.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_1_9
+include secure_linux_cis::distribution::redhat7::cis_6_1_9
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_1_9` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_1_9` class.
 
 ##### `enforced`
 
@@ -7813,7 +7813,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_1
+### secure_linux_cis::distribution::redhat7::cis_6_2_1
 
 6.2.1 Ensure password fields are not empty (Scored)
 
@@ -7826,12 +7826,12 @@ An account with an empty password field means that anybody may log in as that us
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_1
+include secure_linux_cis::distribution::redhat7::cis_6_2_1
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_1` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_1` class.
 
 ##### `enforced`
 
@@ -7841,7 +7841,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_10
+### secure_linux_cis::distribution::redhat7::cis_6_2_10
 
 6.2.10 Ensure users' dot files are not group or world writable (Scored)
 
@@ -7854,12 +7854,12 @@ While the system administrator can establish secure permissions for users' "dot"
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_10
+include secure_linux_cis::distribution::redhat7::cis_6_2_10
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_10` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_10` class.
 
 ##### `enforced`
 
@@ -7869,7 +7869,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_11
+### secure_linux_cis::distribution::redhat7::cis_6_2_11
 
 6.2.11 Ensure no users have .forward files (Scored)
 
@@ -7882,12 +7882,12 @@ The .forward file specifies an email address to forward the user's mail to.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_11
+include secure_linux_cis::distribution::redhat7::cis_6_2_11
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_11` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_11` class.
 
 ##### `enforced`
 
@@ -7897,7 +7897,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_12
+### secure_linux_cis::distribution::redhat7::cis_6_2_12
 
 6.2.12 Ensure no users have .netrc files (Scored)
 
@@ -7910,12 +7910,12 @@ The .netrc file contains data for logging into a remote host for file transfers 
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_12
+include secure_linux_cis::distribution::redhat7::cis_6_2_12
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_12` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_12` class.
 
 ##### `enforced`
 
@@ -7925,7 +7925,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_13
+### secure_linux_cis::distribution::redhat7::cis_6_2_13
 
 6.2.13 Ensure users' .netrc Files are not group or world accessible
 
@@ -7938,12 +7938,12 @@ While the system administrator can establish secure permissions for users' .netr
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_13
+include secure_linux_cis::distribution::redhat7::cis_6_2_13
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_13` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_13` class.
 
 ##### `enforced`
 
@@ -7953,7 +7953,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_14
+### secure_linux_cis::distribution::redhat7::cis_6_2_14
 
 6.2.14 Ensure no users have .rhosts files (Scored)
 
@@ -7966,12 +7966,12 @@ While no .rhosts files are shipped by default, users can easily create them.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_14
+include secure_linux_cis::distribution::redhat7::cis_6_2_14
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_14` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_14` class.
 
 ##### `enforced`
 
@@ -7981,7 +7981,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_15
+### secure_linux_cis::distribution::redhat7::cis_6_2_15
 
 6.2.15 Ensure all groups in /etc/passwd exist in /etc/group (Scored)
 
@@ -7994,12 +7994,12 @@ Over time, system administration errors and changes can lead to groups being def
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_15
+include secure_linux_cis::distribution::redhat7::cis_6_2_15
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_15` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_15` class.
 
 ##### `enforced`
 
@@ -8009,7 +8009,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_16
+### secure_linux_cis::distribution::redhat7::cis_6_2_16
 
 6.2.16 Ensure no duplicate UIDs exist (Scored)
 
@@ -8023,12 +8023,12 @@ it is possible for an administrator to manually edit the /etc/passwd file and ch
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_16
+include secure_linux_cis::distribution::redhat7::cis_6_2_16
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_16` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_16` class.
 
 ##### `enforced`
 
@@ -8038,7 +8038,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_17
+### secure_linux_cis::distribution::redhat7::cis_6_2_17
 
 6.2.17 Ensure no duplicate GIDs exist (Scored)
 
@@ -8052,12 +8052,12 @@ to manually edit the /etc/group file and change the GID field.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_17
+include secure_linux_cis::distribution::redhat7::cis_6_2_17
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_17` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_17` class.
 
 ##### `enforced`
 
@@ -8067,7 +8067,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_18
+### secure_linux_cis::distribution::redhat7::cis_6_2_18
 
 6.2.18 Ensure no duplicate user names exist (Scored)
 
@@ -8081,12 +8081,12 @@ edit the /etc/passwd file and change the user name.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_18
+include secure_linux_cis::distribution::redhat7::cis_6_2_18
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_18` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_18` class.
 
 ##### `enforced`
 
@@ -8096,7 +8096,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_19
+### secure_linux_cis::distribution::redhat7::cis_6_2_19
 
 6.2.19 Ensure no duplicate group names exist (Scored)
 
@@ -8110,12 +8110,12 @@ the /etc/group file and change the group name.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_19
+include secure_linux_cis::distribution::redhat7::cis_6_2_19
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_19` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_19` class.
 
 ##### `enforced`
 
@@ -8125,7 +8125,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_2
+### secure_linux_cis::distribution::redhat7::cis_6_2_2
 
 6.2.2 Ensure no legacy "+" entries exist in /etc/passwd (Scored)
 
@@ -8140,12 +8140,12 @@ from other platforms.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_2
+include secure_linux_cis::distribution::redhat7::cis_6_2_2
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_2` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_2` class.
 
 ##### `enforced`
 
@@ -8155,7 +8155,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_3
+### secure_linux_cis::distribution::redhat7::cis_6_2_3
 
 6.2.3 Ensure no legacy "+" entries exist in /etc/shadow (Scored)
 
@@ -8170,12 +8170,12 @@ from other platforms.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_3
+include secure_linux_cis::distribution::redhat7::cis_6_2_3
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_3` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_3` class.
 
 ##### `enforced`
 
@@ -8185,7 +8185,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_4
+### secure_linux_cis::distribution::redhat7::cis_6_2_4
 
 6.2.4 Ensure no legacy "+" entries exist in /etc/group (Scored)
 
@@ -8199,12 +8199,12 @@ file. These entries are no longer required on most systems, but may exist in fil
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_4
+include secure_linux_cis::distribution::redhat7::cis_6_2_4
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_4` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_4` class.
 
 ##### `enforced`
 
@@ -8214,7 +8214,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_5
+### secure_linux_cis::distribution::redhat7::cis_6_2_5
 
 6.2.5 Ensure root is the only UID 0 account (Scored)
 
@@ -8227,12 +8227,12 @@ Any account with UID 0 has superuser privileges on the system.
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_5
+include secure_linux_cis::distribution::redhat7::cis_6_2_5
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_5` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_5` class.
 
 ##### `enforced`
 
@@ -8242,7 +8242,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_6
+### secure_linux_cis::distribution::redhat7::cis_6_2_6
 
 6.2.6 Ensure root PATH Integrity (Scored)
 
@@ -8251,12 +8251,12 @@ Default value: `true`
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_6
+include secure_linux_cis::distribution::redhat7::cis_6_2_6
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_6` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_6` class.
 
 ##### `enforced`
 
@@ -8266,7 +8266,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_7
+### secure_linux_cis::distribution::redhat7::cis_6_2_7
 
 6.2.7 Ensure all users' home directories exist (Scored)
 
@@ -8279,12 +8279,12 @@ Users can be defined in /etc/passwd without a home directory or with a home dire
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_7
+include secure_linux_cis::distribution::redhat7::cis_6_2_7
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_7` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_7` class.
 
 ##### `enforced`
 
@@ -8294,7 +8294,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_8
+### secure_linux_cis::distribution::redhat7::cis_6_2_8
 
 6.2.8 Ensure users' home directories permissions are 750 or more restrictive (Scored)
 
@@ -8307,12 +8307,12 @@ While the system administrator can establish secure permissions for users' home 
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_8
+include secure_linux_cis::distribution::redhat7::cis_6_2_8
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_8` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_8` class.
 
 ##### `enforced`
 
@@ -8322,7 +8322,7 @@ Should this rule be enforced
 
 Default value: `true`
 
-### secure_linux_cis::redhat7::cis_6_2_9
+### secure_linux_cis::distribution::redhat7::cis_6_2_9
 
 6.2.9 Ensure users own their home directories (Scored)
 
@@ -8335,12 +8335,12 @@ The user home directory is space defined for the particular user to set local en
 ##### 
 
 ```puppet
-include secure_linux_cis::redhat7::cis_6_2_9
+include secure_linux_cis::distribution::redhat7::cis_6_2_9
 ```
 
 #### Parameters
 
-The following parameters are available in the `secure_linux_cis::redhat7::cis_6_2_9` class.
+The following parameters are available in the `secure_linux_cis::distribution::redhat7::cis_6_2_9` class.
 
 ##### `enforced`
 

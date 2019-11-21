@@ -1,0 +1,11 @@
+---
+secure_linux_cis::aide_command: /usr/sbin/aide --check
+secure_linux_cis::su_group: wheelwheel
+secure_linux_cis::grub_config_files:
+  - /boot/grub2/grub.cfg
+  - /boot/grub2/user.cfg
+secure_linux_cis::update_command: zypper update
+secure_linux_cis::tcp_wrappers_package: tcpd
+secure_linux_cis::samba_service: smb
+secure_linux_cis::cron_service: cron
+secure_linux_cis::auditd_package: audit

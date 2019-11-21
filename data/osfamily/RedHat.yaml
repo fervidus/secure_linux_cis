@@ -1,0 +1,11 @@
+---
+secure_linux_cis::aide_command: /usr/sbin/aide --check
+secure_linux_cis::su_group: wheel
+secure_linux_cis::grub_config_files:
+  - /boot/grub2/grub.cfg
+  - /boot/grub2/user.cfg
+secure_linux_cis::update_command: yum check-update --security
+secure_linux_cis::tcp_wrappers_package: tcp_wrappers
+secure_linux_cis::samba_service: smb
+secure_linux_cis::auditd_package: audit
+secure_linux_cis::cron_service: crond

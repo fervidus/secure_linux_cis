@@ -4,6 +4,6 @@
 # Ensures MOTD is properly configured
 
 Facter.add('motd') do
-  confine osfamily: 'RedHat'
+  confine kernel: 'Linux'
   setcode "egrep '(\\\\v|\\\\r|\\\\m|\\\\s)' /etc/motd"
 end

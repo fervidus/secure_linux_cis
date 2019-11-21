@@ -2,6 +2,7 @@
 #
 # @example
 #   include secure_linux_cis::redhat7
+
 class secure_linux_cis::service {
 
   ## Shared resources used in more than one class
