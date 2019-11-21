@@ -36,8 +36,12 @@ class secure_linux_cis::rules::ensure_default_user_shell_timeout_is_900_seconds_
     }
   }
 
-  file_line { 'profile_readonly_tmout':
-    path => '/etc/profile',
+  $readonly_file = $facts['os']['family'] ? {
+    'RedHat' => '/etc/bashrc',
+    default  => '/etc/profile',
+  }
+  file_line { "${readonly_file} readonly tmout":
+    path => $readonly_file,
     line => 'readonly TMOUT',
   }
 }
