@@ -13,6 +13,7 @@ class secure_linux_cis::rules::ensure_selinux_or_apparmor_are_installed {
       $packages = ['apparmor', 'apparmor-utils']
     }
     default: {
+      warning ("MAC ${::secure_linux_cis::mac} not supported.")
     }
   }
 

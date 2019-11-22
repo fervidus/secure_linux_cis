@@ -32,6 +32,7 @@ class secure_linux_cis::rules::ensure_chrony_is_configured {
       $content = 'DAEMON_OPTS="-u _chrony"'
     }
     default: {
+      warning ("Chrony check is not supported on os family ${facts['os']['family']}.")
     }
   }
 

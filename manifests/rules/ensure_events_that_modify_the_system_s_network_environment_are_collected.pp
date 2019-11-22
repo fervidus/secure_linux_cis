@@ -84,6 +84,7 @@ class secure_linux_cis::rules::ensure_events_that_modify_the_system_s_network_en
         }
       }
       default: {
+        warning ("Network audit rules are not supported on os family ${facts['os']['family']}.")
       }
     }
   }
@@ -137,6 +138,7 @@ class secure_linux_cis::rules::ensure_events_that_modify_the_system_s_network_en
         }
       }
       default: {
+        warning ("Network audit rules are not supported on os family ${facts['os']['family']}.")
       }
     }
   }

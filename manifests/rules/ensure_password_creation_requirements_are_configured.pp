@@ -41,14 +41,16 @@ class secure_linux_cis::rules::ensure_password_creation_requirements_are_configu
     'Debian' => ['common-password'],
   }
 
-  if $::secure_linux_cis::minlen == 0 and $::secure_linux_cis::dcredit == 0 and $::secure_linux_cis::ucredit == 0 and $::secure_linux_cis::ocredit == 0 and $::secure_linux_cis::lcredit == 0 {
+  if $::secure_linux_cis::minlen == 0 and $::secure_linux_cis::dcredit == 0 and $::secure_linux_cis::ucredit == 0 and
+      $::secure_linux_cis::ocredit == 0 and $::secure_linux_cis::lcredit == 0 {
 
     notify { 'blackpass':
       message  => 'Not in compliance with CIS  (Scored). At least one of the password requirements in /etc/security/pwquality.conf must be specified',#lint:ignore:140chars
       loglevel => 'warning',
     }
   }
-  elsif $::secure_linux_cis::minlen == undef and $::secure_linux_cis::dcredit == undef and $::secure_linux_cis::ucredit == undef and $::secure_linux_cis::ocredit == undef and $::secure_linux_cis::lcredit == undef {
+  elsif $::secure_linux_cis::minlen == undef and $::secure_linux_cis::dcredit == undef and $::secure_linux_cis::ucredit == undef and
+        $::secure_linux_cis::ocredit == undef and $::secure_linux_cis::lcredit == undef {
 
   fail('All of the minimum characters in pwquality.conf are undefined')      }
   else {

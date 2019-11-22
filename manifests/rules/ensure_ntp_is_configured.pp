@@ -50,6 +50,9 @@ class secure_linux_cis::rules::ensure_ntp_is_configured {
           require => Class['::ntp']
         }
       }
+      default: {
+        warning ("NTP configuration is not supported on os family ${facts['os']['family']}.")
+      }
     }
   }
 }

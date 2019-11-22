@@ -35,7 +35,8 @@ class secure_linux_cis::rules::ensure_password_expiration_is_365_days_or_less {
   $local_users = pick($facts['local_users'], {})
 
   $local_users.each |String $user, Hash $attributes| {
-    if $attributes['password_expires_days'] != 'never' and $attributes['max_days_between_password_change'] != $::secure_linux_cis::pass_max_days {
+    if $attributes['password_expires_days'] != 'never' and
+        $attributes['max_days_between_password_change'] != $::secure_linux_cis::pass_max_days {
       exec { "/usr/bin/chage --maxdays ${::secure_linux_cis::pass_max_days} ${user}": }
     }
   }
