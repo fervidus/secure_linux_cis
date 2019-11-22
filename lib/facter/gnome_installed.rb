@@ -11,6 +11,6 @@ end
 Facter.add('gnome_installed') do
   confine osfamily: 'Debian'
   setcode do
-    Facter::Core::Execution.exec('dpkg -l | grep gdm3')
+    Facter::Core::Execution.exec('dpkg -l | grep gdm3') != ''
   end
 end
