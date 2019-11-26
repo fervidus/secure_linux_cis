@@ -13,7 +13,7 @@
 
 class secure_linux_cis::rules::ensure_separate_partition_exists_for_tmp {
 
-  if ! $facts['mountpoints']['/tmp'] {
+  unless $facts['mountpoints']['/tmp'] {
     notify { 'tmp-part':
       message  => 'Not in compliance with CIS  (Scored). There is not a seperate partition for /tmp',
       loglevel => 'warning',
