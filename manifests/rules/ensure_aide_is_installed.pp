@@ -45,6 +45,7 @@ class secure_linux_cis::rules::ensure_aide_is_installed {
       }
     }
     default: {
+      warning ("Aide check is not supported on os family ${facts['os']['family']}.")
     }
   }
 }

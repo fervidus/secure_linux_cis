@@ -40,7 +40,8 @@ class secure_linux_cis::rules::ensure_ssh_access_is_limited {
 
   include ::secure_linux_cis::service
 
-  if $::secure_linux_cis::allow_users == [] and $::secure_linux_cis::allow_groups == [] and $::secure_linux_cis::deny_users == [] and $::secure_linux_cis::deny_groups == [] {
+  if $::secure_linux_cis::allow_users == [] and $::secure_linux_cis::allow_groups == [] and $::secure_linux_cis::deny_users == [] and
+      $::secure_linux_cis::deny_groups == [] {
 
     notify { 'allow_groups':
       message  => 'Not in compliance with CIS 4 (Scored). One or more parameters in /etc/ssh/sshd_config have not been set.',

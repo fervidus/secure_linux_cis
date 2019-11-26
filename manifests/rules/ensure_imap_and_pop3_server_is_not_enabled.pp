@@ -35,6 +35,7 @@ class secure_linux_cis::rules::ensure_imap_and_pop3_server_is_not_enabled {
       }
     }
     default: {
+      warning ("Imap / pop3 checks are not supported on os family ${facts['os']['family']}.")
     }
 
   }

@@ -34,7 +34,8 @@ class secure_linux_cis::rules::ensure_password_expiration_warning_days_is_7_or_m
 
   $local_users.each |String $user, Hash $attributes| {
 
-    if $attributes['password_expires_days'] != 'never' and $attributes['warn_days_between_password_change'] != $::secure_linux_cis::pass_warn_days {
+    if $attributes['password_expires_days'] != 'never' and
+        $attributes['warn_days_between_password_change'] != $::secure_linux_cis::pass_warn_days {
       exec { "/usr/bin/chage --warndays ${::secure_linux_cis::pass_warn_days} ${user}": }
     }
   }

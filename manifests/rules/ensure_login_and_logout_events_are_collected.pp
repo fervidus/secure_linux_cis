@@ -37,15 +37,16 @@ class secure_linux_cis::rules::ensure_login_and_logout_events_are_collected {
       file_line { 'audit.rules login/logout 2':
         ensure => present,
         path   => '/etc/audit/rules.d/audit.rules',
-        line   => '-w /var/run/faillog -p wa -k logins',
+        line   => '-w /var/log/faillog -p wa -k logins',
       }
       file_line { 'audit.rules login/logout 3':
         ensure => present,
         path   => '/etc/audit/rules.d/audit.rules',
-        line   => '-w /var/run/tallylog -p wa -k logins',
+        line   => '-w /var/log/tallylog -p wa -k logins',
       }
     }
     default: {
+      warning ("Login / logon event checking is not supported on os family ${facts['os']['family']}.")
     }
   }
 }

@@ -31,6 +31,7 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_shadow_are_configured {
       }
     }
     default: {
+      warning ("shadow configuration not supported on os family ${facts['os']['family']}.")
     }
   }
 }

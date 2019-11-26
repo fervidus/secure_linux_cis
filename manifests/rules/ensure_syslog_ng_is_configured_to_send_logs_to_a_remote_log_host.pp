@@ -21,10 +21,11 @@
 class secure_linux_cis::rules::ensure_syslog_ng_is_configured_to_send_logs_to_a_remote_log_host {
 
   if $::secure_linux_cis::logging == 'syslog-ng' and $::secure_linux_cis::logging_host != '' {
+    $log_host = $::secure_linux_cis::logging_host
     file_line { 'syslog-ng.conf logging_host':
       ensure => present,
       path   => '/etc/syslog-ng/syslog-ng.conf',
-      line   => "destination logserver { tcp(\"${::secure_linux_cis::logging_host}\" port(514)); }; log { source(src); destination(logserver); };",
+      line   => "destination logserver { tcp(\"${log_host}\" port(514)); }; log { source(src); destination(logserver); };",
       match  => '^destination logserver',
     }
   }
