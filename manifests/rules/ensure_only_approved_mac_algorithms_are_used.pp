@@ -26,7 +26,7 @@ class secure_linux_cis::rules::ensure_only_approved_mac_algorithms_are_used {
 
   $::secure_linux_cis::approved_mac_algorithms.each |$algorithm| {
 
-    if !($algorithm in $acceptable_values) {
+    unless $algorithm in $acceptable_values {
 
       fail("MAC Algorithm ${algorithm} does not match CIS standards. Please use CIS standard 1 for reference")
     }

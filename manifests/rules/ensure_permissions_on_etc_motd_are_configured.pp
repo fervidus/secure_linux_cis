@@ -15,7 +15,7 @@
 
 class secure_linux_cis::rules::ensure_permissions_on_etc_motd_are_configured {
 
-  if !$::secure_linux_cis::motd and $::secure_linux_cis::banner {
+  unless $::secure_linux_cis::motd and $::secure_linux_cis::banner {
     $motd_real = $::secure_linux_cis::banner
   }
   else {

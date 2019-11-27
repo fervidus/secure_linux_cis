@@ -22,7 +22,7 @@ class secure_linux_cis::rules::ensure_no_duplicate_gids_exist {
     content => file('secure_linux_cis/dup_gid.sh'),
   }
 
-  if !($facts['duplicate_gid'].empty) {
+  unless $facts['duplicate_gid'].empty {
 
     notify { 'dg':
       message  => 'Not in compliance with CIS 7 (Scored). There are duplicate GIDs that exist in /etc/group. Check the duplicate_gid fact for details',#lint:ignore:140chars

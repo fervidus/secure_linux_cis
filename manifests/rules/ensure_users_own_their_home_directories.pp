@@ -21,7 +21,7 @@ class secure_linux_cis::rules::ensure_users_own_their_home_directories {
     content => file('secure_linux_cis/home_dir_own.sh'),
   }
 
-  if !($facts[ 'home_directory_owner' ].empty) {
+  unless $facts['home_directory_owner'].empty {
 
     notify { 'hdo':
       message  => 'Not in compliance with CIS  (Scored). You have a home directory that is not owned by the matching user name. Check the home_directory_owner fact for details',#lint:ignore:140chars

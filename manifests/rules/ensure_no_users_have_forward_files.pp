@@ -20,7 +20,7 @@ class secure_linux_cis::rules::ensure_no_users_have_forward_files {
     content => file('secure_linux_cis/forward.sh'),
   }
 
-  if !($facts['forward_files'].empty) {
+  unless $facts['forward_files'].empty {
     notify { 'ff':
       message  => 'Not in compliance with CIS 1 (Scored). There are .forward files on the system. Check the forward_files fact for details',#lint:ignore:140chars
       loglevel => 'warning',

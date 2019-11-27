@@ -20,7 +20,7 @@ class secure_linux_cis::rules::ensure_all_users_home_directories_exist {
     content => file('secure_linux_cis/home_directory.sh'),
   }
 
-  if !($facts['home_directory'].empty) {
+  unless $facts['home_directory'].empty {
     notify { 'hdir':
       message  => 'Not in compliance with CIS (Scored). You have user(s) without a home directory. Check the home_directory fact for details',#lint:ignore:140chars
       loglevel => 'warning',

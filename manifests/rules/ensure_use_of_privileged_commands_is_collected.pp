@@ -26,7 +26,7 @@ class secure_linux_cis::rules::ensure_use_of_privileged_commands_is_collected {
     content => file('secure_linux_cis/audit_priv.sh'),
   }
 
-  if !($facts['audit_privileged'].empty) {
+  unless $facts['audit_privileged'].empty {
 
     file { '/etc/audit/rules.d/cis_4_1_12.rules':
       ensure  => file,

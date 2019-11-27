@@ -17,7 +17,7 @@ class secure_linux_cis::rules::ensure_root_path_integrity {
     content => file('secure_linux_cis/root_path.sh'),
   }
 
-  if !$facts['root_path'].empty {
+  unless $facts['root_path'].empty {
     notify { 'rp':
       message  => 'Not in compliance with CIS  (Scored). There is a "." or other writable directory in the root executable path. Check the root_path fact for details',#lint:ignore:140chars
       loglevel => 'warning',

@@ -22,7 +22,7 @@ class secure_linux_cis::rules::ensure_system_accounts_are_non_login {
       $nologin = '/sbin/nologin'
     }
   }
-  if !empty($facts['nologin']) {
+  unless $facts['nologin'].empty {
 
     $facts['nologin'].each | String $user | {
       exec { "nologin ${user}":

@@ -17,7 +17,7 @@
 
 class secure_linux_cis::rules::ensure_ipv6_is_disabled {
 
-  if !$::secure_linux_cis::ipv6_enabled {
+  unless $::secure_linux_cis::ipv6_enabled {
 
     sysctl { 'net.ipv6.conf.all.disable_ipv6':
       value => 1,

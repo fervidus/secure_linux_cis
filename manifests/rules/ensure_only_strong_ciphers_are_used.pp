@@ -38,8 +38,7 @@ class secure_linux_cis::rules::ensure_only_strong_ciphers_are_used (
 
   $approved_ciphers.each |$cipher| {
 
-    if !($cipher in $acceptable_values) {
-
+    unless $cipher in $acceptable_values {
       fail("Cipher ${cipher} does not match CIS standards. Please use CIS standard 5.2.13 for reference")
     }
   }

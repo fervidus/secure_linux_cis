@@ -46,8 +46,7 @@ class secure_linux_cis::rules::ensure_only_strong_key_exchange_algorithms_are_us
 
   $approved_kex.each |$kex| {
 
-    if !($kex in $acceptable_values) {
-
+    unless $kex in $acceptable_values {
       fail("Key exchange algorithm ${kex} does not match CIS standards. Please use CIS standard 5.2.15 for reference")
     }
   }
