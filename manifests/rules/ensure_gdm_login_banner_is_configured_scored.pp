@@ -4,6 +4,10 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_gdm_login_banner_is_configured_scored
-class secure_linux_cis::rules::ensure_gdm_login_banner_is_configured_scored {
-  warning('gdm banner not implemented yet')
+class secure_linux_cis::rules::ensure_gdm_login_banner_is_configured_scored(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    warning('gdm banner not implemented yet')
+  }
 }

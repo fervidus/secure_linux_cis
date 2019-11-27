@@ -16,17 +16,18 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_permissions_on_ssh_public_host_key_files_are_configured
-class secure_linux_cis::rules::ensure_permissions_on_ssh_public_host_key_files_are_configured {
-
-  include ::secure_linux_cis::service
-
-  unless $facts['ssh_host_pub_keys'].empty {
-
-    file{ $facts['ssh_host_pub_keys']:
-      ensure => 'present',
-      owner  => 'root',
-      group  => 'root',
-      mode   => '0644',
+class secure_linux_cis::rules::ensure_permissions_on_ssh_public_host_key_files_are_configured(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    include ::secure_linux_cis::service
+    unless $facts['ssh_host_pub_keys'].empty {
+      file{ $facts['ssh_host_pub_keys']:
+        ensure => 'present',
+        owner  => 'root',
+        group  => 'root',
+        mode   => '0644',
+      }
     }
   }
 }

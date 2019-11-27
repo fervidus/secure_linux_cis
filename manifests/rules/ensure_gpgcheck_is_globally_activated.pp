@@ -10,14 +10,15 @@
 #
 # @example
 #   include secure_linux_cis::ensure_gpgcheck_is_globally_activated
-
-class secure_linux_cis::rules::ensure_gpgcheck_is_globally_activated {
-
-  file_line { 'gpgcheck':
-    ensure => present,
-    path   => '/etc/yum.conf',
-    line   => 'gpgcheck=1',
-    match  => '^gpgcheck',
+class secure_linux_cis::rules::ensure_gpgcheck_is_globally_activated(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    file_line { 'gpgcheck':
+      ensure => present,
+      path   => '/etc/yum.conf',
+      line   => 'gpgcheck=1',
+      match  => '^gpgcheck',
+    }
   }
-
 }

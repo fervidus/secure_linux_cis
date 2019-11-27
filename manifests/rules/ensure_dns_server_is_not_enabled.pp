@@ -14,25 +14,25 @@
 #
 # @example
 #   include secure_linux_cis::ensure_dns_server_is_not_enabled
-
-class secure_linux_cis::rules::ensure_dns_server_is_not_enabled {
-
-  case $facts['os']['family'] {
-    'RedHat': {
-      $service = 'named'
+class secure_linux_cis::rules::ensure_dns_server_is_not_enabled(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    case $facts['os']['family'] {
+      'RedHat': {
+        $service = 'named'
+      }
+      'Debian': {
+        $service = 'bind9'
+      }
+      default: {
+        notify { "This DNS server check is not yet implemented for ${facts['os']['family']}": }
+        $service = 'TODO DNS'
+      }
     }
-    'Debian': {
-      $service = 'bind9'
-    }
-    default: {
-      notify { "This DNS server check is not yet implemented for ${facts['os']['family']}": }
-      $service = 'TODO DNS'
+    service { $service:
+      ensure => stopped,
+      enable => false,
     }
   }
-
-  service { $service:
-    ensure => stopped,
-    enable => false,
-  }
-
 }

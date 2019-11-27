@@ -12,17 +12,17 @@
 #
 # @example
 #   include secure_linux_cis::ensure_core_dumps_are_restricted
-
-class secure_linux_cis::rules::ensure_core_dumps_are_restricted {
-
-  file_line { 'limits_hc':
-    path  => '/etc/security/limits.conf',
-    line  => '* hard core 0',
-    match => '^* hard core ',
+class secure_linux_cis::rules::ensure_core_dumps_are_restricted(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    file_line { 'limits_hc':
+      path  => '/etc/security/limits.conf',
+      line  => '* hard core 0',
+      match => '^* hard core ',
+    }
+    sysctl { 'fs.suid_dumpable':
+      value => 0,
+    }
   }
-
-  sysctl { 'fs.suid_dumpable':
-    value => 0,
-  }
-
 }

@@ -10,14 +10,15 @@
 #
 # @example
 #   include secure_linux_cis::ensure_nodev_option_set_on_tmp_partition
-
-class secure_linux_cis::rules::ensure_nodev_option_set_on_tmp_partition {
-  $mount = '/tmp'
-  $option = 'nodev'
-
-  secure_linux_cis::mount_options { "${mount}-${option}":
-    mount => $mount,
-    opt   => $option,
+class secure_linux_cis::rules::ensure_nodev_option_set_on_tmp_partition(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    $mount = '/tmp'
+    $option = 'nodev'
+    secure_linux_cis::mount_options { "${mount}-${option}":
+      mount => $mount,
+      opt   => $option,
+    }
   }
-
 }

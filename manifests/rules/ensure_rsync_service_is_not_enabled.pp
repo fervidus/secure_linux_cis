@@ -12,12 +12,13 @@
 #
 # @example
 #   include secure_linux_cis::ensure_rsync_service_is_not_enabled
-
-class secure_linux_cis::rules::ensure_rsync_service_is_not_enabled {
-
-  service { ['rsyncd', 'rsync']:
-    ensure => stopped,
-    enable => false,
+class secure_linux_cis::rules::ensure_rsync_service_is_not_enabled(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    service { ['rsyncd', 'rsync']:
+      ensure => stopped,
+      enable => false,
+    }
   }
-
 }

@@ -9,13 +9,15 @@
 # attention as a weak spot that can be exploited with expanded computing power. An
 # attacker that breaks the algorithm could take advantage of a MiTM position to decrypt the
 # SSH tunnel and capture credentials and information
-
 # @summary Only enable strong MAC algorithms
 #
 # @example
 #   include secure_linux_cis::ensure_only_strong_mac_algorithms_are_used
-class secure_linux_cis::rules::ensure_only_strong_mac_algorithms_are_used {
-  # Looks like the same check
-  include ::secure_linux_cis::rules::ensure_only_approved_mac_algorithms_are_used
+class secure_linux_cis::rules::ensure_only_strong_mac_algorithms_are_used(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    # Looks like the same check
+    include ::secure_linux_cis::rules::ensure_only_approved_mac_algorithms_are_used
+  }
 }
-

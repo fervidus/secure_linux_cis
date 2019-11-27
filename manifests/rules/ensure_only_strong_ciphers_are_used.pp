@@ -15,42 +15,38 @@
 # @example
 #   include secure_linux_cis::rules::ensure_only_strong_ciphers_are_used
 class secure_linux_cis::rules::ensure_only_strong_ciphers_are_used (
-  Array $approved_ciphers = [
-    'chacha20-poly1305@openssh.com',
-    'aes256-gcm@openssh.com',
-    'aes128-gcm@openssh.com',
-    'aes256-ctr',
-    'aes192-ctr',
-    'aes128-ctr'
-  ]
+    Boolean $enforced = true,
+    Array $approved_ciphers = [
+      'chacha20-poly1305@openssh.com',
+      'aes256-gcm@openssh.com',
+      'aes128-gcm@openssh.com',
+      'aes256-ctr',
+      'aes192-ctr',
+      'aes128-ctr'
+    ]
 ) {
-
-  include ::secure_linux_cis::service
-
-  $acceptable_values = [
-    'chacha20-poly1305@openssh.com',
-    'aes256-gcm@openssh.com',
-    'aes128-gcm@openssh.com',
-    'aes256-ctr',
-    'aes192-ctr',
-    'aes128-ctr'
-  ]
-
-  $approved_ciphers.each |$cipher| {
-
-    unless $cipher in $acceptable_values {
-      fail("Cipher ${cipher} does not match CIS standards. Please use CIS standard 5.2.13 for reference")
+  if $enforced {
+    include ::secure_linux_cis::service
+    $acceptable_values = [
+      'chacha20-poly1305@openssh.com',
+      'aes256-gcm@openssh.com',
+      'aes128-gcm@openssh.com',
+      'aes256-ctr',
+      'aes192-ctr',
+      'aes128-ctr'
+    ]
+    $approved_ciphers.each |$cipher| {
+      unless $cipher in $acceptable_values {
+        fail("Cipher ${cipher} does not match CIS standards. Please use CIS standard 5.2.13 for reference")
+      }
+    }
+    $ciphers_array = join($approved_ciphers,',')
+    file_line { 'ssh ciphers':
+      ensure => 'present',
+      path   => '/etc/ssh/sshd_config',
+      line   => "Ciphers ${ciphers_array}",
+      match  => '^#?Ciphers',
+      notify => Exec['reload sshd'],
     }
   }
-
-  $ciphers_array = join($approved_ciphers,',')
-
-  file_line { 'ssh ciphers':
-    ensure => 'present',
-    path   => '/etc/ssh/sshd_config',
-    line   => "Ciphers ${ciphers_array}",
-    match  => '^#?Ciphers',
-    notify => Exec['reload sshd'],
-  }
 }
-

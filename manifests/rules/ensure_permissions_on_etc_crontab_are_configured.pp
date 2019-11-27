@@ -19,13 +19,15 @@
 #
 # @example
 #   include secure_linux_cis::ensure_permissions_on_etc_crontab_are_configured
-
-class secure_linux_cis::rules::ensure_permissions_on_etc_crontab_are_configured {
-
-  file { '/etc/crontab':
-    ensure => file,
-    group  => 'root',
-    owner  => 'root',
-    mode   => '0600',
+class secure_linux_cis::rules::ensure_permissions_on_etc_crontab_are_configured(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    file { '/etc/crontab':
+      ensure => file,
+      group  => 'root',
+      owner  => 'root',
+      mode   => '0600',
+    }
   }
 }

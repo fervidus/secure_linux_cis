@@ -11,9 +11,12 @@
 #
 # @example
 #   include secure_linux_cis::ensure_address_space_layout_randomization_aslr_is_enabled
-
-class secure_linux_cis::rules::ensure_address_space_layout_randomization_aslr_is_enabled {
-  sysctl { 'kernel.randomize_va_space':
-    value => 2,
+class secure_linux_cis::rules::ensure_address_space_layout_randomization_aslr_is_enabled(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    sysctl { 'kernel.randomize_va_space':
+      value => 2,
+    }
   }
 }

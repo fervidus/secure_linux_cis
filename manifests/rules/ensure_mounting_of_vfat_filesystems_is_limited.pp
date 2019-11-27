@@ -14,11 +14,12 @@
 #
 # @example
 #   include secure_linux_cis::ensure_mounting_of_vfat_filesystems_is_limited
-
-class secure_linux_cis::rules::ensure_mounting_of_vfat_filesystems_is_limited {
-
-  kmod::install { 'vfat':
-    command => '/bin/true',
+class secure_linux_cis::rules::ensure_mounting_of_vfat_filesystems_is_limited(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    kmod::install { 'vfat':
+      command => '/bin/true',
+    }
   }
 }
-

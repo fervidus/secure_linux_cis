@@ -22,5 +22,4 @@
 #   }
 # }
 #---This cannot be automated or enforced in any way
-
 class secure_linux_cis::rules::ensure_root_login_is_restricted_to_system_console {}

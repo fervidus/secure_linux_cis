@@ -16,11 +16,12 @@
 #
 # @example
 #   include secure_linux_cis::ensure_dccp_is_disabled
-
-class secure_linux_cis::rules::ensure_dccp_is_disabled {
-
-  kmod::install { 'dccp':
-    command => '/bin/true',
+class secure_linux_cis::rules::ensure_dccp_is_disabled(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    kmod::install { 'dccp':
+      command => '/bin/true',
+    }
   }
-
 }

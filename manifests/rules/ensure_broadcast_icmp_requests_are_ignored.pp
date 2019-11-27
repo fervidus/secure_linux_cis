@@ -18,9 +18,12 @@
 #
 # @example
 #   include secure_linux_cis::ensure_broadcast_icmp_requests_are_ignored
-
-class secure_linux_cis::rules::ensure_broadcast_icmp_requests_are_ignored {
-  sysctl { 'net.ipv4.icmp_echo_ignore_broadcasts':
-    value => 1,
+class secure_linux_cis::rules::ensure_broadcast_icmp_requests_are_ignored(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    sysctl { 'net.ipv4.icmp_echo_ignore_broadcasts':
+      value => 1,
+    }
   }
 }

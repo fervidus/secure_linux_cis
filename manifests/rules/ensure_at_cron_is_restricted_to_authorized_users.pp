@@ -23,28 +23,27 @@
 #
 # @example
 #   include secure_linux_cis::ensure_at_cron_is_restricted_to_authorized_users
-
-class secure_linux_cis::rules::ensure_at_cron_is_restricted_to_authorized_users {
-
-  file { '/etc/cron.allow':
-    ensure => file,
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0600',
-  }
-
-  file { '/etc/at.allow':
-    ensure => file,
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0600',
-  }
-
-  file { '/etc/cron.deny':
-    ensure => absent,
-  }
-
-  file { '/etc/at.deny':
-    ensure => absent,
+class secure_linux_cis::rules::ensure_at_cron_is_restricted_to_authorized_users(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    file { '/etc/cron.allow':
+      ensure => file,
+      owner  => 'root',
+      group  => 'root',
+      mode   => '0600',
+    }
+    file { '/etc/at.allow':
+      ensure => file,
+      owner  => 'root',
+      group  => 'root',
+      mode   => '0600',
+    }
+    file { '/etc/cron.deny':
+      ensure => absent,
+    }
+    file { '/etc/at.deny':
+      ensure => absent,
+    }
   }
 }

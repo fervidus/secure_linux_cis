@@ -15,14 +15,15 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ipv6_router_advertisements_are_not_accepted
-
-class secure_linux_cis::rules::ensure_ipv6_router_advertisements_are_not_accepted {
-
-  sysctl { 'net.ipv6.conf.all.accept_ra':
-    value => 0,
-  }
-
-  sysctl { 'net.ipv6.conf.default.accept_ra':
-    value => 0,
+class secure_linux_cis::rules::ensure_ipv6_router_advertisements_are_not_accepted(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    sysctl { 'net.ipv6.conf.all.accept_ra':
+      value => 0,
+    }
+    sysctl { 'net.ipv6.conf.default.accept_ra':
+      value => 0,
+    }
   }
 }

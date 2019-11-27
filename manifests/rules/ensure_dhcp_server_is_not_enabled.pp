@@ -13,12 +13,13 @@
 #
 # @example
 #   include secure_linux_cis::ensure_dhcp_server_is_not_enabled
-
-class secure_linux_cis::rules::ensure_dhcp_server_is_not_enabled {
-
-  service { ['dhcpd', 'isc-dhcp-server', 'isc-dhcp-server6']:
-    ensure => stopped,
-    enable => false,
+class secure_linux_cis::rules::ensure_dhcp_server_is_not_enabled(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    service { ['dhcpd', 'isc-dhcp-server', 'isc-dhcp-server6']:
+      ensure => stopped,
+      enable => false,
+    }
   }
-
 }

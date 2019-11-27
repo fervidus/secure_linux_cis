@@ -10,13 +10,15 @@
 #
 # @example
 #   include secure_linux_cis::ensure_root_is_the_only_uid_0_account
-
-class secure_linux_cis::rules::ensure_root_is_the_only_uid_0_account {
-
-  if $facts['root_uid'] and $facts[ 'root_uid'] != 'root' {
-    notify { 'ru':
-      message  => 'Not in compliance with CIS  (Scored). One or more users have superuser privileges on the system other than Root. Check the root_uid fact for details', # lint:ignore:140chars
-      loglevel => 'warning',
+class secure_linux_cis::rules::ensure_root_is_the_only_uid_0_account(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    if $facts['root_uid'] and $facts[ 'root_uid'] != 'root' {
+      notify { 'ru':
+        message  => 'Not in compliance with CIS  (Scored). One or more users have superuser privileges on the system other than Root. Check the root_uid fact for details', # lint:ignore:140chars
+        loglevel => 'warning',
+      }
     }
   }
 }

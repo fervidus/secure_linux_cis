@@ -19,24 +19,24 @@
 #
 # @example
 #   include secure_linux_cis::ensure_session_initiation_information_is_collected
-
-class secure_linux_cis::rules::ensure_session_initiation_information_is_collected {
-
-  file_line { 'audit.rules session 1':
-    ensure => present,
-    path   => '/etc/audit/rules.d/audit.rules',
-    line   => '-w /var/run/utmp -p wa -k session',
-  }
-
-  file_line { 'audit.rules session 2':
-    ensure => present,
-    path   => '/etc/audit/rules.d/audit.rules',
-    line   => '-w /var/log/wtmp -p wa -k logins',
-  }
-
-  file_line { 'audit.rules session 3':
-    ensure => present,
-    path   => '/etc/audit/rules.d/audit.rules',
-    line   => '-w /var/log/btmp -p wa -k logins',
+class secure_linux_cis::rules::ensure_session_initiation_information_is_collected(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    file_line { 'audit.rules session 1':
+      ensure => present,
+      path   => '/etc/audit/rules.d/audit.rules',
+      line   => '-w /var/run/utmp -p wa -k session',
+    }
+    file_line { 'audit.rules session 2':
+      ensure => present,
+      path   => '/etc/audit/rules.d/audit.rules',
+      line   => '-w /var/log/wtmp -p wa -k logins',
+    }
+    file_line { 'audit.rules session 3':
+      ensure => present,
+      path   => '/etc/audit/rules.d/audit.rules',
+      line   => '-w /var/log/btmp -p wa -k logins',
+    }
   }
 }

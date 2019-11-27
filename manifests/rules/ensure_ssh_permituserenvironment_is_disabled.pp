@@ -13,17 +13,18 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_permituserenvironment_is_disabled
-
-class secure_linux_cis::rules::ensure_ssh_permituserenvironment_is_disabled {
-
-  include ::secure_linux_cis::service
-
-  file_line { 'ssh permit user environment':
-    ensure   => present,
-    path     => '/etc/ssh/sshd_config',
-    line     => 'PermitUserEnvironment no',
-    match    => '^#?PermitUserEnvironment',
-    multiple => true,
-    notify   => Exec['reload sshd'],
+class secure_linux_cis::rules::ensure_ssh_permituserenvironment_is_disabled(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    include ::secure_linux_cis::service
+    file_line { 'ssh permit user environment':
+      ensure   => present,
+      path     => '/etc/ssh/sshd_config',
+      line     => 'PermitUserEnvironment no',
+      match    => '^#?PermitUserEnvironment',
+      multiple => true,
+      notify   => Exec['reload sshd'],
+    }
   }
 }

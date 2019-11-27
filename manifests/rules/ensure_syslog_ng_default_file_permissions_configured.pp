@@ -15,15 +15,16 @@
 #
 # @example
 #   include secure_linux_cis::ensure_syslog_ng_default_file_permissions_configured
-
-class secure_linux_cis::rules::ensure_syslog_ng_default_file_permissions_configured {
-
-  if $::secure_linux_cis::logging == 'syslog-ng' {
-
-    file_line { 'syslog-ng.conf permissions':
-      ensure => present,
-      path   => '/etc/syslog-ng/syslog-ng.conf',
-      line   => 'options { chain_hostnames(off); flush_lines(0); perm(0640); stats_freq(3600); threaded(yes); };',
+class secure_linux_cis::rules::ensure_syslog_ng_default_file_permissions_configured(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    if $::secure_linux_cis::logging == 'syslog-ng' {
+      file_line { 'syslog-ng.conf permissions':
+        ensure => present,
+        path   => '/etc/syslog-ng/syslog-ng.conf',
+        line   => 'options { chain_hostnames(off); flush_lines(0); perm(0640); stats_freq(3600); threaded(yes); };',
+      }
     }
   }
 }

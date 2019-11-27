@@ -11,11 +11,12 @@
 #
 # @example
 #   include secure_linux_cis::ensure_the_mcs_translation_service_mcstrans_is_not_installed
-
-class secure_linux_cis::rules::ensure_the_mcs_translation_service_mcstrans_is_not_installed {
-
-  package { 'mcstrans':
-    ensure => purged,
+class secure_linux_cis::rules::ensure_the_mcs_translation_service_mcstrans_is_not_installed(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    package { 'mcstrans':
+      ensure => purged,
+    }
   }
-
 }

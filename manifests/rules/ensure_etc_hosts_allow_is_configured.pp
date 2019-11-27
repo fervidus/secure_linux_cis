@@ -25,16 +25,17 @@
 #
 # @example
 #   include secure_linux_cis::ensure_etc_hosts_allow_is_configured
-
-class secure_linux_cis::rules::ensure_etc_hosts_allow_is_configured {
-
-  # This file manages both benchmarks 3_4_2 and 3_4_4
-  file { '/etc/hosts.allow':
-    ensure  => file,
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
-    content => "ALL: ${facts['networking']['network']}/${facts['networking']['netmask']}\n",
+class secure_linux_cis::rules::ensure_etc_hosts_allow_is_configured(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    # This file manages both benchmarks 3_4_2 and 3_4_4
+    file { '/etc/hosts.allow':
+      ensure  => file,
+      owner   => 'root',
+      group   => 'root',
+      mode    => '0644',
+      content => "ALL: ${facts['networking']['network']}/${facts['networking']['netmask']}\n",
+    }
   }
-
 }

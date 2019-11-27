@@ -13,30 +13,29 @@
 #
 # @example
 #   include secure_linux_cis::ensure_imap_and_pop3_server_is_not_enabled
-
-class secure_linux_cis::rules::ensure_imap_and_pop3_server_is_not_enabled {
-
-  case $facts['os']['family'] {
-    'RedHat': {
-      $services = [
-        'dovecot',
-        'cyrus-imap',
-      ]
-
-      service { $services:
-        ensure => stopped,
-        enable => false,
+class secure_linux_cis::rules::ensure_imap_and_pop3_server_is_not_enabled(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    case $facts['os']['family'] {
+      'RedHat': {
+        $services = [
+          'dovecot',
+          'cyrus-imap',
+        ]
+        service { $services:
+          ensure => stopped,
+          enable => false,
+        }
       }
-
-    }
-    'Debian': {
-      package { 'exim4':
-        ensure => purged,
+      'Debian': {
+        package { 'exim4':
+          ensure => purged,
+        }
+      }
+      default: {
+        warning ("Imap / pop3 checks are not supported on os family ${facts['os']['family']}.")
       }
     }
-    default: {
-      warning ("Imap / pop3 checks are not supported on os family ${facts['os']['family']}.")
-    }
-
   }
 }

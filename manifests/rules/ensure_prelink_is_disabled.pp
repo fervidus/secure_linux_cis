@@ -11,10 +11,12 @@
 #
 # @example
 #   include secure_linux_cis::ensure_prelink_is_disabled
-
-class secure_linux_cis::rules::ensure_prelink_is_disabled {
-
-  package { 'prelink':
-    ensure => purged,
+class secure_linux_cis::rules::ensure_prelink_is_disabled(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    package { 'prelink':
+      ensure => purged,
+    }
   }
 }

@@ -14,11 +14,12 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ldap_client_is_not_installed
-
-class secure_linux_cis::rules::ensure_ldap_client_is_not_installed {
-
-  package { ['openldap-clients', 'ldap-utils']:
-    ensure => purged,
+class secure_linux_cis::rules::ensure_ldap_client_is_not_installed(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    package { ['openldap-clients', 'ldap-utils']:
+      ensure => purged,
+    }
   }
-
 }

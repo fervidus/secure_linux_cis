@@ -4,9 +4,13 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_nfs_is_not_enabled
-class secure_linux_cis::rules::ensure_nfs_is_not_enabled {
-  service { 'nfs':
-    ensure => stopped,
-    enable => false,
+class secure_linux_cis::rules::ensure_nfs_is_not_enabled(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    service { 'nfs':
+      ensure => stopped,
+      enable => false,
+    }
   }
 }

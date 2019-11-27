@@ -16,18 +16,19 @@
 #
 # @example
 #   include secure_linux_cis::ensure_events_that_modify_the_system_s_mandatory_access_controls_are_collected
-
-class secure_linux_cis::rules::ensure_events_that_modify_the_system_s_mandatory_access_controls_are_collected {
-
-  file_line { 'audit.rules selinux 1':
-    ensure => present,
-    path   => '/etc/audit/rules.d/audit.rules',
-    line   => '-w /etc/selinux/ -p wa -k MAC-policy',
-  }
-
-  file_line { 'audit.rules selinux 2':
-    ensure => present,
-    path   => '/etc/audit/rules.d/audit.rules',
-    line   => '-w /usr/share/selinux/ -p wa -k MAC-policy',
+class secure_linux_cis::rules::ensure_events_that_modify_the_system_s_mandatory_access_controls_are_collected(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    file_line { 'audit.rules selinux 1':
+      ensure => present,
+      path   => '/etc/audit/rules.d/audit.rules',
+      line   => '-w /etc/selinux/ -p wa -k MAC-policy',
+    }
+    file_line { 'audit.rules selinux 2':
+      ensure => present,
+      path   => '/etc/audit/rules.d/audit.rules',
+      line   => '-w /usr/share/selinux/ -p wa -k MAC-policy',
+    }
   }
 }

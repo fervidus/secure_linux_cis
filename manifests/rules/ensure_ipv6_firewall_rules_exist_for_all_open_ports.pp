@@ -14,16 +14,17 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ipv6_firewall_rules_exist_for_all_open_ports
-
-class secure_linux_cis::rules::ensure_ipv6_firewall_rules_exist_for_all_open_ports {
-
-  firewall { '010 open IPv6 ssh port':
-    chain    => 'INPUT',
-    dport    => 22,
-    state    => 'NEW',
-    action   => 'accept',
-    proto    => 'tcp',
-    provider => 'ip6tables',
+class secure_linux_cis::rules::ensure_ipv6_firewall_rules_exist_for_all_open_ports(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    firewall { '010 open IPv6 ssh port':
+      chain    => 'INPUT',
+      dport    => 22,
+      state    => 'NEW',
+      action   => 'accept',
+      proto    => 'tcp',
+      provider => 'ip6tables',
+    }
   }
-
 }

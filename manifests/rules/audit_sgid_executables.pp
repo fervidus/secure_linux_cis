@@ -12,16 +12,17 @@
 #
 # @example
 #   include secure_linux_cis::audit_sgid_executables
-
 #
 # NOTE: Not feasible for programatic enforcement
 #
-
-class secure_linux_cis::rules::audit_sgid_executables {
-  # if $facts['sgid_files'] {
-  #   notify { 'sgf':
-  #     message  => '[4] (Not Scored) You have SGID files on your system. It is recommended to verify that
-  #     the files have md5 checksums that match with their corresponding package', # lint:ignore:140chars
-  #   }
-  # }
+class secure_linux_cis::rules::audit_sgid_executables(
+    Boolean $enforced = false,
+) {
+  if $enforced {
+    if $facts['sgid_files'] {
+      notify { 'sgf':
+        message  => '[4] (Not Scored) You have SGID files on your system. It is recommended to verify that the files have md5 checksums that match with their corresponding package', # lint:ignore:140chars
+      }
+    }
+  }
 }

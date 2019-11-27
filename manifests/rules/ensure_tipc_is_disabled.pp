@@ -14,11 +14,12 @@
 #
 # @example
 #   include secure_linux_cis::ensure_tipc_is_disabled
-
-class secure_linux_cis::rules::ensure_tipc_is_disabled {
-
-  kmod::install { 'tipc':
-    command => '/bin/true',
+class secure_linux_cis::rules::ensure_tipc_is_disabled(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    kmod::install { 'tipc':
+      command => '/bin/true',
+    }
   }
-
 }

@@ -13,20 +13,20 @@
 #
 # @example
 #   include secure_linux_cis::ensure_http_server_is_not_enabled
-
-class secure_linux_cis::rules::ensure_http_server_is_not_enabled {
-
-  $http_services = [
-    'httpd',
-    'apache',
-    'apache2',
-    'lighttpd',
-    'nginx',
-  ]
-
-  service { $http_services:
-    ensure => stopped,
-    enable => false,
+class secure_linux_cis::rules::ensure_http_server_is_not_enabled(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    $http_services = [
+      'httpd',
+      'apache',
+      'apache2',
+      'lighttpd',
+      'nginx',
+    ]
+    service { $http_services:
+      ensure => stopped,
+      enable => false,
+    }
   }
-
 }

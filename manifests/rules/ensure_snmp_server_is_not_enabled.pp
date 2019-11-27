@@ -15,12 +15,13 @@
 #
 # @example
 #   include secure_linux_cis::ensure_snmp_server_is_not_enabled
-
-class secure_linux_cis::rules::ensure_snmp_server_is_not_enabled {
-
-  service { 'snmpd':
-    ensure => stopped,
-    enable => false,
+class secure_linux_cis::rules::ensure_snmp_server_is_not_enabled(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    service { 'snmpd':
+      ensure => stopped,
+      enable => false,
+    }
   }
-
 }

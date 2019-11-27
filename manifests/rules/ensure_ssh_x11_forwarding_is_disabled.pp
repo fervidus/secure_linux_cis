@@ -17,16 +17,17 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_x11_forwarding_is_disabled
-
-class secure_linux_cis::rules::ensure_ssh_x11_forwarding_is_disabled {
-
-  include ::secure_linux_cis::service
-
-  file_line { 'ssh x11':
-    ensure => present,
-    path   => '/etc/ssh/sshd_config',
-    line   => 'X11Forwarding no',
-    match  => '^#?[\r\n\f\v ]?X11Forwarding',
-    notify => Exec['reload sshd'],
+class secure_linux_cis::rules::ensure_ssh_x11_forwarding_is_disabled(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    include ::secure_linux_cis::service
+    file_line { 'ssh x11':
+      ensure => present,
+      path   => '/etc/ssh/sshd_config',
+      line   => 'X11Forwarding no',
+      match  => '^#?[\r\n\f\v ]?X11Forwarding',
+      notify => Exec['reload sshd'],
+    }
   }
 }

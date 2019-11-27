@@ -10,10 +10,13 @@
 #
 # @example
 #   include secure_linux_cis::disable_the_rhnsd_daemon
-
-class secure_linux_cis::rules::disable_the_rhnsd_daemon {
-  service { 'rhnsd':
-    ensure => stopped,
-    enable => false,
+class secure_linux_cis::rules::disable_the_rhnsd_daemon(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    service { 'rhnsd':
+      ensure => stopped,
+      enable => false,
+    }
   }
 }

@@ -26,6 +26,10 @@
 #
 #   }
 # }
-class secure_linux_cis::rules::audit_system_file_permissions {
-  warning('secure_linux_cis::rules::audit_system_file_permissions is not yet implemented')
+class secure_linux_cis::rules::audit_system_file_permissions(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    warning('secure_linux_cis::rules::audit_system_file_permissions is not yet implemented')
+  }
 }

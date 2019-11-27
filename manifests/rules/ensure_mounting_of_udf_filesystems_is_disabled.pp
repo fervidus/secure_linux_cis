@@ -15,11 +15,12 @@
 #
 # @example
 #   include secure_linux_cis::ensure_mounting_of_udf_filesystems_is_disabled
-
-class secure_linux_cis::rules::ensure_mounting_of_udf_filesystems_is_disabled {
-
-  kmod::install { 'udf':
-    command => '/bin/true',
+class secure_linux_cis::rules::ensure_mounting_of_udf_filesystems_is_disabled(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    kmod::install { 'udf':
+      command => '/bin/true',
+    }
   }
 }
-

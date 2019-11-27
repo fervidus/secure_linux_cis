@@ -4,6 +4,10 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_a_firewall_package_is_installed
-class secure_linux_cis::rules::ensure_a_firewall_package_is_installed {
-  include  ::firewall
+class secure_linux_cis::rules::ensure_a_firewall_package_is_installed(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    include  ::firewall
+  }
 }

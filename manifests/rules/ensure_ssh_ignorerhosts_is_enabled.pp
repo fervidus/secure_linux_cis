@@ -13,16 +13,17 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_ignorerhosts_is_enabled
-
-class secure_linux_cis::rules::ensure_ssh_ignorerhosts_is_enabled {
-
-  include ::secure_linux_cis::service
-
-  file_line { 'ssh ignore rhosts':
-    ensure => present,
-    path   => '/etc/ssh/sshd_config',
-    line   => 'IgnoreRhosts yes',
-    match  => '^#?IgnoreRhosts',
-    notify => Exec['reload sshd'],
+class secure_linux_cis::rules::ensure_ssh_ignorerhosts_is_enabled(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    include ::secure_linux_cis::service
+    file_line { 'ssh ignore rhosts':
+      ensure => present,
+      path   => '/etc/ssh/sshd_config',
+      line   => 'IgnoreRhosts yes',
+      match  => '^#?IgnoreRhosts',
+      notify => Exec['reload sshd'],
+    }
   }
 }

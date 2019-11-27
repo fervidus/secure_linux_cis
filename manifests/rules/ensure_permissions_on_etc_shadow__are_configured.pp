@@ -10,28 +10,30 @@
 #
 # @example
 #   include secure_linux_cis::ensure_permissions_on_etc_shadow__are_configured
-
-class secure_linux_cis::rules::ensure_permissions_on_etc_shadow__are_configured {
-
-  case $facts['os']['family'] {
-    'RedHat': {
-      file {'/etc/shadow-':
-        ensure => present,
-        owner  => 'root',
-        group  => 'root',
-        mode   => '0000',
+class secure_linux_cis::rules::ensure_permissions_on_etc_shadow__are_configured(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    case $facts['os']['family'] {
+      'RedHat': {
+        file {'/etc/shadow-':
+          ensure => present,
+          owner  => 'root',
+          group  => 'root',
+          mode   => '0000',
+        }
       }
-    }
-    'Debian': {
-      file {'/etc/shadow-':
-        ensure => present,
-        owner  => 'root',
-        group  => 'shadow',
-        mode   => '0640',
+      'Debian': {
+        file {'/etc/shadow-':
+          ensure => present,
+          owner  => 'root',
+          group  => 'shadow',
+          mode   => '0640',
+        }
       }
-    }
-    default: {
-      warning ("shadow- configuration not supported on os family ${facts['os']['family']}.")
+      default: {
+        warning ("shadow- configuration not supported on os family ${facts['os']['family']}.")
+      }
     }
   }
 }

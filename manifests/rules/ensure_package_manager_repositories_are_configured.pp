@@ -11,13 +11,14 @@
 #
 # @example
 #   include secure_linux_cis::ensure_package_manager_repositories_are_configured
-
-class secure_linux_cis::rules::ensure_package_manager_repositories_are_configured {
-
-  if($facts['yum_repolist'] != undef) {
-    if member($::secure_linux_cis::repolist, $facts['yum_repolist']) == false {
-      notify { "No approved repo found in list:  ${::secure_linux_cis::repolist}": }
+class secure_linux_cis::rules::ensure_package_manager_repositories_are_configured(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    if($facts['yum_repolist'] != undef) {
+      if member($::secure_linux_cis::repolist, $facts['yum_repolist']) == false {
+        notify { "No approved repo found in list:  ${::secure_linux_cis::repolist}": }
+      }
     }
   }
-
 }

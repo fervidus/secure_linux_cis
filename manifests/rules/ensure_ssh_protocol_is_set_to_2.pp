@@ -14,16 +14,17 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_protocol_is_set_to_2
-
-class secure_linux_cis::rules::ensure_ssh_protocol_is_set_to_2 {
-
-  include ::secure_linux_cis::service
-
-  file_line { 'ssh protocol':
-    ensure => present,
-    path   => '/etc/ssh/sshd_config',
-    line   => 'Protocol 2',
-    match  => '^Protocol.*',
-    notify => Exec['reload sshd'],
+class secure_linux_cis::rules::ensure_ssh_protocol_is_set_to_2(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    include ::secure_linux_cis::service
+    file_line { 'ssh protocol':
+      ensure => present,
+      path   => '/etc/ssh/sshd_config',
+      line   => 'Protocol 2',
+      match  => '^Protocol.*',
+      notify => Exec['reload sshd'],
+    }
   }
 }

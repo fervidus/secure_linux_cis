@@ -4,8 +4,12 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_openbsd_inetd_is_not_installed
-class secure_linux_cis::rules::ensure_openbsd_inetd_is_not_installed {
-  package { 'openbsd-inetd':
-    ensure => purged,
+class secure_linux_cis::rules::ensure_openbsd_inetd_is_not_installed(
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    package { 'openbsd-inetd':
+      ensure => purged,
+    }
   }
 }
