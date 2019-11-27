@@ -8,7 +8,7 @@ describe 'secure_linux_cis' do
 
       let(:facts) { os_facts }
 
-      pp os_facts[:os]['name'] + ' ' + os_facts[:os]['release']['major'] + ' ' + os_facts[:os]['architecture'] + ' ' + os_facts[:os]['family']
+      # pp os_facts[:os]['name'] + ' ' + os_facts[:os]['release']['major'] + ' ' + os_facts[:os]['architecture'] + ' ' + os_facts[:os]['family']
 
       it { is_expected.to compile }
     end
