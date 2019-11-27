@@ -15,6 +15,6 @@ class secure_linux_cis::rules::ensure_permissions_on_all_logfiles_are_configured
     ensure  => directory,
     recurse => true,
     mode    => 'g-wx,o-rwx',  #lint:ignore:no_symbolic_file_modes
-    ignore  => 'puppet',
+    ignore  => ['log', 'puppet*'],
   }
 }
