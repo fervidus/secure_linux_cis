@@ -20,10 +20,10 @@ class secure_linux_cis::rules::ensure_package_manager_repositories_are_configure
       'CentOS/8' => ['BaseOS','AppStream'],
       'RedHat/7' => ['rhel-7-server-rpms/7Server/x86_64'],
     }
-     
+
     if($facts['yum_repolist'] != undef) {
       if (intersection($facts['yum_repolist'].split("\n"), $repolist).empty) {
-        notify { "No approved repo from ${repolist} found on this system.": }
+        notify { "No approved repo from ${repolist} found on this system.  Check the yum_repolist fact for more information": }
       }
     }
   }
