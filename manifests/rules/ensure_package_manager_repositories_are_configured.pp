@@ -15,9 +15,15 @@ class secure_linux_cis::rules::ensure_package_manager_repositories_are_configure
     Boolean $enforced = true,
 ) {
   if $enforced {
+    $repolist = "${facts['os']['name']}/${facts['os']['release']['major']}" ? {
+      'CentOS/7' => ['updates/7/x86_64'],
+      'CentOS/8' => ['BaseOS','AppStream'],
+      'RedHat/7' => ['rhel-7-server-rpms/7Server/x86_64'],
+    }
+     
     if($facts['yum_repolist'] != undef) {
-      if member($::secure_linux_cis::repolist, $facts['yum_repolist']) == false {
-        notify { "No approved repo found in list:  ${::secure_linux_cis::repolist}": }
+      if (intersection($facts['yum_repolist'].split("\n"), $repolist).empty) {
+        notify { "No approved repo from ${repolist} found on this system.": }
       }
     }
   }
