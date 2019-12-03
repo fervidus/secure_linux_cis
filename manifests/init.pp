@@ -45,6 +45,8 @@
 class secure_linux_cis (
   Array[String]                         $include_rules,
   Array[String]                         $grub_config_files,
+  Array[String]                         $host_allow_rules,
+  Array[String]                         $host_deny_rules,
   String                                $aide_command,
   String                                $su_group,
   String                                $update_command,
@@ -52,8 +54,9 @@ class secure_linux_cis (
   Enum['audit', 'auditd', 'none']       $auditd_package,
   Enum['smbd', 'smb', 'none']           $samba_service,
   Enum['cron', 'crond', 'none']         $cron_service,
+  Boolean                               $auto_restart,
+  Array[Stdlib::Host]                   $time_servers,
   Array[String]                         $exclude_rules           = [],
-  Array[String]                         $time_servers            = [],
   Enum['rsyslog', 'syslog-ng', 'none']  $logging                 = 'rsyslog',
   String                                $logging_host            = '',  #lint:ignore:empty_string_assignment
   Boolean                               $is_logging_host         = false,
@@ -90,7 +93,6 @@ class secure_linux_cis (
   Array                                 $repolist                = ['updates/7/x86_64','rhel-7-server-rpms/7Server/x86_64'],
   Optional[String]                      $banner                  = undef,
   Optional[String]                      $motd                    = undef,
-  Boolean                               $auto_restart            = false,
 ) {
   # Rules to enforce
   $enforced_rules = $include_rules - $exclude_rules

@@ -1,5 +1,9 @@
 ---
 # Exclude rules that need to be fixed
-secure_linux_cis::exclude_rules:
-  - secure_linux_cis::distribution::rhel7::cis_3_4_2
-  - secure_linux_cis::distribution::rhel7::cis_3_4_3
+secure_linux_cis::auto_restart: true
+secure_linux_cis::host_allow_rules:
+  - 'sshd: ALL'
+  - 'ALL: "%{networking.network}/%{networking.netmask}"'
+
+secure_linux_cis::host_deny_rules:
+  - 'ALL: ALL'

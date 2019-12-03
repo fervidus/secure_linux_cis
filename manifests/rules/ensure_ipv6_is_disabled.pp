@@ -19,24 +19,44 @@ class secure_linux_cis::rules::ensure_ipv6_is_disabled(
 ) {
   if $enforced {
     unless $::secure_linux_cis::ipv6_enabled {
-      sysctl { 'net.ipv6.conf.all.disable_ipv6':
-        value => 1,
+
+      shellvar { 'GRUB_CMDLINE_LINUX':
+        ensure       => present,
+        target       => '/etc/default/grub',
+        value        => 'ipv6.disable=1',
+        array_append => true,
       }
-      sysctl { 'net.ipv6.conf.default.disable_ipv6':
-        value => 1,
+
+      exec { 'configure grub':
+        command     => '/sbin/grub2-mkconfig > /boot/grub2/grub.cfg',
+        refreshonly => true,
+        subscribe   => Shellvar['GRUB_CMDLINE_LINUX'],
       }
-      if $facts['os']['family'] == 'RedHat' {
-        file_line { 'disable_ipv6_network':
-          path  => '/etc/sysconfig/network',
-          line  => 'NETWORKING_IPV6=no',
-          match => 'NETWORKING_IPV6=',
-        }
-        file_line { 'disable_ipv6_network_init':
-          path  => '/etc/sysconfig/network',
-          line  => 'IPV6INIT=no',
-          match => 'IPV6INIT=',
-        }
+
+      reboot { 'after ipv6 disable':
+        subscribe => Exec['configure grub'],
       }
+
+      # sysctl { 'net.ipv6.conf.all.disable_ipv6':
+      #   value => 1,
+      # }
+
+      # sysctl { 'net.ipv6.conf.default.disable_ipv6':
+      #   value => 1,
+      # }
+
+      # if $facts['os']['family'] == 'RedHat' {
+      #   file_line { 'disable_ipv6_network':
+      #     path  => '/etc/sysconfig/network',
+      #     line  => 'NETWORKING_IPV6=no',
+      #     match => 'NETWORKING_IPV6=',
+      #   }
+      #   file_line { 'disable_ipv6_network_init':
+      #     path  => '/etc/sysconfig/network',
+      #     line  => 'IPV6INIT=no',
+      #     match => 'IPV6INIT=',
+      #   }
+      # }
     }
   }
 }

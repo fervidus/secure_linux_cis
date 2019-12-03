@@ -16,7 +16,6 @@ class secure_linux_cis::rules::ensure_filesystem_integrity_is_regularly_checked(
   if $enforced {
     cron::job {'cron_aide':
       command => $::secure_linux_cis::aide_command,
-      user    => 'root',
       hour    => 5,
       minute  => 0,
     }
