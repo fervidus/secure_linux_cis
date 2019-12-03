@@ -90,7 +90,7 @@ class secure_linux_cis (
   Integer                               $pass_min_days           = 7,
   Integer                               $pass_warn_days          = 7,
   Integer                               $pass_inactive_days      = 30,
-  Array                                 $repolist                = ['updates/7/x86_64','rhel-7-server-rpms/7Server/x86_64'],
+  Array                                 $repolist,
   Optional[String]                      $banner                  = undef,
   Optional[String]                      $motd                    = undef,
 ) {
@@ -111,4 +111,42 @@ class secure_linux_cis (
 
   Class['::Secure_linux_cis::Rules::Ensure_auditd_service_is_enabled']
   -> Class['::Secure_linux_cis::Rules::Ensure_system_is_disabled_when_audit_logs_are_full']
+
+  # define classes that change resources requiring a reboot to take effect, as using pkill is undesirable.
+  # note that cis_4_1_12 is not among this array
+  if $auto_restart {
+    $restart_classes = [
+      'Class[secure_linux_cis::rules::ensure_selinux_is_not_disabled_in_bootloader_configuration]',
+      'Class[secure_linux_cis::rules::ensure_auditing_for_processes_that_start_prior_to_auditd_is_enabled]',
+      'Class[secure_linux_cis::rules::ensure_events_that_modify_date_and_time_information_are_collected]',
+      'Class[secure_linux_cis::rules::ensure_events_that_modify_user_group_information_are_collected]',
+      'Class[secure_linux_cis::rules::ensure_events_that_modify_the_system_s_network_environment_are_collected]',
+      'Class[secure_linux_cis::rules::ensure_events_that_modify_the_system_s_mandatory_access_controls_are_collected]',
+      'Class[secure_linux_cis::rules::ensure_login_and_logout_events_are_collected]',
+      'Class[secure_linux_cis::rules::ensure_session_initiation_information_is_collected]',
+      'Class[secure_linux_cis::rules::ensure_discretionary_access_control_permission_modification_events_are_collected]',
+      'Class[secure_linux_cis::rules::ensure_unsuccessful_unauthorized_file_access_attempts_are_collected]',
+      'Class[secure_linux_cis::rules::ensure_successful_file_system_mounts_are_collected]',
+      'Class[secure_linux_cis::rules::ensure_file_deletion_events_by_users_are_collected]',
+      'Class[secure_linux_cis::rules::ensure_changes_to_system_administration_scope_sudoers_is_collected]',
+      'Class[secure_linux_cis::rules::ensure_system_administrator_actions_sudolog_are_collected]',
+      'Class[secure_linux_cis::rules::ensure_kernel_module_loading_and_unloading_is_collected]',
+      'Class[secure_linux_cis::rules::ensure_the_audit_configuration_is_immutable]',
+      'Class[secure_linux_cis::rules::ensure_logging_is_configured]',
+      'Class[secure_linux_cis::rules::ensure_rsyslog_default_file_permissions_configured]',
+      'Class[secure_linux_cis::rules::ensure_rsyslog_is_configured_to_send_logs_to_a_remote_log_host]',
+      'Class[secure_linux_cis::rules::ensure_remote_rsyslog_messages_are_only_accepted_on_designated_log_hosts]',
+      'Class[secure_linux_cis::rules::ensure_logging_is_configured]',
+      'Class[secure_linux_cis::rules::ensure_syslog_ng_default_file_permissions_configured]',
+      'Class[secure_linux_cis::rules::ensure_syslog_ng_is_configured_to_send_logs_to_a_remote_log_host]',
+      'Class[secure_linux_cis::rules::ensure_remote_syslog_ng_messages_are_only_accepted_on_designated_log_hosts]',
+    ]
+
+    reboot { 'after_run':
+      apply     => 'finished',
+      timeout   => 60,
+      subscribe => $restart_classes,
+    }
+  }
+
 }

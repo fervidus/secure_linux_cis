@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 2.0.0 Release Candidate
+* Major release adding Linux releases and refactoring
+* Module level hiera now used with (optional) exclude_rules subtracted from include_rules
+* Not all OS's supported as yet
+
 ## Release 1.0.17
 * Fix issue with logic in cis_1_7_2
 * Correct syntax in rootpw fact
