@@ -90,7 +90,7 @@ class secure_linux_cis (
   Integer                               $pass_min_days           = 7,
   Integer                               $pass_warn_days          = 7,
   Integer                               $pass_inactive_days      = 30,
-  Array                                 $repolist,
+  Array                                 $repolist                = ['updates/7/x86_64','rhel-7-server-rpms/7Server/x86_64'],
   Optional[String]                      $banner                  = undef,
   Optional[String]                      $motd                    = undef,
 ) {
