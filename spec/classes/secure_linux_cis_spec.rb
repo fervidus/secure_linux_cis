@@ -25,15 +25,15 @@ describe 'secure_linux_cis' do
       it { is_expected.to compile }
 
       # Do not believe hiera can interprolate properly
-      # it {
-      #   is_expected.to contain_file('/etc/hosts.allow').with(
-      #     'content' => 'sshd: ALL\\nALL: 127.0.1.0/255.255.255.0'
-      #   )
-      # }
+       it {
+         is_expected.to contain_file('/etc/hosts.allow').with(
+           'content' => 'sshd: ALL\nALL: 127.0.1.0/255.255.255.0'
+         )
+       }
 
       it {
         is_expected.to contain_file('/etc/hosts.deny').with(
-          'content' => 'ALL: ALL'
+          'content' => 'ALL: ALL',
         )
       }
     end
