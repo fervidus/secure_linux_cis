@@ -28,13 +28,15 @@ describe 'secure_linux_cis' do
       it {
         is_expected.to contain_file('/etc/hosts.allow').with(
           'content' => 'sshd: ALL
-ALL: 192.168.1.0/255.255.255.0',
+ALL: 192.168.1.0/255.255.255.0
+',
         )
       }
 
       it {
         is_expected.to contain_file('/etc/hosts.deny').with(
-          'content' => 'ALL: ALL',
+          'content' => 'ALL: ALL
+',
         )
       }
     end

@@ -97,13 +97,6 @@
       ]
     },
     {
-      "operatingsystem": "Amazon",
-      "operatingsystemrelease": [
-        "1",
-        "2"
-      ]
-    },
-    {
       "operatingsystem": "OracleLinux",
       "operatingsystemrelease": [
         "6",
@@ -128,8 +121,7 @@
     {
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
-        "8",
-        "9"
+        "8"
       ]
     },
     {
