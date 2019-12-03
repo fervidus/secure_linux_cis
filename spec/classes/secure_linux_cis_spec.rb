@@ -39,6 +39,10 @@ ALL: 192.168.1.0/255.255.255.0
 ',
         )
       }
+
+      it {
+        is_expected.to contain_reboot('after_run')
+      }
     end
 
     context "on #{os} no time servers" do
