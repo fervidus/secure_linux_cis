@@ -18,6 +18,7 @@ class secure_linux_cis::rules::ensure_iptables_is_installed(
 ) {
   if $enforced {
     include ::firewall
+
     resources { 'firewall':
       purge => true,
     }

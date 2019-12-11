@@ -149,4 +149,10 @@ class secure_linux_cis (
     }
   }
 
+  Firewallchain <| tag == 'cis_firewall_pre' |>
+  -> Firewall <| tag == 'cis_firewall_pre' |>
+  -> Firewall <| tag == 'cis_firewall_rule' |>
+  -> Firewall <| tag == 'cis_firewall_post' |>
+  -> Firewallchain <| tag== 'cis_firewall_post' |>
+
 }

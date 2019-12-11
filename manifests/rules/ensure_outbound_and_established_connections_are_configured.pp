@@ -22,36 +22,42 @@ class secure_linux_cis::rules::ensure_outbound_and_established_connections_are_c
       state  => ['NEW', 'ESTABLISHED'],
       action => 'accept',
       proto  => 'tcp',
+      tag    => 'cis_firewall_pre',
     }
     -> firewall { '005 accept new and established ouput udp connections':
       chain  => 'OUTPUT',
       state  => ['NEW', 'ESTABLISHED'],
       action => 'accept',
       proto  => 'udp',
+      tag    => 'cis_firewall_pre',
     }
     -> firewall { '006 accept new and established ouput icmp connections':
       chain  => 'OUTPUT',
       state  => ['NEW', 'ESTABLISHED'],
       action => 'accept',
       proto  => 'icmp',
+      tag    => 'cis_firewall_pre',
     }
     -> firewall { '007 accept estalished input tcp connections':
       chain  => 'INPUT',
       state  => 'ESTABLISHED',
       action => 'accept',
       proto  => 'tcp',
+      tag    => 'cis_firewall_pre',
     }
     -> firewall { '008 accept estalished input udp connections':
       chain  => 'INPUT',
       state  => 'ESTABLISHED',
       action => 'accept',
       proto  => 'udp',
+      tag    => 'cis_firewall_pre',
     }
     -> firewall { '009 accept estalished input icmp connections':
       chain  => 'INPUT',
       state  => 'ESTABLISHED',
       action => 'accept',
       proto  => 'icmp',
+      tag    => 'cis_firewall_pre',
     }
   }
 }

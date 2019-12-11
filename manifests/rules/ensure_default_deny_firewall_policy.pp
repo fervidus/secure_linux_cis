@@ -17,30 +17,21 @@
 class secure_linux_cis::rules::ensure_default_deny_firewall_policy(
     Boolean $enforced = true,
 ) {
+  # Create default drop policy for ipv4 and ipv6
+  $filter_rules = [
+    'INPUT:filter:IPv4',
+    'OUTPUT:filter:IPv4',
+    'FORWARD:filter:IPv4',
+    'INPUT:filter:IPv6',
+    'OUTPUT:filter:IPv6',
+    'FORWARD:filter:IPv6',
+  ]
+
   if $enforced {
-    firewallchain { 'INPUT:filter:IPv4':
+    firewallchain { $filter_rules:
       ensure => present,
       policy => drop,
-    }
-    firewallchain { 'OUTPUT:filter:IPv4':
-      ensure => present,
-      policy => drop,
-    }
-    firewallchain { 'FORWARD:filter:IPv4':
-      ensure => present,
-      policy => drop,
-    }
-    firewallchain { 'INPUT:filter:IPv6':
-      ensure => present,
-      policy => drop,
-    }
-    firewallchain { 'OUTPUT:filter:IPv6':
-      ensure => present,
-      policy => drop,
-    }
-    firewallchain { 'FORWARD:filter:IPv6':
-      ensure => present,
-      policy => drop,
+      tag    => 'cis_firewall_post',
     }
   }
 }

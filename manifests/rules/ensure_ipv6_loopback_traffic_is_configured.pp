@@ -26,6 +26,7 @@ class secure_linux_cis::rules::ensure_ipv6_loopback_traffic_is_configured(
       iniface  => 'lo',
       action   => 'accept',
       provider => 'ip6tables',
+      tag      => 'cis_firewall_pre',
     }
     -> firewall { '002 IPv6 accept all output to lo interface':
       chain    => 'OUTPUT',
@@ -33,6 +34,7 @@ class secure_linux_cis::rules::ensure_ipv6_loopback_traffic_is_configured(
       outiface => 'lo',
       action   => 'accept',
       provider => 'ip6tables',
+      tag      => 'cis_firewall_pre',
     }
     -> firewall { '003 IPv6 drop all to lo ::/0':
       chain    => 'INPUT',
@@ -40,6 +42,7 @@ class secure_linux_cis::rules::ensure_ipv6_loopback_traffic_is_configured(
       source   => '::1',
       action   => 'drop',
       provider => 'ip6tables',
+      tag      => 'cis_firewall_pre',
     }
   }
 }
