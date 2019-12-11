@@ -24,6 +24,7 @@ class secure_linux_cis::rules::ensure_firewall_rules_exist_for_all_open_ports(
       state  => 'NEW',
       action => 'accept',
       proto  => 'tcp',
+      tag    => 'cis_firewall_pre',
     }
   }
 }

@@ -25,6 +25,7 @@ class secure_linux_cis::rules::ensure_ipv6_firewall_rules_exist_for_all_open_por
       action   => 'accept',
       proto    => 'tcp',
       provider => 'ip6tables',
+      tag      => 'cis_firewall_pre',
     }
   }
 }
