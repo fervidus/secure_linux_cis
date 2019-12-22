@@ -21,6 +21,10 @@
 class secure_linux_cis::rules::ensure_events_that_modify_user_group_information_are_collected(
     Boolean $enforced = true,
 ) {
+
+  Class['secure_linux_cis::rules::ensure_events_that_modify_user_group_information_are_collected']
+  ~> Class['::secure_linux_cis::reboot']
+
   if $enforced {
     file_line { 'audit.rules user/group 1':
       ensure => present,

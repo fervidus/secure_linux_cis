@@ -20,6 +20,10 @@
 class secure_linux_cis::rules::ensure_changes_to_system_administration_scope_sudoers_is_collected(
     Boolean $enforced = true,
 ) {
+
+  Class['::secure_linux_cis::rules::ensure_changes_to_system_administration_scope_sudoers_is_collected']
+  ~> Class['::secure_linux_cis::reboot']
+
   if $enforced {
     file_line { 'audit.rules sudoers 1':
       ensure => present,

@@ -43,7 +43,6 @@
 # @example
 #   include secure_linux_cis
 class secure_linux_cis (
-  Array[String]                           $include_rules,
   Array[String]                           $grub_config_files,
   Array[String]                           $host_allow_rules,
   Array[String]                           $host_deny_rules,
@@ -56,6 +55,10 @@ class secure_linux_cis (
   Enum['cron', 'crond', 'none']           $cron_service,
   Boolean                                 $auto_restart,
   Array[Stdlib::Host]                     $time_servers,
+  Enum['workstation', 'server']           $profile_type,
+  Array[String]                           $include_rules           = [],
+  Array[String]                           $workstation_rules       = [],
+  Array[String]                           $server_rules            = [],
   Array[String]                           $exclude_rules           = [],
   Enum['rsyslog', 'syslog-ng', 'none']    $logging                 = 'rsyslog',
   String                                  $logging_host            = '',  #lint:ignore:empty_string_assignment
@@ -94,8 +97,15 @@ class secure_linux_cis (
   Optional[String]                        $banner                  = undef,
   Optional[String]                        $motd                    = undef,
 ) {
+
+  $base_rules = $profile_type ? {
+    'server'      => $server_rules,
+    'workstation' => $workstation_rules,
+  }
+
   # Rules to enforce
-  $enforced_rules = $include_rules - $exclude_rules
+  $enforced_rules = $base_rules + $include_rules - $exclude_rules
+  # $enforced_rules = $include_rules - $exclude_rules
 
   file { '/usr/share/cis_scripts':
     ensure => directory,
@@ -103,51 +113,7 @@ class secure_linux_cis (
 
   include $enforced_rules
 
-  Class['::Secure_linux_cis::Rules::Ensure_auditd_service_is_enabled']
-  -> Class['::Secure_linux_cis::Rules::Ensure_audit_log_storage_size_is_configured']
-
-  Class['::Secure_linux_cis::Rules::Ensure_auditd_service_is_enabled']
-  -> Class['::Secure_linux_cis::Rules::Ensure_audit_logs_are_not_automatically_deleted']
-
-  Class['::Secure_linux_cis::Rules::Ensure_auditd_service_is_enabled']
-  -> Class['::Secure_linux_cis::Rules::Ensure_system_is_disabled_when_audit_logs_are_full']
-
-  # define classes that change resources requiring a reboot to take effect, as using pkill is undesirable.
-  # note that cis_4_1_12 is not among this array
-  if $auto_restart {
-    $restart_classes = [
-      Class['secure_linux_cis::rules::ensure_selinux_is_not_disabled_in_bootloader_configuration'],
-      Class['secure_linux_cis::rules::ensure_auditing_for_processes_that_start_prior_to_auditd_is_enabled'],
-      Class['secure_linux_cis::rules::ensure_events_that_modify_date_and_time_information_are_collected'],
-      Class['secure_linux_cis::rules::ensure_events_that_modify_user_group_information_are_collected'],
-      Class['secure_linux_cis::rules::ensure_events_that_modify_the_system_s_network_environment_are_collected'],
-      Class['secure_linux_cis::rules::ensure_events_that_modify_the_system_s_mandatory_access_controls_are_collected'],
-      Class['secure_linux_cis::rules::ensure_login_and_logout_events_are_collected'],
-      Class['secure_linux_cis::rules::ensure_session_initiation_information_is_collected'],
-      Class['secure_linux_cis::rules::ensure_discretionary_access_control_permission_modification_events_are_collected'],
-      Class['secure_linux_cis::rules::ensure_unsuccessful_unauthorized_file_access_attempts_are_collected'],
-      Class['secure_linux_cis::rules::ensure_successful_file_system_mounts_are_collected'],
-      Class['secure_linux_cis::rules::ensure_file_deletion_events_by_users_are_collected'],
-      Class['secure_linux_cis::rules::ensure_changes_to_system_administration_scope_sudoers_is_collected'],
-      Class['secure_linux_cis::rules::ensure_system_administrator_actions_sudolog_are_collected'],
-      Class['secure_linux_cis::rules::ensure_kernel_module_loading_and_unloading_is_collected'],
-      Class['secure_linux_cis::rules::ensure_the_audit_configuration_is_immutable'],
-      Class['secure_linux_cis::rules::ensure_logging_is_configured'],
-      Class['secure_linux_cis::rules::ensure_rsyslog_default_file_permissions_configured'],
-      Class['secure_linux_cis::rules::ensure_rsyslog_is_configured_to_send_logs_to_a_remote_log_host'],
-      Class['secure_linux_cis::rules::ensure_remote_rsyslog_messages_are_only_accepted_on_designated_log_hosts'],
-      Class['secure_linux_cis::rules::ensure_logging_is_configured'],
-      Class['secure_linux_cis::rules::ensure_syslog_ng_default_file_permissions_configured'],
-      Class['secure_linux_cis::rules::ensure_syslog_ng_is_configured_to_send_logs_to_a_remote_log_host'],
-      Class['secure_linux_cis::rules::ensure_remote_syslog_ng_messages_are_only_accepted_on_designated_log_hosts'],
-    ]
-
-    reboot { 'after_run':
-      apply     => 'finished',
-      timeout   => 60,
-      subscribe => $restart_classes,
-    }
-  }
+  include ::secure_linux_cis::reboot
 
   Firewallchain <| tag == 'cis_firewall_pre' |>
   -> Firewall <| tag == 'cis_firewall_pre' |>

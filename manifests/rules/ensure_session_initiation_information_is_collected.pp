@@ -22,6 +22,10 @@
 class secure_linux_cis::rules::ensure_session_initiation_information_is_collected(
     Boolean $enforced = true,
 ) {
+
+  Class['secure_linux_cis::rules::ensure_session_initiation_information_is_collected']
+  ~> Class['::secure_linux_cis::reboot']
+
   if $enforced {
     file_line { 'audit.rules session 1':
       ensure => present,

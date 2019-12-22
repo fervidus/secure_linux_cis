@@ -21,6 +21,10 @@
 class secure_linux_cis::rules::ensure_events_that_modify_date_and_time_information_are_collected(
     Boolean $enforced = true,
 ) {
+
+  Class['secure_linux_cis::rules::ensure_events_that_modify_date_and_time_information_are_collected']
+  ~> Class['::secure_linux_cis::reboot']
+
   if $enforced {
     # 64 bit architecture
     if $facts['os']['architecture'] =~ /64/ {

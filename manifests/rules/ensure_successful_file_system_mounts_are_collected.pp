@@ -27,6 +27,10 @@
 class secure_linux_cis::rules::ensure_successful_file_system_mounts_are_collected(
     Boolean $enforced = true,
 ) {
+
+  Class['::secure_linux_cis::rules::ensure_successful_file_system_mounts_are_collected']
+  ~> Class['::secure_linux_cis::reboot']
+
   if $enforced {
     # 64 bit architecture
     if $facts['os']['architecture'] =~ /64/ {

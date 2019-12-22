@@ -22,6 +22,10 @@
 class secure_linux_cis::rules::ensure_file_deletion_events_by_users_are_collected(
     Boolean $enforced = true,
 ) {
+
+  Class['::secure_linux_cis::rules::ensure_file_deletion_events_by_users_are_collected']
+  ~> Class['::secure_linux_cis::reboot']
+
   if $enforced {
     # 64 bit architecture
     if $facts['os']['architecture'] =~ /64/ {

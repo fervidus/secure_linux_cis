@@ -18,6 +18,10 @@
 class secure_linux_cis::rules::ensure_syslog_ng_default_file_permissions_configured(
     Boolean $enforced = true,
 ) {
+
+  Class['secure_linux_cis::rules::ensure_syslog_ng_default_file_permissions_configured']
+  ~> Class['::secure_linux_cis::reboot']
+
   if $enforced {
     if $::secure_linux_cis::logging == 'syslog-ng' {
       file_line { 'syslog-ng.conf permissions':

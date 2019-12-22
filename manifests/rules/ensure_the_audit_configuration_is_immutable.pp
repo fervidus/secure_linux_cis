@@ -20,6 +20,9 @@
 class secure_linux_cis::rules::ensure_the_audit_configuration_is_immutable(
     Boolean $enforced = true,
 ) {
+  Class['::secure_linux_cis::rules::ensure_the_audit_configuration_is_immutable']
+  ~> Class['::secure_linux_cis::reboot']
+
   if $enforced {
     file_line { 'audit.rules make immutable':
       ensure => present,

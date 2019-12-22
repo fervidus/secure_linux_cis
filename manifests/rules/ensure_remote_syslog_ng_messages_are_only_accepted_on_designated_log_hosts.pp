@@ -21,6 +21,10 @@
 class secure_linux_cis::rules::ensure_remote_syslog_ng_messages_are_only_accepted_on_designated_log_hosts(
     Boolean $enforced = true,
 ) {
+
+  Class['::secure_linux_cis::rules::ensure_remote_syslog_ng_messages_are_only_accepted_on_designated_log_hosts']
+  ~> Class['::secure_linux_cis::reboot']
+
   if $enforced {
     if $::secure_linux_cis::logging == 'syslog-ng' {
       if $::secure_linux_cis::is_logging_host {

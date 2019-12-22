@@ -16,6 +16,8 @@
 class secure_linux_cis::rules::ensure_system_is_disabled_when_audit_logs_are_full(
     Boolean $enforced = true,
 ) {
+  require ::secure_linux_cis::rules::ensure_auditd_service_is_enabled
+
   if $enforced {
     file_line { 'space_left_action':
       ensure => present,

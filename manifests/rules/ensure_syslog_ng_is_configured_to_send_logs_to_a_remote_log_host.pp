@@ -20,6 +20,10 @@
 class secure_linux_cis::rules::ensure_syslog_ng_is_configured_to_send_logs_to_a_remote_log_host(
     Boolean $enforced = true,
 ) {
+
+  Class['secure_linux_cis::rules::ensure_syslog_ng_is_configured_to_send_logs_to_a_remote_log_host']
+  ~> Class['::secure_linux_cis::reboot']
+
   if $enforced {
     if $::secure_linux_cis::logging == 'syslog-ng' and $::secure_linux_cis::logging_host != '' {
       $log_host = $::secure_linux_cis::logging_host

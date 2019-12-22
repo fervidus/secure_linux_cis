@@ -19,6 +19,10 @@
 class secure_linux_cis::rules::ensure_login_and_logout_events_are_collected(
     Boolean $enforced = true,
 ) {
+
+  Class['secure_linux_cis::rules::ensure_login_and_logout_events_are_collected']
+  ~> Class['::secure_linux_cis::reboot']
+
   if $enforced {
     file_line { 'audit.rules login/logout 1':
       ensure => present,

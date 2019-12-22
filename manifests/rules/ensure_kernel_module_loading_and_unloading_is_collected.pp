@@ -25,6 +25,10 @@
 class secure_linux_cis::rules::ensure_kernel_module_loading_and_unloading_is_collected(
     Boolean $enforced = true,
 ) {
+
+  Class['::secure_linux_cis::rules::ensure_kernel_module_loading_and_unloading_is_collected']
+  ~> Class['::secure_linux_cis::reboot']
+
   if $enforced {
     # 64 bit architecture
     if $facts['os']['architecture'] =~ /64/ {

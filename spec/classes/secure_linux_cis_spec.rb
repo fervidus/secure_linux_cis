@@ -16,11 +16,12 @@ describe 'secure_linux_cis' do
       let(:params) do
         {
           'time_servers' => ['tick.usno.navy.mil', 'tock.usno.navy.mil'],
+          'profile_type' => 'server',
         }
       end
 
       # pp os_facts[:os]['name'] + ' ' + os_facts[:os]['release']['major'] + ' ' + os_facts[:os]['architecture'] + ' ' + os_facts[:os]['family']
-      # pp os_facts
+      # pp os_facts[:os]['family']
 
       it { is_expected.to compile }
 

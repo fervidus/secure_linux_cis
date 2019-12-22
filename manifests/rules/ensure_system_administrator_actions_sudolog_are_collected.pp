@@ -23,6 +23,9 @@
 class secure_linux_cis::rules::ensure_system_administrator_actions_sudolog_are_collected(
     Boolean $enforced = true,
 ) {
+  Class['::secure_linux_cis::rules::ensure_system_administrator_actions_sudolog_are_collected']
+  ~> Class['::secure_linux_cis::reboot']
+
   if $enforced {
     file_line { 'audit.rules sudo.log 1':
       ensure => present,

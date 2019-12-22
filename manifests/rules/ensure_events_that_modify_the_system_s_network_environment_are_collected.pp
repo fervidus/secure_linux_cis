@@ -31,6 +31,9 @@
 class secure_linux_cis::rules::ensure_events_that_modify_the_system_s_network_environment_are_collected(
     Boolean $enforced = true,
 ) {
+  Class['secure_linux_cis::rules::ensure_events_that_modify_the_system_s_network_environment_are_collected']
+  ~> Class['::secure_linux_cis::reboot']
+
   if $enforced {
     # 64 bit architecture
     if $facts['os']['architecture'] =~ /64/ {
