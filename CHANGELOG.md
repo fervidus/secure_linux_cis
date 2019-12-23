@@ -1,5 +1,9 @@
 # Changelog
 
+## Release 2.0.5 Release Candidate
+* Added plan to harden OS's
+* Separated Centos 7 and RHEL 7 into server / workstation profiles
+
 ## Release 2.0.0 Release Candidate
 * Major release adding Linux releases and refactoring
 * Module level hiera now used with (optional) exclude_rules subtracted from include_rules
