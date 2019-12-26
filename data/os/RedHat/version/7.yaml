@@ -1,3 +1,4 @@
+---
 secure_linux_cis::workstation_rules:
   - secure_linux_cis::distribution::rhel7::cis_1_1_1_1
   - secure_linux_cis::distribution::rhel7::cis_1_1_1_2
