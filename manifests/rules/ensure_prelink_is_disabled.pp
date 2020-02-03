@@ -15,8 +15,17 @@ class secure_linux_cis::rules::ensure_prelink_is_disabled(
     Boolean $enforced = true,
 ) {
   if $enforced {
-    package { 'prelink':
-      ensure => purged,
+    case $facts['osfamily'] {
+      'Suse': {
+        package { 'prelink':
+          ensure => absent,
+        }
+      }
+      default: {
+        package { 'prelink':
+          ensure => purged,
+        }
+      }
     }
   }
 }

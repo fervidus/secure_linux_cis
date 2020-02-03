@@ -25,8 +25,8 @@ fixtures:
     ntp: "puppetlabs-ntp"
     reboot: "puppetlabs-reboot"
     stdlib: "puppetlabs-stdlib"
-    # postfix: "camptocamp-postfix"
+    #postfix: "camptocamp-postfix"
   repositories:
     postfix:
-      repo: "https://github.com/camptocamp/puppet-postfix.git"
+      repo: "https://github.com/fervidus/puppet-postfix.git"
       branch: "master"

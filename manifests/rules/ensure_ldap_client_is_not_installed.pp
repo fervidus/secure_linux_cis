@@ -18,8 +18,17 @@ class secure_linux_cis::rules::ensure_ldap_client_is_not_installed(
     Boolean $enforced = true,
 ) {
   if $enforced {
-    package { ['openldap-clients', 'ldap-utils']:
-      ensure => purged,
+    case $facts['osfamily'] {
+      'Suse': {
+        package { ['openldap-clients', 'ldap-utils']:
+          ensure => absent,
+        }
+      }
+      default: {
+        package { ['openldap-clients', 'ldap-utils']:
+          ensure => purged,
+        }
+      }
     }
   }
 }

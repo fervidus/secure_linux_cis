@@ -19,7 +19,7 @@ class secure_linux_cis::rules::ensure_aide_is_installed(
       ensure => installed,
       notify => Exec['create_aide_database'],
     }
-    case $facts['os']['family'] {
+    case $facts['osfamily'] {
       'RedHat': {
         exec { 'create_aide_database':
           command   => 'aide --init',
@@ -35,6 +35,14 @@ class secure_linux_cis::rules::ensure_aide_is_installed(
           logoutput => true,
         }
       }
+      'Suse': {
+        exec { 'create_aide_database':
+          command   => 'aide -i',
+          creates   => ['/var/lib/aide/aide.db.new', '/var/lib/aide/aide.db'],
+          path      => '/sbin:/bin:/usr/sbin:/usr/bin',
+          logoutput => true,
+        }
+      }
       'Debian': {
         exec { 'create_aide_database':
           command   => 'aideinit',
@@ -44,7 +52,7 @@ class secure_linux_cis::rules::ensure_aide_is_installed(
         }
       }
       default: {
-        warning ("Aide check is not supported on os family ${facts['os']['family']}.")
+        warning ("Aide check is not supported on os family ${facts['osfamily']}.")
       }
     }
   }

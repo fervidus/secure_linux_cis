@@ -23,7 +23,7 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
     Boolean $enforced = true,
 ) {
   if $enforced {
-    case $facts['os']['family'] {
+    case $facts['osfamily'] {
       'Debian': {
         pam { 'pam_tally2 common-auth':
           ensure    => present,

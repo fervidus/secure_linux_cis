@@ -17,7 +17,7 @@ class secure_linux_cis::rules::ensure_imap_and_pop3_server_is_not_enabled(
     Boolean $enforced = true,
 ) {
   if $enforced {
-    case $facts['os']['family'] {
+    case $facts['osfamily'] {
       'RedHat': {
         $services = [
           'dovecot',
@@ -34,7 +34,7 @@ class secure_linux_cis::rules::ensure_imap_and_pop3_server_is_not_enabled(
         }
       }
       default: {
-        warning ("Imap / pop3 checks are not supported on os family ${facts['os']['family']}.")
+        warning ("Imap / pop3 checks are not supported on os family ${facts['osfamily']}.")
       }
     }
   }

@@ -17,14 +17,6 @@
 class secure_linux_cis::rules::ensure_firewall_rules_exist_for_all_open_ports(
     Boolean $enforced = true,
 ) {
-  if $enforced {
-    firewall { '010 open ssh port':
-      chain  => 'INPUT',
-      dport  => 22,
-      state  => 'NEW',
-      action => 'accept',
-      proto  => 'tcp',
-      tag    => 'cis_firewall_pre',
-    }
-  }
+    # This is enforced elswhere in rules, as all configurations are purged and defined by Puppet
+    # SEE: secure_linux_cis class
 }

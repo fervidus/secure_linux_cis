@@ -15,8 +15,17 @@ class secure_linux_cis::rules::ensure_the_mcs_translation_service_mcstrans_is_no
     Boolean $enforced = true,
 ) {
   if $enforced {
-    package { 'mcstrans':
-      ensure => purged,
+    case $facts['osfamily'] {
+      'Suse': {
+        package { 'mcstrans':
+          ensure => absent,
+        }
+      }
+      default: {
+        package { 'mcstrans':
+          ensure => purged,
+        }
+      }
     }
   }
 }

@@ -97,6 +97,13 @@
       ]
     },
     {
+      "operatingsystem": "Amazon",
+      "operatingsystemrelease": [
+        "2016",
+        "2"
+      ]
+    },
+    {
       "operatingsystem": "OracleLinux",
       "operatingsystemrelease": [
         "6",
@@ -141,7 +148,7 @@
       "version_requirement": ">= 5.0.0 < 7.0.0"
     }
   ],
-  "pdk-version": "1.15.0",
-  "template-url": "https://github.com/puppetlabs/pdk-templates#1.15.0",
-  "template-ref": "tags/1.15.0-0-g0bc522e"
+  "pdk-version": "1.16.0",
+  "template-url": "https://github.com/puppetlabs/pdk-templates#1.16.0",
+  "template-ref": "tags/1.16.0-0-gaf44904"
 }

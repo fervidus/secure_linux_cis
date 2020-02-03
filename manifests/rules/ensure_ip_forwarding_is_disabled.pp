@@ -20,7 +20,7 @@ class secure_linux_cis::rules::ensure_ip_forwarding_is_disabled(
     sysctl { 'net.ipv4.ip_forward':
       value => 0,
     }
-    if $facts['os']['family'] == 'Debian' {
+    if $facts['osfamily'] == 'Debian' {
       sysctl { 'net.ipv6.conf.all.forwarding':
         value => 0,
       }

@@ -7,9 +7,7 @@
 class secure_linux_cis::rules::ensure_default_zone(
     Boolean $enforced = true,
 ) {
-  if $enforced {
-    class { '::firewalld':
-      default_zone => 'public',
-    }
+  if($enforced) {
+    include ::secure_linux_cis::rules::ensure_default_zone_is_set
   }
 }

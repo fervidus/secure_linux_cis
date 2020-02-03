@@ -17,8 +17,17 @@ class secure_linux_cis::rules::ensure_talk_client_is_not_installed(
     Boolean $enforced = true,
 ) {
   if $enforced {
-    package { 'talk':
-      ensure => purged,
+    case $facts['osfamily'] {
+      'Suse': {
+        package { 'talk':
+          ensure => absent,
+        }
+      }
+      default: {
+        package { 'talk':
+          ensure => purged,
+        }
+      }
     }
   }
 }

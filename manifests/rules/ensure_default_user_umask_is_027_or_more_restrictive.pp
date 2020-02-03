@@ -17,7 +17,7 @@ class secure_linux_cis::rules::ensure_default_user_umask_is_027_or_more_restrict
     Boolean $enforced = true,
 ) {
   if $enforced {
-    $bashrc = $facts['os']['family'] ? {
+    $bashrc = $facts['osfamily'] ? {
       'Suse'   => '/etc/bash.bashrc',
       'RedHat' => '/etc/bashrc',
       'Debian' => '/etc/bash.bashrc',
@@ -39,7 +39,7 @@ class secure_linux_cis::rules::ensure_default_user_umask_is_027_or_more_restrict
       line  => 'UMASK           077',
       match => '^\s+umask\s+\d+',
     }
-    if $facts['os']['family'] == 'RedHat' {
+    if $facts['osfamily'] == 'RedHat' {
       file_line { 'csh.cshrc':
         path     => '/etc/csh.cshrc',
         line     => '    umask 077',

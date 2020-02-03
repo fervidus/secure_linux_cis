@@ -1,5 +1,5 @@
 ---
-secure_linux_cis::include_rules:
+secure_linux_cis::server_rules:
   - secure_linux_cis::distribution::amazon2::cis_1_1_1_1
   - secure_linux_cis::distribution::amazon2::cis_1_1_1_2
   - secure_linux_cis::distribution::amazon2::cis_1_1_1_3

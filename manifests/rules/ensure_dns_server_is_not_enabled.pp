@@ -18,7 +18,7 @@ class secure_linux_cis::rules::ensure_dns_server_is_not_enabled(
     Boolean $enforced = true,
 ) {
   if $enforced {
-    case $facts['os']['family'] {
+    case $facts['osfamily'] {
       'RedHat': {
         $service = 'named'
       }
@@ -26,7 +26,7 @@ class secure_linux_cis::rules::ensure_dns_server_is_not_enabled(
         $service = 'bind9'
       }
       default: {
-        notify { "This DNS server check is not yet implemented for ${facts['os']['family']}": }
+        notify { "This DNS server check is not yet implemented for ${facts['osfamily']}": }
         $service = 'TODO DNS'
       }
     }

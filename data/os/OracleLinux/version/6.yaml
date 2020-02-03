@@ -222,7 +222,7 @@ secure_linux_cis::workstation_rules:
   - secure_linux_cis::distribution::oracle6::cis_6_2_18
   - secure_linux_cis::distribution::oracle6::cis_6_2_19
 
-secure_linux_cis::server:
+secure_linux_cis::server_rules:
   - secure_linux_cis::distribution::oracle6::cis_1_1_1_1
   - secure_linux_cis::distribution::oracle6::cis_1_1_1_2
   - secure_linux_cis::distribution::oracle6::cis_1_1_1_3

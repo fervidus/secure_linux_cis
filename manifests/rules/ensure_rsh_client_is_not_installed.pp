@@ -19,8 +19,17 @@ class secure_linux_cis::rules::ensure_rsh_client_is_not_installed(
     Boolean $enforced = true,
 ) {
   if $enforced {
-    package { ['rsh', 'rsh-client', 'rsh-redone-client']:
-      ensure => purged,
+    case $facts['osfamily'] {
+      'Suse': {
+        package { ['rsh', 'rsh-client', 'rsh-redone-client']:
+          ensure => absent,
+        }
+      }
+      default: {
+        package { ['rsh', 'rsh-client', 'rsh-redone-client']:
+          ensure => purged,
+        }
+      }
     }
   }
 }
