@@ -1,3 +1,4 @@
+# @api private
 #  Ensure xinetd is not enabled (Scored)
 #
 # Description:

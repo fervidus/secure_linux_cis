@@ -1,3 +1,4 @@
+# @api private
 #  Disable the rhnsd Daemon (Not Scored)
 #
 #

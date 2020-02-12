@@ -1,3 +1,4 @@
+# @api private
 # 3 Ensure successful file system mounts are collected (Scored)
 #
 # Description:

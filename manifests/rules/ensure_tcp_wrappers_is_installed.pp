@@ -1,3 +1,4 @@
+# @api private
 #  Ensure TCP Wrappers is installed (Scored)
 #
 # Description:

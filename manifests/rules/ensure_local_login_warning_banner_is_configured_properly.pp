@@ -1,3 +1,4 @@
+# @api private
 #  Ensure local login warning banner is configured properly (Not Scored)
 #
 # Description:

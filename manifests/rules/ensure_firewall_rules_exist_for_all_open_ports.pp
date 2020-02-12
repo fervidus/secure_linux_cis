@@ -1,3 +1,4 @@
+# @api private
 #  Ensure firewall rules exist for all open ports (Scored)
 #
 # Description:

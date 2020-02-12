@@ -1,3 +1,4 @@
+# @api private
 #  Ensure cron daemon is enabled (Scored)
 #
 # Description:

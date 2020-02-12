@@ -1,3 +1,4 @@
+# @api private
 #  Ensure users own their home directories (Scored)
 #
 #

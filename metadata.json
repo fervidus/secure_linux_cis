@@ -1,6 +1,6 @@
 {
   "name": "fervid-secure_linux_cis",
-  "version": "2.0.7",
+  "version": "2.0.10",
   "author": "Bryan Belanger",
   "summary": "This module hardens Linux servers to CIS security compliance",
   "license": "Apache-2.0",

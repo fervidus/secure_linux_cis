@@ -1,3 +1,4 @@
+# @api private
 # 4 Ensure SSH access is limited (Scored)
 #
 # Description:

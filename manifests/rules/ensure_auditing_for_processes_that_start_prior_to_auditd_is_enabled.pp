@@ -1,3 +1,4 @@
+# @api private
 #  Ensure auditing for processes that start prior to auditd is enabled (Scored)
 #
 # Description:

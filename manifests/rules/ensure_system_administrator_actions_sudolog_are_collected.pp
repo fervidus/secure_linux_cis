@@ -1,3 +1,4 @@
+# @api private
 # 6 Ensure system administrator actions (sudolog) are collected (Scored)
 #
 # Description:

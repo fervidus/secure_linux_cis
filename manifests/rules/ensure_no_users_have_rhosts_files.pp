@@ -1,3 +1,4 @@
+# @api private
 # 4 Ensure no users have .rhosts files (Scored)
 #
 #

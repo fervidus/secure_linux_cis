@@ -1,3 +1,4 @@
+# @api private
 #  Ensure all users last password change date is in the past (Scored)
 #
 # Description:

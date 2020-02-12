@@ -1,3 +1,4 @@
+# @api private
 # 0 Ensure discretionary access control permission modification events are collected (Scored)
 #
 # Description:

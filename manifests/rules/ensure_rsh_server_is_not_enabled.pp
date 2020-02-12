@@ -1,3 +1,4 @@
+# @api private
 # 7 Ensure rsh server is not enabled (Scored)
 #
 # Description:

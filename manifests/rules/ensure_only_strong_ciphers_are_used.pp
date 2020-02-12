@@ -1,3 +1,4 @@
+# @api private
 # A description of what this class does
 #
 # Description:

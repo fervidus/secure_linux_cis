@@ -1,3 +1,4 @@
+# @api private
 #  Ensure AIDE is installed (Scored)
 #
 #

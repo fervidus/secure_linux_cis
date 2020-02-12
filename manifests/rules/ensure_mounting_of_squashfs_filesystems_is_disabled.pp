@@ -1,3 +1,4 @@
+# @api private
 #  Ensure mounting of squashfs filesystems is disabled (Scored)
 #
 # Description:

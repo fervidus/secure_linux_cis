@@ -1,3 +1,5 @@
+# @param enforced Should this rule be enforced
+# @api private
 #  Ensure the SELinux state is enforcing (Scored)
 #
 #

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure outbound and established connections are configured (Not Scored)
 #
 # Description:

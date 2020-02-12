@@ -1,3 +1,4 @@
+# @api private
 # 4 Ensure nodev option set on /home partition (Scored)
 #
 #

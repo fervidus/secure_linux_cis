@@ -1,3 +1,4 @@
+# @api private
 #  Ensure SETroubleshoot is not installed (Scored)
 #
 #

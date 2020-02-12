@@ -1,3 +1,4 @@
+# @api private
 #  Ensure permissions on /etc/cron.d are configured (Scored)
 #
 # Description:

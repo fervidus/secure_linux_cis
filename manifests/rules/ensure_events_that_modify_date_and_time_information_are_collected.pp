@@ -1,3 +1,4 @@
+# @api private
 #  Ensure events that modify date and time information are collected (Scored)
 #
 # Description:

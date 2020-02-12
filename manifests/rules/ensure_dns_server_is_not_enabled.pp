@@ -1,3 +1,4 @@
+# @api private
 #  Ensure DNS Server is not enabled (Scored)
 #
 # Description:

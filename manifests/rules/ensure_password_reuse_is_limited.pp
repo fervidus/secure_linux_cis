@@ -1,3 +1,4 @@
+# @api private
 #  Ensure password reuse is limited (Scored)
 #
 # Description:

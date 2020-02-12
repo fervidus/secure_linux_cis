@@ -1,3 +1,4 @@
+# @api private
 #  Ensure permissions on /etc/group- are configured (Scored)
 #
 # Description:

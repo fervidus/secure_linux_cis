@@ -1,3 +1,4 @@
+# @api private
 #  Ensure no unconfined daemons exist (Scored)
 #
 #

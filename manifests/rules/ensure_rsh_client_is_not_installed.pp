@@ -1,3 +1,4 @@
+# @api private
 #  Ensure rsh client is not installed (Scored)
 #
 # Description:

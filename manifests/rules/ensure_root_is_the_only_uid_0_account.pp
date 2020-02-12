@@ -1,3 +1,4 @@
+# @api private
 #  Ensure root is the only UID 0 account (Scored)
 #
 #

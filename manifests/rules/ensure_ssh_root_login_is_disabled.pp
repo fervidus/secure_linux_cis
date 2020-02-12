@@ -1,3 +1,4 @@
+# @api private
 #  Ensure SSH root login is disabled (Scored)
 #
 # Description:

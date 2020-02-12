@@ -1,3 +1,4 @@
+# @api private
 #  Ensure noexec option set on /tmp partition (Scored)
 #
 #

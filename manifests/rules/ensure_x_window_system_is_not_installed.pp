@@ -1,3 +1,4 @@
+# @api private
 #  Ensure X Window System is not installed (Scored)
 #
 # Description:

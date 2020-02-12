@@ -1,3 +1,4 @@
+# @api private
 # 0 Ensure SSH PermitUserEnvironment is disabled (Scored)
 #
 # Description:

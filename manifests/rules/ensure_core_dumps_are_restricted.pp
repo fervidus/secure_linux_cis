@@ -1,3 +1,4 @@
+# @api private
 #  Ensure core dumps are restricted (Scored)
 #
 #

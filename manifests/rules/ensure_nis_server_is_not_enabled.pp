@@ -1,3 +1,4 @@
+# @api private
 # 6 Ensure NIS Server is not enabled (Scored)
 #
 # Description:

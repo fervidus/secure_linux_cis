@@ -1,3 +1,4 @@
+# @api private
 #  Ensure DHCP Server is not enabled (Scored)
 #
 # Description:

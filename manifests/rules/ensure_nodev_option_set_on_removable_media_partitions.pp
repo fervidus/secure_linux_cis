@@ -1,3 +1,4 @@
+# @api private
 # 8 Ensure nodev option set on removable media partitions (Not Scored)
 #
 #

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure packet redirect sending is disabled (Scored)
 #
 # Description:

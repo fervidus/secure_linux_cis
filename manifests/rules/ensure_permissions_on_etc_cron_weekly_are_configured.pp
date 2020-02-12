@@ -1,3 +1,4 @@
+# @api private
 #  Ensure permissions on /etc/cron.weekly are configured (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure echo services are not enabled (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 #  Audit system file permissions (Not Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure password fields are not empty (Scored)
 #
 #

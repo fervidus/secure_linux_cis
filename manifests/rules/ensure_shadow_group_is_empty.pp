@@ -1,3 +1,4 @@
+# @api private
 # Ensure shadow group is empty (Scored)
 #
 #

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure chrony is configured (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure password creation requirements are configured (Scored)
 #
 # Description:

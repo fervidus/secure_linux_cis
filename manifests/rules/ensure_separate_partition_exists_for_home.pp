@@ -1,3 +1,4 @@
+# @api private
 # 3 Ensure separate partition exists for /home (Scored)
 #
 #

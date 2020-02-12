@@ -1,3 +1,4 @@
+# @api private
 #  Ensure rsyslog default file permissions configured (Scored)
 #
 # Description:

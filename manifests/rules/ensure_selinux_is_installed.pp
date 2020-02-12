@@ -1,3 +1,4 @@
+# @api private
 #  Ensure SELinux is installed (Scored)
 #
 #

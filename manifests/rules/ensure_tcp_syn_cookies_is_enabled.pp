@@ -1,3 +1,4 @@
+# @api private
 #  Ensure TCP SYN Cookies is enabled (Scored)
 #
 # Description:

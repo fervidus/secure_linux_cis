@@ -1,3 +1,4 @@
+# @api private
 #  Ensure users' home directories permissions are 750 or more restrictive (Scored)
 #
 #

@@ -1,3 +1,4 @@
+# @api private
 # 8 Ensure the audit configuration is immutable (Scored)
 #
 # Description:

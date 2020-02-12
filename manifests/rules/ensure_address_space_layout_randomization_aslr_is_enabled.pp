@@ -1,3 +1,4 @@
+# @api private
 #  Ensure address space layout randomization (ASLR) is enabled (Scored)
 #
 #

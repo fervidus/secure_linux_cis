@@ -1,3 +1,4 @@
+# @api private
 # 7 Ensure no duplicate GIDs exist (Scored)
 #
 #

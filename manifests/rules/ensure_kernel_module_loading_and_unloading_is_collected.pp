@@ -1,3 +1,4 @@
+# @api private
 # 7 Ensure kernel module loading and unloading is collected (Scored)
 #
 # Description:

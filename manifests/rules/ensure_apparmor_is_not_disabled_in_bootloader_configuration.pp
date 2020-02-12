@@ -1,3 +1,5 @@
+# @param enforced Should this rule be enforced
+# @api private
 # Ensure AppArmor is enabled in the bootloader configuration (Scored)
 #
 # Description:

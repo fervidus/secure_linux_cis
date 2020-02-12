@@ -1,3 +1,4 @@
+# @api private
 # 8 Ensure talk server is not enabled (Scored)
 #
 # Description:

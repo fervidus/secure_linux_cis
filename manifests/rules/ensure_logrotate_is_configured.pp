@@ -1,3 +1,4 @@
+# @api private
 #  Ensure logrotate is configured (Not Scored)
 #
 # Description:

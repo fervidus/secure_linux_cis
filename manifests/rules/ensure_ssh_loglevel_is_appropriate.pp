@@ -1,3 +1,4 @@
+# @api private
 #  Ensure SSH LogLevel is set to INFO (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure events that modify the system's network environment are collected (Scored)
 #
 # Description:

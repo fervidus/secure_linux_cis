@@ -1,3 +1,4 @@
+# @api private
 # 3 Ensure HTTP Proxy Server is not enabled (Scored)
 #
 # Description:

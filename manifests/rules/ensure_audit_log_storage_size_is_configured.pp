@@ -1,3 +1,4 @@
+# @api private
 #  Ensure audit log storage size is configured (Not Scored)
 #
 # Description:

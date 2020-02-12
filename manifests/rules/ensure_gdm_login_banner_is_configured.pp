@@ -1,3 +1,4 @@
+# @api private
 #  Ensure GDM login banner is configured (Scored)
 #
 #

@@ -1,3 +1,4 @@
+# @api private
 # 6 Ensure nosuid option set on /dev/shm partition (Scored)
 #
 #

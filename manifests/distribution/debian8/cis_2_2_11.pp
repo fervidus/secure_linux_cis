@@ -1,3 +1,4 @@
+# @api private
 #
 class secure_linux_cis::distribution::debian8::cis_2_2_11 {
   # CIS is not strict with this check accross distributions. Enabled and

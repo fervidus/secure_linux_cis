@@ -1,3 +1,4 @@
+# @api private
 #  Ensure telnet client is not installed (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 # 0 Ensure no world writable files exist (Scored)
 #
 # Description:

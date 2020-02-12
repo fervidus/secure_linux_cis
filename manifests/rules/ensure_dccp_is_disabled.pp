@@ -1,3 +1,4 @@
+# @api private
 #  Ensure DCCP is disabled (Not Scored)
 #
 # Description:

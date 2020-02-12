@@ -1,3 +1,4 @@
+# @api private
 #  Ensure default user umask is 027 or more restrictive (Scored)
 #
 #

@@ -1,3 +1,4 @@
+# @api private
 # 1 Ensure IMAP and POP3 server is not enabled (Scored)
 #
 # Description:

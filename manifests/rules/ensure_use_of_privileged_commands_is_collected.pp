@@ -1,3 +1,4 @@
+# @api private
 # 2 Ensure use of privileged commands is collected (Scored)
 #
 # Description:

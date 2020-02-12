@@ -1,3 +1,4 @@
+# @api private
 # 5 Ensure SSH warning banner is configured (Scored)
 #
 # Description:

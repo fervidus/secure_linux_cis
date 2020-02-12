@@ -1,3 +1,4 @@
+# @api private
 #  Ensure login and logout events are collected (Scored)
 #
 # Description:

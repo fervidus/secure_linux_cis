@@ -1,3 +1,4 @@
+# @api private
 #  Ensure SSH IgnoreRhosts is enabled (Scored)
 #
 # Description:

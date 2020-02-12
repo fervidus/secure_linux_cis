@@ -1,3 +1,4 @@
+# @api private
 #  Ensure default group for the root account is GID 0 (Scored)
 #
 #

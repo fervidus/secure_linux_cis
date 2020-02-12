@@ -1,3 +1,4 @@
+# @api private
 # @summary Check and fix a mount with a single option
 #
 # @param mount The mount point we have to check

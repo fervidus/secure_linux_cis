@@ -1,3 +1,4 @@
+# @api private
 #  Ensure prelink is disabled (Scored)
 #
 #

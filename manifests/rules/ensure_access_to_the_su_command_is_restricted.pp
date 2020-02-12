@@ -1,3 +1,4 @@
+# @api private
 #  Ensure access to the su command is restricted (Scored)
 #
 #

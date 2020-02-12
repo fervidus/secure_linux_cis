@@ -1,3 +1,4 @@
+# @api private
 #  Ensure permissions on /etc/ssh/sshd_config are configured (Scored)
 #
 # Description:

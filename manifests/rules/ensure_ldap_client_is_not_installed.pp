@@ -1,3 +1,4 @@
+# @api private
 #  Ensure LDAP client is not installed (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure syslog-ng default file permissions configured (Scored)
 #
 # Description:

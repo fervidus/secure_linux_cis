@@ -1,3 +1,4 @@
+# @api private
 #  Ensure system is disabled when audit logs are full (Scored)
 #
 # Description:

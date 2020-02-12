@@ -1,3 +1,4 @@
+# @api private
 # 3 Audit SUID executables (Not Scored)
 #
 #

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure bootloader password is set (Scored)
 #
 #

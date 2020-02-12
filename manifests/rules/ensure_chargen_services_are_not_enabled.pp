@@ -1,3 +1,4 @@
+# @api private
 #  Ensure chargen services are not enabled (Scored)
 #
 # Description:

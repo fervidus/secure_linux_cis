@@ -1,3 +1,4 @@
+# @api private
 #  Ensure auditd service is enabled (Scored)
 #
 # Description:

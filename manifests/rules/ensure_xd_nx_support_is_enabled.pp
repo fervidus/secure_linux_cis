@@ -1,3 +1,4 @@
+# @api private
 #  Ensure XD/NX support is enabled (Not Scored)
 #
 #

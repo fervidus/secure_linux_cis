@@ -1,3 +1,4 @@
+# @api private
 #  Ensure suspicious packets are logged (Scored)
 #
 # Description:

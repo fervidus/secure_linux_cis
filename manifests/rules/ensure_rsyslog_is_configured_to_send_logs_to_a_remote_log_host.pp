@@ -1,3 +1,4 @@
+# @api private
 #  Ensure rsyslog is configured to send logs to a remote log host (Scored)
 #
 #

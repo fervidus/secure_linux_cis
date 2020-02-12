@@ -1,3 +1,4 @@
+# @api private
 # 5 Ensure nodev option set on /dev/shm partition (Scored)
 #
 #

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure SSH HostbasedAuthentication is disabled (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 # Ensure permissions on SSH private host key files are configured (Scored)
 #
 # Description:

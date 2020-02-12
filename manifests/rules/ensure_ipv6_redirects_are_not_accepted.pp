@@ -1,3 +1,4 @@
+# @api private
 #  Ensure IPv6 redirects are not accepted (Not Scored)
 #
 # Description:

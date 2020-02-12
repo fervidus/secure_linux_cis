@@ -1,3 +1,4 @@
+# @api private
 #  Ensure at/cron is restricted to authorized users (Scored)
 #
 # Description:

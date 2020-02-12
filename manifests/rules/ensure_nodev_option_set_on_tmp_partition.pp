@@ -1,3 +1,4 @@
+# @api private
 #  Ensure nodev option set on /tmp partition (Scored)
 #
 #

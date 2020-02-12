@@ -1,3 +1,4 @@
+# @api private
 # 1 Ensure rsync service is not enabled (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure CUPS is not enabled (Scored)
 #
 # Description:

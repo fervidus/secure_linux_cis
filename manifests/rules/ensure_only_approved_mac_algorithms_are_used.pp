@@ -1,3 +1,5 @@
+# @param enforced Should this rule be enforced
+# @api private
 # A description of what this class does
 #
 # Description:

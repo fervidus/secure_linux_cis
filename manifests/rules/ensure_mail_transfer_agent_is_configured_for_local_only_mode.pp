@@ -1,3 +1,4 @@
+# @api private
 # 5 Ensure mail transfer agent is configured for local-only mode (Scored)
 #
 # Description:

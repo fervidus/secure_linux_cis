@@ -1,3 +1,4 @@
+# @api private
 #  Ensure iptables is installed (Scored)
 #
 # Description:

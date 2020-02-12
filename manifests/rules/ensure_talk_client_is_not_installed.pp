@@ -1,3 +1,4 @@
+# @api private
 #  Ensure talk client is not installed (Scored)
 #
 # Description:

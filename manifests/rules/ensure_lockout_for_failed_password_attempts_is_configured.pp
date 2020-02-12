@@ -1,3 +1,4 @@
+# @api private
 #  Ensure lockout for failed password attempts is configured (Scored)
 #
 # Description:

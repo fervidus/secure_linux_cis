@@ -1,3 +1,4 @@
+# @api private
 # 8 Ensure no duplicate user names exist (Scored)
 #
 #

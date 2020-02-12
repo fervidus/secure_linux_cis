@@ -1,3 +1,4 @@
+# @api private
 #  Ensure permissions on /etc/cron.monthly are configured (Scored)
 #
 # Description:

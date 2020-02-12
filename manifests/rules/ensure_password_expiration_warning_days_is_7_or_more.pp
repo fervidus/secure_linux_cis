@@ -1,3 +1,4 @@
+# @api private
 #  Ensure password expiration warning days is 7 or more (Scored)
 #
 # Description:

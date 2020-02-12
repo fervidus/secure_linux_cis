@@ -1,3 +1,4 @@
+# @api private
 #  Ensure wireless interfaces are disabled (Not Scored)
 #
 # Description:

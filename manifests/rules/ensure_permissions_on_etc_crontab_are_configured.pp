@@ -1,3 +1,4 @@
+# @api private
 #  Ensure permissions on /etc/crontab are configured (Scored)
 #
 #

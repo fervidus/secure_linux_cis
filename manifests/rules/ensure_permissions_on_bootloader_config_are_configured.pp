@@ -1,3 +1,4 @@
+# @api private
 #  Ensure permissions on bootloader config are configured (Scored)
 #
 #

@@ -1,3 +1,4 @@
+# @api private
 # 7 Ensure noexec option set on /dev/shm partition (Scored)
 #
 #

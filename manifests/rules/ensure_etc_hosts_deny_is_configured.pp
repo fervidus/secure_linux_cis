@@ -1,3 +1,4 @@
+# @api private
 #  Ensure /etc/hosts.deny is configured (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure SSH Protocol is set to 2 (Scored)
 #
 # Description:

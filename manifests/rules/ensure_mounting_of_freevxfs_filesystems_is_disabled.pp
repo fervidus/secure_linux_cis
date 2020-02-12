@@ -1,3 +1,4 @@
+# @api private
 #  Ensure mounting of freevxfs filesystems is disabled (Scored)
 #
 # Description:

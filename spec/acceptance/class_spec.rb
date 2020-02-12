@@ -5,7 +5,10 @@ describe 'secure_linux_cis' do
     # Using puppet_apply as a helper
     it 'works idempotently with no errors' do
       pp = <<-LINUX_TEST
-      class { 'secure_linux_cis': }
+      class { 'secure_linux_cis':
+        time_servers => ['tick.usno.navy.mil', 'tock.usno.navy.mil'],
+        profile_type => 'server',
+      }
       LINUX_TEST
 
       # Run it twice and test for idempotency

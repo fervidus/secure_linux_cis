@@ -1,3 +1,4 @@
+# @api private
 # 1 Ensure no unowned files or directories exist (Scored)
 #
 # Description:

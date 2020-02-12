@@ -1,3 +1,4 @@
+# @api private
 # 2 Ensure separate partition exists for /var/log/audit (Scored)
 #
 # Description:

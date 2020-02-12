@@ -1,3 +1,4 @@
+# @api private
 #  Ensure remote syslog-ng messages are only accepted on designated log hosts (Not Scored)
 #
 # Description:

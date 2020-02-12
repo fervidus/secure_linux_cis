@@ -1,3 +1,4 @@
+# @api private
 #  Ensure the MCS Translation Service (mcstrans) is not installed (Scored)
 #
 #

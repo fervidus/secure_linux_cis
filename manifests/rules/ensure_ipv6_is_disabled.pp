@@ -1,3 +1,4 @@
+# @api private
 #  Ensure IPv6 is disabled (Not Scored)
 #
 # Description:

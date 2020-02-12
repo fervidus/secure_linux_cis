@@ -1,3 +1,4 @@
+# @api private
 #  Ensure Red Hat Subscription Manager connection is configured (Not Scored)
 #
 #

@@ -1,3 +1,4 @@
+# @api private
 # 0 Ensure noexec option set on /var/tmp partition (Scored)
 #
 #

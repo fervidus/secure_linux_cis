@@ -1,3 +1,5 @@
+# @param enforced Should this rule be enforced
+# @api private
 # Ensure only strong MAC algorithms are used
 #
 # Description:

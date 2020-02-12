@@ -1,3 +1,4 @@
+# @api private
 #  Ensure SSH MaxAuthTries is set to 4 or less (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure mounting of cramfs filesystems is disabled (Scored)
 #
 # Description:

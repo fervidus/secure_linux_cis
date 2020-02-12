@@ -1,3 +1,4 @@
+# @api private
 #  Ensure time synchronization is in use (Not Scored)
 #
 # Description:

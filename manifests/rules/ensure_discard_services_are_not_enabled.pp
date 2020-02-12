@@ -1,3 +1,4 @@
+# @api private
 #  Ensure discard services are not enabled (Scored)
 #
 # Description:

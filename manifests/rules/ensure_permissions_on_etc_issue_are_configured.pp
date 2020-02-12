@@ -1,3 +1,4 @@
+# @api private
 #  Ensure permissions on /etc/issue are configured (Scored)
 #
 #

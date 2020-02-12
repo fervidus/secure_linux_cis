@@ -1,3 +1,4 @@
+# @api private
 #  Ensure filesystem integrity is regularly checked (Scored)
 #
 #

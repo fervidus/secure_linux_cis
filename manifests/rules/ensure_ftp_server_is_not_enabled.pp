@@ -1,3 +1,4 @@
+# @api private
 #  Ensure FTP Server is not enabled (Scored)
 #
 # Description:

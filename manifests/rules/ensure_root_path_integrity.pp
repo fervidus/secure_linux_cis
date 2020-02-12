@@ -1,3 +1,4 @@
+# @api private
 #  Ensure root PATH Integrity (Scored)
 #
 # @summary  Ensure root PATH Integrity (Scored)

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure NFS and RPC are not enabled (Scored)
 #
 # Description:

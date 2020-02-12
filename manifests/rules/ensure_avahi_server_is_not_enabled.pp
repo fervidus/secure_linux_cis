@@ -1,3 +1,4 @@
+# @api private
 #  Ensure Avahi Server is not enabled (Scored)
 #
 # Description:

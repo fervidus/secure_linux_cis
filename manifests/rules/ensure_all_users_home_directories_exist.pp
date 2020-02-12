@@ -1,3 +1,4 @@
+# @api private
 #  Ensure all users' home directories exist (Scored)
 #
 #

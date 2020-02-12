@@ -1,3 +1,4 @@
+# @api private
 # 1 Ensure sticky bit is set on all world-writable directories (Scored)
 #
 #

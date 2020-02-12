@@ -1,3 +1,4 @@
+# @api private
 # 5 Ensure all groups in /etc/passwd exist in /etc/group (Scored)
 #
 #

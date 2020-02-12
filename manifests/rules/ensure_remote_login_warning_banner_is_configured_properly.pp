@@ -1,3 +1,4 @@
+# @api private
 #  Ensure remote login warning banner is configured properly (Not Scored)
 #
 #

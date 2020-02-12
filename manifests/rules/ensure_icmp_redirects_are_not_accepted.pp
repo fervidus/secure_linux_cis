@@ -1,3 +1,4 @@
+# @api private
 #  Ensure ICMP redirects are not accepted (Scored)
 #
 # Description:

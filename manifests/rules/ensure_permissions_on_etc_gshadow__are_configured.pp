@@ -1,3 +1,4 @@
+# @api private
 #  Ensure permissions on /etc/gshadow- are configured (Scored)
 #
 # Description:

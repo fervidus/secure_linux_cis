@@ -1,3 +1,4 @@
+# @api private
 #  Ensure no legacy "+" entries exist in /etc/passwd (Scored)
 #
 #

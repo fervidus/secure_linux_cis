@@ -1,3 +1,4 @@
+# @api private
 #  Ensure updates, patches, and additional security software are installed (Scored)
 #
 #

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure GPG keys are configured (Not Scored)
 #
 #

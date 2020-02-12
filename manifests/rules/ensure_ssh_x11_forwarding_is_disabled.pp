@@ -1,3 +1,4 @@
+# @api private
 #  Ensure SSH X11 forwarding is disabled (Scored)
 #
 # Description:

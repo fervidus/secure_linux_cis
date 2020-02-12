@@ -1,3 +1,4 @@
+# @api private
 # Helper class for reloading various services when needed
 #
 # @example

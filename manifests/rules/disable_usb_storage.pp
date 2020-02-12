@@ -1,3 +1,4 @@
+# @api private
 #  Ensure mounting of hfsplus filesystems is disabled (Scored)
 #
 # Description:

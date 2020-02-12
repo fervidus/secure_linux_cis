@@ -1,3 +1,4 @@
+# @api private
 # 4 Ensure file deletion events by users are collected (Scored)
 #
 # Description:

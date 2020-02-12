@@ -1,3 +1,4 @@
+# @api private
 #  Ensure permissions on /etc/cron.daily are configured (Scored)
 #
 # Description:

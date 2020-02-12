@@ -1,3 +1,4 @@
+# @api private
 #  Ensure permissions on /etc/cron.hourly are configured (Scored)
 #
 # Description:

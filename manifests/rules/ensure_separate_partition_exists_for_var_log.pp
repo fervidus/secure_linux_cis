@@ -1,3 +1,4 @@
+# @api private
 # 1 Ensure separate partition exists for /var/log (Scored)
 #
 #

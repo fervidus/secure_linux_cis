@@ -1,3 +1,4 @@
+# @api private
 #  Ensure RDS is disabled (Not Scored)
 #
 # Description:

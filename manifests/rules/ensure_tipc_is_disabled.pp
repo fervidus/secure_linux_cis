@@ -1,3 +1,4 @@
+# @api private
 #  Ensure TIPC is disabled (Not Scored)
 #
 # # Description:

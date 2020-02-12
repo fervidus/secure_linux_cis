@@ -1,3 +1,4 @@
+# @api private
 # 1 Ensure no users have .forward files (Scored)
 #
 #

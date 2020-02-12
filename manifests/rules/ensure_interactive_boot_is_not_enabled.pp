@@ -1,3 +1,4 @@
+# @api private
 #  Ensure inactive password lock is 30 days or less (Scored)
 #
 # Description:

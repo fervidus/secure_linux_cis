@@ -1,3 +1,4 @@
+# @api private
 #  Ensure LDAP server is not enabled (Scored)
 #
 # Description:

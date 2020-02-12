@@ -1,3 +1,4 @@
+# @api private
 #  Ensure SSH PermitEmptyPasswords is disabled (Scored)
 #
 # Description:

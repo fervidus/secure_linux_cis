@@ -1,3 +1,4 @@
+# @api private
 #  Ensure authentication required for single user mode (Scored)
 #
 #

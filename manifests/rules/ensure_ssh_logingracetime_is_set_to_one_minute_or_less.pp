@@ -1,3 +1,4 @@
+# @api private
 # 3 Ensure SSH LoginGraceTime is set to one minute or less (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 # 4 Ensure SNMP Server is not enabled (Scored)
 #
 # Description:

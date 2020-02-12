@@ -1,3 +1,4 @@
+# @api private
 # 6 Ensure no duplicate UIDs exist (Scored)
 #
 #

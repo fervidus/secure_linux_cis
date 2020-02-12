@@ -1,3 +1,4 @@
+# @api private
 #  Ensure default user shell timeout is 900 seconds or less (Scored)
 #
 #

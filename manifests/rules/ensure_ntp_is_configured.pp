@@ -1,3 +1,4 @@
+# @api private
 #  Ensure ntp is configured (Scored)
 #
 # Description:

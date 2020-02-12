@@ -1,3 +1,4 @@
+# @api private
 #  Ensure nosuid option set on /tmp partition (Scored)
 #
 #

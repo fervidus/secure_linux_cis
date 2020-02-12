@@ -1,3 +1,4 @@
+# @api private
 #  Ensure separate partition exists for /var/tmp (Scored)
 #
 #

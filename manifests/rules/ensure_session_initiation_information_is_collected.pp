@@ -1,3 +1,4 @@
+# @api private
 #  Ensure session initiation information is collected (Scored)
 #
 # Description:

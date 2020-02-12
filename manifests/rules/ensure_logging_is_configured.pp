@@ -1,3 +1,4 @@
+# @api private
 #  Ensure logging is configured (Not Scored)
 #
 # Description:

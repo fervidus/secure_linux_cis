@@ -1,3 +1,4 @@
+# @api private
 # 0 Ensure tftp server is not enabled (Scored)
 #
 # Description:

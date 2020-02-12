@@ -1,3 +1,4 @@
+# @api private
 # 2 Ensure no ungrouped files or directories exist (Scored)
 #
 # Description:

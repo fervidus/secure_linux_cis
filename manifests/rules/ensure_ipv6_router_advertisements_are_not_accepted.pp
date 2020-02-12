@@ -1,3 +1,4 @@
+# @api private
 #  Ensure IPv6 router advertisements are not accepted (Not Scored)
 #
 # Description:

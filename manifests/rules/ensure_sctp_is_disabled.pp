@@ -1,3 +1,4 @@
+# @api private
 #  Ensure SCTP is disabled (Not Scored)
 #
 # Description:

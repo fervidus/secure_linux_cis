@@ -1,3 +1,4 @@
+# @api private
 # 4 Audit SGID executables (Not Scored)
 #
 #

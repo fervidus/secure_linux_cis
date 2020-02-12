@@ -1,3 +1,4 @@
+# @api private
 #  Ensure default deny firewall policy (Scored)
 #
 # Description:

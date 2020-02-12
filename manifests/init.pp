@@ -1,5 +1,7 @@
 # @summary CIS Red Hat Enterprise Linux 7 Benchmark
 #
+# @api public
+#
 # @param include_rules Which rules to include
 # @param grub_config_files Grub configuration
 # @param aide_command Command used to invoke aide

@@ -1,3 +1,4 @@
+# @api private
 # 0 Ensure HTTP server is not enabled (Scored)
 #
 # Description:

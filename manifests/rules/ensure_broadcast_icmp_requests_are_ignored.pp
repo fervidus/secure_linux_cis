@@ -1,3 +1,4 @@
+# @api private
 #  Ensure broadcast ICMP requests are ignored (Scored)
 #
 # Description:

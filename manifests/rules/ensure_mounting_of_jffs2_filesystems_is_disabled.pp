@@ -1,3 +1,4 @@
+# @api private
 #  Ensure mounting of jffs2 filesystems is disabled (Scored)
 #
 # Description:

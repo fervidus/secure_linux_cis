@@ -1,3 +1,4 @@
+# @api private
 # 5 Ensure changes to system administration scope (sudoers) is collected (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 # 3 Ensure users' .netrc Files are not group or world accessible
 #
 #

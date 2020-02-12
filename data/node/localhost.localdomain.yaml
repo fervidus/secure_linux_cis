@@ -1,0 +1,2 @@
+---
+secure_linux_cis::rules::ensure_ssh_root_login_is_disabled::enforced: false

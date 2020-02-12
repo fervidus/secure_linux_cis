@@ -1,3 +1,4 @@
+# @api private
 # 2 Ensure no users have .netrc files (Scored)
 #
 #

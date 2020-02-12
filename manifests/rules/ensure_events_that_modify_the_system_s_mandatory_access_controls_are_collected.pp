@@ -1,3 +1,4 @@
+# @api private
 #  Ensure events that modify the system's Mandatory Access Controls are collected (Scored)
 #
 # Description:

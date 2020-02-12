@@ -1,3 +1,4 @@
+# @api private
 #  Ensure loopback traffic is configured (Scored)
 #
 # Description:

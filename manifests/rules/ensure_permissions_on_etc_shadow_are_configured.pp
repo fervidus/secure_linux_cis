@@ -1,3 +1,4 @@
+# @api private
 #  Ensure permissions on /etc/shadow are configured (Scored)
 #
 # Description:

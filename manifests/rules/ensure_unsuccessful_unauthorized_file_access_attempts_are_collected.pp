@@ -1,3 +1,4 @@
+# @api private
 # 1 Ensure unsuccessful unauthorized file access attempts are collected (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure events that modify user/group information are collected (Scored)
 #
 # Description:

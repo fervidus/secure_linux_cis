@@ -1,3 +1,4 @@
+# @api private
 #  Ensure syslog-ng service is enabled (Scored)
 #
 # Description:

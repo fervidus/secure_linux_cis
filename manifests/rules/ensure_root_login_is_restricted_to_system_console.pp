@@ -1,3 +1,4 @@
+# @api private
 # #  Ensure root login is restricted to system console (Not Scored)
 # #
 # #

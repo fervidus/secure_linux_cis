@@ -1,3 +1,4 @@
+# @api private
 #  Ensure audit logs are not automatically deleted (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure system accounts are non-login (Scored)
 #
 #

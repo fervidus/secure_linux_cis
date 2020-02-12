@@ -1,3 +1,4 @@
+# @api private
 # 0 Ensure users' dot files are not group or world writable (Scored)
 #
 #

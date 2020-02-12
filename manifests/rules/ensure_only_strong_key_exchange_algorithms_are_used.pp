@@ -1,3 +1,4 @@
+# @api private
 # Description:
 # Key exchange is any method in cryptography by which cryptographic keys are exchanged
 # between two parties, allowing use of a cryptographic algorithm. If the sender and receiver

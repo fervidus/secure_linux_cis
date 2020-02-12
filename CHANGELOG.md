@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 2.0.10
+* New updated documentation
+* Apache license
+* Litmus acceptance testing
+
 ## Release 2.0.5 Release Candidate
 * Added plan to harden OS's
 * Separated Centos 7 and RHEL 7 into server / workstation profiles

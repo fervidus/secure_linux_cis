@@ -1,3 +1,4 @@
+# @api private
 #  Ensure NIS Client is not installed (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 # 2 Ensure SSH Idle Timeout Interval is configured (Scored)
 #
 # Description:

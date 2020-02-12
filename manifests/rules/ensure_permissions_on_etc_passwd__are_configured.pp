@@ -1,3 +1,4 @@
+# @api private
 #  Ensure permissions on /etc/passwd- are configured (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 # 9 Ensure no duplicate group names exist (Scored)
 #
 #

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure SELinux policy is configured (Scored)
 #
 #

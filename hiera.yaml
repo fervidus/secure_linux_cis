@@ -9,6 +9,9 @@ hierarchy:
 #  - name: "OS Structured Fact"
 #    path: "os/%{facts.os.name}/version/%{facts.os.release.major}.yaml"
     
+  - name: "Nodes"
+    path: "node/%{facts.fqdn}.yaml"
+    
   - name: "OS Major Release"
     path: "os/%{facts.operatingsystem}/version/%{facts.operatingsystemmajrelease}.yaml"
 

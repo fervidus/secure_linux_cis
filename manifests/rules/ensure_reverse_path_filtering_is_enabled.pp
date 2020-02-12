@@ -1,3 +1,4 @@
+# @api private
 #  Ensure Reverse Path Filtering is enabled (Scored)
 #
 # Description:

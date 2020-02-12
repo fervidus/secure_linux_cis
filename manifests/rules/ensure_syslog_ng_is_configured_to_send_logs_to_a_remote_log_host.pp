@@ -1,3 +1,4 @@
+# @api private
 #  Ensure syslog-ng is configured to send logs to a remote log host (Not Scored)
 #
 # Description:

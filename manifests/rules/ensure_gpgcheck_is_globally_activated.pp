@@ -1,3 +1,4 @@
+# @api private
 #  Ensure gpgcheck is globally activated (Scored)
 #
 #

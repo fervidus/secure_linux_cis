@@ -1,3 +1,4 @@
+# @api private
 #  Ensure IP forwarding is disabled (Scored)
 #
 # Description:

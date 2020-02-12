@@ -1,3 +1,4 @@
+# @api private
 #  Ensure rsyslog or syslog-ng is installed (Scored)
 #
 # Description:

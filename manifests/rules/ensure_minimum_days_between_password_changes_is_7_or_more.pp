@@ -1,3 +1,4 @@
+# @api private
 #  Ensure minimum days between password changes is 7 or more (Scored)
 #
 # Description:

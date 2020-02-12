@@ -1,3 +1,4 @@
+# @api private
 # 9 Ensure telnet server is not enabled (Scored)
 #
 # Description:

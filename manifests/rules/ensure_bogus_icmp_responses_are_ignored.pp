@@ -1,3 +1,4 @@
+# @api private
 #  Ensure bogus ICMP responses are ignored (Scored)
 #
 # Description:

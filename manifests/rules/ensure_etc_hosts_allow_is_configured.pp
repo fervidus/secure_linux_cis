@@ -1,3 +1,4 @@
+# @api private
 #  Ensure /etc/hosts.allow is configured (Scored)
 #
 # Description:

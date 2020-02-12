@@ -1,3 +1,4 @@
+# @api private
 #  Ensure time services are not enabled (Scored)
 #
 # Description:

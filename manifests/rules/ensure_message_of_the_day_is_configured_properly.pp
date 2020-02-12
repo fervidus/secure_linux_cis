@@ -1,3 +1,4 @@
+# @api private
 #  Ensure message of the day is configured properly (Scored)
 #
 #

@@ -1,3 +1,4 @@
+# @api private
 # Ensure IPv6 loopback traffic is configured (Scored)
 #
 # Description:

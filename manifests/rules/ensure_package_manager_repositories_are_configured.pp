@@ -1,3 +1,4 @@
+# @api private
 #  Ensure package manager repositories are configured (Not Scored)
 #
 #

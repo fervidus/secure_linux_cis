@@ -1,3 +1,4 @@
+# @api private
 #  Ensure mounting of FAT filesystems is disabled (Scored)
 #
 # Description:

@@ -1,3 +1,4 @@
+# @api private
 #  Ensure daytime services are not enabled (Scored)
 #
 # Description:

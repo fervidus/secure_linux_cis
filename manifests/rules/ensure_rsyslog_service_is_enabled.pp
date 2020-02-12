@@ -1,3 +1,4 @@
+# @api private
 #  Ensure rsyslog Service is enabled (Scored)
 #
 # Description:

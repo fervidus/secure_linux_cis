@@ -1,3 +1,4 @@
+# @api private
 #  Ensure password expiration is 365 days or less (Scored)
 #
 # Description:

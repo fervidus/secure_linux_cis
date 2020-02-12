@@ -1,3 +1,4 @@
+# @api private
 #  Ensure permissions on /etc/motd are configured (Not Scored)
 #
 #

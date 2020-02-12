@@ -1,3 +1,4 @@
+# @api private
 # 9 Ensure nosuid option set on removable media partitions (Not Scored)
 #
 #
