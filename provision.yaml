@@ -1,15 +1,18 @@
 ---
 vagrant:
- provisioner: vagrant
- images:
+  provisioner: vagrant
+  params:
+    hyperv_smb_username: someone
+    hyperv_smb_password: something
+  images:
    - bento/ubuntu-16.04
-   - bento/ubuntu-18.04
-  #  - bento/centos-6.8
-   - bento/centos-7.7
-   - bento/centos-8.1
-  #  - bento/oracle-6
-  #  - bento/oracle-7.7
-  #  - bento/oracle-8.1
-   - bento/debian-8.9
-   - bento/debian-9.11
-  #  - bento/amazonlinux-2
+  # - bento/ubuntu-18.04
+  # # - bento/centos-6.8
+  # - bento/centos-7.7
+  # - bento/centos-8.1
+  # # - bento/oracle-6
+  # # - bento/oracle-7.7
+  # # - bento/oracle-8.1
+  # - bento/debian-8.9
+  # - bento/debian-9.11
+  # # - bento/amazonlinux-2
