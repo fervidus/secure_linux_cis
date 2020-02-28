@@ -8,4 +8,7 @@ secure_linux_cis::host_allow_rules:
   - "ALL: %{facts.networking.network}/%{facts.networking.netmask}"
 
 secure_linux_cis::host_deny_rules:
-  - 'ALL: ALL'
+
+secure_linux_cis::hardening_schedule:
+  period: hourly
+  repeat: 2

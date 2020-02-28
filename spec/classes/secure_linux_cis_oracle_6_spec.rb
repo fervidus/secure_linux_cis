@@ -11,7 +11,6 @@ describe 'secure_linux_cis' do
   }
 
   on_supported_os(test_on).each do |os, os_facts|
-
     puts "\n##########>  #{os}  <##########\n\n"
 
     let(:facts) { os_facts }
@@ -214,7 +213,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_6_2_9') }
 
     it { is_expected.to contain_class('secure_linux_cis::reboot') }
-    
+
     it { is_expected.to contain_class('secure_linux_cis::rules::audit_sgid_executables') }
     it { is_expected.to contain_class('secure_linux_cis::rules::audit_suid_executables') }
     it { is_expected.to contain_class('secure_linux_cis::rules::disable_automounting') }
@@ -401,13 +400,13 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_x_window_system_is_not_installed') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_xd_nx_support_is_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_xinetd_is_not_enabled') }
-    
+
     it { is_expected.to contain_class('secure_linux_cis::service') }
 
     it { is_expected.to contain_cron__job('cron_aide') }
-    
+
     it { is_expected.to contain_cron__monthly('security-update') }
-    
+
     it { is_expected.to contain_exec('create_aide_database') }
     it { is_expected.to contain_exec('gpgkey') }
     it { is_expected.to contain_exec('reload sshd') }
@@ -529,7 +528,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_firewallchain('INPUT:filter:IPv6') }
     it { is_expected.to contain_firewallchain('OUTPUT:filter:IPv4') }
     it { is_expected.to contain_firewallchain('OUTPUT:filter:IPv6') }
-    
+
     it { is_expected.to contain_kmod__install('cramfs') }
     it { is_expected.to contain_kmod__install('dccp') }
     it { is_expected.to contain_kmod__install('freevxfs') }
@@ -541,11 +540,11 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_kmod__install('squashfs') }
     it { is_expected.to contain_kmod__install('tipc') }
     it { is_expected.to contain_kmod__install('udf') }
-    
+
     it { is_expected.to contain_notify('NX') }
     it { is_expected.to contain_notify('allow_groups') }
     it { is_expected.to contain_notify('gp') }
-    
+
     it { is_expected.to contain_package('aide') }
     it { is_expected.to contain_package('ldap-utils') }
     it { is_expected.to contain_package('libpwquality') }
@@ -560,7 +559,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_package('tcp_wrappers') }
     it { is_expected.to contain_package('telnet') }
     it { is_expected.to contain_package('ypbind') }
-    
+
     it { is_expected.to contain_pam('pam password-auth requisite') }
     it { is_expected.to contain_pam('pam password-auth sufficient') }
     it { is_expected.to contain_pam('pam system-auth requisite') }
@@ -575,9 +574,9 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_pam('pam_unix system-auth') }
 
     it { is_expected.to contain_reboot('after_run') }
-    
+
     it { is_expected.to contain_resources('firewall') }
-    
+
     it { is_expected.to contain_secure_linux_cis__mount_options('/home-nodev') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/tmp-nodev') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/tmp-noexec') }
@@ -585,7 +584,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_secure_linux_cis__mount_options('/var/tmp-nodev') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/var/tmp-noexec') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/var/tmp-nosuid') }
-    
+
     it { is_expected.to contain_service('apache2') }
     it { is_expected.to contain_service('apache') }
     it { is_expected.to contain_service('autofs') }
@@ -631,7 +630,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_service('vsftpd') }
     it { is_expected.to contain_service('xinetd') }
     it { is_expected.to contain_service('ypserv') }
-    
+
     it { is_expected.to contain_sysctl('fs.suid_dumpable') }
     it { is_expected.to contain_sysctl('kernel.randomize_va_space') }
     it { is_expected.to contain_sysctl('net.ipv4.conf.all.accept_redirects') }
@@ -658,6 +657,5 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.disable_ipv6') }
 
     it { is_expected.to contain_user('root') }
-    
   end
 end

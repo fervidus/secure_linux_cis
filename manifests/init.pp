@@ -41,6 +41,7 @@
 # @param banner Optional string to be content of /etc/issue, /etc/issue.net (and /etc/motd if $motd not defined)
 # @param motd Optional string to be content of /etc/motd.  If $banner is defined and $motd is not, $banner becomes content of /etc/motd
 # @param auto_restart If an automatic restart should occur when defined classes require a reboot to take effect
+# @param schedule If you want to change when this runs use a scheduler
 #
 # @example
 #   include secure_linux_cis
@@ -58,6 +59,15 @@ class secure_linux_cis (
   Array[Stdlib::Host]                     $time_servers,
   Enum['workstation', 'server']           $profile_type,
   Enum['firewall', 'firewalld']           $firewall_package,
+  Struct[
+    {
+      Optional[period]      => Enum['hourly', 'daily', 'weekly', 'monthly', 'never'],
+      Optional[periodmatch] => Enum['number', 'distance'],
+      Optional[range]       => String[1],
+      Optional[repeat]      => Integer,
+      Optional[weekday]     => Variant[Array, String[1]],
+    }
+  ]                                       $hardening_schedule,
   Array[String]                           $include_rules           = [],
   Array[String]                           $workstation_rules       = [],
   Array[String]                           $server_rules            = [],

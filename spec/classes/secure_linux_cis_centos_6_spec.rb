@@ -11,7 +11,6 @@ describe 'secure_linux_cis' do
   }
 
   on_supported_os(test_on).each do |os, os_facts|
-
     puts "\n##########>  #{os}  <##########\n\n"
 
     let(:facts) { os_facts }
@@ -657,6 +656,5 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.disable_ipv6') }
 
     it { is_expected.to contain_user('root') }
-    
   end
 end

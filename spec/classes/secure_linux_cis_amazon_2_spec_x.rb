@@ -11,8 +11,7 @@ describe 'secure_linux_cis' do
     ],
   }
 
-  on_supported_os(test_on).each do |os, os_facts|
-
+  on_supported_os(test_on).each do |_os, os_facts|
     puts "\n##########>  #{os_facts}  <##########\n\n"
 
     let(:facts) { os_facts }

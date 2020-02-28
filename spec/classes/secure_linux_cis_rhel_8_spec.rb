@@ -11,7 +11,6 @@ describe 'secure_linux_cis' do
   }
 
   on_supported_os(test_on).each do |os, os_facts|
-
     puts "\n##########>  #{os}  <##########\n\n"
 
     let(:facts) { os_facts }
@@ -24,7 +23,7 @@ describe 'secure_linux_cis' do
     end
 
     it { is_expected.to compile.with_all_deps }
-    
+
     it { is_expected.to contain_class('secure_linux_cis::distribution::rhel8::cis_1_10') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::rhel8::cis_1_1_10') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::rhel8::cis_1_1_14') }
@@ -217,7 +216,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::distribution::rhel8::cis_6_2_9') }
 
     it { is_expected.to contain_class('secure_linux_cis::reboot') }
-    
+
     it { is_expected.to contain_class('secure_linux_cis::rules::audit_sgid_executables') }
     it { is_expected.to contain_class('secure_linux_cis::rules::audit_suid_executables') }
     it { is_expected.to contain_class('secure_linux_cis::rules::create_custom_authselect_profile') }
@@ -410,7 +409,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::service') }
 
     it { is_expected.to contain_cron__job('cron_aide') }
-    
+
     it { is_expected.to contain_cron__monthly('security-update') }
 
     it { is_expected.to contain_exec('create_aide_database') }
@@ -551,7 +550,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_notify('ensure_base_chains_exist Still needs to be implemented.') }
     it { is_expected.to contain_notify('ensure_iptables_are_flushed Still needs to be implemented.') }
     it { is_expected.to contain_notify('gp') }
-    
+
     it { is_expected.to contain_package('aide') }
     it { is_expected.to contain_package('ldap-utils') }
     it { is_expected.to contain_package('libpwquality') }
@@ -561,7 +560,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_package('telnet') }
     it { is_expected.to contain_package('xinetd') }
     it { is_expected.to contain_package('ypbind') }
-    
+
     it { is_expected.to contain_pam('pam password-auth requisite') }
     it { is_expected.to contain_pam('pam password-auth sufficient') }
     it { is_expected.to contain_pam('pam system-auth requisite') }
@@ -574,9 +573,9 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_pam('pam_faillock preauth system-auth') }
     it { is_expected.to contain_pam('pam_unix password-auth') }
     it { is_expected.to contain_pam('pam_unix system-auth') }
-    
+
     it { is_expected.to contain_reboot('after_run') }
-    
+
     it { is_expected.to contain_secure_linux_cis__mount_options('/home-nodev') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/tmp-mode=1777,strictatime,noexec,nodev,nosuid') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/tmp-nodev') }
@@ -585,7 +584,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_secure_linux_cis__mount_options('/var/tmp-nodev') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/var/tmp-noexec') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/var/tmp-nosuid') }
-    
+
     it { is_expected.to contain_service('apache2') }
     it { is_expected.to contain_service('apache') }
     it { is_expected.to contain_service('autofs') }
@@ -616,7 +615,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_service('squid') }
     it { is_expected.to contain_service('vsftpd') }
     it { is_expected.to contain_service('ypserv') }
-    
+
     it { is_expected.to contain_sysctl('fs.suid_dumpable') }
     it { is_expected.to contain_sysctl('kernel.randomize_va_space') }
     it { is_expected.to contain_sysctl('net.ipv4.conf.all.accept_redirects') }
@@ -639,8 +638,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_sysctl('net.ipv6.conf.all.accept_redirects') }
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.accept_ra') }
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.accept_redirects') }
-    
+
     it { is_expected.to contain_user('root') }
-    
   end
 end

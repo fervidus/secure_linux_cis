@@ -11,7 +11,6 @@ describe 'secure_linux_cis' do
   }
 
   on_supported_os(test_on).each do |os, os_facts|
-
     puts "\n##########>  #{os}  <##########\n\n"
 
     let(:facts) { os_facts }
@@ -24,6 +23,5 @@ describe 'secure_linux_cis' do
     end
 
     it { is_expected.to compile.with_all_deps }
-   
   end
 end

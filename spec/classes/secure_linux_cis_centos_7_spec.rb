@@ -11,7 +11,6 @@ describe 'secure_linux_cis' do
   }
 
   on_supported_os(test_on).each do |os, os_facts|
-
     puts "\n##########>  #{os}  <##########\n\n"
 
     let(:facts) { os_facts }
@@ -525,7 +524,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_firewallchain('INPUT:filter:IPv6') }
     it { is_expected.to contain_firewallchain('OUTPUT:filter:IPv4') }
     it { is_expected.to contain_firewallchain('OUTPUT:filter:IPv6') }
-  
+
     it { is_expected.to contain_kmod__install('cramfs') }
     it { is_expected.to contain_kmod__install('dccp') }
     it { is_expected.to contain_kmod__install('freevxfs') }
@@ -661,6 +660,5 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_service('ypserv') }
 
     it { is_expected.to contain_user('root') }
-    
   end
 end
