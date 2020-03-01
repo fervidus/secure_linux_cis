@@ -31,9 +31,9 @@
 #
 
 class secure_linux_cis::rules::ensure_bootloader_password_is_set(
-  String $grub_pbkdf2_password_hash,
-  String $grub_username = root,
   Boolean $enforced = false,
+  String $grub_username = root,
+  String $grub_pbkdf2_password_hash = undef,
 ) {
   if $enforced {
     if $facts['grub_pass'] == undef {
@@ -42,8 +42,13 @@ class secure_linux_cis::rules::ensure_bootloader_password_is_set(
         loglevel => 'warning',
       }
     }
-    grub_user { $grub_username:
+    unless $grub_pbkdf2_password_hash == undef {
+      grub_user { $grub_username:
         password => $grub_pbkdf2_password_hash
+      }
+    }
+    else {
+      fail('Set to enforce but no PBKDF2 password hash provided. Please add proper value to hiera.')
     }
   }
 }
