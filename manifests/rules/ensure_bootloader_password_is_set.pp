@@ -31,7 +31,6 @@
 #
 
 class secure_linux_cis::rules::ensure_bootloader_password_is_set(
-  String $grub_username,
   String $grub_pbkdf2_password_hash,
   String $grub_username = root,
   Boolean $enforced = false,
