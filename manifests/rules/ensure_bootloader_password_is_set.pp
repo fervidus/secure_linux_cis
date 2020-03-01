@@ -33,7 +33,7 @@
 class secure_linux_cis::rules::ensure_bootloader_password_is_set(
   Boolean $enforced = false,
   String $grub_username = root,
-  String $grub_pbkdf2_password_hash = undef,
+  Optional[String] $grub_pbkdf2_password_hash = undef,
 ) {
   if $enforced {
     if $facts['grub_pass'] == undef {
