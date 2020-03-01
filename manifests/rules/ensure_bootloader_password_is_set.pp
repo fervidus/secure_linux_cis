@@ -27,7 +27,7 @@
 # @example Using hiera
 #   secure_linux_cis::rules::ensure_bootloader_password_is_set::enforced: true
 #   secure_linux_cis::rules::ensure_bootloader_password_is_set::grub_username: root
-#   secure_linux_cis::rules::ensure_bootloader_password_is_set::grub_pbkdf2_password_hash: grub.pbkdf2.sha512.10000.7D81626...ABC0123C616C3210CBA
+#   secure_linux_cis::rules::ensure_bootloader_password_is_set::grub_pbkdf2_password_hash: grub.pbkdf2.sha512.10000.7D81626...ABC0123210CBA
 #
 
 class secure_linux_cis::rules::ensure_bootloader_password_is_set(
@@ -48,7 +48,7 @@ class secure_linux_cis::rules::ensure_bootloader_password_is_set(
       }
     }
     else {
-      fail('Set to enforce but no PBKDF2 password hash provided. Please add proper value to hiera.')
+      fail('Set to enforce but no PBKDF2 password hash provided. Please add proper value to hiera or disable this rule until present.')
     }
   }
 }
