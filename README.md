@@ -6,7 +6,7 @@
 #### Table of Contents
 
 1. [Description](#description)
-2. [Setup - The basics of getting started with test](#setup)
+2. [Setup - The basics of getting started](#setup)
     * [What secure_linux_cis affects](#what-secure_linux_cis-affects)
     * [Setup requirements](#setup-requirements)
     * [Beginning with test](#beginning-with-secure_linux_cis)
@@ -19,7 +19,7 @@
 
 ## Description
 
-This Puppet module implements security controls defined in the Center for Internet Security (CIS) benchmarks for the below operating systems. The benchmark versions are listed below:
+This Puppet module implements security controls defined in the Center for Internet Security (CIS) benchmarks for the following operating systems and benchmark versions:
 
 | Operating System | Benchmark Version |
 |------------------|-------------------|
@@ -41,7 +41,7 @@ This Puppet module implements security controls defined in the Center for Intern
 | Ubuntu 16.04 | 1.1.0 |
 | Ubuntu 18.04 | 2.1.0 |
 
-CIS Benchmarks can be found [here](https://www.cisecurity.org/benchmark
+CIS Benchmarks can be found [here](https://www.cisecurity.org/benchmark).
 
 ## Setup
 
@@ -50,10 +50,11 @@ CIS Benchmarks can be found [here](https://www.cisecurity.org/benchmark
 This module touches the:
 
 * Kernel settings
+* Bootloader configuration
 * Update settings
 * Firewall
-* Tcp wrappers
-* file and directory permissions
+* TCP wrappers
+* File and directory permissions
 
 These are good things. They keep you safe.
 
@@ -63,11 +64,11 @@ But, please run tests before slamming it into productions.
 
 To start with Secure Linux and harden your server to CIS standards, declare the `secure_linux_cis:` class.
 
-*Note:* you will want to open up at least one firewall port. See Opening firewall ports in Usage below.
+*NOTE:* you will want to open up at least one firewall port. See [Opening firewall ports](#usage).
 
 Three parameters are required:
 
-* ```time_servers``` We didn't feel it was safe to 'guess' the time server. Your corporation should have one.
+* ```time_servers``` Specify your enterprise's time server(s)
 
 * ```profile_type``` It will be ```workstation``` or ```server```
 
@@ -77,7 +78,7 @@ Three parameters are required:
 class {'::secure_linux_cis':
    time_servers  => ['tick.usno.navy.mil', 'tock.usno.navy.mil'],
    profile_type  => 'server',
-   allow_users   => 'goodguy',
+   allow_users   => 'trusteduser',
 }
 ```
 
@@ -91,7 +92,7 @@ If using iptables (Everything but RedHat family version 8) you will need to add 
 
 For example we want to open up for 8080 for tomcat:
 
-``` puppet
+```puppet
   firewall { '010 tomcat http port':
     chain  => 'INPUT',
     dport  => 8080,
@@ -112,16 +113,28 @@ This module is very generous with tcp controls. It relies on firewall rules for 
 
 You should tighten them down.
 
-*TODO: tcp wrapper example*
+*TODO: TCP wrapper example*
 
 ### Disabling rules with Hiera
 
-As of enforcement for the Redhat 7 OS, there are 223 CIS rules that are either enforced or documented. Each rule relates to a class which can be turned on or off according to the needs of the system. By default, all vulnerabilities are turned ON to ensure maximum security out-of-box. This is how you would turn off a vulnerablity using your company's Hiera configuration.
+As of enforcement for the Redhat 7 OS, there are 223 CIS rules that are either enforced or documented. Each rule relates to a class which can be turned on or off according to the needs of the system. By default, all vulnerabilities are turned ON to ensure maximum security out-of-box. This is how you would disable enforcement of a particular recommendation using Hiera:
 
-``` yaml
+```yaml
 # hieradata/common.yaml
-secure_linux_cis::distribution::redhat7::cis_1_1_2::enforced: false
+secure_linux_cis::rules::ensure_mounting_of_squashfs_filesystems_is_disabled::enforced: false
 ```
+
+### Enabling rules with Hiera
+Some recommendations are *not* enforced by default. For example, to enforce password-protected bootloader, a hash value for password must be present:
+
+```yaml
+# hieradata/common.yaml
+secure_linux_cis::rules::ensure_bootloader_password_is_set::enforced: true
+secure_linux_cis::rules::ensure_bootloader_password_is_set::grub_username: root
+secure_linux_cis::rules::ensure_bootloader_password_is_set::grub_pbkdf2_password_hash: grub.pbkdf2.sha512.10000.7D81626...ABC0123C616C3210CBA
+```
+
+*NOTE:* Don't use the example pbkdf2 string value. It needs to be a hash you've generated with the intended password.
 
 See [Limitations](#limitations) for a list of vulnerabilities that might not apply to certain system configurations
 
@@ -132,15 +145,15 @@ Include usage examples for common use cases in the **Usage** section. Show your 
 ### No-Op Mode
 It is possible to run the module in "No-Op Mode", which identifies detected Configuration Drifts without implementing any actual changes. This is useful for auditing the state of your system without making any changes.
 
-```puppet agent -t --noop```
+```bash
+puppet agent -t --noop
+```
 
 ## Limitations
 
 RedHat family '8' OSes are not fully covered. Almost, but not quite.
 
-Help getting this out the door would be appreciated.
-
-Also, we do not have acceptance testing completed for Oracle Linux, Aliyun, or Amazon.
+Help getting this out the door would be appreciated. Also, we do not have acceptance testing completed for OracleLinux, Aliyun, or Amazon Linux. 
 
 Same deal. Any help appreciated.
 
@@ -148,4 +161,4 @@ Same deal. Any help appreciated.
 
 Please ensure PDK validation and unit tests pass.
 
-Ideally make sure litmus tests pass too, but we understand this will be out of reach for some.
+Ideally make sure litmus tests pass too, but we understand this will be out of scope for some.
