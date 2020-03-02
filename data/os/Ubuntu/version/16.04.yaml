@@ -52,7 +52,6 @@ secure_linux_cis::workstation_level_1:
   - secure_linux_cis::distribution::ubuntu16::cis_2_2_1_3
   - secure_linux_cis::distribution::ubuntu16::cis_2_2_2
   - secure_linux_cis::distribution::ubuntu16::cis_2_2_3
-  - secure_linux_cis::distribution::ubuntu16::cis_2_2_4
   - secure_linux_cis::distribution::ubuntu16::cis_2_2_5
   - secure_linux_cis::distribution::ubuntu16::cis_2_2_6
   - secure_linux_cis::distribution::ubuntu16::cis_2_2_7
@@ -98,7 +97,6 @@ secure_linux_cis::workstation_level_1:
   - secure_linux_cis::distribution::ubuntu16::cis_3_6_3
   - secure_linux_cis::distribution::ubuntu16::cis_3_6_4
   - secure_linux_cis::distribution::ubuntu16::cis_3_6_5
-  - secure_linux_cis::distribution::ubuntu16::cis_3_7
   - secure_linux_cis::distribution::ubuntu16::cis_4_2_1_1
   - secure_linux_cis::distribution::ubuntu16::cis_4_2_1_2
   - secure_linux_cis::distribution::ubuntu16::cis_4_2_1_3
@@ -196,6 +194,8 @@ secure_linux_cis::workstation_level_2:
   - secure_linux_cis::distribution::ubuntu16::cis_1_6_1_4
   - secure_linux_cis::distribution::ubuntu16::cis_1_6_2_1
   - secure_linux_cis::distribution::ubuntu16::cis_1_6_2_2
+  - secure_linux_cis::distribution::ubuntu16::cis_2_2_4
+  - secure_linux_cis::distribution::ubuntu16::cis_3_7
   - secure_linux_cis::distribution::ubuntu16::cis_4_1_1_1
   - secure_linux_cis::distribution::ubuntu16::cis_4_1_1_2
   - secure_linux_cis::distribution::ubuntu16::cis_4_1_1_3
