@@ -67,7 +67,7 @@ class secure_linux_cis (
       Optional[weekday]     => Variant[Array, String[1]],
     }
   ]                                       $hardening_schedule,
-  Enum['workstation', 'server']           $profile_type,
+  Enum['workstation', 'server']           $profile_type            = 'server',
   Enum['1', '2']                          $enforcement_level       = '1',
   Array[String]                           $include_rules           = [],
   Array[String]                           $exclude_rules           = [],
