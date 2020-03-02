@@ -1,5 +1,9 @@
 ---
-secure_linux_cis::server_rules:
+secure_linux_cis::workstation_level_1:
+
+secure_linux_cis::workstation_level_2:
+
+secure_linux_cis::server_level_1:
   - secure_linux_cis::distribution::amazon2::cis_1_1_1_1
   - secure_linux_cis::distribution::amazon2::cis_1_1_1_2
   - secure_linux_cis::distribution::amazon2::cis_1_1_1_3
@@ -9,14 +13,9 @@ secure_linux_cis::server_rules:
   - secure_linux_cis::distribution::amazon2::cis_1_1_3
   - secure_linux_cis::distribution::amazon2::cis_1_1_4
   - secure_linux_cis::distribution::amazon2::cis_1_1_5
-  # - secure_linux_cis::distribution::amazon2::cis_1_1_6
-  # - secure_linux_cis::distribution::amazon2::cis_1_1_7
   - secure_linux_cis::distribution::amazon2::cis_1_1_8
   - secure_linux_cis::distribution::amazon2::cis_1_1_9
   - secure_linux_cis::distribution::amazon2::cis_1_1_10
-  # - secure_linux_cis::distribution::amazon2::cis_1_1_11
-  # - secure_linux_cis::distribution::amazon2::cis_1_1_12
-  # - secure_linux_cis::distribution::amazon2::cis_1_1_13
   - secure_linux_cis::distribution::amazon2::cis_1_1_14
   - secure_linux_cis::distribution::amazon2::cis_1_1_15
   - secure_linux_cis::distribution::amazon2::cis_1_1_16
@@ -33,13 +32,6 @@ secure_linux_cis::server_rules:
   - secure_linux_cis::distribution::amazon2::cis_1_5_1
   - secure_linux_cis::distribution::amazon2::cis_1_5_2
   - secure_linux_cis::distribution::amazon2::cis_1_5_3
-  # - secure_linux_cis::distribution::amazon2::cis_1_6_1_1
-  # - secure_linux_cis::distribution::amazon2::cis_1_6_1_2
-  # - secure_linux_cis::distribution::amazon2::cis_1_6_1_3
-  # - secure_linux_cis::distribution::amazon2::cis_1_6_1_4
-  # - secure_linux_cis::distribution::amazon2::cis_1_6_1_5
-  # - secure_linux_cis::distribution::amazon2::cis_1_6_1_6
-  # - secure_linux_cis::distribution::amazon2::cis_1_6_2
   - secure_linux_cis::distribution::amazon2::cis_1_7_1_1
   - secure_linux_cis::distribution::amazon2::cis_1_7_1_2
   - secure_linux_cis::distribution::amazon2::cis_1_7_1_3
@@ -104,26 +96,6 @@ secure_linux_cis::server_rules:
   - secure_linux_cis::distribution::amazon2::cis_3_5_2_3
   - secure_linux_cis::distribution::amazon2::cis_3_5_2_4
   - secure_linux_cis::distribution::amazon2::cis_3_5_3
-  # - secure_linux_cis::distribution::amazon2::cis_3_6
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_1_1
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_1_2
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_1_3
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_2
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_3
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_4
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_5
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_6
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_8
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_9
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_10
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_11
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_12
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_13
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_14
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_15
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_16
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_17
-  # - secure_linux_cis::distribution::amazon2::cis_4_1_18
   - secure_linux_cis::distribution::amazon2::cis_4_2_1_1
   - secure_linux_cis::distribution::amazon2::cis_4_2_1_2
   - secure_linux_cis::distribution::amazon2::cis_4_2_1_3
@@ -150,7 +122,6 @@ secure_linux_cis::server_rules:
   - secure_linux_cis::distribution::amazon2::cis_5_2_3
   - secure_linux_cis::distribution::amazon2::cis_5_2_4
   - secure_linux_cis::distribution::amazon2::cis_5_2_5
-  # - secure_linux_cis::distribution::amazon2::cis_5_2_6
   - secure_linux_cis::distribution::amazon2::cis_5_2_7
   - secure_linux_cis::distribution::amazon2::cis_5_2_8
   - secure_linux_cis::distribution::amazon2::cis_5_2_9
@@ -176,10 +147,8 @@ secure_linux_cis::server_rules:
   - secure_linux_cis::distribution::amazon2::cis_5_4_2
   - secure_linux_cis::distribution::amazon2::cis_5_4_3
   - secure_linux_cis::distribution::amazon2::cis_5_4_4
-  # - secure_linux_cis::distribution::amazon2::cis_5_4_5
   - secure_linux_cis::distribution::amazon2::cis_5_5
   - secure_linux_cis::distribution::amazon2::cis_5_6
-  # - secure_linux_cis::distribution::amazon2::cis_6_1_1
   - secure_linux_cis::distribution::amazon2::cis_6_1_2
   - secure_linux_cis::distribution::amazon2::cis_6_1_3
   - secure_linux_cis::distribution::amazon2::cis_6_1_4
@@ -212,3 +181,40 @@ secure_linux_cis::server_rules:
   - secure_linux_cis::distribution::amazon2::cis_6_2_17
   - secure_linux_cis::distribution::amazon2::cis_6_2_18
   - secure_linux_cis::distribution::amazon2::cis_6_2_19
+
+secure_linux_cis::server_level_2:
+  - secure_linux_cis::distribution::amazon2::cis_1_1_6
+  - secure_linux_cis::distribution::amazon2::cis_1_1_7
+  - secure_linux_cis::distribution::amazon2::cis_1_1_11
+  - secure_linux_cis::distribution::amazon2::cis_1_1_12
+  - secure_linux_cis::distribution::amazon2::cis_1_1_13
+  - secure_linux_cis::distribution::amazon2::cis_1_6_1_1
+  - secure_linux_cis::distribution::amazon2::cis_1_6_1_2
+  - secure_linux_cis::distribution::amazon2::cis_1_6_1_3
+  - secure_linux_cis::distribution::amazon2::cis_1_6_1_4
+  - secure_linux_cis::distribution::amazon2::cis_1_6_1_5
+  - secure_linux_cis::distribution::amazon2::cis_1_6_1_6
+  - secure_linux_cis::distribution::amazon2::cis_1_6_2
+  - secure_linux_cis::distribution::amazon2::cis_3_6
+  - secure_linux_cis::distribution::amazon2::cis_4_1_1_1
+  - secure_linux_cis::distribution::amazon2::cis_4_1_1_2
+  - secure_linux_cis::distribution::amazon2::cis_4_1_1_3
+  - secure_linux_cis::distribution::amazon2::cis_4_1_2
+  - secure_linux_cis::distribution::amazon2::cis_4_1_3
+  - secure_linux_cis::distribution::amazon2::cis_4_1_4
+  - secure_linux_cis::distribution::amazon2::cis_4_1_5
+  - secure_linux_cis::distribution::amazon2::cis_4_1_6
+  - secure_linux_cis::distribution::amazon2::cis_4_1_8
+  - secure_linux_cis::distribution::amazon2::cis_4_1_9
+  - secure_linux_cis::distribution::amazon2::cis_4_1_10
+  - secure_linux_cis::distribution::amazon2::cis_4_1_11
+  - secure_linux_cis::distribution::amazon2::cis_4_1_12
+  - secure_linux_cis::distribution::amazon2::cis_4_1_13
+  - secure_linux_cis::distribution::amazon2::cis_4_1_14
+  - secure_linux_cis::distribution::amazon2::cis_4_1_15
+  - secure_linux_cis::distribution::amazon2::cis_4_1_16
+  - secure_linux_cis::distribution::amazon2::cis_4_1_17
+  - secure_linux_cis::distribution::amazon2::cis_4_1_18
+  - secure_linux_cis::distribution::amazon2::cis_5_2_6
+  - secure_linux_cis::distribution::amazon2::cis_5_4_5
+  - secure_linux_cis::distribution::amazon2::cis_6_1_1
