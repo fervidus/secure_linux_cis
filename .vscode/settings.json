@@ -1,0 +1,6 @@
+{
+    "files.watcherExclude": {
+        "**/.vagrant/**": true,
+        "**/fixtures/**": true
+    }
+}

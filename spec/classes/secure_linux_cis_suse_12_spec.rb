@@ -582,218 +582,218 @@ describe 'secure_linux_cis' do
 #    it \{ is_expected\.to contain_file_line('audit.rules session 3') }
 #    it \{ is_expected\.to contain_file_line('audit.rules sudo.log 1') }
 #    it \{ is_expected\.to contain_file_line('audit.rules sudoers 1') }
-#    it \{ is_expected\.to contain_file_line('audit.rules sudoers 2') }
-#    it \{ is_expected\.to contain_file_line('audit.rules time 1') }
-#    it \{ is_expected\.to contain_file_line('audit.rules time 2') }
-#    it \{ is_expected\.to contain_file_line('audit.rules time 3') }
-#    it \{ is_expected\.to contain_file_line('audit.rules time 4') }
-#    it \{ is_expected\.to contain_file_line('audit.rules time 5') }
-#    it \{ is_expected\.to contain_file_line('audit.rules user/group 1') }
-#    it \{ is_expected\.to contain_file_line('audit.rules user/group 2') }
-#    it \{ is_expected\.to contain_file_line('audit.rules user/group 3') }
-#    it \{ is_expected\.to contain_file_line('audit.rules user/group 4') }
-#    it \{ is_expected\.to contain_file_line('audit.rules user/group 5') }
-#    it \{ is_expected\.to contain_file_line('bashrc') }
-#    it \{ is_expected\.to contain_file_line('disable_ipv6_network') }
-#    it \{ is_expected\.to contain_file_line('disable_ipv6_network_init') }
-#    it \{ is_expected\.to contain_file_line('emergency') }
-#    it \{ is_expected\.to contain_file_line('limits_hc') }
-#    it \{ is_expected\.to contain_file_line('login.defs') }
-#    it \{ is_expected\.to contain_file_line('max_log_file') }
-#    it \{ is_expected\.to contain_file_line('max_log_file_action') }
-#    it \{ is_expected\.to contain_file_line('pam dcredit') }
-#    it \{ is_expected\.to contain_file_line('pam lcredit') }
-#    it \{ is_expected\.to contain_file_line('pam minlen') }
-#    it \{ is_expected\.to contain_file_line('pam ocredit') }
-#    it \{ is_expected\.to contain_file_line('pam ucredit') }
-#    it \{ is_expected\.to contain_file_line('password change policy') }
-#    it \{ is_expected\.to contain_file_line('password expiration policy') }
-#    it \{ is_expected\.to contain_file_line('password warning policy') }
-#    it \{ is_expected\.to contain_file_line('profile') }
-#    it \{ is_expected\.to contain_file_line('rescue') }
-#    it \{ is_expected\.to contain_file_line('rsyslog.conf InputTCPServerRun') }
-#    it \{ is_expected\.to contain_file_line('rsyslog.conf ModLoad') }
-#    it \{ is_expected\.to contain_file_line('rsyslog.conf log_permissions') }
-#    it \{ is_expected\.to contain_file_line('selinux_enforce') }
-#    it \{ is_expected\.to contain_file_line('selinux_targeted') }
-#    it \{ is_expected\.to contain_file_line('space_left_action') }
-#    it \{ is_expected\.to contain_file_line('ssh alive count max') }
-#    it \{ is_expected\.to contain_file_line('ssh alive interval') }
-#    it \{ is_expected\.to contain_file_line('ssh host based authentication') }
-#    it \{ is_expected\.to contain_file_line('ssh ignore rhosts') }
-#    it \{ is_expected\.to contain_file_line('ssh log level') }
-#    it \{ is_expected\.to contain_file_line('ssh login grace time') }
-#    it \{ is_expected\.to contain_file_line('ssh mac algorithms') }
-#    it \{ is_expected\.to contain_file_line('ssh max auth tries') }
-#    it \{ is_expected\.to contain_file_line('ssh permit empty password') }
-#    it \{ is_expected\.to contain_file_line('ssh permit root login') }
-#    it \{ is_expected\.to contain_file_line('ssh permit user environment') }
-#    it \{ is_expected\.to contain_file_line('ssh protocol') }
-#    it \{ is_expected\.to contain_file_line('ssh warning banner') }
-#    it \{ is_expected\.to contain_file_line('ssh x11') }
-#    it \{ is_expected\.to contain_file_line('su') }
-#    it \{ is_expected\.to contain_file_line('useradd_inactive') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules sudoers 2') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules time 1') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules time 2') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules time 3') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules time 4') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules time 5') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules user/group 1') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules user/group 2') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules user/group 3') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules user/group 4') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules user/group 5') }
+    #    it \{ is_expected\.to contain_file_line('bashrc') }
+    #    it \{ is_expected\.to contain_file_line('disable_ipv6_network') }
+    #    it \{ is_expected\.to contain_file_line('disable_ipv6_network_init') }
+    #    it \{ is_expected\.to contain_file_line('emergency') }
+    #    it \{ is_expected\.to contain_file_line('limits_hc') }
+    #    it \{ is_expected\.to contain_file_line('login.defs') }
+    #    it \{ is_expected\.to contain_file_line('max_log_file') }
+    #    it \{ is_expected\.to contain_file_line('max_log_file_action') }
+    #    it \{ is_expected\.to contain_file_line('pam dcredit') }
+    #    it \{ is_expected\.to contain_file_line('pam lcredit') }
+    #    it \{ is_expected\.to contain_file_line('pam minlen') }
+    #    it \{ is_expected\.to contain_file_line('pam ocredit') }
+    #    it \{ is_expected\.to contain_file_line('pam ucredit') }
+    #    it \{ is_expected\.to contain_file_line('password change policy') }
+    #    it \{ is_expected\.to contain_file_line('password expiration policy') }
+    #    it \{ is_expected\.to contain_file_line('password warning policy') }
+    #    it \{ is_expected\.to contain_file_line('profile') }
+    #    it \{ is_expected\.to contain_file_line('rescue') }
+    #    it \{ is_expected\.to contain_file_line('rsyslog.conf InputTCPServerRun') }
+    #    it \{ is_expected\.to contain_file_line('rsyslog.conf ModLoad') }
+    #    it \{ is_expected\.to contain_file_line('rsyslog.conf log_permissions') }
+    #    it \{ is_expected\.to contain_file_line('selinux_enforce') }
+    #    it \{ is_expected\.to contain_file_line('selinux_targeted') }
+    #    it \{ is_expected\.to contain_file_line('space_left_action') }
+    #    it \{ is_expected\.to contain_file_line('ssh alive count max') }
+    #    it \{ is_expected\.to contain_file_line('ssh alive interval') }
+    #    it \{ is_expected\.to contain_file_line('ssh host based authentication') }
+    #    it \{ is_expected\.to contain_file_line('ssh ignore rhosts') }
+    #    it \{ is_expected\.to contain_file_line('ssh log level') }
+    #    it \{ is_expected\.to contain_file_line('ssh login grace time') }
+    #    it \{ is_expected\.to contain_file_line('ssh mac algorithms') }
+    #    it \{ is_expected\.to contain_file_line('ssh max auth tries') }
+    #    it \{ is_expected\.to contain_file_line('ssh permit empty password') }
+    #    it \{ is_expected\.to contain_file_line('ssh permit root login') }
+    #    it \{ is_expected\.to contain_file_line('ssh permit user environment') }
+    #    it \{ is_expected\.to contain_file_line('ssh protocol') }
+    #    it \{ is_expected\.to contain_file_line('ssh warning banner') }
+    #    it \{ is_expected\.to contain_file_line('ssh x11') }
+    #    it \{ is_expected\.to contain_file_line('su') }
+    #    it \{ is_expected\.to contain_file_line('useradd_inactive') }
 
-#    it \{ is_expected\.to contain_firewall('001 accept all input to lo interface') }
-#    it \{ is_expected\.to contain_firewall('002 accept all output to lo interface') }
-#    it \{ is_expected\.to contain_firewall('003 drop all to lo 127.0.0.0/8') }
-#    it \{ is_expected\.to contain_firewall('004 accept new and established ouput tcp connections') }
-#    it \{ is_expected\.to contain_firewall('005 accept new and established ouput udp connections') }
-#    it \{ is_expected\.to contain_firewall('006 accept new and established ouput icmp connections') }
-#    it \{ is_expected\.to contain_firewall('007 accept estalished input tcp connections') }
-#    it \{ is_expected\.to contain_firewall('008 accept estalished input udp connections') }
-#    it \{ is_expected\.to contain_firewall('009 accept estalished input icmp connections') }
+    #    it \{ is_expected\.to contain_firewall('001 accept all input to lo interface') }
+    #    it \{ is_expected\.to contain_firewall('002 accept all output to lo interface') }
+    #    it \{ is_expected\.to contain_firewall('003 drop all to lo 127.0.0.0/8') }
+    #    it \{ is_expected\.to contain_firewall('004 accept new and established ouput tcp connections') }
+    #    it \{ is_expected\.to contain_firewall('005 accept new and established ouput udp connections') }
+    #    it \{ is_expected\.to contain_firewall('006 accept new and established ouput icmp connections') }
+    #    it \{ is_expected\.to contain_firewall('007 accept estalished input tcp connections') }
+    #    it \{ is_expected\.to contain_firewall('008 accept estalished input udp connections') }
+    #    it \{ is_expected\.to contain_firewall('009 accept estalished input icmp connections') }
 
-#    it \{ is_expected\.to contain_firewallchain('FORWARD:filter:IPv4') }
-#    it \{ is_expected\.to contain_firewallchain('FORWARD:filter:IPv6') }
-#    it \{ is_expected\.to contain_firewallchain('INPUT:filter:IPv4') }
-#    it \{ is_expected\.to contain_firewallchain('INPUT:filter:IPv6') }
-#    it \{ is_expected\.to contain_firewallchain('OUTPUT:filter:IPv4') }
-#    it \{ is_expected\.to contain_firewallchain('OUTPUT:filter:IPv6') }
+    #    it \{ is_expected\.to contain_firewallchain('FORWARD:filter:IPv4') }
+    #    it \{ is_expected\.to contain_firewallchain('FORWARD:filter:IPv6') }
+    #    it \{ is_expected\.to contain_firewallchain('INPUT:filter:IPv4') }
+    #    it \{ is_expected\.to contain_firewallchain('INPUT:filter:IPv6') }
+    #    it \{ is_expected\.to contain_firewallchain('OUTPUT:filter:IPv4') }
+    #    it \{ is_expected\.to contain_firewallchain('OUTPUT:filter:IPv6') }
 
-#    it \{ is_expected\.to contain_kernel_parameter('apparmor=1') }
-#    it \{ is_expected\.to contain_kernel_parameter('audit=1') }
-#    it \{ is_expected\.to contain_kernel_parameter('enforcing=0') }
-#    it \{ is_expected\.to contain_kernel_parameter('quiet') }
-#    it \{ is_expected\.to contain_kernel_parameter('security=apparmor') }
-#    it \{ is_expected\.to contain_kernel_parameter('selinux=0') }
+    #    it \{ is_expected\.to contain_kernel_parameter('apparmor=1') }
+    #    it \{ is_expected\.to contain_kernel_parameter('audit=1') }
+    #    it \{ is_expected\.to contain_kernel_parameter('enforcing=0') }
+    #    it \{ is_expected\.to contain_kernel_parameter('quiet') }
+    #    it \{ is_expected\.to contain_kernel_parameter('security=apparmor') }
+    #    it \{ is_expected\.to contain_kernel_parameter('selinux=0') }
 
-#    it \{ is_expected\.to contain_kmod__install('cramfs') }
-#    it \{ is_expected\.to contain_kmod__install('dccp') }
-#    it \{ is_expected\.to contain_kmod__install('freevxfs') }
-#    it \{ is_expected\.to contain_kmod__install('hfs') }
-#    it \{ is_expected\.to contain_kmod__install('hfsplus') }
-#    it \{ is_expected\.to contain_kmod__install('jffs2') }
-#    it \{ is_expected\.to contain_kmod__install('rds') }
-#    it \{ is_expected\.to contain_kmod__install('sctp') }
-#    it \{ is_expected\.to contain_kmod__install('squashfs') }
-#    it \{ is_expected\.to contain_kmod__install('tipc') }
-#    it \{ is_expected\.to contain_kmod__install('udf') }
-#    it \{ is_expected\.to contain_kmod__install('vfat') }
+    #    it \{ is_expected\.to contain_kmod__install('cramfs') }
+    #    it \{ is_expected\.to contain_kmod__install('dccp') }
+    #    it \{ is_expected\.to contain_kmod__install('freevxfs') }
+    #    it \{ is_expected\.to contain_kmod__install('hfs') }
+    #    it \{ is_expected\.to contain_kmod__install('hfsplus') }
+    #    it \{ is_expected\.to contain_kmod__install('jffs2') }
+    #    it \{ is_expected\.to contain_kmod__install('rds') }
+    #    it \{ is_expected\.to contain_kmod__install('sctp') }
+    #    it \{ is_expected\.to contain_kmod__install('squashfs') }
+    #    it \{ is_expected\.to contain_kmod__install('tipc') }
+    #    it \{ is_expected\.to contain_kmod__install('udf') }
+    #    it \{ is_expected\.to contain_kmod__install('vfat') }
 
-#    it \{ is_expected\.to contain_notify('NX') }
-#    it \{ is_expected\.to contain_notify('This DNS server check is not yet implemented for Suse') }
-#    it \{ is_expected\.to contain_notify('allow_groups') }
-#    it \{ is_expected\.to contain_notify('gp') }
-#    it \{ is_expected\.to contain_notify('mh') }
-#    it \{ is_expected\.to contain_notify('tmp-part') }
-#    it \{ is_expected\.to contain_notify('vla') }
-#    it \{ is_expected\.to contain_notify('vlp') }
-#    it \{ is_expected\.to contain_notify('vp') }
-#    it \{ is_expected\.to contain_notify('vtp') }
+    #    it \{ is_expected\.to contain_notify('NX') }
+    #    it \{ is_expected\.to contain_notify('This DNS server check is not yet implemented for Suse') }
+    #    it \{ is_expected\.to contain_notify('allow_groups') }
+    #    it \{ is_expected\.to contain_notify('gp') }
+    #    it \{ is_expected\.to contain_notify('mh') }
+    #    it \{ is_expected\.to contain_notify('tmp-part') }
+    #    it \{ is_expected\.to contain_notify('vla') }
+    #    it \{ is_expected\.to contain_notify('vlp') }
+    #    it \{ is_expected\.to contain_notify('vp') }
+    #    it \{ is_expected\.to contain_notify('vtp') }
 
-#    it \{ is_expected\.to contain_package('aide') }
-#    it \{ is_expected\.to contain_package('audit') }
-#    it \{ is_expected\.to contain_package('ldap-utils') }
-#    it \{ is_expected\.to contain_package('libpwquality') }
-#    it \{ is_expected\.to contain_package('mcstrans') }
-#    it \{ is_expected\.to contain_package('nis') }
-#    it \{ is_expected\.to contain_package('openldap-clients') }
-#    it \{ is_expected\.to contain_package('prelink') }
-#    it \{ is_expected\.to contain_package('rsh-client') }
-#    it \{ is_expected\.to contain_package('rsh-redone-client') }
-#    it \{ is_expected\.to contain_package('rsh') }
-#    it \{ is_expected\.to contain_package('rsyslog') }
-#    it \{ is_expected\.to contain_package('setroubleshoot') }
-#    it \{ is_expected\.to contain_package('talk') }
-#    it \{ is_expected\.to contain_package('tcpd') }
-#    it \{ is_expected\.to contain_package('telnet') }
-#    it \{ is_expected\.to contain_package('ypbind') }
+    #    it \{ is_expected\.to contain_package('aide') }
+    #    it \{ is_expected\.to contain_package('audit') }
+    #    it \{ is_expected\.to contain_package('ldap-utils') }
+    #    it \{ is_expected\.to contain_package('libpwquality') }
+    #    it \{ is_expected\.to contain_package('mcstrans') }
+    #    it \{ is_expected\.to contain_package('nis') }
+    #    it \{ is_expected\.to contain_package('openldap-clients') }
+    #    it \{ is_expected\.to contain_package('prelink') }
+    #    it \{ is_expected\.to contain_package('rsh-client') }
+    #    it \{ is_expected\.to contain_package('rsh-redone-client') }
+    #    it \{ is_expected\.to contain_package('rsh') }
+    #    it \{ is_expected\.to contain_package('rsyslog') }
+    #    it \{ is_expected\.to contain_package('setroubleshoot') }
+    #    it \{ is_expected\.to contain_package('talk') }
+    #    it \{ is_expected\.to contain_package('tcpd') }
+    #    it \{ is_expected\.to contain_package('telnet') }
+    #    it \{ is_expected\.to contain_package('ypbind') }
 
-#    it \{ is_expected\.to contain_pam('pam common-password requisite') }
-#    it \{ is_expected\.to contain_pam('pam password-auth sufficient') }
-#    it \{ is_expected\.to contain_pam('pam system-auth sufficient') }
-#    it \{ is_expected\.to contain_pam('pam_faillock authfail password-auth') }
-#    it \{ is_expected\.to contain_pam('pam_faillock authfail system-auth') }
-#    it \{ is_expected\.to contain_pam('pam_faillock authsucc password-auth') }
-#    it \{ is_expected\.to contain_pam('pam_faillock authsucc system-auth') }
-#    it \{ is_expected\.to contain_pam('pam_faillock preauth password-auth') }
-#    it \{ is_expected\.to contain_pam('pam_faillock preauth system-auth') }
-#    it \{ is_expected\.to contain_pam('pam_unix password-auth') }
-#    it \{ is_expected\.to contain_pam('pam_unix system-auth') }
+    #    it \{ is_expected\.to contain_pam('pam common-password requisite') }
+    #    it \{ is_expected\.to contain_pam('pam password-auth sufficient') }
+    #    it \{ is_expected\.to contain_pam('pam system-auth sufficient') }
+    #    it \{ is_expected\.to contain_pam('pam_faillock authfail password-auth') }
+    #    it \{ is_expected\.to contain_pam('pam_faillock authfail system-auth') }
+    #    it \{ is_expected\.to contain_pam('pam_faillock authsucc password-auth') }
+    #    it \{ is_expected\.to contain_pam('pam_faillock authsucc system-auth') }
+    #    it \{ is_expected\.to contain_pam('pam_faillock preauth password-auth') }
+    #    it \{ is_expected\.to contain_pam('pam_faillock preauth system-auth') }
+    #    it \{ is_expected\.to contain_pam('pam_unix password-auth') }
+    #    it \{ is_expected\.to contain_pam('pam_unix system-auth') }
 
-#    it \{ is_expected\.to contain_reboot('after_run') }
+    #    it \{ is_expected\.to contain_reboot('after_run') }
 
-#    it \{ is_expected\.to contain_resources('firewall') }
+    #    it \{ is_expected\.to contain_resources('firewall') }
 
-#    it \{ is_expected\.to contain_secure_linux_cis__mount_options('/home-nodev') }
-#    it \{ is_expected\.to contain_secure_linux_cis__mount_options('/tmp-nodev') }
-#    it \{ is_expected\.to contain_secure_linux_cis__mount_options('/tmp-noexec') }
-#    it \{ is_expected\.to contain_secure_linux_cis__mount_options('/tmp-nosuid') }
-#    it \{ is_expected\.to contain_secure_linux_cis__mount_options('/var/tmp-nodev') }
-#    it \{ is_expected\.to contain_secure_linux_cis__mount_options('/var/tmp-noexec') }
-#    it \{ is_expected\.to contain_secure_linux_cis__mount_options('/var/tmp-nosuid') }
+    #    it \{ is_expected\.to contain_secure_linux_cis__mount_options('/home-nodev') }
+    #    it \{ is_expected\.to contain_secure_linux_cis__mount_options('/tmp-nodev') }
+    #    it \{ is_expected\.to contain_secure_linux_cis__mount_options('/tmp-noexec') }
+    #    it \{ is_expected\.to contain_secure_linux_cis__mount_options('/tmp-nosuid') }
+    #    it \{ is_expected\.to contain_secure_linux_cis__mount_options('/var/tmp-nodev') }
+    #    it \{ is_expected\.to contain_secure_linux_cis__mount_options('/var/tmp-noexec') }
+    #    it \{ is_expected\.to contain_secure_linux_cis__mount_options('/var/tmp-nosuid') }
 
-#    it \{ is_expected\.to contain_service('TODO DNS') }
-#    it \{ is_expected\.to contain_service('apache2') }
-#    it \{ is_expected\.to contain_service('apache') }
-#    it \{ is_expected\.to contain_service('auditd') }
-#    it \{ is_expected\.to contain_service('autofs') }
-#    it \{ is_expected\.to contain_service('avahi-daemon') }
-#    it \{ is_expected\.to contain_service('chargen-dgram') }
-#    it \{ is_expected\.to contain_service('chargen-stream') }
-#    it \{ is_expected\.to contain_service('cron') }
-#    it \{ is_expected\.to contain_service('cups') }
-#    it \{ is_expected\.to contain_service('daytime-dgram') }
-#    it \{ is_expected\.to contain_service('daytime-stream') }
-#    it \{ is_expected\.to contain_service('dhcpd') }
-#    it \{ is_expected\.to contain_service('discard-dgram') }
-#    it \{ is_expected\.to contain_service('discard-stream') }
-#    it \{ is_expected\.to contain_service('echo-dgram') }
-#    it \{ is_expected\.to contain_service('echo-stream') }
-#    it \{ is_expected\.to contain_service('httpd') }
-#    it \{ is_expected\.to contain_service('isc-dhcp-server6') }
-#    it \{ is_expected\.to contain_service('isc-dhcp-server') }
-#    it \{ is_expected\.to contain_service('lighttpd') }
-#    it \{ is_expected\.to contain_service('nfs-server') }
-#    it \{ is_expected\.to contain_service('nfs') }
-#    it \{ is_expected\.to contain_service('nginx') }
-#    it \{ is_expected\.to contain_service('nis') }
-#    it \{ is_expected\.to contain_service('ntalk') }
-#    it \{ is_expected\.to contain_service('rexec.socket') }
-#    it \{ is_expected\.to contain_service('rlogin.socket') }
-#    it \{ is_expected\.to contain_service('rpcbind') }
-#    it \{ is_expected\.to contain_service('rsh.socket') }
-#    it \{ is_expected\.to contain_service('rsync') }
-#    it \{ is_expected\.to contain_service('rsyncd') }
-#    it \{ is_expected\.to contain_service('rsyslog') }
-#    it \{ is_expected\.to contain_service('slapd') }
-#    it \{ is_expected\.to contain_service('smb') }
-#    it \{ is_expected\.to contain_service('snmpd') }
-#    it \{ is_expected\.to contain_service('squid') }
-#    it \{ is_expected\.to contain_service('telnet.socket') }
-#    it \{ is_expected\.to contain_service('tftp.socket') }
-#    it \{ is_expected\.to contain_service('time-dgram') }
-#    it \{ is_expected\.to contain_service('time-stream') }
-#    it \{ is_expected\.to contain_service('vsftpd') }
-#    it \{ is_expected\.to contain_service('xinetd') }
-#    it \{ is_expected\.to contain_service('ypserv') }
+    #    it \{ is_expected\.to contain_service('TODO DNS') }
+    #    it \{ is_expected\.to contain_service('apache2') }
+    #    it \{ is_expected\.to contain_service('apache') }
+    #    it \{ is_expected\.to contain_service('auditd') }
+    #    it \{ is_expected\.to contain_service('autofs') }
+    #    it \{ is_expected\.to contain_service('avahi-daemon') }
+    #    it \{ is_expected\.to contain_service('chargen-dgram') }
+    #    it \{ is_expected\.to contain_service('chargen-stream') }
+    #    it \{ is_expected\.to contain_service('cron') }
+    #    it \{ is_expected\.to contain_service('cups') }
+    #    it \{ is_expected\.to contain_service('daytime-dgram') }
+    #    it \{ is_expected\.to contain_service('daytime-stream') }
+    #    it \{ is_expected\.to contain_service('dhcpd') }
+    #    it \{ is_expected\.to contain_service('discard-dgram') }
+    #    it \{ is_expected\.to contain_service('discard-stream') }
+    #    it \{ is_expected\.to contain_service('echo-dgram') }
+    #    it \{ is_expected\.to contain_service('echo-stream') }
+    #    it \{ is_expected\.to contain_service('httpd') }
+    #    it \{ is_expected\.to contain_service('isc-dhcp-server6') }
+    #    it \{ is_expected\.to contain_service('isc-dhcp-server') }
+    #    it \{ is_expected\.to contain_service('lighttpd') }
+    #    it \{ is_expected\.to contain_service('nfs-server') }
+    #    it \{ is_expected\.to contain_service('nfs') }
+    #    it \{ is_expected\.to contain_service('nginx') }
+    #    it \{ is_expected\.to contain_service('nis') }
+    #    it \{ is_expected\.to contain_service('ntalk') }
+    #    it \{ is_expected\.to contain_service('rexec.socket') }
+    #    it \{ is_expected\.to contain_service('rlogin.socket') }
+    #    it \{ is_expected\.to contain_service('rpcbind') }
+    #    it \{ is_expected\.to contain_service('rsh.socket') }
+    #    it \{ is_expected\.to contain_service('rsync') }
+    #    it \{ is_expected\.to contain_service('rsyncd') }
+    #    it \{ is_expected\.to contain_service('rsyslog') }
+    #    it \{ is_expected\.to contain_service('slapd') }
+    #    it \{ is_expected\.to contain_service('smb') }
+    #    it \{ is_expected\.to contain_service('snmpd') }
+    #    it \{ is_expected\.to contain_service('squid') }
+    #    it \{ is_expected\.to contain_service('telnet.socket') }
+    #    it \{ is_expected\.to contain_service('tftp.socket') }
+    #    it \{ is_expected\.to contain_service('time-dgram') }
+    #    it \{ is_expected\.to contain_service('time-stream') }
+    #    it \{ is_expected\.to contain_service('vsftpd') }
+    #    it \{ is_expected\.to contain_service('xinetd') }
+    #    it \{ is_expected\.to contain_service('ypserv') }
 
-#    it \{ is_expected\.to contain_sysctl('fs.suid_dumpable') }
-#    it \{ is_expected\.to contain_sysctl('kernel.randomize_va_space') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.all.accept_redirects') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.all.accept_source_route') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.all.log_martians') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.all.rp_filter') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.all.secure_redirects') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.all.send_redirects') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.default.accept_redirects') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.default.accept_source_route') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.default.log_martians') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.default.rp_filter') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.default.secure_redirects') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.default.send_redirects') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv4.icmp_echo_ignore_broadcasts') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv4.icmp_ignore_bogus_error_responses') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv4.ip_forward') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv4.tcp_syncookies') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv6.conf.all.accept_ra') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv6.conf.all.accept_redirects') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv6.conf.all.disable_ipv6') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv6.conf.default.accept_ra') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv6.conf.default.accept_redirects') }
-#    it \{ is_expected\.to contain_sysctl('net.ipv6.conf.default.disable_ipv6') }
+    #    it \{ is_expected\.to contain_sysctl('fs.suid_dumpable') }
+    #    it \{ is_expected\.to contain_sysctl('kernel.randomize_va_space') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.all.accept_redirects') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.all.accept_source_route') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.all.log_martians') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.all.rp_filter') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.all.secure_redirects') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.all.send_redirects') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.default.accept_redirects') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.default.accept_source_route') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.default.log_martians') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.default.rp_filter') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.default.secure_redirects') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv4.conf.default.send_redirects') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv4.icmp_echo_ignore_broadcasts') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv4.icmp_ignore_bogus_error_responses') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv4.ip_forward') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv4.tcp_syncookies') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv6.conf.all.accept_ra') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv6.conf.all.accept_redirects') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv6.conf.all.disable_ipv6') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv6.conf.default.accept_ra') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv6.conf.default.accept_redirects') }
+    #    it \{ is_expected\.to contain_sysctl('net.ipv6.conf.default.disable_ipv6') }
 
-#    it \{ is_expected\.to contain_user('root') }
+    #    it \{ is_expected\.to contain_user('root') }
   end
 end
