@@ -57,7 +57,6 @@ class secure_linux_cis (
   Enum['smbd', 'smb', 'none']             $samba_service,
   Enum['cron', 'crond', 'none']           $cron_service,
   Array[Stdlib::Host]                     $time_servers,
-  Enum['workstation', 'server']           $profile_type,
   Enum['firewall', 'firewalld']           $firewall_package,
   Struct[
     {
@@ -68,10 +67,14 @@ class secure_linux_cis (
       Optional[weekday]     => Variant[Array, String[1]],
     }
   ]                                       $hardening_schedule,
+  Enum['workstation', 'server']           $profile_type,
+  Enum['1', '2']                          $enforcement_level       = '1',
   Array[String]                           $include_rules           = [],
-  Array[String]                           $workstation_rules       = [],
-  Array[String]                           $server_rules            = [],
   Array[String]                           $exclude_rules           = [],
+  Array[String]                           $workstation_level_1     = [],
+  Array[String]                           $workstation_level_2     = [],
+  Array[String]                           $server_level_1          = [],
+  Array[String]                           $server_level_2          = [],
   Boolean                                 $auto_restart            = false,
   Enum['rsyslog', 'syslog-ng', 'none']    $logging                 = 'rsyslog',
   String                                  $logging_host            = '',  #lint:ignore:empty_string_assignment
@@ -86,8 +89,7 @@ class secure_linux_cis (
   Array                                   $approved_mac_algorithms =
     ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com',
   'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com'],
-  # $client_alive_interval must be between 1 and 300
-  Integer                                 $client_alive_interval   = 300,
+  Integer                                 $client_alive_interval   = 300, # must be between 1 and 300
   Integer[0,3]                            $client_alive_count_max  = 0,
   Integer                                 $login_grace_time        = 60,
   Array[String]                           $allow_users             = [],
@@ -119,13 +121,18 @@ class secure_linux_cis (
   }
 
   $base_rules = $profile_type ? {
-    'server'      => $server_rules,
-    'workstation' => $workstation_rules,
+    'workstation' => $enforcement_level ? {
+      '1' => $workstation_level_1,
+      '2' => $workstation_level_1 + $workstation_level_2,
+    },
+    'server'      => $enforcement_level ? {
+      '1' => $server_level_1,
+      '2' => $server_level_1 + $server_level_2,
+    }
   }
 
-  # Rules to enforce
+  # Build rules to enforce
   $enforced_rules = $base_rules + $include_rules - $exclude_rules
-  # $enforced_rules = $include_rules - $exclude_rules
 
   file { '/usr/share/cis_scripts':
     ensure   => directory,
@@ -133,6 +140,6 @@ class secure_linux_cis (
   }
 
   include $enforced_rules
-
   include ::secure_linux_cis::reboot
+
 }
