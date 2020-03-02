@@ -27,10 +27,11 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_cron_d_are_configured(
 ) {
   if $enforced {
     file { '/etc/cron.d':
-      ensure => directory,
-      group  => 'root',
-      owner  => 'root',
-      mode   => '0700',
+      ensure   => directory,
+      schedule => 'harden_schedule',
+      group    => 'root',
+      owner    => 'root',
+      mode     => '0700',
     }
   }
 }

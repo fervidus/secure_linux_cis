@@ -19,8 +19,9 @@ class secure_linux_cis::rules::ensure_xinetd_is_not_enabled(
 ) {
   if $enforced {
     service { 'xinetd':
-      ensure => stopped,
-      enable => false,
+      ensure   => stopped,
+      schedule => 'harden_schedule',
+      enable   => false,
     }
   }
 }

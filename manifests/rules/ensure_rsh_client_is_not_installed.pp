@@ -23,12 +23,14 @@ class secure_linux_cis::rules::ensure_rsh_client_is_not_installed(
     case $facts['osfamily'] {
       'Suse': {
         package { ['rsh', 'rsh-client', 'rsh-redone-client']:
-          ensure => absent,
+          ensure   => absent,
+          schedule => 'harden_schedule',
         }
       }
       default: {
         package { ['rsh', 'rsh-client', 'rsh-redone-client']:
-          ensure => purged,
+          ensure   => purged,
+          schedule => 'harden_schedule',
         }
       }
     }

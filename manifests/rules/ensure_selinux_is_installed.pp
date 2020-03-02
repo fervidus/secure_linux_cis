@@ -16,7 +16,8 @@ class secure_linux_cis::rules::ensure_selinux_is_installed(
 ) {
   if $enforced {
     package { 'libselinux':
-      ensure => present,
+      ensure   => present,
+      schedule => 'harden_schedule',
     }
   }
 }

@@ -16,8 +16,9 @@ class secure_linux_cis::rules::disable_automounting(
 ) {
   if $enforced {
     service { 'autofs':
-      ensure => stopped,
-      enable => false,
+      ensure   => stopped,
+      schedule => 'harden_schedule',
+      enable   => false,
     }
   }
 }

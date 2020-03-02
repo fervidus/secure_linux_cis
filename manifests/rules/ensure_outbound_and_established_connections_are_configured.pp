@@ -19,11 +19,12 @@ class secure_linux_cis::rules::ensure_outbound_and_established_connections_are_c
 ) {
   if $enforced {
     firewall { '004 accept new and established ouput tcp connections':
-      chain  => 'OUTPUT',
-      state  => ['NEW', 'ESTABLISHED'],
-      action => 'accept',
-      proto  => 'tcp',
-      tag    => 'cis_firewall_pre',
+      chain    => 'OUTPUT',
+      schedule => 'harden_schedule',
+      state    => ['NEW', 'ESTABLISHED'],
+      action   => 'accept',
+      proto    => 'tcp',
+      tag      => 'cis_firewall_pre',
     }
     -> firewall { '005 accept new and established ouput udp connections':
       chain  => 'OUTPUT',

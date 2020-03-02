@@ -11,8 +11,9 @@ class secure_linux_cis::rules::ensure_nftables_is_not_enabled(
 ) {
   if $enforced {
     service { 'nftables':
-      ensure => stopped,
-      enable => mask,
+      ensure   => stopped,
+      schedule => 'harden_schedule',
+      enable   => mask,
     }
   }
 }

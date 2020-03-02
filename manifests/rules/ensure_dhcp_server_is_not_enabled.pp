@@ -19,8 +19,9 @@ class secure_linux_cis::rules::ensure_dhcp_server_is_not_enabled(
 ) {
   if $enforced {
     service { ['dhcpd', 'isc-dhcp-server', 'isc-dhcp-server6']:
-      ensure => stopped,
-      enable => false,
+      ensure   => stopped,
+      schedule => 'harden_schedule',
+      enable   => false,
     }
   }
 }

@@ -24,6 +24,7 @@ class secure_linux_cis::rules::ensure_all_users_last_password_change_date_is_in_
         # fail("User ${user} has a password last changed date in the future. Please investigate.")
         notify { "plcd ${user}":
           message  => 'Not in compliance with CIS  (Scored). We believe the user has a password last changed date in the future. Please investigate.', #lint:ignore:140chars
+          schedule => 'harden_schedule',
           loglevel => 'warning',
         }
       }

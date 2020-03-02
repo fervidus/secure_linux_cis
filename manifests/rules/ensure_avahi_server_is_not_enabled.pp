@@ -22,8 +22,9 @@ class secure_linux_cis::rules::ensure_avahi_server_is_not_enabled(
 ) {
   if $enforced {
     service { 'avahi-daemon':
-      ensure => stopped,
-      enable => false,
+      ensure   => stopped,
+      schedule => 'harden_schedule',
+      enable   => false,
     }
   }
 }

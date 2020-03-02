@@ -18,18 +18,20 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_gshadow__are_configured
     case $facts['osfamily'] {
       'RedHat': {
         file {'/etc/gshadow-':
-          ensure => present,
-          owner  => 'root',
-          group  => 'root',
-          mode   => '0000',
+          ensure   => present,
+          schedule => 'harden_schedule',
+          owner    => 'root',
+          group    => 'root',
+          mode     => '0000',
         }
       }
       'Debian': {
         file {'/etc/gshadow-':
-          ensure => present,
-          owner  => 'root',
-          group  => 'shadow',
-          mode   => '0640',
+          ensure   => present,
+          schedule => 'harden_schedule',
+          owner    => 'root',
+          group    => 'shadow',
+          mode     => '0640',
         }
       }
       default: {

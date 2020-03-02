@@ -22,6 +22,7 @@ class secure_linux_cis::rules::ensure_authentication_required_for_single_user_mo
         unless $facts['rootpw`'].empty {
           notify { 'rootpw':
             message  => 'Not in compliance with CIS 1.4.3 (Scored). No authentication required for single user mode.',#lint:ignore:140chars
+            schedule => 'harden_schedule',
             loglevel => 'warning',
           }
         }

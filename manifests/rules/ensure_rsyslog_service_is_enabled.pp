@@ -21,8 +21,9 @@ class secure_linux_cis::rules::ensure_rsyslog_service_is_enabled(
   if $enforced {
     if $::secure_linux_cis::logging == 'rsyslog' {
       service { 'rsyslog':
-        ensure => running,
-        enable => true,
+        ensure   => running,
+        schedule => 'harden_schedule',
+        enable   => true,
       }
     }
   }

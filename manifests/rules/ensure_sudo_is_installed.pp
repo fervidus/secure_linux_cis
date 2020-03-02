@@ -17,7 +17,8 @@ class secure_linux_cis::rules::ensure_sudo_is_installed(
 ) {
   if $enforced {
     package { 'sudo':
-      ensure => installed,
+      ensure   => installed,
+      schedule => 'harden_schedule',
     }
   }
 }

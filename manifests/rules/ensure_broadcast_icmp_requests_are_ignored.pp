@@ -24,7 +24,8 @@ class secure_linux_cis::rules::ensure_broadcast_icmp_requests_are_ignored(
 ) {
   if $enforced {
     sysctl { 'net.ipv4.icmp_echo_ignore_broadcasts':
-      value => 1,
+      value    => 1,
+      schedule => 'harden_schedule',
     }
   }
 }

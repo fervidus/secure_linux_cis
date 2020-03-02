@@ -19,12 +19,14 @@ class secure_linux_cis::rules::ensure_prelink_is_disabled(
     case $facts['osfamily'] {
       'Suse': {
         package { 'prelink':
-          ensure => absent,
+          ensure   => absent,
+          schedule => 'harden_schedule',
         }
       }
       default: {
         package { 'prelink':
-          ensure => purged,
+          ensure   => purged,
+          schedule => 'harden_schedule',
         }
       }
     }

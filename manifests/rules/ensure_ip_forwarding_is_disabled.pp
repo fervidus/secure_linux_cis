@@ -19,11 +19,13 @@ class secure_linux_cis::rules::ensure_ip_forwarding_is_disabled(
 ) {
   if $enforced {
     sysctl { 'net.ipv4.ip_forward':
-      value => 0,
+      value    => 0,
+      schedule => 'harden_schedule',
     }
     if $facts['osfamily'] == 'Debian' {
       sysctl { 'net.ipv6.conf.all.forwarding':
-        value => 0,
+        value    => 0,
+        schedule => 'harden_schedule',
       }
     }
   }

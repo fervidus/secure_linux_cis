@@ -15,10 +15,11 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_passwd_are_configured(
 ) {
   if $enforced {
     file {'/etc/passwd':
-      ensure => present,
-      owner  => 'root',
-      group  => 'root',
-      mode   => '0644',
+      ensure   => present,
+      schedule => 'harden_schedule',
+      owner    => 'root',
+      group    => 'root',
+      mode     => '0644',
     }
   }
 }

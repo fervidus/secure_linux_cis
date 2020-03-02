@@ -21,6 +21,7 @@ class secure_linux_cis::rules::ensure_ipv6_firewall_rules_exist_for_all_open_por
   if $enforced {
     firewall { '010 open IPv6 ssh port':
       chain    => 'INPUT',
+      schedule => 'harden_schedule',
       dport    => 22,
       state    => 'NEW',
       action   => 'accept',

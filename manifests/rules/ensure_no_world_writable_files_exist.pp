@@ -18,6 +18,7 @@ class secure_linux_cis::rules::ensure_no_world_writable_files_exist(
     if $facts['world_writable'] {
       notify { 'ww':
         message  => '[0] You have one or more world writable files. Check the world_writable fact for details.',
+        schedule => 'harden_schedule',
         loglevel => 'warning',
       }
     }

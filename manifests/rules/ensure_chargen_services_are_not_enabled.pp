@@ -19,12 +19,14 @@ class secure_linux_cis::rules::ensure_chargen_services_are_not_enabled(
 ) {
   if $enforced {
     service { 'chargen-dgram':
-      ensure => stopped,
-      enable => false,
+      ensure   => stopped,
+      schedule => 'harden_schedule',
+      enable   => false,
     }
     service { 'chargen-stream':
-      ensure => stopped,
-      enable => false,
+      ensure   => stopped,
+      schedule => 'harden_schedule',
+      enable   => false,
     }
   }
 }

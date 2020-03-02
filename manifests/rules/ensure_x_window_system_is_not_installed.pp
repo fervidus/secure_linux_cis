@@ -21,7 +21,8 @@ class secure_linux_cis::rules::ensure_x_window_system_is_not_installed(
   if $enforced {
     unless $facts['xorg_x11_packages'].empty {
       package { $facts['xorg_x11_packages']:
-        ensure => purged,
+        ensure   => purged,
+        schedule => 'harden_schedule',
       }
     }
   }

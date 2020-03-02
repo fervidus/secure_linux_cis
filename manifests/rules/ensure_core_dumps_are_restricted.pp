@@ -23,7 +23,8 @@ class secure_linux_cis::rules::ensure_core_dumps_are_restricted(
       match => '^* hard core ',
     }
     sysctl { 'fs.suid_dumpable':
-      value => 0,
+      value    => 0,
+      schedule => 'harden_schedule',
     }
   }
 }

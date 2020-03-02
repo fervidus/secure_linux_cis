@@ -44,8 +44,9 @@ class secure_linux_cis::rules::ensure_logging_is_configured(
       }
       $configs.each | $config, $dest | {
         file { "/etc/rsyslog.d/${config}":
-          ensure  => file,
-          content => "${config} ${dest}",
+          ensure   => file,
+          schedule => 'harden_schedule',
+          content  => "${config} ${dest}",
         }
       }
     }

@@ -27,17 +27,21 @@ class secure_linux_cis::rules::ensure_source_routed_packets_are_not_accepted(
 ) {
   if $enforced {
     sysctl { 'net.ipv4.conf.all.accept_source_route':
-      value => 0,
+      value    => 0,
+      schedule => 'harden_schedule',
     }
     sysctl { 'net.ipv4.conf.default.accept_source_route':
-      value => 0,
+      value    => 0,
+      schedule => 'harden_schedule',
     }
     if $facts['osfamily'] == 'Debian' {
       sysctl { 'net.ipv6.conf.all.accept_source_route':
-        value => 0,
+        value    => 0,
+        schedule => 'harden_schedule',
       }
       sysctl { 'net.ipv6.conf.default.accept_source_route':
-        value => 0,
+        value    => 0,
+        schedule => 'harden_schedule',
       }
     }
   }

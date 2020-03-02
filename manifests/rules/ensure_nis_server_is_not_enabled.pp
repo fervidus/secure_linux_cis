@@ -23,8 +23,9 @@ class secure_linux_cis::rules::ensure_nis_server_is_not_enabled(
 ) {
   if $enforced {
     service { ['ypserv', 'nis']:
-      ensure => stopped,
-      enable => false,
+      ensure   => stopped,
+      schedule => 'harden_schedule',
+      enable   => false,
     }
   }
 }

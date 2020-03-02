@@ -21,7 +21,8 @@ class secure_linux_cis::rules::ensure_iptables_is_installed(
     include $::secure_linux_cis::firewall_package
 
     resources { 'firewall':
-      purge => true,
+      purge    => true,
+      schedule => 'harden_schedule',
     }
   }
 }

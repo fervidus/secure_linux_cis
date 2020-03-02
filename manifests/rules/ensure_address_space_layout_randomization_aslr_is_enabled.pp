@@ -17,7 +17,8 @@ class secure_linux_cis::rules::ensure_address_space_layout_randomization_aslr_is
 ) {
   if $enforced {
     sysctl { 'kernel.randomize_va_space':
-      value => 2,
+      value    => 2,
+      schedule => 'harden_schedule',
     }
   }
 }

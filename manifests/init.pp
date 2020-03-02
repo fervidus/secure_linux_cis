@@ -110,6 +110,13 @@ class secure_linux_cis (
   Optional[String]                        $banner                  = undef,
   Optional[String]                        $motd                    = undef,
 ) {
+  schedule { 'harden_schedule':
+      period      => $hardening_schedule['period'],
+      periodmatch => $hardening_schedule['periodmatch'],
+      range       => $hardening_schedule['range'],
+      repeat      => $hardening_schedule['repeat'],
+      weekday     => $hardening_schedule['weekday'],
+  }
 
   $base_rules = $profile_type ? {
     'server'      => $server_rules,
@@ -121,7 +128,8 @@ class secure_linux_cis (
   # $enforced_rules = $include_rules - $exclude_rules
 
   file { '/usr/share/cis_scripts':
-    ensure => directory,
+    ensure   => directory,
+    schedule => 'harden_schedule',
   }
 
   include $enforced_rules

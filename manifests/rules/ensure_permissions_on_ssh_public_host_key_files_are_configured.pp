@@ -24,10 +24,11 @@ class secure_linux_cis::rules::ensure_permissions_on_ssh_public_host_key_files_a
     include ::secure_linux_cis::service
     unless $facts['ssh_host_pub_keys'].empty {
       file{ $facts['ssh_host_pub_keys']:
-        ensure => 'present',
-        owner  => 'root',
-        group  => 'root',
-        mode   => '0644',
+        ensure   => 'present',
+        schedule => 'harden_schedule',
+        owner    => 'root',
+        group    => 'root',
+        mode     => '0644',
       }
     }
   }

@@ -11,7 +11,8 @@ class secure_linux_cis::rules::ensure_inetd_is_not_installed(
 ) {
   if $enforced {
     package { 'inetd':
-      ensure => purged,
+      ensure   => purged,
+      schedule => 'harden_schedule',
     }
   }
 }

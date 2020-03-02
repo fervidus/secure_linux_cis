@@ -21,7 +21,8 @@ class secure_linux_cis::rules::ensure_tcp_wrappers_is_installed(
 ) {
   if $enforced {
     package { $::secure_linux_cis::tcp_wrappers_package:
-      ensure => installed,
+      ensure   => installed,
+      schedule => 'harden_schedule',
     }
   }
 }

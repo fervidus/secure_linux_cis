@@ -20,6 +20,7 @@ class secure_linux_cis::rules::ensure_ipv6_outbound_and_established_connections_
   if $enforced {
     firewall { '004 accept new and established ouput IPv6 tcp connections':
       chain    => 'OUTPUT',
+      schedule => 'harden_schedule',
       state    => ['NEW', 'ESTABLISHED'],
       action   => 'accept',
       proto    => 'tcp',

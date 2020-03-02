@@ -21,10 +21,12 @@ class secure_linux_cis::rules::ensure_ipv6_router_advertisements_are_not_accepte
 ) {
   if $enforced {
     sysctl { 'net.ipv6.conf.all.accept_ra':
-      value => 0,
+      value    => 0,
+      schedule => 'harden_schedule',
     }
     sysctl { 'net.ipv6.conf.default.accept_ra':
-      value => 0,
+      value    => 0,
+      schedule => 'harden_schedule',
     }
   }
 }

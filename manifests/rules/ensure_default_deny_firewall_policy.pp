@@ -32,9 +32,10 @@ class secure_linux_cis::rules::ensure_default_deny_firewall_policy(
   if ($enforced) {
     unless ($facts['osfamily'] == 'RedHat' and $facts['operatingsystemmajrelease'] == '8') {
       firewallchain { $filter_rules:
-        ensure => present,
-        policy => drop,
-        tag    => 'cis_firewall_post',
+        ensure   => present,
+        schedule => 'harden_schedule',
+        policy   => drop,
+        tag      => 'cis_firewall_post',
       }
     }
   }

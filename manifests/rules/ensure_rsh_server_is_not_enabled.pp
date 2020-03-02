@@ -23,8 +23,9 @@ class secure_linux_cis::rules::ensure_rsh_server_is_not_enabled(
       'rexec.socket',
     ]
     service { $rsh_services:
-      ensure => stopped,
-      enable => false,
+      ensure   => stopped,
+      schedule => 'harden_schedule',
+      enable   => false,
     }
   }
 }

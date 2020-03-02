@@ -25,10 +25,11 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_crontab_are_configured(
 ) {
   if $enforced {
     file { '/etc/crontab':
-      ensure => file,
-      group  => 'root',
-      owner  => 'root',
-      mode   => '0600',
+      ensure   => file,
+      schedule => 'harden_schedule',
+      group    => 'root',
+      owner    => 'root',
+      mode     => '0600',
     }
   }
 }

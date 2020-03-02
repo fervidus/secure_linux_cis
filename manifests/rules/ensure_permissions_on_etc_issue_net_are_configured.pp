@@ -17,11 +17,12 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_issue_net_are_configure
 ) {
   if $enforced {
     file { '/etc/issue.net':
-      ensure  => present,
-      owner   => 'root',
-      group   => 'root',
-      mode    => '0644',
-      content => $::secure_linux_cis::banner,
+      ensure   => present,
+      schedule => 'harden_schedule',
+      owner    => 'root',
+      group    => 'root',
+      mode     => '0644',
+      content  => $::secure_linux_cis::banner,
     }
   }
 }

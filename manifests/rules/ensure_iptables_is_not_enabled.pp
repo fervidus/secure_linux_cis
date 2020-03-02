@@ -19,8 +19,9 @@ class secure_linux_cis::rules::ensure_iptables_is_not_enabled(
 ) {
   if $enforced {
     service { 'iptables':
-      ensure => stopped,
-      enable => mask,
+      ensure   => stopped,
+      schedule => 'harden_schedule',
+      enable   => mask,
     }
   }
 }

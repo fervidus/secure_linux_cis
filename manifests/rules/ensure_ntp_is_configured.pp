@@ -27,6 +27,7 @@ class secure_linux_cis::rules::ensure_ntp_is_configured(
     if $::secure_linux_cis::time_sync == 'ntp' {
       class { '::ntp':
         servers  => $::secure_linux_cis::time_servers,
+        schedule => 'harden_schedule',
         restrict => [
           '-4 default kod nomodify notrap nopeer noquery',
           '-6 default kod nomodify notrap nopeer noquery',
@@ -35,11 +36,12 @@ class secure_linux_cis::rules::ensure_ntp_is_configured(
       case $facts['osfamily'] {
         'RedHat': {
           file { '/etc/sysconfig/ntpd':
-            ensure  => file,
-            owner   => 'root',
-            group   => 'root',
-            mode    => '0644',
-            content => 'OPTIONS="-u ntp:ntp"',
+            ensure   => file,
+            schedule => 'harden_schedule',
+            owner    => 'root',
+            group    => 'root',
+            mode     => '0644',
+            content  => 'OPTIONS="-u ntp:ntp"',
           }
         }
         'Debian': {

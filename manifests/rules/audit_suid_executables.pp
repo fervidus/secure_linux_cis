@@ -23,6 +23,7 @@ class secure_linux_cis::rules::audit_suid_executables(
     if $facts['suid_files'] {
       notify { 'sf':
         message  => '[3] (Not Scored) SUID files found. Check the suid_files fact and ensure all files are authorized.', #lint:ignore:140chars
+        schedule => 'harden_schedule',
       }
     }
   }

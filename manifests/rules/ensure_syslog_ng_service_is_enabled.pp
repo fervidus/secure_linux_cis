@@ -21,8 +21,9 @@ class secure_linux_cis::rules::ensure_syslog_ng_service_is_enabled(
   if $enforced {
     if $::secure_linux_cis::logging == 'syslog-ng' {
       service { 'syslog-ng':
-        ensure => running,
-        enable => true,
+        ensure   => running,
+        schedule => 'harden_schedule',
+        enable   => true,
       }
     }
   }

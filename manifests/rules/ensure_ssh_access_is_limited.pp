@@ -45,6 +45,7 @@ class secure_linux_cis::rules::ensure_ssh_access_is_limited(
         $::secure_linux_cis::deny_groups == [] {
       notify { 'allow_groups':
         message  => 'Not in compliance with CIS 4 (Scored). One or more parameters in /etc/ssh/sshd_config have not been set.',
+        schedule => 'harden_schedule',
         loglevel => 'warning',
       }
     }

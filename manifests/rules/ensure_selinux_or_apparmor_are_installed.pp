@@ -22,7 +22,8 @@ class secure_linux_cis::rules::ensure_selinux_or_apparmor_are_installed(
       }
     }
     package { $packages:
-      ensure => installed,
+      ensure   => installed,
+      schedule => 'harden_schedule',
     }
   }
 }

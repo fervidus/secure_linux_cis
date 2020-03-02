@@ -27,6 +27,7 @@ class secure_linux_cis::rules::ensure_password_reuse_is_limited(
       'Debian': {
         pam { 'pam common-password pwhistory':
           ensure    => present,
+          schedule  => 'harden_schedule',
           service   => 'common-password',
           type      => 'password',
           control   => 'required',
@@ -36,6 +37,7 @@ class secure_linux_cis::rules::ensure_password_reuse_is_limited(
         }
         pam { 'pam_unix common-password':
           ensure           => present,
+          schedule         => 'harden_schedule',
           service          => 'common-password',
           type             => 'password',
           module           => 'pam_unix.so',
@@ -57,6 +59,7 @@ class secure_linux_cis::rules::ensure_password_reuse_is_limited(
         $services.each | $service | {
           pam { "pam ${service} sufficient":
             ensure    => present,
+            schedule  => 'harden_schedule',
             service   => $service,
             type      => 'password',
             control   => 'sufficient',

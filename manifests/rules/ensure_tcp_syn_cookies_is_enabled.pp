@@ -27,7 +27,8 @@ class secure_linux_cis::rules::ensure_tcp_syn_cookies_is_enabled(
 ) {
   if $enforced {
     sysctl { 'net.ipv4.tcp_syncookies':
-      value => 1,
+      value    => 1,
+      schedule => 'harden_schedule',
     }
   }
 }

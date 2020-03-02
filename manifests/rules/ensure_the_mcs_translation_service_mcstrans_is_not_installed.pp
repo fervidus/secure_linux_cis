@@ -19,12 +19,14 @@ class secure_linux_cis::rules::ensure_the_mcs_translation_service_mcstrans_is_no
     case $facts['osfamily'] {
       'Suse': {
         package { 'mcstrans':
-          ensure => absent,
+          ensure   => absent,
+          schedule => 'harden_schedule',
         }
       }
       default: {
         package { 'mcstrans':
-          ensure => purged,
+          ensure   => purged,
+          schedule => 'harden_schedule',
         }
       }
     }

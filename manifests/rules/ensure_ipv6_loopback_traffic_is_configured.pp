@@ -23,6 +23,7 @@ class secure_linux_cis::rules::ensure_ipv6_loopback_traffic_is_configured(
   if $enforced {
     firewall { '001 IPv6 accept all input to lo interface':
       chain    => 'INPUT',
+      schedule => 'harden_schedule',
       proto    => 'all',
       iniface  => 'lo',
       action   => 'accept',

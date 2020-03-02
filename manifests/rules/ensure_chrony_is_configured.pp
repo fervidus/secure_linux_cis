@@ -39,14 +39,16 @@ class secure_linux_cis::rules::ensure_chrony_is_configured(
     }
     if $::secure_linux_cis::time_sync == 'chrony' {
       class { '::chrony':
-        servers => $::secure_linux_cis::time_servers,
+        servers  => $::secure_linux_cis::time_servers,
+        schedule => 'harden_schedule',
       }
       file { $config:
-        ensure  => file,
-        owner   => 'root',
-        group   => 'root',
-        mode    => '0644',
-        content => $content,
+        ensure   => file,
+        schedule => 'harden_schedule',
+        owner    => 'root',
+        group    => 'root',
+        mode     => '0644',
+        content  => $content,
       }
     }
   }

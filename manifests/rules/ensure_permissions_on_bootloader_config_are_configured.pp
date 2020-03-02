@@ -18,10 +18,11 @@ class secure_linux_cis::rules::ensure_permissions_on_bootloader_config_are_confi
 ) {
   if $enforced {
     file { $::secure_linux_cis::grub_config_files:
-      ensure => file,
-      owner  => 'root',
-      group  => 'root',
-      mode   => '0600',
+      ensure   => file,
+      schedule => 'harden_schedule',
+      owner    => 'root',
+      group    => 'root',
+      mode     => '0600',
     }
   }
 }

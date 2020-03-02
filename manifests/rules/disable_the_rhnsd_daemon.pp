@@ -16,8 +16,9 @@ class secure_linux_cis::rules::disable_the_rhnsd_daemon(
 ) {
   if $enforced {
     service { 'rhnsd':
-      ensure => stopped,
-      enable => false,
+      ensure   => stopped,
+      schedule => 'harden_schedule',
+      enable   => false,
     }
   }
 }

@@ -11,7 +11,8 @@ class secure_linux_cis::rules::ensure_xinetd_is_not_installed(
 ) {
   if $enforced {
     package { 'xinetd':
-      ensure => purged,
+      ensure   => purged,
+      schedule => 'harden_schedule',
     }
   }
 }

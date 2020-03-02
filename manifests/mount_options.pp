@@ -17,17 +17,19 @@ define secure_linux_cis::mount_options (
     if member($facts['mountpoints'][$mount]['options'], $opt) == false {
 
       augeas{ "/etc/fstab - ${opt} on ${mount}":
-        context => '/files/etc/fstab',
-        changes => [
+        context  => '/files/etc/fstab',
+        schedule => 'harden_schedule',
+        changes  => [
           "ins opt after /files/etc/fstab/*[file = '${mount}']/opt[last()]",
           "set *[file = '${mount}']/opt[last()] ${opt}",
         ],
-        onlyif  => "match *[file = '${mount}']/opt[. = '${opt}'] size == 0",
-        notify  => Exec["remount_${mount}_${opt}"],
+        onlyif   => "match *[file = '${mount}']/opt[. = '${opt}'] size == 0",
+        notify   => Exec["remount_${mount}_${opt}"],
       }
 
       exec { "remount_${mount}_${opt}":
         command     => "mount -o remount ${mount}",
+        schedule    => 'harden_schedule',
         path        => '/bin/',
         refreshonly => true,
       }

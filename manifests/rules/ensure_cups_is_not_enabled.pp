@@ -21,8 +21,9 @@ class secure_linux_cis::rules::ensure_cups_is_not_enabled(
 ) {
   if $enforced {
     service { 'cups':
-      ensure => stopped,
-      enable => false,
+      ensure   => stopped,
+      schedule => 'harden_schedule',
+      enable   => false,
     }
   }
 }

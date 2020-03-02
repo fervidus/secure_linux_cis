@@ -25,8 +25,9 @@ class secure_linux_cis::rules::ensure_nfs_and_rpc_are_not_enabled(
       'rpcbind',
     ]
     service { $nfs_services:
-      ensure => stopped,
-      enable => false,
+      ensure   => stopped,
+      schedule => 'harden_schedule',
+      enable   => false,
     }
   }
 }

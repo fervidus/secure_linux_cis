@@ -23,6 +23,7 @@ class secure_linux_cis::rules::audit_sgid_executables(
     if $facts['sgid_files'] {
       notify { 'sgf':
         message  => '[4] (Not Scored) You have SGID files on your system. It is recommended to verify that the files have md5 checksums that match with their corresponding package', # lint:ignore:140chars
+        schedule => 'harden_schedule',
       }
     }
   }

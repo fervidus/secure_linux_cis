@@ -48,6 +48,7 @@ class secure_linux_cis::rules::ensure_password_creation_requirements_are_configu
         $::secure_linux_cis::ocredit == 0 and $::secure_linux_cis::lcredit == 0 {
       notify { 'blackpass':
         message  => 'Not in compliance with CIS  (Scored). At least one of the password requirements in /etc/security/pwquality.conf must be specified',#lint:ignore:140chars
+        schedule => 'harden_schedule',
         loglevel => 'warning',
       }
     }
@@ -64,7 +65,8 @@ class secure_linux_cis::rules::ensure_password_creation_requirements_are_configu
         'Debian' => 'libpam-pwquality',
       }
       package { $libpwquality:
-        ensure => installed,
+        ensure   => installed,
+        schedule => 'harden_schedule',
       }
       -> File_line <| path == '/etc/security/pwquality.conf' |>
       file_line { 'pam minlen':
@@ -100,6 +102,7 @@ class secure_linux_cis::rules::ensure_password_creation_requirements_are_configu
       $services.each | $service | {
         pam { "pam ${service} requisite":
           ensure    => present,
+          schedule  => 'harden_schedule',
           service   => $service,
           type      => 'password',
           control   => 'requisite',

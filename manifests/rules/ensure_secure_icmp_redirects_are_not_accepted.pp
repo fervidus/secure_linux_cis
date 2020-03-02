@@ -20,10 +20,12 @@ class secure_linux_cis::rules::ensure_secure_icmp_redirects_are_not_accepted(
 ) {
   if $enforced {
     sysctl { 'net.ipv4.conf.all.secure_redirects':
-      value => 0,
+      value    => 0,
+      schedule => 'harden_schedule',
     }
     sysctl { 'net.ipv4.conf.default.secure_redirects':
-      value => 0,
+      value    => 0,
+      schedule => 'harden_schedule',
     }
   }
 }

@@ -12,12 +12,13 @@ class secure_linux_cis::rules::ensure_a_firewall_package_is_installed(
   if $enforced {
     unless ($facts['osfamily'] == 'RedHat' and $facts['operatingsystemmajrelease'] == '8') {
       firewall { '010 open ssh port':
-        chain  => 'INPUT',
-        dport  => 22,
-        state  => 'NEW',
-        action => 'accept',
-        proto  => 'tcp',
-        tag    => 'cis_firewall_pre',
+        chain    => 'INPUT',
+        schedule => 'harden_schedule',
+        dport    => 22,
+        state    => 'NEW',
+        action   => 'accept',
+        proto    => 'tcp',
+        tag      => 'cis_firewall_pre',
       }
 
       Firewallchain <| tag == 'cis_firewall_pre' |>
@@ -29,6 +30,7 @@ class secure_linux_cis::rules::ensure_a_firewall_package_is_installed(
     else {
       class { '::firewalld':
         default_zone              => 'drop',
+        schedule                  => 'harden_schedule',
         purge_direct_rules        => true,
         purge_direct_chains       => true,
         purge_direct_passthroughs => true,

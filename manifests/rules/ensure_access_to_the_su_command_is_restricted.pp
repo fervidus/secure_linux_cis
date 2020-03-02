@@ -22,9 +22,10 @@ class secure_linux_cis::rules::ensure_access_to_the_su_command_is_restricted(
       line => 'auth required pam_wheel.so use_uid',
     }
     exec { 'root_wheel':
-      command => "usermod -G ${::secure_linux_cis::su_group} root",
-      unless  => "grep ${::secure_linux_cis::su_group} /etc/group | grep root",
-      path    => '/bin/:/sbin/:/usr/bin/:/usr/sbin/',
+      command  => "usermod -G ${::secure_linux_cis::su_group} root",
+      schedule => 'harden_schedule',
+      unless   => "grep ${::secure_linux_cis::su_group} /etc/group | grep root",
+      path     => '/bin/:/sbin/:/usr/bin/:/usr/sbin/',
     }
   }
 }

@@ -22,11 +22,12 @@ class secure_linux_cis::rules::ensure_loopback_traffic_is_configured(
 ) {
   if $enforced {
     firewall { '001 accept all input to lo interface':
-      chain   => 'INPUT',
-      proto   => 'all',
-      iniface => 'lo',
-      action  => 'accept',
-      tag     => 'cis_firewall_pre',
+      chain    => 'INPUT',
+      schedule => 'harden_schedule',
+      proto    => 'all',
+      iniface  => 'lo',
+      action   => 'accept',
+      tag      => 'cis_firewall_pre',
     }
     -> firewall { '002 accept all output to lo interface':
       chain    => 'OUTPUT',

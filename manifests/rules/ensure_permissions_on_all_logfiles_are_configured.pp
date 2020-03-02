@@ -14,10 +14,11 @@ class secure_linux_cis::rules::ensure_permissions_on_all_logfiles_are_configured
     # Recursively set permissions on /var/log
     # Note: Ignoring puppet logs because Puppet manages it's own log permissions
     file { '/var/log':
-      ensure  => directory,
-      recurse => true,
-      mode    => 'g-wx,o-rwx',  #lint:ignore:no_symbolic_file_modes
-      ignore  => ['log', 'puppet*'],
+      ensure   => directory,
+      schedule => 'harden_schedule',
+      recurse  => true,
+      mode     => 'g-wx,o-rwx',  #lint:ignore:no_symbolic_file_modes
+      ignore   => ['log', 'puppet*'],
     }
   }
 }

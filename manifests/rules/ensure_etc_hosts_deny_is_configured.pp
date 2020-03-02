@@ -33,11 +33,12 @@ class secure_linux_cis::rules::ensure_etc_hosts_deny_is_configured(
   if $enforced {
     # This file manages both benchmarks 3_4_3 and 3_4_5
     file { '/etc/hosts.deny':
-      ensure  => file,
-      owner   => 'root',
-      group   => 'root',
-      mode    => '0644',
-      content => "${deny_content}\n",
+      ensure   => file,
+      schedule => 'harden_schedule',
+      owner    => 'root',
+      group    => 'root',
+      mode     => '0644',
+      content  => "${deny_content}\n",
     }
   }
 }

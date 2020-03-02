@@ -21,8 +21,9 @@ class secure_linux_cis::rules::ensure_http_proxy_server_is_not_enabled(
       'squid',
     ]
     service { $http_proxy_services:
-      ensure => stopped,
-      enable => false,
+      ensure   => stopped,
+      schedule => 'harden_schedule',
+      enable   => false,
     }
   }
 }

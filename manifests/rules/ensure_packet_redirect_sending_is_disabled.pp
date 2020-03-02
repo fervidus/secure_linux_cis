@@ -20,10 +20,12 @@ class secure_linux_cis::rules::ensure_packet_redirect_sending_is_disabled(
 ) {
   if $enforced {
     sysctl { 'net.ipv4.conf.all.send_redirects':
-      value => 0,
+      value    => 0,
+      schedule => 'harden_schedule',
     }
     sysctl { 'net.ipv4.conf.default.send_redirects':
-      value => 0,
+      value    => 0,
+      schedule => 'harden_schedule',
     }
   }
 }

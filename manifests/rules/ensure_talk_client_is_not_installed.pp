@@ -21,12 +21,14 @@ class secure_linux_cis::rules::ensure_talk_client_is_not_installed(
     case $facts['osfamily'] {
       'Suse': {
         package { 'talk':
-          ensure => absent,
+          ensure   => absent,
+          schedule => 'harden_schedule',
         }
       }
       default: {
         package { 'talk':
-          ensure => purged,
+          ensure   => purged,
+          schedule => 'harden_schedule',
         }
       }
     }

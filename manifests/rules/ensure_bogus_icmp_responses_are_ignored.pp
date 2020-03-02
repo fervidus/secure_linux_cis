@@ -20,7 +20,8 @@ class secure_linux_cis::rules::ensure_bogus_icmp_responses_are_ignored(
 ) {
   if $enforced {
     sysctl { 'net.ipv4.icmp_ignore_bogus_error_responses':
-      value => 1,
+      value    => 1,
+      schedule => 'harden_schedule',
     }
   }
 }

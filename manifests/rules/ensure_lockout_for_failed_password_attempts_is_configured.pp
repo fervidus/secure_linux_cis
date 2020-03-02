@@ -28,6 +28,7 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
       'Debian': {
         pam { 'pam_tally2 common-auth':
           ensure    => present,
+          schedule  => 'harden_schedule',
           service   => 'common-auth',
           type      => 'auth',
           module    => 'pam_tally2.so',
@@ -50,6 +51,7 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
         $services.each | $service | {
           pam { "pam_unix ${service}":
             ensure           => present,
+            schedule         => 'harden_schedule',
             service          => $service,
             type             => 'auth',
             module           => 'pam_unix.so',
@@ -59,6 +61,7 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
           }
           pam { "pam_faillock preauth ${service}":
             ensure           => present,
+            schedule         => 'harden_schedule',
             service          => $service,
             type             => 'auth',
             module           => 'pam_faillock.so',
@@ -75,6 +78,7 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
           }
           pam { "pam_faillock authfail ${service}":
             ensure           => present,
+            schedule         => 'harden_schedule',
             service          => $service,
             type             => 'auth',
             module           => 'pam_faillock.so',
@@ -90,6 +94,7 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
           }
           pam { "pam_faillock authsucc ${service}":
             ensure           => present,
+            schedule         => 'harden_schedule',
             service          => $service,
             type             => 'auth',
             module           => 'pam_faillock.so',

@@ -9,6 +9,7 @@ plan secure_linux_cis(
   apply($nodes) {
     class { '::secure_linux_cis':
       time_servers => $time_servers,
+      schedule     => 'harden_schedule',
       profile_type => $profile_type,
     }
   }

@@ -20,10 +20,11 @@ class secure_linux_cis::rules::ensure_nodev_option_set_on_dev_shm_partition(
     $options = 'nodev,nosuid,noexec'
     if $facts['mountpoints'][$mount] {
       mount { $mount:
-        device  => $mount,
-        fstype  => 'tmpfs',
-        options => $options,
-        atboot  => true,
+        device   => $mount,
+        schedule => 'harden_schedule',
+        fstype   => 'tmpfs',
+        options  => $options,
+        atboot   => true,
       }
     }
   }

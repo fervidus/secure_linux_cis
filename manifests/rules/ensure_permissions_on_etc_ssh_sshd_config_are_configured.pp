@@ -20,10 +20,11 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_ssh_sshd_config_are_con
 ) {
   if $enforced {
     file { '/etc/ssh/sshd_config':
-      ensure => file,
-      owner  => 'root',
-      group  => 'root',
-      mode   => '0600',
+      ensure   => file,
+      schedule => 'harden_schedule',
+      owner    => 'root',
+      group    => 'root',
+      mode     => '0600',
     }
   }
 }

@@ -22,12 +22,14 @@ class secure_linux_cis::rules::ensure_ldap_client_is_not_installed(
     case $facts['osfamily'] {
       'Suse': {
         package { ['openldap-clients', 'ldap-utils']:
-          ensure => absent,
+          ensure   => absent,
+          schedule => 'harden_schedule',
         }
       }
       default: {
         package { ['openldap-clients', 'ldap-utils']:
-          ensure => purged,
+          ensure   => purged,
+          schedule => 'harden_schedule',
         }
       }
     }

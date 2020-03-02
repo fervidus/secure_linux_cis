@@ -18,8 +18,9 @@ class secure_linux_cis::rules::ensure_rsync_service_is_not_enabled(
 ) {
   if $enforced {
     service { ['rsyncd', 'rsync']:
-      ensure => stopped,
-      enable => false,
+      ensure   => stopped,
+      schedule => 'harden_schedule',
+      enable   => false,
     }
   }
 }

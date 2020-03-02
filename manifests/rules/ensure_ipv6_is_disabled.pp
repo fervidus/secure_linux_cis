@@ -22,11 +22,13 @@ class secure_linux_cis::rules::ensure_ipv6_is_disabled(
     unless $::secure_linux_cis::ipv6_enabled {
 
       sysctl { 'net.ipv6.conf.all.disable_ipv6':
-        value => 1,
+        value    => 1,
+        schedule => 'harden_schedule',
       }
 
       sysctl { 'net.ipv6.conf.default.disable_ipv6':
-        value => 1,
+        value    => 1,
+        schedule => 'harden_schedule',
       }
 
       file_line { 'disable_ipv6_network':

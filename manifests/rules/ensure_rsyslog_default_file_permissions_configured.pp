@@ -32,9 +32,10 @@ class secure_linux_cis::rules::ensure_rsyslog_default_file_permissions_configure
         match  => '^\$FileCreateMode.*',
       }
       file { '/etc/rsyslog.d/':
-        ensure  => directory,
-        recurse => true,
-        mode    => '0640',
+        ensure   => directory,
+        schedule => 'harden_schedule',
+        recurse  => true,
+        mode     => '0640',
       }
     }
   }

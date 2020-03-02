@@ -21,6 +21,7 @@ class secure_linux_cis::rules::ensure_nodev_option_set_on_removable_media_partit
         if member($facts['mountpoints'][$mnt[0]]['options'], 'nodev') == false {
           notify { "1_1_18 nodev ${mnt[0]}":
             message  =>  "POTENTIAL Not in compliance with CIS 8 (Not Scored). Ensure nodev option set on removable media partitions - ${mnt[0]}",  #lint:ignore:140chars
+            schedule => 'harden_schedule',
             loglevel =>  'warning',
           }
         }

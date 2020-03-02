@@ -25,13 +25,15 @@ class secure_linux_cis::rules::ensure_imap_and_pop3_server_is_not_enabled(
           'cyrus-imap',
         ]
         service { $services:
-          ensure => stopped,
-          enable => false,
+          ensure   => stopped,
+          schedule => 'harden_schedule',
+          enable   => false,
         }
       }
       'Debian': {
         package { 'exim4':
-          ensure => purged,
+          ensure   => purged,
+          schedule => 'harden_schedule',
         }
       }
       default: {

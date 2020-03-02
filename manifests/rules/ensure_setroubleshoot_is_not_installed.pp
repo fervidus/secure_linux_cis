@@ -19,12 +19,14 @@ class secure_linux_cis::rules::ensure_setroubleshoot_is_not_installed(
     case $facts['osfamily'] {
       'Suse': {
         package { 'setroubleshoot':
-          ensure => absent,
+          ensure   => absent,
+          schedule => 'harden_schedule',
         }
       }
       default: {
         package { 'setroubleshoot':
-          ensure => purged,
+          ensure   => purged,
+          schedule => 'harden_schedule',
         }
       }
     }

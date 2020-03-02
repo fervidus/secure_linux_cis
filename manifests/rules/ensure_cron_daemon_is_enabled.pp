@@ -20,8 +20,9 @@ class secure_linux_cis::rules::ensure_cron_daemon_is_enabled(
 ) {
   if $enforced {
     service { $::secure_linux_cis::cron_service:
-      ensure => running,
-      enable => true,
+      ensure   => running,
+      schedule => 'harden_schedule',
+      enable   => true,
     }
   }
 }
