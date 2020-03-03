@@ -44,9 +44,9 @@ RSpec.configure do |c|
     Puppet.settings[:strict] = :warning
   end
   c.filter_run_excluding(bolt: true) unless ENV['GEM_BOLT']
-  # c.after(:suite) do
-  #   RSpec::Puppet::Coverage.report!(90)
-  # end
+  c.after(:suite) do
+    RSpec::Puppet::Coverage.report!(90)
+  end
 end
 
 # Ensures that a module is defined
