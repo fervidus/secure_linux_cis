@@ -33,18 +33,20 @@ class secure_linux_cis::rules::ensure_ssh_idle_timeout_interval_is_configured(
       fail('The Client Alive Interval has been manually set past the 1 - 300 threshold')
     }
     file_line { 'ssh alive interval':
-      ensure => 'present',
-      path   => '/etc/ssh/sshd_config',
-      line   => "ClientAliveInterval ${::secure_linux_cis::client_alive_interval}",
-      match  => '^#?ClientAliveInterval',
-      notify => Exec['reload sshd'],
+      ensure   => 'present',
+      schedule => 'harden_schedule',
+      path     => '/etc/ssh/sshd_config',
+      line     => "ClientAliveInterval ${::secure_linux_cis::client_alive_interval}",
+      match    => '^#?ClientAliveInterval',
+      notify   => Exec['reload sshd'],
     }
     file_line { 'ssh alive count max':
-      ensure => 'present',
-      path   => '/etc/ssh/sshd_config',
-      line   => "ClientAliveCountMax ${::secure_linux_cis::client_alive_count_max}",
-      match  => '^#?ClientAliveCountMax',
-      notify => Exec['reload sshd'],
+      ensure   => 'present',
+      schedule => 'harden_schedule',
+      path     => '/etc/ssh/sshd_config',
+      line     => "ClientAliveCountMax ${::secure_linux_cis::client_alive_count_max}",
+      match    => '^#?ClientAliveCountMax',
+      notify   => Exec['reload sshd'],
     }
   }
 }

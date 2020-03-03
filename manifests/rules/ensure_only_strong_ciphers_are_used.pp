@@ -43,11 +43,12 @@ class secure_linux_cis::rules::ensure_only_strong_ciphers_are_used (
     }
     $ciphers_array = join($approved_ciphers,',')
     file_line { 'ssh ciphers':
-      ensure => 'present',
-      path   => '/etc/ssh/sshd_config',
-      line   => "Ciphers ${ciphers_array}",
-      match  => '^#?Ciphers',
-      notify => Exec['reload sshd'],
+      ensure   => 'present',
+      schedule => 'harden_schedule',
+      path     => '/etc/ssh/sshd_config',
+      line     => "Ciphers ${ciphers_array}",
+      match    => '^#?Ciphers',
+      notify   => Exec['reload sshd'],
     }
   }
 }

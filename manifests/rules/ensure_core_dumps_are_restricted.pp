@@ -18,10 +18,12 @@ class secure_linux_cis::rules::ensure_core_dumps_are_restricted(
 ) {
   if $enforced {
     file_line { 'limits_hc':
-      path  => '/etc/security/limits.conf',
-      line  => '* hard core 0',
-      match => '^* hard core ',
+      schedule => 'harden_schedule',
+      path     => '/etc/security/limits.conf',
+      line     => '* hard core 0',
+      match    => '^* hard core ',
     }
+
     sysctl { 'fs.suid_dumpable':
       value    => 0,
       schedule => 'harden_schedule',

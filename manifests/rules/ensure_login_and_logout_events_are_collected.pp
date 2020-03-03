@@ -26,28 +26,32 @@ class secure_linux_cis::rules::ensure_login_and_logout_events_are_collected(
 
   if $enforced {
     file_line { 'audit.rules login/logout 1':
-      ensure => present,
-      path   => '/etc/audit/rules.d/audit.rules',
-      line   => '-w /var/log/lastlog -p wa -k logins',
+      ensure   => present,
+      schedule => 'harden_schedule',
+      path     => '/etc/audit/rules.d/audit.rules',
+      line     => '-w /var/log/lastlog -p wa -k logins',
     }
     case $facts['osfamily'] {
       'RedHat': {
         file_line { 'audit.rules login/logout 2':
-          ensure => present,
-          path   => '/etc/audit/rules.d/audit.rules',
-          line   => '-w /var/run/faillock/ -p wa -k logins',
+          ensure   => present,
+          schedule => 'harden_schedule',
+          path     => '/etc/audit/rules.d/audit.rules',
+          line     => '-w /var/run/faillock/ -p wa -k logins',
         }
       }
       'Debian': {
         file_line { 'audit.rules login/logout 2':
-          ensure => present,
-          path   => '/etc/audit/rules.d/audit.rules',
-          line   => '-w /var/log/faillog -p wa -k logins',
+          ensure   => present,
+          schedule => 'harden_schedule',
+          path     => '/etc/audit/rules.d/audit.rules',
+          line     => '-w /var/log/faillog -p wa -k logins',
         }
         file_line { 'audit.rules login/logout 3':
-          ensure => present,
-          path   => '/etc/audit/rules.d/audit.rules',
-          line   => '-w /var/log/tallylog -p wa -k logins',
+          ensure   => present,
+          schedule => 'harden_schedule',
+          path     => '/etc/audit/rules.d/audit.rules',
+          line     => '-w /var/log/tallylog -p wa -k logins',
         }
       }
       default: {

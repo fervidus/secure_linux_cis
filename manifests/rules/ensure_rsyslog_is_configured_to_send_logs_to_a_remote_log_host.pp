@@ -24,10 +24,11 @@ class secure_linux_cis::rules::ensure_rsyslog_is_configured_to_send_logs_to_a_re
   if $enforced {
     if $::secure_linux_cis::logging == 'rsyslog' and $::secure_linux_cis::logging_host != '' {
       file_line { 'rsyslog.conf logging_host':
-        ensure => present,
-        path   => '/etc/rsyslog.conf',
-        line   => "*.* @@${::secure_linux_cis::logging_host}",
-        match  => '\*\.\* @@',
+        ensure   => present,
+        schedule => 'harden_schedule',
+        path     => '/etc/rsyslog.conf',
+        line     => "*.* @@${::secure_linux_cis::logging_host}",
+        match    => '\*\.\* @@',
       }
     }
   }

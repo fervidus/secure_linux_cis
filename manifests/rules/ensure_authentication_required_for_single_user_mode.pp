@@ -29,14 +29,17 @@ class secure_linux_cis::rules::ensure_authentication_required_for_single_user_mo
       }
       default: {
         file_line { 'rescue':
-          path  => '/usr/lib/systemd/system/rescue.service',
-          line  => 'ExecStart=-/bin/sh -c "/sbin/sulogin; /usr/bin/systemctl --fail --no-block default"',
-          match => '^ExecStart=',
+          schedule => 'harden_schedule',
+          path     => '/usr/lib/systemd/system/rescue.service',
+          line     => 'ExecStart=-/bin/sh -c "/sbin/sulogin; /usr/bin/systemctl --fail --no-block default"',
+          match    => '^ExecStart=',
         }
+
         file_line { 'emergency':
-          path  => '/usr/lib/systemd/system/emergency.service',
-          line  => 'ExecStart=-/bin/sh -c "/sbin/sulogin; /usr/bin/systemctl --fail --no-block default"',
-          match => '^ExecStart=',
+          schedule => 'harden_schedule',
+          path     => '/usr/lib/systemd/system/emergency.service',
+          line     => 'ExecStart=-/bin/sh -c "/sbin/sulogin; /usr/bin/systemctl --fail --no-block default"',
+          match    => '^ExecStart=',
         }
       }
     }

@@ -53,41 +53,45 @@ class secure_linux_cis::rules::ensure_ssh_access_is_limited(
       if $::secure_linux_cis::allow_users != [] {
         $user_list_allow = join($::secure_linux_cis::allow_users, ' ')
         file_line{ 'ssh allow users':
-          ensure => 'present',
-          path   => '/etc/ssh/sshd_config',
-          line   => "AllowUsers ${user_list_allow}",
-          match  => '^#?AllowUsers',
-          notify => Exec['reload sshd'],
+          ensure   => 'present',
+          schedule => 'harden_schedule',
+          path     => '/etc/ssh/sshd_config',
+          line     => "AllowUsers ${user_list_allow}",
+          match    => '^#?AllowUsers',
+          notify   => Exec['reload sshd'],
         }
       }
       if $::secure_linux_cis::allow_groups != [] {
         $group_list_allow = join($::secure_linux_cis::allow_groups, ' ')
         file_line{ 'ssh allow groups':
-          ensure => 'present',
-          path   => '/etc/ssh/sshd_config',
-          line   => "AllowGroups ${group_list_allow}",
-          match  => '^#?AllowGroups',
-          notify => Exec['reload sshd'],
+          ensure   => 'present',
+          schedule => 'harden_schedule',
+          path     => '/etc/ssh/sshd_config',
+          line     => "AllowGroups ${group_list_allow}",
+          match    => '^#?AllowGroups',
+          notify   => Exec['reload sshd'],
         }
       }
       if $::secure_linux_cis::deny_users != [] {
         $user_list_deny = join($::secure_linux_cis::deny_users, ' ')
         file_line{ 'ssh deny users':
-          ensure => 'present',
-          path   => '/etc/ssh/sshd_config',
-          line   => "DenyUsers ${user_list_deny}",
-          match  => '^#?DenyUsers',
-          notify => Exec['reload sshd'],
+          ensure   => 'present',
+          schedule => 'harden_schedule',
+          path     => '/etc/ssh/sshd_config',
+          line     => "DenyUsers ${user_list_deny}",
+          match    => '^#?DenyUsers',
+          notify   => Exec['reload sshd'],
         }
       }
       if $::secure_linux_cis::deny_groups != [] {
         $group_list_deny = join($::secure_linux_cis::deny_groups, ' ')
         file_line{ 'ssh deny groups':
-          ensure => 'present',
-          path   => '/etc/ssh/sshd_config',
-          line   => "DenyGroups ${group_list_deny}",
-          match  => '^#?DenyGroups',
-          notify => Exec['reload sshd'],
+          ensure   => 'present',
+          schedule => 'harden_schedule',
+          path     => '/etc/ssh/sshd_config',
+          line     => "DenyGroups ${group_list_deny}",
+          match    => '^#?DenyGroups',
+          notify   => Exec['reload sshd'],
         }
       }
     }

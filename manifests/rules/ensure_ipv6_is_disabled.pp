@@ -32,15 +32,19 @@ class secure_linux_cis::rules::ensure_ipv6_is_disabled(
       }
 
       file_line { 'disable_ipv6_network':
-        path  => '/etc/sysconfig/network',
-        line  => 'NETWORKING_IPV6=no',
-        match => 'NETWORKING_IPV6=',
+
+        schedule => 'harden_schedule',
+        path     => '/etc/sysconfig/network',
+        line     => 'NETWORKING_IPV6=no',
+        match    => 'NETWORKING_IPV6=',
       }
 
       file_line { 'disable_ipv6_network_init':
-        path  => '/etc/sysconfig/network',
-        line  => 'IPV6INIT=no',
-        match => 'IPV6INIT=',
+
+        schedule => 'harden_schedule',
+        path     => '/etc/sysconfig/network',
+        line     => 'IPV6INIT=no',
+        match    => 'IPV6INIT=',
       }
     }
   }

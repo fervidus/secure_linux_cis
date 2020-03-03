@@ -21,11 +21,12 @@ class secure_linux_cis::rules::ensure_ssh_warning_banner_is_configured(
   if $enforced {
     include ::secure_linux_cis::service
     file_line { 'ssh warning banner':
-      ensure => 'present',
-      path   => '/etc/ssh/sshd_config',
-      line   => 'Banner /etc/issue.net',
-      match  => '^#?Banner',
-      notify => Exec['reload sshd'],
+      ensure   => 'present',
+      schedule => 'harden_schedule',
+      path     => '/etc/ssh/sshd_config',
+      line     => 'Banner /etc/issue.net',
+      match    => '^#?Banner',
+      notify   => Exec['reload sshd'],
     }
   }
 }

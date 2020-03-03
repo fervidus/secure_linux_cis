@@ -46,11 +46,12 @@ class secure_linux_cis::rules::ensure_ntp_is_configured(
         }
         'Debian': {
           file_line { 'ntpuser':
-            ensure  => present,
-            path    => '/etc/init.d/ntp',
-            line    => 'RUNASUSER=ntp',
-            match   => '^RUNASUSER=',
-            require => Class['::ntp']
+            ensure   => present,
+            schedule => 'harden_schedule',
+            path     => '/etc/init.d/ntp',
+            line     => 'RUNASUSER=ntp',
+            match    => '^RUNASUSER=',
+            require  => Class['::ntp']
           }
         }
         default: {

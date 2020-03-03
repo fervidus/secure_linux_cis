@@ -21,6 +21,7 @@ class secure_linux_cis::rules::ensure_ssh_permituserenvironment_is_disabled(
     include ::secure_linux_cis::service
     file_line { 'ssh permit user environment':
       ensure   => present,
+      schedule => 'harden_schedule',
       path     => '/etc/ssh/sshd_config',
       line     => 'PermitUserEnvironment no',
       match    => '^#?PermitUserEnvironment',

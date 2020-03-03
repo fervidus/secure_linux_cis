@@ -26,14 +26,16 @@ class secure_linux_cis::rules::ensure_events_that_modify_the_system_s_mandatory_
 
   if $enforced {
     file_line { 'audit.rules selinux 1':
-      ensure => present,
-      path   => '/etc/audit/rules.d/audit.rules',
-      line   => '-w /etc/selinux/ -p wa -k MAC-policy',
+      ensure   => present,
+      schedule => 'harden_schedule',
+      path     => '/etc/audit/rules.d/audit.rules',
+      line     => '-w /etc/selinux/ -p wa -k MAC-policy',
     }
     file_line { 'audit.rules selinux 2':
-      ensure => present,
-      path   => '/etc/audit/rules.d/audit.rules',
-      line   => '-w /usr/share/selinux/ -p wa -k MAC-policy',
+      ensure   => present,
+      schedule => 'harden_schedule',
+      path     => '/etc/audit/rules.d/audit.rules',
+      line     => '-w /usr/share/selinux/ -p wa -k MAC-policy',
     }
   }
 }

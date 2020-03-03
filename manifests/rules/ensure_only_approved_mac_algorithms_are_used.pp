@@ -32,11 +32,12 @@ class secure_linux_cis::rules::ensure_only_approved_mac_algorithms_are_used(
     }
     $mac_algorithm_array = join($::secure_linux_cis::approved_mac_algorithms,',')
     file_line { 'ssh mac algorithms':
-      ensure => 'present',
-      path   => '/etc/ssh/sshd_config',
-      line   => "MACs ${mac_algorithm_array}",
-      match  => '^#?MACs',
-      notify => Exec['reload sshd'],
+      ensure   => 'present',
+      schedule => 'harden_schedule',
+      path     => '/etc/ssh/sshd_config',
+      line     => "MACs ${mac_algorithm_array}",
+      match    => '^#?MACs',
+      notify   => Exec['reload sshd'],
     }
   }
 }

@@ -26,10 +26,11 @@ class secure_linux_cis::rules::ensure_inactive_password_lock_is_30_days_or_less(
     # The command 'useradd -D -f 30' does the same as editting
     # /etc/default/useradd directly.
     file_line {'useradd_inactive':
-      ensure => present,
-      path   => '/etc/default/useradd',
-      line   => "INACTIVE=${::secure_linux_cis::pass_inactive_days}",
-      match  => '^#?INACTIVE=',
+      ensure   => present,
+      schedule => 'harden_schedule',
+      path     => '/etc/default/useradd',
+      line     => "INACTIVE=${::secure_linux_cis::pass_inactive_days}",
+      match    => '^#?INACTIVE=',
     }
     # local_users fact may be undef
     $local_users = pick($facts['local_users'], {})

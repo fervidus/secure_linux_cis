@@ -25,10 +25,11 @@ class secure_linux_cis::rules::ensure_minimum_days_between_password_changes_is_7
       fail('PASS_min_DAYS should be set to a value of 7 or more')
     }
     file_line { 'password change policy':
-      ensure => present,
-      path   => '/etc/login.defs',
-      line   => "PASS_MIN_DAYS ${::secure_linux_cis::pass_min_days}",
-      match  => '^#?PASS_MIN_DAYS',
+      ensure   => present,
+      schedule => 'harden_schedule',
+      path     => '/etc/login.defs',
+      line     => "PASS_MIN_DAYS ${::secure_linux_cis::pass_min_days}",
+      match    => '^#?PASS_MIN_DAYS',
     }
     # local_users fact may be undef
     $local_users = pick($facts['local_users'], {})

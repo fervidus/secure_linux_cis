@@ -26,10 +26,11 @@ class secure_linux_cis::rules::ensure_rsyslog_default_file_permissions_configure
   if $enforced {
     if $::secure_linux_cis::logging == 'rsyslog' {
       file_line { 'rsyslog.conf log_permissions':
-        ensure => present,
-        path   => '/etc/rsyslog.conf',
-        line   => '$FileCreateMode 0640',
-        match  => '^\$FileCreateMode.*',
+        ensure   => present,
+        schedule => 'harden_schedule',
+        path     => '/etc/rsyslog.conf',
+        line     => '$FileCreateMode 0640',
+        match    => '^\$FileCreateMode.*',
       }
       file { '/etc/rsyslog.d/':
         ensure   => directory,

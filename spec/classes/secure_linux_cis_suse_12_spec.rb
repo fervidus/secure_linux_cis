@@ -376,212 +376,212 @@ describe 'secure_linux_cis' do
 #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_password_reuse_is_limited') }
 #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_all_logfiles_are_configured') }
 #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_bootloader_config_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_cron_d_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_cron_daily_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_cron_hourly_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_cron_monthly_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_cron_weekly_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_crontab_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_group__are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_group_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_gshadow__are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_gshadow_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_hosts_allow_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_hosts_deny_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_issue_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_issue_net_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_motd_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_passwd__are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_passwd_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_shadow__are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_shadow_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_ssh_sshd_config_are_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_prelink_is_disabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_rds_is_disabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_remote_login_warning_banner_is_configured_properly') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_remote_rsyslog_messages_are_only_accepted_on_designated_log_hosts') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_remote_syslog_ng_messages_are_only_accepted_on_designated_log_hosts') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_reverse_path_filtering_is_enabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_root_is_the_only_uid_0_account') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_root_login_is_restricted_to_system_console') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_root_path_integrity') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_rsh_client_is_not_installed') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_rsh_server_is_not_enabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_rsync_service_is_not_enabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_rsyslog_default_file_permissions_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_rsyslog_is_configured_to_send_logs_to_a_remote_log_host') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_rsyslog_or_syslog_ng_is_installed') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_rsyslog_service_is_enabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_samba_is_not_enabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_sctp_is_disabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_secure_icmp_redirects_are_not_accepted') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_selinux_is_not_disabled_in_bootloader_configuration') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_selinux_policy_is_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_home') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_tmp') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_var') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_var_log') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_var_log_audit') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_var_tmp') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_session_initiation_information_is_collected') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_setroubleshoot_is_not_installed') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_shadow_group_is_empty') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_snmp_server_is_not_enabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_source_routed_packets_are_not_accepted') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_access_is_limited') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_hostbasedauthentication_is_disabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_idle_timeout_interval_is_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_ignorerhosts_is_enabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_logingracetime_is_set_to_one_minute_or_less') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_loglevel_is_set_to_info') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_maxauthtries_is_set_to_4_or_less') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_permitemptypasswords_is_disabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_permituserenvironment_is_disabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_protocol_is_set_to_2') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_root_login_is_disabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_warning_banner_is_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_x11_forwarding_is_disabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_sticky_bit_is_set_on_all_world_writable_directories') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_successful_file_system_mounts_are_collected') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_suspicious_packets_are_logged') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_syslog_ng_default_file_permissions_configured') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_syslog_ng_is_configured_to_send_logs_to_a_remote_log_host') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_syslog_ng_service_is_enabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_system_accounts_are_non_login') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_system_administrator_actions_sudolog_are_collected') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_system_is_disabled_when_audit_logs_are_full') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_talk_client_is_not_installed') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_talk_server_is_not_enabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_tcp_syn_cookies_is_enabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_tcp_wrappers_is_installed') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_telnet_client_is_not_installed') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_telnet_server_is_not_enabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_tftp_server_is_not_enabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_the_audit_configuration_is_immutable') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_the_mcs_translation_service_mcstrans_is_not_installed') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_the_selinux_state_is_enforcing') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_time_services_are_not_enabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_time_synchronization_is_in_use') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_tipc_is_disabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_unsuccessful_unauthorized_file_access_attempts_are_collected') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_updates_patches_and_additional_security_software_are_installed') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_use_of_privileged_commands_is_collected') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_users_dot_files_are_not_group_or_world_writable') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_users_home_directories_permissions_are_750_or_more_restrictive') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_users_netrc_files_are_not_group_or_world_accessible') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_users_own_their_home_directories') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_wireless_interfaces_are_disabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_x_window_system_is_not_installed') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_xd_nx_support_is_enabled') }
-#    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_xinetd_is_not_enabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_cron_d_are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_cron_daily_are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_cron_hourly_are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_cron_monthly_are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_cron_weekly_are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_crontab_are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_group__are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_group_are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_gshadow__are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_gshadow_are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_hosts_allow_are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_hosts_deny_are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_issue_are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_issue_net_are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_motd_are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_passwd__are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_passwd_are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_shadow__are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_shadow_are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_ssh_sshd_config_are_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_prelink_is_disabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_rds_is_disabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_remote_login_warning_banner_is_configured_properly') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_remote_rsyslog_messages_are_only_accepted_on_designated_log_hosts') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_remote_syslog_ng_messages_are_only_accepted_on_designated_log_hosts') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_reverse_path_filtering_is_enabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_root_is_the_only_uid_0_account') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_root_login_is_restricted_to_system_console') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_root_path_integrity') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_rsh_client_is_not_installed') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_rsh_server_is_not_enabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_rsync_service_is_not_enabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_rsyslog_default_file_permissions_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_rsyslog_is_configured_to_send_logs_to_a_remote_log_host') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_rsyslog_or_syslog_ng_is_installed') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_rsyslog_service_is_enabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_samba_is_not_enabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_sctp_is_disabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_secure_icmp_redirects_are_not_accepted') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_selinux_is_not_disabled_in_bootloader_configuration') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_selinux_policy_is_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_home') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_tmp') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_var') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_var_log') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_var_log_audit') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_var_tmp') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_session_initiation_information_is_collected') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_setroubleshoot_is_not_installed') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_shadow_group_is_empty') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_snmp_server_is_not_enabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_source_routed_packets_are_not_accepted') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_access_is_limited') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_hostbasedauthentication_is_disabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_idle_timeout_interval_is_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_ignorerhosts_is_enabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_logingracetime_is_set_to_one_minute_or_less') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_loglevel_is_set_to_info') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_maxauthtries_is_set_to_4_or_less') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_permitemptypasswords_is_disabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_permituserenvironment_is_disabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_protocol_is_set_to_2') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_root_login_is_disabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_warning_banner_is_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_ssh_x11_forwarding_is_disabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_sticky_bit_is_set_on_all_world_writable_directories') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_successful_file_system_mounts_are_collected') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_suspicious_packets_are_logged') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_syslog_ng_default_file_permissions_configured') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_syslog_ng_is_configured_to_send_logs_to_a_remote_log_host') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_syslog_ng_service_is_enabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_system_accounts_are_non_login') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_system_administrator_actions_sudolog_are_collected') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_system_is_disabled_when_audit_logs_are_full') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_talk_client_is_not_installed') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_talk_server_is_not_enabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_tcp_syn_cookies_is_enabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_tcp_wrappers_is_installed') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_telnet_client_is_not_installed') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_telnet_server_is_not_enabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_tftp_server_is_not_enabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_the_audit_configuration_is_immutable') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_the_mcs_translation_service_mcstrans_is_not_installed') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_the_selinux_state_is_enforcing') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_time_services_are_not_enabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_time_synchronization_is_in_use') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_tipc_is_disabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_unsuccessful_unauthorized_file_access_attempts_are_collected') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_updates_patches_and_additional_security_software_are_installed') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_use_of_privileged_commands_is_collected') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_users_dot_files_are_not_group_or_world_writable') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_users_home_directories_permissions_are_750_or_more_restrictive') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_users_netrc_files_are_not_group_or_world_accessible') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_users_own_their_home_directories') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_wireless_interfaces_are_disabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_x_window_system_is_not_installed') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_xd_nx_support_is_enabled') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::rules::ensure_xinetd_is_not_enabled') }
 
-#    it \{ is_expected\.to contain_class('secure_linux_cis::service') }
+    #    it \{ is_expected\.to contain_class('secure_linux_cis::service') }
 
-#    it \{ is_expected\.to contain_cron__job('cron_aide') }
+    #    it \{ is_expected\.to contain_cron__job('cron_aide') }
 
-#    it \{ is_expected\.to contain_cron__monthly('security-update') }
+    #    it \{ is_expected\.to contain_cron__monthly('security-update') }
 
-#    it \{ is_expected\.to contain_exec('create_aide_database') }
-#    it \{ is_expected\.to contain_exec('gpgkey') }
-#    it \{ is_expected\.to contain_exec('reload sshd') }
-#    it \{ is_expected\.to contain_exec('root_wheel') }
+    #    it \{ is_expected\.to contain_exec('create_aide_database') }
+    #    it \{ is_expected\.to contain_exec('gpgkey') }
+    #    it \{ is_expected\.to contain_exec('reload sshd') }
+    #    it \{ is_expected\.to contain_exec('root_wheel') }
 
-#    it \{ is_expected\.to contain_file('/boot/grub2/grub.cfg') }
-#    it \{ is_expected\.to contain_file('/boot/grub2/user.cfg') }
-#    it \{ is_expected\.to contain_file('/etc/at.allow') }
-#    it \{ is_expected\.to contain_file('/etc/at.deny') }
-#    it \{ is_expected\.to contain_file('/etc/cron.allow') }
-#    it \{ is_expected\.to contain_file('/etc/cron.d') }
-#    it \{ is_expected\.to contain_file('/etc/cron.daily') }
-#    it \{ is_expected\.to contain_file('/etc/cron.deny') }
-#    it \{ is_expected\.to contain_file('/etc/cron.hourly') }
-#    it \{ is_expected\.to contain_file('/etc/cron.monthly') }
-#    it \{ is_expected\.to contain_file('/etc/cron.weekly') }
-#    it \{ is_expected\.to contain_file('/etc/crontab') }
-#    it \{ is_expected\.to contain_file('/etc/group-') }
-#    it \{ is_expected\.to contain_file('/etc/group') }
-#    it \{ is_expected\.to contain_file('/etc/hosts.allow') }
-#    it \{ is_expected\.to contain_file('/etc/hosts.deny') }
-#    it \{ is_expected\.to contain_file('/etc/issue.net') }
-#    it \{ is_expected\.to contain_file('/etc/issue') }
-#    it \{ is_expected\.to contain_file('/etc/motd') }
-#    it \{ is_expected\.to contain_file('/etc/passwd-') }
-#    it \{ is_expected\.to contain_file('/etc/passwd') }
-#    it \{ is_expected\.to contain_file('/etc/rsyslog.d/*.*;mail.none;news.none') }
-#    it \{ is_expected\.to contain_file('/etc/rsyslog.d/*.=warning;*.=err') }
-#    it \{ is_expected\.to contain_file('/etc/rsyslog.d/*.crit') }
-#    it \{ is_expected\.to contain_file('/etc/rsyslog.d/*.emerg') }
-#    it \{ is_expected\.to contain_file('/etc/rsyslog.d/') }
-#    it \{ is_expected\.to contain_file('/etc/rsyslog.d/local0,local1.*') }
-#    it \{ is_expected\.to contain_file('/etc/rsyslog.d/local2,local3.*') }
-#    it \{ is_expected\.to contain_file('/etc/rsyslog.d/local4,local5.*') }
-#    it \{ is_expected\.to contain_file('/etc/rsyslog.d/local6,local7.*') }
-#    it \{ is_expected\.to contain_file('/etc/rsyslog.d/mail.*') }
-#    it \{ is_expected\.to contain_file('/etc/rsyslog.d/mail.err') }
-#    it \{ is_expected\.to contain_file('/etc/rsyslog.d/mail.info') }
-#    it \{ is_expected\.to contain_file('/etc/rsyslog.d/mail.warning') }
-#    it \{ is_expected\.to contain_file('/etc/rsyslog.d/news.crit') }
-#    it \{ is_expected\.to contain_file('/etc/rsyslog.d/news.err') }
-#    it \{ is_expected\.to contain_file('/etc/rsyslog.d/news.notice') }
-#    it \{ is_expected\.to contain_file('/etc/ssh/sshd_config') }
-#    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/audit_priv.sh') }
-#    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/dot_file_wr.sh') }
-#    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/dup_gid.sh') }
-#    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/dup_group.sh') }
-#    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/dup_uid.sh') }
-#    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/dup_usr.sh') }
-#    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/forward.sh') }
-#    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/home_dir_own.sh') }
-#    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/home_dir_perm.sh') }
-#    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/home_directory.sh') }
-#    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/netrc.sh') }
-#    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/netrc_access.sh') }
-#    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/pwd_group_exist.sh') }
-#    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/rhost.sh') }
-#    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/root_path.sh') }
-#    it \{ is_expected\.to contain_file('/usr/share/cis_scripts') }
-#    it \{ is_expected\.to contain_file('/var/log') }
+    #    it \{ is_expected\.to contain_file('/boot/grub2/grub.cfg') }
+    #    it \{ is_expected\.to contain_file('/boot/grub2/user.cfg') }
+    #    it \{ is_expected\.to contain_file('/etc/at.allow') }
+    #    it \{ is_expected\.to contain_file('/etc/at.deny') }
+    #    it \{ is_expected\.to contain_file('/etc/cron.allow') }
+    #    it \{ is_expected\.to contain_file('/etc/cron.d') }
+    #    it \{ is_expected\.to contain_file('/etc/cron.daily') }
+    #    it \{ is_expected\.to contain_file('/etc/cron.deny') }
+    #    it \{ is_expected\.to contain_file('/etc/cron.hourly') }
+    #    it \{ is_expected\.to contain_file('/etc/cron.monthly') }
+    #    it \{ is_expected\.to contain_file('/etc/cron.weekly') }
+    #    it \{ is_expected\.to contain_file('/etc/crontab') }
+    #    it \{ is_expected\.to contain_file('/etc/group-') }
+    #    it \{ is_expected\.to contain_file('/etc/group') }
+    #    it \{ is_expected\.to contain_file('/etc/hosts.allow') }
+    #    it \{ is_expected\.to contain_file('/etc/hosts.deny') }
+    #    it \{ is_expected\.to contain_file('/etc/issue.net') }
+    #    it \{ is_expected\.to contain_file('/etc/issue') }
+    #    it \{ is_expected\.to contain_file('/etc/motd') }
+    #    it \{ is_expected\.to contain_file('/etc/passwd-') }
+    #    it \{ is_expected\.to contain_file('/etc/passwd') }
+    #    it \{ is_expected\.to contain_file('/etc/rsyslog.d/*.*;mail.none;news.none') }
+    #    it \{ is_expected\.to contain_file('/etc/rsyslog.d/*.=warning;*.=err') }
+    #    it \{ is_expected\.to contain_file('/etc/rsyslog.d/*.crit') }
+    #    it \{ is_expected\.to contain_file('/etc/rsyslog.d/*.emerg') }
+    #    it \{ is_expected\.to contain_file('/etc/rsyslog.d/') }
+    #    it \{ is_expected\.to contain_file('/etc/rsyslog.d/local0,local1.*') }
+    #    it \{ is_expected\.to contain_file('/etc/rsyslog.d/local2,local3.*') }
+    #    it \{ is_expected\.to contain_file('/etc/rsyslog.d/local4,local5.*') }
+    #    it \{ is_expected\.to contain_file('/etc/rsyslog.d/local6,local7.*') }
+    #    it \{ is_expected\.to contain_file('/etc/rsyslog.d/mail.*') }
+    #    it \{ is_expected\.to contain_file('/etc/rsyslog.d/mail.err') }
+    #    it \{ is_expected\.to contain_file('/etc/rsyslog.d/mail.info') }
+    #    it \{ is_expected\.to contain_file('/etc/rsyslog.d/mail.warning') }
+    #    it \{ is_expected\.to contain_file('/etc/rsyslog.d/news.crit') }
+    #    it \{ is_expected\.to contain_file('/etc/rsyslog.d/news.err') }
+    #    it \{ is_expected\.to contain_file('/etc/rsyslog.d/news.notice') }
+    #    it \{ is_expected\.to contain_file('/etc/ssh/sshd_config') }
+    #    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/audit_priv.sh') }
+    #    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/dot_file_wr.sh') }
+    #    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/dup_gid.sh') }
+    #    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/dup_group.sh') }
+    #    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/dup_uid.sh') }
+    #    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/dup_usr.sh') }
+    #    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/forward.sh') }
+    #    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/home_dir_own.sh') }
+    #    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/home_dir_perm.sh') }
+    #    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/home_directory.sh') }
+    #    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/netrc.sh') }
+    #    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/netrc_access.sh') }
+    #    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/pwd_group_exist.sh') }
+    #    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/rhost.sh') }
+    #    it \{ is_expected\.to contain_file('/usr/share/cis_scripts/root_path.sh') }
+    #    it \{ is_expected\.to contain_file('/usr/share/cis_scripts') }
+    #    it \{ is_expected\.to contain_file('/var/log') }
 
-#    it \{ is_expected\.to contain_file_line('/etc/bash.bashrc_export_tmout') }
-#    it \{ is_expected\.to contain_file_line('/etc/bash.bashrc_tmout') }
-#    it \{ is_expected\.to contain_file_line('/etc/profile readonly tmout') }
-#    it \{ is_expected\.to contain_file_line('/etc/profile_export_tmout') }
-#    it \{ is_expected\.to contain_file_line('/etc/profile_tmout') }
-#    it \{ is_expected\.to contain_file_line('action_mail_acct') }
-#    it \{ is_expected\.to contain_file_line('admin_space_left_action') }
-#    it \{ is_expected\.to contain_file_line('audit.rules access 1') }
-#    it \{ is_expected\.to contain_file_line('audit.rules access 2') }
-#    it \{ is_expected\.to contain_file_line('audit.rules access 3') }
-#    it \{ is_expected\.to contain_file_line('audit.rules access 4') }
-#    it \{ is_expected\.to contain_file_line('audit.rules access 5') }
-#    it \{ is_expected\.to contain_file_line('audit.rules access 6') }
-#    it \{ is_expected\.to contain_file_line('audit.rules file access 1') }
-#    it \{ is_expected\.to contain_file_line('audit.rules file access 2') }
-#    it \{ is_expected\.to contain_file_line('audit.rules file access 3') }
-#    it \{ is_expected\.to contain_file_line('audit.rules file access 4') }
-#    it \{ is_expected\.to contain_file_line('audit.rules file deletion 1') }
-#    it \{ is_expected\.to contain_file_line('audit.rules file deletion 2') }
-#    it \{ is_expected\.to contain_file_line('audit.rules kernel module 1') }
-#    it \{ is_expected\.to contain_file_line('audit.rules kernel module 2') }
-#    it \{ is_expected\.to contain_file_line('audit.rules kernel module 3') }
-#    it \{ is_expected\.to contain_file_line('audit.rules kernel module 4') }
-#    it \{ is_expected\.to contain_file_line('audit.rules kernel module 5') }
-#    it \{ is_expected\.to contain_file_line('audit.rules login/logout 1') }
-#    it \{ is_expected\.to contain_file_line('audit.rules make immutable') }
-#    it \{ is_expected\.to contain_file_line('audit.rules mounts 1') }
-#    it \{ is_expected\.to contain_file_line('audit.rules mounts 2') }
-#    it \{ is_expected\.to contain_file_line('audit.rules network 1') }
-#    it \{ is_expected\.to contain_file_line('audit.rules network 2') }
-#    it \{ is_expected\.to contain_file_line('audit.rules network 3') }
-#    it \{ is_expected\.to contain_file_line('audit.rules network 4') }
-#    it \{ is_expected\.to contain_file_line('audit.rules network 5') }
-#    it \{ is_expected\.to contain_file_line('audit.rules selinux 1') }
-#    it \{ is_expected\.to contain_file_line('audit.rules selinux 2') }
-#    it \{ is_expected\.to contain_file_line('audit.rules session 1') }
-#    it \{ is_expected\.to contain_file_line('audit.rules session 2') }
-#    it \{ is_expected\.to contain_file_line('audit.rules session 3') }
-#    it \{ is_expected\.to contain_file_line('audit.rules sudo.log 1') }
-#    it \{ is_expected\.to contain_file_line('audit.rules sudoers 1') }
+    #    it \{ is_expected\.to contain_file_line('/etc/bash.bashrc_export_tmout') }
+    #    it \{ is_expected\.to contain_file_line('/etc/bash.bashrc_tmout') }
+    #    it \{ is_expected\.to contain_file_line('/etc/profile readonly tmout') }
+    #    it \{ is_expected\.to contain_file_line('/etc/profile_export_tmout') }
+    #    it \{ is_expected\.to contain_file_line('/etc/profile_tmout') }
+    #    it \{ is_expected\.to contain_file_line('action_mail_acct') }
+    #    it \{ is_expected\.to contain_file_line('admin_space_left_action') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules access 1') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules access 2') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules access 3') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules access 4') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules access 5') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules access 6') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules file access 1') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules file access 2') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules file access 3') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules file access 4') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules file deletion 1') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules file deletion 2') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules kernel module 1') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules kernel module 2') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules kernel module 3') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules kernel module 4') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules kernel module 5') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules login/logout 1') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules make immutable') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules mounts 1') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules mounts 2') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules network 1') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules network 2') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules network 3') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules network 4') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules network 5') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules selinux 1') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules selinux 2') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules session 1') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules session 2') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules session 3') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules sudo.log 1') }
+    #    it \{ is_expected\.to contain_file_line('audit.rules sudoers 1') }
     #    it \{ is_expected\.to contain_file_line('audit.rules sudoers 2') }
     #    it \{ is_expected\.to contain_file_line('audit.rules time 1') }
     #    it \{ is_expected\.to contain_file_line('audit.rules time 2') }

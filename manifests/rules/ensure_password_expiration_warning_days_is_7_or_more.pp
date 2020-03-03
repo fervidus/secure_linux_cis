@@ -24,10 +24,11 @@ class secure_linux_cis::rules::ensure_password_expiration_warning_days_is_7_or_m
       fail('PASS_WARN_AGE should be set to a value of 7 or more')
     }
     file_line { 'password warning policy':
-      ensure => present,
-      path   => '/etc/login.defs',
-      line   => "PASS_WARN_AGE ${::secure_linux_cis::pass_warn_days}",
-      match  => '^#?PASS_WARN_AGE',
+      ensure   => present,
+      schedule => 'harden_schedule',
+      path     => '/etc/login.defs',
+      line     => "PASS_WARN_AGE ${::secure_linux_cis::pass_warn_days}",
+      match    => '^#?PASS_WARN_AGE',
     }
     # local_users fact may be undef
     $local_users = pick($facts['local_users'], {})

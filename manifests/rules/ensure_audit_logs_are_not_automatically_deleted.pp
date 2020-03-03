@@ -22,10 +22,11 @@ class secure_linux_cis::rules::ensure_audit_logs_are_not_automatically_deleted(
 
   if $enforced {
     file_line { 'max_log_file_action':
-      ensure => present,
-      path   => '/etc/audit/auditd.conf',
-      line   => 'max_log_file_action = keep_logs',
-      match  => '^max_log_file_action',
+      ensure   => present,
+      schedule => 'harden_schedule',
+      path     => '/etc/audit/auditd.conf',
+      line     => 'max_log_file_action = keep_logs',
+      match    => '^max_log_file_action',
     }
   }
 }

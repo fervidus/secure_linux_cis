@@ -70,34 +70,39 @@ class secure_linux_cis::rules::ensure_password_creation_requirements_are_configu
       }
       -> File_line <| path == '/etc/security/pwquality.conf' |>
       file_line { 'pam minlen':
-        ensure => 'present',
-        path   => '/etc/security/pwquality.conf',
-        line   => "minlen = ${::secure_linux_cis::minlen}",
-        match  => '^#?minlen',
+        ensure   => 'present',
+        schedule => 'harden_schedule',
+        path     => '/etc/security/pwquality.conf',
+        line     => "minlen = ${::secure_linux_cis::minlen}",
+        match    => '^#?minlen',
       }
       file_line { 'pam dcredit':
-        ensure => 'present',
-        path   => '/etc/security/pwquality.conf',
-        line   => "dcredit = ${::secure_linux_cis::dcredit}",
-        match  => '^#?dcredit',
+        ensure   => 'present',
+        schedule => 'harden_schedule',
+        path     => '/etc/security/pwquality.conf',
+        line     => "dcredit = ${::secure_linux_cis::dcredit}",
+        match    => '^#?dcredit',
       }
       file_line { 'pam ucredit':
-        ensure => 'present',
-        path   => '/etc/security/pwquality.conf',
-        line   => "ucredit = ${::secure_linux_cis::ucredit}",
-        match  => '^#?ucredit',
+        ensure   => 'present',
+        schedule => 'harden_schedule',
+        path     => '/etc/security/pwquality.conf',
+        line     => "ucredit = ${::secure_linux_cis::ucredit}",
+        match    => '^#?ucredit',
       }
       file_line { 'pam ocredit':
-        ensure => 'present',
-        path   => '/etc/security/pwquality.conf',
-        line   => "ocredit = ${::secure_linux_cis::ocredit}",
-        match  => '^#?ocredit',
+        ensure   => 'present',
+        schedule => 'harden_schedule',
+        path     => '/etc/security/pwquality.conf',
+        line     => "ocredit = ${::secure_linux_cis::ocredit}",
+        match    => '^#?ocredit',
       }
       file_line { 'pam lcredit':
-        ensure => 'present',
-        path   => '/etc/security/pwquality.conf',
-        line   => "lcredit = ${::secure_linux_cis::lcredit}",
-        match  => '^#?lcredit',
+        ensure   => 'present',
+        schedule => 'harden_schedule',
+        path     => '/etc/security/pwquality.conf',
+        line     => "lcredit = ${::secure_linux_cis::lcredit}",
+        match    => '^#?lcredit',
       }
       $services.each | $service | {
         pam { "pam ${service} requisite":

@@ -22,11 +22,12 @@ class secure_linux_cis::rules::ensure_ssh_maxauthtries_is_set_to_4_or_less(
   if $enforced {
     include ::secure_linux_cis::service
     file_line { 'ssh max auth tries':
-      ensure => present,
-      path   => '/etc/ssh/sshd_config',
-      line   => "MaxAuthTries ${::secure_linux_cis::max_auth_tries}",
-      match  => '^#?MaxAuthTries',
-      notify => Exec['reload sshd'],
+      ensure   => present,
+      schedule => 'harden_schedule',
+      path     => '/etc/ssh/sshd_config',
+      line     => "MaxAuthTries ${::secure_linux_cis::max_auth_tries}",
+      match    => '^#?MaxAuthTries',
+      notify   => Exec['reload sshd'],
     }
   }
 }

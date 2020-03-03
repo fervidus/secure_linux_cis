@@ -18,9 +18,10 @@ class secure_linux_cis::rules::ensure_selinux_policy_is_configured(
   if $enforced {
     if $::secure_linux_cis::mac == 'selinux' {
       file_line { 'selinux_targeted':
-        path  => '/etc/selinux/config',
-        line  => 'SELINUXTYPE=targeted',
-        match => '^SELINUXTYPE=',
+        schedule => 'harden_schedule',
+        path     => '/etc/selinux/config',
+        line     => 'SELINUXTYPE=targeted',
+        match    => '^SELINUXTYPE=',
       }
     }
   }

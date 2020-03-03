@@ -18,8 +18,9 @@ class secure_linux_cis::rules::ensure_access_to_the_su_command_is_restricted(
 ) {
   if $enforced {
     file_line { 'su':
-      path => '/etc/pam.d/su',
-      line => 'auth required pam_wheel.so use_uid',
+      schedule => 'harden_schedule',
+      path     => '/etc/pam.d/su',
+      line     => 'auth required pam_wheel.so use_uid',
     }
     exec { 'root_wheel':
       command  => "usermod -G ${::secure_linux_cis::su_group} root",

@@ -23,25 +23,33 @@ class secure_linux_cis::rules::ensure_default_user_umask_is_027_or_more_restrict
       'RedHat' => '/etc/bashrc',
       'Debian' => '/etc/bash.bashrc',
     }
+
     file_line { 'bashrc':
+      schedule => 'harden_schedule',
       path     => $bashrc,
       line     => '      umask 077',
       match    => '^\s+umask\s+\d+',
       multiple => true,
     }
+
     file_line { 'profile':
+      schedule => 'harden_schedule',
       path     => '/etc/profile',
       line     => '    umask 077',
       match    => '^\s+umask\s+\d+',
       multiple => true,
     }
+
     file_line { 'login.defs':
-      path  => '/etc/login.defs',
-      line  => 'UMASK           077',
-      match => '^\s+umask\s+\d+',
+      schedule => 'harden_schedule',
+      path     => '/etc/login.defs',
+      line     => 'UMASK           077',
+      match    => '^\s+umask\s+\d+',
     }
+
     if $facts['osfamily'] == 'RedHat' {
       file_line { 'csh.cshrc':
+        schedule => 'harden_schedule',
         path     => '/etc/csh.cshrc',
         line     => '    umask 077',
         match    => '^\s+umask\s+\d+',
