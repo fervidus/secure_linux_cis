@@ -209,10 +209,10 @@ secure_linux_cis::workstation_level_2:
   - secure_linux_cis::distribution::rhel8::cis_3_3_4
   - secure_linux_cis::distribution::rhel8::cis_3_5
   - secure_linux_cis::distribution::rhel8::cis_3_6
-  - secure_linux_cis::distribution::rhel8::cis_4_1_1_1
+  # - secure_linux_cis::distribution::rhel8::cis_4_1_1_1 # TODO: research
   - secure_linux_cis::distribution::rhel8::cis_4_1_1_2
   - secure_linux_cis::distribution::rhel8::cis_4_1_1_3
-  - secure_linux_cis::distribution::rhel8::cis_4_1_1_4
+  # - secure_linux_cis::distribution::rhel8::cis_4_1_1_4 # TODO: research
   - secure_linux_cis::distribution::rhel8::cis_4_1_2_1
   - secure_linux_cis::distribution::rhel8::cis_4_1_2_2
   - secure_linux_cis::distribution::rhel8::cis_4_1_2_3
@@ -231,7 +231,7 @@ secure_linux_cis::workstation_level_2:
   - secure_linux_cis::distribution::rhel8::cis_4_1_15
   - secure_linux_cis::distribution::rhel8::cis_4_1_16
   - secure_linux_cis::distribution::rhel8::cis_4_1_17
-  - secure_linux_cis::distribution::rhel8::cis_5_2_17
+  # - secure_linux_cis::distribution::rhel8::cis_5_2_17 # TODO: research
   - secure_linux_cis::distribution::rhel8::cis_6_1_1
 
 secure_linux_cis::server_level_1:
@@ -446,10 +446,10 @@ secure_linux_cis::server_level_2:
   - secure_linux_cis::distribution::rhel8::cis_3_3_3
   - secure_linux_cis::distribution::rhel8::cis_3_3_4
   - secure_linux_cis::distribution::rhel8::cis_3_6
-  - secure_linux_cis::distribution::rhel8::cis_4_1_1_1
+  # - secure_linux_cis::distribution::rhel8::cis_4_1_1_1 # TODO: research
   - secure_linux_cis::distribution::rhel8::cis_4_1_1_2
   - secure_linux_cis::distribution::rhel8::cis_4_1_1_3
-  - secure_linux_cis::distribution::rhel8::cis_4_1_1_4
+  # - secure_linux_cis::distribution::rhel8::cis_4_1_1_4 # TODO: research
   - secure_linux_cis::distribution::rhel8::cis_4_1_2_1
   - secure_linux_cis::distribution::rhel8::cis_4_1_2_2
   - secure_linux_cis::distribution::rhel8::cis_4_1_2_3
@@ -468,5 +468,5 @@ secure_linux_cis::server_level_2:
   - secure_linux_cis::distribution::rhel8::cis_4_1_15
   - secure_linux_cis::distribution::rhel8::cis_4_1_16
   - secure_linux_cis::distribution::rhel8::cis_4_1_17
-  - secure_linux_cis::distribution::rhel8::cis_5_2_17
+  # - secure_linux_cis::distribution::rhel8::cis_5_2_17 # TODO: research
   - secure_linux_cis::distribution::rhel8::cis_6_1_1

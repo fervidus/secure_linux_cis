@@ -413,7 +413,6 @@ secure_linux_cis::server_level_2:
   - secure_linux_cis::distribution::debian8::cis_1_1_10
   - secure_linux_cis::distribution::debian8::cis_1_1_11
   - secure_linux_cis::distribution::debian8::cis_1_1_12
-  - secure_linux_cis::distribution::debian8::cis_1_1_21
   - secure_linux_cis::distribution::debian8::cis_1_6_1_1
   - secure_linux_cis::distribution::debian8::cis_1_6_1_2
   - secure_linux_cis::distribution::debian8::cis_1_6_1_3
@@ -422,7 +421,6 @@ secure_linux_cis::server_level_2:
   - secure_linux_cis::distribution::debian8::cis_1_6_2_2
   - secure_linux_cis::distribution::debian8::cis_1_6_3
   - secure_linux_cis::distribution::debian8::cis_2_2_4
-  - secure_linux_cis::distribution::debian8::cis_3_6
   - secure_linux_cis::distribution::debian8::cis_4_1_1_1
   - secure_linux_cis::distribution::debian8::cis_4_1_1_2
   - secure_linux_cis::distribution::debian8::cis_4_1_1_3
@@ -443,6 +441,5 @@ secure_linux_cis::server_level_2:
   - secure_linux_cis::distribution::debian8::cis_4_1_16
   - secure_linux_cis::distribution::debian8::cis_4_1_17
   - secure_linux_cis::distribution::debian8::cis_4_1_18
-  - secure_linux_cis::distribution::debian8::cis_5_2_6
   - secure_linux_cis::distribution::debian8::cis_5_4_5
   - secure_linux_cis::distribution::debian8::cis_6_1_1

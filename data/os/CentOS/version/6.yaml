@@ -429,7 +429,6 @@ secure_linux_cis::server_level_2:
   - secure_linux_cis::distribution::centos6::cis_1_6_1_6
   - secure_linux_cis::distribution::centos6::cis_1_6_2
   - secure_linux_cis::distribution::centos6::cis_2_2_4
-  - secure_linux_cis::distribution::centos6::cis_3_7
   - secure_linux_cis::distribution::centos6::cis_4_1_1_1
   - secure_linux_cis::distribution::centos6::cis_4_1_1_2
   - secure_linux_cis::distribution::centos6::cis_4_1_1_3

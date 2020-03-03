@@ -4,8 +4,8 @@ describe 'secure_linux_cis' do
   test_on = {
     supported_os: [
       {
-        'operatingsystem'           => 'Ubuntu',
-        'operatingsystemrelease'    => '16.04',
+        'operatingsystem'           => 'RedHat',
+        'operatingsystemrelease'    => '7',
       },
     ],
   }
@@ -24,239 +24,244 @@ describe 'secure_linux_cis' do
 
     it { is_expected.to compile.with_all_deps }
 
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_10') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_11') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_12') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_13') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_14') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_15') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_16') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_17') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_18') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_19') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_1_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_1_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_1_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_1_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_1_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_1_6') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_20') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_21') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_6') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_7') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_8') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_1_9') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_2_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_3_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_3_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_4_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_4_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_4_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_5_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_5_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_5_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_5_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_6_1_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_6_1_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_6_1_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_6_1_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_6_2_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_6_2_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_7_1_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_7_1_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_7_1_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_7_1_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_7_1_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_7_1_6') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_7_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_1_8') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_1_10') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_1_11') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_1_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_1_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_1_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_1_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_1_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_1_6') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_1_7') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_1_8') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_1_9') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_10') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_11') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_12') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_13') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_14') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_15') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_16') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_17') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_1_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_1_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_1_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_6') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_7') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_8') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_2_9') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_3_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_3_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_3_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_3_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_2_3_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_1_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_1_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_2_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_2_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_2_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_2_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_2_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_2_6') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_2_7') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_2_8') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_3_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_3_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_3_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_4_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_4_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_4_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_4_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_4_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_5_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_5_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_5_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_5_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_6_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_6_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_6_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_6_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_6_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_3_7') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_10') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_11') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_12') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_13') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_14') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_15') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_16') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_17') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_18') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_1_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_1_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_1_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_6') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_7') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_8') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_1_9') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_2_1_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_2_1_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_2_1_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_2_1_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_2_1_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_2_2_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_2_2_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_2_2_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_2_2_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_2_2_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_2_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_2_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_4_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_1_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_1_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_1_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_1_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_1_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_1_6') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_1_7') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_1_8') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_2_10') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_2_11') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_2_12') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_2_13') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_2_14') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_2_15') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_2_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_2_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_2_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_2_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_2_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_2_6') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_2_7') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_2_8') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_2_9') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_3_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_3_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_3_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_3_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_4_1_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_4_1_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_4_1_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_4_1_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_4_1_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_4_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_4_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_4_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_4_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_5_6') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_1_10') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_1_11') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_1_12') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_1_13') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_1_14') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_1_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_1_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_1_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_1_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_1_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_1_6') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_1_7') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_1_8') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_1_9') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_10') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_11') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_12') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_13') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_14') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_15') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_16') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_17') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_18') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_19') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_1') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_20') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_2') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_6') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_7') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_8') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::ubuntu16::cis_6_2_9') }
-  
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_10') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_11') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_12') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_13') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_14') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_15') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_16') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_17') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_18') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_19') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_1_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_1_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_1_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_1_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_1_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_1_6') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_1_7') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_1_8') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_20') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_21') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_22') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_6') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_7') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_8') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_1_9') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_2_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_2_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_2_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_2_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_2_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_3_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_3_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_4_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_4_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_4_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_5_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_5_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_5_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_5_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_6_1_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_6_1_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_6_1_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_6_1_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_6_1_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_6_1_6') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_6_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_7_1_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_7_1_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_7_1_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_7_1_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_7_1_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_7_1_6') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_7_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_1_8') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_1_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_1_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_1_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_1_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_1_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_1_6') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_1_7') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_10') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_11') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_12') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_13') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_14') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_15') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_16') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_17') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_18') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_19') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_1_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_1_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_1_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_20') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_21') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_6') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_7') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_8') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_2_9') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_3_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_3_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_3_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_3_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_2_3_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_1_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_1_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_2_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_2_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_2_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_2_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_2_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_2_6') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_2_7') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_2_8') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_3_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_3_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_3_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_4_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_4_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_4_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_4_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_4_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_5_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_5_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_5_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_5_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_6_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_6_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_6_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_6_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_6_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_3_7') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_10') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_11') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_12') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_13') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_14') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_15') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_16') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_17') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_18') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_1_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_1_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_1_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_6') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_7') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_8') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_1_9') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_2_1_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_2_1_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_2_1_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_2_1_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_2_1_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_2_2_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_2_2_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_2_2_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_2_2_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_2_2_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_2_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_2_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_4_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_1_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_1_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_1_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_1_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_1_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_1_6') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_1_7') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_1_8') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_2_10') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_2_11') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_2_12') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_2_13') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_2_14') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_2_15') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_2_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_2_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_2_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_2_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_2_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_2_6') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_2_7') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_2_8') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_2_9') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_3_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_3_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_3_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_3_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_4_1_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_4_1_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_4_1_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_4_1_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_4_1_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_4_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_4_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_4_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_4_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_5_6') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_1_10') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_1_11') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_1_12') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_1_13') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_1_14') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_1_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_1_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_1_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_1_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_1_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_1_6') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_1_7') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_1_8') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_1_9') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_10') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_11') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_12') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_13') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_14') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_15') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_16') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_17') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_18') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_19') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_1') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_2') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_3') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_6') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_7') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_8') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::rhel7::cis_6_2_9') }
+
     it { is_expected.to contain_class('secure_linux_cis::reboot') }
     
     it { is_expected.to contain_class('secure_linux_cis::rules::audit_sgid_executables') }
     it { is_expected.to contain_class('secure_linux_cis::rules::audit_suid_executables') }
     it { is_expected.to contain_class('secure_linux_cis::rules::audit_system_file_permissions') }
     it { is_expected.to contain_class('secure_linux_cis::rules::disable_automounting') }
+    it { is_expected.to contain_class('secure_linux_cis::rules::disable_the_rhnsd_daemon') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_access_to_the_su_command_is_restricted') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_address_space_layout_randomization_aslr_is_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_aide_is_installed') }
-    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_all_apparmor_profiles_are_enforcing') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_all_groups_in_etc_passwd_exist_in_etc_group') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_all_users_home_directories_exist') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_all_users_last_password_change_date_is_in_the_past') }
-    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_apparmor_is_not_disabled_in_bootloader_configuration') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_at_cron_is_restricted_to_authorized_users') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_audit_log_storage_size_is_configured') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_audit_logs_are_not_automatically_deleted') }
@@ -295,6 +300,8 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_firewall_rules_exist_for_all_open_ports') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_ftp_server_is_not_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_gdm_login_banner_is_configured') }
+    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_gpg_keys_are_configured') }
+    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_gpgcheck_is_globally_activated') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_http_proxy_server_is_not_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_http_server_is_not_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_icmp_redirects_are_not_accepted') }
@@ -318,10 +325,12 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_message_of_the_day_is_configured_properly') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_minimum_days_between_password_changes_is_7_or_more') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_mounting_of_cramfs_filesystems_is_disabled') }
+    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_mounting_of_fat_filesystems_is_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_mounting_of_freevxfs_filesystems_is_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_mounting_of_hfs_filesystems_is_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_mounting_of_hfsplus_filesystems_is_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_mounting_of_jffs2_filesystems_is_disabled') }
+    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_mounting_of_squashfs_filesystems_is_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_mounting_of_udf_filesystems_is_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_nfs_and_rpc_are_not_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_nis_client_is_not_installed') }
@@ -347,6 +356,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_nodev_option_set_on_var_tmp_partition') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_noexec_option_set_on_dev_shm_partition') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_noexec_option_set_on_removable_media_partitions') }
+    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_noexec_option_set_on_tmp_partition') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_noexec_option_set_on_var_tmp_partition') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_nosuid_option_set_on_dev_shm_partition') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_nosuid_option_set_on_removable_media_partitions') }
@@ -354,8 +364,8 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_nosuid_option_set_on_var_tmp_partition') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_ntp_is_configured') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_only_approved_mac_algorithms_are_used') }
-    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_openbsd_inetd_is_not_installed') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_outbound_and_established_connections_are_configured') }
+    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_package_manager_repositories_are_configured') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_packet_redirect_sending_is_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_password_creation_requirements_are_configured') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_password_expiration_is_365_days_or_less') }
@@ -387,6 +397,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_permissions_on_etc_ssh_sshd_config_are_configured') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_prelink_is_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_rds_is_disabled') }
+    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_red_hat_subscription_manager_connection_is_configured') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_remote_login_warning_banner_is_configured_properly') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_remote_rsyslog_messages_are_only_accepted_on_designated_log_hosts') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_remote_syslog_ng_messages_are_only_accepted_on_designated_log_hosts') }
@@ -404,6 +415,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_samba_is_not_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_sctp_is_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_secure_icmp_redirects_are_not_accepted') }
+    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_selinux_is_installed') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_selinux_is_not_disabled_in_bootloader_configuration') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_selinux_policy_is_configured') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_home') }
@@ -413,7 +425,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_var_log_audit') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_var_tmp') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_session_initiation_information_is_collected') }
-    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_shadow_group_is_empty') }
+    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_setroubleshoot_is_not_installed') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_snmp_server_is_not_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_source_routed_packets_are_not_accepted') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_ssh_access_is_limited') }
@@ -446,6 +458,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_telnet_server_is_not_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_tftp_server_is_not_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_the_audit_configuration_is_immutable') }
+    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_the_mcs_translation_service_mcstrans_is_not_installed') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_the_selinux_state_is_enforcing') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_time_services_are_not_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_time_synchronization_is_in_use') }
@@ -458,7 +471,6 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_users_netrc_files_are_not_group_or_world_accessible') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_users_own_their_home_directories') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_wireless_interfaces_are_disabled') }
-    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_x_window_system_is_not_installed') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_xd_nx_support_is_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_xinetd_is_not_enabled') }
     
@@ -469,10 +481,13 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_cron__monthly('security-update') }
   
     it { is_expected.to contain_exec('create_aide_database') }
+    it { is_expected.to contain_exec('gpgkey') }
     it { is_expected.to contain_exec('reload sshd') }
+    it { is_expected.to contain_exec('rename_aide_database') }
     it { is_expected.to contain_exec('root_wheel') }
   
-    it { is_expected.to contain_file('/boot/grub/grub.cfg') }
+    it { is_expected.to contain_file('/boot/grub2/grub.cfg') }
+    it { is_expected.to contain_file('/boot/grub2/user.cfg') }
     it { is_expected.to contain_file('/etc/at.allow') }
     it { is_expected.to contain_file('/etc/at.deny') }
     it { is_expected.to contain_file('/etc/cron.allow') }
@@ -513,6 +528,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_file('/etc/shadow-') }
     it { is_expected.to contain_file('/etc/shadow') }
     it { is_expected.to contain_file('/etc/ssh/sshd_config') }
+    it { is_expected.to contain_file('/etc/sysconfig/ntpd') }
     it { is_expected.to contain_file('/usr/share/cis_scripts/audit_priv.sh') }
     it { is_expected.to contain_file('/usr/share/cis_scripts/dot_file_wr.sh') }
     it { is_expected.to contain_file('/usr/share/cis_scripts/dup_gid.sh') }
@@ -531,9 +547,9 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_file('/usr/share/cis_scripts') }
     it { is_expected.to contain_file('/var/log') }
 
-    it { is_expected.to contain_file_line('/etc/bash.bashrc_export_tmout') }
-    it { is_expected.to contain_file_line('/etc/bash.bashrc_tmout') }
-    it { is_expected.to contain_file_line('/etc/profile readonly tmout') }
+    it { is_expected.to contain_file_line('/etc/bashrc readonly tmout') }
+    it { is_expected.to contain_file_line('/etc/bashrc_export_tmout') }
+    it { is_expected.to contain_file_line('/etc/bashrc_tmout') }
     it { is_expected.to contain_file_line('/etc/profile_export_tmout') }
     it { is_expected.to contain_file_line('/etc/profile_tmout') }
     it { is_expected.to contain_file_line('action_mail_acct') }
@@ -557,7 +573,6 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_file_line('audit.rules kernel module 5') }
     it { is_expected.to contain_file_line('audit.rules login/logout 1') }
     it { is_expected.to contain_file_line('audit.rules login/logout 2') }
-    it { is_expected.to contain_file_line('audit.rules login/logout 3') }
     it { is_expected.to contain_file_line('audit.rules make immutable') }
     it { is_expected.to contain_file_line('audit.rules mounts 1') }
     it { is_expected.to contain_file_line('audit.rules mounts 2') }
@@ -567,6 +582,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_file_line('audit.rules network 4') }
     it { is_expected.to contain_file_line('audit.rules network 5') }
     it { is_expected.to contain_file_line('audit.rules network 6') }
+    it { is_expected.to contain_file_line('audit.rules network 7') }
     it { is_expected.to contain_file_line('audit.rules selinux 1') }
     it { is_expected.to contain_file_line('audit.rules selinux 2') }
     it { is_expected.to contain_file_line('audit.rules session 1') }
@@ -586,14 +602,15 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_file_line('audit.rules user/group 4') }
     it { is_expected.to contain_file_line('audit.rules user/group 5') }
     it { is_expected.to contain_file_line('bashrc') }
+    it { is_expected.to contain_file_line('csh.cshrc') }
     it { is_expected.to contain_file_line('disable_ipv6_network') }
     it { is_expected.to contain_file_line('disable_ipv6_network_init') }
     it { is_expected.to contain_file_line('emergency') }
+    it { is_expected.to contain_file_line('gpgcheck') }
     it { is_expected.to contain_file_line('limits_hc') }
     it { is_expected.to contain_file_line('login.defs') }
     it { is_expected.to contain_file_line('max_log_file') }
     it { is_expected.to contain_file_line('max_log_file_action') }
-    it { is_expected.to contain_file_line('ntpuser') }
     it { is_expected.to contain_file_line('pam dcredit') }
     it { is_expected.to contain_file_line('pam lcredit') }
     it { is_expected.to contain_file_line('pam minlen') }
@@ -607,6 +624,8 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_file_line('rsyslog.conf InputTCPServerRun') }
     it { is_expected.to contain_file_line('rsyslog.conf ModLoad') }
     it { is_expected.to contain_file_line('rsyslog.conf log_permissions') }
+    it { is_expected.to contain_file_line('selinux_enforce') }
+    it { is_expected.to contain_file_line('selinux_targeted') }
     it { is_expected.to contain_file_line('space_left_action') }
     it { is_expected.to contain_file_line('ssh alive count max') }
     it { is_expected.to contain_file_line('ssh alive interval') }
@@ -642,11 +661,9 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_firewallchain('OUTPUT:filter:IPv4') }
     it { is_expected.to contain_firewallchain('OUTPUT:filter:IPv6') }
 
-    it { is_expected.to contain_kernel_parameter('apparmor=1') }
     it { is_expected.to contain_kernel_parameter('audit=1') }
     it { is_expected.to contain_kernel_parameter('enforcing=0') }
     it { is_expected.to contain_kernel_parameter('quiet') }
-    it { is_expected.to contain_kernel_parameter('security=apparmor') }
     it { is_expected.to contain_kernel_parameter('selinux=0') }
 
     it { is_expected.to contain_kmod__install('cramfs') }
@@ -657,9 +674,12 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_kmod__install('jffs2') }
     it { is_expected.to contain_kmod__install('rds') }
     it { is_expected.to contain_kmod__install('sctp') }
+    it { is_expected.to contain_kmod__install('squashfs') }
     it { is_expected.to contain_kmod__install('tipc') }
     it { is_expected.to contain_kmod__install('udf') }
+    it { is_expected.to contain_kmod__install('vfat') }
 
+    it { is_expected.to contain_notify('1_2_4 rhsm') }
     it { is_expected.to contain_notify('NX') }
     it { is_expected.to contain_notify('allow_groups') }
     it { is_expected.to contain_notify('mh') }
@@ -670,36 +690,46 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_notify('vtp') }
 
     it { is_expected.to contain_package('aide') }
-    it { is_expected.to contain_package('auditd') }
-    it { is_expected.to contain_package('exim4') }
+    it { is_expected.to contain_package('audit') }
     it { is_expected.to contain_package('ldap-utils') }
-    it { is_expected.to contain_package('libpam-pwquality') }
+    it { is_expected.to contain_package('libpwquality') }
+    it { is_expected.to contain_package('libselinux') }
+    it { is_expected.to contain_package('mcstrans') }
     it { is_expected.to contain_package('nis') }
-    it { is_expected.to contain_package('openbsd-inetd') }
     it { is_expected.to contain_package('openldap-clients') }
     it { is_expected.to contain_package('prelink') }
     it { is_expected.to contain_package('rsh-client') }
     it { is_expected.to contain_package('rsh-redone-client') }
     it { is_expected.to contain_package('rsh') }
     it { is_expected.to contain_package('rsyslog') }
+    it { is_expected.to contain_package('setroubleshoot') }
     it { is_expected.to contain_package('talk') }
-    it { is_expected.to contain_package('tcpd') }
+    it { is_expected.to contain_package('tcp_wrappers') }
     it { is_expected.to contain_package('telnet') }
     it { is_expected.to contain_package('ypbind') }
 
-    it { is_expected.to contain_pam('pam common-password pwhistory') }
-    it { is_expected.to contain_pam('pam common-password requisite') }
-    it { is_expected.to contain_pam('pam_tally2 common-auth') }
-    it { is_expected.to contain_pam('pam_unix common-password') }
-
+    it { is_expected.to contain_pam('pam password-auth requisite') }
+    it { is_expected.to contain_pam('pam password-auth sufficient') }
+    it { is_expected.to contain_pam('pam system-auth requisite') }
+    it { is_expected.to contain_pam('pam system-auth sufficient') }
+    it { is_expected.to contain_pam('pam_faillock authfail password-auth') }
+    it { is_expected.to contain_pam('pam_faillock authfail system-auth') }
+    it { is_expected.to contain_pam('pam_faillock authsucc password-auth') }
+    it { is_expected.to contain_pam('pam_faillock authsucc system-auth') }
+    it { is_expected.to contain_pam('pam_faillock preauth password-auth') }
+    it { is_expected.to contain_pam('pam_faillock preauth system-auth') }
+    it { is_expected.to contain_pam('pam_unix password-auth') }
+    it { is_expected.to contain_pam('pam_unix system-auth') }
+      
     it { is_expected.to contain_reboot('after_run') }
   
     it { is_expected.to contain_resources('firewall') }
-  
+
     it { is_expected.to contain_schedule('harden_schedule') }
-  
+    
     it { is_expected.to contain_secure_linux_cis__mount_options('/home-nodev') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/tmp-nodev') }
+    it { is_expected.to contain_secure_linux_cis__mount_options('/tmp-noexec') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/tmp-nosuid') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/var/tmp-nodev') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/var/tmp-noexec') }
@@ -710,28 +740,31 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_service('auditd') }
     it { is_expected.to contain_service('autofs') }
     it { is_expected.to contain_service('avahi-daemon') }
-    it { is_expected.to contain_service('bind9') }
     it { is_expected.to contain_service('chargen-dgram') }
     it { is_expected.to contain_service('chargen-stream') }
-    it { is_expected.to contain_service('cron') }
+    it { is_expected.to contain_service('crond') }
     it { is_expected.to contain_service('cups') }
+    it { is_expected.to contain_service('cyrus-imap') }
     it { is_expected.to contain_service('daytime-dgram') }
     it { is_expected.to contain_service('daytime-stream') }
     it { is_expected.to contain_service('dhcpd') }
     it { is_expected.to contain_service('discard-dgram') }
     it { is_expected.to contain_service('discard-stream') }
+    it { is_expected.to contain_service('dovecot') }
     it { is_expected.to contain_service('echo-dgram') }
     it { is_expected.to contain_service('echo-stream') }
     it { is_expected.to contain_service('httpd') }
     it { is_expected.to contain_service('isc-dhcp-server6') }
     it { is_expected.to contain_service('isc-dhcp-server') }
     it { is_expected.to contain_service('lighttpd') }
+    it { is_expected.to contain_service('named') }
     it { is_expected.to contain_service('nfs-server') }
     it { is_expected.to contain_service('nfs') }
     it { is_expected.to contain_service('nginx') }
     it { is_expected.to contain_service('nis') }
     it { is_expected.to contain_service('ntalk') }
     it { is_expected.to contain_service('rexec.socket') }
+    it { is_expected.to contain_service('rhnsd') }
     it { is_expected.to contain_service('rlogin.socket') }
     it { is_expected.to contain_service('rpcbind') }
     it { is_expected.to contain_service('rsh.socket') }
@@ -739,7 +772,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_service('rsyncd') }
     it { is_expected.to contain_service('rsyslog') }
     it { is_expected.to contain_service('slapd') }
-    it { is_expected.to contain_service('smbd') }
+    it { is_expected.to contain_service('smb') }
     it { is_expected.to contain_service('snmpd') }
     it { is_expected.to contain_service('squid') }
     it { is_expected.to contain_service('telnet.socket') }
@@ -770,12 +803,9 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_sysctl('net.ipv4.tcp_syncookies') }
     it { is_expected.to contain_sysctl('net.ipv6.conf.all.accept_ra') }
     it { is_expected.to contain_sysctl('net.ipv6.conf.all.accept_redirects') }
-    it { is_expected.to contain_sysctl('net.ipv6.conf.all.accept_source_route') }
     it { is_expected.to contain_sysctl('net.ipv6.conf.all.disable_ipv6') }
-    it { is_expected.to contain_sysctl('net.ipv6.conf.all.forwarding') }
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.accept_ra') }
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.accept_redirects') }
-    it { is_expected.to contain_sysctl('net.ipv6.conf.default.accept_source_route') }
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.disable_ipv6') }
   
     it { is_expected.to contain_user('root') }
