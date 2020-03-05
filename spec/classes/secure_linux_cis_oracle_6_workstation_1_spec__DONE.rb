@@ -4,23 +4,23 @@ describe 'secure_linux_cis' do
   test_on = {
     supported_os: [
       {
-        'operatingsystem'        => 'OracleLinux',
-        'operatingsystemrelease' => ['6'],
+        'operatingsystem'           => 'OracleLinux',
+        'operatingsystemrelease'    => '6',
       },
     ],
   }
 
   on_supported_os(test_on).each do |os, os_facts|
-    puts "\n##########>  #{os}  <##########\n\n"
-
     let(:facts) { os_facts }
-
     let(:params) do
       {
-        'time_servers' => ['tick.usno.navy.mil', 'tock.usno.navy.mil'],
-        'profile_type' => 'server',
+        'time_servers'      => ['tick.usno.navy.mil', 'tock.usno.navy.mil'],
+        'profile_type'      => 'workstation',
+        'enforcement_level' => '1',
       }
     end
+
+    puts "\n##########>  #{os} - workstation 1  <##########\n\n"
 
     it { is_expected.to compile.with_all_deps }
 
@@ -40,7 +40,6 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_1_1_1_7') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_1_1_20') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_1_1_21') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_1_1_22') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_1_1_3') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_1_1_4') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_1_1_5') }
@@ -88,9 +87,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_2_2_1_1') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_2_2_1_2') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_2_2_1_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_2_2_2') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_2_2_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_2_2_4') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_2_2_5') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_2_2_6') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_2_2_7') }
@@ -128,7 +125,6 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_3_6_3') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_3_6_4') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_3_6_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_3_7') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_4_2_1_1') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_4_2_1_2') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_4_2_1_3') }
@@ -213,10 +209,9 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_6_2_9') }
 
     it { is_expected.to contain_class('secure_linux_cis::reboot') }
-
+    
     it { is_expected.to contain_class('secure_linux_cis::rules::audit_sgid_executables') }
     it { is_expected.to contain_class('secure_linux_cis::rules::audit_suid_executables') }
-    it { is_expected.to contain_class('secure_linux_cis::rules::disable_automounting') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_access_to_the_su_command_is_restricted') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_address_space_layout_randomization_aslr_is_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_aide_is_installed') }
@@ -233,7 +228,6 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_chrony_is_configured') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_core_dumps_are_restricted') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_cron_daemon_is_enabled') }
-    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_cups_is_not_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_daytime_services_are_not_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_dccp_is_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_default_deny_firewall_policy') }
@@ -396,17 +390,15 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_users_home_directories_permissions_are_750_or_more_restrictive') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_users_netrc_files_are_not_group_or_world_accessible') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_users_own_their_home_directories') }
-    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_wireless_interfaces_are_disabled') }
-    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_x_window_system_is_not_installed') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_xd_nx_support_is_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_xinetd_is_not_enabled') }
-
+    
     it { is_expected.to contain_class('secure_linux_cis::service') }
-
+  
     it { is_expected.to contain_cron__job('cron_aide') }
-
+  
     it { is_expected.to contain_cron__monthly('security-update') }
-
+  
     it { is_expected.to contain_exec('create_aide_database') }
     it { is_expected.to contain_exec('gpgkey') }
     it { is_expected.to contain_exec('reload sshd') }
@@ -543,7 +535,6 @@ describe 'secure_linux_cis' do
 
     it { is_expected.to contain_notify('NX') }
     it { is_expected.to contain_notify('allow_groups') }
-    it { is_expected.to contain_notify('gp') }
 
     it { is_expected.to contain_package('aide') }
     it { is_expected.to contain_package('ldap-utils') }
@@ -574,8 +565,10 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_pam('pam_unix system-auth') }
 
     it { is_expected.to contain_reboot('after_run') }
-
+  
     it { is_expected.to contain_resources('firewall') }
+
+    it { is_expected.to contain_schedule('harden_schedule') }
 
     it { is_expected.to contain_secure_linux_cis__mount_options('/home-nodev') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/tmp-nodev') }
@@ -587,12 +580,10 @@ describe 'secure_linux_cis' do
 
     it { is_expected.to contain_service('apache2') }
     it { is_expected.to contain_service('apache') }
-    it { is_expected.to contain_service('autofs') }
     it { is_expected.to contain_service('avahi-daemon') }
     it { is_expected.to contain_service('chargen-dgram') }
     it { is_expected.to contain_service('chargen-stream') }
     it { is_expected.to contain_service('crond') }
-    it { is_expected.to contain_service('cups') }
     it { is_expected.to contain_service('cyrus-imap') }
     it { is_expected.to contain_service('daytime-dgram') }
     it { is_expected.to contain_service('daytime-stream') }
@@ -655,7 +646,8 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.accept_ra') }
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.accept_redirects') }
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.disable_ipv6') }
-
+  
     it { is_expected.to contain_user('root') }
+
   end
 end
