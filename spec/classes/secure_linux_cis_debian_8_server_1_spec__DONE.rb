@@ -11,19 +11,18 @@ describe 'secure_linux_cis' do
   }
 
   on_supported_os(test_on).each do |os, os_facts|
-    puts "\n##########>  #{os}  <##########\n\n"
-
     let(:facts) { os_facts }
-
     let(:params) do
       {
-        'time_servers' => ['tick.usno.navy.mil', 'tock.usno.navy.mil'],
-        'profile_type' => 'server',
+        'time_servers'      => ['tick.usno.navy.mil', 'tock.usno.navy.mil'],
+        'profile_type'      => 'server',
+        'enforcement_level' => '1',
       }
     end
 
-    it { is_expected.to compile.with_all_deps }
+    puts "\n##########>  #{os} - server 1  <##########\n\n"
 
+    it { is_expected.to compile.with_all_deps }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_13') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_14') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_15') }
@@ -35,14 +34,14 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_1_2') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_1_3') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_1_4') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_1_5') }
+    it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_1_6') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_1_7') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_20') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_21') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_2') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_3') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_4') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_5') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_6') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_7') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_8') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_1_1_9') }
@@ -77,7 +76,6 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_2_2_1_1') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_2_2_1_2') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_2_2_1_3') }
-    it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_2_2_2') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_2_2_3') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_2_2_4') }
     it { is_expected.to contain_class('secure_linux_cis::distribution::debian8::cis_2_2_5') }
@@ -267,7 +265,9 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_mounting_of_cramfs_filesystems_is_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_mounting_of_freevxfs_filesystems_is_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_mounting_of_hfs_filesystems_is_disabled') }
+    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_mounting_of_hfsplus_filesystems_is_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_mounting_of_jffs2_filesystems_is_disabled') }
+    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_mounting_of_squashfs_filesystems_is_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_mounting_of_udf_filesystems_is_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_nfs_and_rpc_are_not_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_nis_client_is_not_installed') }
@@ -352,8 +352,6 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_samba_is_not_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_sctp_is_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_secure_icmp_redirects_are_not_accepted') }
-    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_var') }
-    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_separate_partition_exists_for_var_tmp') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_shadow_group_is_empty') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_snmp_server_is_not_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_source_routed_packets_are_not_accepted') }
@@ -390,7 +388,6 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_users_netrc_files_are_not_group_or_world_accessible') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_users_own_their_home_directories') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_wireless_interfaces_are_disabled') }
-    it { is_expected.to contain_class('secure_linux_cis::rules::ensure_x_window_system_is_not_installed') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_xd_nx_support_is_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_xinetd_is_not_installed') }
     it { is_expected.to contain_class('secure_linux_cis::service') }
@@ -522,16 +519,15 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_kmod__install('dccp') }
     it { is_expected.to contain_kmod__install('freevxfs') }
     it { is_expected.to contain_kmod__install('hfs') }
+    it { is_expected.to contain_kmod__install('hfsplus') }
     it { is_expected.to contain_kmod__install('jffs2') }
     it { is_expected.to contain_kmod__install('rds') }
     it { is_expected.to contain_kmod__install('sctp') }
+    it { is_expected.to contain_kmod__install('squashfs') }
     it { is_expected.to contain_kmod__install('tipc') }
     it { is_expected.to contain_kmod__install('udf') }
     it { is_expected.to contain_notify('NX') }
     it { is_expected.to contain_notify('allow_groups') }
-    it { is_expected.to contain_notify('gp') }
-    it { is_expected.to contain_notify('vp') }
-    it { is_expected.to contain_notify('vtp') }
     it { is_expected.to contain_package('aide') }
     it { is_expected.to contain_package('exim4') }
     it { is_expected.to contain_package('inetd') }
@@ -555,6 +551,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_pam('pam_unix common-password') }
     it { is_expected.to contain_reboot('after_run') }
     it { is_expected.to contain_resources('firewall') }
+    it { is_expected.to contain_schedule('harden_schedule') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/home-nodev') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/tmp-mode=1777,strictatime,noexec,nodev,nosuid') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/tmp-nodev') }
@@ -616,5 +613,6 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.accept_source_route') }
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.disable_ipv6') }
     it { is_expected.to contain_user('root') }
+
   end
 end
