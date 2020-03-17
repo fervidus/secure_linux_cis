@@ -25,17 +25,35 @@ class secure_linux_cis::rules::ensure_events_that_modify_the_system_s_mandatory_
   ~> Class['::secure_linux_cis::reboot']
 
   if $enforced {
-    file_line { 'audit.rules selinux 1':
-      ensure   => present,
-      schedule => 'harden_schedule',
-      path     => '/etc/audit/rules.d/audit.rules',
-      line     => '-w /etc/selinux/ -p wa -k MAC-policy',
-    }
-    file_line { 'audit.rules selinux 2':
-      ensure   => present,
-      schedule => 'harden_schedule',
-      path     => '/etc/audit/rules.d/audit.rules',
-      line     => '-w /usr/share/selinux/ -p wa -k MAC-policy',
+    case $::secure_linux_cis::mac {
+      'apparmor': {
+        file_line { 'audit.rules apparmor 1':
+          ensure   => present,
+          schedule => 'harden_schedule',
+          path     => '/etc/audit/rules.d/audit.rules',
+          line     => '-w /etc/apparmor/ -p wa -k MAC-policy',
+        }
+        file_line { 'audit.rules apparmor 2':
+          ensure   => present,
+          schedule => 'harden_schedule',
+          path     => '/etc/audit/rules.d/audit.rules',
+          line     => '-w /etc/apparmor.d/ -p wa -k MAC-policy',
+        }
+      }
+      'selinux', default: {
+        file_line { 'audit.rules selinux 1':
+          ensure   => present,
+          schedule => 'harden_schedule',
+          path     => '/etc/audit/rules.d/audit.rules',
+          line     => '-w /etc/selinux/ -p wa -k MAC-policy',
+        }
+        file_line { 'audit.rules selinux 2':
+          ensure   => present,
+          schedule => 'harden_schedule',
+          path     => '/etc/audit/rules.d/audit.rules',
+          line     => '-w /usr/share/selinux/ -p wa -k MAC-policy',
+        }
+      }
     }
   }
 }

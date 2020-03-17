@@ -15,6 +15,12 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_shadow__are_configured(
     Boolean $enforced = true,
 ) {
   if $enforced {
+    $os = "${facts['os']['name']}${facts['os']['release']['major']}"
+    $mode = $os ? {
+      'Debian10' => '0600',
+      default    => '0644',
+    }
+
     case $facts['osfamily'] {
       'RedHat': {
         file {'/etc/shadow-':
@@ -31,7 +37,7 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_shadow__are_configured(
           schedule => 'harden_schedule',
           owner    => 'root',
           group    => 'shadow',
-          mode     => '0640',
+          mode     => $mode,
         }
       }
       default: {

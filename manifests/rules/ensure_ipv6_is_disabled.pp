@@ -11,7 +11,6 @@
 # @summary  Ensure IPv6 is disabled (Not Scored)
 #
 # @param enforced Should this rule be enforced
-# @param ipv6_enabled Should ipv6 be enabled
 #
 # @example
 #   include secure_linux_cis::ensure_ipv6_is_disabled

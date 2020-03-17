@@ -18,7 +18,7 @@ class secure_linux_cis::rules::ensure_authentication_required_for_single_user_mo
   if $enforced {
     $os = "${facts['os']['name']}${facts['os']['release']['major']}"
     case $os {
-      'Debian8', 'Debian9', 'Ubuntu18.04': {
+      'Debian8', 'Debian9', 'Debian10', 'Ubuntu18.04': {
         unless $facts['rootpw`'].empty {
           notify { 'rootpw':
             message  => 'Not in compliance with CIS 1.4.3 (Scored). No authentication required for single user mode.',#lint:ignore:140chars

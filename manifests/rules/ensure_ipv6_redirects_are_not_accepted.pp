@@ -13,7 +13,6 @@
 # @summary  Ensure IPv6 redirects are not accepted (Not Scored)
 #
 # @param enforced Should this rule be enforced
-# @param ipv6_enabled Should ipv6 be enabled
 #
 # @example
 #   include secure_linux_cis::ensure_ipv6_redirects_are_not_accepted
