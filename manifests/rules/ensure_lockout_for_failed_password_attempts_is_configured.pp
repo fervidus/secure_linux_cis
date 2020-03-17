@@ -24,6 +24,7 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
     Boolean $enforced = true,
 ) {
   if $enforced {
+    $os = "${facts['os']['name']}${facts['os']['release']['major']}"
     case $facts['osfamily'] {
       'Debian': {
         pam { 'pam_tally2 common-auth':
@@ -41,6 +42,17 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
             "unlock_time=${::secure_linux_cis::lockout_time}",
           ],
           position  => 'before *[type="auth" and module="pam_unix.so"]',
+        }
+        if $os == 'Debian10' {
+          pam { 'pam_tally2 common-account':
+            ensure   => present,
+            schedule => 'harden_schedule',
+            service  => 'common-account',
+            type     => 'account',
+            module   => 'pam_tally2.so',
+            control  => 'required',
+            position => 'after *[type="account" and module="pam_deny"]',
+          }
         }
       }
       default: {

@@ -12,6 +12,8 @@
 # @param is_logging_host Is this host a logging host
 # @param max_log_file Maximum log file
 # @param max_auth_tries How many authorization attempts to allow
+# @param max_sessions How many SSH sessions to allow
+# @param max_startups  How many SSH startups to allow
 # @param time_sync Which NTP program to use
 # @param mta Which Mail Transfer program to use
 # @param mac Which Mandatory Access Control to use
@@ -81,6 +83,8 @@ class secure_linux_cis (
   Boolean                                 $is_logging_host         = false,
   Integer                                 $max_log_file            = 32,
   Integer[1,4]                            $max_auth_tries          = 4,
+  Integer[1,10]                           $max_sessions            = 4,
+  String                                  $max_startups            = '10:30:60',
   Enum['ntp', 'chrony', 'none']           $time_sync               = 'ntp',
   Enum['postfix', 'exim', 'none']         $mta                     = 'postfix',
   Enum['selinux', 'apparmor', 'none']     $mac                     = 'selinux',

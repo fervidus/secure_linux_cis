@@ -2,8 +2,9 @@
 #  Ensure mounting of squashfs filesystems is disabled (Scored)
 #
 # Description:
-# The squashfs filesystem type is a compressed read-only Linux filesystem embedded in small footprint systems (similar to cramfs ).
-#  A squashfs image can be used without having to first decompress the image.
+# The squashfs filesystem type is the universal disk format used to implement ISO/IEC 13346 and ECMA-167 specifications.
+# This is an open vendor filesystem type for data storage on a broad range of media.
+# This filesystem type is necessary to support writing DVDs and newer optical disc formats.
 #
 # Rationale:
 # Removing support for unneeded filesystem types reduces the local attack surface of the system.

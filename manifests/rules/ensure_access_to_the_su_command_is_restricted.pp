@@ -17,10 +17,16 @@ class secure_linux_cis::rules::ensure_access_to_the_su_command_is_restricted(
     Boolean $enforced = true,
 ) {
   if $enforced {
+
+    $os = "${facts['os']['name']}${facts['os']['release']['major']}"
+    if $os == 'Debian10' {
+      $group = " group=${::secure_linux_cis::su_group}"
+    }
+
     file_line { 'su':
       schedule => 'harden_schedule',
       path     => '/etc/pam.d/su',
-      line     => 'auth required pam_wheel.so use_uid',
+      line     => "auth required pam_wheel.so use_uid${group}",
     }
     exec { 'root_wheel':
       command  => "usermod -G ${::secure_linux_cis::su_group} root",

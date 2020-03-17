@@ -22,7 +22,7 @@ class secure_linux_cis::rules::ensure_ip_forwarding_is_disabled(
       value    => 0,
       schedule => 'harden_schedule',
     }
-    if $facts['osfamily'] == 'Debian' {
+    if $facts['osfamily'] == 'Debian' and $::secure_linux_cis::ipv6_enabled {
       sysctl { 'net.ipv6.conf.all.forwarding':
         value    => 0,
         schedule => 'harden_schedule',
