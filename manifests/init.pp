@@ -37,6 +37,7 @@
 # @param pass_min_days Password minimum days
 # @param pass_warn_days Password warning days
 # @param pass_inactive_days Password inactive days
+# @param timeout Number of seconds of inactivity after which a shell terminates.
 # @param repolist List of acceptable software repos
 # @param banner Optional string to be content of /etc/issue, /etc/issue.net (and /etc/motd if $motd not defined)
 # @param motd Optional string to be content of /etc/motd.  If $banner is defined and $motd is not, $banner becomes content of /etc/motd
@@ -108,6 +109,7 @@ class secure_linux_cis (
   Integer                                 $pass_min_days           = 7,
   Integer                                 $pass_warn_days          = 7,
   Integer                                 $pass_inactive_days      = 30,
+  Integer                                 $timeout                 = 600,
   Array                                   $repolist                = ['updates/7/x86_64','rhel-7-server-rpms/7Server/x86_64'],
   Optional[String]                        $banner                  = undef,
   Optional[String]                        $motd                    = undef,

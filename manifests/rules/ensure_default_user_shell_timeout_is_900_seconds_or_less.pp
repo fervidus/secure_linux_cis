@@ -28,7 +28,7 @@ class secure_linux_cis::rules::ensure_default_user_shell_timeout_is_900_seconds_
       file_line { "${path}_tmout":
         schedule => 'harden_schedule',
         path     => $path,
-        line     => 'TMOUT=600',
+        line     => "TMOUT=${::secure_linux_cis::timeout}",
       }
       file_line { "${path}_export_tmout":
         schedule => 'harden_schedule',
