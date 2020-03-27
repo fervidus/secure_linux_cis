@@ -15,12 +15,14 @@ Facter.add('smtp_listen') do
       next unless i[2] =~ %r{^0{8}:0{4}$} # Only LISTEN
       smtp << 'There is a process listening on TCP port 25'
     end
-    File.open('/proc/net/tcp6').each do |i|
-      i = i.split(' ')
-      next unless i[1] =~ %r{:0016$} # Skip anything but smtp
-      next if i[1] =~ %r{^00000000000000000000000001000000:} # Skip localhost
-      next unless i[2] =~ %r{^0{32}:0{4}$} # only LISTEN
-      smtp << 'There is a process listening on TCP port 25 (IPv6)'
+    if(File.exist?('/proc/net/tcp6'))
+      File.open('/proc/net/tcp6').each do |i|
+        i = i.split(' ')
+        next unless i[1] =~ %r{:0016$} # Skip anything but smtp
+        next if i[1] =~ %r{^00000000000000000000000001000000:} # Skip localhost
+        next unless i[2] =~ %r{^0{32}:0{4}$} # only LISTEN
+        smtp << 'There is a process listening on TCP port 25 (IPv6)'
+      end
     end
     smtp
   end
