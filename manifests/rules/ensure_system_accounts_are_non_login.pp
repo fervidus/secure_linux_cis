@@ -26,10 +26,12 @@ class secure_linux_cis::rules::ensure_system_accounts_are_non_login(
     }
     unless $facts['nologin'].empty {
       $facts['nologin'].each | String $user | {
-        exec { "nologin ${user}":
-          command  => "usermod -s ${nologin} ${user}",
-          schedule => 'harden_schedule',
-          path     => '/sbin/:/usr/sbin',
+        if ! ($user in $secure_linux_cis::nologin_whitelist) {
+          exec { "nologin ${user}":
+            command  => "usermod -s ${nologin} ${user}",
+            schedule => 'harden_schedule',
+            path     => '/sbin/:/usr/sbin',
+          }
         }
       }
     }
