@@ -45,6 +45,7 @@
 # @param motd Optional string to be content of /etc/motd.  If $banner is defined and $motd is not, $banner becomes content of /etc/motd
 # @param auto_restart If an automatic restart should occur when defined classes require a reboot to take effect
 # @param schedule If you want to change when this runs use a scheduler
+# @param nologin_whitelist Array of accounts to allow login shell other than nologin
 #
 # @example
 #   include secure_linux_cis
@@ -117,6 +118,7 @@ class secure_linux_cis (
   Array                                   $repolist                = ['updates/7/x86_64','rhel-7-server-rpms/7Server/x86_64'],
   Optional[String]                        $banner                  = undef,
   Optional[String]                        $motd                    = undef,
+  Array[String]                           $nologin_whitelist       = [],
 ) {
   schedule { 'harden_schedule':
       period      => $hardening_schedule['period'],
