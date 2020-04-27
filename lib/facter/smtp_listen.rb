@@ -15,7 +15,8 @@ Facter.add('smtp_listen') do
       next unless i[2] =~ %r{^0{8}:0{4}$} # Only LISTEN
       smtp << 'There is a process listening on TCP port 25'
     end
-    if File.exist?('/proc/net/tcp6') # Not present when IPv6 is disabled
+
+    if(File.exist?('/proc/net/tcp6'))
       File.open('/proc/net/tcp6').each do |i|
         i = i.split(' ')
         next unless i[1] =~ %r{:0016$} # Skip anything but smtp
