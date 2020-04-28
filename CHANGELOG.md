@@ -1,5 +1,11 @@
 # Changelog
 
+## Release 2.0.11
+* Add whitelist for non-nologin shells
+* Make TMOUT variable configurable
+* Support for Debian10
+* Add file test for tcp6 to pevent warning if tcp6 disabled
+
 ## Release 2.0.10
 * New updated documentation
 * Apache license

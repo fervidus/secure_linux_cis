@@ -23,8 +23,5 @@ describe 'secure_linux_cis' do
     puts "\n##########>  #{os} - workstation 2  <##########\n\n"
 
     it { is_expected.to compile.with_all_deps }
-
-    
-
   end
 end

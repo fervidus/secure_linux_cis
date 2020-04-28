@@ -10,7 +10,7 @@ describe 'secure_linux_cis' do
     ],
   }
 
-  on_supported_os(test_on).each do |os, os_facts|
+  on_supported_os(test_on).each do |_os, os_facts|
     let(:facts) { os_facts }
     let(:params) do
       {
@@ -23,8 +23,5 @@ describe 'secure_linux_cis' do
     # puts "\n##########>  #{os} - server 2  <##########\n\n"
 
     it { is_expected.to compile.with_all_deps }
-
-    
-
   end
 end

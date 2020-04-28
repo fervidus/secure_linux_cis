@@ -594,6 +594,5 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.accept_redirects') }
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.accept_source_route') }
     it { is_expected.to contain_user('root') }
-    
   end
 end

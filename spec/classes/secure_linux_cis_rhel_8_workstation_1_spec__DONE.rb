@@ -211,7 +211,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::distribution::rhel8::cis_6_2_9') }
 
     it { is_expected.to contain_class('secure_linux_cis::reboot') }
-    
+
     it { is_expected.to contain_class('secure_linux_cis::rules::audit_sgid_executables') }
     it { is_expected.to contain_class('secure_linux_cis::rules::audit_suid_executables') }
     it { is_expected.to contain_class('secure_linux_cis::rules::create_custom_authselect_profile') }
@@ -395,13 +395,13 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_users_own_their_home_directories') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_xinetd_is_not_installed') }
     it { is_expected.to contain_class('secure_linux_cis::rules::select_authselect_profile') }
-    
+
     it { is_expected.to contain_class('secure_linux_cis::service') }
-  
+
     it { is_expected.to contain_cron__job('cron_aide') }
-  
+
     it { is_expected.to contain_cron__monthly('security-update') }
-  
+
     it { is_expected.to contain_exec('create_aide_database') }
     it { is_expected.to contain_exec('gpgkey') }
     it { is_expected.to contain_exec('reload sshd') }
@@ -558,11 +558,11 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_pam('pam_faillock preauth system-auth') }
     it { is_expected.to contain_pam('pam_unix password-auth') }
     it { is_expected.to contain_pam('pam_unix system-auth') }
-  
+
     it { is_expected.to contain_reboot('after_run') }
-  
+
     it { is_expected.to contain_schedule('harden_schedule') }
-  
+
     it { is_expected.to contain_secure_linux_cis__mount_options('/home-nodev') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/tmp-mode=1777,strictatime,noexec,nodev,nosuid') }
     it { is_expected.to contain_secure_linux_cis__mount_options('/tmp-nodev') }
@@ -623,8 +623,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_sysctl('net.ipv6.conf.all.accept_redirects') }
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.accept_ra') }
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.accept_redirects') }
-  
-    it { is_expected.to contain_user('root') }
 
+    it { is_expected.to contain_user('root') }
   end
 end

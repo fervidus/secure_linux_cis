@@ -212,7 +212,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::distribution::oracle6::cis_6_2_9') }
 
     it { is_expected.to contain_class('secure_linux_cis::reboot') }
-    
+
     it { is_expected.to contain_class('secure_linux_cis::rules::audit_sgid_executables') }
     it { is_expected.to contain_class('secure_linux_cis::rules::audit_suid_executables') }
     it { is_expected.to contain_class('secure_linux_cis::rules::disable_automounting') }
@@ -398,19 +398,19 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_wireless_interfaces_are_disabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_xd_nx_support_is_enabled') }
     it { is_expected.to contain_class('secure_linux_cis::rules::ensure_xinetd_is_not_enabled') }
-    
+
     it { is_expected.to contain_class('secure_linux_cis::service') }
-  
+
     it { is_expected.to contain_cron__job('cron_aide') }
-  
+
     it { is_expected.to contain_cron__monthly('security-update') }
-  
+
     it { is_expected.to contain_exec('create_aide_database') }
     it { is_expected.to contain_exec('gpgkey') }
     it { is_expected.to contain_exec('reload sshd') }
     it { is_expected.to contain_exec('rename_aide_database') }
     it { is_expected.to contain_exec('root_wheel') }
- 
+
     it { is_expected.to contain_file('/boot/grub2/grub.cfg') }
     it { is_expected.to contain_file('/boot/grub2/user.cfg') }
     it { is_expected.to contain_file('/etc/at.allow') }
@@ -509,7 +509,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_file_line('ssh x11') }
     it { is_expected.to contain_file_line('su') }
     it { is_expected.to contain_file_line('useradd_inactive') }
-    
+
     it { is_expected.to contain_firewall('001 accept all input to lo interface') }
     it { is_expected.to contain_firewall('002 accept all output to lo interface') }
     it { is_expected.to contain_firewall('003 drop all to lo 127.0.0.0/8') }
@@ -571,7 +571,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_pam('pam_unix system-auth') }
 
     it { is_expected.to contain_reboot('after_run') }
-  
+
     it { is_expected.to contain_resources('firewall') }
 
     it { is_expected.to contain_schedule('harden_schedule') }
@@ -654,8 +654,7 @@ describe 'secure_linux_cis' do
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.accept_ra') }
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.accept_redirects') }
     it { is_expected.to contain_sysctl('net.ipv6.conf.default.disable_ipv6') }
-  
-    it { is_expected.to contain_user('root') }
 
+    it { is_expected.to contain_user('root') }
   end
 end
