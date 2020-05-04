@@ -19,8 +19,10 @@ class secure_linux_cis::rules::ensure_access_to_the_su_command_is_restricted(
   if $enforced {
 
     $os = "${facts['os']['name']}${facts['os']['release']['major']}"
-    if $os == 'Debian10' {
-      $group = " group=${::secure_linux_cis::su_group}"
+
+    $group = $os ? {
+      'Debian10' => " group=${::secure_linux_cis::su_group}",
+      default    => '',
     }
 
     file_line { 'su':
