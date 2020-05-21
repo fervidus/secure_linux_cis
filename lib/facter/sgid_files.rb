@@ -5,5 +5,5 @@
 
 Facter.add('sgid_files') do
   confine kernel: 'Linux'
-  setcode "df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -type f -perm -2000"
+  setcode "df --local -P | grep -v mapper/vg[1-9] |awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -type f -perm -2000"
 end
