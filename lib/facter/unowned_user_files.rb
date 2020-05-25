@@ -5,5 +5,5 @@
 
 Facter.add('unowned_user_files') do
   confine kernel: 'Linux'
-  setcode "df --local -P | grep -v mapper/vg0[1-9] |awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -nouser"
+  setcode "/usr/share/cis_scripts/ensure_no_unowned.sh"
 end

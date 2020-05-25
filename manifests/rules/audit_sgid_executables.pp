@@ -20,6 +20,14 @@ class secure_linux_cis::rules::audit_sgid_executables(
     Boolean $enforced = false,
 ) {
   if $enforced {
+    file { '/usr/share/cis_scripts/audit_sgid.sh':
+      ensure   => file,
+      schedule => 'harden_schedule',
+      owner    => 'root',
+      group    => 'root',
+      mode     => '0700',
+      content  => file('secure_linux_cis/audit_sgid.sh'),
+    }
     if $facts['sgid_files'] {
       notify { 'sgf':
         message  => '[4] (Not Scored) You have SGID files on your system. It is recommended to verify that the files have md5 checksums that match with their corresponding package', # lint:ignore:140chars

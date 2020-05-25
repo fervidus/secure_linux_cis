@@ -13,9 +13,17 @@
 # @example
 #   include secure_linux_cis::ensure_sticky_bit_is_set_on_all_world_writable_directories
 class secure_linux_cis::rules::ensure_sticky_bit_is_set_on_all_world_writable_directories(
-    Boolean $enforced = true,
+  Boolean $enforced = true,
 ) {
   if $enforced {
+    file { '/usr/share/cis_scripts/ensure_sticky_ww.sh':
+      ensure   => file,
+      schedule => 'harden_schedule',
+      owner    => 'root',
+      group    => 'root',
+      mode     => '0700',
+      content  => file('secure_linux_cis/ensure_sticky_ww.sh'),
+    }
     if($facts['sticky_ww'] != undef) {
       $myhash = split($facts['sticky_ww'], '\n')
       $myhash.each | String $dir | {

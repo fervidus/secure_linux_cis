@@ -5,5 +5,5 @@
 
 Facter.add('suid_files') do
   confine kernel: 'Linux'
-  setcode "df --local -P | grep -v mapper/vg0[1-9] |awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -type f -perm -4000"
+  setcode "/usr/share/cis_scripts/audit_suid.sh"
 end
