@@ -7,7 +7,9 @@
 # @example
 #   include secure_linux_cis::rules::ensure_firewalld_service_is_enabled_and_running
 class secure_linux_cis::rules::ensure_firewalld_service_is_enabled_and_running(
-    Boolean $enforced = false,
+  Boolean $enforced = false,
 ) {
-  include ::firewalld
+  if $enforced {
+    include ::firewalld
+  }
 }
