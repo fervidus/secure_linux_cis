@@ -1,8 +1,6 @@
 ---
 secure_linux_cis::firewall_package: firewall
 # Exclude rules that need to be fixed
-secure_linux_cis::auto_restart: true
-
 secure_linux_cis::host_allow_rules:
   - 'sshd: ALL'
   - "ALL: %{facts.networking.network}/%{facts.networking.netmask}"
