@@ -5,5 +5,5 @@
 
 Facter.add('unowned_group_files') do
   confine kernel: 'Linux'
-  setcode "df --local -P | grep -v mapper/vg0[1-9] |awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -nogroup"
+  setcode "/usr/share/cis_scripts/ensure_no_ungrouped.sh"
 end
