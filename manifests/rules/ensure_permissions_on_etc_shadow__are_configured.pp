@@ -17,8 +17,11 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_shadow__are_configured(
   if $enforced {
     $os = "${facts['os']['name']}${facts['os']['release']['major']}"
     $mode = $os ? {
-      'Debian10' => '0600',
-      default    => '0644',
+      'Debian10'    => '0600',
+      'Debian9'     => '0640',
+      'Ubuntu16.04' => '0640',
+      'Ubuntu18.04' => '0640',
+      default       => '0000',
     }
 
     case $facts['osfamily'] {
