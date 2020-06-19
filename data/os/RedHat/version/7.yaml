@@ -52,7 +52,7 @@ secure_linux_cis::workstation_level_1:
   - secure_linux_cis::distribution::rhel7::cis_2_2_1_1
   - secure_linux_cis::distribution::rhel7::cis_2_2_1_2
   - secure_linux_cis::distribution::rhel7::cis_2_2_1_3
-  # - secure_linux_cis::distribution::rhel7::cis_2_2_2 # difficult to enforce
+  - secure_linux_cis::distribution::rhel7::cis_2_2_2
   - secure_linux_cis::distribution::rhel7::cis_2_2_3
   - secure_linux_cis::distribution::rhel7::cis_2_2_5
   - secure_linux_cis::distribution::rhel7::cis_2_2_6
@@ -281,7 +281,7 @@ secure_linux_cis::server_level_1:
   - secure_linux_cis::distribution::rhel7::cis_2_2_1_1
   - secure_linux_cis::distribution::rhel7::cis_2_2_1_2
   - secure_linux_cis::distribution::rhel7::cis_2_2_1_3
-  # - secure_linux_cis::distribution::rhel7::cis_2_2_2 # difficult to enforce
+  - secure_linux_cis::distribution::rhel7::cis_2_2_2
   - secure_linux_cis::distribution::rhel7::cis_2_2_3
   - secure_linux_cis::distribution::rhel7::cis_2_2_4
   - secure_linux_cis::distribution::rhel7::cis_2_2_5
