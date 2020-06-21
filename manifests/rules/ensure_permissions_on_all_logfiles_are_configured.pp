@@ -1,7 +1,15 @@
 # @api private
-# A description of what this class does
+# Ensure permissions on all logfiles are configured (Scored)
+
+# Description:
+# Log files stored in /var/log/ contain logged information from many services on the system,
+# or on log hosts others as well.
 #
-# @summary A short summary of the purpose of this class
+# Rationale:
+# It is important to ensure that log files have the correct permissions to ensure that sensitive
+#data is archived and protected.
+#
+# @summary Ensure permissions on all logfiles are configured (Scored)
 #
 # @param enforced Should this rule be enforced
 #
@@ -11,14 +19,20 @@ class secure_linux_cis::rules::ensure_permissions_on_all_logfiles_are_configured
     Boolean $enforced = true,
 ) {
   if $enforced {
-    # Recursively set permissions on /var/log
-    # Note: Ignoring puppet logs because Puppet manages it's own log permissions
-    file { '/var/log':
-      ensure   => directory,
+    file { '/usr/share/cis_scripts/var_log_permissions.sh':
+      ensure   => file,
       schedule => 'harden_schedule',
-      recurse  => true,
-      mode     => 'g-wx,o-rwx',  #lint:ignore:no_symbolic_file_modes
-      ignore   => ['log', 'puppet*'],
+      owner    => 'root',
+      group    => 'root',
+      mode     => '0700',
+      content  => file('secure_linux_cis/var_log_permissions.sh'),
+    }
+    # Fix permissions on all files reported by this fact as wrong.
+    if $facts['var_log_permissions'] {
+      file { $facts['var_log_permissions']:
+        schedule => 'harden_schedule',
+        mode     => 'g-wx,o-rwx',  #lint:ignore:no_symbolic_file_modes
+      }
     }
   }
 }
