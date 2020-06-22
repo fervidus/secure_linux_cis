@@ -29,7 +29,8 @@ class secure_linux_cis::rules::ensure_permissions_on_all_logfiles_are_configured
     }
     # Fix permissions on all files reported by this fact as wrong.
     if $facts['var_log_permissions'] {
-      file { $facts['var_log_permissions']:
+      $logfiles = split($facts['var_log_permissions'],'\n')
+      file { $logfiles:
         schedule => 'harden_schedule',
         mode     => 'g-wx,o-rwx',  #lint:ignore:no_symbolic_file_modes
       }
