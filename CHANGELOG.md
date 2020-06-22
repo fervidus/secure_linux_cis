@@ -1,5 +1,9 @@
 # Changelog
 
+## Release 2.0.14
+
+* Cleaned up and fixed the way /var/log directory is secured.
+
 ## Release 2.0.13
 
 * Important fixes

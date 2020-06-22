@@ -1,13 +1,15 @@
 # @api private
-#  Ensure permissions on all logfiles are configured (Scored)
-#
+# Ensure permissions on all logfiles are configured (Scored)
+
 # Description:
-# Log files stored in /var/log/ contain logged information from many services on the system, or on log hosts others as well.
+# Log files stored in /var/log/ contain logged information from many services on the system,
+# or on log hosts others as well.
 #
 # Rationale:
-# It is important to ensure that log files have the correct permissions to ensure that sensitive data is archived and protected.
+# It is important to ensure that log files have the correct permissions to ensure that sensitive
+#data is archived and protected.
 #
-# @summary  Ensure permissions on all logfiles are configured (Scored)
+# @summary Ensure permissions on all logfiles are configured (Scored)
 #
 # @param enforced Should this rule be enforced
 #
@@ -17,18 +19,22 @@ class secure_linux_cis::rules::ensure_permissions_on_all_logfiles_are_configured
     Boolean $enforced = true,
 ) {
   if $enforced {
-    # Recursively set permissions on files & directories within /var/log/ - leaving /var/log itself alone.
-    # Use of file resource is blocked by https://tickets.puppetlabs.com/browse/PUP-1444
-    # Note: puppetlabs directory is excluded because Puppet manages it's own log permissions
-    exec { 'set permissions on /var/log subdirectories':
-      command  => 'find /var/log -mindepth 1 -type d -not \( -path /var/log/puppetlabs -prune \) -exec chmod g-w,o-rwx "{}" \;',
-      path     => ['/usr/bin', '/usr/sbin',],
+    file { '/usr/share/cis_scripts/var_log_permissions.sh':
+      ensure   => file,
       schedule => 'harden_schedule',
-    } ->
-    exec { 'set permissions on /var/log files':
-      command  => 'find /var/log -type f -not \( -path /var/log/puppetlabs/\* -prune \) -exec chmod g-wx,o-rwx "{}" \;',
-      path     => ['/usr/bin', '/usr/sbin',],
-      schedule => 'harden_schedule',
+      owner    => 'root',
+      group    => 'root',
+      mode     => '0700',
+      content  => file('secure_linux_cis/var_log_permissions.sh'),
+    }
+
+    # Fix permissions on all files reported by this fact as wrong.
+    if $facts['var_log_permissions'] {
+      $logfiles = split($facts['var_log_permissions'],'\n')
+      file { $logfiles:
+        schedule => 'harden_schedule',
+        mode     => 'g-wx,o-rwx',  #lint:ignore:no_symbolic_file_modes
+      }
     }
   }
 }
