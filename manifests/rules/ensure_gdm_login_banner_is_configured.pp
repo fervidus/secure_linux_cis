@@ -15,7 +15,7 @@ class secure_linux_cis::rules::ensure_gdm_login_banner_is_configured(
     Boolean $enforced = true,
 ) {
   if $enforced {
-    if $facts['gnome_installed'] {
+    if $facts['gdm_installed'] {
       file { '/etc/dconf/profile/gdm':
         ensure   => present,
         schedule => 'harden_schedule',
