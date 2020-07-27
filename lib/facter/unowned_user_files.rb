@@ -5,5 +5,5 @@
 
 Facter.add('unowned_user_files') do
   confine kernel: 'Linux'
-  setcode "/usr/share/cis_scripts/ensure_no_unowned.sh"
+  setcode '/usr/share/cis_scripts/ensure_no_unowned.sh'
 end

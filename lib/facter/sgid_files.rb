@@ -5,5 +5,5 @@
 
 Facter.add('sgid_files') do
   confine kernel: 'Linux'
-  setcode "/usr/share/cis_scripts/audit_sgid.sh"
+  setcode '/usr/share/cis_scripts/audit_sgid.sh'
 end

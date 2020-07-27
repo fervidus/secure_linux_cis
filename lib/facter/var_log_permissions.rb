@@ -5,5 +5,5 @@
 
 Facter.add('var_log_permissions') do
   confine kernel: 'Linux'
-  setcode "/usr/share/cis_scripts/var_log_permissions.sh"
+  setcode '/usr/share/cis_scripts/var_log_permissions.sh'
 end

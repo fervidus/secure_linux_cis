@@ -5,5 +5,5 @@
 
 Facter.add('suid_files') do
   confine kernel: 'Linux'
-  setcode "/usr/share/cis_scripts/audit_suid.sh"
+  setcode '/usr/share/cis_scripts/audit_suid.sh'
 end
