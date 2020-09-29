@@ -1,25 +1,21 @@
 # @api private
-#  Ensure nodev option set on /tmp partition (Scored)
+#  Ensure /tmp is configured (Scored)
 #
 #
 # Description:
-# The nodev mount option specifies that the filesystem cannot contain special devices.
+# The /tmp directory is a world-writable directory used for temporary storage
+# by all users and some applications.
 #
-# @summary  Ensure nodev option set on /tmp partition (Scored)
+# @summary  Ensure /tmp is configured (Scored)
 #
 # @param enforced Should this rule be enforced
 #
 # @example
 #   include secure_linux_cis::ensure_tmp_is_configured
 class secure_linux_cis::rules::ensure_tmp_is_configured(
-    Boolean $enforced = true,
+  Boolean $enforced = true,
 ) {
   if $enforced {
-    $mount = '/tmp'
-    $option = 'mode=1777,strictatime,noexec,nodev,nosuid'
-    secure_linux_cis::mount_options { "${mount}-${option}":
-      mount => $mount,
-      opt   => $option,
-    }
+    include secure_linux_cis::rules::ensure_separate_partition_exists_for_tmp
   }
 }
