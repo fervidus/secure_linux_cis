@@ -28,15 +28,16 @@ class secure_linux_cis::rules::ensure_default_deny_firewall_policy(
     'FORWARD:filter:IPv6',
   ]
 
-  # functionaily for RedHat 8 or later moved to ensure_default_zone_is_set rule
   if ($enforced) {
-    unless ($facts['osfamily'] == 'RedHat' and $facts['operatingsystemmajrelease'] == '8') {
+    if $secure_linux_cis::firewall == 'iptables' {
       firewallchain { $filter_rules:
         ensure   => present,
         schedule => 'harden_schedule',
         policy   => drop,
         tag      => 'cis_firewall_post',
       }
+    } elsif $secure_linux_cis::firewall == 'nftables' {
+      notify { 'ensure_default_deny_firewall_policy still needs to be implemented for nftables.': }
     }
   }
 }

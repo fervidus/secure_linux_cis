@@ -21,27 +21,31 @@ class secure_linux_cis::rules::ensure_loopback_traffic_is_configured(
     Boolean $enforced = true,
 ) {
   if $enforced {
-    firewall { '001 accept all input to lo interface':
-      chain    => 'INPUT',
-      schedule => 'harden_schedule',
-      proto    => 'all',
-      iniface  => 'lo',
-      action   => 'accept',
-      tag      => 'cis_firewall_pre',
-    }
-    -> firewall { '002 accept all output to lo interface':
-      chain    => 'OUTPUT',
-      proto    => 'all',
-      outiface => 'lo',
-      action   => 'accept',
-      tag      => 'cis_firewall_pre',
-    }
-    -> firewall { '003 drop all to lo 127.0.0.0/8':
-      chain  => 'INPUT',
-      proto  => 'all',
-      source => '127.0.0.0/8',
-      action => 'drop',
-      tag    => 'cis_firewall_pre',
+    if $secure_linux_cis::firewall == 'iptables' {
+      firewall { '001 accept all input to lo interface':
+        chain    => 'INPUT',
+        schedule => 'harden_schedule',
+        proto    => 'all',
+        iniface  => 'lo',
+        action   => 'accept',
+        tag      => 'cis_firewall_pre',
+      }
+      -> firewall { '002 accept all output to lo interface':
+        chain    => 'OUTPUT',
+        proto    => 'all',
+        outiface => 'lo',
+        action   => 'accept',
+        tag      => 'cis_firewall_pre',
+      }
+      -> firewall { '003 drop all to lo 127.0.0.0/8':
+        chain  => 'INPUT',
+        proto  => 'all',
+        source => '127.0.0.0/8',
+        action => 'drop',
+        tag    => 'cis_firewall_pre',
+      }
+    } elsif $secure_linux_cis::firewall == 'nftables' {
+      notify { 'ensure_loopback_traffic_is_configured still needs to be implemented for nftables.': }
     }
   }
 }

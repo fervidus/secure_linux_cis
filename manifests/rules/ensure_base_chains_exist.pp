@@ -9,7 +9,7 @@
 class secure_linux_cis::rules::ensure_base_chains_exist(
     Boolean $enforced = true,
 ) {
-  if $enforced {
+  if $enforced and $secure_linux_cis::firewall == 'nftables' {
     notify { 'ensure_base_chains_exist Still needs to be implemented.': }
   }
 }

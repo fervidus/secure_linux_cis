@@ -9,7 +9,7 @@
 class secure_linux_cis::rules::ensure_firewalld_service_is_enabled_and_running(
   Boolean $enforced = false,
 ) {
-  if $enforced {
+  if $enforced and $secure_linux_cis::firewall == 'firewalld' {
     include ::firewalld
   }
 }

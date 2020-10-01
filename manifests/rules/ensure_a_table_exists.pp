@@ -9,7 +9,7 @@
 class secure_linux_cis::rules::ensure_a_table_exists(
     Boolean $enforced = true,
 ) {
-  if $enforced {
+  if $enforced and $secure_linux_cis::firewall == 'nftables' {
     notify { 'ensure_a_table_exists Still needs to be implemented.': }
   }
 }
