@@ -20,7 +20,7 @@
 class secure_linux_cis::rules::ensure_iptables_is_not_enabled(
     Boolean $enforced = true,
 ) {
-  if $enforced {
+  if $enforced and $secure_linux_cis::firewall == 'firewalld' {
     package {'iptables-services':
       ensure => absent,
     }

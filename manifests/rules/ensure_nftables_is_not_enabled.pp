@@ -9,7 +9,7 @@
 class secure_linux_cis::rules::ensure_nftables_is_not_enabled(
     Boolean $enforced = true,
 ) {
-  if $enforced {
+  if $enforced and $secure_linux_cis::firewall != 'nftables' {
     service { 'nftables':
       ensure   => stopped,
       schedule => 'harden_schedule',
