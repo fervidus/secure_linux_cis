@@ -27,6 +27,21 @@ class secure_linux_cis::rules::ensure_authentication_required_for_single_user_mo
           }
         }
       }
+      'RedHat8','CentOS8': {
+        file_line { 'rescue':
+          schedule => 'harden_schedule',
+          path     => '/usr/lib/systemd/system/rescue.service',
+          line     => 'ExecStart=-/usr/lib/systemd/systemd-sulogin-shell rescue',
+          match    => '^ExecStart=',
+        }
+
+        file_line { 'emergency':
+          schedule => 'harden_schedule',
+          path     => '/usr/lib/systemd/system/emergency.service',
+          line     => 'ExecStart=-/usr/lib/systemd/systemd-sulogin-shell emergency',
+          match    => '^ExecStart=',
+        }
+      }
       default: {
         file_line { 'rescue':
           schedule => 'harden_schedule',

@@ -26,6 +26,11 @@ class secure_linux_cis::rules::ensure_source_routed_packets_are_not_accepted(
     Boolean $enforced = true,
 ) {
   if $enforced {
+    if $facts['osfamily'] == 'Debian' or ($facts['osfamily'] == 'RedHat' and $facts['os']['release']['major'] == '8') {
+      if $::secure_linux_cis::ipv6_enabled {
+        $do_ipv6 = true
+      }
+    }
     sysctl { 'net.ipv4.conf.all.accept_source_route':
       value    => 0,
       schedule => 'harden_schedule',
@@ -34,7 +39,7 @@ class secure_linux_cis::rules::ensure_source_routed_packets_are_not_accepted(
       value    => 0,
       schedule => 'harden_schedule',
     }
-    if $facts['osfamily'] == 'Debian' and $::secure_linux_cis::ipv6_enabled {
+    if $do_ipv6 {
       sysctl { 'net.ipv6.conf.all.accept_source_route':
         value    => 0,
         schedule => 'harden_schedule',
