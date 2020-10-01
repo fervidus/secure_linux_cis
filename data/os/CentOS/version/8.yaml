@@ -37,6 +37,7 @@ secure_linux_cis::workstation_level_1:
   - secure_linux_cis::distribution::centos8::cis_1_8_1_3
   - secure_linux_cis::distribution::centos8::cis_1_8_1_4
   - secure_linux_cis::distribution::centos8::cis_1_8_1_5
+  - secure_linux_cis::distribution::centos8::cis_1_8_1_6
   - secure_linux_cis::distribution::centos8::cis_1_8_2
   - secure_linux_cis::distribution::centos8::cis_1_9
   - secure_linux_cis::distribution::centos8::cis_1_10
@@ -272,6 +273,7 @@ secure_linux_cis::server_level_1:
   - secure_linux_cis::distribution::centos8::cis_1_8_1_3
   - secure_linux_cis::distribution::centos8::cis_1_8_1_4
   - secure_linux_cis::distribution::centos8::cis_1_8_1_5
+  - secure_linux_cis::distribution::centos8::cis_1_8_1_6
   - secure_linux_cis::distribution::centos8::cis_1_8_2
   - secure_linux_cis::distribution::centos8::cis_1_9
   - secure_linux_cis::distribution::centos8::cis_1_10
