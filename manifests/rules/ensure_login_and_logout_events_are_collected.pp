@@ -33,11 +33,20 @@ class secure_linux_cis::rules::ensure_login_and_logout_events_are_collected(
     }
     case $facts['osfamily'] {
       'RedHat': {
-        file_line { 'audit.rules login/logout 2':
-          ensure   => present,
-          schedule => 'harden_schedule',
-          path     => '/etc/audit/rules.d/audit.rules',
-          line     => '-w /var/run/faillock/ -p wa -k logins',
+        if $facts['os']['release']['major'] == '8' {
+          file_line { 'audit.rules login/logout 2':
+            ensure   => present,
+            schedule => 'harden_schedule',
+            path     => '/etc/audit/rules.d/audit.rules',
+            line     => '-w /var/log/faillog -p wa -k logins',
+          }
+        } else {
+          file_line { 'audit.rules login/logout 2':
+            ensure   => present,
+            schedule => 'harden_schedule',
+            path     => '/etc/audit/rules.d/audit.rules',
+            line     => '-w /var/run/faillock/ -p wa -k logins',
+          }
         }
       }
       'Debian': {
