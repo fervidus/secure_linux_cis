@@ -147,6 +147,11 @@ class secure_linux_cis (
     schedule => 'harden_schedule',
   }
 
+  file { '/usr/share/cis_scripts/enforced_rules.txt':
+    ensure  => file,
+    content => $enforced_rules.join("\n")
+  }
+
   include $enforced_rules
   include ::secure_linux_cis::reboot
 
