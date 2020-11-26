@@ -84,7 +84,7 @@ class secure_linux_cis (
   Enum['rsyslog', 'syslog-ng', 'none']    $logging                 = 'rsyslog',
   String                                  $logging_host            = '',  #lint:ignore:empty_string_assignment
   Boolean                                 $is_logging_host         = false,
-  Array[Stdlib::Unixhost]                 $exclude_logs            = [],
+  Array[Stdlib::Unixpath]                 $exclude_logs            = [],
   Integer                                 $max_log_file            = 32,
   Integer[1,4]                            $max_auth_tries          = 4,
   Integer[1,10]                           $max_sessions            = 4,
