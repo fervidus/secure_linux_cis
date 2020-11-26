@@ -3,6 +3,8 @@
 # @api public
 #
 # @param include_rules Which rules to include
+# @param exclude_rules Which rules to exclude
+# @param exclude_x_window_packages Which X window packages to exclude from removal
 # @param grub_config_files Grub configuration
 # @param aide_command Command used to invoke aide
 # @param su_group The default group for sudo rights
@@ -19,7 +21,9 @@
 # @param mac Which Mandatory Access Control to use
 # @param firewall Which Firewall provider to use
 # @param ipv6_enabled Should ipv6 be enabled
-# @param approved_mac_algorithms Which algorigthms are approved for use
+# @param approved_ciphers Which SSH Ciphers are approved for use
+# @param approved_kex Which SSH Key Exchange algorithms are approved for use.
+# @param approved_mac_algorithms Which SSH MAC algorigthms are approved for use
 # @param client_alive_interval Client alive interval to use
 # @param client_alive_count_max Maximum specificed client alive count
 # @param login_grace_time Login grace time
@@ -44,6 +48,8 @@
 # @param banner Optional string to be content of /etc/issue, /etc/issue.net (and /etc/motd if $motd not defined)
 # @param motd Optional string to be content of /etc/motd.  If $banner is defined and $motd is not, $banner becomes content of /etc/motd
 # @param auto_restart If an automatic restart should occur when defined classes require a reboot to take effect
+# @param grub_username Account name to authenticate against - defaults to root
+# @param grub_pbkdf2_password_hash String with value of pwssword in GRUB PBKDF2 format
 # @param schedule If you want to change when this runs use a scheduler
 # @param nologin_whitelist Array of accounts to allow login shell other than nologin
 #
@@ -75,11 +81,14 @@ class secure_linux_cis (
   Enum['1', '2']                          $enforcement_level       = '1',
   Array[String]                           $include_rules           = [],
   Array[String]                           $exclude_rules           = [],
+  Optional[Array[String]]                 $exclude_x_window_packages = undef,
   Array[String]                           $workstation_level_1     = [],
   Array[String]                           $workstation_level_2     = [],
   Array[String]                           $server_level_1          = [],
   Array[String]                           $server_level_2          = [],
   Boolean                                 $auto_restart            = false,
+  String                                  $grub_username           = root,
+  Optional[String]                        $grub_pbkdf2_password_hash = undef,
   Enum['rsyslog', 'syslog-ng', 'none']    $logging                 = 'rsyslog',
   String                                  $logging_host            = '',  #lint:ignore:empty_string_assignment
   Boolean                                 $is_logging_host         = false,
@@ -92,9 +101,33 @@ class secure_linux_cis (
   Enum['selinux', 'apparmor', 'none']     $mac                     = 'selinux',
   Enum['firewalld','nftables','iptables'] $firewall                = 'iptables',
   Boolean                                 $ipv6_enabled            = false,
-  Array                                   $approved_mac_algorithms =
-    ['hmac-sha2-512-etm@openssh.com','hmac-sha2-256-etm@openssh.com','umac-128-etm@openssh.com',
-  'hmac-sha2-512','hmac-sha2-256','umac-128@openssh.com'],
+  Array[String]                           $approved_ciphers        = [
+    'chacha20-poly1305@openssh.com',
+    'aes256-gcm@openssh.com',
+    'aes128-gcm@openssh.com',
+    'aes256-ctr',
+    'aes192-ctr',
+    'aes128-ctr'
+  ],
+  Array[String]                           $approved_kex            = [
+    'curve25519-sha256',
+    'curve25519-sha256@libssh.org',
+    'diffie-hellman-group14-sha256',
+    'diffie-hellman-group16-sha512',
+    'diffie-hellman-group18-sha512',
+    'ecdh-sha2-nistp521',
+    'ecdh-sha2-nistp384',
+    'ecdh-sha2-nistp256',
+    'diffie-hellman-group-exchange-sha256'
+  ],
+  Array[String]                           $approved_mac_algorithms = [
+    'hmac-sha2-512-etm@openssh.com',
+    'hmac-sha2-256-etm@openssh.com',
+    'umac-128-etm@openssh.com',
+    'hmac-sha2-512',
+    'hmac-sha2-256',
+    'umac-128@openssh.com'
+  ],
   Integer                                 $client_alive_interval   = 300, # must be between 1 and 300
   Integer[0,3]                            $client_alive_count_max  = 0,
   Integer                                 $login_grace_time        = 60,

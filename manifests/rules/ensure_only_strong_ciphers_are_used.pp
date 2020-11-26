@@ -17,14 +17,7 @@
 #   include secure_linux_cis::rules::ensure_only_strong_ciphers_are_used
 class secure_linux_cis::rules::ensure_only_strong_ciphers_are_used (
     Boolean $enforced = true,
-    Array $approved_ciphers = [
-      'chacha20-poly1305@openssh.com',
-      'aes256-gcm@openssh.com',
-      'aes128-gcm@openssh.com',
-      'aes256-ctr',
-      'aes192-ctr',
-      'aes128-ctr'
-    ]
+    Array[String] $approved_ciphers = $secure_linux_cis::approved_ciphers,
 ) {
   if $enforced {
     include ::secure_linux_cis::service
