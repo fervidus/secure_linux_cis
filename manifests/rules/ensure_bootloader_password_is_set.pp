@@ -17,13 +17,13 @@
 # @param grub_username
 #   Account name to authenticate against - defaults to root
 #
-# @param grub_password_hash
+# @param grub_pbkdf2_password_hash
 #   String with value of pwssword in GRUB PBKDF2 format
 #
 # @note IMPORTANT:
 #   grub_pbkdf2_password_hash must be set in hiera to implement. See associated grub documentation
 #   and test on non-production machines before using elsewhere in your environment
-# 
+#
 # @example Using hiera
 #   secure_linux_cis::rules::ensure_bootloader_password_is_set::enforced: true
 #   secure_linux_cis::rules::ensure_bootloader_password_is_set::grub_username: root
@@ -32,8 +32,8 @@
 
 class secure_linux_cis::rules::ensure_bootloader_password_is_set(
   Boolean $enforced = false,
-  String $grub_username = root,
-  Optional[String] $grub_pbkdf2_password_hash = undef,
+  String $grub_username = $secure_linux_cis::grub_username,
+  Optional[String] $grub_pbkdf2_password_hash = $secure_linux_cis::grub_pbkdf2_password_hash,
 ) {
   if $enforced {
     if $facts['grub_pass'] == undef {
