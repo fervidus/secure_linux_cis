@@ -6,12 +6,16 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_journald_is_configured_to_write_logfiles_to_persistent_disk
-class secure_linux_cis::rules::ensure_journald_is_configured_to_write_logfiles_to_persistent_disk {
-  file_line { 'journald_persist':
-    schedule => 'harden_schedule',
-    path     => '/etc/systemd/journald.conf',
-    line     => 'Storage=persistent',
-    match    => '^Storage=',
-    multiple => true,
+class secure_linux_cis::rules::ensure_journald_is_configured_to_write_logfiles_to_persistent_disk (
+    Boolean $enforced = true,
+) {
+  if $enforced {
+    file_line { 'journald_persist':
+      schedule => 'harden_schedule',
+      path     => '/etc/systemd/journald.conf',
+      line     => 'Storage=persistent',
+      match    => '^Storage\ *=',
+      multiple => true,
+    }
   }
 }
