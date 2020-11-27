@@ -9,6 +9,7 @@
 # @param time_servers Array of valid NTP Time servers
 # @param logging How logging is done
 # @param logging_host Which host should logging be sent to
+# @param exclude_logs What logs files to exclude from management
 # @param is_logging_host Is this host a logging host
 # @param max_log_file Maximum log file
 # @param max_auth_tries How many authorization attempts to allow
@@ -83,6 +84,7 @@ class secure_linux_cis (
   Enum['rsyslog', 'syslog-ng', 'none']    $logging                 = 'rsyslog',
   String                                  $logging_host            = '',  #lint:ignore:empty_string_assignment
   Boolean                                 $is_logging_host         = false,
+  Array[Stdlib::Unixpath]                 $exclude_logs            = [],
   Integer                                 $max_log_file            = 32,
   Integer[1,4]                            $max_auth_tries          = 4,
   Integer[1,10]                           $max_sessions            = 4,

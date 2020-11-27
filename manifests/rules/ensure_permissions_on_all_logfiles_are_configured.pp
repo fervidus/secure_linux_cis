@@ -7,16 +7,18 @@
 #
 # Rationale:
 # It is important to ensure that log files have the correct permissions to ensure that sensitive
-#data is archived and protected.
+# data is archived and protected.
 #
 # @summary Ensure permissions on all logfiles are configured (Scored)
 #
 # @param enforced Should this rule be enforced
+# @param exclude_logs Array of logs to exclude from permissions enforcement
 #
 # @example
 #   include secure_linux_cis::ensure_permissions_on_all_logfiles_are_configured
 class secure_linux_cis::rules::ensure_permissions_on_all_logfiles_are_configured(
     Boolean $enforced = true,
+    Array[Stdlib::Unixpath] $exclude_logs = $secure_linux_cis::exclude_logs,
 ) {
   if $enforced {
     file { '/usr/share/cis_scripts/var_log_permissions.sh':
@@ -31,7 +33,11 @@ class secure_linux_cis::rules::ensure_permissions_on_all_logfiles_are_configured
     # Fix permissions on all files reported by this fact as wrong.
     if $facts['var_log_permissions'] {
       $logfiles = split($facts['var_log_permissions'],'\n')
-      file { $logfiles:
+
+      # Remove any ignored logs from the list.
+      $_logfiles = $logfiles - $exclude_logs
+
+      file { $_logfiles:
         schedule => 'harden_schedule',
         mode     => 'g-wx,o-rwx',  #lint:ignore:no_symbolic_file_modes
       }
