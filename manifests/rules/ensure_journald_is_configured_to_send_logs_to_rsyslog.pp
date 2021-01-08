@@ -14,7 +14,7 @@ class secure_linux_cis::rules::ensure_journald_is_configured_to_send_logs_to_rsy
       schedule => 'harden_schedule',
       path     => '/etc/systemd/journald.conf',
       line     => 'ForwardToSyslog=yes',
-      match    => '^ForwardToSyslog\ ?=',
+      match    => '^ForwardToSyslog\ *=',
       multiple => true,
     }
   }

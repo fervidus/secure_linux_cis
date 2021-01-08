@@ -1,5 +1,9 @@
 # Changelog
 
+## Release 2.0.17
+
+* Strengthened ciphers. Thanks to Tom Parker @tparkercbn.
+
 ## Release 2.0.14
 
 * Cleaned up and fixed the way /var/log directory is secured.

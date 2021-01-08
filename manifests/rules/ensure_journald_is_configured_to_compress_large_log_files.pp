@@ -14,7 +14,7 @@ class secure_linux_cis::rules::ensure_journald_is_configured_to_compress_large_l
       schedule => 'harden_schedule',
       path     => '/etc/systemd/journald.conf',
       line     => 'Compress=yes',
-      match    => '^Compress\ ?=',
+      match    => '^Compress\ *=',
       multiple => true,
     }
   }
