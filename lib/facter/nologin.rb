@@ -13,7 +13,7 @@ Facter.add('nologin') do
     users = []
 
     user_list.each do |user|
-      users.push(%r{^[^:]*}.match(user))
+      users.push(%r{^[^:]*}.match(user).to_s)
     end
     users
   end
