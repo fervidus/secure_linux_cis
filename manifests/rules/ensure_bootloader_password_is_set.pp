@@ -45,7 +45,8 @@ class secure_linux_cis::rules::ensure_bootloader_password_is_set(
     }
     unless $grub_pbkdf2_password_hash == undef {
       grub_user { $grub_username:
-        password => $grub_pbkdf2_password_hash
+        password  => $grub_pbkdf2_password_hash,
+        superuser => true,
       }
     }
     else {
