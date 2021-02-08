@@ -1,5 +1,9 @@
 # Changelog
 
+## Release 2.0.18
+
+* Ensure grub2 password is super user
+
 ## Release 2.0.17
 
 * Strengthened ciphers. Thanks to Tom Parker @tparkercbn.
