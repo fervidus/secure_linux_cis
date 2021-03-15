@@ -1,0 +1,71 @@
+config:
+  enable_pull_requests_from_forks: false
+  enable_pe_plans: true
+pipelines:
+  main:
+    triggers:
+    - "COMMIT"
+    stages:
+    - name: "Code Validation stage"
+      steps:
+      - type: "JOB"
+        name: "module-pdk-validate"
+        concurrent_compilations: 0
+        all_deployments: false
+      - type: "JOB"
+        name: "module-rspec-puppet"
+        concurrent_compilations: 0
+        all_deployments: false
+      - type: "PULL_REQUEST_GATE"
+        concurrent_compilations: 0
+        all_deployments: false
+      auto_promote: "all_succeeded"
+    - name: "Development Deployment"
+      steps:
+      - type: "DEPLOYMENT"
+        name: "Deployment to env_development on Fervid-Puppet"
+        policy:
+          name: "cd4pe_deployments::eventual_consistency"
+        timeout: 3600000
+        concurrent_compilations: 0
+        all_deployments: false
+        pe_server: "Fervid-Puppet"
+        target:
+          type: "NODE_GROUP"
+          node_group_id: "2f4a37f5-fc3f-478f-a98c-f3c97b1e7251"
+      auto_promote: "all_succeeded"
+    - name: "Production Deployment"
+      steps:
+      - type: "DEPLOYMENT"
+        name: "Deployment to env_production on Fervid-Puppet"
+        policy:
+          name: "cd4pe_deployments::eventual_consistency"
+        timeout: 3600000
+        concurrent_compilations: 0
+        all_deployments: false
+        pe_server: "Fervid-Puppet"
+        target:
+          type: "NODE_GROUP"
+          node_group_id: "7ee5e463-d5b3-49b7-bf84-00ef26ea991c"
+      auto_promote: false
+  /testenv_.*/:
+    triggers:
+    - "COMMIT"
+    stages:
+    - name: "Feature Deployment"
+      steps:
+      - type: "DEPLOYMENT"
+        name: "Deployment on Fervid-Puppet"
+        policy:
+          name: "cd4pe_deployments::feature_branch"
+        timeout: 3600000
+        concurrent_compilations: 0
+        all_deployments: false
+        pe_server: "Fervid-Puppet"
+        target:
+          type: "NODE_GROUP"
+        control_repo: "control-repo_fervid"
+        base_feature_branch: "main"
+      auto_promote: false
+spec_version: "V1"
+
