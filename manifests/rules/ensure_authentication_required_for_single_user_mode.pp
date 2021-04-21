@@ -27,7 +27,7 @@ class secure_linux_cis::rules::ensure_authentication_required_for_single_user_mo
           }
         }
       }
-      'RedHat8','CentOS8': {
+      'RedHat8', 'CentOS8', 'OracleLinux8': {
         file_line { 'rescue':
           schedule => 'harden_schedule',
           path     => '/usr/lib/systemd/system/rescue.service',
