@@ -4,7 +4,7 @@ Facter.add('are_legacy_crypto_policies') do
 
   setcode do
     File.open('/etc/crypto-policies/config').each do |i|
-      return true if i =~ %r{^\s*LEGACY\s*(\s+#.*)?$}i # Skip localhost
+      return true if %r{^\s*LEGACY\s*(\s+#.*)?$}i.match?(i) # Skip localhost
     end
 
     false

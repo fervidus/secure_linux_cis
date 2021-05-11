@@ -4,7 +4,7 @@ Facter.add('is_crypto_policy_future') do
 
   setcode do
     File.open('/etc/crypto-policies/config').each do |i|
-      return true if i =~ %r{^\s*(FUTURE|FIPS)\s*(\s+#.*)?$}i # Skip localhost
+      return true if %r{^\s*(FUTURE|FIPS)\s*(\s+#.*)?$}i.match?(i) # Skip localhost
     end
 
     false

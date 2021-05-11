@@ -7,7 +7,7 @@ Facter.add('shm_nosuid') do
   confine kernel: 'Linux'
   setcode do
     shmns = Facter::Core::Execution.exec('mount | grep /dev/shm')
-    if shmns.match?(%r{nosuid})
+    if shmns.include?('nosuid')
       true
     else
       false

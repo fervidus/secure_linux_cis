@@ -23,23 +23,25 @@ This Puppet module implements security controls defined in the Center for Intern
 
 | Operating System | Benchmark Version |
 |------------------|-------------------|
-| Aliyun       | 2.2.0 |
-| Amazon 2017  | 2.2.0 |
-| Amazon 2     | 2.2.0 |
-| CentOS 6     | 2.1.0 |
-| CentOS 7     | 2.2.0 |
+| Aliyun 2     | 1.0.0 |
+| Amazon 2     | 1.0.0 |
+| CentOS 7     | 3.0.0 |
 | CentOS 8     | 1.0.0 |
 | Debian 8     | 2.0.1 |
 | Debian 9     | 1.0.1 |
-| Oracle 6     | 1.0.0 |
-| Oracle 7     | 2.2.0 |
-| Oracle 8     | 1.1.0 |
-| RedHat 6     | 2.1.0 |
-| RedHat 7     | 2.2.0 |
+| Debian 10    | 1.0.0 |
+| Oracle 6     | 2.0.0 |
+| Oracle 7     | 3.0.0 |
+| Oracle 8     | 1.0.0 |
+| RedHat 6     | 3.0.0 |
+| RedHat 7     | 3.0.1 |
 | RedHat 8     | 1.0.0 |
 | SLES   12    | 2.1.0 |
+| SLES   15    | 1.0.0 |
+| Ubuntu 14.04 | 2.1.0 |
 | Ubuntu 16.04 | 1.1.0 |
-| Ubuntu 18.04 | 2.1.0 |
+| Ubuntu 18.04 | 2.0.1 |
+| Ubuntu 20.04 | 1.0.0 |
 
 CIS Benchmarks can be found [here](https://www.cisecurity.org/benchmark).
 

@@ -16,15 +16,11 @@
 #
 # @example
 #   include secure_linux_cis::ensure_logging_is_configured
-class secure_linux_cis::rules::ensure_logging_is_configured(
-    Boolean $enforced = true,
-) {
+class secure_linux_cis::rules::ensure_logging_is_configured {
 
   Class['::secure_linux_cis::rules::ensure_logging_is_configured']
   ~> Class['::secure_linux_cis::reboot']
-
-  if $enforced {
-    if $::secure_linux_cis::logging == 'rsyslog' {
+    if $secure_linux_cis::logging == 'rsyslog' {
       $configs = {
         '*.emerg'                 => ':omusrmsg:*',
         'mail.*'                  => '-/var/log/mail',
@@ -44,11 +40,9 @@ class secure_linux_cis::rules::ensure_logging_is_configured(
       }
       $configs.each | $config, $dest | {
         file { "/etc/rsyslog.d/${config}":
-          ensure   => file,
-          schedule => 'harden_schedule',
-          content  => "${config} ${dest}",
+          ensure  => file,
+          content => "${config} ${dest}",
         }
       }
     }
-  }
 }

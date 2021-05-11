@@ -22,18 +22,13 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_allowtcpforwarding_is_disabled
-class secure_linux_cis::rules::ensure_ssh_allowtcpforwarding_is_disabled(
-    Boolean $enforced = true,
-) {
-  if $enforced {
-    include ::secure_linux_cis::service
+class secure_linux_cis::rules::ensure_ssh_allowtcpforwarding_is_disabled {
+    include secure_linux_cis::service
     file_line { 'ssh tcpforward':
-      ensure   => present,
-      schedule => 'harden_schedule',
-      path     => '/etc/ssh/sshd_config',
-      line     => 'AllowTcpForwarding no',
-      match    => '^#?[\r\n\f\v ]?AllowTcpForwarding',
-      notify   => Exec['reload sshd'],
+      ensure => present,
+      path   => '/etc/ssh/sshd_config',
+      line   => 'AllowTcpForwarding no',
+      match  => '^#?[\r\n\f\v ]?AllowTcpForwarding',
+      notify => Exec['reload sshd'],
     }
-  }
 }

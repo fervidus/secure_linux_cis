@@ -6,10 +6,9 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_firewalld_service_is_enabled_and_running
-class secure_linux_cis::rules::ensure_firewalld_service_is_enabled_and_running(
-  Boolean $enforced = false,
-) {
-  if $enforced and $secure_linux_cis::firewall == 'firewalld' {
-    include ::firewalld
+class secure_linux_cis::rules::ensure_firewalld_service_is_enabled_and_running {
+  service { 'firewalld':
+    ensure => running,
+    enable => true,
   }
 }

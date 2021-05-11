@@ -15,16 +15,11 @@
 #
 # @example
 #   include secure_linux_cis::ensure_remote_login_warning_banner_is_configured_properly
-class secure_linux_cis::rules::ensure_remote_login_warning_banner_is_configured_properly(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::ensure_remote_login_warning_banner_is_configured_properly {
     if $facts['issue_net'] {
       notify { 'issuen':
         message  => 'Not in compliance with CIS (Scored). OS and/or patch level information in /etc/issue.net',
-        schedule => 'harden_schedule',
         loglevel => 'warning',
       }
     }
-  }
 }

@@ -19,8 +19,7 @@ class secure_linux_cis::rules::ensure_only_strong_ciphers_are_used (
     Boolean $enforced = true,
     Array[String] $approved_ciphers = $secure_linux_cis::approved_ciphers,
 ) {
-  if $enforced {
-    include ::secure_linux_cis::service
+    include secure_linux_cis::service
     $acceptable_values = [
       'chacha20-poly1305@openssh.com',
       'aes256-gcm@openssh.com',
@@ -36,12 +35,10 @@ class secure_linux_cis::rules::ensure_only_strong_ciphers_are_used (
     }
     $ciphers_array = join($approved_ciphers,',')
     file_line { 'ssh ciphers':
-      ensure   => 'present',
-      schedule => 'harden_schedule',
-      path     => '/etc/ssh/sshd_config',
-      line     => "Ciphers ${ciphers_array}",
-      match    => '^#?Ciphers',
-      notify   => Exec['reload sshd'],
+      ensure => 'present',
+      path   => '/etc/ssh/sshd_config',
+      line   => "Ciphers ${ciphers_array}",
+      match  => '^#?Ciphers',
+      notify => Exec['reload sshd'],
     }
-  }
 }

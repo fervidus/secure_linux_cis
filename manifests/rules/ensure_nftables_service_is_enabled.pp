@@ -7,4 +7,9 @@
 # @example
 #   include secure_linux_cis::rules::ensure_nftables_service_is_enabled
 class secure_linux_cis::rules::ensure_nftables_service_is_enabled {
+  # Handled in nftables module
+  # service { 'nftables':
+  #   ensure => running,
+  #   enable => true,
+  # }
 }

@@ -14,22 +14,16 @@
 #
 # @example
 #   include secure_linux_cis::ensure_rsyslog_is_configured_to_send_logs_to_a_remote_log_host
-class secure_linux_cis::rules::ensure_rsyslog_is_configured_to_send_logs_to_a_remote_log_host(
-    Boolean $enforced = true,
-) {
+class secure_linux_cis::rules::ensure_rsyslog_is_configured_to_send_logs_to_a_remote_log_host {
 
   Class['secure_linux_cis::rules::ensure_rsyslog_is_configured_to_send_logs_to_a_remote_log_host']
   ~> Class['::secure_linux_cis::reboot']
-
-  if $enforced {
-    if $::secure_linux_cis::logging == 'rsyslog' and $::secure_linux_cis::logging_host != '' {
+    if $secure_linux_cis::logging == 'rsyslog' and $secure_linux_cis::logging_host != '' {
       file_line { 'rsyslog.conf logging_host':
-        ensure   => present,
-        schedule => 'harden_schedule',
-        path     => '/etc/rsyslog.conf',
-        line     => "*.* @@${::secure_linux_cis::logging_host}",
-        match    => '\*\.\* @@',
+        ensure => present,
+        path   => '/etc/rsyslog.conf',
+        line   => "*.* @@${secure_linux_cis::logging_host}",
+        match  => '\*\.\* @@',
       }
     }
-  }
 }

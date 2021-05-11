@@ -18,12 +18,8 @@
 #
 # @example
 #   include secure_linux_cis::ensure_sctp_is_disabled
-class secure_linux_cis::rules::ensure_sctp_is_disabled(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::ensure_sctp_is_disabled {
     kmod::install { 'sctp':
       command => '/bin/true',
     }
-  }
 }

@@ -16,13 +16,8 @@
 #
 # @example
 #   include secure_linux_cis::ensure_tcp_wrappers_is_installed
-class secure_linux_cis::rules::ensure_tcp_wrappers_is_installed(
-    Boolean $enforced = true,
-) {
-  if $enforced {
-    package { $::secure_linux_cis::tcp_wrappers_package:
+class secure_linux_cis::rules::ensure_tcp_wrappers_is_installed {
+    package { $secure_linux_cis::tcp_wrappers_package:
       ensure   => installed,
-      schedule => 'harden_schedule',
     }
-  }
 }

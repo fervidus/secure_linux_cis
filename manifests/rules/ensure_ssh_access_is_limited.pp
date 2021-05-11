@@ -36,64 +36,55 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_access_is_limited
-class secure_linux_cis::rules::ensure_ssh_access_is_limited(
-    Boolean $enforced = true,
-) {
-  if $enforced {
-    include ::secure_linux_cis::service
-    if $::secure_linux_cis::allow_users == [] and $::secure_linux_cis::allow_groups == [] and $::secure_linux_cis::deny_users == [] and
-        $::secure_linux_cis::deny_groups == [] {
+class secure_linux_cis::rules::ensure_ssh_access_is_limited {
+    include secure_linux_cis::service
+    if $secure_linux_cis::allow_users == [] and $secure_linux_cis::allow_groups == [] and $secure_linux_cis::deny_users == [] and
+        $secure_linux_cis::deny_groups == [] {
       notify { 'allow_groups':
         message  => 'Not in compliance with CIS 4 (Scored). One or more parameters in /etc/ssh/sshd_config have not been set.',
-        schedule => 'harden_schedule',
         loglevel => 'warning',
       }
     }
     else {
-      if $::secure_linux_cis::allow_users != [] {
-        $user_list_allow = join($::secure_linux_cis::allow_users, ' ')
+      if $secure_linux_cis::allow_users != [] {
+        $user_list_allow = join($secure_linux_cis::allow_users, ' ')
         file_line{ 'ssh allow users':
-          ensure   => 'present',
-          schedule => 'harden_schedule',
-          path     => '/etc/ssh/sshd_config',
-          line     => "AllowUsers ${user_list_allow}",
-          match    => '^#?AllowUsers',
-          notify   => Exec['reload sshd'],
+          ensure => 'present',
+          path   => '/etc/ssh/sshd_config',
+          line   => "AllowUsers ${user_list_allow}",
+          match  => '^#?AllowUsers',
+          notify => Exec['reload sshd'],
         }
       }
-      if $::secure_linux_cis::allow_groups != [] {
-        $group_list_allow = join($::secure_linux_cis::allow_groups, ' ')
+      if $secure_linux_cis::allow_groups != [] {
+        $group_list_allow = join($secure_linux_cis::allow_groups, ' ')
         file_line{ 'ssh allow groups':
-          ensure   => 'present',
-          schedule => 'harden_schedule',
-          path     => '/etc/ssh/sshd_config',
-          line     => "AllowGroups ${group_list_allow}",
-          match    => '^#?AllowGroups',
-          notify   => Exec['reload sshd'],
+          ensure => 'present',
+          path   => '/etc/ssh/sshd_config',
+          line   => "AllowGroups ${group_list_allow}",
+          match  => '^#?AllowGroups',
+          notify => Exec['reload sshd'],
         }
       }
-      if $::secure_linux_cis::deny_users != [] {
-        $user_list_deny = join($::secure_linux_cis::deny_users, ' ')
+      if $secure_linux_cis::deny_users != [] {
+        $user_list_deny = join($secure_linux_cis::deny_users, ' ')
         file_line{ 'ssh deny users':
-          ensure   => 'present',
-          schedule => 'harden_schedule',
-          path     => '/etc/ssh/sshd_config',
-          line     => "DenyUsers ${user_list_deny}",
-          match    => '^#?DenyUsers',
-          notify   => Exec['reload sshd'],
+          ensure => 'present',
+          path   => '/etc/ssh/sshd_config',
+          line   => "DenyUsers ${user_list_deny}",
+          match  => '^#?DenyUsers',
+          notify => Exec['reload sshd'],
         }
       }
-      if $::secure_linux_cis::deny_groups != [] {
-        $group_list_deny = join($::secure_linux_cis::deny_groups, ' ')
+      if $secure_linux_cis::deny_groups != [] {
+        $group_list_deny = join($secure_linux_cis::deny_groups, ' ')
         file_line{ 'ssh deny groups':
-          ensure   => 'present',
-          schedule => 'harden_schedule',
-          path     => '/etc/ssh/sshd_config',
-          line     => "DenyGroups ${group_list_deny}",
-          match    => '^#?DenyGroups',
-          notify   => Exec['reload sshd'],
+          ensure => 'present',
+          path   => '/etc/ssh/sshd_config',
+          line   => "DenyGroups ${group_list_deny}",
+          match  => '^#?DenyGroups',
+          notify => Exec['reload sshd'],
         }
       }
     }
-  }
 }

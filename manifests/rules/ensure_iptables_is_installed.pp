@@ -14,15 +14,8 @@
 #
 # @example
 #   include secure_linux_cis::ensure_iptables_is_installed
-class secure_linux_cis::rules::ensure_iptables_is_installed(
-    Boolean $enforced = true,
-) {
-  if $enforced {
-    include $::secure_linux_cis::firewall_package
-
-    resources { 'firewall':
-      purge    => true,
-      schedule => 'harden_schedule',
+class secure_linux_cis::rules::ensure_iptables_is_installed {
+    package { 'iptables':
+      ensure => installed,
     }
-  }
 }

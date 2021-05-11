@@ -20,18 +20,14 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_loglevel_is_set_to_info
-class secure_linux_cis::rules::ensure_ssh_loglevel_is_set_to_info(
-    Boolean $enforced = true,
-) {
-  if $enforced {
-    include ::secure_linux_cis::service
-    file_line { 'ssh log level':
-      ensure   => present,
-      schedule => 'harden_schedule',
-      path     => '/etc/ssh/sshd_config',
-      line     => 'LogLevel INFO',
-      match    => '^LogLevel',
-      notify   => Exec['reload sshd'],
-    }
+class secure_linux_cis::rules::ensure_ssh_loglevel_is_set_to_info {
+  include secure_linux_cis::service
+
+  file_line { 'ssh log level':
+    ensure => present,
+    path   => '/etc/ssh/sshd_config',
+    line   => 'LogLevel INFO',
+    match  => '^LogLevel',
+    notify => Exec['reload sshd'],
   }
 }

@@ -12,16 +12,11 @@
 #
 # @example
 #   include secure_linux_cis::ensure_separate_partition_exists_for_var
-class secure_linux_cis::rules::ensure_separate_partition_exists_for_var(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::ensure_separate_partition_exists_for_var {
     unless $facts['mountpoints']['/var'] {
       notify { 'vp':
         message  => 'Not in compliance with CIS  (Scored). A seperate partition does not exist for /var',
-        schedule => 'harden_schedule',
         loglevel => 'warning',
       }
     }
-  }
 }

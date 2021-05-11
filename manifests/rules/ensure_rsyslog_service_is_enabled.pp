@@ -15,16 +15,11 @@
 #
 # @example
 #   include secure_linux_cis::ensure_rsyslog_service_is_enabled
-class secure_linux_cis::rules::ensure_rsyslog_service_is_enabled(
-    Boolean $enforced = true,
-) {
-  if $enforced {
-    if $::secure_linux_cis::logging == 'rsyslog' {
+class secure_linux_cis::rules::ensure_rsyslog_service_is_enabled {
+    if $secure_linux_cis::logging == 'rsyslog' {
       service { 'rsyslog':
-        ensure   => running,
-        schedule => 'harden_schedule',
-        enable   => true,
+        ensure => running,
+        enable => true,
       }
     }
-  }
 }

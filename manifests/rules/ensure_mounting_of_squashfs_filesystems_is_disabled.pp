@@ -16,12 +16,8 @@
 #
 # @example
 #   include secure_linux_cis::ensure_mounting_of_squashfs_filesystems_is_disabled
-class secure_linux_cis::rules::ensure_mounting_of_squashfs_filesystems_is_disabled(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::ensure_mounting_of_squashfs_filesystems_is_disabled {
     kmod::install { 'squashfs':
       command => '/bin/true',
     }
-  }
 }

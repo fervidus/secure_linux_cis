@@ -6,13 +6,8 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_xinetd_is_not_installed
-class secure_linux_cis::rules::ensure_xinetd_is_not_installed(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::ensure_xinetd_is_not_installed {
     package { 'xinetd':
       ensure   => purged,
-      schedule => 'harden_schedule',
     }
-  }
 }

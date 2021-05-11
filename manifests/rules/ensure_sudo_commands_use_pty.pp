@@ -6,15 +6,10 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_sudo_commands_use_pty
-class secure_linux_cis::rules::ensure_sudo_commands_use_pty(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::ensure_sudo_commands_use_pty {
     file_line { 'sudo_rule_pry':
-      schedule => 'harden_schedule',
-      path     => '/etc/sudoers',
-      line     => 'Defaults use_pty',
-      match    => '^#?Defaults\s+use_pty',
+      path  => '/etc/sudoers',
+      line  => 'Defaults use_pty',
+      match => '^#?Defaults\s+use_pty',
     }
-  }
 }

@@ -1,6 +1,6 @@
 {
   "name": "fervid-secure_linux_cis",
-  "version": "2.1.18",
+  "version": "3.0.0",
   "author": "Fervid",
   "summary": "This module hardens Linux servers to CIS security compliance",
   "license": "Apache-2.0",
@@ -81,6 +81,10 @@
       "version_requirement": ">= 1.0.0 < 2.0.0"
     },
     {
+      "name": "puppetlabs/nftables",
+      "version_requirement": ">= 1.0.0 < 2.0.0"
+    },
+    {
       "name": "puppetlabs/ntp",
       "version_requirement": ">= 8.0.0 < 9.0.0"
     },
@@ -152,7 +156,7 @@
       "version_requirement": ">= 5.0.0 < 7.0.0"
     }
   ],
-  "pdk-version": "1.18.1",
-  "template-url": "https://github.com/puppetlabs/pdk-templates#1.18.1",
-  "template-ref": "tags/1.18.1-0-g3d2e75c"
+  "pdk-version": "2.0.0",
+  "template-url": "https://github.com/puppetlabs/pdk-templates#2.0.0",
+  "template-ref": "tags/2.0.0-0-ge838f1d"
 }

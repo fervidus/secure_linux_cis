@@ -6,10 +6,4 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_iptables_are_flushed
-class secure_linux_cis::rules::ensure_iptables_are_flushed(
-    Boolean $enforced = true,
-) {
-  if $enforced and $secure_linux_cis::firewall == 'nftables' {
-    notify { 'ensure_iptables_are_flushed Still needs to be implemented.': }
-  }
-}
+class secure_linux_cis::rules::ensure_iptables_are_flushed { }

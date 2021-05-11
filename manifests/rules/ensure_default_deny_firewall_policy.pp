@@ -15,29 +15,40 @@
 #
 # @example
 #   include secure_linux_cis::ensure_default_deny_firewall_policy
-class secure_linux_cis::rules::ensure_default_deny_firewall_policy(
-    Boolean $enforced = true,
-) {
-  # Create default drop policy for ipv4 and ipv6
-  $filter_rules = [
-    'INPUT:filter:IPv4',
-    'OUTPUT:filter:IPv4',
-    'FORWARD:filter:IPv4',
-    'INPUT:filter:IPv6',
-    'OUTPUT:filter:IPv6',
-    'FORWARD:filter:IPv6',
-  ]
+class secure_linux_cis::rules::ensure_default_deny_firewall_policy {
 
-  if ($enforced) {
-    if $secure_linux_cis::firewall == 'iptables' {
-      firewallchain { $filter_rules:
-        ensure   => present,
-        schedule => 'harden_schedule',
-        policy   => drop,
-        tag      => 'cis_firewall_post',
+  case $secure_linux_cis::firewall {
+    'iptables': {
+      # Create default drop policy for ipv4
+      $ip_tables_filter_rules = [
+        'INPUT:filter:IPv4',
+        'OUTPUT:filter:IPv4',
+        'FORWARD:filter:IPv4',
+      ]
+
+      firewallchain { $ip_tables_filter_rules:
+        ensure => present,
+        policy => drop,
+        tag    => 'cis_firewall_post',
       }
-    } elsif $secure_linux_cis::firewall == 'nftables' {
-      notify { 'ensure_default_deny_firewall_policy still needs to be implemented for nftables.': }
     }
+    'nftables': {
+      # Addressed in nftables module
+      # nftables::rule { 'INPUT-default':
+      #   order   => '01',
+      #   content => 'type filter hook input priority 0; policy drop;',
+      # }
+
+      # nftables::rule { 'OUTPUT-default':
+      #   order   => '01',
+      #   content => 'type filter hook output priority 0; policy drop;',
+      # }
+
+      # nftables::rule { 'FORWARD-default':
+      #   order   => '01',
+      #   content => 'type filter hook forward priority 0; policy drop;',
+      # }
+    }
+    default: { file('Need iptables or nftables firewall.') }
   }
 }

@@ -6,11 +6,10 @@
 # @example
 #   include secure_linux_cis::reboot
 class secure_linux_cis::reboot {
-  if $::secure_linux_cis::auto_restart {
+  if $secure_linux_cis::auto_restart {
     reboot { 'after_run':
-      apply    => 'finished',
-      schedule => 'harden_schedule',
-      timeout  => 60,
+      apply   => 'finished',
+      timeout => 60,
     }
   }
 }

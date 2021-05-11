@@ -12,23 +12,17 @@
 #
 # @example
 #   include secure_linux_cis::ensure_the_mcs_translation_service_mcstrans_is_not_installed
-class secure_linux_cis::rules::ensure_the_mcs_translation_service_mcstrans_is_not_installed(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::ensure_the_mcs_translation_service_mcstrans_is_not_installed {
     case $facts['osfamily'] {
       'Suse': {
         package { 'mcstrans':
           ensure   => absent,
-          schedule => 'harden_schedule',
         }
       }
       default: {
         package { 'mcstrans':
           ensure   => purged,
-          schedule => 'harden_schedule',
         }
       }
     }
-  }
 }
