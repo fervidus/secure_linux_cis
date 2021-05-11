@@ -12,23 +12,17 @@
 #
 # @example
 #   include secure_linux_cis::ensure_setroubleshoot_is_not_installed
-class secure_linux_cis::rules::ensure_setroubleshoot_is_not_installed(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::ensure_setroubleshoot_is_not_installed {
     case $facts['osfamily'] {
       'Suse': {
         package { 'setroubleshoot':
           ensure   => absent,
-          schedule => 'harden_schedule',
         }
       }
       default: {
         package { 'setroubleshoot':
           ensure   => purged,
-          schedule => 'harden_schedule',
         }
       }
     }
-  }
 }

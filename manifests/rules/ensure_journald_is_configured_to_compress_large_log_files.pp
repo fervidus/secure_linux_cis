@@ -6,16 +6,11 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_journald_is_configured_to_compress_large_log_files
-class secure_linux_cis::rules::ensure_journald_is_configured_to_compress_large_log_files (
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::ensure_journald_is_configured_to_compress_large_log_files  {
     file_line { 'journald_compress':
-      schedule => 'harden_schedule',
       path     => '/etc/systemd/journald.conf',
       line     => 'Compress=yes',
       match    => '^Compress\ *=',
       multiple => true,
     }
-  }
 }

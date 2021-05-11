@@ -7,7 +7,7 @@ Facter.add('shm_nodev') do
   confine kernel: 'Linux'
   setcode do
     shm = Facter::Core::Execution.exec('mount | grep /dev/shm')
-    if shm.match?(%r{nodev})
+    if shm.include?('nodev')
       true
     else
       false

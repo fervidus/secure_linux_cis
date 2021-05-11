@@ -22,8 +22,7 @@ class secure_linux_cis::rules::ensure_only_strong_key_exchange_algorithms_are_us
     Boolean $enforced = true,
     Array[String] $approved_kex = $secure_linux_cis::approved_kex,
 ) {
-  if $enforced {
-    include ::secure_linux_cis::service
+    include secure_linux_cis::service
     $acceptable_values = [
       'curve25519-sha256',
       'curve25519-sha256@libssh.org',
@@ -42,12 +41,10 @@ class secure_linux_cis::rules::ensure_only_strong_key_exchange_algorithms_are_us
     }
     $kex_array = join($approved_kex,',')
     file_line { 'ssh kex':
-      ensure   => 'present',
-      schedule => 'harden_schedule',
-      path     => '/etc/ssh/sshd_config',
-      line     => "KexAlgorithms ${kex_array}",
-      match    => '^#?KexAlgorithms',
-      notify   => Exec['reload sshd'],
+      ensure => 'present',
+      path   => '/etc/ssh/sshd_config',
+      line   => "KexAlgorithms ${kex_array}",
+      match  => '^#?KexAlgorithms',
+      notify => Exec['reload sshd'],
     }
-  }
 }

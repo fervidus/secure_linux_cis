@@ -17,34 +17,29 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_ipv6_loopback_traffic_is_configured
-class secure_linux_cis::rules::ensure_ipv6_loopback_traffic_is_configured(
-    Boolean $enforced = true,
-) {
-  if $enforced {
-    firewall { '001 IPv6 accept all input to lo interface':
-      chain    => 'INPUT',
-      schedule => 'harden_schedule',
-      proto    => 'all',
-      iniface  => 'lo',
-      action   => 'accept',
-      provider => 'ip6tables',
-      tag      => 'cis_firewall_pre',
-    }
-    -> firewall { '002 IPv6 accept all output to lo interface':
-      chain    => 'OUTPUT',
-      proto    => 'all',
-      outiface => 'lo',
-      action   => 'accept',
-      provider => 'ip6tables',
-      tag      => 'cis_firewall_pre',
-    }
-    -> firewall { '003 IPv6 drop all to lo ::/0':
-      chain    => 'INPUT',
-      proto    => 'all',
-      source   => '::1',
-      action   => 'drop',
-      provider => 'ip6tables',
-      tag      => 'cis_firewall_pre',
-    }
+class secure_linux_cis::rules::ensure_ipv6_loopback_traffic_is_configured {
+  firewall { '001 IPv6 accept all input to lo interface':
+    chain    => 'INPUT',
+    proto    => 'all',
+    iniface  => 'lo',
+    action   => 'accept',
+    provider => 'ip6tables',
+    tag      => 'cis_firewall_pre',
+  }
+  -> firewall { '002 IPv6 accept all output to lo interface':
+    chain    => 'OUTPUT',
+    proto    => 'all',
+    outiface => 'lo',
+    action   => 'accept',
+    provider => 'ip6tables',
+    tag      => 'cis_firewall_pre',
+  }
+  -> firewall { '003 IPv6 drop all to lo ::/0':
+    chain    => 'INPUT',
+    proto    => 'all',
+    source   => '::1',
+    action   => 'drop',
+    provider => 'ip6tables',
+    tag      => 'cis_firewall_pre',
   }
 }

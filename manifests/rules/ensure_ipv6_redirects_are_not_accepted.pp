@@ -16,8 +16,6 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ipv6_redirects_are_not_accepted
-class secure_linux_cis::rules::ensure_ipv6_redirects_are_not_accepted(
-    Boolean $enforced = false,
-) {
+class secure_linux_cis::rules::ensure_ipv6_redirects_are_not_accepted {
   # This is addresed by ensure_icmp_redirects_are_not_accepted
 }

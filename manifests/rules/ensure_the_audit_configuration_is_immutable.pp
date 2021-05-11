@@ -18,18 +18,12 @@
 #
 # @example
 #   include secure_linux_cis::ensure_the_audit_configuration_is_immutable
-class secure_linux_cis::rules::ensure_the_audit_configuration_is_immutable(
-    Boolean $enforced = true,
-) {
+class secure_linux_cis::rules::ensure_the_audit_configuration_is_immutable {
   Class['::secure_linux_cis::rules::ensure_the_audit_configuration_is_immutable']
   ~> Class['::secure_linux_cis::reboot']
-
-  if $enforced {
     file_line { 'audit.rules make immutable':
-      ensure   => present,
-      schedule => 'harden_schedule',
-      path     => '/etc/audit/rules.d/audit.rules',
-      line     => '-e 2',
+      ensure => present,
+      path   => '/etc/audit/rules.d/audit.rules',
+      line   => '-e 2',
     }
-  }
 }

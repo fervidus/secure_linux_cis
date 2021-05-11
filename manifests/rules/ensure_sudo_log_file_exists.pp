@@ -6,15 +6,10 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_sudo_log_file_exists
-class secure_linux_cis::rules::ensure_sudo_log_file_exists(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::ensure_sudo_log_file_exists {
     file_line { 'sudo_log_file':
-      schedule => 'harden_schedule',
-      path     => '/etc/sudoers',
-      line     => 'Defaults logfile="/var/log/sudo.log"',
-      match    => '^#?\s*Defaults\s+logfile.+',
+      path  => '/etc/sudoers',
+      line  => 'Defaults logfile="/var/log/sudo.log"',
+      match => '^#?\s*Defaults\s+logfile.+',
     }
-  }
 }

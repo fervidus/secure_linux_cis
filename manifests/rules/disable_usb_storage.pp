@@ -14,12 +14,8 @@
 #
 # @example
 #   include secure_linux_cis::disable_usb_storage
-class secure_linux_cis::rules::disable_usb_storage(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::disable_usb_storage {
     kmod::install { 'usb-storage':
       command => '/bin/true',
     }
-  }
 }

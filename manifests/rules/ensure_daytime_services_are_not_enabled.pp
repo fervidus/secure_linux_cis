@@ -14,19 +14,13 @@
 #
 # @example
 #   include secure_linux_cis::ensure_daytime_services_are_not_enabled
-class secure_linux_cis::rules::ensure_daytime_services_are_not_enabled(
-    Boolean $enforced = true,
-) {
-  if $enforced {
-    service { 'daytime-dgram':
-      ensure   => stopped,
-      schedule => 'harden_schedule',
-      enable   => false,
-    }
-    service { 'daytime-stream':
-      ensure   => stopped,
-      schedule => 'harden_schedule',
-      enable   => false,
-    }
+class secure_linux_cis::rules::ensure_daytime_services_are_not_enabled {
+  service { 'daytime-dgram':
+    ensure => stopped,
+    enable => false,
+  }
+  service { 'daytime-stream':
+    ensure => stopped,
+    enable => false,
   }
 }

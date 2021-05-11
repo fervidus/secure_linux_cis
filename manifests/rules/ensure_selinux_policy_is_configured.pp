@@ -12,17 +12,12 @@
 #
 # @example
 #   include secure_linux_cis::ensure_selinux_policy_is_configured
-class secure_linux_cis::rules::ensure_selinux_policy_is_configured(
-    Boolean $enforced = true,
-) {
-  if $enforced {
-    if $::secure_linux_cis::mac == 'selinux' {
+class secure_linux_cis::rules::ensure_selinux_policy_is_configured {
+    if $secure_linux_cis::mac == 'selinux' {
       file_line { 'selinux_targeted':
-        schedule => 'harden_schedule',
-        path     => '/etc/selinux/config',
-        line     => 'SELINUXTYPE=targeted',
-        match    => '^SELINUXTYPE=',
+        path  => '/etc/selinux/config',
+        line  => 'SELINUXTYPE=targeted',
+        match => '^SELINUXTYPE=',
       }
     }
-  }
 }

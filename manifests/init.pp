@@ -68,7 +68,6 @@ class secure_linux_cis (
   Enum['smbd', 'smb', 'none']             $samba_service,
   Enum['cron', 'crond', 'none']           $cron_service,
   Array[Stdlib::Host]                     $time_servers,
-  Enum['firewall', 'firewalld']           $firewall_package,
   Struct[
     {
       Optional[period]      => Enum['hourly', 'daily', 'weekly', 'monthly', 'never'],
@@ -78,8 +77,9 @@ class secure_linux_cis (
       Optional[weekday]     => Variant[Array, String[1]],
     }
   ]                                       $hardening_schedule,
-  Enum['workstation', 'server']           $profile_type            = 'server',
-  Enum['1', '2']                          $enforcement_level       = '1',
+  Enum['workstation', 'server']           $profile_type       = 'server',
+  Enum['1', '2']                          $enforcement_level = '1',
+  Enum['drop', 'block', 'public', 'external', 'dmz', 'work', 'home', 'internal', 'trusted'] $default_firewalld_zone = 'drop',
   Array[String]                           $include_rules           = [],
   Array[String]                           $exclude_rules           = [],
   Optional[Array[String]]                 $exclude_x_window_packages = undef,
@@ -101,15 +101,15 @@ class secure_linux_cis (
   Enum['ntp', 'chrony', 'none']           $time_sync               = 'ntp',
   Enum['postfix', 'exim', 'none']         $mta                     = 'postfix',
   Enum['selinux', 'apparmor', 'none']     $mac                     = 'selinux',
-  Enum['firewalld','nftables','iptables'] $firewall                = 'iptables',
+  Enum['enforcing', 'permissive']         $selinux_mode            = 'enforcing',
+  Enum['nftables','iptables']             $firewall                = 'iptables',
   Boolean                                 $ipv6_enabled            = false,
   Array[String]                           $approved_ciphers        = [
-    'chacha20-poly1305@openssh.com',
     'aes256-gcm@openssh.com',
     'aes128-gcm@openssh.com',
-    'aes256-ctr',
+    'aes128-ctr',
     'aes192-ctr',
-    'aes128-ctr'
+    'aes256-ctr'
   ],
   Array[String]                           $approved_kex            = [
     'curve25519-sha256',
@@ -125,10 +125,8 @@ class secure_linux_cis (
   Array[String]                           $approved_mac_algorithms = [
     'hmac-sha2-512-etm@openssh.com',
     'hmac-sha2-256-etm@openssh.com',
-    'umac-128-etm@openssh.com',
     'hmac-sha2-512',
     'hmac-sha2-256',
-    'umac-128@openssh.com'
   ],
   Integer                                 $client_alive_interval   = 300, # must be between 1 and 300
   Integer[0,3]                            $client_alive_count_max  = 0,
@@ -166,20 +164,21 @@ class secure_linux_cis (
   $base_rules = $profile_type ? {
     'workstation' => $enforcement_level ? {
       '1' => $workstation_level_1,
-      '2' => $workstation_level_1 + $workstation_level_2,
+      '2' => $workstation_level_2,
     },
-    'server'      => $enforcement_level ? {
+    'server' => $enforcement_level ? {
       '1' => $server_level_1,
-      '2' => $server_level_1 + $server_level_2,
+      '2' => $server_level_2,
     }
   }
 
   # Build rules to enforce
-  $enforced_rules = $base_rules + $include_rules - $exclude_rules
+  $enforced_rules = $base_rules.map | String $line | {
+    "secure_linux_cis::rules::${line}"
+  } # + $include_rules - $exclude_rules
 
   file { '/usr/share/cis_scripts':
     ensure   => directory,
-    schedule => 'harden_schedule',
   }
 
   file { '/usr/share/cis_scripts/enforced_rules.txt':
@@ -188,6 +187,6 @@ class secure_linux_cis (
   }
 
   include $enforced_rules
-  include ::secure_linux_cis::reboot
+  include secure_linux_cis::reboot
 
 }

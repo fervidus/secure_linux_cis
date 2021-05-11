@@ -20,16 +20,12 @@
 #
 # @example
 #   include secure_linux_cis::ensure_lockout_for_failed_password_attempts_is_configured
-class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_configured(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_configured {
     $os = "${facts['os']['name']}${facts['os']['release']['major']}"
     case $facts['osfamily'] {
       'Debian': {
         pam { 'pam_tally2 common-auth':
           ensure    => present,
-          schedule  => 'harden_schedule',
           service   => 'common-auth',
           type      => 'auth',
           module    => 'pam_tally2.so',
@@ -38,15 +34,14 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
             'onerr=fail',
             'audit',
             'silent',
-            "deny=${::secure_linux_cis::attempts}",
-            "unlock_time=${::secure_linux_cis::lockout_time}",
+            "deny=${secure_linux_cis::attempts}",
+            "unlock_time=${secure_linux_cis::lockout_time}",
           ],
           position  => 'before *[type="auth" and module="pam_unix.so"]',
         }
         if $os == 'Debian10' {
           pam { 'pam_tally2 common-account':
             ensure   => present,
-            schedule => 'harden_schedule',
             service  => 'common-account',
             type     => 'account',
             module   => 'pam_tally2.so',
@@ -63,7 +58,6 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
         $services.each | $service | {
           pam { "pam_unix ${service}":
             ensure           => present,
-            schedule         => 'harden_schedule',
             service          => $service,
             type             => 'auth',
             module           => 'pam_unix.so',
@@ -73,7 +67,6 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
           }
           pam { "pam_faillock preauth ${service}":
             ensure           => present,
-            schedule         => 'harden_schedule',
             service          => $service,
             type             => 'auth',
             module           => 'pam_faillock.so',
@@ -83,14 +76,13 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
               'preauth',
               'audit',
               'silent',
-              "deny=${::secure_linux_cis::attempts}",
-              "unlock_time=${::secure_linux_cis::lockout_time}",
+              "deny=${secure_linux_cis::attempts}",
+              "unlock_time=${secure_linux_cis::lockout_time}",
             ],
             position         => 'before *[type="auth" and module="pam_unix.so"]',
           }
           pam { "pam_faillock authfail ${service}":
             ensure           => present,
-            schedule         => 'harden_schedule',
             service          => $service,
             type             => 'auth',
             module           => 'pam_faillock.so',
@@ -99,14 +91,13 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
             arguments        => [
               'authfail',
               'audit',
-              "deny=${::secure_linux_cis::attempts}",
-              "unlock_time=${::secure_linux_cis::lockout_time}",
+              "deny=${secure_linux_cis::attempts}",
+              "unlock_time=${secure_linux_cis::lockout_time}",
             ],
             position         => 'after *[type="auth" and module="pam_unix.so"]',
           }
           pam { "pam_faillock authsucc ${service}":
             ensure           => present,
-            schedule         => 'harden_schedule',
             service          => $service,
             type             => 'auth',
             module           => 'pam_faillock.so',
@@ -115,13 +106,12 @@ class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_co
             arguments        => [
               'authsucc',
               'audit',
-              "deny=${::secure_linux_cis::attempts}",
-              "unlock_time=${::secure_linux_cis::lockout_time}",
+              "deny=${secure_linux_cis::attempts}",
+              "unlock_time=${secure_linux_cis::lockout_time}",
             ],
             position         => 'after *[type="auth" and module="pam_faillock.so" and control="[default=die]"]',
           }
         }
       }
     }
-  }
 }

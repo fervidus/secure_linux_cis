@@ -11,14 +11,10 @@
 #
 # @example
 #   include secure_linux_cis::ensure_filesystem_integrity_is_regularly_checked
-class secure_linux_cis::rules::ensure_filesystem_integrity_is_regularly_checked(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::ensure_filesystem_integrity_is_regularly_checked {
     cron::job {'cron_aide':
-      command => $::secure_linux_cis::aide_command,
+      command => $secure_linux_cis::aide_command,
       hour    => 5,
       minute  => 0,
     }
-  }
 }

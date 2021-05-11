@@ -16,28 +16,20 @@
 #
 # @example
 #   include secure_linux_cis::ensure_rsyslog_default_file_permissions_configured
-class secure_linux_cis::rules::ensure_rsyslog_default_file_permissions_configured(
-    Boolean $enforced = true,
-) {
+class secure_linux_cis::rules::ensure_rsyslog_default_file_permissions_configured {
 
   Class['::secure_linux_cis::rules::ensure_rsyslog_default_file_permissions_configured']
   ~> Class['::secure_linux_cis::reboot']
 
-  if $enforced {
-    if $::secure_linux_cis::logging == 'rsyslog' {
-      file_line { 'rsyslog.conf log_permissions':
-        ensure   => present,
-        schedule => 'harden_schedule',
-        path     => '/etc/rsyslog.conf',
-        line     => '$FileCreateMode 0640',
-        match    => '^\$FileCreateMode.*',
-      }
-      file { '/etc/rsyslog.d/':
-        ensure   => directory,
-        schedule => 'harden_schedule',
-        recurse  => true,
-        mode     => '0640',
-      }
-    }
+  file_line { 'rsyslog.conf log_permissions':
+    ensure => present,
+    path   => '/etc/rsyslog.conf',
+    line   => '$FileCreateMode 0640',
+    match  => '^\$FileCreateMode.*',
+  }
+  file { '/etc/rsyslog.d/':
+    ensure  => directory,
+    recurse => true,
+    mode    => '0640',
   }
 }

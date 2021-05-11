@@ -14,11 +14,8 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ipv6_is_disabled
-class secure_linux_cis::rules::ensure_ipv6_is_disabled(
-    Boolean $enforced = true,
-) {
-  if $enforced {
-    unless $::secure_linux_cis::ipv6_enabled {
+class secure_linux_cis::rules::ensure_ipv6_is_disabled {
+    unless $secure_linux_cis::ipv6_enabled {
 
       if $facts['osfamily'] == 'RedHat' and $facts['os']['release']['major'] == '8' {
         kernel_parameter {'ipv6.disable=1':
@@ -28,30 +25,23 @@ class secure_linux_cis::rules::ensure_ipv6_is_disabled(
 
         sysctl { 'net.ipv6.conf.all.disable_ipv6':
           value    => 1,
-          schedule => 'harden_schedule',
         }
 
         sysctl { 'net.ipv6.conf.default.disable_ipv6':
           value    => 1,
-          schedule => 'harden_schedule',
         }
 
         file_line { 'disable_ipv6_network':
-
-          schedule => 'harden_schedule',
-          path     => '/etc/sysconfig/network',
-          line     => 'NETWORKING_IPV6=no',
-          match    => 'NETWORKING_IPV6=',
+          path  => '/etc/sysconfig/network',
+          line  => 'NETWORKING_IPV6=no',
+          match => 'NETWORKING_IPV6=',
         }
 
         file_line { 'disable_ipv6_network_init':
-
-          schedule => 'harden_schedule',
-          path     => '/etc/sysconfig/network',
-          line     => 'IPV6INIT=no',
-          match    => 'IPV6INIT=',
+          path  => '/etc/sysconfig/network',
+          line  => 'IPV6INIT=no',
+          match => 'IPV6INIT=',
         }
       }
     }
-  }
 }

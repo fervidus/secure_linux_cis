@@ -10,16 +10,11 @@
 #
 # @example
 #   include secure_linux_cis::ensure_permissions_on_etc_group_are_configured
-class secure_linux_cis::rules::ensure_permissions_on_etc_group_are_configured(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::ensure_permissions_on_etc_group_are_configured {
     file { '/etc/group':
-      ensure   => present,
-      schedule => 'harden_schedule',
-      owner    => 'root',
-      group    => 'root',
-      mode     => '0644',
+      ensure => present,
+      owner  => 'root',
+      group  => 'root',
+      mode   => '0644',
     }
-  }
 }

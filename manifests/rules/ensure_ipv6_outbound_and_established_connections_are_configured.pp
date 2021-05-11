@@ -14,13 +14,9 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ipv6_outbound_and_established_connections_are_configured
-class secure_linux_cis::rules::ensure_ipv6_outbound_and_established_connections_are_configured(
-    Boolean $enforced = true,
-) {
-  if $enforced and $secure_linux_cis::firewall == 'iptables' {
+class secure_linux_cis::rules::ensure_ipv6_outbound_and_established_connections_are_configured {
     firewall { '004 accept new and established ouput IPv6 tcp connections':
       chain    => 'OUTPUT',
-      schedule => 'harden_schedule',
       state    => ['NEW', 'ESTABLISHED'],
       action   => 'accept',
       proto    => 'tcp',
@@ -67,5 +63,4 @@ class secure_linux_cis::rules::ensure_ipv6_outbound_and_established_connections_
       provider => 'ip6tables',
       tag      => 'cis_firewall_pre',
     }
-  }
 }

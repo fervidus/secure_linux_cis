@@ -11,14 +11,9 @@
 #
 # @example
 #   include secure_linux_cis::disable_automounting
-class secure_linux_cis::rules::disable_automounting(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::disable_automounting {
     service { 'autofs':
-      ensure   => stopped,
-      schedule => 'harden_schedule',
-      enable   => false,
+      ensure => stopped,
+      enable => false,
     }
-  }
 }

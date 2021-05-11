@@ -12,9 +12,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_package_manager_repositories_are_configured
-class secure_linux_cis::rules::ensure_package_manager_repositories_are_configured(
-    Boolean $enforced = true,
-) {
+class secure_linux_cis::rules::ensure_package_manager_repositories_are_configured {
   # Not scored
   # if $enforced {
   #   $repolist = "${facts['os']['name']}/${facts['os']['release']['major']}" ? {

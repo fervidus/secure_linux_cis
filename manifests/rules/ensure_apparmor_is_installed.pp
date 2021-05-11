@@ -15,13 +15,8 @@
 #
 # @example
 #   include secure_linux_cis::ensure_apparmor_is_installed
-class secure_linux_cis::rules::ensure_apparmor_is_installed(
-    Boolean $enforced = true,
-) {
-  if $enforced {
-    package { ['apparmor', 'apparmor-utils']:
-      ensure   => installed,
-      schedule => 'harden_schedule',
-    }
+class secure_linux_cis::rules::ensure_apparmor_is_installed {
+  package { ['apparmor', 'apparmor-utils']:
+    ensure   => installed,
   }
 }

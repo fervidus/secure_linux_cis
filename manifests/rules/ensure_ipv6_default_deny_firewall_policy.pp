@@ -6,21 +6,17 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_ipv6_default_deny_firewall_policy
-class secure_linux_cis::rules::ensure_ipv6_default_deny_firewall_policy(
-    Boolean $enforced = false,
-) {
-  # Taken care of by ensure_default_deny_firewall_policy
-  # firewallchain { 'INPUT:filter:IPv6':
-  #   ensure => present,
-  #   policy => drop,
-  # }
-  # firewallchain { 'OUTPUT:filter:IPv6':
-  #   ensure => present,
-  #   policy => drop,
-  # }
-  # firewallchain { 'FORWARD:filter:IPv6':
-  #   ensure => present,
-  #   policy => drop,
-  # }
-  # include secure_linux_cis::rules::ensure_default_deny_firewall_policy
+class secure_linux_cis::rules::ensure_ipv6_default_deny_firewall_policy {
+  # Create default drop policy for ipv6
+  $filter_rules = [
+    'INPUT:filter:IPv6',
+    'OUTPUT:filter:IPv6',
+    'FORWARD:filter:IPv6',
+  ]
+
+  firewallchain { $filter_rules:
+    ensure => present,
+    policy => drop,
+    tag    => 'cis_firewall_post',
+  }
 }

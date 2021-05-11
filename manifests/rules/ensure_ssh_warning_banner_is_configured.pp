@@ -15,18 +15,13 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_warning_banner_is_configured
-class secure_linux_cis::rules::ensure_ssh_warning_banner_is_configured(
-    Boolean $enforced = true,
-) {
-  if $enforced {
-    include ::secure_linux_cis::service
+class secure_linux_cis::rules::ensure_ssh_warning_banner_is_configured {
+    include secure_linux_cis::service
     file_line { 'ssh warning banner':
-      ensure   => 'present',
-      schedule => 'harden_schedule',
-      path     => '/etc/ssh/sshd_config',
-      line     => 'Banner /etc/issue.net',
-      match    => '^#?Banner',
-      notify   => Exec['reload sshd'],
+      ensure => 'present',
+      path   => '/etc/ssh/sshd_config',
+      line   => 'Banner /etc/issue.net',
+      match  => '^#?Banner',
+      notify => Exec['reload sshd'],
     }
-  }
 }

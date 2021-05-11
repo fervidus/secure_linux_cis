@@ -17,12 +17,8 @@
 #
 # @example
 #   include secure_linux_cis::ensure_iptables_is_not_enabled
-class secure_linux_cis::rules::ensure_iptables_is_not_enabled(
-    Boolean $enforced = true,
-) {
-  if $enforced and $secure_linux_cis::firewall == 'firewalld' {
+class secure_linux_cis::rules::ensure_iptables_is_not_enabled {
     package {'iptables-services':
       ensure => absent,
     }
-  }
 }

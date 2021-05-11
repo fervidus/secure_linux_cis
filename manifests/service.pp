@@ -13,7 +13,6 @@ class secure_linux_cis::service {
   # Reload sshd config (only if running)
   exec { 'reload sshd':
     command     => 'systemctl reload sshd',
-    schedule    => 'harden_schedule',
     onlyif      => 'systemctl status sshd | grep running',
     refreshonly => true,
   }

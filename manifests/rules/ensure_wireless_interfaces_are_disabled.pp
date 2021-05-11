@@ -16,19 +16,14 @@
 #
 # @example
 #   include secure_linux_cis::ensure_wireless_interfaces_are_disabled
-class secure_linux_cis::rules::ensure_wireless_interfaces_are_disabled(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::ensure_wireless_interfaces_are_disabled {
     $facts['networking']['interfaces'].each | String $name, Hash $attributes | {
       if $name =~ /wlan/ {
         exec { "Disable wireless network interface: ${name}":
           command   => "/sbin/ip link set ${name} down",
-          schedule  => 'harden_schedule',
           onlyif    => "/sbin/ip link show ${name} |grep 'state UP'",
           logoutput => true,
         }
       }
     }
-  }
 }

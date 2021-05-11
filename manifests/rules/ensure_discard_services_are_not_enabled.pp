@@ -14,19 +14,13 @@
 #
 # @example
 #   include secure_linux_cis::ensure_discard_services_are_not_enabled
-class secure_linux_cis::rules::ensure_discard_services_are_not_enabled(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::ensure_discard_services_are_not_enabled {
     service { 'discard-dgram':
-      ensure   => stopped,
-      schedule => 'harden_schedule',
-      enable   => false,
+      ensure => stopped,
+      enable => false,
     }
     service { 'discard-stream':
-      ensure   => stopped,
-      schedule => 'harden_schedule',
-      enable   => false,
+      ensure => stopped,
+      enable => false,
     }
-  }
 }

@@ -16,23 +16,17 @@
 #
 # NOTE: Not feasible for programatic enforcement
 #
-class secure_linux_cis::rules::audit_suid_executables(
-    Boolean $enforced = false,
-) {
-  if $enforced {
+class secure_linux_cis::rules::audit_suid_executables {
     file { '/usr/share/cis_scripts/audit_suid.sh':
-      ensure   => file,
-      schedule => 'harden_schedule',
-      owner    => 'root',
-      group    => 'root',
-      mode     => '0700',
-      content  => file('secure_linux_cis/audit_suid.sh'),
+      ensure  => file,
+      owner   => 'root',
+      group   => 'root',
+      mode    => '0700',
+      content => file('secure_linux_cis/audit_suid.sh'),
     }
     if $facts['suid_files'] {
       notify { 'sf':
         message  => '[3] (Not Scored) SUID files found. Check the suid_files fact and ensure all files are authorized.', #lint:ignore:140chars
-        schedule => 'harden_schedule',
       }
     }
-  }
 }

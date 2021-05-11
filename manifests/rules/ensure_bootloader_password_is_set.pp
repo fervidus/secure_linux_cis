@@ -25,32 +25,21 @@
 #   and test on non-production machines before using elsewhere in your environment
 #
 # @example Using hiera
-#   secure_linux_cis::rules::ensure_bootloader_password_is_set::enforced: true
 #   secure_linux_cis::rules::ensure_bootloader_password_is_set::grub_username: root
 #   secure_linux_cis::rules::ensure_bootloader_password_is_set::grub_pbkdf2_password_hash: grub.pbkdf2.sha512.10000.7D81626...ABC0123210CBA
 #
 
 class secure_linux_cis::rules::ensure_bootloader_password_is_set(
-  Boolean $enforced = false,
   String $grub_username = $secure_linux_cis::grub_username,
   Optional[String] $grub_pbkdf2_password_hash = $secure_linux_cis::grub_pbkdf2_password_hash,
 ) {
-  if $enforced {
-    if $facts['grub_pass'] == undef {
-      notify { 'gp':
-        message  => 'Not in compliance with CIS (Scored). The Grub bootloader does not have a set password. If using a bootloader other than this message, please ensure that an encrypted password is set', #lint:ignore:140chars
-        schedule => 'harden_schedule',
-        loglevel => 'warning',
-      }
+  if $grub_pbkdf2_password_hash != undef {
+    grub_user { $grub_username:
+      password  => $grub_pbkdf2_password_hash,
+      superuser => true,
     }
-    unless $grub_pbkdf2_password_hash == undef {
-      grub_user { $grub_username:
-        password  => $grub_pbkdf2_password_hash,
-        superuser => true,
-      }
-    }
-    else {
-      fail('Set to enforce but no PBKDF2 password hash provided. Please add proper value to hiera or disable this rule until present.')
-    }
+  }
+  elsif $facts['grub_pass'] == undef {
+    fail('No PBKDF2 password hash provided or set. Please add proper value to hiera or disable this rule until present.')
   }
 }

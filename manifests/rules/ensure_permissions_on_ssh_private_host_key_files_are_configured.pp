@@ -18,19 +18,14 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_permissions_on_ssh_private_host_key_files_are_configured
-class secure_linux_cis::rules::ensure_permissions_on_ssh_private_host_key_files_are_configured(
-    Boolean $enforced = true,
-) {
-  if $enforced {
-    include ::secure_linux_cis::service
+class secure_linux_cis::rules::ensure_permissions_on_ssh_private_host_key_files_are_configured {
+    include secure_linux_cis::service
     unless $facts['ssh_host_keys'].empty {
       file{ $facts['ssh_host_keys']:
-        ensure   => 'present',
-        schedule => 'harden_schedule',
-        owner    => 'root',
-        group    => 'root',
-        mode     => '0600',
+        ensure => 'present',
+        owner  => 'root',
+        group  => 'root',
+        mode   => '0600',
       }
     }
-  }
 }

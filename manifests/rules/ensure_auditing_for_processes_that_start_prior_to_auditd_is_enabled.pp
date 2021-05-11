@@ -15,16 +15,11 @@
 #
 # @example
 #   include secure_linux_cis::ensure_auditing_for_processes_that_start_prior_to_auditd_is_enabled
-class secure_linux_cis::rules::ensure_auditing_for_processes_that_start_prior_to_auditd_is_enabled(
-    Boolean $enforced = true,
-) {
+class secure_linux_cis::rules::ensure_auditing_for_processes_that_start_prior_to_auditd_is_enabled {
 
   Class['::secure_linux_cis::rules::ensure_auditing_for_processes_that_start_prior_to_auditd_is_enabled']
   ~> Class['::secure_linux_cis']
-
-  if $enforced {
     kernel_parameter { 'audit=1':
       ensure => present,
     }
-  }
 }

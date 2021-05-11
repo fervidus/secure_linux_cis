@@ -12,10 +12,4 @@
 #
 # @example
 #   include secure_linux_cis::ensure_tmp_is_configured
-class secure_linux_cis::rules::ensure_tmp_is_configured(
-  Boolean $enforced = true,
-) {
-  if $enforced {
-    include secure_linux_cis::rules::ensure_separate_partition_exists_for_tmp
-  }
-}
+class secure_linux_cis::rules::ensure_tmp_is_configured { }

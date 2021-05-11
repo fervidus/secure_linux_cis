@@ -16,18 +16,13 @@
 #
 # @example
 #   include secure_linux_cis::ensure_ssh_maxauthtries_is_set_to_4_or_less
-class secure_linux_cis::rules::ensure_ssh_maxauthtries_is_set_to_4_or_less(
-    Boolean $enforced = true,
-) {
-  if $enforced {
-    include ::secure_linux_cis::service
+class secure_linux_cis::rules::ensure_ssh_maxauthtries_is_set_to_4_or_less {
+    include secure_linux_cis::service
     file_line { 'ssh max auth tries':
-      ensure   => present,
-      schedule => 'harden_schedule',
-      path     => '/etc/ssh/sshd_config',
-      line     => "MaxAuthTries ${::secure_linux_cis::max_auth_tries}",
-      match    => '^#?MaxAuthTries',
-      notify   => Exec['reload sshd'],
+      ensure => present,
+      path   => '/etc/ssh/sshd_config',
+      line   => "MaxAuthTries ${secure_linux_cis::max_auth_tries}",
+      match  => '^\s*MaxAuthTries',
+      notify => Exec['reload sshd'],
     }
-  }
 }

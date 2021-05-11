@@ -11,14 +11,10 @@
 #
 # @example
 #   include secure_linux_cis::ensure_selinux_is_not_disabled_in_bootloader_configuration
-class secure_linux_cis::rules::ensure_selinux_is_not_disabled_in_bootloader_configuration(
-    Boolean $enforced = true,
-) {
+class secure_linux_cis::rules::ensure_selinux_is_not_disabled_in_bootloader_configuration {
 
   Class['secure_linux_cis::rules::ensure_selinux_is_not_disabled_in_bootloader_configuration']
   ~> Class['secure_linux_cis::reboot']
-
-  if $enforced {
     kernel_parameter { 'quiet':
       ensure   => present,
       bootmode => 'default',
@@ -29,5 +25,4 @@ class secure_linux_cis::rules::ensure_selinux_is_not_disabled_in_bootloader_conf
     kernel_parameter { 'enforcing=0':
       ensure   => absent,
     }
-  }
 }

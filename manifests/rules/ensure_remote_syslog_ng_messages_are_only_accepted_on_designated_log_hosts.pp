@@ -19,53 +19,43 @@
 #
 # @example
 #   include secure_linux_cis::ensure_remote_syslog_ng_messages_are_only_accepted_on_designated_log_hosts
-class secure_linux_cis::rules::ensure_remote_syslog_ng_messages_are_only_accepted_on_designated_log_hosts(
-    Boolean $enforced = true,
-) {
+class secure_linux_cis::rules::ensure_remote_syslog_ng_messages_are_only_accepted_on_designated_log_hosts {
 
   Class['::secure_linux_cis::rules::ensure_remote_syslog_ng_messages_are_only_accepted_on_designated_log_hosts']
   ~> Class['::secure_linux_cis::reboot']
-
-  if $enforced {
-    if $::secure_linux_cis::logging == 'syslog-ng' {
-      if $::secure_linux_cis::is_logging_host {
+    if $secure_linux_cis::logging == 'syslog-ng' {
+      if $secure_linux_cis::is_logging_host {
         file_line { 'syslog-ng.conf remote 1':
-          ensure   => present,
-          schedule => 'harden_schedule',
-          path     => '/etc/syslog-ng/syslog-ng.conf',
-          line     => 'source net{ tcp(); };',
-          match    => '^source net',
+          ensure => present,
+          path   => '/etc/syslog-ng/syslog-ng.conf',
+          line   => 'source net{ tcp(); };',
+          match  => '^source net',
         }
         file_line { 'syslog-ng.conf remote 2':
-          ensure   => present,
-          schedule => 'harden_schedule',
-          path     => '/etc/syslog-ng/syslog-ng.conf',
-          line     => 'destination remote { file("/var/log/remote/${FULLHOST}-log"); };', # lint:ignore:single_quote_string_with_variables
-          match    => '^destination remote',
+          ensure => present,
+          path   => '/etc/syslog-ng/syslog-ng.conf',
+          line   => 'destination remote { file("/var/log/remote/${FULLHOST}-log"); };', # lint:ignore:single_quote_string_with_variables
+          match  => '^destination remote',
         }
         file_line { 'syslog-ng.conf remote 3':
-          ensure   => present,
-          schedule => 'harden_schedule',
-          path     => '/etc/syslog-ng/syslog-ng.conf',
-          line     => 'log { source(net); destination(remote); };',
+          ensure => present,
+          path   => '/etc/syslog-ng/syslog-ng.conf',
+          line   => 'log { source(net); destination(remote); };',
         }
       }
       else {
         file_line { 'syslog-ng.conf remote 1':
-          ensure   => present,
-          schedule => 'harden_schedule',
-          path     => '/etc/syslog-ng/syslog-ng.conf',
-          line     => '',
-          match    => '^source net',
+          ensure => present,
+          path   => '/etc/syslog-ng/syslog-ng.conf',
+          line   => '',
+          match  => '^source net',
         }
         file_line { 'syslog-ng.conf remote 2':
-          ensure   => present,
-          schedule => 'harden_schedule',
-          path     => '/etc/syslog-ng/syslog-ng.conf',
-          line     => '',
-          match    => '^destination remote',
+          ensure => present,
+          path   => '/etc/syslog-ng/syslog-ng.conf',
+          line   => '',
+          match  => '^destination remote',
         }
       }
     }
-  }
 }

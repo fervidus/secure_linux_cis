@@ -7,7 +7,7 @@ Facter.add('shm_noexec') do
   confine kernel: 'Linux'
   setcode do
     shmne = Facter::Core::Execution.exec('mount | grep /dev/shm')
-    if shmne.match?(%r{noexec})
+    if shmne.include?('noexec')
       true
     else
       false

@@ -6,10 +6,6 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_default_zone
-class secure_linux_cis::rules::ensure_default_zone(
-    Boolean $enforced = true,
-) {
-  if($enforced) {
-    include ::secure_linux_cis::rules::ensure_default_zone_is_set
-  }
+class secure_linux_cis::rules::ensure_default_zone {
+  include secure_linux_cis::rules::ensure_default_zone_is_set
 }

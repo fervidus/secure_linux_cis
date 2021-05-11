@@ -14,18 +14,16 @@
 #
 # @example
 #   include secure_linux_cis::ensure_outbound_and_established_connections_are_configured
-class secure_linux_cis::rules::ensure_outbound_and_established_connections_are_configured(
-    Boolean $enforced = true,
-) {
-  if $enforced {
-    if $secure_linux_cis::firewall == 'iptables' {
+class secure_linux_cis::rules::ensure_outbound_and_established_connections_are_configured {
+
+  case $secure_linux_cis::firewall {
+    'iptables': {
       firewall { '004 accept new and established ouput tcp connections':
-        chain    => 'OUTPUT',
-        schedule => 'harden_schedule',
-        state    => ['NEW', 'ESTABLISHED'],
-        action   => 'accept',
-        proto    => 'tcp',
-        tag      => 'cis_firewall_pre',
+        chain  => 'OUTPUT',
+        state  => ['NEW', 'ESTABLISHED'],
+        action => 'accept',
+        proto  => 'tcp',
+        tag    => 'cis_firewall_pre',
       }
       -> firewall { '005 accept new and established ouput udp connections':
         chain  => 'OUTPUT',
@@ -62,8 +60,37 @@ class secure_linux_cis::rules::ensure_outbound_and_established_connections_are_c
         proto  => 'icmp',
         tag    => 'cis_firewall_pre',
       }
-    } elsif $secure_linux_cis::firewall == 'nftables' {
-      notify { 'ensure_outbound_and_established_connections_are_configured still needs to be implemented for nftables.': }
     }
+    'nftables': {
+      # Create default drop policy for nftables
+      # nftables::rule { 'INPUT-tcp':
+      #   content => 'ip protocol tcp ct state established accept',
+      # }
+
+      # nftables::rule { 'INPUT-tcp-ssh':
+      #   content => 'tcp dport 22 accept',
+      # }
+
+      # nftables::rule { 'INPUT-udp':
+      #   content => 'ip protocol udp ct state established accept',
+      # }
+
+      # nftables::rule { 'INPUT-icmp':
+      #   content => 'ip protocol icmp ct state established accept',
+      # }
+
+      # nftables::rule { 'OUTPUT-tcp':
+      #   content => 'ip protocol tcp ct state new,related,established accept',
+      # }
+
+      # nftables::rule { 'OUTPUT-udp':
+      #   content => 'ip protocol udp ct state new,related,established accept',
+      # }
+
+      # nftables::rule { 'OUTPUT-icmp':
+      #   content => 'ip protocol icmp ct state new,related,established accept',
+      # }
+    }
+    default: { file('Need iptables or nftables firewall.') }
   }
 }

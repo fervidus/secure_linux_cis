@@ -6,14 +6,9 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_rpc_is_not_enabled
-class secure_linux_cis::rules::ensure_rpc_is_not_enabled(
-    Boolean $enforced = true,
-) {
-  if $enforced {
+class secure_linux_cis::rules::ensure_rpc_is_not_enabled {
     service { 'rpcbind':
-      ensure   => stopped,
-      schedule => 'harden_schedule',
-      enable   => false,
+      ensure => stopped,
+      enable => false,
     }
-  }
 }

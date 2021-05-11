@@ -19,21 +19,15 @@
 #
 # @example
 #   include secure_linux_cis::ensure_rsyslog_or_syslog_ng_is_installed
-class secure_linux_cis::rules::ensure_rsyslog_or_syslog_ng_is_installed(
-    Boolean $enforced = true,
-) {
-  if $enforced {
-    if $::secure_linux_cis::logging == 'rsyslog' {
+class secure_linux_cis::rules::ensure_rsyslog_or_syslog_ng_is_installed {
+    if $secure_linux_cis::logging == 'rsyslog' {
       package { 'rsyslog':
         ensure   => installed,
-        schedule => 'harden_schedule',
       }
     }
-    elsif $::secure_linux_cis::logging == 'syslog-ng' {
+    elsif $secure_linux_cis::logging == 'syslog-ng' {
       package { 'syslog-ng':
         ensure   => installed,
-        schedule => 'harden_schedule',
       }
     }
-  }
 }
