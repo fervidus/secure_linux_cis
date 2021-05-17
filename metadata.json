@@ -81,7 +81,7 @@
       "version_requirement": ">= 1.0.0 < 2.0.0"
     },
     {
-      "name": "puppetlabs/nftables",
+      "name": "puppet/nftables",
       "version_requirement": ">= 1.0.0 < 2.0.0"
     },
     {
