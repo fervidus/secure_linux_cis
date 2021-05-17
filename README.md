@@ -68,9 +68,9 @@ To start with Secure Linux and harden your server to CIS standards, declare the 
 
 *NOTE:* you will want to open up at least one firewall port. See [Opening firewall ports](#usage).
 
-Three parameters are required:
+Three or four parameters are required:
 
-* ```time_sync``` Specify choice of 'ntp' or 'chrony'
+* ```time_sync``` Specify choice of 'ntp' or 'chrony' oe 'none'
 
 * ```time_servers``` Specify your enterprise's time server(s)
 
@@ -80,6 +80,7 @@ Three parameters are required:
 
 ``` puppet
 class {'::secure_linux_cis':
+   time_sync     => 'chrony',
    time_servers  => ['tick.usno.navy.mil', 'tock.usno.navy.mil'],
    profile_type  => 'server',
    allow_users   => 'trusteduser',
