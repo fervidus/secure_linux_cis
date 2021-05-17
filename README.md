@@ -70,6 +70,8 @@ To start with Secure Linux and harden your server to CIS standards, declare the 
 
 Three parameters are required:
 
+* ```time_sync``` Specify choice of 'ntp' or 'chrony'
+
 * ```time_servers``` Specify your enterprise's time server(s)
 
 * ```profile_type``` It will be ```workstation``` or ```server```
@@ -117,7 +119,7 @@ You should tighten them down.
 
 *TODO: TCP wrapper example*
 
-### Disabling rules with Hiera
+### Disabling rules with Hiera (Not applicable to 3.0.0 descriptive based 'rules' .pp files)
 
 As of enforcement for the Redhat 7 OS, there are 223 CIS rules that are either enforced or documented. Each rule relates to a class which can be turned on or off according to the needs of the system. By default, all vulnerabilities are turned ON to ensure maximum security out-of-box. This is how you would disable enforcement of a particular recommendation using Hiera:
 
@@ -126,7 +128,7 @@ As of enforcement for the Redhat 7 OS, there are 223 CIS rules that are either e
 secure_linux_cis::rules::ensure_mounting_of_squashfs_filesystems_is_disabled::enforced: false
 ```
 
-### Enabling rules with Hiera
+### Enabling rules with Hiera (Not applicable to 3.0.0 descriptive based 'rules' .pp files)
 Some recommendations are *not* enforced by default. For example, to enforce password-protected bootloader, a hash value for password must be present:
 
 ```yaml
