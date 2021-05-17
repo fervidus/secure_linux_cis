@@ -13,8 +13,8 @@
 # @example
 #   include secure_linux_cis::ensure_sudo_is_installed
 class secure_linux_cis::rules::ensure_sudo_is_installed {
-    # package { 'sudo':
-    #   ensure   => installed,
-    # }
-    include sudo
+    package { 'sudo':
+      ensure   => installed,
+    }
+    # include sudo
 }

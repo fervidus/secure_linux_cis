@@ -2,24 +2,24 @@
 secure_linux_cis::server_level_1:
 - disable_automounting
 - ensure_a_table_exists
-- ensure_access_to_the_su_command_is_restricted
-- ensure_aide_is_installed
+# - ensure_access_to_the_su_command_is_restricted
+# - ensure_aide_is_installed
 - ensure_all_groups_in_etc_passwd_exist_in_etc_group
 - ensure_all_users_home_directories_exist
-- ensure_apparmor_is_installed
+# - ensure_apparmor_is_installed
 - ensure_at_is_restricted_to_authorized_users
 - ensure_authentication_required_for_single_user_mode
 - ensure_avahi_server_is_not_installed
 - ensure_base_chains_exist
 - ensure_bogus_icmp_responses_are_ignored
-- ensure_bootloader_password_is_set
+# - ensure_bootloader_password_is_set
 - ensure_broadcast_icmp_requests_are_ignored
 - ensure_chrony_is_configured
 - ensure_core_dumps_are_restricted
 - ensure_cron_daemon_is_enabled_and_running
 - ensure_cron_is_restricted_to_authorized_users
 - ensure_cups_is_not_installed
-- ensure_default_deny_firewall_policy
+# - ensure_default_deny_firewall_policy
 - ensure_default_group_for_the_root_account_is_gid_0
 - ensure_default_user_shell_timeout_is_configured
 - ensure_default_user_umask_is_configured
@@ -35,26 +35,26 @@ secure_linux_cis::server_level_1:
 - ensure_gdm_is_removed_or_login_is_configured
 - ensure_gpgcheck_is_globally_activated
 - ensure_http_proxy_server_is_not_installed
-- ensure_http_server_is_not_installed
+# - ensure_http_server_is_not_installed
 - ensure_icmp_redirects_are_not_accepted
 - ensure_imap_and_pop3_server_is_not_installed
 - ensure_inactive_password_lock_is_30_days_or_less
 - ensure_ip_forwarding_is_disabled
-- ensure_iptables_package_is_installed
+# - ensure_iptables_packages_are_installed
 # - ensure_ipv6_default_deny_firewall_policy
 # - ensure_ipv6_loopback_traffic_is_configured
 - ensure_ipv6_router_advertisements_are_not_accepted
-- ensure_ldap_client_is_not_installed
-- ensure_ldap_server_is_not_installed
-- ensure_loopback_traffic_is_configured
+# - ensure_ldap_client_is_not_installed
+# - ensure_ldap_server_is_not_installed
+# - ensure_loopback_traffic_is_configured
 - ensure_message_of_the_day_is_configured_properly
 - ensure_mounting_of_udf_filesystems_is_disabled
-- ensure_net_snmp_is_not_installed
-- ensure_nftables_is_installed
+# - ensure_net_snmp_is_not_installed
+# - ensure_nftables_is_installed
 # - ensure_nftables_is_not_installed
-- ensure_nftables_rules_are_permanent
-- ensure_nftables_service_is_enabled
-- ensure_nis_client_is_not_installed
+# - ensure_nftables_rules_are_permanent
+# - ensure_nftables_service_is_enabled
+# - ensure_nis_client_is_not_installed
 - ensure_nis_server_is_not_installed
 - ensure_no_duplicate_gids_exist
 - ensure_no_duplicate_group_names_exist
@@ -97,14 +97,14 @@ secure_linux_cis::server_level_1:
 - ensure_reverse_path_filtering_is_enabled
 - ensure_root_is_the_only_uid_0_account
 - ensure_rsh_client_is_not_installed
-- ensure_rsyslog_default_file_permissions_configured
-- ensure_rsyslog_is_installed
-- ensure_rsyslog_service_is_enabled_and_running
+# - ensure_rsyslog_default_file_permissions_configured
+# - ensure_rsyslog_is_installed
+# - ensure_rsyslog_service_is_enabled_and_running
 - ensure_samba_is_not_installed
 - ensure_secure_icmp_redirects_are_not_accepted
 - ensure_shadow_group_is_empty
 - ensure_source_routed_packets_are_not_accepted
-- ensure_ssh_access_is_limited
+# - ensure_ssh_access_is_limited
 - ensure_ssh_hostbasedauthentication_is_disabled
 - ensure_ssh_idle_timeout_interval_is_configured
 - ensure_ssh_ignorerhosts_is_enabled
@@ -129,18 +129,18 @@ secure_linux_cis::server_level_1:
 - ensure_telnet_server_is_not_installed
 - ensure_tmp_is_configured
 - ensure_users_own_their_home_directories
-- ensure_x11_server_components_are_not_installed
+# - ensure_x11_server_components_are_not_installed
 - ensure_xd_nx_support_is_enabled
 - ensure_xinetd_is_not_installed
 secure_linux_cis::server_level_2:
 - disable_automounting
 - ensure_a_table_exists
-- ensure_access_to_the_su_command_is_restricted
-- ensure_aide_is_installed
-- ensure_all_apparmor_profiles_are_enforcing
+# - ensure_access_to_the_su_command_is_restricted
+# - ensure_aide_is_installed
+# - ensure_all_apparmor_profiles_are_enforcing
 - ensure_all_groups_in_etc_passwd_exist_in_etc_group
 - ensure_all_users_home_directories_exist
-- ensure_apparmor_is_installed
+# - ensure_apparmor_is_installed
 - ensure_at_is_restricted_to_authorized_users
 - ensure_audit_backlog_limit_is_sufficient
 - ensure_audit_log_storage_size_is_configured
@@ -151,7 +151,7 @@ secure_linux_cis::server_level_2:
 - ensure_avahi_server_is_not_installed
 - ensure_base_chains_exist
 - ensure_bogus_icmp_responses_are_ignored
-- ensure_bootloader_password_is_set
+# - ensure_bootloader_password_is_set
 - ensure_broadcast_icmp_requests_are_ignored
 - ensure_chrony_is_configured
 - ensure_core_dumps_are_restricted
@@ -159,7 +159,7 @@ secure_linux_cis::server_level_2:
 - ensure_cron_is_restricted_to_authorized_users
 - ensure_cups_is_not_installed
 - ensure_dccp_is_disabled
-- ensure_default_deny_firewall_policy
+# - ensure_default_deny_firewall_policy
 - ensure_default_group_for_the_root_account_is_gid_0
 - ensure_default_user_shell_timeout_is_configured
 - ensure_default_user_umask_is_configured
@@ -176,28 +176,28 @@ secure_linux_cis::server_level_2:
 - ensure_gdm_is_removed_or_login_is_configured
 - ensure_gpgcheck_is_globally_activated
 - ensure_http_proxy_server_is_not_installed
-- ensure_http_server_is_not_installed
+# - ensure_http_server_is_not_installed
 - ensure_icmp_redirects_are_not_accepted
 - ensure_imap_and_pop3_server_is_not_installed
 - ensure_inactive_password_lock_is_30_days_or_less
 - ensure_ip_forwarding_is_disabled
-- ensure_iptables_package_is_installed
+# - ensure_iptables_packages_are_installed
 # - ensure_ipv6_default_deny_firewall_policy
 # - ensure_ipv6_loopback_traffic_is_configured
 - ensure_ipv6_router_advertisements_are_not_accepted
-- ensure_ldap_client_is_not_installed
-- ensure_ldap_server_is_not_installed
+# - ensure_ldap_client_is_not_installed
+# - ensure_ldap_server_is_not_installed
 - ensure_login_and_logout_events_are_collected
-- ensure_loopback_traffic_is_configured
+# - ensure_loopback_traffic_is_configured
 - ensure_message_of_the_day_is_configured_properly
 - ensure_mounting_of_squashfs_filesystems_is_disabled
 - ensure_mounting_of_udf_filesystems_is_disabled
-- ensure_net_snmp_is_not_installed
-- ensure_nftables_is_installed
+# - ensure_net_snmp_is_not_installed
+# - ensure_nftables_is_installed
 # - ensure_nftables_is_not_installed
-- ensure_nftables_rules_are_permanent
-- ensure_nftables_service_is_enabled
-- ensure_nis_client_is_not_installed
+# - ensure_nftables_rules_are_permanent
+# - ensure_nftables_service_is_enabled
+# - ensure_nis_client_is_not_installed
 - ensure_nis_server_is_not_installed
 - ensure_no_duplicate_gids_exist
 - ensure_no_duplicate_group_names_exist
@@ -240,9 +240,9 @@ secure_linux_cis::server_level_2:
 - ensure_reverse_path_filtering_is_enabled
 - ensure_root_is_the_only_uid_0_account
 - ensure_rsh_client_is_not_installed
-- ensure_rsyslog_default_file_permissions_configured
-- ensure_rsyslog_is_installed
-- ensure_rsyslog_service_is_enabled_and_running
+# - ensure_rsyslog_default_file_permissions_configured
+# - ensure_rsyslog_is_installed
+# - ensure_rsyslog_service_is_enabled_and_running
 - ensure_samba_is_not_installed
 - ensure_sctp_is_disabled
 - ensure_secure_icmp_redirects_are_not_accepted
@@ -254,7 +254,7 @@ secure_linux_cis::server_level_2:
 - ensure_session_initiation_information_is_collected
 - ensure_shadow_group_is_empty
 - ensure_source_routed_packets_are_not_accepted
-- ensure_ssh_access_is_limited
+# - ensure_ssh_access_is_limited
 - ensure_ssh_allowtcpforwarding_is_disabled
 - ensure_ssh_hostbasedauthentication_is_disabled
 - ensure_ssh_idle_timeout_interval_is_configured
@@ -284,27 +284,27 @@ secure_linux_cis::server_level_2:
 - ensure_tmp_is_configured
 - ensure_use_of_privileged_commands_is_collected
 - ensure_users_own_their_home_directories
-- ensure_x11_server_components_are_not_installed
+# - ensure_x11_server_components_are_not_installed
 - ensure_xd_nx_support_is_enabled
 - ensure_xinetd_is_not_installed
 secure_linux_cis::workstation_level_1:
 - ensure_a_table_exists
-- ensure_access_to_the_su_command_is_restricted
-- ensure_aide_is_installed
+# - ensure_access_to_the_su_command_is_restricted
+# - ensure_aide_is_installed
 - ensure_all_groups_in_etc_passwd_exist_in_etc_group
 - ensure_all_users_home_directories_exist
-- ensure_apparmor_is_installed
+# - ensure_apparmor_is_installed
 - ensure_at_is_restricted_to_authorized_users
 - ensure_authentication_required_for_single_user_mode
 - ensure_base_chains_exist
 - ensure_bogus_icmp_responses_are_ignored
-- ensure_bootloader_password_is_set
+# - ensure_bootloader_password_is_set
 - ensure_broadcast_icmp_requests_are_ignored
 - ensure_chrony_is_configured
 - ensure_core_dumps_are_restricted
 - ensure_cron_daemon_is_enabled_and_running
 - ensure_cron_is_restricted_to_authorized_users
-- ensure_default_deny_firewall_policy
+# - ensure_default_deny_firewall_policy
 - ensure_default_group_for_the_root_account_is_gid_0
 - ensure_default_user_shell_timeout_is_configured
 - ensure_default_user_umask_is_configured
@@ -320,26 +320,26 @@ secure_linux_cis::workstation_level_1:
 - ensure_gdm_is_removed_or_login_is_configured
 - ensure_gpgcheck_is_globally_activated
 - ensure_http_proxy_server_is_not_installed
-- ensure_http_server_is_not_installed
+# - ensure_http_server_is_not_installed
 - ensure_icmp_redirects_are_not_accepted
 - ensure_imap_and_pop3_server_is_not_installed
 - ensure_inactive_password_lock_is_30_days_or_less
 - ensure_ip_forwarding_is_disabled
-- ensure_iptables_package_is_installed
+# - ensure_iptables_packages_are_installed
 # - ensure_ipv6_default_deny_firewall_policy
 # - ensure_ipv6_loopback_traffic_is_configured
 - ensure_ipv6_router_advertisements_are_not_accepted
-- ensure_ldap_client_is_not_installed
-- ensure_ldap_server_is_not_installed
-- ensure_loopback_traffic_is_configured
+# - ensure_ldap_client_is_not_installed
+# - ensure_ldap_server_is_not_installed
+# - ensure_loopback_traffic_is_configured
 - ensure_message_of_the_day_is_configured_properly
 - ensure_mounting_of_udf_filesystems_is_disabled
-- ensure_net_snmp_is_not_installed
-- ensure_nftables_is_installed
+# - ensure_net_snmp_is_not_installed
+# - ensure_nftables_is_installed
 # - ensure_nftables_is_not_installed
-- ensure_nftables_rules_are_permanent
-- ensure_nftables_service_is_enabled
-- ensure_nis_client_is_not_installed
+# - ensure_nftables_rules_are_permanent
+# - ensure_nftables_service_is_enabled
+# - ensure_nis_client_is_not_installed
 - ensure_nis_server_is_not_installed
 - ensure_no_duplicate_gids_exist
 - ensure_no_duplicate_group_names_exist
@@ -384,14 +384,14 @@ secure_linux_cis::workstation_level_1:
 - ensure_root_is_the_only_uid_0_account
 - ensure_root_path_integrity
 - ensure_rsh_client_is_not_installed
-- ensure_rsyslog_default_file_permissions_configured
-- ensure_rsyslog_is_installed
-- ensure_rsyslog_service_is_enabled_and_running
+# - ensure_rsyslog_default_file_permissions_configured
+# - ensure_rsyslog_is_installed
+# - ensure_rsyslog_service_is_enabled_and_running
 - ensure_samba_is_not_installed
 - ensure_secure_icmp_redirects_are_not_accepted
 - ensure_shadow_group_is_empty
 - ensure_source_routed_packets_are_not_accepted
-- ensure_ssh_access_is_limited
+# - ensure_ssh_access_is_limited
 - ensure_ssh_hostbasedauthentication_is_disabled
 - ensure_ssh_idle_timeout_interval_is_configured
 - ensure_ssh_ignorerhosts_is_enabled
@@ -421,12 +421,12 @@ secure_linux_cis::workstation_level_1:
 secure_linux_cis::workstation_level_2:
 - disable_automounting
 - ensure_a_table_exists
-- ensure_access_to_the_su_command_is_restricted
-- ensure_aide_is_installed
-- ensure_all_apparmor_profiles_are_enforcing
+# - ensure_access_to_the_su_command_is_restricted
+# - ensure_aide_is_installed
+# - ensure_all_apparmor_profiles_are_enforcing
 - ensure_all_groups_in_etc_passwd_exist_in_etc_group
 - ensure_all_users_home_directories_exist
-- ensure_apparmor_is_installed
+# - ensure_apparmor_is_installed
 - ensure_at_is_restricted_to_authorized_users
 - ensure_audit_backlog_limit_is_sufficient
 - ensure_audit_log_storage_size_is_configured
@@ -437,14 +437,14 @@ secure_linux_cis::workstation_level_2:
 - ensure_avahi_server_is_not_installed
 - ensure_base_chains_exist
 - ensure_bogus_icmp_responses_are_ignored
-- ensure_bootloader_password_is_set
+# - ensure_bootloader_password_is_set
 - ensure_broadcast_icmp_requests_are_ignored
 - ensure_chrony_is_configured
 - ensure_core_dumps_are_restricted
 - ensure_cron_daemon_is_enabled_and_running
 - ensure_cron_is_restricted_to_authorized_users
 - ensure_dccp_is_disabled
-- ensure_default_deny_firewall_policy
+# - ensure_default_deny_firewall_policy
 - ensure_default_group_for_the_root_account_is_gid_0
 - ensure_default_user_shell_timeout_is_configured
 - ensure_default_user_umask_is_configured
@@ -461,28 +461,28 @@ secure_linux_cis::workstation_level_2:
 - ensure_gdm_is_removed_or_login_is_configured
 - ensure_gpgcheck_is_globally_activated
 - ensure_http_proxy_server_is_not_installed
-- ensure_http_server_is_not_installed
+# - ensure_http_server_is_not_installed
 - ensure_icmp_redirects_are_not_accepted
 - ensure_imap_and_pop3_server_is_not_installed
 - ensure_inactive_password_lock_is_30_days_or_less
 - ensure_ip_forwarding_is_disabled
-- ensure_iptables_package_is_installed
+# - ensure_iptables_packages_are_installed
 # - ensure_ipv6_default_deny_firewall_policy
 # - ensure_ipv6_loopback_traffic_is_configured
 - ensure_ipv6_router_advertisements_are_not_accepted
-- ensure_ldap_client_is_not_installed
-- ensure_ldap_server_is_not_installed
+# - ensure_ldap_client_is_not_installed
+# - ensure_ldap_server_is_not_installed
 - ensure_login_and_logout_events_are_collected
-- ensure_loopback_traffic_is_configured
+# - ensure_loopback_traffic_is_configured
 - ensure_message_of_the_day_is_configured_properly
 - ensure_mounting_of_squashfs_filesystems_is_disabled
 - ensure_mounting_of_udf_filesystems_is_disabled
-- ensure_net_snmp_is_not_installed
-- ensure_nftables_is_installed
+# - ensure_net_snmp_is_not_installed
+# - ensure_nftables_is_installed
 # - ensure_nftables_is_not_installed
-- ensure_nftables_rules_are_permanent
-- ensure_nftables_service_is_enabled
-- ensure_nis_client_is_not_installed
+# - ensure_nftables_rules_are_permanent
+# - ensure_nftables_service_is_enabled
+# - ensure_nis_client_is_not_installed
 - ensure_nis_server_is_not_installed
 - ensure_no_duplicate_gids_exist
 - ensure_no_duplicate_group_names_exist
@@ -527,9 +527,9 @@ secure_linux_cis::workstation_level_2:
 - ensure_root_is_the_only_uid_0_account
 - ensure_root_path_integrity
 - ensure_rsh_client_is_not_installed
-- ensure_rsyslog_default_file_permissions_configured
-- ensure_rsyslog_is_installed
-- ensure_rsyslog_service_is_enabled_and_running
+# - ensure_rsyslog_default_file_permissions_configured
+# - ensure_rsyslog_is_installed
+# - ensure_rsyslog_service_is_enabled_and_running
 - ensure_samba_is_not_installed
 - ensure_sctp_is_disabled
 - ensure_secure_icmp_redirects_are_not_accepted
@@ -541,7 +541,7 @@ secure_linux_cis::workstation_level_2:
 - ensure_session_initiation_information_is_collected
 - ensure_shadow_group_is_empty
 - ensure_source_routed_packets_are_not_accepted
-- ensure_ssh_access_is_limited
+# - ensure_ssh_access_is_limited
 - ensure_ssh_allowtcpforwarding_is_disabled
 - ensure_ssh_hostbasedauthentication_is_disabled
 - ensure_ssh_idle_timeout_interval_is_configured
