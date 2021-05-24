@@ -161,7 +161,7 @@ class secure_linux_cis (
       weekday     => $hardening_schedule['weekday'],
   }
 
-  $base_rules = $profile_type ? {
+  $base_rules_x = $profile_type ? {
     'workstation' => $enforcement_level ? {
       '1' => $workstation_level_1,
       '2' => $workstation_level_2,
@@ -170,6 +170,10 @@ class secure_linux_cis (
       '1' => $server_level_1,
       '2' => $server_level_2,
     }
+  }
+
+  $base_rules = $base_rules_x.map | String $line | {
+    "secure_linux_cis::rules::${line}"
   }
 
   # Build rules to enforce
