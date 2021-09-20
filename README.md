@@ -36,6 +36,7 @@ This Puppet module implements security controls defined in the Center for Intern
 | RedHat 6     | 3.0.0 |
 | RedHat 7     | 3.0.1 |
 | RedHat 8     | 1.0.0 |
+| Rocky 8      | 1.0.0 (symlink of CentOS 8) |
 | SLES   12    | 2.1.0 |
 | SLES   15    | 1.0.0 |
 | Ubuntu 14.04 | 2.1.0 |
