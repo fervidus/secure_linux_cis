@@ -1,6 +1,6 @@
 {
   "name": "fervid-secure_linux_cis",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "author": "Fervid",
   "summary": "This module hardens Linux servers to CIS security compliance",
   "license": "Apache-2.0",
@@ -9,8 +9,8 @@
   "issues_url": "https://github.com/fervidus/secure_linux_cis/issues",
   "dependencies": [
     {
-      "name": "aboe/chrony",
-      "version_requirement": ">= 0.3.0 < 1.0.0"
+      "name": "puppet/chrony",
+      "version_requirement": ">= 2.1.0 < 3.0.0"
     },
     {
       "name": "camptocamp/augeas",
@@ -153,7 +153,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 5.0.0 < 7.0.0"
+      "version_requirement": ">= 5.0.0 < 8.0.0"
     }
   ],
   "pdk-version": "2.0.0",
