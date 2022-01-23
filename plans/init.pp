@@ -11,4 +11,5 @@ plan secure_linux_cis(
       time_servers => $time_servers,
       profile_type => $profile_type,
     }
+  }
 }
