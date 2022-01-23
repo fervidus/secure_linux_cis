@@ -1,7 +1,7 @@
 plan secure_linux_cis(
   TargetSpec $nodes,
-  Array[Stdlib::Host]           $time_servers,
-  Enum['workstation', 'server'] $profile_type,
+  Array[Stdlib::Host]           $time_servers = ['time.google.com'],
+  Enum['workstation', 'server'] $profile_type = 'server',
 ) {
   $nodes.apply_prep
 
