@@ -1,6 +1,6 @@
 {
   "name": "fervid-secure_linux_cis",
-  "version": "3.0.0",
+  "version": "2.1.18",
   "author": "Fervid",
   "summary": "This module hardens Linux servers to CIS security compliance",
   "license": "Apache-2.0",
@@ -9,20 +9,20 @@
   "issues_url": "https://github.com/fervidus/secure_linux_cis/issues",
   "dependencies": [
     {
-      "name": "aboe/chrony",
-      "version_requirement": ">= 0.3.0 < 1.0.0"
+      "name": "puppet/chrony",
+      "version_requirement": ">= 2.0.0 < 3.0.0"
     },
     {
       "name": "camptocamp/augeas",
       "version_requirement": ">= 1.8.0 < 2.0.0"
     },
     {
-      "name": "camptocamp/kmod",
-      "version_requirement": ">= 2.3.0 < 3.0.0"
+      "name": "puppet/kmod",
+      "version_requirement": ">= 3.0.0 < 4.0.0"
     },
     {
-      "name": "camptocamp/postfix",
-      "version_requirement": ">= 1.8.0 < 2.0.0"
+      "name": "puppet/postfix",
+      "version_requirement": ">= 2.0.0 < 3.0.0"
     },
     {
       "name": "herculesteam/augeasproviders_core",
@@ -45,8 +45,8 @@
       "version_requirement": ">= 2.2.0 < 3.0.0"
     },
     {
-      "name": "kemra102/auditd",
-      "version_requirement": ">= 2.2.0 < 3.0.0"
+      "name": "ubeek/auditd",
+      "version_requirement": ">= 1.0.0 < 2.0.0"
     },
     {
       "name": "puppet/alternatives",
@@ -78,10 +78,6 @@
     },
     {
       "name": "puppetlabs/mount_core",
-      "version_requirement": ">= 1.0.0 < 2.0.0"
-    },
-    {
-      "name": "puppet/nftables",
       "version_requirement": ">= 1.0.0 < 2.0.0"
     },
     {
@@ -156,7 +152,7 @@
       "version_requirement": ">= 5.0.0 < 7.0.0"
     }
   ],
-  "pdk-version": "2.0.0",
-  "template-url": "https://github.com/puppetlabs/pdk-templates#2.0.0",
-  "template-ref": "tags/2.0.0-0-ge838f1d"
+  "pdk-version": "2.3.0",
+  "template-url": "https://github.com/puppetlabs/pdk-templates#1.18.1",
+  "template-ref": "tags/1.18.1-0-g3d2e75c"
 }
