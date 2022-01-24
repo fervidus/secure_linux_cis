@@ -19,7 +19,8 @@
 # @example
 #   include secure_linux_cis::ensure_ssh_logingracetime_is_set_to_one_minute_or_less
 class secure_linux_cis::rules::ensure_ssh_logingracetime_is_set_to_one_minute_or_less {
-    include secure_linux_cis::service
+    include secure_linux_cis::sshd_service
+
     if $secure_linux_cis::login_grace_time > 60 or $secure_linux_cis::login_grace_time < 1 {
       fail('The Login Grace Time parameter has been manually set past the 1 - 60 threshold')
     }
@@ -28,6 +29,6 @@ class secure_linux_cis::rules::ensure_ssh_logingracetime_is_set_to_one_minute_or
       path   => '/etc/ssh/sshd_config',
       line   => "LoginGraceTime ${secure_linux_cis::login_grace_time}",
       match  => '^#?LoginGraceTime',
-      notify => Exec['reload sshd'],
+      notify => Class['secure_linux_cis::sshd_service'],
     }
 }

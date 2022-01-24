@@ -37,7 +37,8 @@
 # @example
 #   include secure_linux_cis::ensure_ssh_access_is_limited
 class secure_linux_cis::rules::ensure_ssh_access_is_limited {
-    include secure_linux_cis::service
+    include secure_linux_cis::sshd_service
+
     if $secure_linux_cis::allow_users == [] and $secure_linux_cis::allow_groups == [] and $secure_linux_cis::deny_users == [] and
         $secure_linux_cis::deny_groups == [] {
       notify { 'allow_groups':
@@ -53,7 +54,7 @@ class secure_linux_cis::rules::ensure_ssh_access_is_limited {
           path   => '/etc/ssh/sshd_config',
           line   => "AllowUsers ${user_list_allow}",
           match  => '^#?AllowUsers',
-          notify => Exec['reload sshd'],
+          notify => Class['secure_linux_cis::sshd_service'],
         }
       }
       if $secure_linux_cis::allow_groups != [] {
@@ -63,7 +64,7 @@ class secure_linux_cis::rules::ensure_ssh_access_is_limited {
           path   => '/etc/ssh/sshd_config',
           line   => "AllowGroups ${group_list_allow}",
           match  => '^#?AllowGroups',
-          notify => Exec['reload sshd'],
+          notify => Class['secure_linux_cis::sshd_service'],
         }
       }
       if $secure_linux_cis::deny_users != [] {
@@ -73,7 +74,7 @@ class secure_linux_cis::rules::ensure_ssh_access_is_limited {
           path   => '/etc/ssh/sshd_config',
           line   => "DenyUsers ${user_list_deny}",
           match  => '^#?DenyUsers',
-          notify => Exec['reload sshd'],
+          notify => Class['secure_linux_cis::sshd_service'],
         }
       }
       if $secure_linux_cis::deny_groups != [] {
@@ -83,7 +84,7 @@ class secure_linux_cis::rules::ensure_ssh_access_is_limited {
           path   => '/etc/ssh/sshd_config',
           line   => "DenyGroups ${group_list_deny}",
           match  => '^#?DenyGroups',
-          notify => Exec['reload sshd'],
+          notify => Class['secure_linux_cis::sshd_service'],
         }
       }
     }

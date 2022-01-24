@@ -13,28 +13,5 @@
 # @example
 #   include secure_linux_cis::ensure_only_approved_mac_algorithms_are_used
 class secure_linux_cis::rules::ensure_only_approved_mac_algorithms_are_used {
-  include secure_linux_cis::service
-
-  $acceptable_values = [
-    'hmac-sha2-512-etm@openssh.com',
-    'hmac-sha2-256-etm@openssh.com',
-    'hmac-sha2-512',
-    'hmac-sha2-256',
-  ]
-
-  $secure_linux_cis::approved_mac_algorithms.each |$algorithm| {
-    unless $algorithm in $acceptable_values {
-      fail("MAC Algorithm ${algorithm} does not match CIS standards. Please use CIS standard 1 for reference")
-    }
-  }
-
-  $mac_algorithm_array = join($secure_linux_cis::approved_mac_algorithms,',')
-
-  file_line { 'ssh mac algorithms':
-    ensure => 'present',
-    path   => '/etc/ssh/sshd_config',
-    line   => "MACs ${mac_algorithm_array}",
-    match  => '^#?MACs',
-    notify => Exec['reload sshd'],
-  }
+  include secure_linux_cis::rules::ensure_only_strong_mac_algorithms_are_used
 }

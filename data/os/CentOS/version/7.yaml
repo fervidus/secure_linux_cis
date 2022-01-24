@@ -5,8 +5,8 @@ secure_linux_cis::server_level_1:
 - disable_automounting
 - disable_usb_storage
 - ensure_a_table_exists
-# - ensure_access_to_the_su_command_is_restricted
-# - ensure_aide_is_installed
+- ensure_access_to_the_su_command_is_restricted
+- ensure_aide_is_installed
 - ensure_all_groups_in_etc_passwd_exist_in_etc_group
 - ensure_all_users_home_directories_exist
 - ensure_at_is_restricted_to_authorized_users
@@ -55,6 +55,7 @@ secure_linux_cis::server_level_1:
 # - ensure_ldap_server_is_not_installed
 # - ensure_loopback_traffic_is_configured
 - ensure_message_of_the_day_is_configured_properly
+- ensure_minimum_days_between_password_changes_is_7_or_more
 - ensure_mounting_of_cramfs_filesystems_is_disabled
 - ensure_mounting_of_udf_filesystems_is_disabled
 # - ensure_net_snmp_is_not_installed
@@ -85,6 +86,9 @@ secure_linux_cis::server_level_1:
 - ensure_nosuid_option_set_on_dev_shm_partition
 - ensure_nosuid_option_set_on_tmp_partition
 - ensure_nosuid_option_set_on_var_tmp_partition
+- ensure_only_strong_ciphers_are_used
+- ensure_only_strong_key_exchange_algorithms_are_used
+- ensure_only_strong_mac_algorithms_are_used
 # - ensure_ntp_is_configured
 - ensure_packet_redirect_sending_is_disabled
 - ensure_password_expiration_is_365_days_or_less
@@ -150,12 +154,13 @@ secure_linux_cis::server_level_1:
 # - ensure_x11_server_components_are_not_installed
 - ensure_xd_nx_support_is_enabled
 - ensure_xinetd_is_not_installed
+
 secure_linux_cis::server_level_2:
 - disable_automounting
 - disable_usb_storage
 - ensure_a_table_exists
-# - ensure_access_to_the_su_command_is_restricted
-# - ensure_aide_is_installed
+- ensure_access_to_the_su_command_is_restricted
+- ensure_aide_is_installed
 - ensure_all_groups_in_etc_passwd_exist_in_etc_group
 - ensure_all_users_home_directories_exist
 - ensure_at_is_restricted_to_authorized_users
@@ -212,6 +217,7 @@ secure_linux_cis::server_level_2:
 - ensure_login_and_logout_events_are_collected
 # - ensure_loopback_traffic_is_configured
 - ensure_message_of_the_day_is_configured_properly
+- ensure_minimum_days_between_password_changes_is_7_or_more
 - ensure_mounting_of_cramfs_filesystems_is_disabled
 - ensure_mounting_of_squashfs_filesystems_is_disabled
 - ensure_mounting_of_udf_filesystems_is_disabled
@@ -233,6 +239,7 @@ secure_linux_cis::server_level_2:
 - ensure_no_users_have_netrc_files
 - ensure_no_users_have_rhosts_files
 - ensure_no_world_writable_files_exist
+- ensure_only_strong_key_exchange_algorithms_are_used
 - ensure_nodev_option_set_on_dev_shm_partition
 - ensure_nodev_option_set_on_home_partition
 - ensure_nodev_option_set_on_tmp_partition
@@ -243,6 +250,9 @@ secure_linux_cis::server_level_2:
 - ensure_nosuid_option_set_on_dev_shm_partition
 - ensure_nosuid_option_set_on_tmp_partition
 - ensure_nosuid_option_set_on_var_tmp_partition
+- ensure_only_strong_ciphers_are_used
+- ensure_only_strong_key_exchange_algorithms_are_used
+- ensure_only_strong_mac_algorithms_are_used
 # - ensure_ntp_is_configured
 - ensure_packet_redirect_sending_is_disabled
 - ensure_password_expiration_is_365_days_or_less

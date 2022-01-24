@@ -18,7 +18,7 @@
 # @example
 #   include secure_linux_cis::rules::ensure_permissions_on_ssh_public_host_key_files_are_configured
 class secure_linux_cis::rules::ensure_permissions_on_ssh_public_host_key_files_are_configured {
-    include secure_linux_cis::service
+    include secure_linux_cis::sshd_service
 
     file{ $facts['ssh_host_pub_keys']:
       ensure => 'present',

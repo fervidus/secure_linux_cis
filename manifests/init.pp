@@ -68,6 +68,8 @@ class secure_linux_cis (
   Enum['smbd', 'smb', 'none']             $samba_service,
   Enum['cron', 'crond', 'none']           $cron_service,
   Array[Stdlib::Host]                     $time_servers,
+  Array[String]                           $approved_kex,
+  Array[String]                           $approved_mac_algorithms,
   Struct[
     {
       Optional[period]      => Enum['hourly', 'daily', 'weekly', 'monthly', 'never'],
@@ -110,23 +112,6 @@ class secure_linux_cis (
     'aes128-ctr',
     'aes192-ctr',
     'aes256-ctr'
-  ],
-  Array[String]                           $approved_kex            = [
-    'curve25519-sha256',
-    'curve25519-sha256@libssh.org',
-    'diffie-hellman-group14-sha256',
-    'diffie-hellman-group16-sha512',
-    'diffie-hellman-group18-sha512',
-    'ecdh-sha2-nistp521',
-    'ecdh-sha2-nistp384',
-    'ecdh-sha2-nistp256',
-    'diffie-hellman-group-exchange-sha256'
-  ],
-  Array[String]                           $approved_mac_algorithms = [
-    'hmac-sha2-512-etm@openssh.com',
-    'hmac-sha2-256-etm@openssh.com',
-    'hmac-sha2-512',
-    'hmac-sha2-256',
   ],
   Integer                                 $client_alive_interval   = 300, # must be between 1 and 300
   Integer[0,3]                            $client_alive_count_max  = 0,

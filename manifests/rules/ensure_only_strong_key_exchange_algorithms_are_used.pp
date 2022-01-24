@@ -18,33 +18,16 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_only_strong_key_exchange_algorithms_are_used
-class secure_linux_cis::rules::ensure_only_strong_key_exchange_algorithms_are_used (
-    Boolean $enforced = true,
-    Array[String] $approved_kex = $secure_linux_cis::approved_kex,
-) {
-    include secure_linux_cis::service
-    $acceptable_values = [
-      'curve25519-sha256',
-      'curve25519-sha256@libssh.org',
-      'diffie-hellman-group14-sha256',
-      'diffie-hellman-group16-sha512',
-      'diffie-hellman-group18-sha512',
-      'ecdh-sha2-nistp521',
-      'ecdh-sha2-nistp384',
-      'ecdh-sha2-nistp256',
-      'diffie-hellman-group-exchange-sha256'
-    ]
-    $approved_kex.each |$kex| {
-      unless $kex in $acceptable_values {
-        fail("Key exchange algorithm ${kex} does not match CIS standards. Please use CIS standard 5.2.15 for reference")
-      }
-    }
-    $kex_array = join($approved_kex,',')
+class secure_linux_cis::rules::ensure_only_strong_key_exchange_algorithms_are_used {
+    include secure_linux_cis::sshd_service
+
+    $kex_array = join($secure_linux_cis::approved_kex,',')
+
     file_line { 'ssh kex':
       ensure => 'present',
       path   => '/etc/ssh/sshd_config',
       line   => "KexAlgorithms ${kex_array}",
       match  => '^#?KexAlgorithms',
-      notify => Exec['reload sshd'],
+      notify => Class['secure_linux_cis::sshd_service'],
     }
 }
