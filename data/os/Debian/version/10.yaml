@@ -81,8 +81,8 @@ secure_linux_cis::server_level_1:
   - ensure_a_table_exists
   - ensure_base_chains_exist
   - ensure_loopback_traffic_is_configured
-  - ensure_nftables_service_is_enabled
-  - ensure_nftables_rules_are_permanent
+  # - ensure_nftables_service_is_enabled
+  # - ensure_nftables_rules_are_permanent
   - ensure_ipv6_default_deny_firewall_policy
   - ensure_ipv6_loopback_traffic_is_configured
   - ensure_rsyslog_is_installed
@@ -246,8 +246,8 @@ secure_linux_cis::server_level_2:
   - ensure_a_table_exists
   - ensure_base_chains_exist
   - ensure_loopback_traffic_is_configured
-  - ensure_nftables_service_is_enabled
-  - ensure_nftables_rules_are_permanent
+  # - ensure_nftables_service_is_enabled
+  # - ensure_nftables_rules_are_permanent
   - ensure_ipv6_default_deny_firewall_policy
   - ensure_ipv6_loopback_traffic_is_configured
   - ensure_auditd_is_installed
@@ -410,8 +410,8 @@ secure_linux_cis::workstation_level_1:
   - ensure_a_table_exists
   - ensure_base_chains_exist
   - ensure_loopback_traffic_is_configured
-  - ensure_nftables_service_is_enabled
-  - ensure_nftables_rules_are_permanent
+  # - ensure_nftables_service_is_enabled
+  # - ensure_nftables_rules_are_permanent
   - ensure_ipv6_default_deny_firewall_policy
   - ensure_ipv6_loopback_traffic_is_configured
   - ensure_rsyslog_is_installed
@@ -580,8 +580,8 @@ secure_linux_cis::workstation_level_2:
   - ensure_a_table_exists
   - ensure_base_chains_exist
   - ensure_loopback_traffic_is_configured
-  - ensure_nftables_service_is_enabled
-  - ensure_nftables_rules_are_permanent
+  # - ensure_nftables_service_is_enabled
+  # - ensure_nftables_rules_are_permanent
   - ensure_ipv6_default_deny_firewall_policy
   - ensure_ipv6_loopback_traffic_is_configured
   - ensure_auditd_is_installed
