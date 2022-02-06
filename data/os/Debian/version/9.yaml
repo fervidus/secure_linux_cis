@@ -80,7 +80,7 @@ secure_linux_cis::server_level_1:
   - ensure_syslog_ng_default_file_permissions_configured
   - ensure_rsyslog_or_syslog_ng_is_installed
   - ensure_permissions_on_all_logfiles_are_configured
-  - rules::ensure_cron_daemon_is_enabled
+  - ensure_cron_daemon_is_enabled
   - ensure_permissions_on_etc_cron_tab_are_configured
   - ensure_permissions_on_etc_cron_hourly_are_configured
   - ensure_permissions_on_etc_cron_daily_are_configured
@@ -239,7 +239,7 @@ secure_linux_cis::server_level_2:
   - ensure_syslog_ng_default_file_permissions_configured
   - ensure_rsyslog_or_syslog_ng_is_installed
   - ensure_permissions_on_all_logfiles_are_configured
-  - rules::ensure_cron_daemon_is_enabled
+  - ensure_cron_daemon_is_enabled
   - ensure_permissions_on_etc_cron_tab_are_configured
   - ensure_permissions_on_etc_cron_hourly_are_configured
   - ensure_permissions_on_etc_cron_daily_are_configured
@@ -376,7 +376,7 @@ secure_linux_cis::workstation_level_1:
   - ensure_syslog_ng_default_file_permissions_configured
   - ensure_rsyslog_or_syslog_ng_is_installed
   - ensure_permissions_on_all_logfiles_are_configured
-  - rules::ensure_cron_daemon_is_enabled
+  - ensure_cron_daemon_is_enabled
   - ensure_permissions_on_etc_cron_tab_are_configured
   - ensure_permissions_on_etc_cron_hourly_are_configured
   - ensure_permissions_on_etc_cron_daily_are_configured
@@ -540,7 +540,7 @@ secure_linux_cis::workstation_level_2:
   - ensure_syslog_ng_default_file_permissions_configured
   - ensure_rsyslog_or_syslog_ng_is_installed
   - ensure_permissions_on_all_logfiles_are_configured
-  - rules::ensure_cron_daemon_is_enabled
+  - ensure_cron_daemon_is_enabled
   - ensure_permissions_on_etc_cron_tab_are_configured
   - ensure_permissions_on_etc_cron_hourly_are_configured
   - ensure_permissions_on_etc_cron_daily_are_configured

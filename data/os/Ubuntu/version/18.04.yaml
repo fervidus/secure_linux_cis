@@ -67,20 +67,20 @@ secure_linux_cis::server_level_1:
   - ensure_reverse_path_filtering_is_enabled
   - ensure_tcp_syn_cookies_is_enabled
   - ensure_ipv6_router_advertisements_are_not_accepted
-  - ensure_ufw_is_installed
-  - ensure_iptables_persistent_is_not_installed_with_ufw
-  - ensure_ufw_service_is_enabled
-  - ensure_ufw_default_deny_firewall_policy
-  # # - ensure_nftables_is_installed
-  - ensure_ufw_is_uninstalled_or_disabled_with_nftables
+  # - ensure_ufw_is_installed
+  # - ensure_iptables_persistent_is_not_installed_with_ufw
+  # - ensure_ufw_service_is_enabled
+  # - ensure_ufw_default_deny_firewall_policy
+  # - ensure_nftables_is_installed
+  # - ensure_ufw_is_uninstalled_or_disabled_with_nftables
   # - ensure_a_nftables_table_exists
-  # # - ensure_nftables_base_chains_exist
-  # # - ensure_nftables_loopback_traffic_is_configured
-  # # - ensure_nftables_default_deny_firewall_policy
-  # # - ensure_nftables_service_is_enabled
-  # # - ensure_nftables_rules_are_permanent
+  # - ensure_nftables_base_chains_exist
+  # - ensure_nftables_loopback_traffic_is_configured
+  # - ensure_nftables_default_deny_firewall_policy
+  # - ensure_nftables_service_is_enabled
+  # - ensure_nftables_rules_are_permanent
   - ensure_iptables_packages_are_installed
-  # # - ensure_nftables_is_not_installed_with_iptables
+  # - ensure_nftables_is_not_installed_with_iptables
   - ensure_iptables_default_deny_firewall_policy
   - ensure_iptables_loopback_traffic_is_configured
   - ensure_ip6tables_default_deny_firewall_policy
@@ -223,20 +223,20 @@ secure_linux_cis::server_level_2:
   - ensure_sctp_is_disabled
   - ensure_rds_is_disabled
   - ensure_tipc_is_disabled
-  - ensure_ufw_is_installed
-  - ensure_iptables_persistent_is_not_installed_with_ufw
-  - ensure_ufw_service_is_enabled
-  - ensure_ufw_default_deny_firewall_policy
-  # # - ensure_nftables_is_installed
-  - ensure_ufw_is_uninstalled_or_disabled_with_nftables
+  # - ensure_ufw_is_installed
+  # - ensure_iptables_persistent_is_not_installed_with_ufw
+  # - ensure_ufw_service_is_enabled
+  # - ensure_ufw_default_deny_firewall_policy
+  # - ensure_nftables_is_installed
+  # - ensure_ufw_is_uninstalled_or_disabled_with_nftables
   # - ensure_a_nftables_table_exists
-  # # - ensure_nftables_base_chains_exist
-  # # - ensure_nftables_loopback_traffic_is_configured
-  # # - ensure_nftables_default_deny_firewall_policy
-  # # - ensure_nftables_service_is_enabled
-  # # - ensure_nftables_rules_are_permanent
+  # - ensure_nftables_base_chains_exist
+  # - ensure_nftables_loopback_traffic_is_configured
+  # - ensure_nftables_default_deny_firewall_policy
+  # - ensure_nftables_service_is_enabled
+  # - ensure_nftables_rules_are_permanent
   - ensure_iptables_packages_are_installed
-  # # - ensure_nftables_is_not_installed_with_iptables
+  # - ensure_nftables_is_not_installed_with_iptables
   - ensure_iptables_default_deny_firewall_policy
   - ensure_iptables_loopback_traffic_is_configured
   - ensure_ip6tables_default_deny_firewall_policy
@@ -378,20 +378,20 @@ secure_linux_cis::workstation_level_1:
   - ensure_reverse_path_filtering_is_enabled
   - ensure_tcp_syn_cookies_is_enabled
   - ensure_ipv6_router_advertisements_are_not_accepted
-  - ensure_ufw_is_installed
-  - ensure_iptables_persistent_is_not_installed_with_ufw
-  - ensure_ufw_service_is_enabled
-  - ensure_ufw_default_deny_firewall_policy
-  # # - ensure_nftables_is_installed
-  - ensure_ufw_is_uninstalled_or_disabled_with_nftables
+  # - ensure_ufw_is_installed
+  # - ensure_iptables_persistent_is_not_installed_with_ufw
+  # - ensure_ufw_service_is_enabled
+  # - ensure_ufw_default_deny_firewall_policy
+  # - ensure_nftables_is_installed
+  # - ensure_ufw_is_uninstalled_or_disabled_with_nftables
   # - ensure_a_nftables_table_exists
-  # # - ensure_nftables_base_chains_exist
-  # # - ensure_nftables_loopback_traffic_is_configured
-  # # - ensure_nftables_default_deny_firewall_policy
-  # # - ensure_nftables_service_is_enabled
-  # # - ensure_nftables_rules_are_permanent
+  # - ensure_nftables_base_chains_exist
+  # - ensure_nftables_loopback_traffic_is_configured
+  # - ensure_nftables_default_deny_firewall_policy
+  # - ensure_nftables_service_is_enabled
+  # - ensure_nftables_rules_are_permanent
   - ensure_iptables_packages_are_installed
-  # # - ensure_nftables_is_not_installed_with_iptables
+  # - ensure_nftables_is_not_installed_with_iptables
   - ensure_iptables_default_deny_firewall_policy
   - ensure_iptables_loopback_traffic_is_configured
   - ensure_ip6tables_default_deny_firewall_policy
@@ -537,20 +537,20 @@ secure_linux_cis::workstation_level_2:
   - ensure_sctp_is_disabled
   - ensure_rds_is_disabled
   - ensure_tipc_is_disabled
-  - ensure_ufw_is_installed
-  - ensure_iptables_persistent_is_not_installed_with_ufw
-  - ensure_ufw_service_is_enabled
-  - ensure_ufw_default_deny_firewall_policy
-  # # - ensure_nftables_is_installed
-  - ensure_ufw_is_uninstalled_or_disabled_with_nftables
+  # - ensure_ufw_is_installed
+  # - ensure_iptables_persistent_is_not_installed_with_ufw
+  # - ensure_ufw_service_is_enabled
+  # - ensure_ufw_default_deny_firewall_policy
+  # - ensure_nftables_is_installed
+  # - ensure_ufw_is_uninstalled_or_disabled_with_nftables
   # - ensure_a_nftables_table_exists
-  # # - ensure_nftables_base_chains_exist
-  # # - ensure_nftables_loopback_traffic_is_configured
-  # # - ensure_nftables_default_deny_firewall_policy
-  # # - ensure_nftables_service_is_enabled
-  # # - ensure_nftables_rules_are_permanent
+  # - ensure_nftables_base_chains_exist
+  # - ensure_nftables_loopback_traffic_is_configured
+  # - ensure_nftables_default_deny_firewall_policy
+  # - ensure_nftables_service_is_enabled
+  # - ensure_nftables_rules_are_permanent
   - ensure_iptables_packages_are_installed
-  # # - ensure_nftables_is_not_installed_with_iptables
+  # - ensure_nftables_is_not_installed_with_iptables
   - ensure_iptables_default_deny_firewall_policy
   - ensure_iptables_loopback_traffic_is_configured
   - ensure_ip6tables_default_deny_firewall_policy
