@@ -66,15 +66,15 @@ secure_linux_cis::server_level_1:
   # - ensure_firewalld_is_installed
   - ensure_firewalld_service_is_enabled_and_running
   - ensure_default_zone_is_set
-  - ensure_nftables_is_installed
+  # - ensure_nftables_is_installed
   - ensure_a_table_exists
   - ensure_base_chains_exist
   - ensure_loopback_traffic_is_configured
   - ensure_default_deny_firewall_policy
-  - ensure_nftables_service_is_enabled
-  - ensure_nftables_rules_are_permanent
+  # - ensure_nftables_service_is_enabled
+  # - ensure_nftables_rules_are_permanent
   - ensure_iptables_package_is_installed
-  - ensure_nftables_is_not_installed
+  # - ensure_nftables_is_not_installed
   - ensure_firewall_rules_exist_for_all_open_ports
   - ensure_ipv6_default_deny_firewall_policy
   - ensure_ipv6_loopback_traffic_is_configured
@@ -214,15 +214,15 @@ secure_linux_cis::server_level_2:
   # - ensure_firewalld_is_installed
   - ensure_firewalld_service_is_enabled_and_running
   - ensure_default_zone_is_set
-  - ensure_nftables_is_installed
+  # - ensure_nftables_is_installed
   - ensure_a_table_exists
   - ensure_base_chains_exist
   - ensure_loopback_traffic_is_configured
   - ensure_default_deny_firewall_policy
-  - ensure_nftables_service_is_enabled
-  - ensure_nftables_rules_are_permanent
+  # - ensure_nftables_service_is_enabled
+  # - ensure_nftables_rules_are_permanent
   - ensure_iptables_package_is_installed
-  - ensure_nftables_is_not_installed
+  # - ensure_nftables_is_not_installed
   - ensure_firewall_rules_exist_for_all_open_ports
   - ensure_ipv6_default_deny_firewall_policy
   - ensure_ipv6_loopback_traffic_is_configured
@@ -360,15 +360,15 @@ secure_linux_cis::workstation_level_1:
   # - ensure_firewalld_is_installed
   - ensure_firewalld_service_is_enabled_and_running
   - ensure_default_zone_is_set
-  - ensure_nftables_is_installed
+  # - ensure_nftables_is_installed
   - ensure_a_table_exists
   - ensure_base_chains_exist
   - ensure_loopback_traffic_is_configured
   - ensure_default_deny_firewall_policy
-  - ensure_nftables_service_is_enabled
-  - ensure_nftables_rules_are_permanent
+  # - ensure_nftables_service_is_enabled
+  # - ensure_nftables_rules_are_permanent
   - ensure_iptables_package_is_installed
-  - ensure_nftables_is_not_installed
+  # - ensure_nftables_is_not_installed
   - ensure_firewall_rules_exist_for_all_open_ports
   - ensure_ipv6_default_deny_firewall_policy
   - ensure_ipv6_loopback_traffic_is_configured
@@ -506,15 +506,15 @@ secure_linux_cis::workstation_level_2:
   # - ensure_firewalld_is_installed
   - ensure_firewalld_service_is_enabled_and_running
   - ensure_default_zone_is_set
-  - ensure_nftables_is_installed
+  # - ensure_nftables_is_installed
   - ensure_a_table_exists
   - ensure_base_chains_exist
   - ensure_loopback_traffic_is_configured
   - ensure_default_deny_firewall_policy
-  - ensure_nftables_service_is_enabled
-  - ensure_nftables_rules_are_permanent
+  # - ensure_nftables_service_is_enabled
+  # - ensure_nftables_rules_are_permanent
   - ensure_iptables_package_is_installed
-  - ensure_nftables_is_not_installed
+  # - ensure_nftables_is_not_installed
   - ensure_firewall_rules_exist_for_all_open_ports
   - ensure_ipv6_default_deny_firewall_policy
   - ensure_ipv6_loopback_traffic_is_configured
