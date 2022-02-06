@@ -75,7 +75,7 @@ secure_linux_cis::server_level_1:
   - ensure_tcp_syn_cookies_is_enabled
   - ensure_ipv6_router_advertisements_are_not_accepted
   - ensure_a_firewall_package_is_installed
-  - ensure_ufw_service_is_enabled
+  # - ensure_ufw_service_is_enabled
   - ensure_default_deny_firewall_policy
   - ensure_firewall_rules_exist_for_all_open_ports
   - ensure_a_table_exists
@@ -92,7 +92,7 @@ secure_linux_cis::server_level_1:
   - ensure_journald_is_configured_to_compress_large_log_files
   - ensure_permissions_on_all_logfiles_are_configured
   - ensure_logrotate_assigns_appropriate_permissions
-  - rules::ensure_cron_daemon_is_enabled
+  - ensure_cron_daemon_is_enabled
   - ensure_permissions_on_etc_cron_tab_are_configured
   - ensure_permissions_on_etc_cron_hourly_are_configured
   - ensure_permissions_on_etc_cron_daily_are_configured
@@ -240,7 +240,7 @@ secure_linux_cis::server_level_2:
   - ensure_rds_is_disabled
   - ensure_tipc_is_disabled
   - ensure_a_firewall_package_is_installed
-  - ensure_ufw_service_is_enabled
+  # - ensure_ufw_service_is_enabled
   - ensure_default_deny_firewall_policy
   - ensure_firewall_rules_exist_for_all_open_ports
   - ensure_a_table_exists
@@ -270,7 +270,7 @@ secure_linux_cis::server_level_2:
   - ensure_journald_is_configured_to_compress_large_log_files
   - ensure_permissions_on_all_logfiles_are_configured
   - ensure_logrotate_assigns_appropriate_permissions
-  - rules::ensure_cron_daemon_is_enabled
+  - ensure_cron_daemon_is_enabled
   - ensure_permissions_on_etc_cron_tab_are_configured
   - ensure_permissions_on_etc_cron_hourly_are_configured
   - ensure_permissions_on_etc_cron_daily_are_configured
@@ -404,7 +404,7 @@ secure_linux_cis::workstation_level_1:
   - ensure_tcp_syn_cookies_is_enabled
   - ensure_ipv6_router_advertisements_are_not_accepted
   - ensure_a_firewall_package_is_installed
-  - ensure_ufw_service_is_enabled
+  # - ensure_ufw_service_is_enabled
   - ensure_default_deny_firewall_policy
   - ensure_firewall_rules_exist_for_all_open_ports
   - ensure_a_table_exists
@@ -421,7 +421,7 @@ secure_linux_cis::workstation_level_1:
   - ensure_journald_is_configured_to_compress_large_log_files
   - ensure_permissions_on_all_logfiles_are_configured
   - ensure_logrotate_assigns_appropriate_permissions
-  - rules::ensure_cron_daemon_is_enabled
+  - ensure_cron_daemon_is_enabled
   - ensure_permissions_on_etc_cron_tab_are_configured
   - ensure_permissions_on_etc_cron_hourly_are_configured
   - ensure_permissions_on_etc_cron_daily_are_configured
@@ -574,7 +574,7 @@ secure_linux_cis::workstation_level_2:
   - ensure_rds_is_disabled
   - ensure_tipc_is_disabled
   - ensure_a_firewall_package_is_installed
-  - ensure_ufw_service_is_enabled
+  # - ensure_ufw_service_is_enabled
   - ensure_default_deny_firewall_policy
   - ensure_firewall_rules_exist_for_all_open_ports
   - ensure_a_table_exists
@@ -604,7 +604,7 @@ secure_linux_cis::workstation_level_2:
   - ensure_journald_is_configured_to_compress_large_log_files
   - ensure_permissions_on_all_logfiles_are_configured
   - ensure_logrotate_assigns_appropriate_permissions
-  - rules::ensure_cron_daemon_is_enabled
+  - ensure_cron_daemon_is_enabled
   - ensure_permissions_on_etc_cron_tab_are_configured
   - ensure_permissions_on_etc_cron_hourly_are_configured
   - ensure_permissions_on_etc_cron_daily_are_configured

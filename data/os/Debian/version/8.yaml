@@ -13,7 +13,7 @@ secure_linux_cis::server_level_1:
   - ensure_broadcast_icmp_requests_are_ignored
   - ensure_chrony_is_configured
   - ensure_core_dumps_are_restricted
-  - rules::ensure_cron_daemon_is_enabled
+  - ensure_cron_daemon_is_enabled
   - ensure_cups_is_not_enabled
   - ensure_default_deny_firewall_policy
   - ensure_default_group_for_the_root_account_is_gid_0
@@ -157,7 +157,7 @@ secure_linux_cis::server_level_2:
   - ensure_broadcast_icmp_requests_are_ignored
   - ensure_chrony_is_configured
   - ensure_core_dumps_are_restricted
-  - rules::ensure_cron_daemon_is_enabled
+  - ensure_cron_daemon_is_enabled
   - ensure_cups_is_not_enabled
   - ensure_default_deny_firewall_policy
   - ensure_default_group_for_the_root_account_is_gid_0
@@ -315,7 +315,7 @@ secure_linux_cis::workstation_level_1:
   - ensure_broadcast_icmp_requests_are_ignored
   - ensure_chrony_is_configured
   - ensure_core_dumps_are_restricted
-  - rules::ensure_cron_daemon_is_enabled
+  - ensure_cron_daemon_is_enabled
   - ensure_default_deny_firewall_policy
   - ensure_default_group_for_the_root_account_is_gid_0
   - ensure_default_user_umask_is_027_or_more_restrictive
@@ -463,7 +463,7 @@ secure_linux_cis::workstation_level_2:
   - ensure_broadcast_icmp_requests_are_ignored
   - ensure_chrony_is_configured
   - ensure_core_dumps_are_restricted
-  - rules::ensure_cron_daemon_is_enabled
+  - ensure_cron_daemon_is_enabled
   - ensure_cups_is_not_enabled
   - ensure_default_deny_firewall_policy
   - ensure_default_group_for_the_root_account_is_gid_0
