@@ -65,7 +65,7 @@ secure_linux_cis::server_level_1:
   - ensure_a_firewall_package_is_installed
   - ensure_firewalld_service_is_enabled_and_running
   - ensure_nftables_is_not_enabled_with_firewalld
-  - ensure_firewalld_default_zone_is_set
+  #   - ensure_firewalld_default_zone_is_set
   - ensure_an_nftables_table_exists
   - ensure_nftables_base_chains_exist
   - ensure_nftables_loopback_traffic_is_configured
@@ -218,7 +218,7 @@ secure_linux_cis::server_level_2:
   - ensure_a_firewall_package_is_installed
   - ensure_firewalld_service_is_enabled_and_running
   - ensure_nftables_is_not_enabled_with_firewalld
-  - ensure_firewalld_default_zone_is_set
+  #   - ensure_firewalld_default_zone_is_set
   - ensure_an_nftables_table_exists
   - ensure_nftables_base_chains_exist
   - ensure_nftables_loopback_traffic_is_configured
@@ -365,7 +365,7 @@ secure_linux_cis::workstation_level_1:
   - ensure_a_firewall_package_is_installed
   - ensure_firewalld_service_is_enabled_and_running
   - ensure_nftables_is_not_enabled_with_firewalld
-  - ensure_firewalld_default_zone_is_set
+  #   - ensure_firewalld_default_zone_is_set
   - ensure_an_nftables_table_exists
   - ensure_nftables_base_chains_exist
   - ensure_nftables_loopback_traffic_is_configured
@@ -520,7 +520,7 @@ secure_linux_cis::workstation_level_2:
   - ensure_a_firewall_package_is_installed
   - ensure_firewalld_service_is_enabled_and_running
   - ensure_nftables_is_not_enabled_with_firewalld
-  - ensure_firewalld_default_zone_is_set
+  #   - ensure_firewalld_default_zone_is_set
   - ensure_an_nftables_table_exists
   - ensure_nftables_base_chains_exist
   - ensure_nftables_loopback_traffic_is_configured

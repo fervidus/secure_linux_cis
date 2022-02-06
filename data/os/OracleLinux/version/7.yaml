@@ -68,10 +68,10 @@ secure_linux_cis::server_level_1:
   - ensure_reverse_path_filtering_is_enabled
   - ensure_tcp_syn_cookies_is_enabled
   - ensure_ipv6_router_advertisements_are_not_accepted
-  - ensure_firewalld_is_installed
-  - ensure_iptables_services_not_installed_with_firewalld
-  - ensure_firewalld_service_enabled_and_running
-  - ensure_firewalld_default_zone_is_set
+  #  - ensure_firewalld_is_installed
+  #   - ensure_iptables_services_not_installed_with_firewalld
+  # - ensure_firewalld_service_enabled_and_running
+  #   - ensure_firewalld_default_zone_is_set
   - ensure_nftables_is_installed
   - ensure_iptables_services_not_installed_with_nftables
   - ensure_an_nftables_table_exists
@@ -226,10 +226,10 @@ secure_linux_cis::server_level_2:
   - ensure_ipv6_router_advertisements_are_not_accepted
   - ensure_dccp_is_disabled
   - ensure_sctp_is_disabled
-  - ensure_firewalld_is_installed
-  - ensure_iptables_services_not_installed_with_firewalld
-  - ensure_firewalld_service_enabled_and_running
-  - ensure_firewalld_default_zone_is_set
+  #  - ensure_firewalld_is_installed
+  #   - ensure_iptables_services_not_installed_with_firewalld
+  # - ensure_firewalld_service_enabled_and_running
+  #   - ensure_firewalld_default_zone_is_set
   - ensure_nftables_is_installed
   - ensure_iptables_services_not_installed_with_nftables
   - ensure_an_nftables_table_exists
@@ -380,10 +380,10 @@ secure_linux_cis::workstation_level_1:
   - ensure_reverse_path_filtering_is_enabled
   - ensure_tcp_syn_cookies_is_enabled
   - ensure_ipv6_router_advertisements_are_not_accepted
-  - ensure_firewalld_is_installed
-  - ensure_iptables_services_not_installed_with_firewalld
-  - ensure_firewalld_service_enabled_and_running
-  - ensure_firewalld_default_zone_is_set
+  #  - ensure_firewalld_is_installed
+  #   - ensure_iptables_services_not_installed_with_firewalld
+  # - ensure_firewalld_service_enabled_and_running
+  #   - ensure_firewalld_default_zone_is_set
   - ensure_nftables_is_installed
   - ensure_iptables_services_not_installed_with_nftables
   - ensure_an_nftables_table_exists
@@ -540,10 +540,10 @@ secure_linux_cis::workstation_level_2:
   - ensure_ipv6_router_advertisements_are_not_accepted
   - ensure_dccp_is_disabled
   - ensure_sctp_is_disabled
-  - ensure_firewalld_is_installed
-  - ensure_iptables_services_not_installed_with_firewalld
-  - ensure_firewalld_service_enabled_and_running
-  - ensure_firewalld_default_zone_is_set
+  #  - ensure_firewalld_is_installed
+  #   - ensure_iptables_services_not_installed_with_firewalld
+  # - ensure_firewalld_service_enabled_and_running
+  #   - ensure_firewalld_default_zone_is_set
   - ensure_nftables_is_installed
   - ensure_iptables_services_not_installed_with_nftables
   - ensure_an_nftables_table_exists
