@@ -14,7 +14,7 @@
 # @param enforced Should this rule be enforced
 #
 # @example
-#   include secure_linux_cis::ensure_cron_daemon_is_enabled
+#   include secure_linux_cis::ensure_cron_daemon_is_enabled_and_running
 class secure_linux_cis::rules::ensure_cron_daemon_is_enabled_and_running {
   service { $secure_linux_cis::cron_service:
     ensure => running,

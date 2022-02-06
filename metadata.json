@@ -73,6 +73,10 @@
       "version_requirement": ">= 1.15.3 < 3.0.0"
     },
     {
+      "name": "puppetlabs/inifile",
+      "version_requirement": ">= 5.0.0 < 6.0.0"
+    },
+    {
       "name": "puppetlabs/mailalias_core",
       "version_requirement": ">= 1.0.0 < 2.0.0"
     },
@@ -97,13 +101,12 @@
     {
       "operatingsystem": "Aliyun",
       "operatingsystemrelease": [
-        "1"
+        "2"
       ]
     },
     {
       "operatingsystem": "Amazon",
       "operatingsystemrelease": [
-        "2016",
         "2"
       ]
     },
@@ -126,7 +129,6 @@
     {
       "operatingsystem": "CentOS",
       "operatingsystemrelease": [
-        "6",
         "7",
         "8"
       ]
@@ -135,14 +137,17 @@
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
         "8",
-        "9"
+        "9",
+        "10"
       ]
     },
     {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
+        "14.04",
         "16.04",
-        "18.04"
+        "18.04",
+        "20.04"
       ]
     }
   ],
@@ -153,6 +158,6 @@
     }
   ],
   "pdk-version": "2.3.0",
-  "template-url": "https://github.com/puppetlabs/pdk-templates#1.18.1",
-  "template-ref": "tags/1.18.1-0-g3d2e75c"
+  "template-url": "https://github.com/puppetlabs/pdk-templates#2.3.0",
+  "template-ref": "tags/2.3.0-0-g8aaceff"
 }

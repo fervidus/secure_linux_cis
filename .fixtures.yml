@@ -18,6 +18,7 @@ fixtures:
     facts: "puppetlabs-facts"
     firewall: "puppetlabs-firewall"
     firewalld: 'puppet-firewalld'
+    inifile: 'puppetlabs-inifile'
     kmod: "camptocamp-kmod"
     logrotate: "puppet-logrotate"
     mailalias_core: "puppetlabs-mailalias_core"
@@ -26,6 +27,7 @@ fixtures:
     reboot: "puppetlabs-reboot"
     stdlib: "puppetlabs-stdlib"
     provision: "puppetlabs-provision"
+    ufw: 'kogitoapp/ufw'
     #postfix: "camptocamp-postfix"
   repositories:
     postfix:
