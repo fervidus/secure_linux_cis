@@ -7,5 +7,5 @@ secure_linux_cis::grub_config_files:
 secure_linux_cis::update_command: zypper update
 secure_linux_cis::tcp_wrappers_package: tcpd
 secure_linux_cis::samba_service: smb
-secure_linux_cis::cron_service: cron
+secure_linux_cis::cron__service: cron
 secure_linux_cis::auditd_package: audit

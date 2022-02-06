@@ -1,652 +1,638 @@
 ---
-secure_linux_cis::firewall: nftables
-
 secure_linux_cis::server_level_1:
-- disable_automounting
-- disable_usb_storage
-- ensure_a_table_exists
-- ensure_access_to_the_su_command_is_restricted
-- ensure_aide_is_installed
-- ensure_all_groups_in_etc_passwd_exist_in_etc_group
-- ensure_all_users_home_directories_exist
-- ensure_at_is_restricted_to_authorized_users
-- ensure_authentication_required_for_single_user_mode
-- ensure_avahi_server_is_not_installed
-- ensure_base_chains_exist
-- ensure_bogus_icmp_responses_are_ignored
-# - ensure_bootloader_password_is_set
-- ensure_broadcast_icmp_requests_are_ignored
-- ensure_chrony_is_configured
-- ensure_core_dumps_are_restricted
-- ensure_cron_daemon_is_enabled_and_running
-- ensure_cron_is_restricted_to_authorized_users
-- ensure_cups_is_not_installed
-# - ensure_default_deny_firewall_policy
-- ensure_default_group_for_the_root_account_is_gid_0
-- ensure_default_user_shell_timeout_is_configured
-- ensure_default_user_umask_is_configured
-# - ensure_default_zone_is_set
-- ensure_dev_shm_is_configured
-- ensure_dhcp_server_is_not_installed
-- ensure_dns_server_is_not_installed
-- ensure_etc_shadow_password_fields_are_not_empty
-- ensure_filesystem_integrity_is_regularly_checked
-# # - ensure_firewalld_is_installed
-- ensure_firewalld_is_not_installed_or_stopped_and_masked
-# - ensure_firewalld_service_is_enabled_and_running
-- ensure_ftp_server_is_not_installed
-- ensure_gdm_is_removed_or_login_is_configured
-- ensure_gpgcheck_is_globally_activated
-- ensure_http_proxy_server_is_not_installed
-# - ensure_http_server_is_not_installed
-- ensure_icmp_redirects_are_not_accepted
-- ensure_imap_and_pop3_server_is_not_installed
-- ensure_inactive_password_lock_is_30_days_or_less
-- ensure_ip6tables_is_enabled_and_running
-- ensure_ip6tables_rules_are_saved
-- ensure_ip_forwarding_is_disabled
-# - ensure_iptables_services_package_is_not_installed
-# - ensure_iptables_is_enabled_and_running
-# - ensure_iptables_packages_are_installed
-# - ensure_ipv6_default_deny_firewall_policy
-# - ensure_ipv6_loopback_traffic_is_configured
-- ensure_ipv6_router_advertisements_are_not_accepted
-# - ensure_ldap_client_is_not_installed
-# - ensure_ldap_server_is_not_installed
-# - ensure_loopback_traffic_is_configured
-- ensure_message_of_the_day_is_configured_properly
-- ensure_minimum_days_between_password_changes_is_7_or_more
-- ensure_mounting_of_cramfs_filesystems_is_disabled
-- ensure_mounting_of_udf_filesystems_is_disabled
-# - ensure_net_snmp_is_not_installed
-# - ensure_nftables_is_installed
-# - ensure_nftables_is_not_installed
-# - ensure_nftables_rules_are_permanent
-# - ensure_nftables_service_is_enabled
-# - ensure_nis_client_is_not_installed
-- ensure_nis_server_is_not_installed
-- ensure_no_duplicate_gids_exist
-- ensure_no_duplicate_group_names_exist
-- ensure_no_duplicate_uids_exist
-- ensure_no_duplicate_user_names_exist
-- ensure_no_unconfined_services_exist
-- ensure_no_ungrouped_files_or_directories_exist
-- ensure_no_unowned_files_or_directories_exist
-- ensure_no_users_have_forward_files
-- ensure_no_users_have_netrc_files
-- ensure_no_users_have_rhosts_files
-- ensure_no_world_writable_files_exist
-- ensure_nodev_option_set_on_dev_shm_partition
-- ensure_nodev_option_set_on_home_partition
-- ensure_nodev_option_set_on_tmp_partition
-- ensure_nodev_option_set_on_var_tmp_partition
-- ensure_noexec_option_set_on_dev_shm_partition
-- ensure_noexec_option_set_on_tmp_partition
-- ensure_noexec_option_set_on_var_tmp_partition
-- ensure_nosuid_option_set_on_dev_shm_partition
-- ensure_nosuid_option_set_on_tmp_partition
-- ensure_nosuid_option_set_on_var_tmp_partition
-- ensure_only_strong_ciphers_are_used
-- ensure_only_strong_key_exchange_algorithms_are_used
-- ensure_only_strong_mac_algorithms_are_used
-# - ensure_ntp_is_configured
-- ensure_packet_redirect_sending_is_disabled
-- ensure_password_expiration_is_365_days_or_less
-- ensure_password_hashing_algorithm_is_sha_512
-- ensure_password_reuse_is_limited
-- ensure_permissions_on_all_logfiles_are_configured
-- ensure_permissions_on_etc_crond_are_configured
-- ensure_permissions_on_etc_cron_hourly_are_configured
-- ensure_permissions_on_etc_cron_daily_are_configured
-- ensure_permissions_on_etc_cron_weekly_are_configured
-- ensure_permissions_on_etc_cron_monthly_are_configured
-- ensure_permissions_on_etc_crontab_are_configured
-- ensure_permissions_on_etc_group_are_configured
-- ensure_permissions_on_etc_group_dash_are_configured
-- ensure_permissions_on_etc_gshadow_are_configured
-- ensure_permissions_on_etc_gshadow_dash_are_configured
-- ensure_permissions_on_etc_issue_are_configured
-- ensure_permissions_on_etc_motd_are_configured
-- ensure_permissions_on_etc_passwd_are_configured
-- ensure_permissions_on_etc_passwd_dash_are_configured
-- ensure_permissions_on_etc_shadow_are_configured
-- ensure_permissions_on_etc_shadow_dash_are_configured
-- ensure_prelink_is_disabled
-- ensure_reverse_path_filtering_is_enabled
-- ensure_root_is_the_only_uid_0_account
-- ensure_rsh_client_is_not_installed
-# - ensure_rsyslog_default_file_permissions_configured
-# - ensure_rsyslog_is_installed
-# - ensure_rsyslog_service_is_enabled_and_running
-- ensure_samba_is_not_installed
-- ensure_secure_icmp_redirects_are_not_accepted
-# - ensure_selinux_is_installed
-# - ensure_selinux_policy_is_configured
-- ensure_setroubleshoot_is_not_installed
-- ensure_shadow_group_is_empty
-- ensure_source_routed_packets_are_not_accepted
-# - ensure_ssh_access_is_limited
-- ensure_ssh_hostbasedauthentication_is_disabled
-- ensure_ssh_idle_timeout_interval_is_configured
-- ensure_ssh_ignorerhosts_is_enabled
-- ensure_ssh_loglevel_is_appropriate
-- ensure_ssh_maxauthtries_is_set_to_4_or_less
-- ensure_ssh_maxsessions_is_limited
-- ensure_ssh_maxstartups_is_configured
-- ensure_ssh_pam_is_enabled
-- ensure_ssh_permitemptypasswords_is_disabled
-- ensure_ssh_permituserenvironment_is_disabled
-- ensure_ssh_root_login_is_disabled
-- ensure_ssh_warning_banner_is_configured
-- ensure_ssh_x11_forwarding_is_disabled
-- ensure_sudo_commands_use_pty
-- ensure_sudo_is_installed
-- ensure_sudo_log_file_exists
-- ensure_suspicious_packets_are_logged
-- ensure_system_accounts_are_secured
-- ensure_talk_client_is_not_installed
-- ensure_tcp_syn_cookies_is_enabled
-- ensure_telnet_client_is_not_installed
-- ensure_telnet_server_is_not_installed
-# - ensure_the_selinux_mode_is_enforcing_or_permissive
-- ensure_tmp_is_configured
-- ensure_users_own_their_home_directories
-# - ensure_x11_server_components_are_not_installed
-- ensure_xd_nx_support_is_enabled
-- ensure_xinetd_is_not_installed
-
+  - ensure_mounting_of_cramfs_filesystems_is_disabled
+  - ensure_mounting_of_udf_filesystems_is_disabled
+  - ensure_tmp_is_configured
+  - ensure_noexec_option_set_on_tmp_partition
+  - ensure_nodev_option_set_on_tmp_partition
+  - ensure_nosuid_option_set_on_tmp_partition
+  - ensure_dev_shm_is_configured
+  - ensure_noexec_option_set_on_dev_shm_partition
+  - ensure_nodev_option_set_on_dev_shm_partition
+  - ensure_nosuid_option_set_on_dev_shm_partition
+  - ensure_var_tmp_partition_includes_the_nodev_option
+  - ensure_home_partition_includes_the_nodev_option
+  - disable_automounting
+  - disable_usb_storage
+  - ensure_gpgcheck_is_globally_activated
+  - ensure_aide_is_installed
+  - ensure_filesystem_integrity_is_regularly_checked
+  # - ensure_bootloader_password_is_set
+  - ensure_authentication_required_for_single_user_mode
+  - ensure_core_dumps_are_restricted
+  - ensure_xd_nx_support_is_enabled
+  - ensure_prelink_is_not_installed
+  - ensure_selinux_is_installed
+  - ensure_selinux_policy_is_configured
+  - ensure_the_selinux_mode_is_enforcing_or_permissive
+  - ensure_no_unconfined_services_exist
+  - ensure_setroubleshoot_is_not_installed
+  - ensure_message_of_the_day_is_configured_properly
+  - ensure_permissions_on_etc_motd_are_configured
+  - ensure_permissions_on_etc_issue_are_configured
+  - ensure_permissions_on_etc_issue_net_are_configured
+  - ensure_gdm_login_banner_is_configured
+  - ensure_last_logged_in_user_display_is_disabled
+  - ensure_xdcmp_is_not_enabled
+  - ensure_xinetd_is_not_installed
+  - ensure_chrony_is_configured
+  - ensure_ntp_is_configured
+  - ensure_x11_server_components_are_not_installed
+  - ensure_avahi_server_is_not_installed
+  - ensure_cups_is_not_installed
+  - ensure_dhcp_server_is_not_installed
+  - ensure_ldap_server_is_not_installed
+  - ensure_dns_server_is_not_installed
+  - ensure_ftp_server_is_not_installed
+  - ensure_http_server_is_not_installed
+  - ensure_imap_and_pop3_server_is_not_installed
+  - ensure_samba_is_not_installed
+  - ensure_http_proxy_server_is_not_installed
+  - ensure_net_snmp_is_not_installed
+  - ensure_nis_server_is_not_installed
+  - ensure_telnet_server_is_not_installed
+  - ensure_nis_client_is_not_installed
+  - ensure_rsh_client_is_not_installed
+  - ensure_talk_client_is_not_installed
+  - ensure_telnet_client_is_not_installed
+  - ensure_ldap_client_is_not_installed
+  - ensure_wireless_interfaces_are_disabled
+  - ensure_ip_forwarding_is_disabled
+  - ensure_packet_redirect_sending_is_disabled
+  - ensure_source_routed_packets_are_not_accepted
+  - ensure_icmp_redirects_are_not_accepted
+  - ensure_secure_icmp_redirects_are_not_accepted
+  - ensure_suspicious_packets_are_logged
+  - ensure_broadcast_icmp_requests_are_ignored
+  - ensure_bogus_icmp_responses_are_ignored
+  - ensure_reverse_path_filtering_is_enabled
+  - ensure_tcp_syn_cookies_is_enabled
+  - ensure_ipv6_router_advertisements_are_not_accepted
+  - ensure_firewalld_is_installed
+  - ensure_iptables_services_not_installed_with_firewalld
+  - ensure_firewalld_service_enabled_and_running
+  - ensure_firewalld_default_zone_is_set
+  - ensure_nftables_is_installed
+  - ensure_iptables_services_not_installed_with_nftables
+  - ensure_an_nftables_table_exists
+  - ensure_nftables_base_chains_exist
+  - ensure_nftables_loopback_traffic_is_configured
+  - ensure_nftables_default_deny_firewall_policy
+  - ensure_nftables_service_is_enabled
+  - ensure_nftables_rules_are_permanent
+  - ensure_iptables_packages_are_installed
+  - ensure_nftables_is_not_installed_with_iptables
+  - ensure_iptables_loopback_traffic_is_configured
+  - ensure_iptables_rules_exist_for_all_open_ports
+  - ensure_iptables_default_deny_firewall_policy
+  - ensure_iptables_is_enabled_and_running
+  - ensure_ip6tables_loopback_traffic_is_configured
+  - ensure_ip6tables_default_deny_firewall_policy
+  - ensure_ip6tables_is_enabled_and_running
+  - ensure_rsyslog_is_installed
+  - ensure_rsyslog_service_is_enabled_and_running
+  - ensure_rsyslog_default_file_permissions_configured
+  - ensure_cron_daemon_is_enabled_and_running
+  - ensure_permissions_on_etc_cron_tab_are_configured
+  - ensure_permissions_on_etc_cron_daily_are_configured
+  - ensure_permissions_on_etc_cron_d_are_configured
+  - ensure_cron_is_restricted_to_authorized_users
+  - ensure_at_is_restricted_to_authorized_users
+  - ensure_sudo_is_installed
+  - ensure_sudo_commands_use_pty
+  - ensure_sudo_log_file_exists
+  - ensure_ssh_access_is_limited
+  - ensure_ssh_loglevel_is_appropriate
+  - ensure_ssh_x11_forwarding_is_disabled
+  - ensure_ssh_maxauthtries_is_set_to_4_or_less
+  - ensure_ssh_ignorerhosts_is_enabled
+  - ensure_ssh_hostbasedauthentication_is_disabled
+  - ensure_ssh_root_login_is_disabled
+  - ensure_ssh_permitemptypasswords_is_disabled
+  - ensure_ssh_permituserenvironment_is_disabled
+  - ensure_only_strong_ciphers_are_used
+  - ensure_only_strong_mac_algorithms_are_used
+  - ensure_ssh_idle_timeout_interval_is_configured
+  - ensure_ssh_warning_banner_is_configured
+  - ensure_ssh_pam_is_enabled
+  - ensure_ssh_maxstartups_is_configured
+  - ensure_ssh_maxsessions_is_limited
+  - ensure_password_hashing_algorithm_is_sha_512
+  - ensure_password_expiration_is_365_days_or_less
+  - ensure_inactive_password_lock_is_30_days_or_less
+  - ensure_system_accounts_are_secured
+  - ensure_default_group_for_the_root_account_is_gid_0
+  - ensure_default_user_shell_timeout_is_configured
+  - ensure_default_user_umask_is_configured
+  - ensure_access_to_the_su_command_is_restricted
+  - ensure_permissions_on_etc_passwd_are_configured
+  - ensure_permissions_on_etc_passwd_dash_are_configured
+  - ensure_permissions_on_etc_shadow_are_configured
+  - ensure_permissions_on_etc_shadow_dash_are_configured
+  - ensure_permissions_on_etc_gshadow_dash_are_configured
+  - ensure_permissions_on_etc_gshadow_are_configured
+  - ensure_permissions_on_etc_group_are_configured
+  - ensure_permissions_on_etc_group_dash_are_configured
+  - ensure_no_world_writable_files_exist
+  - ensure_no_unowned_files_or_directories_exist
+  - ensure_no_ungrouped_files_or_directories_exist
+  - ensure_etc_shadow_password_fields_are_not_empty
+  - ensure_all_groups_in_etc_passwd_exist_in_etc_group
+  - ensure_shadow_group_is_empty
+  - ensure_no_duplicate_user_names_exist
+  - ensure_no_duplicate_group_names_exist
+  - ensure_no_duplicate_uids_exist
+  - ensure_no_duplicate_gids_exist
+  - ensure_root_is_the_only_uid_0_account
+  - ensure_all_users_home_directories_exist
+  - ensure_no_users_have_netrc_files
+  - ensure_no_users_have_rhosts_files
 secure_linux_cis::server_level_2:
-- disable_automounting
-- disable_usb_storage
-- ensure_a_table_exists
-- ensure_access_to_the_su_command_is_restricted
-- ensure_aide_is_installed
-- ensure_all_groups_in_etc_passwd_exist_in_etc_group
-- ensure_all_users_home_directories_exist
-- ensure_at_is_restricted_to_authorized_users
-- ensure_audit_backlog_limit_is_sufficient
-- ensure_audit_log_storage_size_is_configured
-- ensure_audit_logs_are_not_automatically_deleted
-- ensure_auditd_is_installed
-- ensure_auditd_service_is_enabled_and_running
-- ensure_authentication_required_for_single_user_mode
-- ensure_avahi_server_is_not_installed
-- ensure_base_chains_exist
-- ensure_bogus_icmp_responses_are_ignored
-# - ensure_bootloader_password_is_set
-- ensure_broadcast_icmp_requests_are_ignored
-- ensure_chrony_is_configured
-- ensure_core_dumps_are_restricted
-- ensure_cron_daemon_is_enabled_and_running
-- ensure_cron_is_restricted_to_authorized_users
-- ensure_cups_is_not_installed
-- ensure_dccp_is_disabled
-# - ensure_default_deny_firewall_policy
-- ensure_default_group_for_the_root_account_is_gid_0
-- ensure_default_user_shell_timeout_is_configured
-- ensure_default_user_umask_is_configured
-# - ensure_default_zone_is_set
-- ensure_dev_shm_is_configured
-- ensure_dhcp_server_is_not_installed
-- ensure_dns_server_is_not_installed
-- ensure_etc_shadow_password_fields_are_not_empty
-- ensure_file_deletion_events_by_users_are_collected
-- ensure_filesystem_integrity_is_regularly_checked
-# - ensure_firewalld_is_installed
-# - ensure_firewalld_service_is_enabled_and_running
-- ensure_firewalld_is_not_installed_or_stopped_and_masked
-- ensure_ftp_server_is_not_installed
-- ensure_gdm_is_removed_or_login_is_configured
-- ensure_gpgcheck_is_globally_activated
-- ensure_http_proxy_server_is_not_installed
-# - ensure_http_server_is_not_installed
-- ensure_icmp_redirects_are_not_accepted
-- ensure_imap_and_pop3_server_is_not_installed
-- ensure_inactive_password_lock_is_30_days_or_less
-- ensure_ip6tables_is_enabled_and_running
-- ensure_ip6tables_rules_are_saved
-- ensure_ip_forwarding_is_disabled
-# - ensure_iptables_services_package_is_not_installed
-# - ensure_iptables_is_enabled_and_running
-# - ensure_iptables_packages_are_installed
-# - ensure_ipv6_default_deny_firewall_policy
-# - ensure_ipv6_loopback_traffic_is_configured
-- ensure_ipv6_router_advertisements_are_not_accepted
-# - ensure_ldap_client_is_not_installed
-# - ensure_ldap_server_is_not_installed
-- ensure_login_and_logout_events_are_collected
-# - ensure_loopback_traffic_is_configured
-- ensure_message_of_the_day_is_configured_properly
-- ensure_minimum_days_between_password_changes_is_7_or_more
-- ensure_mounting_of_cramfs_filesystems_is_disabled
-- ensure_mounting_of_squashfs_filesystems_is_disabled
-- ensure_mounting_of_udf_filesystems_is_disabled
-# - ensure_net_snmp_is_not_installed
-# - ensure_nftables_is_installed
-# - ensure_nftables_is_not_installed
-# - ensure_nftables_rules_are_permanent
-# - ensure_nftables_service_is_enabled
-# - ensure_nis_client_is_not_installed
-- ensure_nis_server_is_not_installed
-- ensure_no_duplicate_gids_exist
-- ensure_no_duplicate_group_names_exist
-- ensure_no_duplicate_uids_exist
-- ensure_no_duplicate_user_names_exist
-- ensure_no_unconfined_services_exist
-- ensure_no_ungrouped_files_or_directories_exist
-- ensure_no_unowned_files_or_directories_exist
-- ensure_no_users_have_forward_files
-- ensure_no_users_have_netrc_files
-- ensure_no_users_have_rhosts_files
-- ensure_no_world_writable_files_exist
-- ensure_only_strong_key_exchange_algorithms_are_used
-- ensure_nodev_option_set_on_dev_shm_partition
-- ensure_nodev_option_set_on_home_partition
-- ensure_nodev_option_set_on_tmp_partition
-- ensure_nodev_option_set_on_var_tmp_partition
-- ensure_noexec_option_set_on_dev_shm_partition
-- ensure_noexec_option_set_on_tmp_partition
-- ensure_noexec_option_set_on_var_tmp_partition
-- ensure_nosuid_option_set_on_dev_shm_partition
-- ensure_nosuid_option_set_on_tmp_partition
-- ensure_nosuid_option_set_on_var_tmp_partition
-- ensure_only_strong_ciphers_are_used
-- ensure_only_strong_key_exchange_algorithms_are_used
-- ensure_only_strong_mac_algorithms_are_used
-# - ensure_ntp_is_configured
-- ensure_packet_redirect_sending_is_disabled
-- ensure_password_expiration_is_365_days_or_less
-- ensure_password_hashing_algorithm_is_sha_512
-- ensure_password_reuse_is_limited
-- ensure_permissions_on_all_logfiles_are_configured
-- ensure_permissions_on_etc_crond_are_configured
-- ensure_permissions_on_etc_cron_hourly_are_configured
-- ensure_permissions_on_etc_cron_daily_are_configured
-- ensure_permissions_on_etc_cron_weekly_are_configured
-- ensure_permissions_on_etc_cron_monthly_are_configured
-- ensure_permissions_on_etc_crontab_are_configured
-- ensure_permissions_on_etc_group_are_configured
-- ensure_permissions_on_etc_group_dash_are_configured
-- ensure_permissions_on_etc_gshadow_are_configured
-- ensure_permissions_on_etc_gshadow_dash_are_configured
-- ensure_permissions_on_etc_issue_are_configured
-- ensure_permissions_on_etc_motd_are_configured
-- ensure_permissions_on_etc_passwd_are_configured
-- ensure_permissions_on_etc_passwd_dash_are_configured
-- ensure_permissions_on_etc_shadow_are_configured
-- ensure_permissions_on_etc_shadow_dash_are_configured
-- ensure_prelink_is_disabled
-- ensure_reverse_path_filtering_is_enabled
-- ensure_root_is_the_only_uid_0_account
-- ensure_rsh_client_is_not_installed
-# - ensure_rsyslog_default_file_permissions_configured
-# - ensure_rsyslog_is_installed
-# - ensure_rsyslog_service_is_enabled_and_running
-- ensure_samba_is_not_installed
-- ensure_sctp_is_disabled
-- ensure_secure_icmp_redirects_are_not_accepted
-# - ensure_selinux_is_installed
-# - ensure_selinux_policy_is_configured
-- ensure_separate_partition_exists_for_home
-- ensure_separate_partition_exists_for_var
-- ensure_separate_partition_exists_for_var_log
-- ensure_separate_partition_exists_for_var_log_audit
-- ensure_separate_partition_exists_for_var_tmp
-- ensure_session_initiation_information_is_collected
-- ensure_setroubleshoot_is_not_installed
-- ensure_shadow_group_is_empty
-- ensure_source_routed_packets_are_not_accepted
-# - ensure_ssh_access_is_limited
-- ensure_ssh_allowtcpforwarding_is_disabled
-- ensure_ssh_hostbasedauthentication_is_disabled
-- ensure_ssh_idle_timeout_interval_is_configured
-- ensure_ssh_ignorerhosts_is_enabled
-- ensure_ssh_loglevel_is_appropriate
-- ensure_ssh_maxauthtries_is_set_to_4_or_less
-- ensure_ssh_maxsessions_is_limited
-- ensure_ssh_maxstartups_is_configured
-- ensure_ssh_pam_is_enabled
-- ensure_ssh_permitemptypasswords_is_disabled
-- ensure_ssh_permituserenvironment_is_disabled
-- ensure_ssh_root_login_is_disabled
-- ensure_ssh_warning_banner_is_configured
-- ensure_ssh_x11_forwarding_is_disabled
-- ensure_successful_file_system_mounts_are_collected
-- ensure_sudo_commands_use_pty
-- ensure_sudo_is_installed
-- ensure_sudo_log_file_exists
-- ensure_suspicious_packets_are_logged
-- ensure_system_accounts_are_secured
-- ensure_system_is_disabled_when_audit_logs_are_full
-- ensure_talk_client_is_not_installed
-- ensure_tcp_syn_cookies_is_enabled
-- ensure_telnet_client_is_not_installed
-- ensure_telnet_server_is_not_installed
-- ensure_the_audit_configuration_is_immutable
-# - ensure_the_selinux_mode_is_enforcing
-# - ensure_the_selinux_mode_is_enforcing_or_permissive
-- ensure_tmp_is_configured
-- ensure_use_of_privileged_commands_is_collected
-- ensure_users_own_their_home_directories
-# - ensure_x11_server_components_are_not_installed
-- ensure_xd_nx_support_is_enabled
-- ensure_xinetd_is_not_installed
+  - ensure_mounting_of_cramfs_filesystems_is_disabled
+  - ensure_mounting_of_squashfs_filesystems_is_disabled
+  - ensure_mounting_of_udf_filesystems_is_disabled
+  - ensure_tmp_is_configured
+  - ensure_noexec_option_set_on_tmp_partition
+  - ensure_nodev_option_set_on_tmp_partition
+  - ensure_nosuid_option_set_on_tmp_partition
+  - ensure_dev_shm_is_configured
+  - ensure_noexec_option_set_on_dev_shm_partition
+  - ensure_nodev_option_set_on_dev_shm_partition
+  - ensure_nosuid_option_set_on_dev_shm_partition
+  - ensure_separate_partition_exists_for_var
+  - ensure_separate_partition_exists_for_var_tmp
+  - ensure_var_tmp_partition_includes_the_nodev_option
+  - ensure_separate_partition_exists_for_var_log
+  - ensure_separate_partition_exists_for_var_log_audit
+  - ensure_separate_partition_exists_for_home
+  - ensure_home_partition_includes_the_nodev_option
+  - disable_automounting
+  - disable_usb_storage
+  - ensure_gpgcheck_is_globally_activated
+  - ensure_aide_is_installed
+  - ensure_filesystem_integrity_is_regularly_checked
+  # - ensure_bootloader_password_is_set
+  - ensure_authentication_required_for_single_user_mode
+  - ensure_core_dumps_are_restricted
+  - ensure_xd_nx_support_is_enabled
+  - ensure_prelink_is_not_installed
+  - ensure_selinux_is_installed
+  - ensure_selinux_policy_is_configured
+  - ensure_the_selinux_mode_is_enforcing_or_permissive
+  - ensure_the_selinux_mode_is_enforcing
+  - ensure_no_unconfined_services_exist
+  - ensure_setroubleshoot_is_not_installed
+  - ensure_message_of_the_day_is_configured_properly
+  - ensure_permissions_on_etc_motd_are_configured
+  - ensure_permissions_on_etc_issue_are_configured
+  - ensure_permissions_on_etc_issue_net_are_configured
+  - ensure_gdm_login_banner_is_configured
+  - ensure_last_logged_in_user_display_is_disabled
+  - ensure_xdcmp_is_not_enabled
+  - ensure_xinetd_is_not_installed
+  - ensure_chrony_is_configured
+  - ensure_ntp_is_configured
+  - ensure_x11_server_components_are_not_installed
+  - ensure_avahi_server_is_not_installed
+  - ensure_cups_is_not_installed
+  - ensure_dhcp_server_is_not_installed
+  - ensure_ldap_server_is_not_installed
+  - ensure_dns_server_is_not_installed
+  - ensure_ftp_server_is_not_installed
+  - ensure_http_server_is_not_installed
+  - ensure_imap_and_pop3_server_is_not_installed
+  - ensure_samba_is_not_installed
+  - ensure_http_proxy_server_is_not_installed
+  - ensure_net_snmp_is_not_installed
+  - ensure_nis_server_is_not_installed
+  - ensure_telnet_server_is_not_installed
+  - ensure_nis_client_is_not_installed
+  - ensure_rsh_client_is_not_installed
+  - ensure_talk_client_is_not_installed
+  - ensure_telnet_client_is_not_installed
+  - ensure_ldap_client_is_not_installed
+  - ensure_wireless_interfaces_are_disabled
+  - ensure_ip_forwarding_is_disabled
+  - ensure_packet_redirect_sending_is_disabled
+  - ensure_source_routed_packets_are_not_accepted
+  - ensure_icmp_redirects_are_not_accepted
+  - ensure_secure_icmp_redirects_are_not_accepted
+  - ensure_suspicious_packets_are_logged
+  - ensure_broadcast_icmp_requests_are_ignored
+  - ensure_bogus_icmp_responses_are_ignored
+  - ensure_reverse_path_filtering_is_enabled
+  - ensure_tcp_syn_cookies_is_enabled
+  - ensure_ipv6_router_advertisements_are_not_accepted
+  - ensure_dccp_is_disabled
+  - ensure_sctp_is_disabled
+  - ensure_firewalld_is_installed
+  - ensure_iptables_services_not_installed_with_firewalld
+  - ensure_firewalld_service_enabled_and_running
+  - ensure_firewalld_default_zone_is_set
+  - ensure_nftables_is_installed
+  - ensure_iptables_services_not_installed_with_nftables
+  - ensure_an_nftables_table_exists
+  - ensure_nftables_base_chains_exist
+  - ensure_nftables_loopback_traffic_is_configured
+  - ensure_nftables_default_deny_firewall_policy
+  - ensure_nftables_service_is_enabled
+  - ensure_nftables_rules_are_permanent
+  - ensure_iptables_packages_are_installed
+  - ensure_nftables_is_not_installed_with_iptables
+  - ensure_iptables_loopback_traffic_is_configured
+  - ensure_iptables_rules_exist_for_all_open_ports
+  - ensure_iptables_default_deny_firewall_policy
+  - ensure_iptables_is_enabled_and_running
+  - ensure_ip6tables_loopback_traffic_is_configured
+  - ensure_ip6tables_default_deny_firewall_policy
+  - ensure_ip6tables_is_enabled_and_running
+  - ensure_auditd_is_installed
+  - ensure_auditd_service_is_enabled_and_running
+  - ensure_audit_log_storage_size_is_configured
+  - ensure_audit_logs_are_not_automatically_deleted
+  - ensure_system_is_disabled_when_audit_logs_are_full
+  - ensure_login_and_logout_events_are_collected
+  - ensure_session_initiation_information_is_collected
+  - ensure_use_of_privileged_commands_is_collected
+  - ensure_successful_file_system_mounts_are_collected
+  - ensure_file_deletion_events_by_users_are_collected
+  - ensure_the_audit_configuration_is_immutable
+  - ensure_rsyslog_is_installed
+  - ensure_rsyslog_service_is_enabled_and_running
+  - ensure_rsyslog_default_file_permissions_configured
+  - ensure_cron_daemon_is_enabled_and_running
+  - ensure_permissions_on_etc_cron_tab_are_configured
+  - ensure_permissions_on_etc_cron_daily_are_configured
+  - ensure_permissions_on_etc_cron_d_are_configured
+  - ensure_cron_is_restricted_to_authorized_users
+  - ensure_at_is_restricted_to_authorized_users
+  - ensure_sudo_is_installed
+  - ensure_sudo_commands_use_pty
+  - ensure_sudo_log_file_exists
+  - ensure_ssh_access_is_limited
+  - ensure_ssh_loglevel_is_appropriate
+  - ensure_ssh_x11_forwarding_is_disabled
+  - ensure_ssh_maxauthtries_is_set_to_4_or_less
+  - ensure_ssh_ignorerhosts_is_enabled
+  - ensure_ssh_hostbasedauthentication_is_disabled
+  - ensure_ssh_root_login_is_disabled
+  - ensure_ssh_permitemptypasswords_is_disabled
+  - ensure_ssh_permituserenvironment_is_disabled
+  - ensure_only_strong_ciphers_are_used
+  - ensure_only_strong_mac_algorithms_are_used
+  - ensure_ssh_idle_timeout_interval_is_configured
+  - ensure_ssh_warning_banner_is_configured
+  - ensure_ssh_pam_is_enabled
+  - ensure_ssh_allowtcpforwarding_is_disabled
+  - ensure_ssh_maxstartups_is_configured
+  - ensure_ssh_maxsessions_is_limited
+  - ensure_password_hashing_algorithm_is_sha_512
+  - ensure_password_expiration_is_365_days_or_less
+  - ensure_inactive_password_lock_is_30_days_or_less
+  - ensure_system_accounts_are_secured
+  - ensure_default_group_for_the_root_account_is_gid_0
+  - ensure_default_user_shell_timeout_is_configured
+  - ensure_default_user_umask_is_configured
+  - ensure_access_to_the_su_command_is_restricted
+  - ensure_permissions_on_etc_passwd_are_configured
+  - ensure_permissions_on_etc_passwd_dash_are_configured
+  - ensure_permissions_on_etc_shadow_are_configured
+  - ensure_permissions_on_etc_shadow_dash_are_configured
+  - ensure_permissions_on_etc_gshadow_dash_are_configured
+  - ensure_permissions_on_etc_gshadow_are_configured
+  - ensure_permissions_on_etc_group_are_configured
+  - ensure_permissions_on_etc_group_dash_are_configured
+  - ensure_no_world_writable_files_exist
+  - ensure_no_unowned_files_or_directories_exist
+  - ensure_no_ungrouped_files_or_directories_exist
+  - ensure_etc_shadow_password_fields_are_not_empty
+  - ensure_all_groups_in_etc_passwd_exist_in_etc_group
+  - ensure_shadow_group_is_empty
+  - ensure_no_duplicate_user_names_exist
+  - ensure_no_duplicate_group_names_exist
+  - ensure_no_duplicate_uids_exist
+  - ensure_no_duplicate_gids_exist
+  - ensure_root_is_the_only_uid_0_account
+  - ensure_all_users_home_directories_exist
+  - ensure_no_users_have_netrc_files
+  - ensure_no_users_have_rhosts_files
 secure_linux_cis::workstation_level_1:
-- ensure_a_table_exists
-# - ensure_access_to_the_su_command_is_restricted
-# - ensure_aide_is_installed
-- ensure_all_groups_in_etc_passwd_exist_in_etc_group
-- ensure_all_users_home_directories_exist
-- ensure_at_is_restricted_to_authorized_users
-- ensure_authentication_required_for_single_user_mode
-- ensure_base_chains_exist
-- ensure_bogus_icmp_responses_are_ignored
-# - ensure_bootloader_password_is_set
-- ensure_broadcast_icmp_requests_are_ignored
-- ensure_chrony_is_configured
-- ensure_core_dumps_are_restricted
-- ensure_cron_daemon_is_enabled_and_running
-- ensure_cron_is_restricted_to_authorized_users
-# - ensure_default_deny_firewall_policy
-- ensure_default_group_for_the_root_account_is_gid_0
-- ensure_default_user_shell_timeout_is_configured
-- ensure_default_user_umask_is_configured
-# - ensure_default_zone_is_set
-- ensure_dev_shm_is_configured
-- ensure_dhcp_server_is_not_installed
-- ensure_dns_server_is_not_installed
-- ensure_etc_shadow_password_fields_are_not_empty
-- ensure_filesystem_integrity_is_regularly_checked
-# - ensure_firewalld_is_installed
-- ensure_firewalld_is_not_installed_or_stopped_and_masked
-# - ensure_firewalld_service_is_enabled_and_running
-- ensure_ftp_server_is_not_installed
-- ensure_gdm_is_removed_or_login_is_configured
-- ensure_gpgcheck_is_globally_activated
-- ensure_http_proxy_server_is_not_installed
-# - ensure_http_server_is_not_installed
-- ensure_icmp_redirects_are_not_accepted
-- ensure_imap_and_pop3_server_is_not_installed
-- ensure_inactive_password_lock_is_30_days_or_less
-- ensure_ip6tables_is_enabled_and_running
-- ensure_ip6tables_rules_are_saved
-- ensure_ip_forwarding_is_disabled
-# - ensure_iptables_services_package_is_not_installed
-# - ensure_iptables_is_enabled_and_running
-# - ensure_iptables_packages_are_installed
-# - ensure_iptables_rules_are_saved
-# - ensure_ipv6_default_deny_firewall_policy
-# - ensure_ipv6_loopback_traffic_is_configured
-- ensure_ipv6_router_advertisements_are_not_accepted
-# - ensure_ldap_client_is_not_installed
-# - ensure_ldap_server_is_not_installed
-# - ensure_loopback_traffic_is_configured
-- ensure_message_of_the_day_is_configured_properly
-- ensure_mounting_of_cramfs_filesystems_is_disabled
-- ensure_mounting_of_udf_filesystems_is_disabled
-# - ensure_net_snmp_is_not_installed
-# - ensure_nftables_is_installed
-# - ensure_nftables_is_not_installed
-# - ensure_nftables_rules_are_permanent
-# - ensure_nftables_service_is_enabled
-# - ensure_nis_client_is_not_installed
-- ensure_nis_server_is_not_installed
-- ensure_no_duplicate_gids_exist
-- ensure_no_duplicate_group_names_exist
-- ensure_no_duplicate_uids_exist
-- ensure_no_duplicate_user_names_exist
-- ensure_no_unconfined_services_exist
-- ensure_no_ungrouped_files_or_directories_exist
-- ensure_no_unowned_files_or_directories_exist
-- ensure_no_users_have_forward_files
-- ensure_no_users_have_netrc_files
-- ensure_no_users_have_rhosts_files
-- ensure_no_world_writable_files_exist
-- ensure_nodev_option_set_on_dev_shm_partition
-- ensure_nodev_option_set_on_home_partition
-- ensure_nodev_option_set_on_tmp_partition
-- ensure_nodev_option_set_on_var_tmp_partition
-- ensure_noexec_option_set_on_dev_shm_partition
-- ensure_noexec_option_set_on_tmp_partition
-- ensure_noexec_option_set_on_var_tmp_partition
-- ensure_nosuid_option_set_on_dev_shm_partition
-- ensure_nosuid_option_set_on_tmp_partition
-- ensure_nosuid_option_set_on_var_tmp_partition
-# - ensure_ntp_is_configured
-- ensure_only_strong_ciphers_are_used
-- ensure_only_strong_mac_algorithms_are_used
-- ensure_packet_redirect_sending_is_disabled
-- ensure_password_expiration_is_365_days_or_less
-- ensure_password_hashing_algorithm_is_sha_512
-- ensure_password_reuse_is_limited
-- ensure_permissions_on_all_logfiles_are_configured
-- ensure_permissions_on_etc_crond_are_configured
-- ensure_permissions_on_etc_cron_hourly_are_configured
-- ensure_permissions_on_etc_cron_daily_are_configured
-- ensure_permissions_on_etc_cron_weekly_are_configured
-- ensure_permissions_on_etc_cron_monthly_are_configured
-- ensure_permissions_on_etc_crontab_are_configured
-- ensure_permissions_on_etc_group_are_configured
-- ensure_permissions_on_etc_group_dash_are_configured
-- ensure_permissions_on_etc_gshadow_are_configured
-- ensure_permissions_on_etc_gshadow_dash_are_configured
-- ensure_permissions_on_etc_issue_are_configured
-- ensure_permissions_on_etc_motd_are_configured
-- ensure_permissions_on_etc_passwd_are_configured
-- ensure_permissions_on_etc_passwd_dash_are_configured
-- ensure_permissions_on_etc_shadow_are_configured
-- ensure_permissions_on_etc_shadow_dash_are_configured
-- ensure_prelink_is_disabled
-- ensure_reverse_path_filtering_is_enabled
-- ensure_root_is_the_only_uid_0_account
-- ensure_root_path_integrity
-- ensure_rsh_client_is_not_installed
-# - ensure_rsyslog_default_file_permissions_configured
-# - ensure_rsyslog_is_installed
-# - ensure_rsyslog_service_is_enabled_and_running
-- ensure_samba_is_not_installed
-- ensure_secure_icmp_redirects_are_not_accepted
-# - ensure_selinux_is_installed
-# - ensure_selinux_policy_is_configured
-- ensure_shadow_group_is_empty
-- ensure_source_routed_packets_are_not_accepted
-# - ensure_ssh_access_is_limited
-- ensure_ssh_hostbasedauthentication_is_disabled
-- ensure_ssh_idle_timeout_interval_is_configured
-- ensure_ssh_ignorerhosts_is_enabled
-- ensure_ssh_loglevel_is_appropriate
-- ensure_ssh_maxauthtries_is_set_to_4_or_less
-- ensure_ssh_maxsessions_is_limited
-- ensure_ssh_maxstartups_is_configured
-- ensure_ssh_pam_is_enabled
-- ensure_ssh_permitemptypasswords_is_disabled
-- ensure_ssh_permituserenvironment_is_disabled
-- ensure_ssh_root_login_is_disabled
-- ensure_ssh_warning_banner_is_configured
-- ensure_ssh_x11_forwarding_is_disabled
-- ensure_sudo_commands_use_pty
-- ensure_sudo_is_installed
-- ensure_sudo_log_file_exists
-- ensure_suspicious_packets_are_logged
-- ensure_system_accounts_are_secured
-- ensure_talk_client_is_not_installed
-- ensure_tcp_syn_cookies_is_enabled
-- ensure_telnet_client_is_not_installed
-- ensure_telnet_server_is_not_installed
-# - ensure_the_selinux_mode_is_enforcing_or_permissive
-- ensure_tmp_is_configured
-- ensure_users_own_their_home_directories
-- ensure_xd_nx_support_is_enabled
-- ensure_xinetd_is_not_installed
+  - ensure_mounting_of_cramfs_filesystems_is_disabled
+  - ensure_mounting_of_udf_filesystems_is_disabled
+  - ensure_tmp_is_configured
+  - ensure_noexec_option_set_on_tmp_partition
+  - ensure_nodev_option_set_on_tmp_partition
+  - ensure_nosuid_option_set_on_tmp_partition
+  - ensure_dev_shm_is_configured
+  - ensure_noexec_option_set_on_dev_shm_partition
+  - ensure_nodev_option_set_on_dev_shm_partition
+  - ensure_nosuid_option_set_on_dev_shm_partition
+  - ensure_var_tmp_partition_includes_the_nodev_option
+  - ensure_home_partition_includes_the_nodev_option
+  - ensure_gpgcheck_is_globally_activated
+  - ensure_aide_is_installed
+  - ensure_filesystem_integrity_is_regularly_checked
+  # - ensure_bootloader_password_is_set
+  - ensure_authentication_required_for_single_user_mode
+  - ensure_core_dumps_are_restricted
+  - ensure_xd_nx_support_is_enabled
+  - ensure_prelink_is_not_installed
+  - ensure_selinux_is_installed
+  - ensure_selinux_policy_is_configured
+  - ensure_the_selinux_mode_is_enforcing_or_permissive
+  - ensure_no_unconfined_services_exist
+  - ensure_message_of_the_day_is_configured_properly
+  - ensure_permissions_on_etc_motd_are_configured
+  - ensure_permissions_on_etc_issue_are_configured
+  - ensure_permissions_on_etc_issue_net_are_configured
+  - ensure_gdm_login_banner_is_configured
+  - ensure_last_logged_in_user_display_is_disabled
+  - ensure_xdcmp_is_not_enabled
+  - ensure_xinetd_is_not_installed
+  - ensure_chrony_is_configured
+  - ensure_ntp_is_configured
+  - ensure_dhcp_server_is_not_installed
+  - ensure_ldap_server_is_not_installed
+  - ensure_dns_server_is_not_installed
+  - ensure_ftp_server_is_not_installed
+  - ensure_http_server_is_not_installed
+  - ensure_imap_and_pop3_server_is_not_installed
+  - ensure_samba_is_not_installed
+  - ensure_http_proxy_server_is_not_installed
+  - ensure_net_snmp_is_not_installed
+  - ensure_nis_server_is_not_installed
+  - ensure_telnet_server_is_not_installed
+  - ensure_nis_client_is_not_installed
+  - ensure_rsh_client_is_not_installed
+  - ensure_talk_client_is_not_installed
+  - ensure_telnet_client_is_not_installed
+  - ensure_ldap_client_is_not_installed
+  - ensure_ip_forwarding_is_disabled
+  - ensure_packet_redirect_sending_is_disabled
+  - ensure_source_routed_packets_are_not_accepted
+  - ensure_icmp_redirects_are_not_accepted
+  - ensure_secure_icmp_redirects_are_not_accepted
+  - ensure_suspicious_packets_are_logged
+  - ensure_broadcast_icmp_requests_are_ignored
+  - ensure_bogus_icmp_responses_are_ignored
+  - ensure_reverse_path_filtering_is_enabled
+  - ensure_tcp_syn_cookies_is_enabled
+  - ensure_ipv6_router_advertisements_are_not_accepted
+  - ensure_firewalld_is_installed
+  - ensure_iptables_services_not_installed_with_firewalld
+  - ensure_firewalld_service_enabled_and_running
+  - ensure_firewalld_default_zone_is_set
+  - ensure_nftables_is_installed
+  - ensure_iptables_services_not_installed_with_nftables
+  - ensure_an_nftables_table_exists
+  - ensure_nftables_base_chains_exist
+  - ensure_nftables_loopback_traffic_is_configured
+  - ensure_nftables_default_deny_firewall_policy
+  - ensure_nftables_service_is_enabled
+  - ensure_nftables_rules_are_permanent
+  - ensure_iptables_packages_are_installed
+  - ensure_nftables_is_not_installed_with_iptables
+  - ensure_iptables_loopback_traffic_is_configured
+  - ensure_iptables_rules_exist_for_all_open_ports
+  - ensure_iptables_default_deny_firewall_policy
+  - ensure_iptables_rules_are_saved
+  - ensure_iptables_is_enabled_and_running
+  - ensure_ip6tables_loopback_traffic_is_configured
+  - ensure_ip6tables_default_deny_firewall_policy
+  - ensure_ip6tables_rules_are_saved
+  - ensure_ip6tables_is_enabled_and_running
+  - ensure_rsyslog_is_installed
+  - ensure_rsyslog_service_is_enabled_and_running
+  - ensure_rsyslog_default_file_permissions_configured
+  - ensure_cron_daemon_is_enabled_and_running
+  - ensure_permissions_on_etc_cron_tab_are_configured
+  - ensure_permissions_on_etc_cron_daily_are_configured
+  - ensure_permissions_on_etc_cron_d_are_configured
+  - ensure_cron_is_restricted_to_authorized_users
+  - ensure_at_is_restricted_to_authorized_users
+  - ensure_sudo_is_installed
+  - ensure_sudo_commands_use_pty
+  - ensure_sudo_log_file_exists
+  - ensure_ssh_access_is_limited
+  - ensure_ssh_loglevel_is_appropriate
+  - ensure_ssh_x11_forwarding_is_disabled
+  - ensure_ssh_maxauthtries_is_set_to_4_or_less
+  - ensure_ssh_ignorerhosts_is_enabled
+  - ensure_ssh_hostbasedauthentication_is_disabled
+  - ensure_ssh_root_login_is_disabled
+  - ensure_ssh_permitemptypasswords_is_disabled
+  - ensure_ssh_permituserenvironment_is_disabled
+  - ensure_only_strong_ciphers_are_used
+  - ensure_only_strong_mac_algorithms_are_used
+  - ensure_ssh_idle_timeout_interval_is_configured
+  - ensure_ssh_warning_banner_is_configured
+  - ensure_ssh_pam_is_enabled
+  - ensure_ssh_maxstartups_is_configured
+  - ensure_ssh_maxsessions_is_limited
+  - ensure_password_hashing_algorithm_is_sha_512
+  - ensure_password_reuse_is_limited
+  - ensure_password_expiration_is_365_days_or_less
+  - ensure_inactive_password_lock_is_30_days_or_less
+  - ensure_system_accounts_are_secured
+  - ensure_default_group_for_the_root_account_is_gid_0
+  - ensure_default_user_shell_timeout_is_configured
+  - ensure_default_user_umask_is_configured
+  - ensure_access_to_the_su_command_is_restricted
+  - ensure_permissions_on_etc_passwd_are_configured
+  - ensure_permissions_on_etc_passwd_dash_are_configured
+  - ensure_permissions_on_etc_shadow_are_configured
+  - ensure_permissions_on_etc_shadow_dash_are_configured
+  - ensure_permissions_on_etc_gshadow_dash_are_configured
+  - ensure_permissions_on_etc_gshadow_are_configured
+  - ensure_permissions_on_etc_group_are_configured
+  - ensure_permissions_on_etc_group_dash_are_configured
+  - ensure_no_world_writable_files_exist
+  - ensure_no_unowned_files_or_directories_exist
+  - ensure_no_ungrouped_files_or_directories_exist
+  - ensure_etc_shadow_password_fields_are_not_empty
+  - ensure_all_groups_in_etc_passwd_exist_in_etc_group
+  - ensure_shadow_group_is_empty
+  - ensure_no_duplicate_user_names_exist
+  - ensure_no_duplicate_group_names_exist
+  - ensure_no_duplicate_uids_exist
+  - ensure_no_duplicate_gids_exist
+  - ensure_root_is_the_only_uid_0_account
+  - ensure_root_path_integrity
+  - ensure_all_users_home_directories_exist
+  - ensure_users_own_their_home_directories
+  - ensure_no_users_have_forward_files
+  - ensure_no_users_have_netrc_files
+  - ensure_no_users_have_rhosts_files
 secure_linux_cis::workstation_level_2:
-- disable_automounting
-- disable_usb_storage
-- ensure_a_table_exists
-# - ensure_access_to_the_su_command_is_restricted
-# - ensure_aide_is_installed
-- ensure_all_groups_in_etc_passwd_exist_in_etc_group
-- ensure_all_users_home_directories_exist
-- ensure_at_is_restricted_to_authorized_users
-- ensure_audit_backlog_limit_is_sufficient
-- ensure_audit_log_storage_size_is_configured
-- ensure_audit_logs_are_not_automatically_deleted
-- ensure_auditd_is_installed
-- ensure_auditd_service_is_enabled_and_running
-- ensure_authentication_required_for_single_user_mode
-- ensure_avahi_server_is_not_installed
-- ensure_base_chains_exist
-- ensure_bogus_icmp_responses_are_ignored
-# - ensure_bootloader_password_is_set
-- ensure_broadcast_icmp_requests_are_ignored
-- ensure_chrony_is_configured
-- ensure_core_dumps_are_restricted
-- ensure_cron_daemon_is_enabled_and_running
-- ensure_cron_is_restricted_to_authorized_users
-- ensure_dccp_is_disabled
-# - ensure_default_deny_firewall_policy
-- ensure_default_group_for_the_root_account_is_gid_0
-- ensure_default_user_shell_timeout_is_configured
-- ensure_default_user_umask_is_configured
-# - ensure_default_zone_is_set
-- ensure_dev_shm_is_configured
-- ensure_dhcp_server_is_not_installed
-- ensure_dns_server_is_not_installed
-- ensure_etc_shadow_password_fields_are_not_empty
-- ensure_file_deletion_events_by_users_are_collected
-- ensure_filesystem_integrity_is_regularly_checked
-# - ensure_firewalld_is_installed
-- ensure_firewalld_is_not_installed_or_stopped_and_masked
-# - ensure_firewalld_service_is_enabled_and_running
-- ensure_ftp_server_is_not_installed
-- ensure_gdm_is_removed_or_login_is_configured
-- ensure_gpgcheck_is_globally_activated
-- ensure_http_proxy_server_is_not_installed
-# - ensure_http_server_is_not_installed
-- ensure_icmp_redirects_are_not_accepted
-- ensure_imap_and_pop3_server_is_not_installed
-- ensure_inactive_password_lock_is_30_days_or_less
-- ensure_ip6tables_is_enabled_and_running
-- ensure_ip6tables_rules_are_saved
-- ensure_ip_forwarding_is_disabled
-# - ensure_iptables_services_package_is_not_installed
-# - ensure_iptables_is_enabled_and_running
-# - ensure_iptables_packages_are_installed
-# - ensure_iptables_rules_are_saved
-# - ensure_ipv6_default_deny_firewall_policy
-# - ensure_ipv6_loopback_traffic_is_configured
-- ensure_ipv6_router_advertisements_are_not_accepted
-# - ensure_ldap_client_is_not_installed
-# - ensure_ldap_server_is_not_installed
-- ensure_login_and_logout_events_are_collected
-# - ensure_loopback_traffic_is_configured
-- ensure_message_of_the_day_is_configured_properly
-- ensure_mounting_of_cramfs_filesystems_is_disabled
-- ensure_mounting_of_squashfs_filesystems_is_disabled
-- ensure_mounting_of_udf_filesystems_is_disabled
-# - ensure_net_snmp_is_not_installed
-# - ensure_nftables_is_installed
-# - ensure_nftables_is_not_installed
-# - ensure_nftables_rules_are_permanent
-# - ensure_nftables_service_is_enabled
-# - ensure_nis_client_is_not_installed
-- ensure_nis_server_is_not_installed
-- ensure_no_duplicate_gids_exist
-- ensure_no_duplicate_group_names_exist
-- ensure_no_duplicate_uids_exist
-- ensure_no_duplicate_user_names_exist
-- ensure_no_unconfined_services_exist
-- ensure_no_ungrouped_files_or_directories_exist
-- ensure_no_unowned_files_or_directories_exist
-- ensure_no_users_have_forward_files
-- ensure_no_users_have_netrc_files
-- ensure_no_users_have_rhosts_files
-- ensure_no_world_writable_files_exist
-- ensure_nodev_option_set_on_dev_shm_partition
-- ensure_nodev_option_set_on_home_partition
-- ensure_nodev_option_set_on_tmp_partition
-- ensure_nodev_option_set_on_var_tmp_partition
-- ensure_noexec_option_set_on_dev_shm_partition
-- ensure_noexec_option_set_on_tmp_partition
-- ensure_noexec_option_set_on_var_tmp_partition
-- ensure_nosuid_option_set_on_dev_shm_partition
-- ensure_nosuid_option_set_on_tmp_partition
-- ensure_nosuid_option_set_on_var_tmp_partition
-# - ensure_ntp_is_configured
-- ensure_only_strong_ciphers_are_used
-- ensure_only_strong_mac_algorithms_are_used
-- ensure_packet_redirect_sending_is_disabled
-- ensure_password_expiration_is_365_days_or_less
-- ensure_password_hashing_algorithm_is_sha_512
-- ensure_password_reuse_is_limited
-- ensure_permissions_on_all_logfiles_are_configured
-- ensure_permissions_on_etc_crond_are_configured
-- ensure_permissions_on_etc_cron_hourly_are_configured
-- ensure_permissions_on_etc_cron_daily_are_configured
-- ensure_permissions_on_etc_cron_weekly_are_configured
-- ensure_permissions_on_etc_cron_monthly_are_configured
-- ensure_permissions_on_etc_crontab_are_configured
-- ensure_permissions_on_etc_group_are_configured
-- ensure_permissions_on_etc_group_dash_are_configured
-- ensure_permissions_on_etc_gshadow_are_configured
-- ensure_permissions_on_etc_gshadow_dash_are_configured
-- ensure_permissions_on_etc_issue_are_configured
-- ensure_permissions_on_etc_motd_are_configured
-- ensure_permissions_on_etc_passwd_are_configured
-- ensure_permissions_on_etc_passwd_dash_are_configured
-- ensure_permissions_on_etc_shadow_are_configured
-- ensure_permissions_on_etc_shadow_dash_are_configured
-- ensure_prelink_is_disabled
-- ensure_reverse_path_filtering_is_enabled
-- ensure_root_is_the_only_uid_0_account
-- ensure_root_path_integrity
-- ensure_rsh_client_is_not_installed
-# - ensure_rsyslog_default_file_permissions_configured
-# - ensure_rsyslog_is_installed
-# - ensure_rsyslog_service_is_enabled_and_running
-- ensure_samba_is_not_installed
-- ensure_sctp_is_disabled
-- ensure_secure_icmp_redirects_are_not_accepted
-# - ensure_selinux_is_installed
-# - ensure_selinux_policy_is_configured
-- ensure_separate_partition_exists_for_home
-- ensure_separate_partition_exists_for_var
-- ensure_separate_partition_exists_for_var_log
-- ensure_separate_partition_exists_for_var_log_audit
-- ensure_separate_partition_exists_for_var_tmp
-- ensure_session_initiation_information_is_collected
-- ensure_shadow_group_is_empty
-- ensure_source_routed_packets_are_not_accepted
-# - ensure_ssh_access_is_limited
-- ensure_ssh_allowtcpforwarding_is_disabled
-- ensure_ssh_hostbasedauthentication_is_disabled
-- ensure_ssh_idle_timeout_interval_is_configured
-- ensure_ssh_ignorerhosts_is_enabled
-- ensure_ssh_loglevel_is_appropriate
-- ensure_ssh_maxauthtries_is_set_to_4_or_less
-- ensure_ssh_maxsessions_is_limited
-- ensure_ssh_maxstartups_is_configured
-- ensure_ssh_pam_is_enabled
-- ensure_ssh_permitemptypasswords_is_disabled
-- ensure_ssh_permituserenvironment_is_disabled
-- ensure_ssh_root_login_is_disabled
-- ensure_ssh_warning_banner_is_configured
-- ensure_ssh_x11_forwarding_is_disabled
-- ensure_successful_file_system_mounts_are_collected
-- ensure_sudo_commands_use_pty
-- ensure_sudo_is_installed
-- ensure_sudo_log_file_exists
-- ensure_suspicious_packets_are_logged
-- ensure_system_accounts_are_secured
-- ensure_system_is_disabled_when_audit_logs_are_full
-- ensure_talk_client_is_not_installed
-- ensure_tcp_syn_cookies_is_enabled
-- ensure_telnet_client_is_not_installed
-- ensure_telnet_server_is_not_installed
-- ensure_the_audit_configuration_is_immutable
-# - ensure_the_selinux_mode_is_enforcing
-# - ensure_the_selinux_mode_is_enforcing_or_permissive
-- ensure_tmp_is_configured
-- ensure_use_of_privileged_commands_is_collected
-- ensure_users_own_their_home_directories
-- ensure_xd_nx_support_is_enabled
-- ensure_xinetd_is_not_installed
+  - ensure_mounting_of_cramfs_filesystems_is_disabled
+  - ensure_mounting_of_squashfs_filesystems_is_disabled
+  - ensure_mounting_of_udf_filesystems_is_disabled
+  - ensure_tmp_is_configured
+  - ensure_noexec_option_set_on_tmp_partition
+  - ensure_nodev_option_set_on_tmp_partition
+  - ensure_nosuid_option_set_on_tmp_partition
+  - ensure_dev_shm_is_configured
+  - ensure_noexec_option_set_on_dev_shm_partition
+  - ensure_nodev_option_set_on_dev_shm_partition
+  - ensure_nosuid_option_set_on_dev_shm_partition
+  - ensure_separate_partition_exists_for_var
+  - ensure_separate_partition_exists_for_var_tmp
+  - ensure_var_tmp_partition_includes_the_nodev_option
+  - ensure_separate_partition_exists_for_var_log
+  - ensure_separate_partition_exists_for_var_log_audit
+  - ensure_separate_partition_exists_for_home
+  - ensure_home_partition_includes_the_nodev_option
+  - disable_automounting
+  - disable_usb_storage
+  - ensure_gpgcheck_is_globally_activated
+  - ensure_aide_is_installed
+  - ensure_filesystem_integrity_is_regularly_checked
+  # - ensure_bootloader_password_is_set
+  - ensure_authentication_required_for_single_user_mode
+  - ensure_core_dumps_are_restricted
+  - ensure_xd_nx_support_is_enabled
+  - ensure_prelink_is_not_installed
+  - ensure_selinux_is_installed
+  - ensure_selinux_policy_is_configured
+  - ensure_the_selinux_mode_is_enforcing_or_permissive
+  - ensure_the_selinux_mode_is_enforcing
+  - ensure_no_unconfined_services_exist
+  - ensure_message_of_the_day_is_configured_properly
+  - ensure_permissions_on_etc_motd_are_configured
+  - ensure_permissions_on_etc_issue_are_configured
+  - ensure_permissions_on_etc_issue_net_are_configured
+  - ensure_gdm_login_banner_is_configured
+  - ensure_last_logged_in_user_display_is_disabled
+  - ensure_xdcmp_is_not_enabled
+  - ensure_xinetd_is_not_installed
+  - ensure_chrony_is_configured
+  - ensure_ntp_is_configured
+  - ensure_avahi_server_is_not_installed
+  - ensure_dhcp_server_is_not_installed
+  - ensure_ldap_server_is_not_installed
+  - ensure_dns_server_is_not_installed
+  - ensure_ftp_server_is_not_installed
+  - ensure_http_server_is_not_installed
+  - ensure_imap_and_pop3_server_is_not_installed
+  - ensure_samba_is_not_installed
+  - ensure_http_proxy_server_is_not_installed
+  - ensure_net_snmp_is_not_installed
+  - ensure_nis_server_is_not_installed
+  - ensure_telnet_server_is_not_installed
+  - ensure_nis_client_is_not_installed
+  - ensure_rsh_client_is_not_installed
+  - ensure_talk_client_is_not_installed
+  - ensure_telnet_client_is_not_installed
+  - ensure_ldap_client_is_not_installed
+  - ensure_wireless_interfaces_are_disabled
+  - ensure_ip_forwarding_is_disabled
+  - ensure_packet_redirect_sending_is_disabled
+  - ensure_source_routed_packets_are_not_accepted
+  - ensure_icmp_redirects_are_not_accepted
+  - ensure_secure_icmp_redirects_are_not_accepted
+  - ensure_suspicious_packets_are_logged
+  - ensure_broadcast_icmp_requests_are_ignored
+  - ensure_bogus_icmp_responses_are_ignored
+  - ensure_reverse_path_filtering_is_enabled
+  - ensure_tcp_syn_cookies_is_enabled
+  - ensure_ipv6_router_advertisements_are_not_accepted
+  - ensure_dccp_is_disabled
+  - ensure_sctp_is_disabled
+  - ensure_firewalld_is_installed
+  - ensure_iptables_services_not_installed_with_firewalld
+  - ensure_firewalld_service_enabled_and_running
+  - ensure_firewalld_default_zone_is_set
+  - ensure_nftables_is_installed
+  - ensure_iptables_services_not_installed_with_nftables
+  - ensure_an_nftables_table_exists
+  - ensure_nftables_base_chains_exist
+  - ensure_nftables_loopback_traffic_is_configured
+  - ensure_nftables_default_deny_firewall_policy
+  - ensure_nftables_service_is_enabled
+  - ensure_nftables_rules_are_permanent
+  - ensure_iptables_packages_are_installed
+  - ensure_nftables_is_not_installed_with_iptables
+  - ensure_iptables_loopback_traffic_is_configured
+  - ensure_iptables_rules_exist_for_all_open_ports
+  - ensure_iptables_default_deny_firewall_policy
+  - ensure_iptables_rules_are_saved
+  - ensure_iptables_is_enabled_and_running
+  - ensure_ip6tables_loopback_traffic_is_configured
+  - ensure_ip6tables_default_deny_firewall_policy
+  - ensure_ip6tables_rules_are_saved
+  - ensure_ip6tables_is_enabled_and_running
+  - ensure_auditd_is_installed
+  - ensure_auditd_service_is_enabled_and_running
+  - ensure_audit_log_storage_size_is_configured
+  - ensure_audit_logs_are_not_automatically_deleted
+  - ensure_system_is_disabled_when_audit_logs_are_full
+  - ensure_audit_backlog_limit_is_sufficient
+  - ensure_login_and_logout_events_are_collected
+  - ensure_session_initiation_information_is_collected
+  - ensure_use_of_privileged_commands_is_collected
+  - ensure_successful_file_system_mounts_are_collected
+  - ensure_file_deletion_events_by_users_are_collected
+  - ensure_the_audit_configuration_is_immutable
+  - ensure_rsyslog_is_installed
+  - ensure_rsyslog_service_is_enabled_and_running
+  - ensure_rsyslog_default_file_permissions_configured
+  - ensure_cron_daemon_is_enabled_and_running
+  - ensure_permissions_on_etc_cron_tab_are_configured
+  - ensure_permissions_on_etc_cron_daily_are_configured
+  - ensure_permissions_on_etc_cron_d_are_configured
+  - ensure_cron_is_restricted_to_authorized_users
+  - ensure_at_is_restricted_to_authorized_users
+  - ensure_sudo_is_installed
+  - ensure_sudo_commands_use_pty
+  - ensure_sudo_log_file_exists
+  - ensure_ssh_access_is_limited
+  - ensure_ssh_loglevel_is_appropriate
+  - ensure_ssh_x11_forwarding_is_disabled
+  - ensure_ssh_maxauthtries_is_set_to_4_or_less
+  - ensure_ssh_ignorerhosts_is_enabled
+  - ensure_ssh_hostbasedauthentication_is_disabled
+  - ensure_ssh_root_login_is_disabled
+  - ensure_ssh_permitemptypasswords_is_disabled
+  - ensure_ssh_permituserenvironment_is_disabled
+  - ensure_only_strong_ciphers_are_used
+  - ensure_only_strong_mac_algorithms_are_used
+  - ensure_ssh_idle_timeout_interval_is_configured
+  - ensure_ssh_warning_banner_is_configured
+  - ensure_ssh_pam_is_enabled
+  - ensure_ssh_allowtcpforwarding_is_disabled
+  - ensure_ssh_maxstartups_is_configured
+  - ensure_ssh_maxsessions_is_limited
+  - ensure_password_hashing_algorithm_is_sha_512
+  - ensure_password_reuse_is_limited
+  - ensure_password_expiration_is_365_days_or_less
+  - ensure_inactive_password_lock_is_30_days_or_less
+  - ensure_system_accounts_are_secured
+  - ensure_default_group_for_the_root_account_is_gid_0
+  - ensure_default_user_shell_timeout_is_configured
+  - ensure_default_user_umask_is_configured
+  - ensure_access_to_the_su_command_is_restricted
+  - ensure_permissions_on_etc_passwd_are_configured
+  - ensure_permissions_on_etc_passwd_dash_are_configured
+  - ensure_permissions_on_etc_shadow_are_configured
+  - ensure_permissions_on_etc_shadow_dash_are_configured
+  - ensure_permissions_on_etc_gshadow_dash_are_configured
+  - ensure_permissions_on_etc_gshadow_are_configured
+  - ensure_permissions_on_etc_group_are_configured
+  - ensure_permissions_on_etc_group_dash_are_configured
+  - ensure_no_world_writable_files_exist
+  - ensure_no_unowned_files_or_directories_exist
+  - ensure_no_ungrouped_files_or_directories_exist
+  - ensure_etc_shadow_password_fields_are_not_empty
+  - ensure_all_groups_in_etc_passwd_exist_in_etc_group
+  - ensure_shadow_group_is_empty
+  - ensure_no_duplicate_user_names_exist
+  - ensure_no_duplicate_group_names_exist
+  - ensure_no_duplicate_uids_exist
+  - ensure_no_duplicate_gids_exist
+  - ensure_root_is_the_only_uid_0_account
+  - ensure_root_path_integrity
+  - ensure_all_users_home_directories_exist
+  - ensure_users_own_their_home_directories
+  - ensure_no_users_have_forward_files
+  - ensure_no_users_have_netrc_files
+  - ensure_no_users_have_rhosts_files

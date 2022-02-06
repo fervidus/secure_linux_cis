@@ -5,7 +5,7 @@
 # @example
 #   include secure_linux_cis::rules::ensure_ufw_service_is_enabled
 class secure_linux_cis::rules::ensure_ufw_service_is_enabled {
-    service { 'ugw':
+    service { 'ufw':
       ensure => running,
       enable => true,
     }
