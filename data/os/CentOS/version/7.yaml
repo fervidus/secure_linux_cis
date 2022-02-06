@@ -73,7 +73,7 @@ secure_linux_cis::server_level_1:
   # - ensure_firewalld_service_enabled_and_running
   # - ensure_firewalld_default_zone_is_set
   # - ensure_nftables_is_installed
-  - ensure_iptables_services_not_installed_with_nftables
+  # - ensure_iptables_services_not_installed_with_nftables
   - ensure_an_nftables_table_exists
   # - ensure_nftables_base_chains_exist
   # - ensure_nftables_loopback_traffic_is_configured
@@ -230,7 +230,7 @@ secure_linux_cis::server_level_2:
   # - ensure_firewalld_service_enabled_and_running
   # - ensure_firewalld_default_zone_is_set
   # - ensure_nftables_is_installed
-  - ensure_iptables_services_not_installed_with_nftables
+  # - ensure_iptables_services_not_installed_with_nftables
   - ensure_an_nftables_table_exists
   # - ensure_nftables_base_chains_exist
   # - ensure_nftables_loopback_traffic_is_configured
@@ -383,7 +383,7 @@ secure_linux_cis::workstation_level_1:
   # - ensure_firewalld_service_enabled_and_running
   # - ensure_firewalld_default_zone_is_set
   # - ensure_nftables_is_installed
-  - ensure_iptables_services_not_installed_with_nftables
+  # - ensure_iptables_services_not_installed_with_nftables
   - ensure_an_nftables_table_exists
   # - ensure_nftables_base_chains_exist
   # - ensure_nftables_loopback_traffic_is_configured
@@ -543,7 +543,7 @@ secure_linux_cis::workstation_level_2:
   # - ensure_firewalld_service_enabled_and_running
   # - ensure_firewalld_default_zone_is_set
   # - ensure_nftables_is_installed
-  - ensure_iptables_services_not_installed_with_nftables
+  # - ensure_iptables_services_not_installed_with_nftables
   - ensure_an_nftables_table_exists
   # - ensure_nftables_base_chains_exist
   # - ensure_nftables_loopback_traffic_is_configured
