@@ -15,5 +15,4 @@
 # @example
 #   include secure_linux_cis::ensure_iptables_default_deny_firewall_policy
 class secure_linux_cis::rules::ensure_iptables_default_deny_firewall_policy {
-    include secure_linux_cis::rules::ensure_iptables_is_installed
 }

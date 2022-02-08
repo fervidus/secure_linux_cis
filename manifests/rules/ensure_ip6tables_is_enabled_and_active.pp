@@ -13,6 +13,10 @@
 # @param enforced Should this rule be enforced
 #
 # @example
-#   include secure_linux_cis::ensure_ip6tables_loopback_traffic_is_configured
-class secure_linux_cis::rules::ensure_ip6tables_loopback_traffic_is_configured {
+#   include secure_linux_cis::ensure_ip6tables_is_enabled_and_active
+class secure_linux_cis::rules::ensure_ip6tables_is_enabled_and_active {
+  service { 'ip6tables':
+    ensure => running,
+    enable => true,
+  }
 }
