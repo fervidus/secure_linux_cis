@@ -323,7 +323,7 @@ secure_linux_cis::server_level_2:
   - ensure_tftp_server_is_not_enabled
   - ensure_the_audit_configuration_is_immutable
   - ensure_the_selinux_mode_is_enforcing
-  - ensure_the_selinux_mode_is_enforcing_or_permissive
+  # - ensure_the_selinux_mode_is_enforcing_or_permissive
   - ensure_time_services_are_not_enabled
   - ensure_tipc_is_disabled
   - ensure_tmp_is_configured
@@ -654,7 +654,7 @@ secure_linux_cis::workstation_level_2:
   - ensure_tftp_server_is_not_enabled
   - ensure_the_audit_configuration_is_immutable
   - ensure_the_selinux_mode_is_enforcing
-  - ensure_the_selinux_mode_is_enforcing_or_permissive
+  # - ensure_the_selinux_mode_is_enforcing_or_permissive
   - ensure_time_services_are_not_enabled
   - ensure_tipc_is_disabled
   - ensure_tmp_is_configured

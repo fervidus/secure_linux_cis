@@ -169,7 +169,7 @@ secure_linux_cis::server_level_2:
   - ensure_prelink_is_not_installed
   - ensure_selinux_is_installed
   - ensure_selinux_policy_is_configured
-  - ensure_the_selinux_mode_is_enforcing_or_permissive
+  # - ensure_the_selinux_mode_is_enforcing_or_permissive
   - ensure_the_selinux_mode_is_enforcing
   - ensure_no_unconfined_services_exist
   - ensure_setroubleshoot_is_not_installed

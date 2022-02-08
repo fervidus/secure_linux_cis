@@ -307,7 +307,7 @@ secure_linux_cis::workstation_level_1:
   - ensure_all_groups_in_etc_passwd_exist_in_etc_group
   - ensure_all_users_home_directories_exist
   - ensure_all_users_last_password_change_date_is_in_the_past
-  - ensure_at_cron__is_restricted_to_authorized_users
+  - ensure_at_cron_is_restricted_to_authorized_users
   - ensure_authentication_required_for_single_user_mode
   - ensure_avahi_server_is_not_enabled
   - ensure_bogus_icmp_responses_are_ignored
@@ -452,7 +452,7 @@ secure_linux_cis::workstation_level_2:
   - ensure_all_groups_in_etc_passwd_exist_in_etc_group
   - ensure_all_users_home_directories_exist
   - ensure_all_users_last_password_change_date_is_in_the_past
-  - ensure_at_cron__is_restricted_to_authorized_users
+  - ensure_at_cron_is_restricted_to_authorized_users
   - ensure_audit_log_storage_size_is_configured
   - ensure_audit_logs_are_not_automatically_deleted
   - ensure_auditd_service_is_enabled

@@ -13,6 +13,6 @@
 # @param enforced Should this rule be enforced
 #
 # @example
-#   include secure_linux_cis::ensure_ip6tables_loopback_traffic_is_configured
-class secure_linux_cis::rules::ensure_ip6tables_loopback_traffic_is_configured {
+#   include secure_linux_cis::ensure_iptables_rules_exist_for_all_open_ports
+class secure_linux_cis::rules::ensure_iptables_rules_exist_for_all_open_ports {
 }

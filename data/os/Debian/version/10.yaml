@@ -99,7 +99,7 @@ secure_linux_cis::server_level_1:
   - ensure_permissions_on_etc_cron_weekly_are_configured
   - ensure_permissions_on_etc_cron_monthly_are_configured
   - ensure_permissions_on_etc_cron_d_are_configured
-  - ensure_at_cron__is_restricted_to_authorized_users
+  - ensure_at_cron_is_restricted_to_authorized_users
   - ensure_ssh_protocol_is_not_set_to_1
   - ensure_ssh_loglevel_is_appropriate
   - ensure_ssh_x11_forwarding_is_disabled
@@ -277,7 +277,7 @@ secure_linux_cis::server_level_2:
   - ensure_permissions_on_etc_cron_weekly_are_configured
   - ensure_permissions_on_etc_cron_monthly_are_configured
   - ensure_permissions_on_etc_cron_d_are_configured
-  - ensure_at_cron__is_restricted_to_authorized_users
+  - ensure_at_cron_is_restricted_to_authorized_users
   - ensure_ssh_protocol_is_not_set_to_1
   - ensure_ssh_loglevel_is_appropriate
   - ensure_ssh_x11_forwarding_is_disabled
@@ -428,7 +428,7 @@ secure_linux_cis::workstation_level_1:
   - ensure_permissions_on_etc_cron_weekly_are_configured
   - ensure_permissions_on_etc_cron_monthly_are_configured
   - ensure_permissions_on_etc_cron_d_are_configured
-  - ensure_at_cron__is_restricted_to_authorized_users
+  - ensure_at_cron_is_restricted_to_authorized_users
   - ensure_ssh_protocol_is_not_set_to_1
   - ensure_ssh_loglevel_is_appropriate
   - ensure_ssh_x11_forwarding_is_disabled
@@ -611,7 +611,7 @@ secure_linux_cis::workstation_level_2:
   - ensure_permissions_on_etc_cron_weekly_are_configured
   - ensure_permissions_on_etc_cron_monthly_are_configured
   - ensure_permissions_on_etc_cron_d_are_configured
-  - ensure_at_cron__is_restricted_to_authorized_users
+  - ensure_at_cron_is_restricted_to_authorized_users
   - ensure_ssh_protocol_is_not_set_to_1
   - ensure_ssh_loglevel_is_appropriate
   - ensure_ssh_x11_forwarding_is_disabled
