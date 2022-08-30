@@ -1,0 +1,28 @@
+---
+name: secure_linux_cis
+modules:
+- camptocamp/augeas
+- herculesteam/augeasproviders_core
+- herculesteam/augeasproviders_grub
+- herculesteam/augeasproviders_pam
+- herculesteam/augeasproviders_shellvar
+- herculesteam/augeasproviders_sysctl
+- puppet/alternatives
+- puppet/firewalld
+- puppet/kmod
+- puppet/logrotate
+- puppet/postfix
+- puppet/selinux
+- puppet/systemd
+- puppetlabs/augeas_core
+- puppetlabs/concat
+- puppetlabs/firewall
+- puppetlabs/inifile
+- puppetlabs/mailalias_core
+- puppetlabs/ntp
+- puppetlabs/puppet_agent
+- puppetlabs/reboot
+- puppetlabs/stdlib
+- ubeek/auditd
+- puppetlabs/mount_core
+- puppet/cron

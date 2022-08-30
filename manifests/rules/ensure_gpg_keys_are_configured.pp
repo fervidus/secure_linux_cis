@@ -13,9 +13,9 @@
 # @example
 #   include secure_linux_cis::ensure_gpg_keys_are_configured
 class secure_linux_cis::rules::ensure_gpg_keys_are_configured {
-    exec { 'gpgkey':
-      command => "rpm -q gpg-pubkey --qf '%{name}-%{version}-%{release} --> %{summary}\\n' > /root/gpgkeys.txt",
-      creates => '/root/gpgkeys.txt',
-      path    => '/bin/',
-    }
+  exec { 'gpgkey':
+    command => "rpm -q gpg-pubkey --qf '%{name}-%{version}-%{release} --> %{summary}\\n' > /root/gpgkeys.txt",
+    creates => '/root/gpgkeys.txt',
+    path    => '/bin/',
+  }
 }

@@ -16,7 +16,18 @@
 # @example
 #   include secure_linux_cis::ensure_tipc_is_disabled
 class secure_linux_cis::rules::ensure_tipc_is_disabled {
-    kmod::install { 'tipc':
-      command => '/bin/true',
-    }
+  realize File['/etc/modprobe.d/storage_disable.conf']
+
+  file_line { 'Disable tipc':
+    ensure  => present,
+    path    => '/etc/modprobe.d/storage_disable.conf',
+    line    => 'install tipc /bin/true',
+    match   => '^install\s+tipc',
+    require => File['/etc/modprobe.d/storage_disable.conf'],
+  }
+
+  exec { '/usr/sbin/rmmod tipc':
+    subscribe   => File_line['Disable tipc'],
+    refreshonly => true,
+  }
 }

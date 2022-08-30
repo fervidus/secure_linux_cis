@@ -15,7 +15,26 @@
 # @example
 #   include secure_linux_cis::ensure_mounting_of_jffs2_filesystems_is_disabled
 class secure_linux_cis::rules::ensure_mounting_of_jffs2_filesystems_is_disabled {
-    kmod::install { 'jffs2':
-      command => '/bin/true',
-    }
+  realize File['/etc/modprobe.d/filesystem_disable.conf']
+
+  file_line { 'Disable jffs2':
+    ensure  => present,
+    path    => '/etc/modprobe.d/filesystem_disable.conf',
+    line    => 'install jffs2 /bin/false',
+    match   => '^install\s+jffs2',
+    require => File['/etc/modprobe.d/filesystem_disable.conf'],
+  }
+
+  file_line { 'Blacklist jffs2':
+    ensure  => present,
+    path    => '/etc/modprobe.d/filesystem_disable.conf',
+    line    => 'blacklist jffs2',
+    match   => '^blacklist\s+jffs2',
+    require => File['/etc/modprobe.d/filesystem_disable.conf'],
+  }
+
+  exec { '/usr/sbin/modprobe -r jffs2':
+    subscribe   => [File_line['Disable jffs2'], File_line['Blacklist jffs2']],
+    refreshonly => true,
+  }
 }

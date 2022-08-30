@@ -16,7 +16,26 @@
 # @example
 #   include secure_linux_cis::ensure_mounting_of_fat_filesystems_is_disabled
 class secure_linux_cis::rules::ensure_mounting_of_fat_filesystems_is_disabled {
-    kmod::install { 'vfat':
-      command => '/bin/true',
-    }
+  realize File['/etc/modprobe.d/filesystem_disable.conf']
+
+  file_line { 'Disable vfat':
+    ensure  => present,
+    path    => '/etc/modprobe.d/filesystem_disable.conf',
+    line    => 'install vfat /bin/false',
+    match   => '^install\s+vfat',
+    require => File['/etc/modprobe.d/filesystem_disable.conf'],
+  }
+
+  file_line { 'Blacklist vfat':
+    ensure  => present,
+    path    => '/etc/modprobe.d/filesystem_disable.conf',
+    line    => 'blacklist vfat',
+    match   => '^blacklist\s+vfat',
+    require => File['/etc/modprobe.d/filesystem_disable.conf'],
+  }
+
+  exec { '/usr/sbin/modprobe -r vfat':
+    subscribe   => [File_line['Disable vfat'], File_line['Blacklist vfat']],
+    refreshonly => true,
+  }
 }
