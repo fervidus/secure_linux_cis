@@ -111,7 +111,7 @@ class secure_linux_cis (
     'aes128-gcm@openssh.com',
     'aes128-ctr',
     'aes192-ctr',
-    'aes256-ctr'
+    'aes256-ctr',
   ],
   Integer                                 $client_alive_interval   = 300, # must be between 1 and 300
   Integer[0,3]                            $client_alive_count_max  = 0,
@@ -139,11 +139,11 @@ class secure_linux_cis (
   Array[String]                           $nologin_whitelist       = [],
 ) {
   schedule { 'harden_schedule':
-      period      => $hardening_schedule['period'],
-      periodmatch => $hardening_schedule['periodmatch'],
-      range       => $hardening_schedule['range'],
-      repeat      => $hardening_schedule['repeat'],
-      weekday     => $hardening_schedule['weekday'],
+    period      => $hardening_schedule['period'],
+    periodmatch => $hardening_schedule['periodmatch'],
+    range       => $hardening_schedule['range'],
+    repeat      => $hardening_schedule['repeat'],
+    weekday     => $hardening_schedule['weekday'],
   }
 
   $base_rules = $profile_type ? {
@@ -157,6 +157,15 @@ class secure_linux_cis (
     }
   }
 
+  # Filesystem disable configuration file
+  @file { '/etc/modprobe.d/filesystem_disable.conf':
+    ensure => file,
+  }
+  # Storage disable configuration file
+  @file { '/etc/modprobe.d/storage_disable.conf':
+    ensure => file,
+  }
+
   # Build rules to enforce
   $enforced_rules = $base_rules.map | String $line | {
     "secure_linux_cis::rules::${line}"
@@ -168,10 +177,9 @@ class secure_linux_cis (
 
   file { '/usr/share/cis_scripts/enforced_rules.txt':
     ensure  => file,
-    content => $enforced_rules.join("\n")
+    content => $enforced_rules.join("\n"),
   }
 
   include $enforced_rules
   include secure_linux_cis::reboot
-
 }

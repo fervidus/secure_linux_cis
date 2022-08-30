@@ -12,8 +12,8 @@
 #
 # @example
 #   include secure_linux_cis::ensure_sudo_is_installed
-class secure_linux_cis::rules::ensure_sudo_is_installed {
-  package { 'sudo':
+class secure_linux_cis::rules::ensure_systemd_journal_remote_is_installed {
+  package { 'systemd-journal-remote':
     ensure   => installed,
   }
   # include sudo

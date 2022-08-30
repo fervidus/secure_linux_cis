@@ -18,7 +18,13 @@
 # @example
 #   include secure_linux_cis::ensure_dccp_is_disabled
 class secure_linux_cis::rules::ensure_dccp_is_disabled {
-  kmod::install { 'dccp':
-    command => '/bin/true',
+  realize File['/etc/modprobe.d/storage_disable.conf']
+
+  file_line { 'Disable dccp':
+    ensure  => present,
+    path    => '/etc/modprobe.d/storage_disable.conf',
+    line    => 'install usb-storage /bin/true',
+    match   => '^install\s+usb-storage',
+    require => File['/etc/modprobe.d/storage_disable.conf'],
   }
 }

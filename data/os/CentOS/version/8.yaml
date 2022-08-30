@@ -1,4 +1,6 @@
 ---
+secure_linux_cis::rules::ensure_gpgcheck_is_globally_activated::package_configuration: /etc/dnf/dnf.conf
+
 secure_linux_cis::server_level_1:
   - ensure_mounting_of_cramfs_filesystems_is_disabled
   - ensure_mounting_of_squashfs_filesystems_is_disabled
@@ -63,7 +65,7 @@ secure_linux_cis::server_level_1:
   - ensure_tcp_syn_cookies_is_enabled
   - ensure_ipv6_router_advertisements_are_not_accepted
   - ensure_a_firewall_package_is_installed
-  # - ensure_firewalld_service_is_enabled_and_running
+  - ensure_firewalld_service_is_enabled_and_running
   # - ensure_nftables_is_not_enabled_with_firewalld
   # - ensure_firewalld_default_zone_is_set
   # - ensure_an_nftables_table_exists
@@ -72,12 +74,12 @@ secure_linux_cis::server_level_1:
   # - ensure_nftables_default_deny_firewall_policy
   # - ensure_nftables_service_is_enabled
   # - ensure_nftables_rules_are_permanent
-  - ensure_iptables_default_deny_firewall_policy
-  - ensure_iptables_loopback_traffic_is_configured
-  - ensure_iptables_is_enabled_and_active
-  - ensure_ip6tables_default_deny_firewall_policy
-  - ensure_ip6tables_loopback_traffic_is_configured
-  - ensure_ip6tables_is_enabled_and_active
+  # - ensure_iptables_default_deny_firewall_policy
+  # - ensure_iptables_loopback_traffic_is_configured
+  # - ensure_iptables_is_enabled_and_active
+  # - ensure_ip6tables_default_deny_firewall_policy
+  # - ensure_ip6tables_loopback_traffic_is_configured
+  # - ensure_ip6tables_is_enabled_and_active
   - ensure_wireless_interfaces_are_disabled
   - ensure_rsyslog_is_installed
   - ensure_rsyslog_service_is_enabled
@@ -102,6 +104,7 @@ secure_linux_cis::server_level_1:
   - ensure_ssh_pam_is_enabled
   - ensure_ssh_maxstartups_is_configured
   - ensure_ssh_maxsessions_is_set_to_4_or_less
+  - ensure_sticky_bit_is_set_on_all_world_writable_directories
   - ensure_system_wide_crypto_policy_is_not_over_ridden
   - create_custom_authselect_profile
   - select_authselect_profile
@@ -137,6 +140,8 @@ secure_linux_cis::server_level_1:
   - ensure_no_duplicate_group_names_exist
   - ensure_shadow_group_is_empty
   - ensure_all_users_home_directories_exist
+  - ensure_systemd_journal_remote_is_installed
+
 secure_linux_cis::server_level_2:
   - ensure_mounting_of_cramfs_filesystems_is_disabled
   - ensure_mounting_of_squashfs_filesystems_is_disabled
@@ -216,7 +221,7 @@ secure_linux_cis::server_level_2:
   - ensure_rds_is_disabled
   - ensure_tipc_is_disabled
   - ensure_a_firewall_package_is_installed
-  # - ensure_firewalld_service_is_enabled_and_running
+  - ensure_firewalld_service_is_enabled_and_running
   # - ensure_nftables_is_not_enabled_with_firewalld
   # - ensure_firewalld_default_zone_is_set
   # - ensure_an_nftables_table_exists
@@ -225,12 +230,12 @@ secure_linux_cis::server_level_2:
   # - ensure_nftables_default_deny_firewall_policy
   # - ensure_nftables_service_is_enabled
   # - ensure_nftables_rules_are_permanent
-  - ensure_iptables_default_deny_firewall_policy
-  - ensure_iptables_loopback_traffic_is_configured
-  - ensure_iptables_is_enabled_and_active
-  - ensure_ip6tables_default_deny_firewall_policy
-  - ensure_ip6tables_loopback_traffic_is_configured
-  - ensure_ip6tables_is_enabled_and_active
+  # - ensure_iptables_default_deny_firewall_policy
+  # - ensure_iptables_loopback_traffic_is_configured
+  # - ensure_iptables_is_enabled_and_active
+  # - ensure_ip6tables_default_deny_firewall_policy
+  # - ensure_ip6tables_loopback_traffic_is_configured
+  # - ensure_ip6tables_is_enabled_and_active
   - ensure_wireless_interfaces_are_disabled
   - ensure_auditd_is_installed
   - ensure_auditd_service_is_enabled
@@ -268,6 +273,7 @@ secure_linux_cis::server_level_2:
   - ensure_ssh_allowtcpforwarding_is_disabled
   - ensure_ssh_maxstartups_is_configured
   - ensure_ssh_maxsessions_is_set_to_4_or_less
+  - ensure_sticky_bit_is_set_on_all_world_writable_directories
   - ensure_system_wide_crypto_policy_is_not_over_ridden
   - create_custom_authselect_profile
   - select_authselect_profile
@@ -303,6 +309,8 @@ secure_linux_cis::server_level_2:
   - ensure_no_duplicate_group_names_exist
   - ensure_shadow_group_is_empty
   - ensure_all_users_home_directories_exist
+  - ensure_systemd_journal_remote_is_installed
+
 secure_linux_cis::workstation_level_1:
   - ensure_mounting_of_cramfs_filesystems_is_disabled
   - ensure_mounting_of_squashfs_filesystems_is_disabled
@@ -363,7 +371,7 @@ secure_linux_cis::workstation_level_1:
   - ensure_tcp_syn_cookies_is_enabled
   - ensure_ipv6_router_advertisements_are_not_accepted
   - ensure_a_firewall_package_is_installed
-  # - ensure_firewalld_service_is_enabled_and_running
+  - ensure_firewalld_service_is_enabled_and_running
   # - ensure_nftables_is_not_enabled_with_firewalld
   # - ensure_firewalld_default_zone_is_set
   # - ensure_an_nftables_table_exists
@@ -372,12 +380,12 @@ secure_linux_cis::workstation_level_1:
   # - ensure_nftables_default_deny_firewall_policy
   # - ensure_nftables_service_is_enabled
   # - ensure_nftables_rules_are_permanent
-  - ensure_iptables_default_deny_firewall_policy
-  - ensure_iptables_loopback_traffic_is_configured
-  - ensure_iptables_is_enabled_and_active
-  - ensure_ip6tables_default_deny_firewall_policy
-  - ensure_ip6tables_loopback_traffic_is_configured
-  - ensure_ip6tables_is_enabled_and_active
+  # - ensure_iptables_default_deny_firewall_policy
+  # - ensure_iptables_loopback_traffic_is_configured
+  # - ensure_iptables_is_enabled_and_active
+  # - ensure_ip6tables_default_deny_firewall_policy
+  # - ensure_ip6tables_loopback_traffic_is_configured
+  # - ensure_ip6tables_is_enabled_and_active
   - ensure_rsyslog_is_installed
   - ensure_rsyslog_service_is_enabled
   - ensure_rsyslog_default_file_permissions_configured
@@ -401,6 +409,7 @@ secure_linux_cis::workstation_level_1:
   - ensure_ssh_pam_is_enabled
   - ensure_ssh_maxstartups_is_configured
   - ensure_ssh_maxsessions_is_set_to_4_or_less
+  - ensure_sticky_bit_is_set_on_all_world_writable_directories
   - ensure_system_wide_crypto_policy_is_not_over_ridden
   - create_custom_authselect_profile
   - select_authselect_profile
@@ -441,6 +450,8 @@ secure_linux_cis::workstation_level_1:
   - ensure_no_duplicate_group_names_exist
   - ensure_shadow_group_is_empty
   - ensure_all_users_home_directories_exist
+  - ensure_systemd_journal_remote_is_installed
+
 secure_linux_cis::workstation_level_2:
   - ensure_mounting_of_cramfs_filesystems_is_disabled
   - ensure_mounting_of_squashfs_filesystems_is_disabled
@@ -518,7 +529,7 @@ secure_linux_cis::workstation_level_2:
   - ensure_rds_is_disabled
   - ensure_tipc_is_disabled
   - ensure_a_firewall_package_is_installed
-  # - ensure_firewalld_service_is_enabled_and_running
+  - ensure_firewalld_service_is_enabled_and_running
   # - ensure_nftables_is_not_enabled_with_firewalld
   # - ensure_firewalld_default_zone_is_set
   # - ensure_an_nftables_table_exists
@@ -527,12 +538,12 @@ secure_linux_cis::workstation_level_2:
   # - ensure_nftables_default_deny_firewall_policy
   # - ensure_nftables_service_is_enabled
   # - ensure_nftables_rules_are_permanent
-  - ensure_iptables_default_deny_firewall_policy
-  - ensure_iptables_loopback_traffic_is_configured
-  - ensure_iptables_is_enabled_and_active
-  - ensure_ip6tables_default_deny_firewall_policy
-  - ensure_ip6tables_loopback_traffic_is_configured
-  - ensure_ip6tables_is_enabled_and_active
+  # - ensure_iptables_default_deny_firewall_policy
+  # - ensure_iptables_loopback_traffic_is_configured
+  # - ensure_iptables_is_enabled_and_active
+  # - ensure_ip6tables_default_deny_firewall_policy
+  # - ensure_ip6tables_loopback_traffic_is_configured
+  # - ensure_ip6tables_is_enabled_and_active
   - ensure_wireless_interfaces_are_disabled
   - ensure_auditd_is_installed
   - ensure_auditd_service_is_enabled
@@ -570,6 +581,7 @@ secure_linux_cis::workstation_level_2:
   - ensure_ssh_allowtcpforwarding_is_disabled
   - ensure_ssh_maxstartups_is_configured
   - ensure_ssh_maxsessions_is_set_to_4_or_less
+  - ensure_sticky_bit_is_set_on_all_world_writable_directories
   - ensure_system_wide_crypto_policy_is_not_over_ridden
   - create_custom_authselect_profile
   - select_authselect_profile
@@ -610,3 +622,4 @@ secure_linux_cis::workstation_level_2:
   - ensure_no_duplicate_group_names_exist
   - ensure_shadow_group_is_empty
   - ensure_all_users_home_directories_exist
+  - ensure_systemd_journal_remote_is_installed

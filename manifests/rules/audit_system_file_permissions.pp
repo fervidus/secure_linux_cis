@@ -27,4 +27,4 @@
 #
 #   }
 # }
-class secure_linux_cis::rules::audit_system_file_permissions { }
+class secure_linux_cis::rules::audit_system_file_permissions {}

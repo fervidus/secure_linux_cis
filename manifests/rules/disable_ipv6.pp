@@ -16,8 +16,8 @@
 # @example
 #   include secure_linux_cis::disable_ipv6
 class secure_linux_cis::rules::disable_ipv6 {
-    kernel_parameter { 'ipv6.disable=1':
-      ensure   => present,
-      bootmode => 'default',
-    }
+  kernel_parameter { 'ipv6.disable=1':
+    ensure   => present,
+    bootmode => 'default',
+  }
 }
