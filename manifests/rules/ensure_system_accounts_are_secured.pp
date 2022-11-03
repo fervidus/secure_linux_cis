@@ -6,8 +6,8 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_system_accounts_are_secured
-class secure_linux_cis::rules::ensure_system_accounts_are_secured  {
-    unless $facts['insecure_system_accounts'] {
-      warning('Insecure system accounts are present.')
-    }
+class secure_linux_cis::rules::ensure_system_accounts_are_secured {
+  unless $facts['insecure_system_accounts'] {
+    warning('Insecure system accounts are present.')
+  }
 }

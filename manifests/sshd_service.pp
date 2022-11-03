@@ -19,6 +19,4 @@ class secure_linux_cis::sshd_service {
     ensure => running,
     enable => true,
   }
-
 }
-

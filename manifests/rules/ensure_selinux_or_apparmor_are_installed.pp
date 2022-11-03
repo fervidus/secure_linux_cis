@@ -7,18 +7,18 @@
 # @example
 #   include secure_linux_cis::rules::ensure_selinux_or_apparmor_are_installed
 class secure_linux_cis::rules::ensure_selinux_or_apparmor_are_installed {
-    case $secure_linux_cis::mac {
-      'selinux': {
-        $packages = ['selinux-basics', 'selinux-policy-default']
-      }
-      'apparmor': {
-        $packages = ['apparmor', 'apparmor-utils']
-      }
-      default: {
-        warning ("MAC ${secure_linux_cis::mac} not supported.")
-      }
+  case $secure_linux_cis::mac {
+    'selinux': {
+      $packages = ['selinux-basics', 'selinux-policy-default']
     }
-    package { $packages:
-      ensure   => installed,
+    'apparmor': {
+      $packages = ['apparmor', 'apparmor-utils']
     }
+    default: {
+      warning ("MAC ${secure_linux_cis::mac} not supported.")
+    }
+  }
+  package { $packages:
+    ensure   => installed,
+  }
 }

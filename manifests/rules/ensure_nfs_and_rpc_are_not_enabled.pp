@@ -16,13 +16,13 @@
 # @example
 #   include secure_linux_cis::ensure_nfs_and_rpc_are_not_enabled
 class secure_linux_cis::rules::ensure_nfs_and_rpc_are_not_enabled {
-    $nfs_services = [
-      'nfs',
-      'nfs-server',
-      'rpcbind',
-    ]
-    service { $nfs_services:
-      ensure => stopped,
-      enable => false,
-    }
+  $nfs_services = [
+    'nfs',
+    'nfs-server',
+    'rpcbind',
+  ]
+  service { $nfs_services:
+    ensure => stopped,
+    enable => false,
+  }
 }

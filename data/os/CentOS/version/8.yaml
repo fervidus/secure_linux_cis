@@ -87,7 +87,10 @@ secure_linux_cis::server_level_1:
   - ensure_permissions_on_all_logfiles_are_configured
   - ensure_cron_daemon_is_enabled
   - ensure_permissions_on_etc_cron_tab_are_configured
+  - ensure_permissions_on_etc_cron_hourly_are_configured
   - ensure_permissions_on_etc_cron_daily_are_configured
+  - ensure_permissions_on_etc_cron_weekly_are_configured
+  - ensure_permissions_on_etc_cron_monthly_are_configured
   - ensure_permissions_on_etc_cron_d_are_configured
   - ensure_at_cron_is_restricted_to_authorized_users
   - ensure_ssh_access_is_limited
@@ -141,6 +144,13 @@ secure_linux_cis::server_level_1:
   - ensure_shadow_group_is_empty
   - ensure_all_users_home_directories_exist
   - ensure_systemd_journal_remote_is_installed
+  - ensure_permissions_on_bootloader_config_are_configured
+  - ensure_authentication_required_when_booting_into_rescue_mode
+  - ensure_code_dump_storage_is_disabled
+  - ensure_code_dump_backtraces_are_disabled
+  - ensure_address_space_layout_randomization_aslr_is_enabled
+  - ensure_journald_is_configured_to_compress_large_log_files
+  - ensure_journald_is_configured_to_write_logfiles_to_persistent_disk
 
 secure_linux_cis::server_level_2:
   - ensure_mounting_of_cramfs_filesystems_is_disabled
@@ -255,7 +265,11 @@ secure_linux_cis::server_level_2:
   - ensure_permissions_on_all_logfiles_are_configured
   - ensure_cron_daemon_is_enabled
   - ensure_permissions_on_etc_cron_tab_are_configured
+  - ensure_permissions_on_etc_cron_tab_are_configured
+  - ensure_permissions_on_etc_cron_hourly_are_configured
   - ensure_permissions_on_etc_cron_daily_are_configured
+  - ensure_permissions_on_etc_cron_weekly_are_configured
+  - ensure_permissions_on_etc_cron_monthly_are_configured
   - ensure_permissions_on_etc_cron_d_are_configured
   - ensure_at_cron_is_restricted_to_authorized_users
   - ensure_ssh_access_is_limited
@@ -310,6 +324,13 @@ secure_linux_cis::server_level_2:
   - ensure_shadow_group_is_empty
   - ensure_all_users_home_directories_exist
   - ensure_systemd_journal_remote_is_installed
+  - ensure_permissions_on_bootloader_config_are_configured
+  - ensure_authentication_required_when_booting_into_rescue_mode
+  - ensure_code_dump_storage_is_disabled
+  - ensure_code_dump_backtraces_are_disabled
+  - ensure_address_space_layout_randomization_aslr_is_enabled
+  - ensure_journald_is_configured_to_compress_large_log_files
+  - ensure_journald_is_configured_to_write_logfiles_to_persistent_disk
 
 secure_linux_cis::workstation_level_1:
   - ensure_mounting_of_cramfs_filesystems_is_disabled
@@ -392,7 +413,10 @@ secure_linux_cis::workstation_level_1:
   - ensure_permissions_on_all_logfiles_are_configured
   - ensure_cron_daemon_is_enabled
   - ensure_permissions_on_etc_cron_tab_are_configured
+  - ensure_permissions_on_etc_cron_hourly_are_configured
   - ensure_permissions_on_etc_cron_daily_are_configured
+  - ensure_permissions_on_etc_cron_weekly_are_configured
+  - ensure_permissions_on_etc_cron_monthly_are_configured
   - ensure_permissions_on_etc_cron_d_are_configured
   - ensure_at_cron_is_restricted_to_authorized_users
   - ensure_ssh_access_is_limited
@@ -451,6 +475,13 @@ secure_linux_cis::workstation_level_1:
   - ensure_shadow_group_is_empty
   - ensure_all_users_home_directories_exist
   - ensure_systemd_journal_remote_is_installed
+  - ensure_permissions_on_bootloader_config_are_configured
+  - ensure_authentication_required_when_booting_into_rescue_mode
+  - ensure_code_dump_storage_is_disabled
+  - ensure_code_dump_backtraces_are_disabled
+  - ensure_address_space_layout_randomization_aslr_is_enabled
+  - ensure_journald_is_configured_to_compress_large_log_files
+  - ensure_journald_is_configured_to_write_logfiles_to_persistent_disk
 
 secure_linux_cis::workstation_level_2:
   - ensure_mounting_of_cramfs_filesystems_is_disabled
@@ -563,7 +594,10 @@ secure_linux_cis::workstation_level_2:
   - ensure_permissions_on_all_logfiles_are_configured
   - ensure_cron_daemon_is_enabled
   - ensure_permissions_on_etc_cron_tab_are_configured
+  - ensure_permissions_on_etc_cron_hourly_are_configured
   - ensure_permissions_on_etc_cron_daily_are_configured
+  - ensure_permissions_on_etc_cron_weekly_are_configured
+  - ensure_permissions_on_etc_cron_monthly_are_configured
   - ensure_permissions_on_etc_cron_d_are_configured
   - ensure_at_cron_is_restricted_to_authorized_users
   - ensure_ssh_access_is_limited
@@ -623,3 +657,10 @@ secure_linux_cis::workstation_level_2:
   - ensure_shadow_group_is_empty
   - ensure_all_users_home_directories_exist
   - ensure_systemd_journal_remote_is_installed
+  - ensure_permissions_on_bootloader_config_are_configured
+  - ensure_authentication_required_when_booting_into_rescue_mode
+  - ensure_code_dump_storage_is_disabled
+  - ensure_code_dump_backtraces_are_disabled
+  - ensure_address_space_layout_randomization_aslr_is_enabled
+  - ensure_journald_is_configured_to_compress_large_log_files
+  - ensure_journald_is_configured_to_write_logfiles_to_persistent_disk

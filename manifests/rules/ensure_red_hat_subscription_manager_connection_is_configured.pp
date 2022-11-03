@@ -13,10 +13,10 @@
 # @example
 #   include secure_linux_cis::ensure_red_hat_subscription_manager_connection_is_configured
 class secure_linux_cis::rules::ensure_red_hat_subscription_manager_connection_is_configured {
-    if(! $facts['rhsm_identity']) {
-      notify {'1_2_4 rhsm':
-        message  => 'Not in compliance with CIS  (Not Scored). Ensure Red Hat Subscription Manager connection is configured',
-        loglevel => 'warning',
-      }
+  if(! $facts['rhsm_identity']) {
+    notify { '1_2_4 rhsm':
+      message  => 'Not in compliance with CIS  (Not Scored). Ensure Red Hat Subscription Manager connection is configured',
+      loglevel => 'warning',
     }
+  }
 }

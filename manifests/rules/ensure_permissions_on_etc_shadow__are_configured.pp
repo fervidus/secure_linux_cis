@@ -11,8 +11,8 @@
 #
 # @example
 #   include secure_linux_cis::ensure_permissions_on_etc_shadow__are_configured
-class secure_linux_cis::rules::ensure_permissions_on_etc_shadow__are_configured(
-    Boolean $enforced = true,
+class secure_linux_cis::rules::ensure_permissions_on_etc_shadow__are_configured (
+  Boolean $enforced = true,
 ) {
   if $enforced {
     $os = "${facts['os']['name']}${facts['os']['release']['major']}"
@@ -24,10 +24,10 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_shadow__are_configured(
       default       => '0000',
     }
 
-    case $facts['osfamily'] {
+    case $facts['os']['family'] {
       'RedHat': {
-        file {'/etc/shadow-':
-          ensure   => present,
+        file { '/etc/shadow-':
+          ensure   => file,
           schedule => 'harden_schedule',
           owner    => 'root',
           group    => 'root',
@@ -35,8 +35,8 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_shadow__are_configured(
         }
       }
       'Debian': {
-        file {'/etc/shadow-':
-          ensure   => present,
+        file { '/etc/shadow-':
+          ensure   => file,
           schedule => 'harden_schedule',
           owner    => 'root',
           group    => 'shadow',
@@ -44,7 +44,7 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_shadow__are_configured(
         }
       }
       default: {
-        warning ("shadow- configuration not supported on os family ${facts['osfamily']}.")
+        warning ("shadow- configuration not supported on os family ${facts['os']['family']}.")
       }
     }
   }

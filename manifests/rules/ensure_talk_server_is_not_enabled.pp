@@ -15,8 +15,8 @@
 # @example
 #   include secure_linux_cis::ensure_talk_server_is_not_enabled
 class secure_linux_cis::rules::ensure_talk_server_is_not_enabled {
-    service { 'ntalk':
-      ensure => stopped,
-      enable => false,
-    }
+  service { 'ntalk':
+    ensure => stopped,
+    enable => false,
+  }
 }

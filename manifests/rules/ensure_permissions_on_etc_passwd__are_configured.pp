@@ -10,7 +10,7 @@
 #
 # @example
 #   include secure_linux_cis::ensure_permissions_on_etc_passwd__are_configured
-class secure_linux_cis::rules::ensure_permissions_on_etc_passwd__are_configured(
+class secure_linux_cis::rules::ensure_permissions_on_etc_passwd__are_configured (
   Boolean $enforced = true,
 ) {
   if $enforced {
@@ -20,8 +20,8 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_passwd__are_configured(
       default    => '0644',
     }
 
-    file {'/etc/passwd-':
-      ensure   => present,
+    file { '/etc/passwd-':
+      ensure   => file,
       schedule => 'harden_schedule',
       owner    => 'root',
       group    => 'root',

@@ -13,22 +13,22 @@
 # @example
 #   include secure_linux_cis::ensure_system_accounts_are_non_login
 class secure_linux_cis::rules::ensure_system_accounts_are_non_login {
-    case $facts['osfamily'] {
-      'Debian': {
-        $nologin = '/usr/sbin/nologin'
-      }
-      default: {
-        $nologin = '/sbin/nologin'
-      }
+  case $facts['os']['family'] {
+    'Debian': {
+      $nologin = '/usr/sbin/nologin'
     }
-    unless $facts['nologin'].empty {
-      $facts['nologin'].each | String $user | {
-        if ! ($user in $secure_linux_cis::nologin_whitelist) {
-          exec { "nologin ${user}":
-            command => "usermod -s ${nologin} ${user}",
-            path    => '/sbin/:/usr/sbin',
-          }
+    default: {
+      $nologin = '/sbin/nologin'
+    }
+  }
+  unless $facts['nologin'].empty {
+    $facts['nologin'].each | String $user | {
+      if ! ($user in $secure_linux_cis::nologin_whitelist) {
+        exec { "nologin ${user}":
+          command => "usermod -s ${nologin} ${user}",
+          path    => '/sbin/:/usr/sbin',
         }
       }
     }
+  }
 }

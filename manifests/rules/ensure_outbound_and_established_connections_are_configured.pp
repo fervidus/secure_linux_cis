@@ -15,7 +15,6 @@
 # @example
 #   include secure_linux_cis::ensure_outbound_and_established_connections_are_configured
 class secure_linux_cis::rules::ensure_outbound_and_established_connections_are_configured {
-
   case $secure_linux_cis::firewall {
     'iptables': {
       firewall { '004 accept new and established ouput tcp connections':

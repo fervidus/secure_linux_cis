@@ -18,24 +18,24 @@
 # @example
 #   include secure_linux_cis::ensure_minimum_days_between_password_changes_is_7_or_more
 class secure_linux_cis::rules::ensure_minimum_days_between_password_changes_is_7_or_more {
-    if $secure_linux_cis::pass_min_days < 7 {
-      fail('PASS_min_DAYS should be set to a value of 7 or more')
-    }
+  if $secure_linux_cis::pass_min_days < 7 {
+    fail('PASS_min_DAYS should be set to a value of 7 or more')
+  }
 
-    file_line { 'password change policy':
-      ensure => present,
-      path   => '/etc/login.defs',
-      line   => "PASS_MIN_DAYS ${secure_linux_cis::pass_min_days}",
-      match  => '^#?PASS_MIN_DAYS',
-    }
+  file_line { 'password change policy':
+    ensure => present,
+    path   => '/etc/login.defs',
+    line   => "PASS_MIN_DAYS ${secure_linux_cis::pass_min_days}",
+    match  => '^#?PASS_MIN_DAYS',
+  }
 
-    # local_users fact may be undef
-    $local_users = pick($facts['local_users'], {})
+  # local_users fact may be undef
+  $local_users = pick($facts['local_users'], {})
 
-    $local_users.each |String $user, Hash $attributes| {
-      if $attributes['password_expires_days'] != 'never' and
-          $attributes['min_days_between_password_change'] != $secure_linux_cis::pass_min_days {
-        exec { "/usr/bin/chage --mindays ${secure_linux_cis::pass_min_days} ${user}": }
-      }
+  $local_users.each |String $user, Hash $attributes| {
+    if $attributes['password_expires_days'] != 'never' and
+    $attributes['min_days_between_password_change'] != $secure_linux_cis::pass_min_days {
+      exec { "/usr/bin/chage --mindays ${secure_linux_cis::pass_min_days} ${user}": }
     }
+  }
 }

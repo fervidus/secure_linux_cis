@@ -20,14 +20,14 @@
 # @example
 #   include secure_linux_cis::ensure_rsyslog_or_syslog_ng_is_installed
 class secure_linux_cis::rules::ensure_rsyslog_or_syslog_ng_is_installed {
-    if $secure_linux_cis::logging == 'rsyslog' {
-      package { 'rsyslog':
-        ensure   => installed,
-      }
+  if $secure_linux_cis::logging == 'rsyslog' {
+    package { 'rsyslog':
+      ensure   => installed,
     }
-    elsif $secure_linux_cis::logging == 'syslog-ng' {
-      package { 'syslog-ng':
-        ensure   => installed,
-      }
+  }
+  elsif $secure_linux_cis::logging == 'syslog-ng' {
+    package { 'syslog-ng':
+      ensure   => installed,
     }
+  }
 }

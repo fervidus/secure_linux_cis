@@ -18,12 +18,12 @@
 # @example
 #   include secure_linux_cis::rules::ensure_permissions_on_ssh_public_host_key_files_are_configured
 class secure_linux_cis::rules::ensure_permissions_on_ssh_public_host_key_files_are_configured {
-    include secure_linux_cis::sshd_service
+  include secure_linux_cis::sshd_service
 
-    file{ $facts['ssh_host_pub_keys']:
-      ensure => 'present',
-      owner  => 'root',
-      group  => 'root',
-      mode   => 'u-x,go-wx',
-    }
+  file { $facts['ssh_host_pub_keys']:
+    ensure => 'file',
+    owner  => 'root',
+    group  => 'root',
+    mode   => 'u-x,go-wx',
+  }
 }

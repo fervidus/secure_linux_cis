@@ -15,7 +15,7 @@
 # @example
 #   include secure_linux_cis::ensure_ufw_is_installed
 class secure_linux_cis::rules::ensure_ufw_is_installed {
-  class {'ufw':
+  class { 'ufw':
     manage_package => true,
     package_name   => 'ufw',
     packege_ensure => 'present',

@@ -16,10 +16,10 @@
 # @example
 #   include secure_linux_cis::ensure_syslog_ng_service_is_enabled
 class secure_linux_cis::rules::ensure_syslog_ng_service_is_enabled {
-    if $secure_linux_cis::logging == 'syslog-ng' {
-      service { 'syslog-ng':
-        ensure => running,
-        enable => true,
-      }
+  if $secure_linux_cis::logging == 'syslog-ng' {
+    service { 'syslog-ng':
+      ensure => running,
+      enable => true,
     }
+  }
 }

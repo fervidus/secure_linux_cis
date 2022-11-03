@@ -15,16 +15,16 @@
 # @example
 #   include secure_linux_cis::ensure_telnet_client_is_not_installed
 class secure_linux_cis::rules::ensure_telnet_client_is_not_installed {
-    case $facts['osfamily'] {
-      'Suse': {
-        package { 'telnet':
-          ensure   => absent,
-        }
-      }
-      default: {
-        package { 'telnet':
-          ensure   => purged,
-        }
+  case $facts['os']['family'] {
+    'Suse': {
+      package { 'telnet':
+        ensure   => absent,
       }
     }
+    default: {
+      package { 'telnet':
+        ensure   => purged,
+      }
+    }
+  }
 }

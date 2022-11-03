@@ -6,8 +6,8 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_nftables_is_not_enabled
-class secure_linux_cis::rules::ensure_nftables_is_not_enabled(
-    Boolean $enforced = true,
+class secure_linux_cis::rules::ensure_nftables_is_not_enabled (
+  Boolean $enforced = true,
 ) {
   if $enforced and $secure_linux_cis::firewall != 'nftables' {
     service { 'nftables':

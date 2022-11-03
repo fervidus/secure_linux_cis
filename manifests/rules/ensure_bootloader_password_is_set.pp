@@ -29,7 +29,7 @@
 #   secure_linux_cis::rules::ensure_bootloader_password_is_set::grub_pbkdf2_password_hash: grub.pbkdf2.sha512.10000.7D81626...ABC0123210CBA
 #
 
-class secure_linux_cis::rules::ensure_bootloader_password_is_set(
+class secure_linux_cis::rules::ensure_bootloader_password_is_set (
   String $grub_username = $secure_linux_cis::grub_username,
   Optional[String] $grub_pbkdf2_password_hash = $secure_linux_cis::grub_pbkdf2_password_hash,
 ) {
