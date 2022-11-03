@@ -15,6 +15,4 @@
 #
 # @example
 #   include secure_linux_cis::ensure_nftables_default_deny_firewall_policy
-class secure_linux_cis::rules::ensure_nftables_default_deny_firewall_policy {
-
-}
+class secure_linux_cis::rules::ensure_nftables_default_deny_firewall_policy {}

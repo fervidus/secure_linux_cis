@@ -4,6 +4,7 @@ secure_linux_cis::su_group: wheel
 secure_linux_cis::grub_config_files:
   - /boot/grub2/grub.cfg
   - /boot/grub2/user.cfg
+  - /boot/grub2/grubenv
 secure_linux_cis::update_command: yum check-update --security
 secure_linux_cis::tcp_wrappers_package: tcp_wrappers
 secure_linux_cis::samba_service: smb

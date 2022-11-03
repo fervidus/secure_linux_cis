@@ -7,6 +7,6 @@ Facter.add('home_nodev') do
   confine kernel: 'Linux'
   setcode do
     home = Facter::Core::Execution.exec('mount | grep /home')
-    %r{nodev}.match(home)
+    %r{nodev}.match?(home)
   end
 end

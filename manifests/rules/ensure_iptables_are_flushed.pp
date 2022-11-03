@@ -6,4 +6,4 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_iptables_are_flushed
-class secure_linux_cis::rules::ensure_iptables_are_flushed { }
+class secure_linux_cis::rules::ensure_iptables_are_flushed {}

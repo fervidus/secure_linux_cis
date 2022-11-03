@@ -13,5 +13,5 @@
 # @example
 #   include secure_linux_cis::ensure_prelink_is_not_installed
 class secure_linux_cis::rules::ensure_prelink_is_not_installed {
-    include secure_linux_cis::rules::ensure_prelink_is_disabled
+  include secure_linux_cis::rules::ensure_prelink_is_disabled
 }

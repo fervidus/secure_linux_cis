@@ -13,16 +13,16 @@
 # @example
 #   include secure_linux_cis::ensure_the_mcs_translation_service_mcstrans_is_not_installed
 class secure_linux_cis::rules::ensure_the_mcs_translation_service_mcstrans_is_not_installed {
-    case $facts['osfamily'] {
-      'Suse': {
-        package { 'mcstrans':
-          ensure   => absent,
-        }
-      }
-      default: {
-        package { 'mcstrans':
-          ensure   => purged,
-        }
+  case $facts['os']['family'] {
+    'Suse': {
+      package { 'mcstrans':
+        ensure   => absent,
       }
     }
+    default: {
+      package { 'mcstrans':
+        ensure   => purged,
+      }
+    }
+  }
 }

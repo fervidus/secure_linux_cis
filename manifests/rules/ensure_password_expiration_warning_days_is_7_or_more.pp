@@ -17,21 +17,21 @@
 # @example
 #   include secure_linux_cis::ensure_password_expiration_warning_days_is_7_or_more
 class secure_linux_cis::rules::ensure_password_expiration_warning_days_is_7_or_more {
-    if $secure_linux_cis::pass_warn_days < 7 {
-      fail('PASS_WARN_AGE should be set to a value of 7 or more')
+  if $secure_linux_cis::pass_warn_days < 7 {
+    fail('PASS_WARN_AGE should be set to a value of 7 or more')
+  }
+  file_line { 'password warning policy':
+    ensure => present,
+    path   => '/etc/login.defs',
+    line   => "PASS_WARN_AGE ${secure_linux_cis::pass_warn_days}",
+    match  => '^#?PASS_WARN_AGE',
+  }
+  # local_users fact may be undef
+  $local_users = pick($facts['local_users'], {})
+  $local_users.each |String $user, Hash $attributes| {
+    if $attributes['password_expires_days'] != 'never' and
+    $attributes['warn_days_between_password_change'] != $secure_linux_cis::pass_warn_days {
+      exec { "/usr/bin/chage --warndays ${secure_linux_cis::pass_warn_days} ${user}": }
     }
-    file_line { 'password warning policy':
-      ensure => present,
-      path   => '/etc/login.defs',
-      line   => "PASS_WARN_AGE ${secure_linux_cis::pass_warn_days}",
-      match  => '^#?PASS_WARN_AGE',
-    }
-    # local_users fact may be undef
-    $local_users = pick($facts['local_users'], {})
-    $local_users.each |String $user, Hash $attributes| {
-      if $attributes['password_expires_days'] != 'never' and
-          $attributes['warn_days_between_password_change'] != $secure_linux_cis::pass_warn_days {
-        exec { "/usr/bin/chage --warndays ${secure_linux_cis::pass_warn_days} ${user}": }
-      }
-    }
+  }
 }

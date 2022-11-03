@@ -6,4 +6,4 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_selinux_is_enabled_in_the_bootloader_configuration
-class secure_linux_cis::rules::ensure_selinux_is_enabled_in_the_bootloader_configuration { }
+class secure_linux_cis::rules::ensure_selinux_is_enabled_in_the_bootloader_configuration {}

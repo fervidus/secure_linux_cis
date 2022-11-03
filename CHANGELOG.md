@@ -1,5 +1,11 @@
 # Changelog
 
+## Release 3.1.0
+
+* Moved multiple code to execs instead of using facts.
+* Fixed home nodev selection fact
+* Formatting changes
+
 ## Release 2.0.18
 
 * Ensure grub2 password is super user

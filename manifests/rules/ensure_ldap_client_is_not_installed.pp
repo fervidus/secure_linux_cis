@@ -16,16 +16,16 @@
 # @example
 #   include secure_linux_cis::ensure_ldap_client_is_not_installed
 class secure_linux_cis::rules::ensure_ldap_client_is_not_installed {
-    case $facts['osfamily'] {
-      'Suse': {
-        package { ['openldap-clients', 'ldap-utils']:
-          ensure   => absent,
-        }
-      }
-      default: {
-        package { ['openldap-clients', 'ldap-utils']:
-          ensure   => purged,
-        }
+  case $facts['os']['family'] {
+    'Suse': {
+      package { ['openldap-clients', 'ldap-utils']:
+        ensure   => absent,
       }
     }
+    default: {
+      package { ['openldap-clients', 'ldap-utils']:
+        ensure   => purged,
+      }
+    }
+  }
 }

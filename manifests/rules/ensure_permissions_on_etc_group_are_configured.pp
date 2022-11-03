@@ -11,10 +11,10 @@
 # @example
 #   include secure_linux_cis::ensure_permissions_on_etc_group_are_configured
 class secure_linux_cis::rules::ensure_permissions_on_etc_group_are_configured {
-    file { '/etc/group':
-      ensure => present,
-      owner  => 'root',
-      group  => 'root',
-      mode   => '0644',
-    }
+  file { '/etc/group':
+    ensure => file,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
+  }
 }

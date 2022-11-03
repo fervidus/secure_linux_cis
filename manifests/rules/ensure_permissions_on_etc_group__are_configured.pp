@@ -10,8 +10,8 @@
 #
 # @example
 #   include secure_linux_cis::ensure_permissions_on_etc_group__are_configured
-class secure_linux_cis::rules::ensure_permissions_on_etc_group__are_configured(
-    Boolean $enforced = true,
+class secure_linux_cis::rules::ensure_permissions_on_etc_group__are_configured (
+  Boolean $enforced = true,
 ) {
   if $enforced {
     $os = "${facts['os']['name']}${facts['os']['release']['major']}"
@@ -21,7 +21,7 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_group__are_configured(
     }
 
     file { '/etc/group-':
-      ensure   => present,
+      ensure   => file,
       schedule => 'harden_schedule',
       owner    => 'root',
       group    => 'root',

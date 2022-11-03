@@ -6,4 +6,4 @@
 #
 # @example
 #   include secure_linux_cis::rules::ensure_base_chains_exist
-class secure_linux_cis::rules::ensure_base_chains_exist { }
+class secure_linux_cis::rules::ensure_base_chains_exist {}

@@ -11,6 +11,6 @@
 #
 # @example
 #   include secure_linux_cis::ensure_noexec_option_set_on_dev_shm_partition
-class secure_linux_cis::rules::ensure_noexec_option_set_on_dev_shm_partition { }
+class secure_linux_cis::rules::ensure_noexec_option_set_on_dev_shm_partition {}
 # this requirement is managed in cis_1_1_15
 ##  }

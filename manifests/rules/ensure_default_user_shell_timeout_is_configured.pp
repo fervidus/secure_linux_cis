@@ -12,7 +12,7 @@
 # @example
 #   include secure_linux_cis::ensure_default_user_shell_timeout_is_configured
 class secure_linux_cis::rules::ensure_default_user_shell_timeout_is_configured {
-  $bashrc = $facts['osfamily'] ? {
+  $bashrc = $facts['os']['family'] ? {
     'RedHat' => '/etc/bashrc',
     'Suse'   => '/etc/bash.bashrc',
     'Debian' => '/etc/bash.bashrc',

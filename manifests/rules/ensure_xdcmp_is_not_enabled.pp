@@ -13,7 +13,7 @@ class secure_linux_cis::rules::ensure_xdcmp_is_not_enabled {
     ensure => file,
   }
 
-  file_line {'disable xdcmp':
+  file_line { 'disable xdcmp':
     ensure            => absent,
     path              => '/etc/gdm/custom.conf',
     match             => '^\s*Enable\s*=\s*true',

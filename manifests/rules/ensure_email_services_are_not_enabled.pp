@@ -5,8 +5,8 @@
 # @example
 #   include secure_linux_cis::rules::ensure_email_services_are_not_enabled
 class secure_linux_cis::rules::ensure_email_services_are_not_enabled {
-    service { 'dovecot':
-      ensure => stopped,
-      enable => false,
-    }
+  service { 'dovecot':
+    ensure => stopped,
+    enable => false,
+  }
 }

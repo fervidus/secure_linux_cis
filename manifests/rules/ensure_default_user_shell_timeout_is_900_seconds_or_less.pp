@@ -5,7 +5,7 @@
 # @example
 #   include secure_linux_cis::rules::ensure_default_user_shell_timeout_is_900_seconds_or_less
 class secure_linux_cis::rules::ensure_default_user_shell_timeout_is_900_seconds_or_less {
-  $bashrc = $facts['osfamily'] ? {
+  $bashrc = $facts['os']['family'] ? {
     'RedHat' => '/etc/bashrc',
     'Suse'   => '/etc/bash.bashrc',
     'Debian' => '/etc/bash.bashrc',

@@ -15,8 +15,7 @@ define secure_linux_cis::mount_options (
 ) {
   if $facts['mountpoints'][$mount] {
     if member($facts['mountpoints'][$mount]['options'], $opt) == false {
-
-      augeas{ "/etc/fstab - ${opt} on ${mount}":
+      augeas { "/etc/fstab - ${opt} on ${mount}":
         context => '/files/etc/fstab',
         changes => [
           "ins opt after /files/etc/fstab/*[file = '${mount}']/opt[last()]",

@@ -16,8 +16,8 @@
 # @example
 #   include secure_linux_cis::ensure_audit_backlog_limit_is_sufficient
 class secure_linux_cis::rules::ensure_audit_backlog_limit_is_sufficient {
-    kernel_parameter { 'audit_backlog_limit=8192':
-      ensure   => present,
-      bootmode => 'default',
-    }
+  kernel_parameter { 'audit_backlog_limit=8192':
+    ensure   => present,
+    bootmode => 'default',
+  }
 }

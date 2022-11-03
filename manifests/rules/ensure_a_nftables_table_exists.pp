@@ -14,6 +14,4 @@
 #
 # @example
 #   include secure_linux_cis::ensure_a_nftables_table_exists
-class secure_linux_cis::rules::ensure_a_nftables_table_exists {
-
-}
+class secure_linux_cis::rules::ensure_a_nftables_table_exists {}

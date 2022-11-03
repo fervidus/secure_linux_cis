@@ -12,10 +12,10 @@
 # @example
 #   include secure_linux_cis::ensure_no_unconfined_daemons_exist
 class secure_linux_cis::rules::ensure_no_unconfined_daemons_exist {
-    if $facts['unconf_daemons'] {
-      notify { 'ud':
-        message  => 'Not in compliance with CIS  (Scored). There are unconfined daemons running on the system',
-        loglevel => 'warning',
-      }
+  if $facts['unconf_daemons'] {
+    notify { 'ud':
+      message  => 'Not in compliance with CIS  (Scored). There are unconfined daemons running on the system',
+      loglevel => 'warning',
     }
+  }
 }

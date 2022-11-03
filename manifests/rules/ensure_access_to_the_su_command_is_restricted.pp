@@ -14,7 +14,6 @@
 # @example
 #   include secure_linux_cis::ensure_access_to_the_su_command_is_restricted
 class secure_linux_cis::rules::ensure_access_to_the_su_command_is_restricted {
-
   group { 'su_group':
     ensure  => present,
     members => [],

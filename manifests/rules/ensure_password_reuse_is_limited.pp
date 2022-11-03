@@ -20,7 +20,7 @@ class secure_linux_cis::rules::ensure_password_reuse_is_limited {
   if $secure_linux_cis::past_passwords < 5 {
     fail('CIS recommends setting old password limit to previous 5.')
   }
-  case $facts['osfamily'] {
+  case $facts['os']['family'] {
     'Debian': {
       pam { 'pam common-password pwhistory':
         ensure    => present,

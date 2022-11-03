@@ -7,8 +7,8 @@
 # @example
 #   include secure_linux_cis::rules::ensure_rpc_is_not_enabled
 class secure_linux_cis::rules::ensure_rpc_is_not_enabled {
-    service { 'rpcbind':
-      ensure => stopped,
-      enable => false,
-    }
+  service { 'rpcbind':
+    ensure => stopped,
+    enable => false,
+  }
 }

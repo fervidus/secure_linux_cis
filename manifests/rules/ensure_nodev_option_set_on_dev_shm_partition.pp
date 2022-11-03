@@ -11,4 +11,4 @@
 #
 # @example
 #   include secure_linux_cis::ensure_nodev_option_set_on_dev_shm_partition
-class secure_linux_cis::rules::ensure_nodev_option_set_on_dev_shm_partition { }
+class secure_linux_cis::rules::ensure_nodev_option_set_on_dev_shm_partition {}

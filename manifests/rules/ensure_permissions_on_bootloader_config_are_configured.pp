@@ -14,10 +14,10 @@
 # @example
 #   include secure_linux_cis::ensure_permissions_on_bootloader_config_are_configured
 class secure_linux_cis::rules::ensure_permissions_on_bootloader_config_are_configured {
-    file { $secure_linux_cis::grub_config_files:
-      ensure => file,
-      owner  => 'root',
-      group  => 'root',
-      mode   => '0600',
-    }
+  file { $secure_linux_cis::grub_config_files:
+    ensure => file,
+    owner  => 'root',
+    group  => 'root',
+    mode   => 'og-rwx',
+  }
 }

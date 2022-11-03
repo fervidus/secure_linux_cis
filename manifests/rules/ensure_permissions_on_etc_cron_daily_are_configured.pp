@@ -20,8 +20,8 @@
 #
 # @example
 #   include secure_linux_cis::ensure_permissions_on_etc_cron_daily_are_configured
-class secure_linux_cis::rules::ensure_permissions_on_etc_cron_daily_are_configured(
-    Boolean $enforced = true,
+class secure_linux_cis::rules::ensure_permissions_on_etc_cron_daily_are_configured (
+  Boolean $enforced = true,
 ) {
   if $enforced {
     file { '/etc/cron.daily':

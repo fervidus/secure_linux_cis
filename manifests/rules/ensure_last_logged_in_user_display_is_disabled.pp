@@ -14,19 +14,19 @@ class secure_linux_cis::rules::ensure_last_logged_in_user_display_is_disabled {
     ensure => file,
   }
 
-  file_line {'remove_user-db':
+  file_line { 'remove_user-db':
     ensure => present,
     path   => '/etc/dconf/profile/gdm',
     line   => 'user-db:user',
   }
 
-  file_line {'remove_system-db':
+  file_line { 'remove_system-db':
     ensure => present,
     path   => '/etc/dconf/profile/gdm',
     line   => 'system-db:gdm',
   }
 
-  file_line {'remove_file-db':
+  file_line { 'remove_file-db':
     ensure => present,
     path   => '/etc/dconf/profile/gdm',
     line   => 'file-db:/usr/share/gdm/greeter-dconf-defaults',
