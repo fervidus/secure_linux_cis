@@ -13,7 +13,7 @@
 # @example
 #   include secure_linux_cis::ensure_system_accounts_are_non_login
 class secure_linux_cis::rules::ensure_system_accounts_are_non_login {
-  case $facts['os']['family'] {
+  case $facts['osfamily'] {
     'Debian': {
       $nologin = '/usr/sbin/nologin'
     }

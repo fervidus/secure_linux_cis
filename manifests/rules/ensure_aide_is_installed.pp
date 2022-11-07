@@ -17,7 +17,7 @@ class secure_linux_cis::rules::ensure_aide_is_installed {
     ensure => installed,
     notify => Exec['create_aide_database'],
   }
-  case $facts['os']['family'] {
+  case $facts['osfamily'] {
     'RedHat': {
       exec { 'create_aide_database':
         command   => 'aide --init',
@@ -50,7 +50,7 @@ class secure_linux_cis::rules::ensure_aide_is_installed {
       }
     }
     default: {
-      warning ("Aide check is not supported on os family ${facts['os']['family']}.")
+      warning ("Aide check is not supported on os family ${facts['osfamily']}.")
     }
   }
 }

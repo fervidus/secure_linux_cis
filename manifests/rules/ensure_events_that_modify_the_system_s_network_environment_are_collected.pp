@@ -59,7 +59,7 @@ class secure_linux_cis::rules::ensure_events_that_modify_the_system_s_network_en
       path   => '/etc/audit/rules.d/audit.rules',
       line   => '-w /etc/hosts -p wa -k system-locale',
     }
-    case $facts['os']['family'] {
+    case $facts['osfamily'] {
       'RedHat': {
         file_line { 'audit.rules network 6':
           ensure => present,
@@ -80,7 +80,7 @@ class secure_linux_cis::rules::ensure_events_that_modify_the_system_s_network_en
         }
       }
       default: {
-        warning ("Network audit rules are not supported on os family ${facts['os']['family']}.")
+        warning ("Network audit rules are not supported on os family ${facts['osfamily']}.")
       }
     }
   }
@@ -106,7 +106,7 @@ class secure_linux_cis::rules::ensure_events_that_modify_the_system_s_network_en
       path   => '/etc/audit/rules.d/audit.rules',
       line   => '-w /etc/hosts -p wa -k system-locale',
     }
-    case $facts['os']['family'] {
+    case $facts['osfamily'] {
       'RedHat': {
         file_line { 'audit.rules network 5':
           ensure => present,
@@ -127,7 +127,7 @@ class secure_linux_cis::rules::ensure_events_that_modify_the_system_s_network_en
         }
       }
       default: {
-        warning ("Network audit rules are not supported on os family ${facts['os']['family']}.")
+        warning ("Network audit rules are not supported on os family ${facts['osfamily']}.")
       }
     }
   }

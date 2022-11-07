@@ -1,4 +1,6 @@
 ---
+secure_linux_cis::rules::ensure_gpgcheck_is_globally_activated::package_configuration: /etc/yum.conf
+
 secure_linux_cis::server_level_1:
   - ensure_mounting_of_cramfs_filesystems_is_disabled
   - ensure_mounting_of_freevxfs_filesystems_is_disabled

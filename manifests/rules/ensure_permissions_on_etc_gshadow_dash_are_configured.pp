@@ -12,7 +12,7 @@
 # @example
 #   include secure_linux_cis::ensure_permissions_on_etc_gshadow_dash_are_configured
 class secure_linux_cis::rules::ensure_permissions_on_etc_gshadow_dash_are_configured {
-  case $facts['os']['family'] {
+  case $facts['osfamily'] {
     'RedHat': {
       file { '/etc/gshadow-':
         ensure => file,
@@ -30,7 +30,7 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_gshadow_dash_are_config
       }
     }
     default: {
-      warning ("gshadow- configuration not supported on os family ${facts['os']['family']}.")
+      warning ("gshadow- configuration not supported on os family ${facts['osfamily']}.")
     }
   }
 }

@@ -24,7 +24,7 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_shadow__are_configured 
       default       => '0000',
     }
 
-    case $facts['os']['family'] {
+    case $facts['osfamily'] {
       'RedHat': {
         file { '/etc/shadow-':
           ensure   => file,
@@ -44,7 +44,7 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_shadow__are_configured 
         }
       }
       default: {
-        warning ("shadow- configuration not supported on os family ${facts['os']['family']}.")
+        warning ("shadow- configuration not supported on os family ${facts['osfamily']}.")
       }
     }
   }
