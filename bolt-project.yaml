@@ -2,11 +2,6 @@
 name: secure_linux_cis
 modules:
 - camptocamp/augeas
-- herculesteam/augeasproviders_core
-- herculesteam/augeasproviders_grub
-- herculesteam/augeasproviders_pam
-- herculesteam/augeasproviders_shellvar
-- herculesteam/augeasproviders_sysctl
 - puppet/alternatives
 - puppet/firewalld
 - puppet/kmod
@@ -26,3 +21,9 @@ modules:
 - ubeek/auditd
 - puppetlabs/mount_core
 - puppet/cron
+- puppet/augeasproviders_core
+- puppet/augeasproviders_grub
+- puppet/augeasproviders_pam
+- puppet/augeasproviders_shellvar
+- herculesteam/augeasproviders_sysctl
+- puppetlabs/lvm

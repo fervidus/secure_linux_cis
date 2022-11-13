@@ -12,7 +12,7 @@
 # @example
 #   include secure_linux_cis::ensure_permissions_on_etc_shadow_are_configured
 class secure_linux_cis::rules::ensure_permissions_on_etc_shadow_are_configured {
-  case $facts['osfamily'] {
+  case $facts['os']['family'] {
     'RedHat': {
       file { '/etc/shadow':
         ensure => file,
@@ -30,7 +30,7 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_shadow_are_configured {
       }
     }
     default: {
-      warning ("shadow configuration not supported on os family ${facts['osfamily']}.")
+      warning ("shadow configuration not supported on os family ${facts['os']['family']}.")
     }
   }
 }

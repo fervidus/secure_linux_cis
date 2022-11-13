@@ -5,7 +5,7 @@
 # @example
 #   include secure_linux_cis::rules::ensure_default_user_umask_is_027_or_more_restrictive
 class secure_linux_cis::rules::ensure_default_user_umask_is_027_or_more_restrictive {
-  $bashrc = $facts['osfamily'] ? {
+  $bashrc = $facts['os']['family'] ? {
     'Suse'   => '/etc/bash.bashrc',
     'RedHat' => '/etc/bashrc',
     'Debian' => '/etc/bash.bashrc',
@@ -31,7 +31,7 @@ class secure_linux_cis::rules::ensure_default_user_umask_is_027_or_more_restrict
     match => '^\s+umask\s+\d+',
   }
 
-  if $facts['osfamily'] == 'RedHat' {
+  if $facts['os']['family'] == 'RedHat' {
     file_line { 'csh.cshrc':
       path     => '/etc/csh.cshrc',
       line     => '    umask 077',

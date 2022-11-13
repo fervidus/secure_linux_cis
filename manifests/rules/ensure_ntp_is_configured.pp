@@ -29,7 +29,7 @@ class secure_linux_cis::rules::ensure_ntp_is_configured {
         '-6 default kod nomodify notrap nopeer noquery',
       ],
     }
-    case $facts['osfamily'] {
+    case $facts['os']['family'] {
       'RedHat': {
         file { '/etc/sysconfig/ntpd':
           ensure  => file,
@@ -49,7 +49,7 @@ class secure_linux_cis::rules::ensure_ntp_is_configured {
         }
       }
       default: {
-        warning ("NTP configuration is not supported on os family ${facts['osfamily']}.")
+        warning ("NTP configuration is not supported on os family ${facts['os']['family']}.")
       }
     }
   }

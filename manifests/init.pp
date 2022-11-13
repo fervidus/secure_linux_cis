@@ -161,6 +161,7 @@ class secure_linux_cis (
   @file { '/etc/modprobe.d/filesystem_disable.conf':
     ensure => file,
   }
+
   # Storage disable configuration file
   @file { '/etc/modprobe.d/storage_disable.conf':
     ensure => file,
@@ -178,6 +179,11 @@ class secure_linux_cis (
   file { '/usr/share/cis_scripts/enforced_rules.txt':
     ensure  => file,
     content => $enforced_rules.join("\n"),
+  }
+
+  file { '/root/scripts':
+    ensure => directory,
+    mode   => 'u+xr',
   }
 
   include $enforced_rules

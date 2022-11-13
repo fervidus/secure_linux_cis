@@ -11,6 +11,15 @@
 #
 # @example
 #   include secure_linux_cis::ensure_noexec_option_set_on_dev_shm_partition
-class secure_linux_cis::rules::ensure_noexec_option_set_on_dev_shm_partition {}
-# this requirement is managed in cis_1_1_15
-##  }
+class secure_linux_cis::rules::ensure_noexec_option_set_on_dev_shm_partition {
+  if $facts['mountpoints']['/dev/shm'] {
+    augeas { '/etc/fstab - noexec on /dev/shm':
+      context => '/files/etc/fstab',
+      changes => [
+        "ins opt after /files/etc/fstab/*[file = '/dev/shm']/opt[last()]",
+        "set *[file = '/dev/shm']/opt[last()] noexec",
+      ],
+      onlyif  => "match *[file = '/dev/shm']/opt[. = 'noexec'] size == 0",
+    }
+  }
+}

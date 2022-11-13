@@ -25,7 +25,7 @@ class secure_linux_cis::rules::ensure_login_and_logout_events_are_collected {
     path   => '/etc/audit/rules.d/audit.rules',
     line   => '-w /var/log/lastlog -p wa -k logins',
   }
-  case $facts['osfamily'] {
+  case $facts['os']['family'] {
     'RedHat': {
       if $facts['os']['release']['major'] == '8' {
         file_line { 'audit.rules login/logout 2':
@@ -54,7 +54,7 @@ class secure_linux_cis::rules::ensure_login_and_logout_events_are_collected {
       }
     }
     default: {
-      warning ("Login / logon event checking is not supported on os family ${facts['osfamily']}.")
+      warning ("Login / logon event checking is not supported on os family ${facts['os']['family']}.")
     }
   }
 }

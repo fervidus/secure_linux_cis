@@ -5,11 +5,14 @@
 # @example
 #   include secure_linux_cis::rules::ensure_nosuid_option_set_on_run_shm_partition
 class secure_linux_cis::rules::ensure_nosuid_option_set_on_run_shm_partition {
-  $mount = '/run/shm'
-  $option = 'nosuid'
-
-  secure_linux_cis::mount_options { "${mount}-${option}":
-    mount => $mount,
-    opt   => $option,
+  if $facts['mountpoints']['/run/shm'] {
+    augeas { '/etc/fstab - nosuid on /run/shm':
+      context => '/files/etc/fstab',
+      changes => [
+        "ins opt after /files/etc/fstab/*[file = '/run/shm']/opt[last()]",
+        "set *[file = '/run/shm']/opt[last()] nosuid",
+      ],
+      onlyif  => "match *[file = '/run/shm']/opt[. = 'nosuid'] size == 0",
+    }
   }
 }

@@ -13,7 +13,7 @@
 # @example
 #   include secure_linux_cis::ensure_prelink_is_disabled
 class secure_linux_cis::rules::ensure_prelink_is_disabled {
-  case $facts['osfamily'] {
+  case $facts['os']['family'] {
     'Suse': {
       package { 'prelink':
         ensure   => absent,

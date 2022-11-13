@@ -14,8 +14,8 @@
 #   include secure_linux_cis::ensure_tmp_is_configured
 class secure_linux_cis::rules::ensure_var_tmp_is_configured {
   mount { '/var/tmp':
-    ensure  => 'mounted',
-    options => 'remount,nosuid,nodev,noexec',
-    target  => '/etc/fstab',
+    ensure => 'mounted',
+    target => '/etc/fstab',
+    fstype => 'ext4',
   }
 }
