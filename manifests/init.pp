@@ -161,7 +161,6 @@ class secure_linux_cis (
   @file { '/etc/modprobe.d/filesystem_disable.conf':
     ensure => file,
   }
-
   # Storage disable configuration file
   @file { '/etc/modprobe.d/storage_disable.conf':
     ensure => file,
