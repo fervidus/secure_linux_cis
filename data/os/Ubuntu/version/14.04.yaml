@@ -71,8 +71,8 @@ secure_linux_cis::server_level_1:
   - ensure_tcp_wrappers_is_installed
   - ensure_etc_hosts_allow_is_configured
   - ensure_etc_hosts_deny_is_configured
-  - :ensure_permissions_on_etc_hosts_allow_are_configured
-  - ensure_permissions_on_etc_hostsdeny_are_configured
+  - ensure_permissions_on_etc_hosts_allow_are_configured
+  - ensure_permissions_on_etc_hosts_deny_are_configured
   - ensure_iptables_is_installed
   - ensure_default_deny_firewall_policy
   - ensure_loopback_traffic_is_configured
@@ -143,6 +143,7 @@ secure_linux_cis::server_level_1:
   - ensure_no_duplicate_user_names_exist
   - ensure_no_duplicate_group_names_exist
   - ensure_shadow_group_is_empty
+
 secure_linux_cis::server_level_2:
   - ensure_mounting_of_cramfs_filesystems_is_disabled
   - ensure_mounting_of_freevxfs_filesystems_is_disabled
@@ -226,8 +227,8 @@ secure_linux_cis::server_level_2:
   - ensure_tcp_wrappers_is_installed
   - ensure_etc_hosts_allow_is_configured
   - ensure_etc_hosts_deny_is_configured
-  - :ensure_permissions_on_etc_hosts_allow_are_configured
-  - ensure_permissions_on_etc_hostsdeny_are_configured
+  - ensure_permissions_on_etc_hosts_allow_are_configured
+  - ensure_permissions_on_etc_hosts_deny_are_configured
   - ensure_iptables_is_installed
   - ensure_default_deny_firewall_policy
   - ensure_loopback_traffic_is_configured
@@ -309,6 +310,7 @@ secure_linux_cis::server_level_2:
   - ensure_no_duplicate_user_names_exist
   - ensure_no_duplicate_group_names_exist
   - ensure_shadow_group_is_empty
+
 secure_linux_cis::workstation_level_1:
   - ensure_mounting_of_cramfs_filesystems_is_disabled
   - ensure_mounting_of_freevxfs_filesystems_is_disabled
@@ -380,8 +382,8 @@ secure_linux_cis::workstation_level_1:
   - ensure_tcp_wrappers_is_installed
   - ensure_etc_hosts_allow_is_configured
   - ensure_etc_hosts_deny_is_configured
-  - :ensure_permissions_on_etc_hosts_allow_are_configured
-  - ensure_permissions_on_etc_hostsdeny_are_configured
+  - ensure_permissions_on_etc_hosts_allow_are_configured
+  - ensure_permissions_on_etc_hosts_deny_are_configured
   - ensure_iptables_is_installed
   - ensure_default_deny_firewall_policy
   - ensure_loopback_traffic_is_configured
@@ -454,6 +456,7 @@ secure_linux_cis::workstation_level_1:
   - ensure_no_duplicate_user_names_exist
   - ensure_no_duplicate_group_names_exist
   - ensure_shadow_group_is_empty
+
 secure_linux_cis::workstation_level_2:
   - ensure_mounting_of_cramfs_filesystems_is_disabled
   - ensure_mounting_of_freevxfs_filesystems_is_disabled
@@ -538,8 +541,8 @@ secure_linux_cis::workstation_level_2:
   - ensure_tcp_wrappers_is_installed
   - ensure_etc_hosts_allow_is_configured
   - ensure_etc_hosts_deny_is_configured
-  - :ensure_permissions_on_etc_hosts_allow_are_configured
-  - ensure_permissions_on_etc_hostsdeny_are_configured
+  - ensure_permissions_on_etc_hosts_allow_are_configured
+  - ensure_permissions_on_etc_hosts_deny_are_configured
   - ensure_iptables_is_installed
   - ensure_default_deny_firewall_policy
   - ensure_loopback_traffic_is_configured

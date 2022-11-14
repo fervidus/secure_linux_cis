@@ -12,6 +12,15 @@
 #
 # @example
 #   include secure_linux_cis::ensure_nosuid_option_set_on_dev_shm_partition
-class secure_linux_cis::rules::ensure_nosuid_option_set_on_dev_shm_partition {}
-# this requirement is managed in cis_1_1_15
-##  }
+class secure_linux_cis::rules::ensure_nosuid_option_set_on_dev_shm_partition {
+  if $facts['mountpoints']['/dev/shm'] {
+    augeas { '/etc/fstab - nosuid on /dev/shm':
+      context => '/files/etc/fstab',
+      changes => [
+        "ins opt after /files/etc/fstab/*[file = '/dev/shm']/opt[last()]",
+        "set *[file = '/dev/shm']/opt[last()] nosuid",
+      ],
+      onlyif  => "match *[file = '/dev/shm']/opt[. = 'nosuid'] size == 0",
+    }
+  }
+}

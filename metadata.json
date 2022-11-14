@@ -1,6 +1,6 @@
 {
   "name": "fervid-secure_linux_cis",
-  "version": "3.1.0",
+  "version": "3.1.2",
   "author": "Fervid",
   "summary": "This module hardens Linux servers to CIS security compliance",
   "license": "Apache-2.0",
@@ -25,24 +25,24 @@
       "version_requirement": ">= 2.0.0 < 3.0.0"
     },
     {
-      "name": "herculesteam/augeasproviders_core",
-      "version_requirement": ">= 2.5.0 < 3.0.0"
+      "name": "puppet/augeasproviders_core",
+      "version_requirement": ">= 3.2.0 < 4.0.0"
     },
     {
-      "name": "herculesteam/augeasproviders_grub",
-      "version_requirement": ">= 3.0.0 < 4.0.0"
-    },
-    {
-      "name": "herculesteam/augeasproviders_sysctl",
-      "version_requirement": ">= 2.3.0 < 3.0.0"
-    },
-    {
-      "name": "herculesteam/augeasproviders_shellvar",
+      "name": "puppet/augeasproviders_grub",
       "version_requirement": ">= 4.0.0 < 5.0.0"
     },
     {
-      "name": "herculesteam/augeasproviders_pam",
-      "version_requirement": ">= 2.2.0 < 3.0.0"
+      "name": "herculesteam/augeasproviders_sysctl",
+      "version_requirement": ">= 2.6.2 < 3.0.0"
+    },
+    {
+      "name": "puppet/augeasproviders_shellvar",
+      "version_requirement": ">= 5.0.0 < 6.0.0"
+    },
+    {
+      "name": "puppet/augeasproviders_pam",
+      "version_requirement": ">= 3.0.1 < 4.0.0"
     },
     {
       "name": "ubeek/auditd",
@@ -113,9 +113,9 @@
     {
       "operatingsystem": "OracleLinux",
       "operatingsystemrelease": [
-        "6",
         "7",
-        "8"
+        "8",
+        "9"
       ]
     },
     {
@@ -130,15 +130,15 @@
       "operatingsystem": "CentOS",
       "operatingsystemrelease": [
         "7",
-        "8"
+        "8",
+        "9"
       ]
     },
     {
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
-        "8",
-        "9",
-        "10"
+        "10",
+        "11"
       ]
     },
     {
@@ -147,7 +147,8 @@
         "14.04",
         "16.04",
         "18.04",
-        "20.04"
+        "20.04",
+        "22.04"
       ]
     }
   ],

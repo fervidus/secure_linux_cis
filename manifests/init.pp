@@ -180,6 +180,11 @@ class secure_linux_cis (
     content => $enforced_rules.join("\n"),
   }
 
+  file { '/root/scripts':
+    ensure => directory,
+    mode   => 'u+xr',
+  }
+
   include $enforced_rules
   include secure_linux_cis::reboot
 }

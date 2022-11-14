@@ -92,7 +92,7 @@ secure_linux_cis::server_level_1:
   - ensure_permissions_on_etc_gshadow_are_configured
   - ensure_permissions_on_etc_gshadow_dash_are_configured
   - :ensure_permissions_on_etc_hosts_allow_are_configured
-  - ensure_permissions_on_etc_hostsdeny_are_configured
+  - ensure_permissions_on_etc_hosts_deny_are_configured
   - ensure_permissions_on_etc_issue_are_configured
   - ensure_permissions_on_etc_issue_net_are_configured
   - ensure_permissions_on_etc_motd_are_configured
@@ -241,7 +241,7 @@ secure_linux_cis::server_level_2:
   - ensure_permissions_on_etc_gshadow_are_configured
   - ensure_permissions_on_etc_gshadow_dash_are_configured
   - :ensure_permissions_on_etc_hosts_allow_are_configured
-  - ensure_permissions_on_etc_hostsdeny_are_configured
+  - ensure_permissions_on_etc_hosts_deny_are_configured
   - ensure_permissions_on_etc_issue_are_configured
   - ensure_permissions_on_etc_issue_net_are_configured
   - ensure_permissions_on_etc_motd_are_configured
@@ -397,7 +397,7 @@ secure_linux_cis::workstation_level_1:
   - ensure_permissions_on_etc_gshadow_are_configured
   - ensure_permissions_on_etc_gshadow_dash_are_configured
   - :ensure_permissions_on_etc_hosts_allow_are_configured
-  - ensure_permissions_on_etc_hostsdeny_are_configured
+  - ensure_permissions_on_etc_hosts_deny_are_configured
   - ensure_permissions_on_etc_issue_are_configured
   - ensure_permissions_on_etc_issue_net_are_configured
   - ensure_permissions_on_etc_motd_are_configured
@@ -551,7 +551,7 @@ secure_linux_cis::workstation_level_2:
   - ensure_permissions_on_etc_gshadow_are_configured
   - ensure_permissions_on_etc_gshadow_dash_are_configured
   - :ensure_permissions_on_etc_hosts_allow_are_configured
-  - ensure_permissions_on_etc_hostsdeny_are_configured
+  - ensure_permissions_on_etc_hosts_deny_are_configured
   - ensure_permissions_on_etc_issue_are_configured
   - ensure_permissions_on_etc_issue_net_are_configured
   - ensure_permissions_on_etc_motd_are_configured

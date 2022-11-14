@@ -16,7 +16,7 @@
 # @example
 #   include secure_linux_cis::ensure_nftables_is_not_installed_with_iptables
 class secure_linux_cis::rules::ensure_nftables_is_not_installed_with_iptables {
-  package { 'iptables':
+  package { 'nftables':
     ensure => purged,
   }
 }

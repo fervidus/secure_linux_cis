@@ -67,7 +67,7 @@ secure_linux_cis::server_level_1:
   - ensure_ipv6_router_advertisements_are_not_accepted
   - ensure_tcp_wrappers_is_installed
   - :ensure_permissions_on_etc_hosts_allow_are_configured
-  - ensure_permissions_on_etc_hostsdeny_are_configured
+  - ensure_permissions_on_etc_hosts_deny_are_configured
   - ensure_default_deny_firewall_policy
   - ensure_loopback_traffic_is_configured
   - ensure_firewall_rules_exist_for_all_open_ports
@@ -216,7 +216,7 @@ secure_linux_cis::server_level_2:
   - ensure_ipv6_router_advertisements_are_not_accepted
   - ensure_tcp_wrappers_is_installed
   - :ensure_permissions_on_etc_hosts_allow_are_configured
-  - ensure_permissions_on_etc_hostsdeny_are_configured
+  - ensure_permissions_on_etc_hosts_deny_are_configured
   - ensure_default_deny_firewall_policy
   - ensure_loopback_traffic_is_configured
   - ensure_firewall_rules_exist_for_all_open_ports
@@ -363,7 +363,7 @@ secure_linux_cis::workstation_level_1:
   - ensure_ipv6_router_advertisements_are_not_accepted
   - ensure_tcp_wrappers_is_installed
   - :ensure_permissions_on_etc_hosts_allow_are_configured
-  - ensure_permissions_on_etc_hostsdeny_are_configured
+  - ensure_permissions_on_etc_hosts_deny_are_configured
   - ensure_default_deny_firewall_policy
   - ensure_loopback_traffic_is_configured
   - ensure_firewall_rules_exist_for_all_open_ports
@@ -517,7 +517,7 @@ secure_linux_cis::workstation_level_2:
   - ensure_ipv6_router_advertisements_are_not_accepted
   - ensure_tcp_wrappers_is_installed
   - :ensure_permissions_on_etc_hosts_allow_are_configured
-  - ensure_permissions_on_etc_hostsdeny_are_configured
+  - ensure_permissions_on_etc_hosts_deny_are_configured
   - ensure_default_deny_firewall_policy
   - ensure_loopback_traffic_is_configured
   - ensure_firewall_rules_exist_for_all_open_ports
