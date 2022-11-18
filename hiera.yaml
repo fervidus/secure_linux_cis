@@ -21,5 +21,8 @@ hierarchy:
   - name: "OS Family"
     path: "osfamily/%{facts.osfamily}.yaml"
 
+  - name: "OS Family Version"
+    path: "osfamily/%{facts.osfamily}/version/%{facts.operatingsystemmajrelease}.yaml"
+
   - name: "Common data"
     path: "common.yaml"

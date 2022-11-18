@@ -27,3 +27,6 @@ modules:
 - puppet/augeasproviders_shellvar
 - herculesteam/augeasproviders_sysctl
 - puppetlabs/lvm
+- puppetlabs/service
+- puppetlabs/exec
+- puppetlabs/package

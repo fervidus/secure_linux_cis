@@ -6,6 +6,6 @@
 #   include secure_linux_cis::rules::ensure_snmp_server_is_not_installed
 class secure_linux_cis::rules::ensure_snmp_server_is_not_installed {
   package { 'snmpd':
-    ensure => purged,
+    ensure => absent,
   }
 }

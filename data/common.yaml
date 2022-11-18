@@ -3,9 +3,7 @@ secure_linux_cis::banner: >
   Authorized uses only. All activity may be monitored and reported.
   
 
-secure_linux_cis::motd: >
-  Module by Fervid
-  
+secure_linux_cis::motd: 🐉 Module by Fervid 🐉                      
 
 # secure_linux_cis::firewall_package: firewall
 # Exclude rules that need to be fixed

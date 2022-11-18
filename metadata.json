@@ -107,15 +107,20 @@
     {
       "operatingsystem": "Amazon",
       "operatingsystemrelease": [
-        "2"
+        "2022"
       ]
     },
     {
       "operatingsystem": "OracleLinux",
       "operatingsystemrelease": [
         "7",
-        "8",
-        "9"
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "AlmaLinux",
+      "operatingsystemrelease": [
+        "8"
       ]
     },
     {
@@ -139,6 +144,12 @@
       "operatingsystemrelease": [
         "10",
         "11"
+      ]
+    },
+    {
+      "operatingsystem": "SLES",
+      "operatingsystemrelease": [
+        "15"
       ]
     },
     {

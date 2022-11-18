@@ -25,7 +25,7 @@ class secure_linux_cis::rules::ensure_rsh_client_is_not_installed {
     }
     default: {
       package { ['rsh', 'rsh-client', 'rsh-redone-client']:
-        ensure   => purged,
+        ensure   => absent,
       }
     }
   }

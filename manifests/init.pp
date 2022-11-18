@@ -20,7 +20,6 @@
 # @param time_sync Which NTP program to use
 # @param mta Which Mail Transfer program to use
 # @param mac Which Mandatory Access Control to use
-# @param firewall Which Firewall provider to use
 # @param ipv6_enabled Should ipv6 be enabled
 # @param approved_ciphers Which SSH Ciphers are approved for use
 # @param approved_kex Which SSH Key Exchange algorithms are approved for use.
@@ -51,7 +50,6 @@
 # @param auto_restart If an automatic restart should occur when defined classes require a reboot to take effect
 # @param grub_username Account name to authenticate against - defaults to root
 # @param grub_pbkdf2_password_hash String with value of pwssword in GRUB PBKDF2 format
-# @param schedule If you want to change when this runs use a scheduler
 # @param nologin_whitelist Array of accounts to allow login shell other than nologin
 #
 # @example
@@ -70,15 +68,6 @@ class secure_linux_cis (
   Array[Stdlib::Host]                     $time_servers,
   Array[String]                           $approved_kex,
   Array[String]                           $approved_mac_algorithms,
-  Struct[
-    {
-      Optional[period]      => Enum['hourly', 'daily', 'weekly', 'monthly', 'never'],
-      Optional[periodmatch] => Enum['number', 'distance'],
-      Optional[range]       => String[1],
-      Optional[repeat]      => Integer,
-      Optional[weekday]     => Variant[Array, String[1]],
-    }
-  ]                                       $hardening_schedule,
   Enum['workstation', 'server']           $profile_type       = 'server',
   Enum['1', '2']                          $enforcement_level = '1',
   Enum['drop', 'block', 'public', 'external', 'dmz', 'work', 'home', 'internal', 'trusted'] $default_firewalld_zone = 'drop',
@@ -104,7 +93,6 @@ class secure_linux_cis (
   Enum['postfix', 'exim', 'none']         $mta                     = 'postfix',
   Enum['selinux', 'apparmor', 'none']     $mac                     = 'selinux',
   Enum['enforcing', 'permissive']         $selinux_mode            = 'enforcing',
-  Enum['nftables','iptables']             $firewall                = 'iptables',
   Boolean                                 $ipv6_enabled            = false,
   Array[String]                           $approved_ciphers        = [
     'aes256-gcm@openssh.com',
@@ -138,13 +126,7 @@ class secure_linux_cis (
   Optional[String]                        $motd                    = undef,
   Array[String]                           $nologin_whitelist       = [],
 ) {
-  schedule { 'harden_schedule':
-    period      => $hardening_schedule['period'],
-    periodmatch => $hardening_schedule['periodmatch'],
-    range       => $hardening_schedule['range'],
-    repeat      => $hardening_schedule['repeat'],
-    weekday     => $hardening_schedule['weekday'],
-  }
+  $firewall = 'iptables'
 
   $base_rules = $profile_type ? {
     'workstation' => $enforcement_level ? {
@@ -187,4 +169,5 @@ class secure_linux_cis (
 
   include $enforced_rules
   include secure_linux_cis::reboot
+  include secure_linux_cis::refresh_mount_options
 }

@@ -25,9 +25,7 @@ class secure_linux_cis::rules::ensure_tipc_is_disabled {
     match   => '^install\s+tipc',
     require => File['/etc/modprobe.d/storage_disable.conf'],
   }
-
-  exec { '/usr/sbin/rmmod tipc':
-    subscribe   => File_line['Disable tipc'],
+  ~> exec { '/usr/sbin/rmmod tipc':
     refreshonly => true,
   }
 }

@@ -5,33 +5,38 @@
 fixtures:
   forge_modules:
     alternatives: "puppet-alternatives"
-    auditd: "kemra102-auditd"
+    apt: "puppetlabs-apt"
+    auditd: "ubeek-auditd"
     augeas: "camptocamp-augeas"
     augeas_core: "puppetlabs-augeas_core"
-    augeasproviders_core: "herculesteam-augeasproviders_core"
-    augeasproviders_grub: "herculesteam-augeasproviders_grub"
-    augeasproviders_pam: "herculesteam-augeasproviders_pam"
-    augeasproviders_shellvar: "herculesteam-augeasproviders_shellvar"
+    augeasproviders_core: "puppet-augeasproviders_core"
+    augeasproviders_grub: "puppet-augeasproviders_grub"
+    augeasproviders_pam: "puppet-augeasproviders_pam"
+    augeasproviders_shellvar: "puppet-augeasproviders_shellvar"
     augeasproviders_sysctl: "herculesteam-augeasproviders_sysctl"
-    chrony: "aboe-chrony"
+    chrony: "puppet-chrony"
     cron: "puppet-cron"
+    exec: "puppetlabs-exec"
     facts: "puppetlabs-facts"
     firewall: "puppetlabs-firewall"
     firewalld: 'puppet-firewalld'
     inifile: 'puppetlabs-inifile'
-    kmod: "camptocamp-kmod"
+    kmod: "puppet-kmod"
+    lvm: 'puppetlabs-lvm'
     logrotate: "puppet-logrotate"
     mailalias_core: "puppetlabs-mailalias_core"
-    mount: "puppetlabs-mount_core"
+    mount_core: "puppetlabs-mount_core"
     ntp: "puppetlabs-ntp"
+    package: "puppetlabs-package"
     reboot: "puppetlabs-reboot"
+    selinux: "puppet-selinux"
+    service: "puppetlabs-service"
     stdlib: "puppetlabs-stdlib"
+    systemd: "puppet-systemd"
     provision: "puppetlabs-provision"
     ufw: 'kogitoapp/ufw'
-    #postfix: "camptocamp-postfix"
   repositories:
     postfix:
       repo: "https://github.com/fervidus/puppet-postfix.git"
       branch: "master"
-    puppet_agent: 'https://github.com/puppetlabs/puppetlabs-puppet_agent.git'
     provision: 'https://github.com/puppetlabs/provision.git'

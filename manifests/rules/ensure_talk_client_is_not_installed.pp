@@ -23,7 +23,7 @@ class secure_linux_cis::rules::ensure_talk_client_is_not_installed {
     }
     default: {
       package { 'talk':
-        ensure   => purged,
+        ensure   => absent,
       }
     }
   }

@@ -23,7 +23,7 @@ class secure_linux_cis::rules::ensure_telnet_client_is_not_installed {
     }
     default: {
       package { 'telnet':
-        ensure   => purged,
+        ensure   => absent,
       }
     }
   }

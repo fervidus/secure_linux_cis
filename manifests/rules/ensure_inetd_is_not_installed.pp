@@ -8,6 +8,6 @@
 #   include secure_linux_cis::rules::ensure_inetd_is_not_installed
 class secure_linux_cis::rules::ensure_inetd_is_not_installed {
   package { 'inetd':
-    ensure   => purged,
+    ensure   => absent,
   }
 }

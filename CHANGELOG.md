@@ -1,5 +1,12 @@
 # Changelog
 
+## Release 3.2.0
+
+* Add missing checks
+* Remove some facts
+* Limit firewall to iptables
+* Remove unused hardening schedule
+
 ## Release 3.1.0
 
 * Moved multiple code to execs instead of using facts.

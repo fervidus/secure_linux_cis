@@ -16,6 +16,6 @@
 #   include secure_linux_cis::ensure_imap_and_pop3_server_are_not_installed
 class secure_linux_cis::rules::ensure_imap_and_pop3_server_are_not_installed {
   package { ['dovecot-imapd','dovecot-pop3d']:
-    ensure => purged,
+    ensure => absent,
   }
 }

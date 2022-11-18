@@ -5,7 +5,7 @@
 # @example
 #   include secure_linux_cis::rules::ensure_iptables_persistent_is_not_installed_with_ufw
 class secure_linux_cis::rules::ensure_iptables_persistent_is_not_installed_with_ufw {
-  package { 'ufw':
-    ensure => purged,
+  package { 'iptables-persistent':
+    ensure => absent,
   }
 }

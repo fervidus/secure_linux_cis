@@ -1,0 +1,1012 @@
+---
+groups:
+- name: CentOS_8_server_1
+  facts:
+    required_packages:
+    - &29
+      rule: 1.3.1 Ensure AIDE is installed
+      package: aide
+    - &30
+      rule: 1.6.1.1 Ensure SELinux is installed
+      package: libselinux
+    - &31
+      rule: 2.1.1 Ensure time synchronization is in use
+      package: chrony
+    - &32
+      rule: 3.4.1.1 Ensure firewalld is installed
+      package: firewalld
+    - &33
+      rule: 3.4.2.1 Ensure nftables is installed
+      package: nftables
+    - &34
+      rule: 4.2.1.1 Ensure rsyslog is installed
+      package: rsyslog
+    - &35
+      rule: 4.2.1.7 Ensure rsyslog is not configured to recieve logs from a remote
+        client
+      package: systemd-journal-remote
+    prohibited_packages:
+    - rule: 1.6.1.7 Ensure SETroubleshoot is not installed
+      package: setroubleshoot
+    - &36
+      rule: 1.6.1.8 Ensure the MCS Translation Service (mcstrans) is not installed
+      package: mcstrans
+    - &37
+      rule: 2.2.1 Ensure xinetd is not installed
+      package: xinetd
+    - rule: 2.2.1 Ensure xinetd is not installed
+      package: xorg-x11-server-common
+    - &124
+      rule: 2.2.3 Ensure Avahi Server is not installed
+      package: avahi-autoipd
+    - rule: 2.2.4 Ensure CUPS is not installed
+      package: cups
+    - &38
+      rule: 2.2.5 Ensure DHCP Server is not installed
+      package: dhcp-server
+    - &39
+      rule: 2.2.6 Ensure DNS Server is not installed
+      package: bind
+    - &40
+      rule: 2.2.7 Ensure FTP Server is not installed
+      package: ftp
+    - &41
+      rule: 2.2.8 Ensure VSFTP Server is not installed
+      package: vsftpd
+    - &42
+      rule: 2.2.9 Ensure TFTP Server is not installed
+      package: tftp-server
+    - &43
+      rule: 2.2.10 Ensure a web server is not installed
+      package: httpd
+    - &44
+      rule: 2.2.10 Ensure a web server is not installed
+      package: dovecot
+    - &45
+      rule: 2.2.12 Ensure Samba is not installed
+      package: samba
+    - &46
+      rule: 2.2.13 Ensure HTTP Proxy Server is not installed
+      package: squid
+    - &47
+      rule: 2.2.14 Ensure net-snmp is not installed
+      package: net-snmp
+    - &48
+      rule: 2.2.15 Ensure NIS server is not installed
+      package: ypserv
+    - &5
+      rule: 2.2.18 Ensure nfs-utils is not installed or the nfs-server service is
+        masked
+      service: nfs-server
+      package: nfs-utils
+    - &6
+      rule: 2.2.19 Ensure rpcbind is not installed or the rpcbind services are masked
+      service: rpcbind.socket
+      package: rpcbind
+    - &7
+      rule: 2.2.20 Ensure rsync is not installed or the rsyncd service is masked
+      service: rsyncd
+      package: rsync
+    - &49
+      rule: 2.3.1 Ensure NIS Client is not installed
+      package: ypbind
+    - &50
+      rule: 2.3.2 Ensure rsh client is not installed
+      package: rsh
+    - &51
+      rule: 2.3.3 Ensure talk client is not installed
+      package: talk
+    - &52
+      rule: 2.3.4 Ensure telnet client is not installed
+      package: telnet
+    - &53
+      rule: 2.3.5 Ensure LDAP client is not installed
+      package: openldap-clients
+    - &54
+      rule: 2.3.6 Ensure TFTP client is not installed
+      package: tftp
+    - &55
+      rule: 3.4.1.2 Ensure iptables-services not installed with firewalld
+      package: iptables-services
+    - &8
+      rule: 3.4.1.3 Ensure nftables either not installed or masked with firewalld
+      service: nftables
+      package: nftables
+    - &9
+      rule: 3.4.2.2 Ensure firewalld is either not installed or masked with nftables
+      service: firewalld
+      package: firewalld
+    - &56
+      rule: 3.4.2.3 Ensure iptables-services not installed with nftables
+      package: iptables-services
+    - &57
+      rule: 3.4.3.1.2 Ensure nftables is not installed with iptables
+      package: nftables
+    - &10
+      rule: 3.4.3.1.3 Ensure firewalld is either not installed or masked with iptables
+      service: firewalld
+      package: firewalld
+    disabled_modules:
+    - &1
+      rule: 1.1.1.1 Ensure mounting of cramfs filesystems is disabled
+      filesystem: cramfs
+      module: cramfs
+    enabled_modules:
+    - &2
+      rule: 1.1.10 Disable USB Storage
+      filesystem: usb-storage
+      module: usb-storage
+    unloaded_modules:
+    - *1
+    - *2
+    blacklist_modules:
+    - *1
+    enabled_services:
+    - &11
+      rule: 1.1.2.1 Ensure /tmp is a separate partition
+      "/tmp":
+      - nodev
+      - nodev
+      - noexec
+      - noexec
+      - nosuid
+      - nosuid
+      service: tmp.mount
+    - &3
+      rule: 1.1.9 Disable Automounting
+      service: autofs
+    - *3
+    - &4
+      rule: 1.3.2 Ensure filesystem integrity is regularly checked
+      service: aidecheck.timer
+      flags: " -Ers"
+      line: |-
+        '^([^#]+\s+)?(\/usr\/s?bin\/|^\s*)aide(\.wrapper)?\s(--?\S+\s)*(-
+        -(check|update)|\$AIDEARGS)\b'
+      path: " /etc/cron.* /etc/crontab /var/spool/cron/"
+      result: Ensure a cron job in compliance with site policy is returned.
+    - *4
+    - *5
+    - *6
+    - *6
+    - *7
+    - *8
+    - &58
+      rule: 3.4.1.4 Ensure firewalld service enabled and running
+      service: firewalld
+    - *9
+    - &59
+      rule: 3.4.2.10 Ensure nftables service is enabled
+      service: nftables
+    - *10
+    - &60
+      rule: 3.4.3.2.6 Ensure iptables is enabled and active
+      service: iptables
+    - &61
+      rule: 3.4.3.2.6 Ensure iptables is enabled and active
+      service: ip6tables
+    - &62
+      rule: 4.2.1.2 Ensure rsyslog service is enabled
+      service: rsyslog
+    - &63
+      rule: 4.2.1.7 Ensure rsyslog is not configured to recieve logs from a remote
+        client
+      service: systemd-journal-upload.service
+    - &64
+      rule: 4.2.2.1.4 Ensure journald is not configured to recieve logs from a remote
+        client
+      service: systemd-journal-remote.socket
+    - &65
+      rule: 4.2.2.2 Ensure journald service is enabled
+      service: systemd-journald.service
+    - &66
+      rule: 5.1.1 Ensure cron daemon is enabled
+      service: crond
+    running_services:
+    - *4
+    - *10
+    file_configurations:
+    - &67
+      rule: 1.7.4 Ensure permissions on /etc/motd are configured
+      "/etc/motd":
+        mode: '644'
+        owner: root
+        group: root
+    - &68
+      rule: 1.7.5 Ensure permissions on /etc/issue are configured
+      "/etc/issue":
+        mode: '644'
+        owner: root
+        group: root
+    - &69
+      rule: 1.7.6 Ensure permissions on /etc/issue.net are configured
+      "/etc/issue.net":
+        mode: '644'
+        owner: root
+        group: root
+    - &70
+      rule: 5.1.2 Ensure permissions on /etc/crontab are configured
+      "/etc/crontab":
+        mode: '700'
+        owner: root
+        group: root
+    - &71
+      rule: 5.1.3 Ensure permissions on /etc/cron.hourly are configured
+      "/etc/cron.hourly":
+        mode: '700'
+        owner: root
+        group: root
+    - &72
+      rule: 5.1.4 Ensure permissions on /etc/cron.daily are configured
+      "/etc/cron.daily":
+        mode: '700'
+        owner: root
+        group: root
+    - &73
+      rule: 5.1.5 Ensure permissions on /etc/cron.weekly are configured
+      "/etc/cron.weekly":
+        mode: '700'
+        owner: root
+        group: root
+    - &74
+      rule: 5.1.6 Ensure permissions on /etc/cron.monthly are configured
+      "/etc/cron.monthly":
+        mode: '700'
+        owner: root
+        group: root
+    - &75
+      rule: 5.1.7 Ensure permissions on /etc/cron.d are configured
+      "/etc/cron.d":
+        mode: '700'
+        owner: root
+        group: root
+    - &76
+      rule: 5.2.1 Ensure permissions on /etc/ssh/sshd_config are configured
+      "/etc/ssh/sshd_config":
+        mode: '700'
+        owner: root
+        group: root
+    - &77
+      rule: 6.1.3 Ensure permissions on /etc/passwd are configured
+      "/etc/passwd":
+        mode: '644'
+        owner: root
+        group: root
+    - &78
+      rule: 6.1.4 Ensure permissions on /etc/shadow are configured
+      "/etc/shadow":
+        mode: '000'
+        owner: root
+        group: root
+    - &79
+      rule: 6.1.5 Ensure permissions on /etc/group are configured
+      "/etc/group":
+        mode: '744'
+        owner: root
+        group: root
+    - &80
+      rule: 6.1.6 Ensure permissions on /etc/gshadow are configured
+      "/etc/gshadow":
+        mode: '000'
+        owner: root
+        group: root
+    - &81
+      rule: 6.1.7 Ensure permissions on /etc/passwd- are configured
+      "/etc/passwd-":
+        mode: '644'
+        owner: root
+        group: root
+    - &82
+      rule: 6.1.8 Ensure permissions on /etc/shadow- are configured
+      "/etc/shadow-":
+        mode: '000'
+        owner: root
+        group: root
+    - &83
+      rule: 6.1.9 Ensure permissions on /etc/group- are configured
+      "/etc/group-":
+        mode: '644'
+        owner: root
+        group: root
+    - &84
+      rule: 6.1.10 Ensure permissions on /etc/gshadow- are configured
+      "/etc/gshadow-":
+        mode: '000'
+        owner: root
+        group: root
+    required_partitions:
+    - *11
+    - rule: 1.1.8.1 Ensure nodev option set on /dev/shm partition
+      "/dev/shm":
+      - nodev
+      - noexec
+      - nosuid
+    required_settings:
+    - &85
+      rule: 1.1.10 Disable USB Storage
+      flags: " -r"
+      line: gpgkey
+      path: " /etc/yum.repos.d/* /etc/dnf/dnf.conf"
+      result: List installed GPG keys
+    - &12
+      rule: 1.2.2 Ensure gpgcheck is globally activated
+      flags: " -P"
+      line: "^gpgcheck"
+      path: "/etc/dnf/dnf.conf"
+      result: gpgcheck=1
+    - *12
+    - *4
+    - &86
+      rule: 1.4.3 Ensure authentication is required when booting into rescue mode
+      flags: " -r"
+      line: "/systemd-sulogin-shell"
+      path: " /usr/lib/systemd/system/rescue.service /etc/systemd/system/rescue.service.d"
+      result: ExecStart=-/usr/lib/systemd/systemd-sulogin-shell rescue
+    - &87
+      rule: 1.5.1 Ensure core dump storage is disabled
+      flags: " -i"
+      line: "'^\\s*storage\\s*=\\s*none'"
+      path: " /etc/systemd/coredump.conf"
+      result: Storage=none
+    - &88
+      rule: 1.5.2 Ensure core dump backtraces are disabled
+      flags: " -i"
+      line: "'^\\s*ProcessSizeMax\\s*=\\s*0'"
+      path: " /etc/systemd/coredump.conf"
+      result: ProcessSizeMax=0
+    - &89
+      rule: 1.6.1.2 Ensure SELinux is not disabled in bootloader configuration
+      flags: "-P --"
+      path:
+      result:
+      line: |-
+        '^\h*(kernelopts=|linux|kernel)' $(find /boot -type f \( -name'grubenv' -o -name 'grub.conf' -o -name 'grub.cfg' \) -exec grep -Pl --
+        '^\h*(kernelopts=|linux|kernel)' {} \;) | grep -E --
+        '(selinux=0|enforcing=0)'
+    - &90
+      rule: 1.6.1.3 Ensure SELinux policy is configured
+      flags: " -E"
+      line: "'^\\s*SELINUXTYPE=(targeted|mls)\\b'"
+      path: " /etc/selinux/config"
+      result: SELINUXTYPE=targeted
+    - &91
+      rule: 1.6.1.4 Ensure the SELinux mode is not disabled
+      flags: " -Ei"
+      line: "'^\\s*SELINUX=(enforcing|permissive)'"
+      path: " /etc/selinux/config"
+      result: SELINUX=enforcing
+    - &92
+      rule: 1.7.1 Ensure message of the day is configured properly
+      flags: "-E -i"
+      path: "/etc/motd"
+      result:
+      line: '"(\\\v|\\\r|\\\m|\\\s|$(grep ''^ID='' /etc/os-release | cut -d= -f2 |
+        sed -e ''s/"//g''))"'
+    - &93
+      rule: 1.7.2 Ensure local login warning banner is configured properly
+      flags: "-E -i"
+      path: "/etc/issue"
+      result:
+      line: '"(\\\v|\\\r|\\\m|\\\s|$(grep ''^ID='' /etc/os-release | cut -d= -f2 |
+        sed -e ''s/"//g''))"'
+    - &94
+      rule: 1.7.3 Ensure remote login warning banner is configured properly
+      flags: "-E -i"
+      path: "/etc/issue.net"
+      result:
+      line: '"(\\\v|\\\r|\\\m|\\\s|$(grep ''^ID='' /etc/os-release | cut -d= -f2 |
+        sed -e ''s/"//g''))"'
+    - &95
+      rule: 1.8.4 Ensure XDMCP is not enabled
+      flags: " -Eis"
+      line: "'^\\s*Enable\\s*=\\s*true'"
+      path: " /etc/gdm/custom.conf"
+      result:
+    - &96
+      rule: 1.10 Ensure system-wide crypto policy is not legacy
+      flags: " -E -i"
+      line: "'^\\s*LEGACY\\s*(\\s+#.*)?$'"
+      path: " /etc/crypto-policies/config"
+      result:
+    - &13
+      rule: 2.1.2 Ensure chrony is configured
+      flags: " -E"
+      line: "^OPTIONS"
+      path: "/etc/sysconfig/chronyd"
+      result: OPTIONS="-u chrony"
+    - *13
+    - &97
+      rule: 4.2.1.2 Ensure rsyslog service is enabled
+      flags:
+      line: "^\\s*ForwardToSyslog"
+      path: " /etc/systemd/journald.conf"
+      result: ForwardToSyslog=yes
+    - &98
+      rule: 4.2.1.4 Ensure rsyslog default file permissions are configured
+      flags:
+      line: "^\\$FileCreateMode"
+      path: " /etc/rsyslog.conf /etc/rsyslog.d/*.conf"
+      result: "$FileCreateMode 0640"
+    - &14
+      rule: 4.2.1.4 Ensure rsyslog default file permissions are configured
+      flags: " -E"
+      line: '"^*.*[^I][^I]*@"'
+      path: "/etc/rsyslog.conf"
+      result: "/etc/rsyslog.d/*.conf"
+    - *14
+    - &15
+      rule: 4.2.1.7 Ensure rsyslog is not configured to recieve logs from a remote
+        client
+      flags: "-P --"
+      path: "/etc/rsyslog.conf"
+      result: "/etc/rsyslog.d/*.conf"
+      line: "'$InputTCPServerRun'"
+    - *15
+    - *15
+    - &99
+      rule: 4.2.1.7 Ensure rsyslog is not configured to recieve logs from a remote
+        client
+      flags: " -P"
+      line: |-
+        "^ *URL=|^ *ServerKeyFile=|^ *ServerCertificateFile=|^
+        *TrustedCertificateFile="
+      path: " /etc/systemd/journal-upload.conf"
+      result: Verify the output matches per your environments certificate locations
+        and the URL of the
+    - &100
+      rule: 4.2.2.3 Ensure journald is configured to compress large log files
+      flags:
+      line: "^\\s*Compress"
+      path: " /etc/systemd/journald.conf"
+      result: Compress=yes
+    - &101
+      rule: 4.2.2.4 Ensure journald is configured to write logfiles to persistent
+        disk
+      flags:
+      line: "^\\s*Storage"
+      path: " /etc/systemd/journald.conf"
+      result: Storage=persistent
+    - &102
+      rule: 4.2.2.4 Ensure journald is configured to write logfiles to persistent
+        disk
+      line: "^\\s*ForwardToSyslog"
+      path: "/etc/systemd/journald.conf"
+      result: Verify that there is no output.
+    - &103
+      rule: 5.2.4 Ensure SSH access is limited
+      flags: " -Pi"
+      line: "'^\\h*(allow|deny)(users|groups)\\h+\\H+(\\h+.*)?$'"
+      path: " /etc/ssh/sshd_config"
+      result: 'Verify that the output of both commands matches at least one of the
+        following lines:'
+    - &104
+      rule: 5.2.5 Ensure SSH LogLevel is appropriate
+      flags: " -i"
+      line: "'loglevel'"
+      path: " /etc/ssh/sshd_config"
+      result: "| grep -Evi '(VERBOSE|INFO)'"
+    - &105
+      rule: 5.2.6 Ensure SSH PAM is enabled
+      flags: " -Ei"
+      line: "'^\\s*UsePAM\\s+no'"
+      path: " /etc/ssh/sshd_config"
+      result:
+    - &106
+      rule: 5.2.7 Ensure SSH root login is disabled
+      flags: " -Ei"
+      line: "'^\\s*PermitRootLogin\\s+yes'"
+      path: " /etc/ssh/sshd_config"
+      result:
+    - &107
+      rule: 5.2.8 Ensure SSH HostbasedAuthentication is disabled
+      flags: " -Ei"
+      line: "'^\\s*HostbasedAuthentication\\s+yes'"
+      path: " /etc/ssh/sshd_config"
+      result:
+    - &108
+      rule: 5.2.9 Ensure SSH PermitEmptyPasswords is disabled
+      flags: " -Ei"
+      line: "'^\\s*PermitEmptyPasswords\\s+yes'"
+      path: " /etc/ssh/sshd_config"
+      result:
+    - &109
+      rule: 5.2.10 Ensure SSH PermitUserEnvironment is disabled
+      flags: " -Ei"
+      line: "'^\\s*PermitUserEnvironment\\s+yes'"
+      path: " /etc/ssh/sshd_config"
+      result:
+    - &110
+      rule: 5.2.11 Ensure SSH IgnoreRhosts is enabled
+      flags: " -Ei"
+      line: "'^\\s*ignorerhosts\\s+no\\b'"
+      path: " /etc/ssh/sshd_config"
+      result:
+    - &112
+      rule: 5.2.14 Ensure system-wide crypto policy is not over-ridden
+      flags: " -i"
+      line: "'^\\s*CRYPTO_POLICY='"
+      path: " /etc/sysconfig/sshd"
+      result:
+    - &113
+      rule: 5.2.15 Ensure SSH warning banner is configured
+      flags: " -Ei"
+      line: "'^\\s*maxauthtries\\s+([5-9]|[1-9][0-9]+)'"
+      path: " /etc/ssh/sshd_config"
+      result:
+    - &114
+      rule: 5.2.17 Ensure SSH MaxStartups is configured
+      flags: " -Ei"
+      line: |-
+        '^\s*maxstartups\s+(((1[1-9]|[1-9][0-9][0-9]+):([0-9]+):([0-
+        9]+))|(([0-9]+):(3[1-9]|[4-9][0-9]|[1-9][0-9][0-9]+):([0-9]+))|(([0-9]+):([0-
+        9]+):(6[1-9]|[7-9][0-9]|[1-9][0-9][0-9]+)))'
+      path: " /etc/ssh/sshd_config"
+      result:
+    - &115
+      rule: 5.2.19 Ensure SSH LoginGraceTime is set to one minute or less
+      flags: " -Ei"
+      line: |-
+        '^\s*LoginGraceTime\s+(0|6[1-9]|[7-9][0-9]|[1-9][0-9][0-
+        9]+|[^1]m)'
+      path: " /etc/ssh/sshd_config"
+      result:
+    - &16
+      rule: 5.2.20 Ensure SSH Idle Timeout Interval is configured
+      flags: " -Ei"
+      line: "'^\\s*ClientAliveCountMax\\s+([1-9]|[1-9][0-9]+)\\b'"
+      path: " /etc/ssh/sshd_config"
+      result:
+    - *16
+    - &116
+      rule: 5.3.2 Ensure sudo commands use pty
+      flags: " -rPi"
+      line: "'^\\h*Defaults\\h+([^#\\n\\r]+,)?use_pty(,\\h*\\h+\\h*)*\\h*(#.*)?$'"
+      path: |2-
+         /etc/sudoers*
+
+        /etc/sudoers:Defaults
+      result: use_pty
+    - &117
+      rule: 5.3.3 Ensure sudo log file exists
+      flags: rPsi
+      line: '"^\h*Defaults\h+([^#]+,\h*)?logfile\h*=\h*(\"|\'')?\H+(\"|\'')?(,\h*\H+\h*)*\h*'
+      path: (#.*)?$" /etc/sudoers*
+    - &118
+      rule: 5.3.5 Ensure re-authentication for privilege escalation is not disabled
+        globally
+      flags: " -r"
+      line: '"^[^#].*\!authenticate"'
+      path: " /etc/sudoers*"
+      result: If any line is found with !authenticate   tag, refer to the remediation
+        procedure below.
+    - &119
+      rule: 5.3.6 Ensure sudo authentication timeout is configured correctly
+      flags: " -roP"
+      line: '"timestamp_timeout=\K[0-9]*"'
+      path: " /etc/sudoers*"
+      result: If there is ntimestamp_timeout    configured in /etc/sudoers*   then
+        the default is 5
+    - &17
+      rule: 5.3.7 Ensure access to the su command is restricted
+      flags: " -Pi"
+      line: "<group_name>"
+      path: "/etc/group"
+      result: "<group_name>:x:<GID>:"
+    - *17
+    - &120
+      rule: 5.4.2 Ensure authselect includes with-faillock
+      line: pam_faillock.so
+      path: "/etc/pam.d/password-auth"
+      result: "/etc/pam.d/system-auth"
+    - &18
+      rule: 5.5.1 Ensure password creation requirements are configured
+      flags: " -E"
+      line: "^minclass"
+      path: "/etc/security/pwquality.conf"
+      result: OR
+    - *18
+    - *18
+    - *18
+    - &19
+      rule: 5.5.2 Ensure lockout for failed password attempts is configured
+      flags: " -E"
+      line: "'^\\s*auth\\s+required\\s+pam_faillock.so\\s+'"
+      path: " /etc/pam.d/password-auth /etc/pam.d/system-auth"
+      result: 'Output should look similar to:'
+    - *19
+    - *19
+    - &121
+      rule: 5.5.3 Ensure password reuse is limited
+      flags: " -P"
+      line: |-
+        '^\h*password\h+(requisite|sufficient)\h+(pam_pwhistory\.so|pam_unix\.so)\h+(
+        [^#\n\r]+\h+)?remember=([5-9]|[1-9][0-9]+)\h*(\h+.*)?$'
+      path: " /etc/pam.d/system-"
+      result: auth
+    - &20
+      rule: 5.5.3 Ensure password reuse is limited
+      flags: " -Ei"
+      path: " /etc/login.defs"
+      result: ENCRYPT_METHOD SHA512
+      line: "'^\\s*ENCRYPT_METHOD\\s+SHA512\\b'"
+    - *20
+    - *20
+    - &21
+      rule: 5.5.3 Ensure password reuse is limited
+      flags: " -E"
+      line: PASS_MAX_DAYS
+      path: "/etc/login.defs"
+      result: PASS_MAX_DAYS 365
+    - *21
+    - &22
+      rule: 5.5.3 Ensure password reuse is limited
+      flags: " -E"
+      line: "^\\s*PASS_MIN_DAYS"
+      path: "/etc/login.defs"
+      result: PASS_MIN_DAYS 7
+    - *22
+    - &23
+      rule: 5.5.3 Ensure password reuse is limited
+      flags: " -E"
+      line: PASS_WARN_AGE
+      path: "/etc/login.defs"
+      result: PASS_WARN_AGE 7
+    - *23
+    - &122
+      rule: 5.6.2 Ensure system accounts are secured
+      line: '"^root:"'
+      path: "/etc/passwd"
+      result: "| cut -f4 -d:"
+    - &123
+      rule: 5.6.2 Ensure system accounts are secured
+      flags: " -RPi"
+      line: |-
+        '(^|^[^#]*)\s*umask\s+([0-7][0-7][01][0-7]\b|[0-7][0-7][0-7][0-
+        6]\b|[0-7][01][0-7]\b|[0-7][0-7][0-
+        6]\b|(u=[rwx]{0,3},)?(g=[rwx]{0,3},)?o=[rwx]+\b|(u=[rwx]{1,3},)?g=[^rx]{1,3}(
+        ,o=[rwx]{0,3})?\b)'
+      path: " /etc/login.defs /etc/profile* /etc/bashrc*"
+      result: No file should be returned
+- name: CentOS_8_server_2
+  facts:
+    required_packages: []
+    prohibited_packages:
+    - rule: 1.7.6 Ensure permissions on /etc/issue.net are configured
+      package: gdm
+    disabled_modules:
+    - &24
+      rule: 1.1.1.2 Ensure mounting of squashfs filesystems is disabled
+      filesystem: squashfs
+      module: squashfs
+    - &25
+      rule: 1.1.1.3 Ensure mounting of udf filesystems is disabled
+      filesystem: udf
+      module: udf
+    enabled_modules:
+    - &26
+      rule: 3.1.2 Ensure SCTP is disabled
+      filesystem: sctp
+      module: sctp
+    - &27
+      rule: 3.1.3 Ensure DCCP is disabled
+      filesystem: dccp
+      module: dccp
+    unloaded_modules:
+    - *24
+    - *25
+    - *26
+    - *27
+    blacklist_modules:
+    - *24
+    - *25
+    enabled_services:
+    - &125
+      rule: 4.1.1.2 Ensure auditd service is enabled
+      service: auditd
+    running_services: []
+    file_configurations: []
+    required_partitions:
+    - &126
+      rule: 1.1.3.1 Ensure separate partition exists for /var
+      "/var":
+      - nodev
+      - nodev
+      - noexec
+      - noexec
+      - nosuid
+      - nosuid
+    - &127
+      rule: 1.1.4.1 Ensure separate partition exists for /var/tmp
+      "/var/tmp":
+      - noexec
+      - noexec
+      - nosuid
+      - nosuid
+      - nodev
+      - nodev
+    - &128
+      rule: 1.1.5.1 Ensure separate partition exists for /var/log
+      "/var/log":
+      - nodev
+      - nodev
+      - noexec
+      - noexec
+      - nosuid
+      - nosuid
+    - &129
+      rule: 1.1.6.1 Ensure separate partition exists for /var/log/audit
+      "/var/log/audit":
+      - noexec
+      - noexec
+      - nodev
+      - nodev
+      - nosuid
+      - nosuid
+    - &130
+      rule: 1.1.7.1 Ensure separate partition exists for /home
+      "/home":
+      - nodev
+      - nodev
+      - nosuid
+      - nosuid
+      - usrquota
+      - usrquota
+      - grpquota
+      - grpquota
+    required_settings:
+    - &131
+      rule: 1.6.1.5 Ensure the SELinux mode is enforcing
+      flags: " -i"
+      line: SELINUX=enforcing
+      path: " /etc/selinux/config"
+      result: SELINUX=enforcing
+    - &132
+      rule: 4.1.2.1 Ensure audit log storage size is configured
+      flags: " -w"
+      line: '"^\s*max_log_file\s*="'
+      path: " /etc/audit/auditd.conf"
+      result: max_log_file = <MB>
+    - &133
+      rule: 4.1.2.2 Ensure audit logs are not automatically deleted
+      line: max_log_file_action
+      path: "/etc/audit/auditd.conf"
+      result: max_log_file_action = keep_logs
+    - &28
+      rule: 4.1.2.3 Ensure system is disabled when audit logs are full
+      flags: " -E"
+      line: action_mail_acct
+      path: "/etc/audit/auditd.conf"
+      result: action_mail_acct = root
+    - *28
+    - *28
+    - &134
+      rule: 4.1.3.20 Ensure the audit configuration is immutable
+      line: '"^\s*[^#]"'
+      path: "/etc/audit/rules.d/*.rules"
+      result: "| tail -1"
+    - &111
+      rule: 5.2.11 Ensure SSH IgnoreRhosts is enabled
+      flags: " -Ei"
+      line: "'^\\s*x11forwarding\\s+yes'"
+      path: " /etc/ssh/sshd_config"
+      result:
+    - &135
+      rule: 5.2.13 Ensure SSH AllowTcpForwarding is disabled
+      flags: " -Ei"
+      line: "'^\\s*AllowTcpForwarding\\s+yes'"
+      path: " /etc/ssh/sshd_config"
+      result:
+    - &136
+      rule: 5.3.4 Ensure users must provide password for escalation
+      flags: " -r"
+      line: '"^[^#].*NOPASSWD"'
+      path: " /etc/sudoers*"
+      result: If any line is found refer to the remediation procedure below.
+- name: CentOS_8_workstation_1
+  facts:
+    required_packages:
+    - *29
+    - *30
+    - *31
+    - *32
+    - *33
+    - *34
+    - *35
+    prohibited_packages:
+    - *36
+    - *37
+    - *38
+    - *39
+    - *40
+    - *41
+    - *42
+    - *43
+    - *44
+    - *45
+    - *46
+    - *47
+    - *48
+    - *5
+    - *6
+    - *7
+    - *49
+    - *50
+    - *51
+    - *52
+    - *53
+    - *54
+    - *55
+    - *8
+    - *9
+    - *56
+    - *57
+    - *10
+    disabled_modules:
+    - *1
+    enabled_modules: []
+    unloaded_modules:
+    - *1
+    blacklist_modules:
+    - *1
+    enabled_services:
+    - *11
+    - *4
+    - *4
+    - *5
+    - *6
+    - *6
+    - *7
+    - *8
+    - *58
+    - *9
+    - *59
+    - *10
+    - *60
+    - *61
+    - *62
+    - *63
+    - *64
+    - *65
+    - *66
+    running_services:
+    - *4
+    - *10
+    file_configurations:
+    - *67
+    - *68
+    - *69
+    - *70
+    - *71
+    - *72
+    - *73
+    - *74
+    - *75
+    - *76
+    - *77
+    - *78
+    - *79
+    - *80
+    - *81
+    - *82
+    - *83
+    - *84
+    required_partitions:
+    - *11
+    - rule: 1.1.8.1 Ensure nodev option set on /dev/shm partition
+      "/dev/shm":
+      - nodev
+      - noexec
+      - nosuid
+    required_settings:
+    - *85
+    - *12
+    - *12
+    - *4
+    - *86
+    - *87
+    - *88
+    - *89
+    - *90
+    - *91
+    - *92
+    - *93
+    - *94
+    - *95
+    - *96
+    - *13
+    - *13
+    - *97
+    - *98
+    - *14
+    - *14
+    - *15
+    - *15
+    - *15
+    - *99
+    - *100
+    - *101
+    - *102
+    - *103
+    - *104
+    - *105
+    - *106
+    - *107
+    - *108
+    - *109
+    - *110
+    - *111
+    - *112
+    - *113
+    - *114
+    - *115
+    - *16
+    - *16
+    - *116
+    - *117
+    - *118
+    - *119
+    - *17
+    - *17
+    - *120
+    - *18
+    - *18
+    - *18
+    - *18
+    - *19
+    - *19
+    - *19
+    - *121
+    - *20
+    - *20
+    - *20
+    - *21
+    - *21
+    - *22
+    - *22
+    - *23
+    - *23
+    - *122
+    - *123
+- name: CentOS_8_workstation_2
+  facts:
+    required_packages: []
+    prohibited_packages:
+    - *124
+    disabled_modules:
+    - *24
+    - *25
+    enabled_modules:
+    - *2
+    - *26
+    - *27
+    unloaded_modules:
+    - *24
+    - *25
+    - *2
+    - *26
+    - *27
+    blacklist_modules:
+    - *24
+    - *25
+    enabled_services:
+    - *3
+    - *3
+    - *125
+    running_services: []
+    file_configurations: []
+    required_partitions:
+    - *126
+    - *127
+    - *128
+    - *129
+    - *130
+    required_settings:
+    - *131
+    - *132
+    - *133
+    - *28
+    - *28
+    - *28
+    - *134
+    - *135
+    - *136

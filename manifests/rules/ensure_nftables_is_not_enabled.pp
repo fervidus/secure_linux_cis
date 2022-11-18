@@ -13,7 +13,8 @@ class secure_linux_cis::rules::ensure_nftables_is_not_enabled (
     service { 'nftables':
       ensure   => stopped,
       schedule => 'harden_schedule',
-      enable   => mask,
+      # enable   => mask, # TODO set to mask
+      enable   => false, # TODO set to mask
     }
   }
 }

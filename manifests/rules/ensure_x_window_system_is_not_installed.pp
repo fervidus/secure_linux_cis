@@ -36,7 +36,7 @@ class secure_linux_cis::rules::ensure_x_window_system_is_not_installed (
     $facts['xorg_x11_packages'].each |String $package| {
       if ! ($package in $exclude) {
         package { $package:
-          ensure   => purged,
+          ensure   => absent,
         }
       }
     }

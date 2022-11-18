@@ -21,7 +21,7 @@ class secure_linux_cis::rules::ensure_the_mcs_translation_service_mcstrans_is_no
     }
     default: {
       package { 'mcstrans':
-        ensure   => purged,
+        ensure   => absent,
       }
     }
   }

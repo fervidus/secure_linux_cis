@@ -21,7 +21,7 @@ class secure_linux_cis::rules::ensure_setroubleshoot_is_not_installed {
     }
     default: {
       package { 'setroubleshoot':
-        ensure   => purged,
+        ensure   => absent,
       }
     }
   }

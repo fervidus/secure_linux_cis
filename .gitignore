@@ -28,3 +28,7 @@
 /spec/fixtures/litmus_inventory.yaml
 .modules
 .resource_types
+bolt-debug.log
+.rerun.json
+.plan_cache.json
+.task_cache.json

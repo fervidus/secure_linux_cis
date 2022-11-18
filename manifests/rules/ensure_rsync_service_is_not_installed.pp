@@ -15,6 +15,6 @@
 #   include secure_linux_cis::ensure_rsync_service_is_not_installed
 class secure_linux_cis::rules::ensure_rsync_service_is_not_installed {
   package { 'rsync':
-    ensure => purged,
+    ensure => absent,
   }
 }
