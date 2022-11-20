@@ -10,10 +10,6 @@
 #
 # @summary  Ensure outbound and established connections are configured (Not Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_outbound_and_established_connections_are_configured
 class secure_linux_cis::rules::ensure_outbound_and_established_connections_are_configured {
   case $secure_linux_cis::firewall {
     'iptables': {

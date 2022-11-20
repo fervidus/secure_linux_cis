@@ -2,7 +2,5 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_ufw_is_uninstalled_or_disabled_with_iptables
 class secure_linux_cis::rules::ensure_ufw_is_uninstalled_or_disabled_with_iptables {
 }

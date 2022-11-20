@@ -13,11 +13,6 @@
 #
 # @summary 3 Ensure SSH LoginGraceTime is set to one minute or less (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param login_grace_time Login grace time
-#
-# @example
-#   include secure_linux_cis::ensure_ssh_logingracetime_is_set_to_one_minute_or_less
 class secure_linux_cis::rules::ensure_ssh_logingracetime_is_set_to_one_minute_or_less {
   include secure_linux_cis::sshd_service
 

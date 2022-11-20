@@ -13,10 +13,6 @@
 #
 # @summary Ensure permissions on SSH public host key files are configured (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::rules::ensure_permissions_on_ssh_public_host_key_files_are_configured
 class secure_linux_cis::rules::ensure_permissions_on_ssh_public_host_key_files_are_configured {
   include secure_linux_cis::sshd_service
 

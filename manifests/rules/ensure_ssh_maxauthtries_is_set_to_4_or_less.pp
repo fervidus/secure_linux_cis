@@ -11,11 +11,6 @@
 #
 # @summary  Ensure SSH MaxAuthTries is set to 4 or less (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param max_auth_tries How many authorization attempts to allow
-#
-# @example
-#   include secure_linux_cis::ensure_ssh_maxauthtries_is_set_to_4_or_less
 class secure_linux_cis::rules::ensure_ssh_maxauthtries_is_set_to_4_or_less {
   include secure_linux_cis::sshd_service
 

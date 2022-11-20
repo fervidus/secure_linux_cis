@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_events_that_modify_the_systems_network_environment_are_collected
 class secure_linux_cis::rules::ensure_events_that_modify_the_systems_network_environment_are_collected {
   $system_audit_rules = @("SYSTEMAUDITRULES"/L)
     -a always,exit -F arch=b64 -S sethostname -S setdomainname -k system-locale

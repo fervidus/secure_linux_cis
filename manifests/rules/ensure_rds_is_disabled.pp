@@ -12,10 +12,6 @@
 #
 # @summary  Ensure RDS is disabled (Not Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_rds_is_disabled
 class secure_linux_cis::rules::ensure_rds_is_disabled {
   realize File['/etc/modprobe.d/storage_disable.conf']
 

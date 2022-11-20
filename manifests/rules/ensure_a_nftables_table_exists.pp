@@ -1,4 +1,5 @@
 # @api private
+#
 #  Ensure DHCP Server is not enabled (Scored)
 #
 # Description:
@@ -10,8 +11,4 @@
 #
 # @summary  Ensure DHCP Server is not enabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_a_nftables_table_exists
 class secure_linux_cis::rules::ensure_a_nftables_table_exists {}

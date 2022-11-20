@@ -14,12 +14,6 @@
 #
 # @summary  Ensure lockout for failed password attempts is configured (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param attempts Number of attempts
-# @param lockout_time Amount of time for lockout
-#
-# @example
-#   include secure_linux_cis::ensure_lockout_for_failed_password_attempts_is_configured
 class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_configured {
   $os = "${facts['os']['name']}${facts['os']['release']['major']}"
   case $facts['os']['family'] {

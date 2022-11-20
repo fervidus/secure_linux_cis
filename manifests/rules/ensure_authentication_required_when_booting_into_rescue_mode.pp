@@ -1,17 +1,12 @@
 # @api private
 #  Ensure authentication required for single user mode (Scored)
 #
-#
 # Description:
 # ingle user mode (rescue mode) is used for recovery when the system detects an issue during boot or by
 # manual selection from the bootloader.
 #
 # @summary  Ensure authentication required for single user mode (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_authentication_required_when_booting_into_rescue_mode
 class secure_linux_cis::rules::ensure_authentication_required_when_booting_into_rescue_mode {
   $os = "${facts['os']['name']}${facts['os']['release']['major']}"
   case $os {

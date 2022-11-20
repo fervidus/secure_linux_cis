@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_local_interactive_users_home_directories_are_mode_750_or_more_restrictive
 class secure_linux_cis::rules::ensure_local_interactive_users_home_directories_are_mode_750_or_more_restrictive {
   file { 'audit_local_interactive_users_home_directories_are_mode_750_or_more_restrictive':
     ensure => file,

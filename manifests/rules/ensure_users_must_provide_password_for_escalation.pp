@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_users_must_provide_password_for_escalation
 class secure_linux_cis::rules::ensure_users_must_provide_password_for_escalation {
   # TODO
 }

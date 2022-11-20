@@ -1,7 +1,6 @@
 # @api private
 #  Ensure auditd is installed (Scored)
 #
-#
 # Description:
 # auditd is the userspace component to the Linux Auditing System. It's responsible for
 # writing audit records to the disk
@@ -12,10 +11,6 @@
 #
 # @summary  Ensure auditd is installed (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_auditd_is_installed
 class secure_linux_cis::rules::ensure_auditd_is_installed {
   # Note: CIS also wants package auditd installed. This is a dependency of
   # audispd-plugins, and also managed by

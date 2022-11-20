@@ -10,11 +10,6 @@
 #
 # @summary  Ensure inactive password lock is 30 days or less (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param pass_inactive_days Password inactive days
-#
-# @example
-#   include secure_linux_cis::ensure_inactive_password_lock_is_30_days_or_less
 class secure_linux_cis::rules::ensure_inactive_password_lock_is_30_days_or_less {
   if $secure_linux_cis::pass_inactive_days > 30 {
     fail('pass_inactive_days should be set to a value of 30 or less')

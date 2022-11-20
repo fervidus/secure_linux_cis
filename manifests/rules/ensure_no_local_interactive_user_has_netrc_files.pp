@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_no_local_interactive_user_has_netrc_files
 class secure_linux_cis::rules::ensure_no_local_interactive_user_has_netrc_files {
   file { 'audit_no_local_interactive_user_has_netrc_files':
     ensure => file,

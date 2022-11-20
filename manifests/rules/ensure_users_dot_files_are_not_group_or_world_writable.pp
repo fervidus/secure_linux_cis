@@ -1,16 +1,11 @@
 # @api private
 # 0 Ensure users' dot files are not group or world writable (Scored)
 #
-#
 # Description:
 # While the system administrator can establish secure permissions for users' "dot" files, the users can easily override these.
 #
 # @summary 0 Ensure users' dot files are not group or world writable (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_users_dot_files_are_not_group_or_world_writable
 class secure_linux_cis::rules::ensure_users_dot_files_are_not_group_or_world_writable {
   file { '/usr/share/cis_scripts/dot_file_wr.sh':
     ensure  => file,

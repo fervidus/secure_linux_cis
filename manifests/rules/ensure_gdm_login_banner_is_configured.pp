@@ -1,16 +1,11 @@
 # @api private
 #  Ensure GDM login banner is configured (Scored)
 #
-#
 # Description:
 # GDM is the GNOME Display Manager which handles graphical login for GNOME based systems.
 #
 # @summary  Ensure GDM login banner is configured (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_gdm_login_banner_is_configured
 class secure_linux_cis::rules::ensure_gdm_login_banner_is_configured {
   if $facts['gdm_installed'] {
     file { '/etc/dconf/profile/gdm':

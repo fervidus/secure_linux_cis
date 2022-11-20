@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_local_interactive_users_own_their_home_directories
 class secure_linux_cis::rules::ensure_local_interactive_users_own_their_home_directories {
   file { 'audit_local_interactive_users_own_their_home_directories':
     ensure => file,

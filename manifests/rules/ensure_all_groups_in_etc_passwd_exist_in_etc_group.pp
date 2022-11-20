@@ -1,16 +1,12 @@
 # @api private
-# 5 Ensure all groups in /etc/passwd exist in /etc/group (Scored)
 #
+# 5 Ensure all groups in /etc/passwd exist in /etc/group (Scored)
 #
 # Description:
 # Over time, system administration errors and changes can lead to groups being defined in /etc/passwd but not in /etc/group
 #
 # @summary 5 Ensure all groups in /etc/passwd exist in /etc/group (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_all_groups_in_etc_passwd_exist_in_etc_group
 class secure_linux_cis::rules::ensure_all_groups_in_etc_passwd_exist_in_etc_group {
   file { '/usr/share/cis_scripts/pwd_group_exist.sh':
     ensure  => file,

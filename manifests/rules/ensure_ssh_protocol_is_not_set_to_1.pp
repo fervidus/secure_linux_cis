@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_ssh_protocol_is_not_set_to_1
 class secure_linux_cis::rules::ensure_ssh_protocol_is_not_set_to_1 {
   include secure_linux_cis::sshd_service
 

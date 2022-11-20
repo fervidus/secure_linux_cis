@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_last_logged_in_user_display_is_disabled
 class secure_linux_cis::rules::ensure_last_logged_in_user_display_is_disabled {
   # Ensure gnome configruation exists
   file { ['/etc/dconf', '/etc/dconf/profile', '/etc/dconf/db', '/etc/dconf/db/gdm.d']:

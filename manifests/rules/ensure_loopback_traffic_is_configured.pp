@@ -13,10 +13,6 @@
 #
 # @summary  Ensure loopback traffic is configured (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_loopback_traffic_is_configured
 class secure_linux_cis::rules::ensure_loopback_traffic_is_configured {
   case $secure_linux_cis::firewall {
     'iptables': {

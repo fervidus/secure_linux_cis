@@ -10,10 +10,6 @@
 #
 # @summary  Ensure DHCP Server is not enabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_ufw_is_installed
 class secure_linux_cis::rules::ensure_ufw_is_installed {
   class { 'ufw':
     manage_package => true,

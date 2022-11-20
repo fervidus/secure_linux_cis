@@ -16,10 +16,6 @@
 #
 # @summary  Ensure session initiation information is collected (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_session_initiation_information_is_collected
 class secure_linux_cis::rules::ensure_session_initiation_information_is_collected {
   Class['secure_linux_cis::rules::ensure_session_initiation_information_is_collected']
   ~> Class['secure_linux_cis::reboot']

@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_cryptographic_mechanisms_are_used_to_protect_the_integrity_of_audit_tools
 class secure_linux_cis::rules::ensure_cryptographic_mechanisms_are_used_to_protect_the_integrity_of_audit_tools {
   $system_audit_rules = @(SYSTEMAUDITRULES/L)
     # Audit Tools

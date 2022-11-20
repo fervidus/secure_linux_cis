@@ -1,16 +1,11 @@
 # @api private
 # 4 Ensure no users have .rhosts files (Scored)
 #
-#
 # Description:
 # While no .rhosts files are shipped by default, users can easily create them.
 #
 # @summary 4 Ensure no users have .rhosts files (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_no_users_have_rhosts_files
 class secure_linux_cis::rules::ensure_no_users_have_rhosts_files {
   file { '/usr/share/cis_scripts/rhost.sh':
     ensure  => file,

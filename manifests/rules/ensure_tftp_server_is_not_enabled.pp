@@ -13,10 +13,6 @@
 #
 # @summary 0 Ensure tftp server is not enabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_tftp_server_is_not_enabled
 class secure_linux_cis::rules::ensure_tftp_server_is_not_enabled {
   service { 'tftp.socket':
     ensure => stopped,

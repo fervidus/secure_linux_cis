@@ -16,10 +16,6 @@
 #
 # @summary  Ensure SSH LogLevel is set to INFO (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_ssh_loglevel_is_set_to_info
 class secure_linux_cis::rules::ensure_ssh_loglevel_is_set_to_info {
   include secure_linux_cis::sshd_service
 

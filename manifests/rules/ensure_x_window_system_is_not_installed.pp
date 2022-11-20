@@ -11,19 +11,13 @@
 #
 # @summary  Ensure X Window System is not installed (Scored)
 #
-# @param enforced
 #   Should this rule be enforced - defaults to false - test before enabling as some xorg packages may be required as dependancies.
 #   See exclude param if you need to exclude packages from removal
 #
-# @param exclude
 #   Optional Array of xorg packages to NOT remove. This may want to be used if specific xorg packages are required as dependancies.
 #   Must match exactly with the package name obtained through the xorg_x11_packages fact.
 #
-# @example
-#   include secure_linux_cis::ensure_x_window_system_is_not_installed
 #
-# @example Using hiera
-# secure_linux_cis::rules::ensure_x_window_system_is_not_installed::enforced:: true
 # secure_linux_cis::rules::ensure_x_window_system_is_not_installed::exclude:
 #   - 'xorg-x11-font-utils'
 #   - 'xorg-x11-fonts-Type1'

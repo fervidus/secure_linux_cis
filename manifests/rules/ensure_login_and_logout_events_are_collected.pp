@@ -13,10 +13,6 @@
 #
 # @summary  Ensure login and logout events are collected (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_login_and_logout_events_are_collected
 class secure_linux_cis::rules::ensure_login_and_logout_events_are_collected {
   Class['secure_linux_cis::rules::ensure_login_and_logout_events_are_collected']
   ~> Class['secure_linux_cis::reboot']

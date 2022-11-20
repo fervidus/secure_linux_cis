@@ -21,10 +21,6 @@
 #
 # @summary  Ensure /etc/hosts.deny is configured (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_etc_hosts_deny_is_configured
 class secure_linux_cis::rules::ensure_etc_hosts_deny_is_configured {
   $deny_content = join($secure_linux_cis::host_deny_rules, "\n")
   # This file manages both benchmarks 3_4_3 and 3_4_5

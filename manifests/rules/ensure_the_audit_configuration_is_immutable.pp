@@ -14,10 +14,6 @@
 #
 # @summary 8 Ensure the audit configuration is immutable (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_the_audit_configuration_is_immutable
 class secure_linux_cis::rules::ensure_the_audit_configuration_is_immutable {
   Class['secure_linux_cis::rules::ensure_the_audit_configuration_is_immutable']
   ~> Class['secure_linux_cis::reboot']

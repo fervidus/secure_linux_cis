@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_only_authorized_groups_are_assigned_ownership_of_audit_log_files
 class secure_linux_cis::rules::ensure_only_authorized_groups_are_assigned_ownership_of_audit_log_files {
   exec { 'Fix log files group ownership':
     command => 'find $(dirname $(awk -F"=" \'/^\s*log_file/ {print $2}\' /etc/audit/auditd.conf | xargs)) -type f \( ! -group adm -a ! -group root \) -exec chgrp adm {} +',

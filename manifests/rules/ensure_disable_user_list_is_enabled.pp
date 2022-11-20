@@ -10,10 +10,6 @@
 #
 # @summary  Ensure discard services are not enabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_disable_user_list_is_enabled
 class secure_linux_cis::rules::ensure_disable_user_list_is_enabled {
   ini_setting { 'disable-user-list':
     ensure  => present,

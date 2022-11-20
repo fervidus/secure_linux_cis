@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_local_interactive_user_home_directories_exist
 class secure_linux_cis::rules::ensure_local_interactive_user_home_directories_exist {
   file { 'audit_local_interactive_user_home_directories_exist':
     ensure => file,

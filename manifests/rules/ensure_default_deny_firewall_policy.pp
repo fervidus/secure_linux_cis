@@ -11,10 +11,6 @@
 #
 # @summary  Ensure default deny firewall policy (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_default_deny_firewall_policy
 class secure_linux_cis::rules::ensure_default_deny_firewall_policy {
   case $secure_linux_cis::firewall {
     'iptables': {

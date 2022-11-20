@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_no_local_interactive_user_has_forward_files
 class secure_linux_cis::rules::ensure_no_local_interactive_user_has_rhosts_files {
   file { 'audit_no_local_interactive_user_has_rhosts_files':
     ensure => file,

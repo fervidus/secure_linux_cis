@@ -12,10 +12,6 @@
 #
 # @summary  Ensure IPv6 redirects are not accepted (Not Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_ipv6_redirects_are_not_accepted
 class secure_linux_cis::rules::ensure_ipv6_redirects_are_not_accepted {
   # This is addresed by ensure_icmp_redirects_are_not_accepted
 }

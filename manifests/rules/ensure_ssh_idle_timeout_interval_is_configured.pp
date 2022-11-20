@@ -18,12 +18,6 @@
 #
 # @summary 2 Ensure SSH Idle Timeout Interval is configured (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param client_alive_interval Client alive interval to use
-# @param client_alive_count_max Maximum specificed client alive count
-#
-# @example
-#   include secure_linux_cis::ensure_ssh_idle_timeout_interval_is_configured
 class secure_linux_cis::rules::ensure_ssh_idle_timeout_interval_is_configured {
   include secure_linux_cis::sshd_service
 

@@ -1,16 +1,11 @@
 # @api private
 # 0 Ensure noexec option set on removable media partitions (Not Scored)
 #
-#
 # Description:
 # The noexec mount option specifies that the filesystem cannot contain executable binaries.
 #
 # @summary 0 Ensure noexec option set on removable media partitions (Not Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_noexec_option_set_on_removable_media_partitions
 class secure_linux_cis::rules::ensure_noexec_option_set_on_removable_media_partitions {
   # Let's look at the name of each one and try to guess if it's removable
   $facts['mountpoints'].each | Tuple $mnt | {

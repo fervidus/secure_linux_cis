@@ -14,12 +14,6 @@
 #
 # @summary  Ensure chrony is configured (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param time_servers Array of valid NTP Time servers
-# @param time_sync Which NTP program to use
-#
-# @example
-#   include secure_linux_cis::ensure_chrony_is_configured
 class secure_linux_cis::rules::ensure_chrony_is_configured {
   case $facts['os']['family'] {
     'RedHat': {

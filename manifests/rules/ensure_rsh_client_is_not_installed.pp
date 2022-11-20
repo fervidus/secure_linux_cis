@@ -12,10 +12,6 @@
 #
 # @summary  Ensure rsh client is not installed (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_rsh_client_is_not_installed
 class secure_linux_cis::rules::ensure_rsh_client_is_not_installed {
   case $facts['os']['family'] {
     'Suse': {

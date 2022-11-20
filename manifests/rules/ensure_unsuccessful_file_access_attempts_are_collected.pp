@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_unsuccessful_file_access_attempts_are_collected
 class secure_linux_cis::rules::ensure_unsuccessful_file_access_attempts_are_collected {
   $system_audit_rules = @("SYSTEMAUDITRULES"/L)
     -a always,exit -F arch=b64 -S creat,open,openat,truncate,ftruncate -F exit=- EACCES -F auid>=${facts['uid_min']} -F auid!=unset -k access

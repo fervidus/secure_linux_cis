@@ -12,10 +12,6 @@
 #
 # @summary 9 Ensure telnet server is not enabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_telnet_server_is_not_enabled
 class secure_linux_cis::rules::ensure_telnet_server_is_not_enabled {
   service { 'telnet.socket':
     ensure => stopped,

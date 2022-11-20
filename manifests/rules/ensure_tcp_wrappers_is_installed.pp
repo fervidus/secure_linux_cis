@@ -12,10 +12,6 @@
 #
 # @summary  Ensure TCP Wrappers is installed (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_tcp_wrappers_is_installed
 class secure_linux_cis::rules::ensure_tcp_wrappers_is_installed {
   package { $secure_linux_cis::tcp_wrappers_package:
     ensure   => installed,

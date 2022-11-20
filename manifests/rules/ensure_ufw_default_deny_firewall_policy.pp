@@ -10,10 +10,6 @@
 #
 # @summary 1 Ensure IMAP and POP3 server is not enabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_ufw_default_deny_firewall_policy
 class secure_linux_cis::rules::ensure_ufw_default_deny_firewall_policy {
   include secure_linux_cis::rules::ensure_ufw_is_installed
 }

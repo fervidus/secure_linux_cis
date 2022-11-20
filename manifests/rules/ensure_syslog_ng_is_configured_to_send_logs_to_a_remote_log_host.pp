@@ -12,12 +12,6 @@
 #
 # @summary  Ensure syslog-ng is configured to send logs to a remote log host (Not Scored)
 #
-# @param enforced Should this rule be enforced
-# @param logging How logging is done
-# @param logging_host Which host should logging be sent to
-#
-# @example
-#   include secure_linux_cis::ensure_syslog_ng_is_configured_to_send_logs_to_a_remote_log_host
 class secure_linux_cis::rules::ensure_syslog_ng_is_configured_to_send_logs_to_a_remote_log_host {
   Class['secure_linux_cis::rules::ensure_syslog_ng_is_configured_to_send_logs_to_a_remote_log_host']
   ~> Class['secure_linux_cis::reboot']

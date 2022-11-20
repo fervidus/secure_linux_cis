@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_ipv4_default_deny_firewall_policy
 class secure_linux_cis::rules::ensure_ipv4_default_deny_firewall_policy {
   # Create default drop policy for ipv6
   $filter_rules = [

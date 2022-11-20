@@ -10,10 +10,6 @@
 #
 # @summary  Ensure local login warning banner is configured properly (Not Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_local_login_warning_banner_is_configured_properly
 class secure_linux_cis::rules::ensure_local_login_warning_banner_is_configured_properly {
   if $facts['issue_os'] {
     notify { 'issue':

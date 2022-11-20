@@ -11,11 +11,6 @@
 #
 # @summary  Ensure syslog-ng default file permissions configured (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param logging How logging is done
-#
-# @example
-#   include secure_linux_cis::ensure_syslog_ng_default_file_permissions_configured
 class secure_linux_cis::rules::ensure_syslog_ng_default_file_permissions_configured {
   Class['secure_linux_cis::rules::ensure_syslog_ng_default_file_permissions_configured']
   ~> Class['secure_linux_cis::reboot']

@@ -12,10 +12,6 @@
 #
 # @summary 4 Ensure SNMP Server is not enabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_net_snmp_is_not_installed
 class secure_linux_cis::rules::ensure_net_snmp_is_not_installed {
   package { 'net-snmp':
     ensure => absent,

@@ -1,4 +1,5 @@
 # @api private
+#
 #  Audit system file permissions (Not Scored)
 #
 # Description:
@@ -14,10 +15,6 @@
 #
 # @summary  Audit system file permissions (Not Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::audit_system_file_permissions
 # class secure_linux_cis::rules::audit_system_file_permissions (
 #   Boolean $enforced = true,
 # ) {

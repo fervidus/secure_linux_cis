@@ -12,10 +12,6 @@
 #
 # @summary  Ensure mounting of squashfs filesystems is disabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_mounting_of_squashfs_filesystems_is_disabled
 class secure_linux_cis::rules::ensure_mounting_of_squashfs_filesystems_is_disabled {
   realize File['/etc/modprobe.d/filesystem_disable.conf']
 

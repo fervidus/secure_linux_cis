@@ -16,10 +16,6 @@
 #
 # @summary 4 Ensure file deletion events by users are collected (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_file_deletion_events_by_users_are_collected
 class secure_linux_cis::rules::ensure_file_deletion_events_by_users_are_collected {
   Class['secure_linux_cis::rules::ensure_file_deletion_events_by_users_are_collected']
   ~> Class['secure_linux_cis::reboot']

@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_rsyslog_is_not_configured_to_recieve_logs_from_a_remote_client
 class secure_linux_cis::rules::ensure_rsyslog_is_not_configured_to_recieve_logs_from_a_remote_client {
   $facts['rsyslog_configuration_files'].each | String $path | {
     file { "Remove ModLoad on ${path}":

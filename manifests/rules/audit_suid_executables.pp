@@ -1,6 +1,6 @@
 # @api private
-# 3 Audit SUID executables (Not Scored)
 #
+# 3 Audit SUID executables (Not Scored)
 #
 # Description:
 # The owner of a file can set the file's permissions to run with the owner's or group's permissions, even if the user running the
@@ -9,10 +9,6 @@
 #
 # @summary 3 Audit SUID executables (Not Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::audit_suid_executables
 #
 # NOTE: Not feasible for programatic enforcement
 #

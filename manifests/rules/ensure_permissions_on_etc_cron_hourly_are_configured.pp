@@ -16,10 +16,6 @@
 #
 # @summary  Ensure permissions on /etc/cron.hourly are configured (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_permissions_on_etc_cron_hourly_are_configured
 class secure_linux_cis::rules::ensure_permissions_on_etc_cron_hourly_are_configured {
   file { '/etc/cron.hourly':
     ensure => directory,

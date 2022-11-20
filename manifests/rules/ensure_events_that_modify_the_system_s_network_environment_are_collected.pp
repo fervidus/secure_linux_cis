@@ -25,10 +25,6 @@
 #
 # @summary  Ensure events that modify the system's network environment are collected (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_events_that_modify_the_system_s_network_environment_are_collected
 class secure_linux_cis::rules::ensure_events_that_modify_the_system_s_network_environment_are_collected {
   Class['secure_linux_cis::rules::ensure_events_that_modify_the_system_s_network_environment_are_collected']
   ~> Class['secure_linux_cis::reboot']

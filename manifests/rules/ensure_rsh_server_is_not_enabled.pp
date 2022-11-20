@@ -9,10 +9,6 @@
 #
 # @summary 7 Ensure rsh server is not enabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_rsh_server_is_not_enabled
 class secure_linux_cis::rules::ensure_rsh_server_is_not_enabled {
   $rsh_services = [
     'rsh.socket',

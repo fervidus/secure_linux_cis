@@ -1,4 +1,5 @@
 # @api private
+#
 #  Ensure mounting of hfsplus filesystems is disabled (Scored)
 #
 # Description:
@@ -10,10 +11,6 @@
 #
 # @summary  Ensure mounting of hfsplus filesystems is disabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::disable_usb_storage
 class secure_linux_cis::rules::disable_usb_storage {
   realize File['/etc/modprobe.d/storage_disable.conf']
 

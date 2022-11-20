@@ -12,10 +12,6 @@
 #
 # @summary  Ensure FTP Server is not enabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_ftp_server_is_not_enabled
 class secure_linux_cis::rules::ensure_ftp_server_is_not_installed {
   package { 'ftp':
     ensure => absent,

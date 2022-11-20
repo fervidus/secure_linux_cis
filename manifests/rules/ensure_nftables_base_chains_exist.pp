@@ -11,8 +11,4 @@
 #
 # @summary  Ensure nftables base chains exist
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_nftables_base_chains_exist
 class secure_linux_cis::rules::ensure_nftables_base_chains_exist {}

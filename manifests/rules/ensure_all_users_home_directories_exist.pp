@@ -1,16 +1,11 @@
 # @api private
 #  Ensure all users' home directories exist (Scored)
 #
-#
 # Description:
 # Users can be defined in /etc/passwd without a home directory or with a home directory that does not actually exist.
 #
 # @summary  Ensure all users' home directories exist (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_all_users_home_directories_exist
 class secure_linux_cis::rules::ensure_all_users_home_directories_exist {
   file { '/usr/share/cis_scripts/home_directory.sh':
     ensure  => file,

@@ -15,10 +15,6 @@
 #
 # @summary  Ensure events that modify user/group information are collected (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_events_that_modify_user_group_information_are_collected
 class secure_linux_cis::rules::ensure_events_that_modify_user_group_information_are_collected {
   Class['secure_linux_cis::rules::ensure_events_that_modify_user_group_information_are_collected']
   ~> Class['secure_linux_cis::reboot']

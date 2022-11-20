@@ -1,16 +1,11 @@
 # @api private
 # 3 Ensure users' .netrc Files are not group or world accessible
 #
-#
 # Description:
 # While the system administrator can establish secure permissions for users' .netrc files, the users can easily override these.
 #
 # @summary 3 Ensure users' .netrc Files are not group or world accessible
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_users_netrc_files_are_not_group_or_world_accessible
 class secure_linux_cis::rules::ensure_users_netrc_files_are_not_group_or_world_accessible {
   file { '/usr/share/cis_scripts/netrc_access.sh':
     ensure  => file,

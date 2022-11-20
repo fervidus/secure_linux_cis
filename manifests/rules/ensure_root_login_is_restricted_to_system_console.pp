@@ -7,8 +7,7 @@
 # #
 # # @summary  Ensure root login is restricted to system console (Not Scored)
 # #
-# # @param enforced Should this rule be enforced
-# #
+# # #
 # # @example
 # #   include secure_linux_cis::ensure_root_login_is_restricted_to_system_console
 #

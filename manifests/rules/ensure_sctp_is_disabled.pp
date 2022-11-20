@@ -14,10 +14,6 @@
 #
 # @summary  Ensure SCTP is disabled (Not Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_sctp_is_disabled
 class secure_linux_cis::rules::ensure_sctp_is_disabled {
   realize File['/etc/modprobe.d/storage_disable.conf']
 

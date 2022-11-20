@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_the_selinux_mode_is_enforcing_or_permissive
 class secure_linux_cis::rules::ensure_the_selinux_mode_is_enforcing_or_permissive {
   file_line { 'selinux_enforce':
     path     => '/etc/selinux/config',

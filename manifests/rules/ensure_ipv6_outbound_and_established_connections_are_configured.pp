@@ -10,10 +10,6 @@
 #
 # @summary  Ensure outbound and established connections are configured (Not Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_ipv6_outbound_and_established_connections_are_configured
 class secure_linux_cis::rules::ensure_ipv6_outbound_and_established_connections_are_configured {
   firewall { '004 accept new and established ouput IPv6 tcp connections':
     chain    => 'OUTPUT',

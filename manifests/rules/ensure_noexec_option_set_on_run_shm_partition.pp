@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_noexec_option_set_on_run_shm_partition
 class secure_linux_cis::rules::ensure_noexec_option_set_on_run_shm_partition {
   if $facts['mountpoints']['/run/shm'] {
     augeas { '/etc/fstab - noexec on /run/shm':

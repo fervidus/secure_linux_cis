@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_use_of_privileged_commands_are_collected
 class secure_linux_cis::rules::ensure_use_of_privileged_commands_are_collected {
   file { 'audit_use_of_privileged_commands_are_collected':
     ensure => file,

@@ -18,10 +18,6 @@
 #
 # @summary 0 Ensure discretionary access control permission modification events are collected (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_discretionary_access_control_permission_modification_events_are_collected
 class secure_linux_cis::rules::ensure_discretionary_access_control_permission_modification_events_are_collected {
   Class['secure_linux_cis::rules::ensure_discretionary_access_control_permission_modification_events_are_collected']
   ~> Class['secure_linux_cis::reboot']

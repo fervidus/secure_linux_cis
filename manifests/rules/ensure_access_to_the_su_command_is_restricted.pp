@@ -1,7 +1,6 @@
 # @api private
 #  Ensure access to the su command is restricted (Scored)
 #
-#
 # Description:
 # The su command allows a user to run a command or shell as another user. The program has been superseded by sudo , which allows for more
 # granular control over privileged access. Normally, the su command can be executed by any user. By uncommenting the pam_wheel.so
@@ -9,10 +8,6 @@
 #
 # @summary  Ensure access to the su command is restricted (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_access_to_the_su_command_is_restricted
 class secure_linux_cis::rules::ensure_access_to_the_su_command_is_restricted {
   group { 'su_group':
     ensure  => present,

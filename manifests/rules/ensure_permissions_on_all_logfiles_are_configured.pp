@@ -11,11 +11,6 @@
 #
 # @summary Ensure permissions on all logfiles are configured (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param exclude_logs Array of logs to exclude from permissions enforcement
-#
-# @example
-#   include secure_linux_cis::ensure_permissions_on_all_logfiles_are_configured
 class secure_linux_cis::rules::ensure_permissions_on_all_logfiles_are_configured (
   Boolean $enforced = true,
   Array[Stdlib::Unixpath] $exclude_logs = $secure_linux_cis::exclude_logs,

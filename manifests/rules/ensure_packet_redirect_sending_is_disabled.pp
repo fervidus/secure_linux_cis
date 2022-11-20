@@ -11,10 +11,6 @@
 #
 # @summary  Ensure packet redirect sending is disabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_packet_redirect_sending_is_disabled
 class secure_linux_cis::rules::ensure_packet_redirect_sending_is_disabled {
   sysctl { 'net.ipv4.conf.all.send_redirects':
     value    => 0,

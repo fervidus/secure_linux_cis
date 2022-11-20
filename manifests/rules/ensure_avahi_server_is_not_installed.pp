@@ -13,10 +13,6 @@
 #
 # @summary  Ensure Avahi Server is not enabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_avahi_server_is_not_enabled
 class secure_linux_cis::rules::ensure_avahi_server_is_not_installed {
   package { ['avahi-autoipd', 'avahi']:
     ensure => absent,

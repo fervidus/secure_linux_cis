@@ -21,10 +21,6 @@
 #
 # @summary 3 Ensure successful file system mounts are collected (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_successful_file_system_mounts_are_collected
 class secure_linux_cis::rules::ensure_successful_file_system_mounts_are_collected {
   Class['secure_linux_cis::rules::ensure_successful_file_system_mounts_are_collected']
   ~> Class['secure_linux_cis::reboot']

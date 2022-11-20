@@ -7,10 +7,6 @@
 #
 # @summary 0 Ensure no world writable files exist (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_no_world_writable_files_exist
 class secure_linux_cis::rules::ensure_no_world_writable_files_exist {
   file { '/usr/share/cis_scripts/ensure_no_world_writable.sh':
     ensure  => file,

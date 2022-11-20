@@ -10,9 +10,5 @@
 #
 # @summary  Ensure iptables is installed (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_iptables_rules_exist_for_all_open_ports
 class secure_linux_cis::rules::ensure_iptables_rules_exist_for_all_open_ports {
 }

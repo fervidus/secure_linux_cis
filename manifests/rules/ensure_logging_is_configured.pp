@@ -11,11 +11,6 @@
 #
 # @summary  Ensure logging is configured (Not Scored)
 #
-# @param enforced Should this rule be enforced
-# @param logging How logging is done
-#
-# @example
-#   include secure_linux_cis::ensure_logging_is_configured
 class secure_linux_cis::rules::ensure_logging_is_configured {
   Class['secure_linux_cis::rules::ensure_logging_is_configured']
   ~> Class['secure_linux_cis::reboot']

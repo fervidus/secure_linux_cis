@@ -10,10 +10,6 @@
 #
 # @summary  Ensure time services are not enabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_time_services_are_not_enabled
 class secure_linux_cis::rules::ensure_time_services_are_not_enabled {
   service { 'time-dgram':
     ensure => stopped,

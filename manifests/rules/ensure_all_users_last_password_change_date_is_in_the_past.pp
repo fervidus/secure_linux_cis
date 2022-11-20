@@ -9,10 +9,6 @@
 #
 # @summary  Ensure all users last password change date is in the past (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_all_users_last_password_change_date_is_in_the_past
 class secure_linux_cis::rules::ensure_all_users_last_password_change_date_is_in_the_past {
   # local_users fact may be undef
   $local_users = pick($facts['local_users'], {})

@@ -1,4 +1,3 @@
-# @param enforced Should this rule be enforced
 # @api private
 # Ensure only strong MAC algorithms are used
 #
@@ -13,8 +12,6 @@
 # SSH tunnel and capture credentials and information
 # @summary Only enable strong MAC algorithms
 #
-# @example
-#   include secure_linux_cis::ensure_only_strong_mac_algorithms_are_used
 class secure_linux_cis::rules::ensure_only_strong_mac_algorithms_are_used {
   include secure_linux_cis::sshd_service
 

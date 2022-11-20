@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_kernel_module_loading_unloading_and_modification_is_collected
 class secure_linux_cis::rules::ensure_kernel_module_loading_unloading_and_modification_is_collected {
   $system_audit_rules = @("SYSTEMAUDITRULES"/L)
     -a always,exit -F arch=b64 -S init_module,finit_module,delete_module,create_module,query_module -F auid>=${facts['uid_min']} -F auid!=unset -k kernel_modules

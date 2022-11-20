@@ -14,11 +14,6 @@
 #
 # @summary 5 Ensure mail transfer agent is configured for local-only mode (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param mta Which Mail Transfer program to use
-#
-# @example
-#   include secure_linux_cis::ensure_mail_transfer_agent_is_configured_for_local_only_mode
 class secure_linux_cis::rules::ensure_mail_transfer_agent_is_configured_for_local_only_mode {
   case $secure_linux_cis::mta {
     'postfix':

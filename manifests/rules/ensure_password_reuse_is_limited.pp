@@ -11,11 +11,6 @@
 #
 # @summary  Ensure password reuse is limited (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param past_passwords Number of previous passwords
-#
-# @example
-#   include secure_linux_cis::ensure_password_reuse_is_limited
 class secure_linux_cis::rules::ensure_password_reuse_is_limited {
   if $secure_linux_cis::past_passwords < 5 {
     fail('CIS recommends setting old password limit to previous 5.')

@@ -6,10 +6,6 @@
 #
 # @summary 2 Ensure no ungrouped files or directories exist (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_no_ungrouped_files_or_directories_exist
 class secure_linux_cis::rules::ensure_no_ungrouped_files_or_directories_exist {
   file { '/usr/share/cis_scripts/ensure_no_ungrouped.sh':
     ensure  => file,

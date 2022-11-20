@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_firewalld_is_installed
 class secure_linux_cis::rules::ensure_firewalld_is_installed {
   class { 'firewalld':
     default_zone => $secure_linux_cis::default_firewalld_zone,

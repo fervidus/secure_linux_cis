@@ -1,7 +1,6 @@
 # @api private
 #  Ensure default user umask is 027 or more restrictive (Scored)
 #
-#
 # Description:
 # The default umask determines the permissions of files created by users. The user creating the file has the discretion of making
 # their files and directories readable by others via the chmod command. Users who wish to allow their files and directories to be
@@ -10,10 +9,6 @@
 #
 # @summary  Ensure default user umask is 027 or more restrictive (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_default_user_umask_is_configured
 class secure_linux_cis::rules::ensure_default_user_umask_is_configured {
   $bashrc = $facts['os']['family'] ? {
     'Suse'   => '/etc/bash.bashrc',

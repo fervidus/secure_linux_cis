@@ -1,4 +1,3 @@
-# @param enforced Should this rule be enforced
 # @api private
 # Ensure AppArmor is enabled in the bootloader configuration (Scored)
 #
@@ -7,8 +6,6 @@
 #
 # @summary Ensure AppArmor is enabled in the bootloader configuration (Scored)
 #
-# @example
-#   include secure_linux_cis::ensure_apparmor_is_not_disabled_in_bootloader_configuration
 class secure_linux_cis::rules::ensure_apparmor_is_not_disabled_in_bootloader_configuration {
   kernel_parameter { 'apparmor=1':
     ensure   => present,

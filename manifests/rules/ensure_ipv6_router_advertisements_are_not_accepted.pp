@@ -11,10 +11,6 @@
 #
 # @summary  Ensure IPv6 router advertisements are not accepted (Not Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_ipv6_router_advertisements_are_not_accepted
 class secure_linux_cis::rules::ensure_ipv6_router_advertisements_are_not_accepted {
   sysctl { 'net.ipv6.conf.all.accept_ra':
     value    => 0,

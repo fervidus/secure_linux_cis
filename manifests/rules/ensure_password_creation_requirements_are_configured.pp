@@ -23,15 +23,6 @@
 #
 # @summary  Ensure password creation requirements are configured (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param minlen Minimum length
-# @param dcredit D Credit
-# @param ucredit U Credit
-# @param ocredit O Credit
-# @param lcredit L Credit
-#
-# @example
-#   include secure_linux_cis::ensure_password_creation_requirements_are_configured
 class secure_linux_cis::rules::ensure_password_creation_requirements_are_configured {
   $services = $facts['os']['family'] ? {
     'RedHat' => [

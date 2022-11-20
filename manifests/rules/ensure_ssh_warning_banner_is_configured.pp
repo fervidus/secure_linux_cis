@@ -11,10 +11,6 @@
 #
 # @summary 5 Ensure SSH warning banner is configured (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_ssh_warning_banner_is_configured
 class secure_linux_cis::rules::ensure_ssh_warning_banner_is_configured {
   include secure_linux_cis::sshd_service
 

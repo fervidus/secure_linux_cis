@@ -13,10 +13,6 @@
 #
 # @summary Ensure IPv6 loopback traffic is configured (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::rules::ensure_ipv6_loopback_traffic_is_configured
 class secure_linux_cis::rules::ensure_ipv6_loopback_traffic_is_configured {
   firewall { '001 IPv6 accept all input to lo interface':
     chain    => 'INPUT',

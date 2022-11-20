@@ -10,11 +10,6 @@
 #
 # @summary  Ensure inactive password lock is 30 days or less (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param pass_inactive_days Password inactive days
-#
-# @example
-#   include secure_linux_cis::ensure_interactive_boot_is_not_enabled
 class secure_linux_cis::rules::ensure_interactive_boot_is_not_enabled {
   # Set the default inactivity period
   # The command 'useradd -D -f 30' does the same as editting

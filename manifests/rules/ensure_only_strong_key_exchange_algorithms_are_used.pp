@@ -10,14 +10,8 @@
 # method may be weak because too few bits are used, or the hashing algorithm is considered
 # too weak. Using weak algorithms could expose connections to man-in-the-middle attacks
 #
-#
 # @summary Make sure only approved key exchange methods are used
 #
-# @param enforced Should this rule be enforced
-# @param approved_kex
-#
-# @example
-#   include secure_linux_cis::rules::ensure_only_strong_key_exchange_algorithms_are_used
 class secure_linux_cis::rules::ensure_only_strong_key_exchange_algorithms_are_used {
   include secure_linux_cis::sshd_service
 

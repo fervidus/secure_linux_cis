@@ -1,16 +1,11 @@
 # @api private
 #  Ensure default user shell timeout is 900 seconds or less (Scored)
 #
-#
 # Description:
 # The default TMOUT determines the shell timeout for users. The TMOUT value is measured in seconds.
 #
 # @summary  Ensure default user shell timeout is 900 seconds or less (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_default_user_shell_timeout_is_configured
 class secure_linux_cis::rules::ensure_default_user_shell_timeout_is_configured {
   $bashrc = $facts['os']['family'] ? {
     'RedHat' => '/etc/bashrc',

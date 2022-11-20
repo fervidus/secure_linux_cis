@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_mounting_of_fat_filesystems_is_limited
 class secure_linux_cis::rules::ensure_mounting_of_fat_filesystems_is_limited {
   $system_audit_rules = @(SYSTEMAUDITRULES/L)
     install fat /bin/true

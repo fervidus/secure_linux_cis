@@ -6,10 +6,6 @@
 #
 # @summary 1 Ensure no unowned files or directories exist (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_no_unowned_files_or_directories_exist
 class secure_linux_cis::rules::ensure_no_unowned_files_or_directories_exist {
   file { '/usr/share/cis_scripts/ensure_no_unowned.sh':
     ensure  => file,

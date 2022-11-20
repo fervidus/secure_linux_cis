@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_at_cron_is_restricted_to_authorized_users
 class secure_linux_cis::rules::ensure_at_cron_is_restricted_to_authorized_users {
   file { ['/etc/cron.deny', '/etc/at.deny']:
     ensure => absent,

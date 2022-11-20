@@ -1,7 +1,6 @@
 # @api private
 #  Ensure XD/NX support is enabled (Not Scored)
 #
-#
 # Description:
 # Recent processors in the x86 family support the ability to prevent code execution on a per memory page basis.
 # Generically and on AMD processors, this ability is called No Execute (NX), while on Intel processors it is called Execute Disable (XD).
@@ -11,10 +10,6 @@
 #
 # @summary  Ensure XD/NX support is enabled (Not Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_xd_nx_support_is_enabled
 class secure_linux_cis::rules::ensure_xd_nx_support_is_enabled {
   if(! $facts['nx_dmesg']) {
     notify { 'NX':

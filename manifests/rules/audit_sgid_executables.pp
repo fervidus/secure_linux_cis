@@ -1,6 +1,6 @@
 # @api private
-# 4 Audit SGID executables (Not Scored)
 #
+# 4 Audit SGID executables (Not Scored)
 #
 # Description:
 # The owner of a file can set the file's permissions to run with the owner's or group's permissions, even if the user running
@@ -9,10 +9,6 @@
 #
 # @summary 4 Audit SGID executables (Not Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::audit_sgid_executables
 #
 # NOTE: Not feasible for programatic enforcement
 #

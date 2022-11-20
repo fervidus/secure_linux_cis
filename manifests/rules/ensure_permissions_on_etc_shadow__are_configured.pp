@@ -7,10 +7,6 @@
 #
 # @summary  Ensure permissions on /etc/shadow are configured (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_permissions_on_etc_shadow__are_configured
 class secure_linux_cis::rules::ensure_permissions_on_etc_shadow__are_configured (
   Boolean $enforced = true,
 ) {

@@ -11,11 +11,6 @@
 #
 # @summary  Ensure audit log storage size is configured (Not Scored)
 #
-# @param enforced Should this rule be enforced
-# @param max_log_file The maximum size of the audit log file (MB) for your organization's policy.
-#
-# @example
-#   include secure_linux_cis::ensure_audit_log_storage_size_is_configured
 class secure_linux_cis::rules::ensure_audit_log_storage_size_is_configured {
   # require secure_linux_cis::rules::ensure_auditd_service_is_enabled
   file_line { 'max_log_file':

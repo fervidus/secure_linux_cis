@@ -12,11 +12,6 @@
 #
 # @summary  Ensure minimum days between password changes is 7 or more (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param pass_min_days Password minimum days
-#
-# @example
-#   include secure_linux_cis::ensure_minimum_days_between_password_changes_is_configured
 class secure_linux_cis::rules::ensure_minimum_days_between_password_changes_is_configured {
   include secure_linux_cis::rules::ensure_minimum_days_between_password_changes_is_7_or_more
 }

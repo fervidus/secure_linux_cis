@@ -13,10 +13,6 @@
 #
 # @summary  Ensure iptables is not enabled
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_iptables_is_not_enabled
 class secure_linux_cis::rules::ensure_iptables_is_not_enabled {
   package { 'iptables-services':
     ensure => absent,

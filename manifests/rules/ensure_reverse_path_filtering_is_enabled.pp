@@ -15,10 +15,6 @@
 #
 # @summary  Ensure Reverse Path Filtering is enabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_reverse_path_filtering_is_enabled
 class secure_linux_cis::rules::ensure_reverse_path_filtering_is_enabled {
   sysctl { 'net.ipv4.conf.all.rp_filter':
     value    => 1,

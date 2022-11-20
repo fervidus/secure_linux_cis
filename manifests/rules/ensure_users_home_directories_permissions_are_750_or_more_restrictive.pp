@@ -1,16 +1,11 @@
 # @api private
 #  Ensure users' home directories permissions are 750 or more restrictive (Scored)
 #
-#
 # Description:
 # While the system administrator can establish secure permissions for users' home directories, the users can easily override these.
 #
 # @summary  Ensure users' home directories permissions are 750 or more restrictive (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_users_home_directories_permissions_are_750_or_more_restrictive
 class secure_linux_cis::rules::ensure_users_home_directories_permissions_are_750_or_more_restrictive {
   file { '/usr/share/cis_scripts/home_dir_perm.sh':
     ensure  => file,

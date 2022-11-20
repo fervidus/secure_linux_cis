@@ -20,10 +20,6 @@
 #
 # @summary  Ensure at/cron is restricted to authorized users (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_at_cron_is_restricted_to_authorized_users
 class secure_linux_cis::rules::ensure_cron_is_restricted_to_authorized_users {
   file { '/etc/cron.allow':
     ensure => file,

@@ -1,17 +1,12 @@
 # @api private
 # 1 Ensure sticky bit is set on all world-writable directories (Scored)
 #
-#
 # Description:
 # Setting the sticky bit on world writable directories prevents users from deleting or renaming files in that directory
 # that are not owned by them.
 #
 # @summary 1 Ensure sticky bit is set on all world-writable directories (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_sticky_bit_is_set_on_all_world_writable_directories
 class secure_linux_cis::rules::ensure_sticky_bit_is_set_on_all_world_writable_directories {
   file { '/usr/share/cis_scripts/ensure_sticky_ww.sh':
     ensure  => file,

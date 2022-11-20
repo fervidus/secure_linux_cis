@@ -12,10 +12,6 @@
 #
 # @summary  Ensure wireless interfaces are disabled (Not Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_wireless_interfaces_are_disabled
 class secure_linux_cis::rules::ensure_wireless_interfaces_are_disabled {
   $facts['networking']['interfaces'].each | String $name, Hash $attributes | {
     if $name =~ /wlan/ {

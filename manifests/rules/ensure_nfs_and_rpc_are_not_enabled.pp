@@ -11,10 +11,6 @@
 #
 # @summary  Ensure NFS and RPC are not enabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_nfs_and_rpc_are_not_enabled
 class secure_linux_cis::rules::ensure_nfs_and_rpc_are_not_enabled {
   $nfs_services = [
     'nfs',

@@ -12,10 +12,6 @@
 #
 # @summary  Ensure CUPS is not enabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_cups_is_not_enabled
 class secure_linux_cis::rules::ensure_cups_is_not_installed {
   package { 'cups':
     ensure => absent,

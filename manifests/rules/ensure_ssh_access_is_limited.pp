@@ -28,14 +28,6 @@
 #
 # @summary 4 Ensure SSH access is limited (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param allow_users Which users to allow
-# @param allow_groups Which groups to allow
-# @param deny_users Which users to deny
-# @param deny_groups Which groups to deny
-#
-# @example
-#   include secure_linux_cis::ensure_ssh_access_is_limited
 class secure_linux_cis::rules::ensure_ssh_access_is_limited {
   include secure_linux_cis::sshd_service
 

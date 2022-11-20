@@ -14,11 +14,6 @@
 #
 # @summary  Ensure rsyslog or syslog-ng is installed (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param logging How logging is done
-#
-# @example
-#   include secure_linux_cis::ensure_rsyslog_or_syslog_ng_is_installed
 class secure_linux_cis::rules::ensure_rsyslog_or_syslog_ng_is_installed {
   if $secure_linux_cis::logging == 'rsyslog' {
     package { 'rsyslog':

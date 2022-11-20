@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_ipv4_loopback_traffic_is_configured
 class secure_linux_cis::rules::ensure_ipv4_loopback_traffic_is_configured {
   firewall { '001 accept all input to lo interface':
     chain   => 'INPUT',

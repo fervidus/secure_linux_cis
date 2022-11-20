@@ -6,10 +6,6 @@
 #
 # @summary 2 Ensure separate partition exists for /var/log/audit (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_separate_partition_exists_for_var_log_audit
 class secure_linux_cis::rules::ensure_separate_partition_exists_for_var_log_audit {
   unless $facts['mountpoints']['/var/log/audit'] {
     notify { 'vla':

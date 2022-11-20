@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_iptables_services_package_is_not_installed
 class secure_linux_cis::rules::ensure_iptables_services_package_is_not_installed {
   service { ['iptables', 'ip6tables']:
     ensure => stopped,

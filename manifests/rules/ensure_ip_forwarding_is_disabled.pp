@@ -10,10 +10,6 @@
 #
 # @summary  Ensure IP forwarding is disabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_ip_forwarding_is_disabled
 class secure_linux_cis::rules::ensure_ip_forwarding_is_disabled {
   sysctl { 'net.ipv4.ip_forward':
     value    => 0,

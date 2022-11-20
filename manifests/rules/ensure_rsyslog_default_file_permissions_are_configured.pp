@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_rsyslog_default_file_permissions_are_configured
 class secure_linux_cis::rules::ensure_rsyslog_default_file_permissions_are_configured {
   file { '/etc/rsyslog.conf':
     ensure => file,

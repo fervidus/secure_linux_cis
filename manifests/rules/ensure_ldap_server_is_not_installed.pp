@@ -11,10 +11,6 @@
 #
 # @summary  Ensure LDAP server is not enabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_ldap_server_is_not_enabled
 class secure_linux_cis::rules::ensure_ldap_server_is_not_installed {
   package { 'openldap-servers':
     ensure => absent,

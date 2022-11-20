@@ -11,11 +11,6 @@
 #
 # @summary  Ensure password expiration warning days is 7 or more (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param pass_warn_days Password warning days
-#
-# @example
-#   include secure_linux_cis::ensure_password_expiration_warning_days_is_7_or_more
 class secure_linux_cis::rules::ensure_password_expiration_warning_days_is_7_or_more {
   if $secure_linux_cis::pass_warn_days < 7 {
     fail('PASS_WARN_AGE should be set to a value of 7 or more')

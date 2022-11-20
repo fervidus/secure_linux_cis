@@ -12,11 +12,6 @@
 #
 # @summary  Ensure password expiration is 365 days or less (Scored)
 #
-# @param enforced Should this rule be enforced
-# @param pass_max_days Password max days
-#
-# @example
-#   include secure_linux_cis::ensure_password_expiration_is_365_days_or_less
 class secure_linux_cis::rules::ensure_password_expiration_is_365_days_or_less {
   # validate parameter
   if $secure_linux_cis::pass_max_days > 365 {

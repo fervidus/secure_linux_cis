@@ -11,10 +11,6 @@
 #
 # @summary  Ensure firewall rules exist for all open ports (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_ipv6_firewall_rules_exist_for_all_open_ports
 class secure_linux_cis::rules::ensure_ipv6_firewall_rules_exist_for_all_open_ports {
   firewall { '010 open IPv6 ssh port':
     chain    => 'INPUT',

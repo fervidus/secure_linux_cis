@@ -10,10 +10,6 @@
 #
 # @summary  Ensure system is disabled when audit logs are full (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_system_is_disabled_when_audit_logs_are_full
 class secure_linux_cis::rules::ensure_system_is_disabled_when_audit_logs_are_full {
   # require secure_linux_cis::rules::ensure_auditd_service_is_enabled
   file_line { 'space_left_action':

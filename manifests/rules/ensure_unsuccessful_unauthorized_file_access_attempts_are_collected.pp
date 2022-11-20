@@ -16,10 +16,6 @@
 #
 # @summary 1 Ensure unsuccessful unauthorized file access attempts are collected (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_unsuccessful_unauthorized_file_access_attempts_are_collected
 class secure_linux_cis::rules::ensure_unsuccessful_unauthorized_file_access_attempts_are_collected {
   Class['secure_linux_cis::rules::ensure_unsuccessful_unauthorized_file_access_attempts_are_collected']
   ~> Class['secure_linux_cis::reboot']

@@ -1,7 +1,6 @@
 # @api private
 #  Ensure permissions on /etc/crontab are configured (Scored)
 #
-#
 # Description:
 # The /etc/crontab file is used by cron to control its own jobs. The commands in
 # this item make sure that root is the user and group owner of the file and that
@@ -16,10 +15,6 @@
 #
 # @summary  Ensure permissions on /etc/crontab are configured (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_permissions_on_etc_crontab_are_configured
 class secure_linux_cis::rules::ensure_permissions_on_etc_crontab_are_configured {
   file { '/etc/crontab':
     ensure => directory,

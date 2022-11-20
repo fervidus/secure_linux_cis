@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_core_dump_backtraces_are_disabled
 class secure_linux_cis::rules::ensure_core_dump_backtraces_are_disabled {
   file_line { 'Ensure core dump backtraces are disabled':
     ensure => present,

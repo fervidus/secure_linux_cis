@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_local_interactive_user_dot_files_are_not_group_or_world_writable
 class secure_linux_cis::rules::ensure_local_interactive_user_dot_files_are_not_group_or_world_writable {
   file { 'audit_local_interactive_user_dot_files_are_not_group_or_world_writable':
     ensure => file,

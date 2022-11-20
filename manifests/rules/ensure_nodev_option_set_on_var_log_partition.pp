@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_nodev_option_set_on_var_log_partition
 class secure_linux_cis::rules::ensure_nodev_option_set_on_var_log_partition {
   if $facts['mountpoints']['/var/log'] {
     augeas { '/etc/fstab - nodev on /var/log':

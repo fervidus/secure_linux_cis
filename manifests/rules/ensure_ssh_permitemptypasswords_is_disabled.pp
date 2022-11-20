@@ -9,10 +9,6 @@
 #
 # @summary  Ensure SSH PermitEmptyPasswords is disabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_ssh_permitemptypasswords_is_disabled
 class secure_linux_cis::rules::ensure_ssh_permitemptypasswords_is_disabled {
   include secure_linux_cis::sshd_service
 

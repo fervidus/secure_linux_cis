@@ -1,17 +1,12 @@
 # @api private
 # 6 Ensure no duplicate UIDs exist (Scored)
 #
-#
 # Description:
 # Although the useradd program will not let you create a duplicate User ID (UID),
 # it is possible for an administrator to manually edit the /etc/passwd file and change the UID field.
 #
 # @summary 6 Ensure no duplicate UIDs exist (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_no_duplicate_uids_exist
 class secure_linux_cis::rules::ensure_no_duplicate_uids_exist {
   file { '/usr/share/cis_scripts/dup_uid.sh':
     ensure  => file,

@@ -10,10 +10,6 @@
 #
 # @summary 1 Ensure IMAP and POP3 server is not enabled (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::ensure_imap_and_pop3_server_are_not_installed
 class secure_linux_cis::rules::ensure_imap_and_pop3_server_are_not_installed {
   package { ['dovecot-imapd','dovecot-pop3d']:
     ensure => absent,

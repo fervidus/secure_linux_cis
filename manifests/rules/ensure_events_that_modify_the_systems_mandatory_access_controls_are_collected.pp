@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_events_that_modify_the_systems_mandatory_access_controls_are_collected
 class secure_linux_cis::rules::ensure_events_that_modify_the_systems_mandatory_access_controls_are_collected {
   $system_audit_rules = @(SYSTEMAUDITRULES/L)
     -w /etc/selinux/ -p wa -k MAC-policy

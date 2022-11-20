@@ -10,11 +10,6 @@
 #
 # @summary Make sure only approved ciphers are used
 #
-# @param enforced Should this rule be enforced
-# @param approved_ciphers
-#
-# @example
-#   include secure_linux_cis::rules::ensure_only_strong_ciphers_are_used
 class secure_linux_cis::rules::ensure_only_strong_ciphers_are_used {
   include secure_linux_cis::sshd_service
 

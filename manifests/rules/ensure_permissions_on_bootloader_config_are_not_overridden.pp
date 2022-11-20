@@ -2,8 +2,6 @@
 #
 # A description of what this class does
 #
-# @example
-#   include secure_linux_cis::rules::ensure_permissions_on_bootloader_config_are_not_overridden
 class secure_linux_cis::rules::ensure_permissions_on_bootloader_config_are_not_overridden {
   $grub_config = @(GRUBCONTENT/L)
     if [ "x${grub_cfg}" != "x" ]; then

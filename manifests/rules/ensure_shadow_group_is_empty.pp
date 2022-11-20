@@ -1,17 +1,12 @@
 # @api private
 # Ensure shadow group is empty (Scored)
 #
-#
 # Description:
 # The shadow group allows system programs which require access the ability to read the
 # /etc/shadow file. No users should be assigned to the shadow group.
 #
 # @summary Ensure shadow group is empty (Scored)
 #
-# @param enforced Should this rule be enforced
-#
-# @example
-#   include secure_linux_cis::rules::ensure_shadow_group_is_empty
 class secure_linux_cis::rules::ensure_shadow_group_is_empty {
   unless $facts['shadowgroup'].empty {
     notify { 'shadow':
