@@ -1,5 +1,9 @@
 # Changelog
 
+## Release 4.0.0
+
+* Simplified main API
+
 ## Release 3.2.1
 
 * Slowly becoming usable again
