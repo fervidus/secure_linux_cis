@@ -140,9 +140,19 @@ class secure_linux_cis (
   }
 
   # Build rules to enforce
-  $enforced_rules = $base_rules.map | String $line | {
+  $base_rules_normalized = $base_rules.map | String $line | {
     "secure_linux_cis::rules::${line}"
-  } # + $include_rules - $exclude_rules
+  }
+
+  $include_rules_normalized = $include_rules.map | String $line | {
+    "secure_linux_cis::rules::${line}"
+  }
+
+  $exclude_rules_normalized = $exclude_rules.map | String $line | {
+    "secure_linux_cis::rules::${line}"
+  }
+
+  $enforced_rules = $base_rules_normalized + $include_rules_normalized - $exclude_rules_normalized
 
   file { '/usr/share/cis_scripts':
     ensure   => directory,

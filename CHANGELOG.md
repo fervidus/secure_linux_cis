@@ -3,6 +3,7 @@
 ## Release 4.0.0
 
 * Simplified main API
+* Added back include and exclude rules
 
 ## Release 3.2.1
 
