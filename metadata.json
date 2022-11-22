@@ -99,9 +99,9 @@
   ],
   "operatingsystem_support": [
     {
-      "operatingsystem": "Aliyun",
+      "operatingsystem": "AlmaLinux",
       "operatingsystemrelease": [
-        "2"
+        "8"
       ]
     },
     {
@@ -111,22 +111,22 @@
       ]
     },
     {
-      "operatingsystem": "AlmaLinux",
+      "operatingsystem": "CentOS",
       "operatingsystemrelease": [
-        "8"
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "10",
+        "11"
       ]
     },
     {
       "operatingsystem": "OracleLinux",
       "operatingsystemrelease": [
-        "7",
-        "8"
-      ]
-    },
-    {
-      "operatingsystem": "AlmaLinux",
-      "operatingsystemrelease": [
-        "8"
+        "7"
       ]
     },
     {
@@ -138,21 +138,6 @@
       ]
     },
     {
-      "operatingsystem": "CentOS",
-      "operatingsystemrelease": [
-        "7",
-        "8",
-        "9"
-      ]
-    },
-    {
-      "operatingsystem": "Debian",
-      "operatingsystemrelease": [
-        "10",
-        "11"
-      ]
-    },
-    {
       "operatingsystem": "SLES",
       "operatingsystemrelease": [
         "15"
@@ -161,8 +146,6 @@
     {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
-        "14.04",
-        "16.04",
         "18.04",
         "20.04",
         "22.04"
