@@ -3,7 +3,7 @@
 # @summary Ensure default user shell timeout is configured 
 #
 class secure_linux_cis::rules::ensure_default_user_shell_timeout_is_configured {
-  $bashrc = $facts['os']['family'] ? {
+  $bashrc = $facts['osfamily'] ? {
     'RedHat' => '/etc/bashrc',
     'Suse'   => '/etc/bash.bashrc',
     'Debian' => '/etc/bash.bashrc',
@@ -27,7 +27,7 @@ class secure_linux_cis::rules::ensure_default_user_shell_timeout_is_configured {
   # processed. This to avoid the message 'TMOUT: readonly variable' at
   # login. Unfortunately, different distributions parse these files in
   # different orders.
-  $readonly_file = "${facts['os']['family']}${facts['os']['release']['major']}" ? {
+  $readonly_file = "${facts['osfamily']}${facts['os']['release']['major']}" ? {
     'RedHat8' => '/etc/profile',
     /RedHat/  => '/etc/bashrc',
     default   => '/etc/profile',

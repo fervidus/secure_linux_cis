@@ -3,7 +3,7 @@
 # @summary Ensure password creation requirements are configured 
 #
 class secure_linux_cis::rules::ensure_password_creation_requirements_are_configured {
-  $services = $facts['os']['family'] ? {
+  $services = $facts['osfamily'] ? {
     'RedHat' => [
       'system-auth',
       'password-auth',
@@ -25,7 +25,7 @@ class secure_linux_cis::rules::ensure_password_creation_requirements_are_configu
     # By default this is already installed on RedHat, but not on Debian
     # We just make certain it is installed on either OS, as this package
     # provides /etc/security/pwquality.conf
-    $libpwquality = $facts['os']['family'] ? {
+    $libpwquality = $facts['osfamily'] ? {
       'Suse'   => 'libpwquality',
       'RedHat' => 'libpwquality',
       'Debian' => 'libpam-pwquality',

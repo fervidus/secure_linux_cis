@@ -3,7 +3,7 @@
 # @summary Ensure chrony is configured 
 #
 class secure_linux_cis::rules::ensure_chrony_is_configured {
-  case $facts['os']['family'] {
+  case $facts['osfamily'] {
     'RedHat': {
       $config = '/etc/sysconfig/chronyd'
       $content = 'OPTIONS="-u chrony"'
@@ -13,7 +13,7 @@ class secure_linux_cis::rules::ensure_chrony_is_configured {
       $content = 'DAEMON_OPTS="-u _chrony"'
     }
     default: {
-      warning ("Chrony check is not supported on os family ${facts['os']['family']}.")
+      warning ("Chrony check is not supported on os family ${facts['osfamily']}.")
     }
   }
   if $secure_linux_cis::time_sync == 'chrony' {

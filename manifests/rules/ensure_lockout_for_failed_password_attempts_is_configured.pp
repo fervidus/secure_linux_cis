@@ -4,7 +4,7 @@
 #
 class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_configured {
   $os = "${facts['os']['name']}${facts['os']['release']['major']}"
-  case $facts['os']['family'] {
+  case $facts['osfamily'] {
     'Debian': {
       pam { 'pam_tally2 common-auth':
         ensure    => present,

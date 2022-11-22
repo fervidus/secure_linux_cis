@@ -11,7 +11,7 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_gshadow__are_configured
   Boolean $enforced = true,
 ) {
   if $enforced {
-    case $facts['os']['family'] {
+    case $facts['osfamily'] {
       'RedHat': {
         file { '/etc/gshadow-':
           ensure   => file,
@@ -31,7 +31,7 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_gshadow__are_configured
         }
       }
       default: {
-        warning ("gshadow- configuration not supported on os family ${facts['os']['family']}.")
+        warning ("gshadow- configuration not supported on os family ${facts['osfamily']}.")
       }
     }
   }

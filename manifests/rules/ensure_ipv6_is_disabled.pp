@@ -12,7 +12,7 @@
 #
 class secure_linux_cis::rules::ensure_ipv6_is_disabled {
   unless $secure_linux_cis::ipv6_enabled {
-    if $facts['os']['family'] == 'RedHat' and $facts['os']['release']['major'] == '8' {
+    if $facts['osfamily'] == 'RedHat' and $facts['os']['release']['major'] == '8' {
       kernel_parameter { 'ipv6.disable=1':
         ensure => present,
       }
