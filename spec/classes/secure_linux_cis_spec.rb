@@ -20,8 +20,6 @@ describe 'secure_linux_cis' do
       let(:params) do
         {
           'time_servers'      => ['tick.usno.navy.mil', 'tock.usno.navy.mil'],
-          'profile_type'      => 'server',
-          'enforcement_level' => '1',
         }
       end
 
@@ -42,8 +40,7 @@ describe 'secure_linux_cis' do
       let(:params) do
         {
           'time_servers'      => ['tick.usno.navy.mil', 'tock.usno.navy.mil'],
-          'profile_type'      => 'server',
-          'enforcement_level' => '2',
+          'enforcement_level' => 2,
         }
       end
 
@@ -65,7 +62,6 @@ describe 'secure_linux_cis' do
         {
           'time_servers'      => ['tick.usno.navy.mil', 'tock.usno.navy.mil'],
           'profile_type'      => 'workstation',
-          'enforcement_level' => '1',
         }
       end
 
@@ -87,7 +83,7 @@ describe 'secure_linux_cis' do
         {
           'time_servers'      => ['tick.usno.navy.mil', 'tock.usno.navy.mil'],
           'profile_type'      => 'workstation',
-          'enforcement_level' => '2',
+          'enforcement_level' => 2,
         }
       end
 
