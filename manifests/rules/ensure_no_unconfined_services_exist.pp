@@ -1,10 +1,6 @@
 # @api private
-#  Ensure no unconfined daemons exist (Scored)
 #
-# Description:
-# Unconfined processes run in unconfined domains.
-#
-# @summary  Ensure no unconfined services exist (Scored)
+# @summary Ensure no unconfined services exist 
 #
 class secure_linux_cis::rules::ensure_no_unconfined_services_exist {
   if $facts['unconf_services'] {

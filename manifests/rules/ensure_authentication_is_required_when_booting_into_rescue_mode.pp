@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure authentication is required when booting into rescue mode 
 #
 class secure_linux_cis::rules::ensure_authentication_is_required_when_booting_into_rescue_mode {
   $system_audit_rules = @(SYSTEMAUDITRULES/L)

@@ -1,11 +1,6 @@
 # @api private
-#  Ensure permissions on /etc/shadow are configured (Scored)
 #
-# Description:
-# The /etc/shadow file is used to store the information about user accounts that is critical to the
-# security of those accounts, such as the hashed password and other security information.
-#
-# @summary  Ensure permissions on /etc/shadow are configured (Scored)
+# @summary Ensure permissions on /etc/shadow- are configured 
 #
 class secure_linux_cis::rules::ensure_permissions_on_etc_shadow_dash_are_configured {
   $os = "${facts['os']['name']}${facts['os']['release']['major']}"

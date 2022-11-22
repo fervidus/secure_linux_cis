@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure rsyslog is not configured to recieve logs from a remote client 
 #
 class secure_linux_cis::rules::ensure_rsyslog_is_not_configured_to_recieve_logs_from_a_remote_client {
   $facts['rsyslog_configuration_files'].each | String $path | {

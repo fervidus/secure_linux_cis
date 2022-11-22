@@ -1,15 +1,6 @@
 # @api private
-# Ensure permissions on all logfiles are configured (Scored)
-
-# Description:
-# Log files stored in /var/log/ contain logged information from many services on the system,
-# or on log hosts others as well.
 #
-# Rationale:
-# It is important to ensure that log files have the correct permissions to ensure that sensitive
-# data is archived and protected.
-#
-# @summary Ensure permissions on all logfiles are configured (Scored)
+# @summary Ensure permissions on all logfiles are configured 
 #
 class secure_linux_cis::rules::ensure_permissions_on_all_logfiles_are_configured (
   Boolean $enforced = true,

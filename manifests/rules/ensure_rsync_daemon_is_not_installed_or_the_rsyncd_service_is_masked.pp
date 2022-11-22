@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure rsync-daemon is not installed or the rsyncd service is masked 
 #
 class secure_linux_cis::rules::ensure_rsync_daemon_is_not_installed_or_the_rsyncd_service_is_masked {
   package { 'rsync':

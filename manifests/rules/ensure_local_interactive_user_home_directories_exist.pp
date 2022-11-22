@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure local interactive user home directories exist 
 #
 class secure_linux_cis::rules::ensure_local_interactive_user_home_directories_exist {
   file { 'audit_local_interactive_user_home_directories_exist':

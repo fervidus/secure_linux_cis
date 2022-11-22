@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure events that modify the system's Mandatory Access Controls are collected 
 #
 class secure_linux_cis::rules::ensure_events_that_modify_the_systems_mandatory_access_controls_are_collected {
   $system_audit_rules = @(SYSTEMAUDITRULES/L)

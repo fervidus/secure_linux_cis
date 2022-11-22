@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure GDM autorun-never is not overridden 
 #
 class secure_linux_cis::rules::ensure_gdm_autorun_never_is_not_overridden {
   # TODO

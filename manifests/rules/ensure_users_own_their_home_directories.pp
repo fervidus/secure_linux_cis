@@ -1,10 +1,6 @@
 # @api private
-#  Ensure users own their home directories (Scored)
 #
-# Description:
-# The user home directory is space defined for the particular user to set local environment variables and to store personal files.
-#
-# @summary  Ensure users own their home directories (Scored)
+# @summary Ensure users own their home directories 
 #
 class secure_linux_cis::rules::ensure_users_own_their_home_directories {
   file { '/usr/share/cis_scripts/home_dir_own.sh':

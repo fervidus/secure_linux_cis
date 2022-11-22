@@ -1,20 +1,6 @@
 # @api private
-# 1 Ensure unsuccessful unauthorized file access attempts are collected (Scored)
 #
-# Description:
-# Monitor for unsuccessful attempts to access files. The parameters below are associated
-# with system calls that control creation ( creat ), opening ( open , openat ) and truncation (
-# truncate , ftruncate ) of files. An audit log record will only be written if the user is a nonprivileged
-# user (auid > = 1000), is not a Daemon event (auid=4294967295) and if the
-# system call returned EACCES (permission denied to the file) or EPERM (some other
-# permanent error associated with the specific system call). All audit records will be tagged
-# with the identifier "access."
-#
-# Rationale:
-# Failed attempts to open, create or truncate files could be an indication that an individual or
-# process is trying to gain unauthorized access to the system.
-#
-# @summary 1 Ensure unsuccessful unauthorized file access attempts are collected (Scored)
+# @summary Ensure unsuccessful unauthorized file access attempts are collected 
 #
 class secure_linux_cis::rules::ensure_unsuccessful_unauthorized_file_access_attempts_are_collected {
   Class['secure_linux_cis::rules::ensure_unsuccessful_unauthorized_file_access_attempts_are_collected']

@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure GDM screen locks when the user is idle 
 #
 class secure_linux_cis::rules::ensure_gdm_screen_locks_when_the_user_is_idle {
   # TODO

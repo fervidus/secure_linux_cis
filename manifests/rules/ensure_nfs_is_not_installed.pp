@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure NFS is not installed 
 #
 class secure_linux_cis::rules::ensure_nfs_is_not_installed {
   package { 'nfs-kernel-server':

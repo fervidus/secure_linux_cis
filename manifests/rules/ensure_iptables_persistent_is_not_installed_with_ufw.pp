@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure iptables-persistent is not installed with ufw 
 #
 class secure_linux_cis::rules::ensure_iptables_persistent_is_not_installed_with_ufw {
   package { 'iptables-persistent':

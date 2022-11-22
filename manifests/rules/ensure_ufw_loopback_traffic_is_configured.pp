@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure ufw loopback traffic is configured 
 #
 class secure_linux_cis::rules::ensure_ufw_loopback_traffic_is_configured {
   # TODO

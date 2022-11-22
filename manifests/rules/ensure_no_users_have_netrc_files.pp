@@ -1,10 +1,6 @@
 # @api private
-# 2 Ensure no users have .netrc files (Scored)
 #
-# Description:
-# The .netrc file contains data for logging into a remote host for file transfers via FTP.
-#
-# @summary 2 Ensure no users have .netrc files (Scored)
+# @summary Ensure no users have .netrc files 
 #
 class secure_linux_cis::rules::ensure_no_users_have_netrc_files {
   file { '/usr/share/cis_scripts/netrc.sh':

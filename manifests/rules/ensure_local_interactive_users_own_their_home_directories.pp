@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure local interactive users own their home directories 
 #
 class secure_linux_cis::rules::ensure_local_interactive_users_own_their_home_directories {
   file { 'audit_local_interactive_users_own_their_home_directories':

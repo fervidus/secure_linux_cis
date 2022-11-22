@@ -1,19 +1,6 @@
 # @api private
-#  Ensure events that modify date and time information are collected (Scored)
 #
-# Description:
-# Capture events where the system date and/or time has been modified. The parameters in
-# this section are set to determine if the adjtimex (tune kernel clock), settimeofday (Set
-# time, using timeval and timezone structures) stime (using seconds since 1/1/1970) or
-# clock_settime (allows for the setting of several internal clocks and timers) system calls
-# have been executed and always write an audit record to the /var/log/audit.log file upon
-# exit, tagging the records with the identifier "time-change"
-#
-# Rationale:
-# Unexpected changes in system date and/or time could be a sign of malicious activity on the
-# system.
-#
-# @summary  Ensure events that modify date and time information are collected (Scored)
+# @summary Ensure events that modify date and time information are collected 
 #
 class secure_linux_cis::rules::ensure_events_that_modify_date_and_time_information_are_collected {
   Class['secure_linux_cis::rules::ensure_events_that_modify_date_and_time_information_are_collected']

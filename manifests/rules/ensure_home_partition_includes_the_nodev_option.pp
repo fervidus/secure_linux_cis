@@ -1,11 +1,6 @@
 # @api private
-#  Ensure /var/tmp is configured (Scored)
 #
-# Description:
-# The /tmp directory is a world-writable directory used for temporary storage
-# by all users and some applications.
-#
-# @summary  Ensure /var/tmp is configured (Scored)
+# @summary Ensure /home partition includes the nodev option 
 #
 class secure_linux_cis::rules::ensure_home_partition_includes_the_nodev_option {
   if $facts['mountpoints']['/tmp'] {

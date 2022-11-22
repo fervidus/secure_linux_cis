@@ -1,8 +1,6 @@
 # @api private
 #
-# @summary A short summary of the purpose of this class
-#
-# A description of what this class does
+# @summary Ensure AppArmor is enabled in the bootloader configuration 
 #
 class secure_linux_cis::rules::ensure_apparmor_is_enabled_in_the_bootloader_configuration {
   file_line { 'Ensure apparmor is enabled in bootloader':

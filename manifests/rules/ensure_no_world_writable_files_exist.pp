@@ -1,11 +1,6 @@
 # @api private
-# 0 Ensure no world writable files exist (Scored)
 #
-# Description:
-# Unix-based systems support variable settings to control access to files. World writable files are the least secure. See the chmod(2)
-# man page for more information.
-#
-# @summary 0 Ensure no world writable files exist (Scored)
+# @summary Ensure no world writable files exist 
 #
 class secure_linux_cis::rules::ensure_no_world_writable_files_exist {
   file { '/usr/share/cis_scripts/ensure_no_world_writable.sh':

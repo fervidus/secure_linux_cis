@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure mounting of FAT filesystems is limited 
 #
 class secure_linux_cis::rules::ensure_mounting_of_fat_filesystems_is_limited {
   $system_audit_rules = @(SYSTEMAUDITRULES/L)

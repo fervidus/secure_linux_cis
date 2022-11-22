@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure XDMCP is not enabled 
 #
 class secure_linux_cis::rules::ensure_xdmcp_is_not_enabled {
   file { '/etc/gdm/custom.conf':

@@ -1,18 +1,6 @@
 # @api private
-#  Ensure ntp is configured (Scored)
 #
-# Description:
-# ntp is a daemon which implements the Network Time Protocol (NTP). It is designed to
-# synchronize system clocks across a variety of systems and use a source that is highly
-# accurate. More information on NTP can be found at http://www.ntp.org. ntp can be
-# configured to be a client and/or a server.
-# This recommendation only applies if ntp is in use on the system.
-#
-# Rationale:
-# If ntp is in use on the system proper configuration is vital to ensuring time synchronization
-# is working properly.
-#
-# @summary  Ensure ntp is configured (Scored)
+# @summary Ensure ntp is configured 
 #
 class secure_linux_cis::rules::ensure_ntp_is_configured {
   if $secure_linux_cis::time_sync == 'ntp' {

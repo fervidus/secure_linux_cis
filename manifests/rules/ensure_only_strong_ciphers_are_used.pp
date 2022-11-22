@@ -1,14 +1,6 @@
 # @api private
-# A description of what this class does
 #
-# Description:
-# This variable limits the ciphers that SSH can use during communication.
-#
-# Rationale:
-# Weak ciphers that are used for authentication to the cryptographic module cannot be relied
-# upon to provide confidentiality or integrity, and system data may be compromised
-#
-# @summary Make sure only approved ciphers are used
+# @summary Ensure only strong Ciphers are used 
 #
 class secure_linux_cis::rules::ensure_only_strong_ciphers_are_used {
   include secure_linux_cis::sshd_service

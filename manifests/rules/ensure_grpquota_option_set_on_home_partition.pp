@@ -1,10 +1,6 @@
 # @api private
-# 4 Ensure grpquota option set on /home partition (Scored)
 #
-# Description:
-# The grpquota mount option specifies that the filesystem cannot contain special devices.
-#
-# @summary 4 Ensure grpquota option set on /home partition (Scored)
+# @summary Ensure grpquota option set on /home partition 
 #
 class secure_linux_cis::rules::ensure_grpquota_option_set_on_home_partition {
   if $facts['mountpoints']['/home'] {

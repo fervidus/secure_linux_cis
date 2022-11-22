@@ -1,13 +1,6 @@
 # @api private
-#  Ensure SSH PermitEmptyPasswords is disabled (Scored)
 #
-# Description:
-# The PermitEmptyPasswords parameter specifies if the SSH server allows login to accounts with empty password strings.
-#
-# Rationale:
-# Disallowing remote shell access to accounts that have an empty password reduces the probability of unauthorized access to the system
-#
-# @summary  Ensure SSH PermitEmptyPasswords is disabled (Scored)
+# @summary Ensure SSH PermitEmptyPasswords is disabled 
 #
 class secure_linux_cis::rules::ensure_ssh_permitemptypasswords_is_disabled {
   include secure_linux_cis::sshd_service

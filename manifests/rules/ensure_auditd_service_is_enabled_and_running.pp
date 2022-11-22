@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure auditd service is enabled and running 
 #
 class secure_linux_cis::rules::ensure_auditd_service_is_enabled_and_running {
   service { 'auditd':

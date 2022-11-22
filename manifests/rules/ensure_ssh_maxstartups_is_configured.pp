@@ -1,7 +1,6 @@
 # @api private
-# @summary A short summary of the purpose of this class
 #
-# A description of what this class does
+# @summary Ensure SSH MaxStartups is configured 
 #
 class secure_linux_cis::rules::ensure_ssh_maxstartups_is_configured {
   include secure_linux_cis::sshd_service

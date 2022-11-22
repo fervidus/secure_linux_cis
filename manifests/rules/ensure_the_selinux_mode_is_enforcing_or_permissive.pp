@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure the SELinux mode is enforcing or permissive 
 #
 class secure_linux_cis::rules::ensure_the_selinux_mode_is_enforcing_or_permissive {
   file_line { 'selinux_enforce':

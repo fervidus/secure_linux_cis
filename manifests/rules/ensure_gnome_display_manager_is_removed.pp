@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure GNOME Display Manager is removed 
 #
 class secure_linux_cis::rules::ensure_gnome_display_manager_is_removed {
   package { 'gdm3':

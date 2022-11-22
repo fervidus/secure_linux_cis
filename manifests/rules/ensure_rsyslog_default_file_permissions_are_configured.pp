@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure rsyslog default file permissions are configured   
 #
 class secure_linux_cis::rules::ensure_rsyslog_default_file_permissions_are_configured {
   file { '/etc/rsyslog.conf':

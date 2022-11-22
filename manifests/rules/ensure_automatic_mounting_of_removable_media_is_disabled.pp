@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure automatic mounting of removable media is disabled 
 #
 class secure_linux_cis::rules::ensure_automatic_mounting_of_removable_media_is_disabled {
   $system_audit_rules = @(SYSTEMAUDITRULES/L)

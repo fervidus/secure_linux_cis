@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure core dump storage is disabled 
 #
 class secure_linux_cis::rules::ensure_core_dump_storage_is_disabled {
   file_line { 'Ensure core dump storage is disabled':

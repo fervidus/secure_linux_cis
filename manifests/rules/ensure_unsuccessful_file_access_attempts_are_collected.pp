@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure unsuccessful file access attempts are collected 
 #
 class secure_linux_cis::rules::ensure_unsuccessful_file_access_attempts_are_collected {
   $system_audit_rules = @("SYSTEMAUDITRULES"/L)

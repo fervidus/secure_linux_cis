@@ -1,10 +1,6 @@
 # @api private
-#  Ensure nosuid option set on /tmp partition (Scored)
 #
-# Description:
-# The nosuid mount option specifies that the filesystem cannot contain setuid files.
-#
-# @summary  Ensure nosuid option set on /tmp partition (Scored)
+# @summary Ensure nosuid option set on /tmp partition 
 #
 class secure_linux_cis::rules::ensure_nosuid_option_set_on_tmp_partition {
   if $facts['mountpoints']['/tmp'] {

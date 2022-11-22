@@ -1,8 +1,6 @@
 # @api private
 #
-# @summary A short summary of the purpose of this class
-#
-# A description of what this class does
+# @summary Ensure all logfiles have appropriate permissions and ownership 
 #
 class secure_linux_cis::rules::ensure_all_logfiles_have_appropriate_permissions_and_ownership {
   file { 'audit_all_logfiles_have_appropriate_permissions_and_ownership':

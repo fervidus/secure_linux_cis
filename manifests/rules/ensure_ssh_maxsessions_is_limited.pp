@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure SSH MaxSessions is limited 
 #
 class secure_linux_cis::rules::ensure_ssh_maxsessions_is_limited {
   include secure_linux_cis::sshd_service

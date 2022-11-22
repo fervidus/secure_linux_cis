@@ -1,16 +1,6 @@
 # @api private
-#  Ensure wireless interfaces are disabled (Not Scored)
 #
-# Description:
-# Wireless networking is used when wired networks are unavailable. Red Hat Enterprise
-# Linux 7 contains a wireless tool kit to allow system administrators to configure and use
-# wireless networks.
-#
-# Rationale:
-# If wireless is not to be used, wireless devices can be disabled to reduce the potential attack
-# surface.
-#
-# @summary  Ensure wireless interfaces are disabled (Not Scored)
+# @summary Ensure wireless interfaces are disabled 
 #
 class secure_linux_cis::rules::ensure_wireless_interfaces_are_disabled {
   $facts['networking']['interfaces'].each | String $name, Hash $attributes | {

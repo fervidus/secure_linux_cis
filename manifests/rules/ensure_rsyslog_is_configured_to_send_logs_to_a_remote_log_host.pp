@@ -1,11 +1,6 @@
 # @api private
-#  Ensure rsyslog is configured to send logs to a remote log host (Scored)
 #
-# Description:
-# The rsyslog utility supports the ability to send logs it gathers to a remote log host running syslogd(8)
-# or to receive messages from remote hosts, reducing administrative overhead.
-#
-# @summary  Ensure rsyslog is configured to send logs to a remote log host (Scored)
+# @summary Ensure rsyslog is configured to send logs to a remote log   host 
 #
 class secure_linux_cis::rules::ensure_rsyslog_is_configured_to_send_logs_to_a_remote_log_host {
   Class['secure_linux_cis::rules::ensure_rsyslog_is_configured_to_send_logs_to_a_remote_log_host']

@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure firewalld is not installed or stopped and masked 
 #
 class secure_linux_cis::rules::ensure_firewalld_is_not_installed_or_stopped_and_masked {
   package { 'firewalld':

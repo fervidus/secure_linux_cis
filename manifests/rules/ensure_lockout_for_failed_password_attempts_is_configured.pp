@@ -1,18 +1,6 @@
 # @api private
-#  Ensure lockout for failed password attempts is configured (Scored)
 #
-# Description:
-# Lock out users after n unsuccessful consecutive login attempts. The first sets of changes are made to the PAM configuration files. The
-# second set of changes are applied to the program specific PAM configuration file. The second set of changes must be applied to each
-# program that will lock out users. Check the documentation for each secondary program for instructions on how to configure them to work
-# with PAM.
-#
-# Set the lockout number to the policy in effect at your site.
-#
-# Rationale:
-# Locking out user IDs after n unsuccessful consecutive login attempts mitigates brute force password attacks against your systems.
-#
-# @summary  Ensure lockout for failed password attempts is configured (Scored)
+# @summary Ensure lockout for failed password attempts is   configured 
 #
 class secure_linux_cis::rules::ensure_lockout_for_failed_password_attempts_is_configured {
   $os = "${facts['os']['name']}${facts['os']['release']['major']}"

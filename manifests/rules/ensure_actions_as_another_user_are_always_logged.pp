@@ -1,7 +1,6 @@
 # @api private
-# @summary A short summary of the purpose of this class
 #
-# A description of what this class does
+# @summary Ensure actions as another user are always logged 
 #
 class secure_linux_cis::rules::ensure_actions_as_another_user_are_always_logged {
   $system_audit_rules = @(SYSTEMAUDITRULES/L)

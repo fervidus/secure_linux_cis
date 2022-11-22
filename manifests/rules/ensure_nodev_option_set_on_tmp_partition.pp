@@ -1,10 +1,6 @@
 # @api private
-#  Ensure nodev option set on /tmp partition (Scored)
 #
-# Description:
-# The nodev mount option specifies that the filesystem cannot contain special devices.
-#
-# @summary  Ensure nodev option set on /tmp partition (Scored)
+# @summary Ensure nodev option set on /tmp partition 
 #
 class secure_linux_cis::rules::ensure_nodev_option_set_on_tmp_partition {
   if $facts['mountpoints']['/tmp'] {

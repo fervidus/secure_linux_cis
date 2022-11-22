@@ -1,10 +1,6 @@
 # @api private
-#  Ensure nosuid option set on /home partition (Scored)
 #
-# Description:
-# The nosuid mount option specifies that the filesystem cannot contain setuid files.
-#
-# @summary  Ensure nosuid option set on /home partition (Scored)
+# @summary Ensure nosuid option set on /home partition 
 #
 class secure_linux_cis::rules::ensure_nosuid_option_set_on_home_partition {
   if $facts['mountpoints']['/home'] {

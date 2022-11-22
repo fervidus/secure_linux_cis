@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure users must provide password for privilege escalation 
 #
 class secure_linux_cis::rules::ensure_users_must_provide_password_for_privilege_escalation {
   # TODO

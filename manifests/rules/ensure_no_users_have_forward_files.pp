@@ -1,10 +1,6 @@
 # @api private
-# 1 Ensure no users have .forward files (Scored)
 #
-# Description:
-# The .forward file specifies an email address to forward the user's mail to.
-#
-# @summary 1 Ensure no users have .forward files (Scored)
+# @summary Ensure no users have .forward files 
 #
 class secure_linux_cis::rules::ensure_no_users_have_forward_files {
   file { '/usr/share/cis_scripts/forward.sh':

@@ -1,10 +1,6 @@
 # @api private
-# 2 Ensure no ungrouped files or directories exist (Scored)
 #
-# Description:
-# Sometimes when administrators delete users or groups from the system they neglect to remove all files owned by those users or groups.
-#
-# @summary 2 Ensure no ungrouped files or directories exist (Scored)
+# @summary Ensure no ungrouped files or directories exist 
 #
 class secure_linux_cis::rules::ensure_no_ungrouped_files_or_directories_exist {
   file { '/usr/share/cis_scripts/ensure_no_ungrouped.sh':

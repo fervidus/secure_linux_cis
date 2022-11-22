@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure kernel module loading unloading and   modification is collected 
 #
 class secure_linux_cis::rules::ensure_kernel_module_loading_unloading_and_modification_is_collected {
   $system_audit_rules = @("SYSTEMAUDITRULES"/L)

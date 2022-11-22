@@ -1,15 +1,6 @@
 # @api private
-#  Ensure password reuse is limited (Scored)
 #
-# Description:
-# The /etc/security/opasswd file stores the users' old passwords and can be checked to ensure that users are not recycling recent passwords.
-#
-# Rationale:
-# Forcing users not to reuse their past 5 passwords make it less likely that an attacker will be able to guess the password.
-#
-# Note that these change only apply to accounts configured on the local system.
-#
-# @summary  Ensure password reuse is limited (Scored)
+# @summary Ensure password reuse is limited 
 #
 class secure_linux_cis::rules::ensure_password_reuse_is_limited {
   if $secure_linux_cis::past_passwords < 5 {

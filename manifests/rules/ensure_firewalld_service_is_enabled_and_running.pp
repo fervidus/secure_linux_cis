@@ -1,7 +1,6 @@
 # @api private
-# @summary A short summary of the purpose of this class
 #
-# A description of what this class does
+# @summary Ensure firewalld service is enabled and running 
 #
 class secure_linux_cis::rules::ensure_firewalld_service_is_enabled_and_running {
   service { 'firewalld':

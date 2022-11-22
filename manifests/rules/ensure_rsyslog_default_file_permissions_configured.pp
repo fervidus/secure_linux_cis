@@ -1,15 +1,6 @@
 # @api private
-#  Ensure rsyslog default file permissions configured (Scored)
 #
-# Description:
-# rsyslog will create logfiles that do not already exist on the system. This setting controls
-# what permissions will be applied to these newly created files.
-#
-# Rationale:
-# It is important to ensure that log files have the correct permissions to ensure that sensitive
-# data is archived and protected.
-#
-# @summary  Ensure rsyslog default file permissions configured (Scored)
+# @summary Ensure rsyslog default file permissions configured 
 #
 class secure_linux_cis::rules::ensure_rsyslog_default_file_permissions_configured {
   Class['secure_linux_cis::rules::ensure_rsyslog_default_file_permissions_configured']

@@ -1,10 +1,6 @@
 # @api private
-# 1 Ensure separate partition exists for /var/log (Scored)
 #
-# Description:
-# The /var/log directory is used by system services to store log data
-#
-# @summary 1 Ensure separate partition exists for /var/log (Scored)
+# @summary Ensure separate partition exists for /var/log 
 #
 class secure_linux_cis::rules::ensure_separate_partition_exists_for_var_log {
   unless $facts['mountpoints']['/var/log'] {

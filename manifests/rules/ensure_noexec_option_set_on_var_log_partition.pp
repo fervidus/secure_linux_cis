@@ -1,10 +1,6 @@
 # @api private
-# 0 Ensure noexec option set on /var/log partition (Scored)
 #
-# Description:
-# The noexec mount option specifies that the filesystem cannot contain executable binaries.
-#
-# @summary 0 Ensure noexec option set on /var/log partition (Scored)
+# @summary Ensure noexec option set on /var/log partition 
 #
 class secure_linux_cis::rules::ensure_noexec_option_set_on_var_log_partition {
   if $facts['mountpoints']['/var/log'] {

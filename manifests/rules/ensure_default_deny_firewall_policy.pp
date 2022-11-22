@@ -1,15 +1,6 @@
 # @api private
-#  Ensure default deny firewall policy (Scored)
 #
-# Description:
-# A default deny all policy on connections ensures that any unconfigured network usage will
-# be rejected.
-#
-# Rationale:
-# With a default accept policy the firewall will accept any packet that is not configured to be
-# denied. It is easier to white list acceptable usage than to black list unacceptable usage.
-#
-# @summary  Ensure default deny firewall policy (Scored)
+# @summary Ensure default deny firewall policy 
 #
 class secure_linux_cis::rules::ensure_default_deny_firewall_policy {
   case $secure_linux_cis::firewall {

@@ -1,10 +1,6 @@
 # @api private
-#  Ensure password fields are not empty (Scored)
 #
-# Description:
-# An account with an empty password field means that anybody may log in as that user without providing a password.
-#
-# @summary  Ensure password fields are not empty (Scored)
+# @summary Ensure password fields are not empty 
 #
 class secure_linux_cis::rules::ensure_password_fields_are_not_empty {
   if $facts['password_empty'] {

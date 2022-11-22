@@ -1,20 +1,6 @@
 # @api private
-# 4 Ensure file deletion events by users are collected (Scored)
 #
-# Description:
-# Monitor the use of system calls associated with the deletion or renaming of files and file
-# attributes. This configuration statement sets up monitoring for the unlink (remove a file),
-# unlinkat (remove a file attribute), rename (rename a file) and renameat (rename a file
-# attribute) system calls and tags them with the identifier "delete".
-#
-# Rationale:
-# Monitoring these calls from non-privileged users could provide a system administrator
-# with evidence that inappropriate removal of files and file attributes associated with
-# protected files is occurring. While this audit option will look at all events, system
-# administrators will want to look for specific privileged files that are being deleted or
-# altered.
-#
-# @summary 4 Ensure file deletion events by users are collected (Scored)
+# @summary Ensure file deletion events by users are collected 
 #
 class secure_linux_cis::rules::ensure_file_deletion_events_by_users_are_collected {
   Class['secure_linux_cis::rules::ensure_file_deletion_events_by_users_are_collected']

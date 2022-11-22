@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure audit tools are owned by root 
 #
 class secure_linux_cis::rules::ensure_audit_tools_are_owned_by_root {
   file { ['/sbin/auditctl', '/sbin/aureport', '/sbin/ausearch', '/sbin/autrace', '/sbin/auditd', '/sbin/augenrules']:

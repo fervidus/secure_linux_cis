@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure local interactive user dot files are not group or  world writable 
 #
 class secure_linux_cis::rules::ensure_local_interactive_user_dot_files_are_not_group_or_world_writable {
   file { 'audit_local_interactive_user_dot_files_are_not_group_or_world_writable':

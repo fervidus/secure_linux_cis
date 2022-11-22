@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure no local interactive user has .netrc files 
 #
 class secure_linux_cis::rules::ensure_no_local_interactive_user_has_netrc_files {
   file { 'audit_no_local_interactive_user_has_netrc_files':

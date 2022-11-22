@@ -1,17 +1,6 @@
 # @api private
-#  Ensure login and logout events are collected (Scored)
 #
-# Description:
-# Monitor login and logout events. The parameters below track changes to files associated
-# with login/logout events. The file /var/log/lastlog maintain records of the last time a
-# user successfully logged in. The /var/run/failock directory maintains records of login
-# failures via the pam_faillock module.
-#
-# Rationale:
-# Monitoring login/logout events could provide a system administrator with information
-# associated with brute force attacks against user logins.
-#
-# @summary  Ensure login and logout events are collected (Scored)
+# @summary Ensure login and logout events are collected 
 #
 class secure_linux_cis::rules::ensure_login_and_logout_events_are_collected {
   Class['secure_linux_cis::rules::ensure_login_and_logout_events_are_collected']

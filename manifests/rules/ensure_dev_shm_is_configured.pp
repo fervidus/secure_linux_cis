@@ -1,10 +1,6 @@
 # @api private
-# 5 Ensure nodev option set on /dev/shm partition (Scored)
 #
-# Description:
-# The nodev mount option specifies that the filesystem cannot contain special devices.
-#
-# @summary 5 Ensure nodev option set on /dev/shm partition (Scored)
+# @summary Ensure /dev/shm is configured 
 #
 class secure_linux_cis::rules::ensure_dev_shm_is_configured {
   $mount   = '/dev/shm'

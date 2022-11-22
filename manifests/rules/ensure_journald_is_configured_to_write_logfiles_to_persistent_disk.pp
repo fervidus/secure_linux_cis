@@ -1,7 +1,6 @@
 # @api private
-# @summary A short summary of the purpose of this class
 #
-# A description of what this class does
+# @summary Ensure journald is configured to write logfiles to persistent disk 
 #
 class secure_linux_cis::rules::ensure_journald_is_configured_to_write_logfiles_to_persistent_disk {
   file_line { 'journald_persist':

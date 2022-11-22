@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure GDM disabling automatic mounting of removable media is not overridden 
 #
 class secure_linux_cis::rules::ensure_gdm_disabling_automatic_mounting_of_removable_media_is_not_overridden {
   # TODO

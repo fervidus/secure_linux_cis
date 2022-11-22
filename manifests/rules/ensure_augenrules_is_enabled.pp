@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure augenrules is enabled 
 #
 class secure_linux_cis::rules::ensure_augenrules_is_enabled {
   file_line { 'augenrules_enabled':

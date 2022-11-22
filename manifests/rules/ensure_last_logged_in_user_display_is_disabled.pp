@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure last logged in user display is disabled 
 #
 class secure_linux_cis::rules::ensure_last_logged_in_user_display_is_disabled {
   # Ensure gnome configruation exists

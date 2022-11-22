@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure no local interactive user has .forward files 
 #
 class secure_linux_cis::rules::ensure_no_local_interactive_user_has_forward_files {
   file { 'audit_no_local_interactive_user_has_forward_files':

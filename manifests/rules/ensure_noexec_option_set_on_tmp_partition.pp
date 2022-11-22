@@ -1,10 +1,6 @@
 # @api private
-#  Ensure noexec option set on /tmp partition (Scored)
 #
-# Description:
-# The noexec mount option specifies that the filesystem cannot contain executable binaries.
-#
-# @summary  Ensure noexec option set on /tmp partition (Scored)
+# @summary Ensure noexec option set on /tmp partition 
 #
 class secure_linux_cis::rules::ensure_noexec_option_set_on_tmp_partition {
   if $facts['mountpoints']['/tmp'] {

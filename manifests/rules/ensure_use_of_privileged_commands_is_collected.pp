@@ -1,16 +1,6 @@
 # @api private
-# 2 Ensure use of privileged commands is collected (Scored)
 #
-# Description:
-# Monitor privileged programs (those that have the setuid and/or setgid
-# bit set on execution) to determine if unprivileged users are running
-# these commands.
-#
-# Rationale:
-# Execution of privileged commands by non-privileged users could be an
-# indication of someone trying to gain unauthorized access to the system.
-#
-# @summary 2 Ensure use of privileged commands is collected (Scored)
+# @summary Ensure use of privileged commands is collected 
 #
 class secure_linux_cis::rules::ensure_use_of_privileged_commands_is_collected {
   file { '/usr/share/cis_scripts/audit_priv.sh':

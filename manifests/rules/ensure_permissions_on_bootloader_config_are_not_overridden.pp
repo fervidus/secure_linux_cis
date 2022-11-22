@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure permissions on bootloader config are not overridden 
 #
 class secure_linux_cis::rules::ensure_permissions_on_bootloader_config_are_not_overridden {
   $grub_config = @(GRUBCONTENT/L)

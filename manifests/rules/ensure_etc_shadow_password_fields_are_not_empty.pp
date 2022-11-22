@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure /etc/shadow password fields are not empty   
 #
 class secure_linux_cis::rules::ensure_etc_shadow_password_fields_are_not_empty {
   if($facts['no_password_accounts']) {

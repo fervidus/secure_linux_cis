@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure ntp is running as user ntp 
 #
 class secure_linux_cis::rules::ensure_ntp_is_running_as_user_ntp {
   file_line { 'Ensure ntp is running as user ntp':

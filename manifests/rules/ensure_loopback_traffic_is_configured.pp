@@ -1,17 +1,6 @@
 # @api private
-#  Ensure loopback traffic is configured (Scored)
 #
-# Description:
-# Configure the loopback interface to accept traffic. Configure all other interfaces to deny
-# traffic to the loopback network (/8).
-#
-# Rationale:
-# Loopback traffic is generated between processes on machine and is typically critical to
-# operation of the system. The loopback interface is the only place that loopback network
-# (/8) traffic should be seen, all other interfaces should ignore traffic on this
-# network as an anti-spoofing measure.
-#
-# @summary  Ensure loopback traffic is configured (Scored)
+# @summary Ensure loopback traffic is configured 
 #
 class secure_linux_cis::rules::ensure_loopback_traffic_is_configured {
   case $secure_linux_cis::firewall {

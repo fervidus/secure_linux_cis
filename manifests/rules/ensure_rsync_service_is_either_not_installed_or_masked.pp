@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure rsync service is either not installed or masked 
 #
 class secure_linux_cis::rules::ensure_rsync_service_is_either_not_installed_or_masked {
   package { 'rsync':

@@ -1,11 +1,6 @@
 # @api private
-# 7 Ensure no duplicate GIDs exist (Scored)
 #
-# Description:
-# Although the groupadd program will not let you create a duplicate Group ID (GID), it is possible for an administrator
-# to manually edit the /etc/group file and change the GID field.
-#
-# @summary 7 Ensure no duplicate GIDs exist (Scored)
+# @summary Ensure no duplicate GIDs exist 
 #
 class secure_linux_cis::rules::ensure_no_duplicate_gids_exist {
   file { '/usr/share/cis_scripts/dup_gid.sh':

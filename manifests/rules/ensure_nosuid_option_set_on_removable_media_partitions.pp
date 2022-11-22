@@ -1,10 +1,6 @@
 # @api private
-# 9 Ensure nosuid option set on removable media partitions (Not Scored)
 #
-# Description:
-# The nosuid mount option specifies that the filesystem cannot contain setuid files.
-#
-# @summary 9 Ensure nosuid option set on removable media partitions (Not Scored)
+# @summary Ensure nosuid option set on removable media partitions 
 #
 class secure_linux_cis::rules::ensure_nosuid_option_set_on_removable_media_partitions {
   # Let's look at the name of each one and try to guess if it's removable

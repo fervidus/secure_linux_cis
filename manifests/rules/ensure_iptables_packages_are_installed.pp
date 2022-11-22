@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure iptables packages are installed 
 #
 class secure_linux_cis::rules::ensure_iptables_packages_are_installed {
   package { ['iptables', 'iptables-services']:

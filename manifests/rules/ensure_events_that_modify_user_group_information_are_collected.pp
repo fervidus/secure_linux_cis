@@ -1,19 +1,6 @@
 # @api private
-#  Ensure events that modify user/group information are collected (Scored)
 #
-# Description:
-# Record events affecting the group , passwd (user IDs), shadow and gshadow (passwords) or
-# /etc/security/opasswd (old passwords, based on remember parameter in the PAM
-# configuration) files. The parameters in this section will watch the files to see if they have
-# been opened for write or have had attribute changes (e.g. permissions) and tag them with
-# the identifier "identity" in the audit log file.
-#
-# Rationale:
-# Unexpected changes to these files could be an indication that the system has been
-# compromised and that an unauthorized user is attempting to hide their activities or
-# compromise additional accounts.
-#
-# @summary  Ensure events that modify user/group information are collected (Scored)
+# @summary Ensure events that modify user/group information are collected 
 #
 class secure_linux_cis::rules::ensure_events_that_modify_user_group_information_are_collected {
   Class['secure_linux_cis::rules::ensure_events_that_modify_user_group_information_are_collected']

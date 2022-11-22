@@ -1,7 +1,6 @@
 # @api private
-# @summary A short summary of the purpose of this class
 #
-# A description of what this class does
+# @summary Ensure SSH PAM is enabled 
 #
 class secure_linux_cis::rules::ensure_ssh_pam_is_enabled {
   include secure_linux_cis::sshd_service

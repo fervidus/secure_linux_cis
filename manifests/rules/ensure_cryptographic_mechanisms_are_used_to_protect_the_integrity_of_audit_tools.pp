@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure cryptographic mechanisms are used to protect   the integrity of audit tools 
 #
 class secure_linux_cis::rules::ensure_cryptographic_mechanisms_are_used_to_protect_the_integrity_of_audit_tools {
   $system_audit_rules = @(SYSTEMAUDITRULES/L)

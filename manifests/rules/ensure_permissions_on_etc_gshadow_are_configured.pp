@@ -1,11 +1,6 @@
 # @api private
-#  Ensure permissions on /etc/gshadow- are configured (Scored)
 #
-# Description:
-# The /etc/gshadow- file is used to store backup information about groups that is critical to the security
-# of those accounts, such as the hashed password and other security information.
-#
-# @summary  Ensure permissions on /etc/gshadow- are configured (Scored)
+# @summary Ensure permissions on /etc/gshadow are configured 
 #
 class secure_linux_cis::rules::ensure_permissions_on_etc_gshadow_are_configured {
   case $facts['os']['family'] {

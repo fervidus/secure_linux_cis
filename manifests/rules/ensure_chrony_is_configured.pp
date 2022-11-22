@@ -1,18 +1,6 @@
 # @api private
-#  Ensure chrony is configured (Scored)
 #
-# Description:
-# chrony is a daemon which implements the Network Time Protocol (NTP) is designed to
-# synchronize system clocks across a variety of systems and use a source that is highly
-# accurate. More information on chrony can be found at http://chrony.tuxfamily.org/. chrony
-# can be configured to be a client and/or a server.
-#
-# Rationale:
-# If chrony is in use on the system proper configuration is vital to ensuring time
-# synchronization is working properly.
-# This recommendation only applies if chrony is in use on the system.
-#
-# @summary  Ensure chrony is configured (Scored)
+# @summary Ensure chrony is configured 
 #
 class secure_linux_cis::rules::ensure_chrony_is_configured {
   case $facts['os']['family'] {

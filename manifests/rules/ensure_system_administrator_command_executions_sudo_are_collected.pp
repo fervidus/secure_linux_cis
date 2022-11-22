@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure system administrator command executions (sudo) are collected 
 #
 class secure_linux_cis::rules::ensure_system_administrator_command_executions_sudo_are_collected {
   $system_audit_rules = @(SYSTEMAUDITRULES/L)

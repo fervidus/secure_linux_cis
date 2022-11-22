@@ -1,10 +1,6 @@
 # @api private
-# 4 Ensure usrquota option set on /home partition (Scored)
 #
-# Description:
-# The usrquota mount option specifies that the filesystem cannot contain special devices.
-#
-# @summary 4 Ensure usrquota option set on /home partition (Scored)
+# @summary Ensure usrquota option set on /home partition 
 #
 class secure_linux_cis::rules::ensure_usrquota_option_set_on_home_partition {
   if $facts['mountpoints']['/home'] {

@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure events that modify the system's network   environment are collected 
 #
 class secure_linux_cis::rules::ensure_events_that_modify_the_systems_network_environment_are_collected {
   $system_audit_rules = @("SYSTEMAUDITRULES"/L)

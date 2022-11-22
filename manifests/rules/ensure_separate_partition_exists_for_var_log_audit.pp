@@ -1,10 +1,6 @@
 # @api private
-# 2 Ensure separate partition exists for /var/log/audit (Scored)
 #
-# Description:
-# The auditing daemon, auditd , stores log data in the /var/log/audit directory.
-#
-# @summary 2 Ensure separate partition exists for /var/log/audit (Scored)
+# @summary Ensure separate partition exists for /var/log/audit 
 #
 class secure_linux_cis::rules::ensure_separate_partition_exists_for_var_log_audit {
   unless $facts['mountpoints']['/var/log/audit'] {

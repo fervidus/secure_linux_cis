@@ -1,10 +1,6 @@
 # @api private
-#  Ensure nosuid option set on /var/log/audit partition (Scored)
 #
-# Description:
-# The nosuid mount option specifies that the filesystem cannot contain setuid files.
-#
-# @summary  Ensure nosuid option set on /var/log/audit partition (Scored)
+# @summary Ensure nosuid option set on /var/log/audit partition 
 #
 class secure_linux_cis::rules::ensure_nosuid_option_set_on_var_log_audit_partition {
   if $facts['mountpoints']['/var/log/audit'] {

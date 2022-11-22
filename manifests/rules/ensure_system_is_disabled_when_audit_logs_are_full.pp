@@ -1,14 +1,6 @@
 # @api private
-#  Ensure system is disabled when audit logs are full (Scored)
 #
-# Description:
-# The auditd daemon can be configured to halt the system when the audit logs are full.
-#
-# Rationale:
-# In high security contexts, the risk of detecting unauthorized access or nonrepudiation
-# exceeds the benefit of the system's availability.
-#
-# @summary  Ensure system is disabled when audit logs are full (Scored)
+# @summary Ensure system is disabled when audit logs are full 
 #
 class secure_linux_cis::rules::ensure_system_is_disabled_when_audit_logs_are_full {
   # require secure_linux_cis::rules::ensure_auditd_service_is_enabled

@@ -1,13 +1,6 @@
 # @api private
-#  Ensure all users last password change date is in the past (Scored)
 #
-# Description:
-# All users should have a password change date in the past.
-#
-# Rationale:
-# If a users recorded password change date is in the future then they could bypass any set password expiration.
-#
-# @summary  Ensure all users last password change date is in the past (Scored)
+# @summary Ensure all users last password change date is in the past 
 #
 class secure_linux_cis::rules::ensure_all_users_last_password_change_date_is_in_the_past {
   # local_users fact may be undef

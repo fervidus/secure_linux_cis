@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure only authorized groups are assigned ownership of audit log files 
 #
 class secure_linux_cis::rules::ensure_only_authorized_groups_are_assigned_ownership_of_audit_log_files {
   exec { 'Fix log files group ownership':

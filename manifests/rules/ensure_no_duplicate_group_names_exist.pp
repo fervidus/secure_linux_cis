@@ -1,11 +1,6 @@
 # @api private
-# 9 Ensure no duplicate group names exist (Scored)
 #
-# Description:
-# Although the groupadd program will not let you create a duplicate group name, it is possible for an administrator to manually edit
-# the /etc/group file and change the group name.
-#
-# @summary 9 Ensure no duplicate group names exist (Scored)
+# @summary Ensure no duplicate group names exist 
 #
 class secure_linux_cis::rules::ensure_no_duplicate_group_names_exist {
   file { '/usr/share/cis_scripts/dup_group.sh':

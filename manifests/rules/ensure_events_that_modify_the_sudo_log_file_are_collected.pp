@@ -1,6 +1,6 @@
-# @summary A short summary of the purpose of this class
+# @api private
 #
-# A description of what this class does
+# @summary Ensure events that modify the sudo log file are collected 
 #
 class secure_linux_cis::rules::ensure_events_that_modify_the_sudo_log_file_are_collected {
   file { '/etc/audit/rules.d/50-sudo.rules':

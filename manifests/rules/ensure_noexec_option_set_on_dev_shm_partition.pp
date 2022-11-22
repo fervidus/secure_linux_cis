@@ -1,10 +1,6 @@
 # @api private
-# 7 Ensure noexec option set on /dev/shm partition (Scored)
 #
-# Description:
-# The noexec mount option specifies that the filesystem cannot contain executable binaries.
-#
-# @summary 7 Ensure noexec option set on /dev/shm partition (Scored)
+# @summary Ensure noexec option set on /dev/shm partition 
 #
 class secure_linux_cis::rules::ensure_noexec_option_set_on_dev_shm_partition {
   if $facts['mountpoints']['/dev/shm'] {
