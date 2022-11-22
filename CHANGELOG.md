@@ -1,5 +1,13 @@
 # Changelog
 
+## Release 3.2.1
+
+* Slowly becoming usable again
+* Remove old classes
+* Remove unsupported OS versions
+* Simplify documentation
+* Add AlmaLinux
+
 ## Release 3.2.0
 
 * Add missing checks
