@@ -190,7 +190,6 @@ secure_linux_cis::server_level_2:
 - ensure_core_dumps_are_restricted
 - ensure_apparmor_is_installed
 - ensure_apparmor_is_enabled_in_the_bootloader_configuration
-- ensure_all_apparmor_profiles_are_in_enforce_or_complain_mode
 - ensure_all_apparmor_profiles_are_enforcing
 - ensure_message_of_the_day_is_configured_properly
 - ensure_local_login_warning_banner_is_configured_properly
@@ -539,7 +538,6 @@ secure_linux_cis::workstation_level_2:
 - ensure_core_dumps_are_restricted
 - ensure_apparmor_is_installed
 - ensure_apparmor_is_enabled_in_the_bootloader_configuration
-- ensure_all_apparmor_profiles_are_in_enforce_or_complain_mode
 - ensure_all_apparmor_profiles_are_enforcing
 - ensure_message_of_the_day_is_configured_properly
 - ensure_local_login_warning_banner_is_configured_properly

@@ -380,7 +380,6 @@ secure_linux_cis::server_level_2:
 - ensure_all_groups_in_etc_passwd_exist_in_etc_group
 - ensure_shadow_group_is_empty
 secure_linux_cis::workstation_level_1:
-- ensure_the_selinux_mode_is_enforcing_or_permissive
 - ensure_mounting_of_cramfs_filesystems_is_disabled
 - ensure_mounting_of_freevxfs_filesystems_is_disabled
 - ensure_mounting_of_hfs_filesystems_is_disabled
@@ -407,6 +406,7 @@ secure_linux_cis::workstation_level_1:
 - ensure_selinux_is_installed
 - ensure_selinux_is_not_disabled_in_bootloader_configuration
 - ensure_selinux_policy_is_configured
+- ensure_the_selinux_mode_is_enforcing_or_permissive
 - ensure_no_unconfined_daemons_exist
 - ensure_the_mcs_translation_service_mcstrans_is_not_installed
 - ensure_message_of_the_day_is_configured_properly
