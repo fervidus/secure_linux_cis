@@ -13,12 +13,12 @@ define secure_linux_cis::mount_options (
   String $mount = '/root',
   String $opt = 'rw',
 ) {
-  if $facts['mountpoints'][$mount] {
+  if $mount in $facts['fstab_entries'] {
     if member($facts['mountpoints'][$mount]['options'], $opt) == false {
       augeas { "/etc/fstab - ${opt} on ${mount}":
         context => '/files/etc/fstab',
         changes => [
-          "ins opt after /files/etc/fstab/*[file = '${mount}']/opt[last()]",
+          "ins opt after *[file = '${mount}']/opt[last()]",
           "set *[file = '${mount}']/opt[last()] ${opt}",
         ],
         onlyif  => "match *[file = '${mount}']/opt[. = '${opt}'] size == 0",

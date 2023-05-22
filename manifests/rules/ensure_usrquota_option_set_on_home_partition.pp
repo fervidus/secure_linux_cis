@@ -1,9 +1,9 @@
 # @api private
 #
-# @summary Ensure usrquota option set on /home partition 
+# @summary Ensure usrquota option set on /home partition
 #
 class secure_linux_cis::rules::ensure_usrquota_option_set_on_home_partition {
-  if $facts['mountpoints']['/home'] {
+  if '/home' in $facts['fstab_entries'] {
     augeas { '/etc/fstab - usrquota on /home':
       context => '/files/etc/fstab',
       changes => [

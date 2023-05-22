@@ -20,7 +20,6 @@ secure_linux_cis::server_level_1:
 - ensure_automatic_error_reporting_is_not_enabled
 - ensure_core_dumps_are_restricted
 - ensure_apparmor_is_installed
-- ensure_apparmor_is_enabled_in_the_bootloader_configuration
 - ensure_all_apparmor_profiles_are_in_enforce_or_complain_mode
 - ensure_message_of_the_day_is_configured_properly
 - ensure_local_login_warning_banner_is_configured_properly
@@ -77,7 +76,7 @@ secure_linux_cis::server_level_1:
 - ensure_reverse_path_filtering_is_enabled
 - ensure_tcp_syn_cookies_is_enabled
 - ensure_a_nftables_table_exists
-- ensure_iptables_packages_are_installed
+- ensure_iptables_package_is_installed
 - ensure_nftables_is_not_installed_with_iptables
 - ensure_ufw_is_uninstalled_or_disabled_with_iptables
 - ensure_iptables_default_deny_firewall_policy
@@ -201,7 +200,6 @@ secure_linux_cis::server_level_2:
 - ensure_automatic_error_reporting_is_not_enabled
 - ensure_core_dumps_are_restricted
 - ensure_apparmor_is_installed
-- ensure_apparmor_is_enabled_in_the_bootloader_configuration
 - ensure_all_apparmor_profiles_are_enforcing
 - ensure_message_of_the_day_is_configured_properly
 - ensure_local_login_warning_banner_is_configured_properly
@@ -263,7 +261,7 @@ secure_linux_cis::server_level_2:
 - ensure_reverse_path_filtering_is_enabled
 - ensure_tcp_syn_cookies_is_enabled
 - ensure_a_nftables_table_exists
-- ensure_iptables_packages_are_installed
+- ensure_iptables_package_is_installed
 - ensure_nftables_is_not_installed_with_iptables
 - ensure_ufw_is_uninstalled_or_disabled_with_iptables
 - ensure_iptables_default_deny_firewall_policy
@@ -471,7 +469,7 @@ secure_linux_cis::workstation_level_1:
 - ensure_reverse_path_filtering_is_enabled
 - ensure_tcp_syn_cookies_is_enabled
 - ensure_a_nftables_table_exists
-- ensure_iptables_packages_are_installed
+- ensure_iptables_package_is_installed
 - ensure_nftables_is_not_installed_with_iptables
 - ensure_ufw_is_uninstalled_or_disabled_with_iptables
 - ensure_iptables_default_deny_firewall_policy
@@ -657,7 +655,7 @@ secure_linux_cis::workstation_level_2:
 - ensure_reverse_path_filtering_is_enabled
 - ensure_tcp_syn_cookies_is_enabled
 - ensure_a_nftables_table_exists
-- ensure_iptables_packages_are_installed
+- ensure_iptables_package_is_installed
 - ensure_nftables_is_not_installed_with_iptables
 - ensure_ufw_is_uninstalled_or_disabled_with_iptables
 - ensure_iptables_default_deny_firewall_policy

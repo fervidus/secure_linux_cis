@@ -1,6 +1,6 @@
 # @api private
 #
-# @summary Ensure all logfiles have appropriate permissions and ownership 
+# @summary Ensure all logfiles have appropriate permissions and ownership
 #
 class secure_linux_cis::rules::ensure_all_logfiles_have_appropriate_permissions_and_ownership {
   file { 'audit_all_logfiles_have_appropriate_permissions_and_ownership':
@@ -18,9 +18,9 @@ class secure_linux_cis::rules::ensure_all_logfiles_have_appropriate_permissions_
   }
 
   exec { 'Fix logfile permissions and ownership':
-    command => '/root/scripts/ensure_all_logfiles_have_appropriate_permissions_and_ownership.sh',
-    unless  => 'cd /root; X=`/root/scripts/audit_all_logfiles_have_appropriate_permissions_and_ownership.sh`; echo "$X" | grep -P -- \'PASS\'',
-    require => [
+    command  => '/root/scripts/ensure_all_logfiles_have_appropriate_permissions_and_ownership.sh',
+    unless   => '/root/scripts/audit_all_logfiles_have_appropriate_permissions_and_ownership.sh',
+    require  => [
       File['audit_all_logfiles_have_appropriate_permissions_and_ownership'],
       File['ensure_all_logfiles_have_appropriate_permissions_and_ownership']
     ],

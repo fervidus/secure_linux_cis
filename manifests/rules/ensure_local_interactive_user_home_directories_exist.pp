@@ -1,6 +1,6 @@
 # @api private
 #
-# @summary Ensure local interactive user home directories exist 
+# @summary Ensure local interactive user home directories exist
 #
 class secure_linux_cis::rules::ensure_local_interactive_user_home_directories_exist {
   file { 'audit_local_interactive_user_home_directories_exist':
@@ -18,9 +18,9 @@ class secure_linux_cis::rules::ensure_local_interactive_user_home_directories_ex
   }
 
   exec { 'Add local interactive user home directories':
-    command => '/root/scripts/ensure_local_interactive_user_home_directories_exist.sh',
-    unless  => 'cd /root; X=`/root/scripts/audit_all_logfiles_have_appropriate_permissions_and_ownership.sh`; echo "$X" | grep -Pi -- \'PASSED\'',
-    require => [
+    command  => '/root/scripts/ensure_local_interactive_user_home_directories_exist.sh',
+    unless   => '/root/scripts/audit_all_logfiles_have_appropriate_permissions_and_ownership.sh',
+    require  => [
       File['audit_local_interactive_user_home_directories_exist'],
       File['ensure_local_interactive_user_home_directories_exist']
     ],

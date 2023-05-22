@@ -1,7 +1,7 @@
 ---
 secure_linux_cis::banner: >
   Authorized uses only. All activity may be monitored and reported.
-  
+
 
 secure_linux_cis::motd: 🐉 Module by Fervid 🐉
 
@@ -33,8 +33,8 @@ secure_linux_cis::pass_min_days: 7
 secure_linux_cis::pass_warn_days: 7
 secure_linux_cis::pass_inactive_days: 30
 secure_linux_cis::timeout: 600
-
 secure_linux_cis::auto_restart: false
+secure_linux_cis::manage_sshd_service: false
 secure_linux_cis::logging_host: ''
 secure_linux_cis::is_logging_host: false
 secure_linux_cis::exclude_logs: []
