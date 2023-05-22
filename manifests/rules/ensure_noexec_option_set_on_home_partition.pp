@@ -7,7 +7,7 @@
 # @summary 7 Ensure noexec option set on /home partition (Scored)
 #
 class secure_linux_cis::rules::ensure_noexec_option_set_on_home_partition {
-  if $facts['mountpoints']['/home'] {
+  if '/home' in $facts['fstab_entries'] {
     augeas { '/etc/fstab - noexec on /home':
       context => '/files/etc/fstab',
       changes => [
