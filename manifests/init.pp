@@ -58,6 +58,7 @@
 # @param auditd_package            Auditd package
 # @param selinux_mode              SElinux mode enforcing or permissive. Defaults to enforcing.
 # @param default_firewalld_zone    Firewalld zone to default o. Defaults to drop.
+# @param manage_sshd_service       Should sshd service be managed
 #
 class secure_linux_cis (
   Array[String]                           $grub_config_files,
@@ -78,6 +79,7 @@ class secure_linux_cis (
   Array[String]                           $server_level_1,
   Array[String]                           $server_level_2,
   Boolean                                 $auto_restart,
+  Boolean                                 $manage_sshd_service,
   String                                  $logging_host,
   String                                  $update_command,
   Boolean                                 $is_logging_host,
