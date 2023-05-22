@@ -86,7 +86,7 @@ class secure_linux_cis (
   Array[Stdlib::Unixpath]                 $exclude_logs,
   String                                  $max_startups,
   String                                  $auditd_package,
-  Enum['ntp', 'chrony', 'systemd-timesuncd']           $time_sync,
+  Enum['ntp', 'chrony', 'systemd-timesyncd', 'none']           $time_sync,
   Enum['postfix', 'exim', 'none']         $mta,
   Enum['selinux', 'apparmor', 'none']     $mac,
   Enum['enforcing', 'permissive']         $selinux_mode,
