@@ -2,8 +2,8 @@
 {
   echo -e "\n- Start check - logfiles have appropriate permissions and ownership"
   output=""
-  
-  find /var/log -type f | (while read -r fname; do
+
+  find /var/log -type f | while read -r fname; do
     bname="$(basename "$fname")"
 
     case "$bname" in
@@ -11,7 +11,7 @@
           if ! stat -Lc "%a" "$fname" | grep -Pq -- '^\h*[0,2,4,6][0,2,4,6][0,4]\h*$'; then
               output="$output\n- File: \"$fname\" mode: \"$(stat -Lc "%a" "$fname")\"\n"
           fi
-              
+
           if ! stat -Lc "%U %G" "$fname" | grep -Pq -- '^\h*root\h+(utmp|root)\h*$'; then
               output="$output\n- File: \"$fname\" ownership: \"$(stat -Lc "%U:%G" "$fname")\"\n"
           fi
@@ -64,7 +64,7 @@
   else
     # print the reason why we are failing
     echo -e "\n- FAIL:\n$output"
+    exit 1
   fi
   echo -e "- End check - logfiles have appropriate permissions and ownership\n"
-  )
 }

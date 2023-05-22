@@ -1,6 +1,6 @@
 # @api private
 #
-# @summary Ensure local interactive users own their home directories 
+# @summary Ensure local interactive users own their home directories
 #
 class secure_linux_cis::rules::ensure_local_interactive_users_own_their_home_directories {
   file { 'audit_local_interactive_users_own_their_home_directories':
@@ -19,7 +19,7 @@ class secure_linux_cis::rules::ensure_local_interactive_users_own_their_home_dir
 
   exec { 'Fix home directories ownership for interactive users':
     command => '/root/scripts/ensure_local_interactive_users_own_their_home_directories.sh',
-    unless  => 'cd /root; X=`/root/scripts/audit_local_interactive_users_own_their_home_directories.sh`; echo "$X" | grep -Pi -- \'PASSED\'',
+    unless  => '/root/scripts/audit_local_interactive_users_own_their_home_directories.sh',
     require => [
       File['audit_local_interactive_users_own_their_home_directories'],
       File['ensure_local_interactive_users_own_their_home_directories']

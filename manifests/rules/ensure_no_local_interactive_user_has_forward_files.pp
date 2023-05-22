@@ -1,6 +1,6 @@
 # @api private
 #
-# @summary Ensure no local interactive user has .forward files 
+# @summary Ensure no local interactive user has .forward files
 #
 class secure_linux_cis::rules::ensure_no_local_interactive_user_has_forward_files {
   file { 'audit_no_local_interactive_user_has_forward_files':
@@ -19,7 +19,7 @@ class secure_linux_cis::rules::ensure_no_local_interactive_user_has_forward_file
 
   exec { 'Remove local interactive forward files':
     command => '/root/scripts/ensure_no_local_interactive_user_has_forward_files.sh',
-    unless  => 'cd /root; X=`/root/scripts/audit_no_local_interactive_user_has_forward_files.sh`; echo "$X" | grep -Pi -- \'PASSED\'',
+    unless  => '/root/scripts/audit_no_local_interactive_user_has_forward_files.sh',
     require => [
       File['audit_no_local_interactive_user_has_forward_files'],
       File['ensure_no_local_interactive_user_has_forward_files']
