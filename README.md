@@ -120,7 +120,9 @@ As of enforcement for the Redhat 7 OS, there are 223 CIS rules that are either e
 
 ```yaml
 # hieradata/common.yaml
-secure_linux_cis::rules::ensure_mounting_of_squashfs_filesystems_is_disabled::enforced: false
+secure_linux_cis::exclude_rules:
+  - ensure_mounting_of_squashfs_filesystems_is_disabled
+  - ensure_rsyslog_is_not_configured_to_recieve_logs_from_a_remote_client
 ```
 
 ### Enabling rules with Hiera (Not applicable to 3.0.0 descriptive based 'rules' .pp files)
