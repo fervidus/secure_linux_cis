@@ -319,6 +319,7 @@ secure_linux_cis::server_level_2:
 - ensure_audit_log_files_are_mode_0640_or_less_permissive
 - ensure_only_authorized_users_own_audit_log_files
 - ensure_the_audit_log_directory_is_0750_or_more_restrictive
+- ensure_audit_configuration_files_are_640_or_more_restrictive
 - ensure_rsyslog_is_installed
 - ensure_rsyslog_service_is_enabled
 - ensure_rsyslog_default_file_permissions_are_configured
@@ -716,6 +717,7 @@ secure_linux_cis::workstation_level_2:
 - ensure_audit_log_files_are_mode_0640_or_less_permissive
 - ensure_only_authorized_users_own_audit_log_files
 - ensure_the_audit_log_directory_is_0750_or_more_restrictive
+- ensure_audit_configuration_files_are_640_or_more_restrictive
 - ensure_rsyslog_is_installed
 - ensure_rsyslog_service_is_enabled
 - ensure_rsyslog_default_file_permissions_are_configured
