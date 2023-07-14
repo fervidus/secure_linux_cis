@@ -321,6 +321,7 @@ secure_linux_cis::server_level_2:
 - ensure_the_audit_log_directory_is_0750_or_more_restrictive
 - ensure_audit_configuration_files_are_640_or_more_restrictive
 - ensure_audit_tools_are_755_or_more_restrictive
+- ensure_ssh_x11_forwarding_is_disabled
 - ensure_rsyslog_is_installed
 - ensure_rsyslog_service_is_enabled
 - ensure_rsyslog_default_file_permissions_are_configured
@@ -533,6 +534,7 @@ secure_linux_cis::workstation_level_1:
 - ensure_ssh_permituserenvironment_is_disabled
 - ensure_ssh_ignorerhosts_is_enabled
 - ensure_system_wide_crypto_policy_is_not_over_ridden
+- ensure_ssh_x11_forwarding_is_disabled
 - ensure_ssh_warning_banner_is_configured
 - ensure_ssh_maxstartups_is_configured
 - ensure_ssh_logingracetime_is_set_to_one_minute_or_less
@@ -720,6 +722,7 @@ secure_linux_cis::workstation_level_2:
 - ensure_the_audit_log_directory_is_0750_or_more_restrictive
 - ensure_audit_configuration_files_are_640_or_more_restrictive
 - ensure_audit_tools_are_755_or_more_restrictive
+- ensure_ssh_x11_forwarding_is_disabled
 - ensure_rsyslog_is_installed
 - ensure_rsyslog_service_is_enabled
 - ensure_rsyslog_default_file_permissions_are_configured
