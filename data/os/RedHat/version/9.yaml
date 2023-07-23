@@ -149,6 +149,7 @@ secure_linux_cis::server_level_1:
 - ensure_password_creation_requirements_are_configured
 - ensure_lockout_for_failed_password_attempts_is_configured
 - ensure_password_reuse_is_limited
+- ensure_password_hashing_algorithm_is_sha_512_or_yescrypt
 - ensure_all_users_last_password_change_date_is_in_the_past
 - ensure_system_accounts_are_secured
 - ensure_sticky_bit_is_set_on_all_world_writable_directories
@@ -372,6 +373,7 @@ secure_linux_cis::server_level_2:
 - ensure_password_creation_requirements_are_configured
 - ensure_lockout_for_failed_password_attempts_is_configured
 - ensure_password_reuse_is_limited
+- ensure_password_hashing_algorithm_is_sha_512_or_yescrypt
 - ensure_all_users_last_password_change_date_is_in_the_past
 - ensure_system_accounts_are_secured
 - ensure_sticky_bit_is_set_on_all_world_writable_directories
@@ -407,7 +409,6 @@ secure_linux_cis::server_level_2:
 - ensure_successful_file_system_mounts_are_collected
 - ensure_journald_is_configured_to_compress_large_log_files
 - ensure_ssh_permitemptypasswords_is_disabled
-- ensure_password_reuse_is_limited
 - ensure_no_duplicate_user_names_exist
 - ensure_no_users_have_rhosts_files
 secure_linux_cis::workstation_level_1:
@@ -555,6 +556,7 @@ secure_linux_cis::workstation_level_1:
 - ensure_password_creation_requirements_are_configured
 - ensure_lockout_for_failed_password_attempts_is_configured
 - ensure_password_reuse_is_limited
+- ensure_password_hashing_algorithm_is_sha_512_or_yescrypt
 - ensure_all_users_last_password_change_date_is_in_the_past
 - ensure_system_accounts_are_secured
 - ensure_sticky_bit_is_set_on_all_world_writable_directories
@@ -777,6 +779,7 @@ secure_linux_cis::workstation_level_2:
 - ensure_password_creation_requirements_are_configured
 - ensure_lockout_for_failed_password_attempts_is_configured
 - ensure_password_reuse_is_limited
+- ensure_password_hashing_algorithm_is_sha_512_or_yescrypt
 - ensure_all_users_last_password_change_date_is_in_the_past
 - ensure_system_accounts_are_secured
 - ensure_sticky_bit_is_set_on_all_world_writable_directories
@@ -813,6 +816,5 @@ secure_linux_cis::workstation_level_2:
 - ensure_successful_file_system_mounts_are_collected
 - ensure_journald_is_configured_to_compress_large_log_files
 - ensure_ssh_permitemptypasswords_is_disabled
-- ensure_password_reuse_is_limited
 - ensure_no_duplicate_user_names_exist
 - ensure_no_users_have_rhosts_files
