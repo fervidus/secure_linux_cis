@@ -151,6 +151,7 @@ secure_linux_cis::server_level_1:
 - ensure_password_reuse_is_limited
 - ensure_password_hashing_algorithm_is_sha_512_or_yescrypt
 - ensure_local_interactive_user_home_directories_are_mode_750_or_more_restrictive
+- ensure_a_single_firewall_configuration_utility_is_in_use
 - ensure_root_password_is_set
 - ensure_root_is_the_only_uid_0_account
 - ensure_all_users_last_password_change_date_is_in_the_past
@@ -378,6 +379,7 @@ secure_linux_cis::server_level_2:
 - ensure_password_reuse_is_limited
 - ensure_password_hashing_algorithm_is_sha_512_or_yescrypt
 - ensure_local_interactive_user_home_directories_are_mode_750_or_more_restrictive
+- ensure_a_single_firewall_configuration_utility_is_in_use
 - ensure_root_password_is_set
 - ensure_root_is_the_only_uid_0_account
 - ensure_all_users_last_password_change_date_is_in_the_past
@@ -564,6 +566,7 @@ secure_linux_cis::workstation_level_1:
 - ensure_password_reuse_is_limited
 - ensure_password_hashing_algorithm_is_sha_512_or_yescrypt
 - ensure_local_interactive_user_home_directories_are_mode_750_or_more_restrictive
+- ensure_a_single_firewall_configuration_utility_is_in_use
 - ensure_root_password_is_set
 - ensure_root_is_the_only_uid_0_account
 - ensure_all_users_last_password_change_date_is_in_the_past
@@ -790,6 +793,7 @@ secure_linux_cis::workstation_level_2:
 - ensure_password_reuse_is_limited
 - ensure_password_hashing_algorithm_is_sha_512_or_yescrypt
 - ensure_local_interactive_user_home_directories_are_mode_750_or_more_restrictive
+- ensure_a_single_firewall_configuration_utility_is_in_use
 - ensure_root_password_is_set
 - ensure_root_is_the_only_uid_0_account
 - ensure_all_users_last_password_change_date_is_in_the_past
