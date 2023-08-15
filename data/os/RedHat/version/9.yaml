@@ -187,6 +187,7 @@ secure_linux_cis::server_level_1:
 - ensure_no_users_have_netrc_files
 - ensure_no_users_have_rhosts_files
 - ensure_accounts_in_etc_passwd_use_shadowed_passwords
+- ensure_authselect_includes_with_faillock
 secure_linux_cis::server_level_2:
 - ensure_mounting_of_cramfs_filesystems_is_disabled
 - ensure_mounting_of_squashfs_filesystems_is_disabled
@@ -429,6 +430,7 @@ secure_linux_cis::server_level_2:
 - ensure_no_duplicate_user_names_exist
 - ensure_no_users_have_rhosts_files
 - ensure_accounts_in_etc_passwd_use_shadowed_passwords
+- ensure_authselect_includes_with_faillock
 secure_linux_cis::workstation_level_1:
 - ensure_mounting_of_cramfs_filesystems_is_disabled
 - ensure_tmp_is_a_separate_partition
@@ -612,6 +614,7 @@ secure_linux_cis::workstation_level_1:
 - ensure_no_users_have_netrc_files
 - ensure_no_users_have_rhosts_files
 - ensure_accounts_in_etc_passwd_use_shadowed_passwords
+- ensure_authselect_includes_with_faillock
 secure_linux_cis::workstation_level_2:
 - ensure_mounting_of_cramfs_filesystems_is_disabled
 - ensure_mounting_of_squashfs_filesystems_is_disabled
@@ -854,3 +857,4 @@ secure_linux_cis::workstation_level_2:
 - ensure_no_duplicate_user_names_exist
 - ensure_no_users_have_rhosts_files
 - ensure_accounts_in_etc_passwd_use_shadowed_passwords
+- ensure_authselect_includes_with_faillock
