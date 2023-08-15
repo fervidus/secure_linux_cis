@@ -13,8 +13,18 @@ class secure_linux_cis::rules::ensure_cryptographic_mechanisms_are_used_to_prote
     /sbin/augenrules p+i+n+u+g+s+b+acl+xattrs+sha512
     | SYSTEMAUDITRULES
 
-  file { '/etc/aide/aide.conf.d/00-cryptographic-mechanisms.conf':
-    ensure  => file,
-    content => $system_audit_rules,
+  if find_file('/etc/aide') {
+
+    file { '/etc/aide/aide.conf.d':
+      ensure  => directory,
+      recurse => false,
+      owner   => 'root',
+      group   => 'root',
+    }
+
+    file { '/etc/aide/aide.conf.d/00-cryptographic-mechanisms.conf':
+      ensure  => file,
+      content => $system_audit_rules,
+    }
   }
 }
