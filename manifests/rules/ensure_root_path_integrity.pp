@@ -10,6 +10,7 @@ class secure_linux_cis::rules::ensure_root_path_integrity {
       ensure => directory,
       owner  => 'root',
       mode   => 'go-w',
+      recurse => true,
     }
   }
 }
