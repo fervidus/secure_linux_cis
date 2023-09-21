@@ -30,3 +30,4 @@ modules:
 - puppetlabs/service
 - puppetlabs/exec
 - puppetlabs/package
+- puppet/chrony

@@ -1,6 +1,6 @@
 Facter.add('are_legacy_crypto_policies') do
   confine osfamily: 'RedHat'
-  confine operatingsystemmajrelease: '8'
+  confine operatingsystemmajrelease: ['8', '9']
 
   setcode do
     File.open('/etc/crypto-policies/config').each do |i|

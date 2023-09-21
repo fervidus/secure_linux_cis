@@ -15,7 +15,7 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_gshadow__are_configured
       'RedHat': {
         file { '/etc/gshadow-':
           ensure   => file,
-          schedule => 'harden_schedule',
+          #schedule => 'harden_schedule',
           owner    => 'root',
           group    => 'root',
           mode     => '0000',
@@ -24,7 +24,7 @@ class secure_linux_cis::rules::ensure_permissions_on_etc_gshadow__are_configured
       'Debian': {
         file { '/etc/gshadow-':
           ensure   => file,
-          schedule => 'harden_schedule',
+          #schedule => 'harden_schedule',
           owner    => 'root',
           group    => 'shadow',
           mode     => '0640',
