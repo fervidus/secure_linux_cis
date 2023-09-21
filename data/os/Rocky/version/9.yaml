@@ -1,6 +1,5 @@
 ---
 secure_linux_cis::server_level_1:
-- ensure_mounting_of_cramfs_filesystems_is_disabled
 - ensure_tmp_is_a_separate_partition
 - ensure_nodev_option_set_on_tmp_partition
 - ensure_noexec_option_set_on_tmp_partition
@@ -25,7 +24,6 @@ secure_linux_cis::server_level_1:
 - ensure_nodev_option_set_on_dev_shm_partition
 - ensure_noexec_option_set_on_dev_shm_partition
 - ensure_nosuid_option_set_on_dev_shm_partition
-- disable_automounting
 - disable_usb_storage
 - ensure_gpgcheck_is_globally_activated
 - ensure_aide_is_installed
@@ -35,7 +33,6 @@ secure_linux_cis::server_level_1:
 - ensure_ssh_maxauthtries_is_set_to_4_or_less
 - ensure_ssh_maxsessions_is_set_to_10_or_less
 - ensure_permissions_on_bootloader_config_are_configured
-- ensure_authentication_is_required_when_booting_into_rescue_mode
 - ensure_core_dump_storage_is_disabled
 - ensure_core_dump_backtraces_are_disabled
 - ensure_address_space_layout_randomization_aslr_is_enabled
@@ -61,7 +58,6 @@ secure_linux_cis::server_level_1:
 - ensure_system_wide_crypto_policy_is_not_legacy
 - ensure_time_synchronization_is_in_use
 - ensure_chrony_is_configured
-- ensure_xinetd_is_not_installed
 - ensure_avahi_server_is_not_installed
 - ensure_cups_is_not_installed
 - ensure_dhcp_server_is_not_installed
@@ -73,14 +69,12 @@ secure_linux_cis::server_level_1:
 - ensure_samba_is_not_installed
 - ensure_http_proxy_server_is_not_installed
 - ensure_net_snmp_is_not_installed
-- ensure_nis_server_is_not_installed
 - ensure_telnet_server_is_not_installed
 - ensure_dnsmasq_is_not_installed
 - ensure_mail_transfer_agent_is_configured_for_local_only_mode
 - ensure_nfs_utils_is_not_installed_or_the_nfs_server_service_is_masked
 - ensure_rpcbind_is_not_installed_or_the_rpcbind_services_are_masked
 - ensure_rsync_is_not_installed_or_the_rsyncd_service_is_masked
-- ensure_nis_client_is_not_installed
 - ensure_rsh_client_is_not_installed
 - ensure_talk_client_is_not_installed
 - ensure_telnet_client_is_not_installed
@@ -97,14 +91,6 @@ secure_linux_cis::server_level_1:
 - ensure_bogus_icmp_responses_are_ignored
 - ensure_reverse_path_filtering_is_enabled
 - ensure_tcp_syn_cookies_is_enabled
-- ensure_iptables_packages_are_installed
-- ensure_nftables_is_not_installed_with_iptables
-- ensure_firewalld_is_either_not_installed_or_masked_with_iptables
-- ensure_iptables_loopback_traffic_is_configured
-- ensure_iptables_rules_exist_for_all_open_ports
-- ensure_iptables_default_deny_firewall_policy
-- ensure_iptables_rules_are_saved
-- ensure_iptables_is_enabled_and_active
 - ensure_rsyslog_is_installed
 - ensure_rsyslog_service_is_enabled
 - ensure_rsyslog_default_file_permissions_are_configured
@@ -187,8 +173,8 @@ secure_linux_cis::server_level_1:
 - ensure_no_users_have_netrc_files
 - ensure_no_users_have_rhosts_files
 - ensure_accounts_in_etc_passwd_use_shadowed_passwords
+- ensure_authselect_includes_with_faillock
 secure_linux_cis::server_level_2:
-- ensure_mounting_of_cramfs_filesystems_is_disabled
 - ensure_mounting_of_squashfs_filesystems_is_disabled
 - ensure_mounting_of_udf_filesystems_is_disabled
 - ensure_tmp_is_a_separate_partition
@@ -220,7 +206,6 @@ secure_linux_cis::server_level_2:
 - ensure_nodev_option_set_on_dev_shm_partition
 - ensure_noexec_option_set_on_dev_shm_partition
 - ensure_nosuid_option_set_on_dev_shm_partition
-- disable_automounting
 - ensure_gpgcheck_is_globally_activated
 - ensure_aide_is_installed
 - ensure_cryptographic_mechanisms_are_used_to_protect_the_integrity_of_audit_tools
@@ -229,7 +214,6 @@ secure_linux_cis::server_level_2:
 - ensure_ssh_maxauthtries_is_set_to_4_or_less
 - ensure_ssh_maxsessions_is_set_to_10_or_less
 - ensure_permissions_on_bootloader_config_are_configured
-- ensure_authentication_is_required_when_booting_into_rescue_mode
 - ensure_core_dump_storage_is_disabled
 - ensure_core_dump_backtraces_are_disabled
 - ensure_address_space_layout_randomization_aslr_is_enabled
@@ -257,7 +241,6 @@ secure_linux_cis::server_level_2:
 - ensure_time_synchronization_is_in_use
 - ensure_chrony_is_configured
 - ensure_xorg_x11_server_common_is_not_installed
-- ensure_xinetd_is_not_installed
 - ensure_avahi_server_is_not_installed
 - ensure_cups_is_not_installed
 - ensure_dhcp_server_is_not_installed
@@ -269,21 +252,17 @@ secure_linux_cis::server_level_2:
 - ensure_samba_is_not_installed
 - ensure_http_proxy_server_is_not_installed
 - ensure_net_snmp_is_not_installed
-- ensure_nis_server_is_not_installed
 - ensure_telnet_server_is_not_installed
 - ensure_dnsmasq_is_not_installed
 - ensure_mail_transfer_agent_is_configured_for_local_only_mode
 - ensure_nfs_utils_is_not_installed_or_the_nfs_server_service_is_masked
 - ensure_rpcbind_is_not_installed_or_the_rpcbind_services_are_masked
 - ensure_rsync_is_not_installed_or_the_rsyncd_service_is_masked
-- ensure_nis_client_is_not_installed
 - ensure_rsh_client_is_not_installed
 - ensure_talk_client_is_not_installed
 - ensure_telnet_client_is_not_installed
 - ensure_ldap_client_is_not_installed
 - ensure_tftp_client_is_not_installed
-- ensure_sctp_is_disabled
-- ensure_dccp_is_disabled
 - ensure_wireless_interfaces_are_disabled
 - ensure_ip_forwarding_is_disabled
 - ensure_packet_redirect_sending_is_disabled
@@ -295,14 +274,6 @@ secure_linux_cis::server_level_2:
 - ensure_bogus_icmp_responses_are_ignored
 - ensure_reverse_path_filtering_is_enabled
 - ensure_tcp_syn_cookies_is_enabled
-- ensure_iptables_packages_are_installed
-- ensure_nftables_is_not_installed_with_iptables
-- ensure_firewalld_is_either_not_installed_or_masked_with_iptables
-- ensure_iptables_loopback_traffic_is_configured
-- ensure_iptables_rules_exist_for_all_open_ports
-- ensure_iptables_default_deny_firewall_policy
-- ensure_iptables_rules_are_saved
-- ensure_iptables_is_enabled_and_active
 - ensure_auditd_is_installed
 - ensure_auditd_service_is_enabled
 - ensure_auditing_for_processes_that_start_prior_to_auditd_is_enabled
@@ -422,15 +393,14 @@ secure_linux_cis::server_level_2:
 - ensure_nodev_option_set_on_var_log_audit_partition
 - ensure_vsftp_server_is_not_installed
 - ensure_tcp_syn_cookies_is_enabled
-- ensure_iptables_is_enabled_and_active
 - ensure_successful_file_system_mounts_are_collected
 - ensure_journald_is_configured_to_compress_large_log_files
 - ensure_ssh_permitemptypasswords_is_disabled
 - ensure_no_duplicate_user_names_exist
 - ensure_no_users_have_rhosts_files
 - ensure_accounts_in_etc_passwd_use_shadowed_passwords
+- ensure_authselect_includes_with_faillock
 secure_linux_cis::workstation_level_1:
-- ensure_mounting_of_cramfs_filesystems_is_disabled
 - ensure_tmp_is_a_separate_partition
 - ensure_nodev_option_set_on_tmp_partition
 - ensure_noexec_option_set_on_tmp_partition
@@ -464,7 +434,6 @@ secure_linux_cis::workstation_level_1:
 - ensure_ssh_maxauthtries_is_set_to_4_or_less
 - ensure_ssh_maxsessions_is_set_to_10_or_less
 - ensure_permissions_on_bootloader_config_are_configured
-- ensure_authentication_is_required_when_booting_into_rescue_mode
 - ensure_core_dump_storage_is_disabled
 - ensure_core_dump_backtraces_are_disabled
 - ensure_address_space_layout_randomization_aslr_is_enabled
@@ -488,7 +457,6 @@ secure_linux_cis::workstation_level_1:
 - ensure_system_wide_crypto_policy_is_not_legacy
 - ensure_time_synchronization_is_in_use
 - ensure_chrony_is_configured
-- ensure_xinetd_is_not_installed
 - ensure_dhcp_server_is_not_installed
 - ensure_dns_server_is_not_installed
 - ensure_ftp_server_is_not_installed
@@ -498,14 +466,12 @@ secure_linux_cis::workstation_level_1:
 - ensure_samba_is_not_installed
 - ensure_http_proxy_server_is_not_installed
 - ensure_net_snmp_is_not_installed
-- ensure_nis_server_is_not_installed
 - ensure_telnet_server_is_not_installed
 - ensure_dnsmasq_is_not_installed
 - ensure_mail_transfer_agent_is_configured_for_local_only_mode
 - ensure_nfs_utils_is_not_installed_or_the_nfs_server_service_is_masked
 - ensure_rpcbind_is_not_installed_or_the_rpcbind_services_are_masked
 - ensure_rsync_is_not_installed_or_the_rsyncd_service_is_masked
-- ensure_nis_client_is_not_installed
 - ensure_rsh_client_is_not_installed
 - ensure_talk_client_is_not_installed
 - ensure_telnet_client_is_not_installed
@@ -521,14 +487,6 @@ secure_linux_cis::workstation_level_1:
 - ensure_bogus_icmp_responses_are_ignored
 - ensure_reverse_path_filtering_is_enabled
 - ensure_tcp_syn_cookies_is_enabled
-- ensure_iptables_packages_are_installed
-- ensure_nftables_is_not_installed_with_iptables
-- ensure_firewalld_is_either_not_installed_or_masked_with_iptables
-- ensure_iptables_loopback_traffic_is_configured
-- ensure_iptables_rules_exist_for_all_open_ports
-- ensure_iptables_default_deny_firewall_policy
-- ensure_iptables_rules_are_saved
-- ensure_iptables_is_enabled_and_active
 - ensure_rsyslog_is_installed
 - ensure_rsyslog_service_is_enabled
 - ensure_rsyslog_default_file_permissions_are_configured
@@ -612,8 +570,8 @@ secure_linux_cis::workstation_level_1:
 - ensure_no_users_have_netrc_files
 - ensure_no_users_have_rhosts_files
 - ensure_accounts_in_etc_passwd_use_shadowed_passwords
+- ensure_authselect_includes_with_faillock
 secure_linux_cis::workstation_level_2:
-- ensure_mounting_of_cramfs_filesystems_is_disabled
 - ensure_mounting_of_squashfs_filesystems_is_disabled
 - ensure_mounting_of_udf_filesystems_is_disabled
 - ensure_tmp_is_a_separate_partition
@@ -645,7 +603,6 @@ secure_linux_cis::workstation_level_2:
 - ensure_nodev_option_set_on_dev_shm_partition
 - ensure_noexec_option_set_on_dev_shm_partition
 - ensure_nosuid_option_set_on_dev_shm_partition
-- disable_automounting
 - disable_usb_storage
 - ensure_gpgcheck_is_globally_activated
 - ensure_aide_is_installed
@@ -655,7 +612,6 @@ secure_linux_cis::workstation_level_2:
 - ensure_ssh_maxauthtries_is_set_to_4_or_less
 - ensure_ssh_maxsessions_is_set_to_10_or_less
 - ensure_permissions_on_bootloader_config_are_configured
-- ensure_authentication_is_required_when_booting_into_rescue_mode
 - ensure_core_dump_storage_is_disabled
 - ensure_core_dump_backtraces_are_disabled
 - ensure_address_space_layout_randomization_aslr_is_enabled
@@ -681,7 +637,6 @@ secure_linux_cis::workstation_level_2:
 - ensure_system_wide_crypto_policy_is_not_legacy
 - ensure_time_synchronization_is_in_use
 - ensure_chrony_is_configured
-- ensure_xinetd_is_not_installed
 - ensure_avahi_server_is_not_installed
 - ensure_cups_is_not_installed
 - ensure_dhcp_server_is_not_installed
@@ -693,21 +648,17 @@ secure_linux_cis::workstation_level_2:
 - ensure_samba_is_not_installed
 - ensure_http_proxy_server_is_not_installed
 - ensure_net_snmp_is_not_installed
-- ensure_nis_server_is_not_installed
 - ensure_telnet_server_is_not_installed
 - ensure_dnsmasq_is_not_installed
 - ensure_mail_transfer_agent_is_configured_for_local_only_mode
 - ensure_nfs_utils_is_not_installed_or_the_nfs_server_service_is_masked
 - ensure_rpcbind_is_not_installed_or_the_rpcbind_services_are_masked
 - ensure_rsync_is_not_installed_or_the_rsyncd_service_is_masked
-- ensure_nis_client_is_not_installed
 - ensure_rsh_client_is_not_installed
 - ensure_talk_client_is_not_installed
 - ensure_telnet_client_is_not_installed
 - ensure_ldap_client_is_not_installed
 - ensure_tftp_client_is_not_installed
-- ensure_sctp_is_disabled
-- ensure_dccp_is_disabled
 - ensure_wireless_interfaces_are_disabled
 - ensure_ip_forwarding_is_disabled
 - ensure_packet_redirect_sending_is_disabled
@@ -719,14 +670,6 @@ secure_linux_cis::workstation_level_2:
 - ensure_bogus_icmp_responses_are_ignored
 - ensure_reverse_path_filtering_is_enabled
 - ensure_tcp_syn_cookies_is_enabled
-- ensure_iptables_packages_are_installed
-- ensure_nftables_is_not_installed_with_iptables
-- ensure_firewalld_is_either_not_installed_or_masked_with_iptables
-- ensure_iptables_loopback_traffic_is_configured
-- ensure_iptables_rules_exist_for_all_open_ports
-- ensure_iptables_default_deny_firewall_policy
-- ensure_iptables_rules_are_saved
-- ensure_iptables_is_enabled_and_active
 - ensure_auditd_is_installed
 - ensure_auditd_service_is_enabled
 - ensure_auditing_for_processes_that_start_prior_to_auditd_is_enabled
@@ -847,10 +790,10 @@ secure_linux_cis::workstation_level_2:
 - ensure_selinux_is_not_disabled_in_bootloader_configuration
 - ensure_vsftp_server_is_not_installed
 - ensure_tcp_syn_cookies_is_enabled
-- ensure_iptables_is_enabled_and_active
 - ensure_successful_file_system_mounts_are_collected
 - ensure_journald_is_configured_to_compress_large_log_files
 - ensure_ssh_permitemptypasswords_is_disabled
 - ensure_no_duplicate_user_names_exist
 - ensure_no_users_have_rhosts_files
 - ensure_accounts_in_etc_passwd_use_shadowed_passwords
+- ensure_authselect_includes_with_faillock
