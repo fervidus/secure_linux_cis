@@ -16,7 +16,7 @@
 /log/
 /pkg/
 /spec/fixtures/manifests/
-/spec/fixtures/modules/
+/spec/fixtures/modules/*
 /tmp/
 /vendor/
 /convert_report.txt
@@ -26,9 +26,3 @@
 .envrc
 /inventory.yaml
 /spec/fixtures/litmus_inventory.yaml
-.modules
-.resource_types
-bolt-debug.log
-.rerun.json
-.plan_cache.json
-.task_cache.json
