@@ -12,6 +12,27 @@ secure_linux_cis::server_level_1:
   - ensure_cramfs_kernel_module_is_not_available
   - ensure_freexvfs_kernel_module_is_not_available
 
+  # Services
+  - ensure_autofs_services_are_not_in_use
+  - ensure_avahi_daemon_services_are_not_in_use
+  - ensure_dhcp_server_services_are_not_in_use
+  - ensure_dns_server_services_are_not_in_use
+  - ensure_dnsmasq_services_are_not_in_use
+  - ensure_ftp_server_services_are_not_in_use
+  - ensure_message_access_services_are_not_in_use
+  - ensure_network_file_system_services_are_not_in_use
+  - ensure_nis_server_services_are_not_in_use
+  - ensure_print_server_services_are_not_in_use
+  - ensure_rpcbind_services_are_not_in_use
+  - ensure_rsync_services_are_not_in_use
+  - ensure_samba_file_server_services_are_not_in_use
+  - ensure_snmp_services_are_not_in_use
+  - ensure_telnet_server_services_are_not_in_use
+  - ensure_tftp_server_services_are_not_in_use
+  - ensure_web_proxy_server_services_are_not_in_use
+  - ensure_web_server_services_are_not_in_use
+  - ensure_xinitd_services_are_not_in_use
+
 secure_linux_cis::server_level_2:
   # Kernel modules
   - ensure_cramfs_kernel_module_is_not_available
@@ -25,6 +46,28 @@ secure_linux_cis::server_level_2:
   - ensure_cramfs_kernel_module_is_not_available
   - ensure_freexvfs_kernel_module_is_not_available
 
+  # Services
+  - ensure_autofs_services_are_not_in_use
+  - ensure_avahi_daemon_services_are_not_in_use
+  - ensure_dhcp_server_services_are_not_in_use
+  - ensure_dns_server_services_are_not_in_use
+  - ensure_dnsmasq_services_are_not_in_use
+  - ensure_ftp_server_services_are_not_in_use
+  - ensure_message_access_services_are_not_in_use
+  - ensure_network_file_system_services_are_not_in_use
+  - ensure_nis_server_services_are_not_in_use
+  - ensure_print_server_services_are_not_in_use
+  - ensure_rpcbind_services_are_not_in_use
+  - ensure_rsync_services_are_not_in_use
+  - ensure_samba_file_server_services_are_not_in_use
+  - ensure_snmp_services_are_not_in_use
+  - ensure_telnet_server_services_are_not_in_use
+  - ensure_tftp_server_services_are_not_in_use
+  - ensure_web_proxy_server_services_are_not_in_use
+  - ensure_web_server_services_are_not_in_use
+  - ensure_x_window_server_services_are_not_in_use
+  - ensure_xinitd_services_are_not_in_use
+
 
 secure_linux_cis::workstation_level_1:
   # Kernel modules
@@ -35,6 +78,24 @@ secure_linux_cis::workstation_level_1:
   - ensure_jffs2_kernel_module_is_not_available
   - ensure_cramfs_kernel_module_is_not_available
   - ensure_freexvfs_kernel_module_is_not_available
+
+  # Services
+  - ensure_dhcp_server_services_are_not_in_use
+  - ensure_dns_server_services_are_not_in_use
+  - ensure_dnsmasq_services_are_not_in_use
+  - ensure_ftp_server_services_are_not_in_use
+  - ensure_message_access_services_are_not_in_use
+  - ensure_network_file_system_services_are_not_in_use
+  - ensure_nis_server_services_are_not_in_use
+  - ensure_rpcbind_services_are_not_in_use
+  - ensure_rsync_services_are_not_in_use
+  - ensure_samba_file_server_services_are_not_in_use
+  - ensure_snmp_services_are_not_in_use
+  - ensure_telnet_server_services_are_not_in_use
+  - ensure_tftp_server_services_are_not_in_use
+  - ensure_web_proxy_server_services_are_not_in_use
+  - ensure_web_server_services_are_not_in_use
+  - ensure_xinitd_services_are_not_in_use
 
 secure_linux_cis::workstation_level_2:
   # Kernel modules
@@ -48,3 +109,23 @@ secure_linux_cis::workstation_level_2:
   - ensure_usbstorage_kernel_module_is_not_available
   - ensure_cramfs_kernel_module_is_not_available
   - ensure_freexvfs_kernel_module_is_not_available
+
+  # Services
+  - ensure_autofs_services_are_not_in_use
+  - ensure_avahi_daemon_services_are_not_in_use
+  - ensure_dhcp_server_services_are_not_in_use
+  - ensure_dns_server_services_are_not_in_use
+  - ensure_dnsmasq_services_are_not_in_use
+  - ensure_ftp_server_services_are_not_in_use
+  - ensure_message_access_services_are_not_in_use
+  - ensure_network_file_system_services_are_not_in_use
+  - ensure_nis_server_services_are_not_in_use
+  - ensure_rpcbind_services_are_not_in_use
+  - ensure_rsync_services_are_not_in_use
+  - ensure_samba_file_server_services_are_not_in_use
+  - ensure_snmp_services_are_not_in_use
+  - ensure_telnet_server_services_are_not_in_use
+  - ensure_tftp_server_services_are_not_in_use
+  - ensure_web_proxy_server_services_are_not_in_use
+  - ensure_web_server_services_are_not_in_use
+  - ensure_xinitd_services_are_not_in_use
