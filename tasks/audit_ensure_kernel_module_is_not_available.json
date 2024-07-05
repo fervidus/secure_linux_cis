@@ -1,0 +1,13 @@
+{
+    "description": "Ensure a module is not available",
+    "parameters": {
+        "mode_name": {
+            "description": "The module being checked",
+            "type": "String[1]"
+        },
+        "mod_path": {
+            "description": "The path we need to check for module informaiton",
+            "type": "String[1]"
+        }
+    }
+}

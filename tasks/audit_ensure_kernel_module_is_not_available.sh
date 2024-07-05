@@ -2,8 +2,8 @@
 {
     l_output3="" l_dl="" # clear variables
     unset a_output; unset a_output2 # unset arrays
-    l_mod_name="cramfs" # set module name
-    l_mod_type="fs" # set module type
+    l_mod_name="$PT_mode_name" # set module name
+    l_mod_type="$PT_mod_type" # set module type
     l_mod_path="$(readlink -f /lib/modules/**/kernel/$l_mod_type | sort -u)"
     f_module_chk()
     {
