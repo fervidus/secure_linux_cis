@@ -1,7 +1,7 @@
 {
     "description": "Ensure a module is not available",
     "parameters": {
-        "mode_name": {
+        "mod_name": {
             "description": "The module being checked",
             "type": "String[1]"
         },
